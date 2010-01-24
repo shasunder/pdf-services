@@ -1,0 +1,14 @@
+<h1>Please upload a file</h1>
+<form method="post" action="/pdf2txt.html" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit"/>
+</form>
+
+<font color="red">$!message</font>
+#if($pdf2txt)
+<br/>
+<br/>
+<textarea cols="80" rows="10">
+$!pdf2txt
+</textarea>
+#end

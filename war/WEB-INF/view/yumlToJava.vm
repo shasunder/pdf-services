@@ -1,0 +1,23 @@
+public class $StringUtil.capitalize($className){
+#set($memberVariablesEntrySet = $memberVariables.entrySet())
+
+#foreach($memberVariable in $memberVariablesEntrySet)
+ 	private $StringUtil.capitalize($memberVariable.value) $memberVariable.key;
+#end
+
+#foreach($memberVariable in $memberVariablesEntrySet)
+	 public void set$StringUtil.capitalize(${memberVariable.key})($StringUtil.capitalize(${memberVariable.value}) $memberVariable.key){
+	  this.${memberVariable.key}=$memberVariable.key;
+	 }
+	 
+	 public $StringUtil.capitalize(${memberVariable.value}) get$StringUtil.capitalize(${memberVariable.key})(){
+	  return $memberVariable.key;
+	 }
+#end
+
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
+}
+

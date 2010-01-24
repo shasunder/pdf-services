@@ -1,0 +1,18 @@
+#set($useJquery = "true")
+#set($module = "search")
+#set($modulePath = "shout")
+
+<form method="post" action="/index.html"> 
+	   <b>Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="shouter"></input> <br/>
+   Message :
+		<textarea name="content"></textArea> <br/>
+   <input type="submit" name="shout" value="shout"></input>
+   </b>
+</form>
+<hr/>
+#foreach($shout in $shouts)
+	#if($shout.shouter)
+	<b>$!shout.shouter</b> >> $!shout.content. <font size=1px >$!shout.date </font> <br/>
+	#end
+#end
+<hr/>
