@@ -1,0 +1,20 @@
+
+<form method="post" action="/yuml.html"> 
+   <b>Input Yuml :</b>
+		<textarea name="yuml" cols="80" rows="10">$!form.yuml</textArea> <br/>
+		
+		<br/>
+		<br/>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="submit" value="Yuml2Java" name="shout"/>
+   <a href="view-template.html?template=yumlToJava.vm"> view template</a>
+   <br/>
+   
+   <br/>
+   <b>Java Code :</b><textarea name="result" cols="80" rows="10">$!form.result</textArea> <br/>
+<hr/>
+   <b>Note: </b>Just copy the above code and paste on eclipse java package. Eclipse will generate the package name for the class automatically!!.
+   </b>
+</form>
+
+
