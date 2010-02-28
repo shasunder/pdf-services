@@ -1,3 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+<head> 
+	<meta content="text/html; charset=utf-8" http-equiv="content-type"> 
+<title>PDF Text Extraction In Your Browser - PDFTextOnline</title> 
+	<meta content="PDFTextOnline enables you to easily and quickly access the text and metadata held in your PDF documents, all without downloading or installing any new software." name="description"> 
+	<meta content="Adobe Acrobat PDF text extract extraction conversion convert snowtide lucene acroform metadata parser ajax javascript dojo aflax pdftextstream pdf2text pdf text convertor online free open source" name="keywords"> 
+<head> 
+<body>	
 <div align="center">
   <font size="10"><font color="purple">Pdf</font>2<font color="orange">Text</font> convertor</font>
 	<br/>
@@ -21,3 +30,6 @@
 </div>
 <br/>
 <a href="/"> home</a>
+</div>
+</body>
+</html>
