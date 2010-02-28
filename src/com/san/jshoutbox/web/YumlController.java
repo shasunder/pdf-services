@@ -1,6 +1,5 @@
 package com.san.jshoutbox.web;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -14,54 +13,84 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
-import org.springframework.validation.BindException;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.san.jshoutbox.util.Constants;
 
-public class YumlController extends BaseSimpleFormController {
-	VelocityEngine ve;
+@Controller("yumlController")
+public class YumlController {
+	static final String VELOCITY_TEMPLATE_PATH = "WEB-INF/view/yumlToJava.vm";
+	VelocityEngine ve = new VelocityEngine();
+	String viewName = "yuml";
+	static Log logger = LogFactory.getLog(YumlController.class);
 
-	protected YumlController() {
-		setCommandName("form");
-	}
-
-	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
-		viewName = "yuml";
+	@RequestMapping(value = "/yuml", method = RequestMethod.GET)
+	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mv = new ModelAndView(viewName);
 		return mv;
 	}
 
-	@Override
-	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception {
-		WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
-		ve=(VelocityEngine) webApplicationContext.getBean("velocityEngine");
-		
-		viewName = "yuml";
+	@RequestMapping(value = "/yuml/{encoded}", method = RequestMethod.GET)
+	protected ModelAndView showForm(@PathVariable("encoded") String yumlEncoded) throws Exception {
 		ModelAndView mv = new ModelAndView(viewName);
-		YumlCommand form = (YumlCommand) command;
-		String result;
+		YumlCommand form = new YumlCommand();
+
+		form.setYumlEncoded(yumlEncoded);
+		String yumlMultiLine = decodeYuml(yumlEncoded);
+		form.setResult(doIt(yumlMultiLine));
+		form.setYuml(yumlMultiLine);
+		mv.getModel().put("form", form);
+		return mv;
+	}
+
+	@RequestMapping(value = "/yuml", method = RequestMethod.POST)
+	protected ModelAndView onSubmit(HttpServletRequest request, YumlCommand form) throws Exception {
+		ModelAndView mv = new ModelAndView(viewName);
 		try {
-			result = doIt(form.getYuml());
-			form.setResult(result);
+			String yuml = form.getYuml();
+			form.setYumlEncoded(encodeYuml(yuml));
+			form.setResult(doIt(yuml));
 		} catch (Exception e) {
-			logger.error(e,e);
+			logger.error(e, e);
 			form.setResult("Sorry!! Either the yuml is bad or I am not smart enough to deal with it!! >:) ");
 		}
-		
-		mv.getModel().put("form", command);
+
+		mv.getModel().put("form", form);
 		return mv;
 	}
 
-	private String doIt(String yuml) throws IOException, Exception {
-		Scanner scanner = new Scanner(yuml);
-		
+	private String encodeYuml(String yumlMultiline) {
+		String multi[] = StringUtils.split(yumlMultiline, Constants.RETURN_NEW_LINE);
+		String encoded = "";
+		for (int i = 0; i < multi.length; i++) {
+			encoded = encoded + multi[i] + ",";
+		}
+		return encoded;
+	}
+
+	private String decodeYuml(String yumlEncoded) {
+		String multi[] = StringUtils.split(yumlEncoded, Constants.COMMA);
+		String yumlMultiLine = "";
+		for (int i = 0; i < multi.length; i++) {
+			yumlMultiLine = yumlMultiLine + multi[i] + Constants.RETURN_NEW_LINE;
+		}
+		return yumlMultiLine;
+	}
+	
+	private String doIt(String yumlMultiLine) throws IOException, Exception {
+		Scanner scanner = new Scanner(yumlMultiLine);
+
 		StringBuffer result = new StringBuffer();
-		List entitiesList=new ArrayList();
+		List entitiesList = new ArrayList();
 		while (scanner.hasNextLine()) {
 			VelocityContext context = new VelocityContext();
 
@@ -70,7 +99,7 @@ public class YumlController extends BaseSimpleFormController {
 
 			String line = scanner.nextLine();
 			String[] entities = StringUtils.substringsBetween(line, "[", "]");
-			
+
 			String entityName = null;
 			for (int i = 0; i < entities.length; i++) {
 				Map memberVariables = new LinkedHashMap();
@@ -97,17 +126,17 @@ public class YumlController extends BaseSimpleFormController {
 				} else {
 					entityName = tokens[0];
 				}
-				if(!entitiesList.contains(entityName)){
-				entitiesList.add(entityName);
-				}else{
-					continue; //skip
+				if (!entitiesList.contains(entityName)) {
+					entitiesList.add(entityName);
+				} else {
+					continue; // skip
 				}
-				
+
 				context.put("className", entityName);
 				context.put("memberVariables", memberVariables);
 				String code = generateCode(context);
 				result.append(code);
-				
+
 			}
 		}
 
@@ -116,7 +145,7 @@ public class YumlController extends BaseSimpleFormController {
 
 	private String generateCode(VelocityContext context) throws Exception, IOException {
 
-		Template t = ve.getTemplate("yumlToJava.vm");
+		Template t = ve.getTemplate(VELOCITY_TEMPLATE_PATH);
 
 		StringWriter writer = new StringWriter();
 		t.merge(context, writer);

@@ -6,6 +6,15 @@ public class YumlCommand {
 
 	String yuml;
 	String result;
+	String yumlEncoded;
+	
+	public String getYumlEncoded() {
+		return yumlEncoded;
+	}
+
+	public void setYumlEncoded(String yumlEncoded) {
+		this.yumlEncoded = yumlEncoded;
+	}
 
 	public String getYuml() {
 		return yuml;
