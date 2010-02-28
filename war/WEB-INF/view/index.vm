@@ -8,7 +8,7 @@
 <font size="6">
  <ul>
    <li><a href="/pdf2text"> Free Pdf to Text conversion </a></li>
-   <li><a href="/yuml"> YUML to Java code generator </a></li>
+   <li><a href="/yuml/[Customer]->[Address],[Group]"> YUML to Java code generator </a></li>
    <li><a href="/mail"> Send e-mail for free online </a></li>
    <li><a href="/shout"> Shout </a></li>
  </ul>
