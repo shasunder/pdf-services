@@ -11,33 +11,27 @@ import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.validation.BindException;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.san.jshoutbox.util.PDF2TextUtil;
 
-/**
- * TODO: can only work when google app engine supports temp files.
- * @author Administrator
- *
- */
-public class Pdf2TxtController extends BaseSimpleFormController {
+@Controller("pdf2TxtController")
+public class Pdf2TxtController {
 
 	private static Log logger = LogFactory.getLog(Pdf2TxtController.class);
 
 	String viewName = "pdf2txt";
 
-	protected Pdf2TxtController() {
-		setCommandName("form");
-		setCommandClass(FileUploadCommand.class);
-	}
-
-	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
+	@RequestMapping(value = "/pdf2txt", method = RequestMethod.GET)
+	public ModelAndView show(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return new ModelAndView(viewName);
 	}
 
-	@Override
-	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception {
+	@RequestMapping(value = "/pdf2txt", method = RequestMethod.POST)
+	public ModelAndView post(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		Map<String, Object> model = new HashMap<String, Object>();
 
 		ServletFileUpload upload = new ServletFileUpload();
@@ -49,6 +43,7 @@ public class Pdf2TxtController extends BaseSimpleFormController {
 			String pdfToText = PDF2TextUtil.getInstance().pdfToText(item.openStream());
 			logger.info(pdfToText);
 			model.put("pdfToText", pdfToText);
+			model.put("file", item.getName());
 		}
 		return new ModelAndView(viewName, model);
 	}

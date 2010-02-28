@@ -1,14 +1,22 @@
-<h1>Please upload a file</h1>
-<form method="post" action="/pdf2txt.html" enctype="multipart/form-data">
-    <input type="file" name="file"/>
-    <input type="submit"/>
-</form>
+<div align="center">
+  <font size="10"><font color="purple">Pdf</font>2<font color="orange">Text</font> convertor</font>
+	<br/>
+	<br/>
+<div>
+	<form method="post" action="/pdf2txt" enctype="multipart/form-data">
+	    <input type="file" name="file" />
+	    <input type="submit"/>
+	</form>
+</div>
+<div>
+	<font color="red">$!message</font>
+	#if($pdfToText)
+	<br/>
+	Text extract of <b>$file </b> : 
+	<br/>
+	<textarea cols="100" rows="20" >
+	$!pdfToText
+	</textarea>
+	#end
+</div>
 
-<font color="red">$!message</font>
-#if($pdf2txt)
-<br/>
-<br/>
-<textarea cols="80" rows="10">
-$!pdf2txt
-</textarea>
-#end

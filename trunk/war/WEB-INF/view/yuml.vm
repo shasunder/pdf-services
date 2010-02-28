@@ -1,20 +1,44 @@
-
-<form method="post" action="/yuml.html"> 
-   <b>Input Yuml :</b>
-		<textarea name="yuml" cols="80" rows="10">$!form.yuml</textArea> <br/>
-		
+<div align="center">
+ <font size="10"><font color="green">Yuml</font>2<font color="purple">Java</font> convertor</font>
+<br/>
+<form method="post" action="/yuml"> 
+   <div> 
+     <b>Input Yuml :</b>
+   </div>
+   <div>
+		<textarea name="yuml" cols="80" rows="10" >$!form.yuml</textArea> <br/>
+   </div>
 		<br/>
+	<div>
+   		<input type="submit" value="Yuml2Java" name="shout"/>
+	</div>
+   <br/>
+   <div>   
+     <b>Java Code :</b>
+   </div>
+   <div>
+   		<textarea id="result" name="result" cols="80" rows="10" onfocus="this.rows=20" onblur="this.rows=10">$!form.result</textArea>
+		<a target="_blank" href="http://yuml.me/diagram/scruffy/class/$!form.yumlEncoded"> 
+		  <img width="200" height="200" src="http://yuml.me/diagram/scruffy/class/$!form.yumlEncoded"/>
+		</a>
 		<br/>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <input type="submit" value="Yuml2Java" name="shout"/>
-   <a href="view-template.html?template=yumlToJava.vm"> view template</a>
+		#if($!form.result)
+			<script language="javascript">
+		 		 document.getElementById("result").rows=20;
+		  </script>
+		#end  
+	</div>
+	
+	
+	<br/>
+	<div align="left">
+   <b>Note: </b>
    <br/>
-   
-   <br/>
-   <b>Java Code :</b><textarea name="result" cols="80" rows="10">$!form.result</textArea> <br/>
-<hr/>
-   <b>Note: </b>Just copy the above code and paste on eclipse java package. Eclipse will generate the package name for the class automatically!!.
-   </b>
+    1. Just copy the above code and paste on eclipse java package. Eclipse will generate the package name for the class automatically.
+    <br/>
+    2. For yuml syntax <a href="http://yuml.me/diagram/scruffy/class/samples">follow me</a>.
+   </div>
 </form>
 
 
+</div>

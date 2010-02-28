@@ -6,6 +6,8 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.pdfbox.cos.COSDocument;
+import org.pdfbox.io.RandomAccess;
+import org.pdfbox.io.RandomAccessBuffer;
 import org.pdfbox.pdfparser.PDFParser;
 import org.pdfbox.pdmodel.PDDocument;
 import org.pdfbox.util.PDFTextStripper;
@@ -23,7 +25,8 @@ public class PDF2TextUtil {
 		String parsedText;
 		try {
 			 
-			PDFParser parser = new PDFParser(fo);
+			RandomAccess rafi=new RandomAccessBuffer();
+			PDFParser parser = new PDFParser(fo,rafi);
 			PDFTextStripper pdfStripper = new PDFTextStripper();
 
 			parser.parse();
