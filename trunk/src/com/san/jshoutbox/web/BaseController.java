@@ -9,6 +9,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
+import com.san.jshoutbox.web.view.CommonVelocityLayoutView;
+
 
 public abstract class BaseController implements Controller {
 

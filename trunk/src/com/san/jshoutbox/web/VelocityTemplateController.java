@@ -1,37 +1,46 @@
 package com.san.jshoutbox.web;
 
-import java.io.File;
 import java.io.IOException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.velocity.Template;
 import org.apache.velocity.app.VelocityEngine;
 import org.apache.velocity.runtime.parser.node.ASTprocess;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindException;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.HtmlUtils;
 
-public class VelocityTemplateController extends BaseSimpleFormController {
+@Controller("velocityTemplateController")
+public class VelocityTemplateController implements ServletContextAware {
 	VelocityEngine ve;
+	String viewName = "velocity-manage";
 
-	protected VelocityTemplateController() {
-		setCommandName("form");
+	ServletContext servletContext;
+
+	public void setServletContext(ServletContext servletContext) {
+		this.servletContext = servletContext;
 	}
 
-	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
+	@RequestMapping(value = "/view-template", method = RequestMethod.GET)
+	protected ModelAndView show(@RequestParam("template") String velocityTemplate) throws Exception {
+		//FIXME: fix how to get webapp context in GAE
 		if (ve == null) {
-			WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+			WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(servletContext);
 			ve = (VelocityEngine) webApplicationContext.getBean("velocityEngine");
 		}
-		viewName = "velocity-manage";
-		String velocityTemplate = request.getParameter("template");
 		String data = getTemplate(velocityTemplate);
 		VelocityCommand form = new VelocityCommand();
-		data=HtmlUtils.htmlEscape(data);
+		data = HtmlUtils.htmlEscape(data);
 		form.setVelocity(data);
 		form.setTemplateName(velocityTemplate);
 		ModelAndView mv = new ModelAndView(viewName);
@@ -47,11 +56,8 @@ public class VelocityTemplateController extends BaseSimpleFormController {
 		return data2.literal();
 	}
 
-	@Override
 	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception {
-		viewName = "velocity-edit";
-
-		ModelAndView mv = new ModelAndView(viewName);
+		ModelAndView mv = new ModelAndView("velocity-edit");
 		VelocityCommand form = (VelocityCommand) command;
 		String result = doIt(form.getTemplateName(), form.getVelocity());
 		form.setResult(result);

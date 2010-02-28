@@ -1,59 +1,53 @@
 package com.san.jshoutbox.web;
 
-import java.io.IOException;
-import java.util.Properties;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.core.io.ResourceLoader;
-import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.san.jshoutbox.util.Constants;
+import com.san.jshoutbox.web.view.CommonVelocityLayoutView;
 
 /**
  * Simple controller that takes as inputs a LayoutView and a content pagename and puts them together
  */
-public class StaticPageViewController extends BaseController {
+@Controller("staticPageViewController")
+public class StaticPageViewController {
+	
 	private static final String TITLE_PREFIX = "title.";
 	private String pageParam = "page";
-	private ResourceLoader messageResourceLoader;
-	private String resourceFile;
-	private Properties properties;
+	@Autowired
+	CommonVelocityLayoutView layoutView;
 
-	public StaticPageViewController() {
-		super();
-	}
+	private static Log logger = LogFactory.getLog(StaticPageViewController.class);
 
-	public StaticPageViewController(ResourceLoader messageResourceLoader, String resourceFile) {
-		super();
+	@RequestMapping(value = "/static", method = RequestMethod.GET)
+	public ModelAndView handleRequest(@RequestParam("page") String page) throws Exception {
+		String propName = TITLE_PREFIX + page;
+		logger.info("Looking for title: " + propName);// TODO:
 
-		this.messageResourceLoader = messageResourceLoader;
-		this.resourceFile = resourceFile;
-		this.properties = new Properties();
-		initializeProperties();
-	}
-
-	private void initializeProperties() {
-		try {
-			this.properties = PropertiesLoaderUtils.loadProperties(messageResourceLoader.getResource(resourceFile));
-		} catch (IOException ioe) {
-			log.info("Properties file '" + resourceFile + "' not found");
-		}
-	}
-
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String page = request.getParameter(pageParam);
-		String propName = TITLE_PREFIX + request.getParameter(pageParam);
-		log.debug("Looking for: " + propName);
-		title = "-"; // TODO: properties.getProperty(propName);
 		ModelAndView mav = getStaticModelAndView(page);
-
 		return mav;
 	}
 
-	public void setProperties(Properties props) {
-		this.properties = props;
+	protected ModelAndView getStaticModelAndView(String page) {
+		return getModelAndView(page);
+	}
+
+	private ModelAndView getModelAndView(String page) {
+		ModelAndView mav = new ModelAndView();
+
+		layoutView.setUrl(page);
+		layoutView.setLayoutUrl(Constants.VIEW_LAYOUT_LAYOUT_VM);
+
+		mav.setView(layoutView);
+		mav.addAllObjects(layoutView.getIncludes());
+		mav.addObject("title", "TODO:");
+		return mav;
 	}
 
 	public String getPageParam() {
@@ -62,10 +56,6 @@ public class StaticPageViewController extends BaseController {
 
 	public void setPageParam(String pageVar) {
 		this.pageParam = pageVar;
-	}
-
-	public void setResourceFile(String resourceFile) {
-		this.resourceFile = resourceFile;
 	}
 
 }
