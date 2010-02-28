@@ -27,14 +27,14 @@ public class MailController {
 	@RequestMapping(value = { "/mail/from:{from},to:{to},subject:{subject},body:{body},password:{password}" }, method = RequestMethod.GET)
 	protected ModelAndView sendUrl(@PathVariable("from") String from, @PathVariable("to") String to, @PathVariable("subject") String subject, @PathVariable("body") String body,
 			@PathVariable("password") String password) throws Exception {
-		ModelAndView mv = new ModelAndView(viewName);
+		ModelAndView mv = new ModelAndView("send-mail-result");
 		MailCommand mail = new MailCommand();
 		mail.setFrom(from);
 		mail.setTo(to);
 		mail.setSubject(subject);
 		mail.setMessage(body);
 
-		if (!validPassword(mail)) {
+		if (!validPassword(password)) {
 			mv.setViewName("send-mail");
 			mv.getModel().put("message", "Invalid password!!");
 			return mv;
@@ -48,7 +48,7 @@ public class MailController {
 	protected ModelAndView post(MailCommand mail) throws Exception {
 		ModelAndView mv = new ModelAndView("send-mail-result");
 		mv.getModel().put("form", mail);
-		if (!validPassword(mail)) {
+		if (!validPassword(mail.getPassword())) {
 			mv.setViewName("send-mail");
 			mv.getModel().put("message", "Invalid password!!");
 			return mv;
@@ -57,11 +57,8 @@ public class MailController {
 		return mv;
 	}
 
-	private boolean validPassword(MailCommand mail) {
-		if (!getPassword().equals(mail.getPassword())) {
-			return false;
-		}
-		return true;
+	private boolean validPassword(String password) {
+		return getPassword().equals(password);
 	}
 
 	private String getPassword() {
