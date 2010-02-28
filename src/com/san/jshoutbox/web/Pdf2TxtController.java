@@ -25,8 +25,8 @@ public class Pdf2TxtController {
 
 	String viewName = "pdf2txt";
 
-	@RequestMapping(value = "/pdf2txt", method = RequestMethod.GET)
-	public ModelAndView show(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = {"/pdf2text","/pdf2txt"}, method = RequestMethod.GET)
+	public ModelAndView show() throws Exception {
 		return new ModelAndView(viewName);
 	}
 

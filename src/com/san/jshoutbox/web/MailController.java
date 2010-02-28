@@ -3,40 +3,73 @@ package com.san.jshoutbox.web;
 import java.util.Properties;
 
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.validation.BindException;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-public class MailController extends BaseSimpleFormController {
-	public MailController() {
-		setCommandName("form");
-	}
+@Controller("mailController")
+public class MailController {
+	String viewName = "send-mail";
 
-	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) throws Exception {
-		viewName = "send-mail";
+	@RequestMapping(value = { "/mail.html", "/mail" }, method = RequestMethod.GET)
+	protected ModelAndView show() throws Exception {
 		ModelAndView mv = new ModelAndView(viewName);
 		return mv;
 	}
 
-	@Override
-	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) throws Exception {
-		viewName = "send-mail-result";
+	@RequestMapping(value = { "/mail/from:{from},to:{to},subject:{subject},body:{body},password:{password}" }, method = RequestMethod.GET)
+	protected ModelAndView sendUrl(@PathVariable("from") String from, @PathVariable("to") String to, @PathVariable("subject") String subject, @PathVariable("body") String body,
+			@PathVariable("password") String password) throws Exception {
 		ModelAndView mv = new ModelAndView(viewName);
-		MailCommand mail = (MailCommand) command;
-		mv.getModel().put("form", mail);
-		if(!"myfavouritepassword".equals(mail.getPassword())){
+		MailCommand mail = new MailCommand();
+		mail.setFrom(from);
+		mail.setTo(to);
+		mail.setSubject(subject);
+		mail.setMessage(body);
+
+		if (!validPassword(mail)) {
 			mv.setViewName("send-mail");
 			mv.getModel().put("message", "Invalid password!!");
 			return mv;
 		}
+
+		sendEmail(mail);
+		return mv;
+	}
+
+	@RequestMapping(value = { "/mail", "/mail.html" }, method = RequestMethod.POST)
+	protected ModelAndView post(MailCommand mail) throws Exception {
+		ModelAndView mv = new ModelAndView("send-mail-result");
+		mv.getModel().put("form", mail);
+		if (!validPassword(mail)) {
+			mv.setViewName("send-mail");
+			mv.getModel().put("message", "Invalid password!!");
+			return mv;
+		}
+		sendEmail(mail);
+		return mv;
+	}
+
+	private boolean validPassword(MailCommand mail) {
+		if (!getPassword().equals(mail.getPassword())) {
+			return false;
+		}
+		return true;
+	}
+
+	private String getPassword() {
+		//FIXME : pull this password from database!!!
+		return "myfavouritepassword";
+	}
+
+	private void sendEmail(MailCommand mail) {
 		Properties props = new Properties();
 		Session session = Session.getDefaultInstance(props, null);
 
@@ -53,6 +86,5 @@ public class MailController extends BaseSimpleFormController {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-		return mv;
 	}
 }

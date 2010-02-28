@@ -9,6 +9,8 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
+import com.san.jshoutbox.web.view.CommonVelocityLayoutView;
+
 
 public abstract class BaseSimpleFormController extends SimpleFormController {
 	protected static Log log = LogFactory.getLog(BaseSimpleFormController.class);

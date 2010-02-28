@@ -1,132 +1,134 @@
 package com.san.jshoutbox.util;
 
-public class Constants {
+public interface Constants {
 
-	public static final String AMPERSAND = "&";
+	 String AMPERSAND = "&";
 
-	public static final String BACK_SLASH = "\\";
+	 String BACK_SLASH = "\\";
 
-	public static final String BLANK = "";
+	 String BLANK = "";
 
-	public static final String CLOSE_BRACKET = "]";
+	 String CLOSE_BRACKET = "]";
 
-	public static final String CLOSE_CURLY_BRACE = "}";
+	 String CLOSE_CURLY_BRACE = "}";
 
-	public static final String CLOSE_PARENTHESIS = ")";
+	 String CLOSE_PARENTHESIS = ")";
 
-	public static final String COLON = ":";
+	 String COLON = ":";
 
-	public static final String COMMA = ",";
+	 String COMMA = ",";
 
-	public static final String COMMA_AND_SPACE = ", ";
+	 String COMMA_AND_SPACE = ", ";
 
-	public static final String DASH = "-";
+	 String DASH = "-";
 
-	public static final String DOUBLE_APOSTROPHE = "''";
+	 String DOUBLE_APOSTROPHE = "''";
 
-	public static final String DOUBLE_CLOSE_BRACKET = "]]";
+	 String DOUBLE_CLOSE_BRACKET = "]]";
 
-	public static final String DOUBLE_OPEN_BRACKET = "[[";
+	 String DOUBLE_OPEN_BRACKET = "[[";
 
-	public static final String DOUBLE_SLASH = "//";
+	 String DOUBLE_SLASH = "//";
 
-	public static final String EQUAL = "=";
+	 String EQUAL = "=";
 
-	public static final String GREATER_THAN = ">";
+	 String GREATER_THAN = ">";
 
-	public static final String GREATER_THAN_OR_EQUAL = ">=";
+	 String GREATER_THAN_OR_EQUAL = ">=";
 
-	public static final String FALSE = "false";
+	 String FALSE = "false";
 
-	public static final String FORWARD_SLASH = "/";
+	 String FORWARD_SLASH = "/";
 
-	public static final String FOUR_SPACES = "    ";
+	 String FOUR_SPACES = "    ";
 
-	public static final String IS_NOT_NULL = "IS NOT NULL";
+	 String IS_NOT_NULL = "IS NOT NULL";
 
-	public static final String IS_NULL = "IS NULL";
+	 String IS_NULL = "IS NULL";
 
-	public static final String LESS_THAN = "<";
+	 String LESS_THAN = "<";
 
-	public static final String LESS_THAN_OR_EQUAL = "<=";
+	 String LESS_THAN_OR_EQUAL = "<=";
 
-	public static final String LIKE = "LIKE";
+	 String LIKE = "LIKE";
 
-	public static final String MINUS = "-";
+	 String MINUS = "-";
 
-	public static final String NBSP = "&nbsp;";
+	 String NBSP = "&nbsp;";
 
-	public static final String NEW_LINE = "\n";
+	 String NEW_LINE = "\n";
 
-	public static final String NOT_EQUAL = "!=";
+	 String NOT_EQUAL = "!=";
 
-	public static final String NOT_LIKE = "NOT LIKE";
+	 String NOT_LIKE = "NOT LIKE";
 
-	public static final String NULL = "null";
+	 String NULL = "null";
 
-	public static final String OPEN_BRACKET = "[";
+	 String OPEN_BRACKET = "[";
 
-	public static final String OPEN_CURLY_BRACE = "{";
+	 String OPEN_CURLY_BRACE = "{";
 
-	public static final String OPEN_PARENTHESIS = "(";
+	 String OPEN_PARENTHESIS = "(";
 
-	public static final String PERCENT = "%";
+	 String PERCENT = "%";
 
-	public static final String PERIOD = ".";
+	 String PERIOD = ".";
 
-	public static final String PIPE = "|";
+	 String PIPE = "|";
 
-	public static final String PLUS = "+";
+	 String PLUS = "+";
 
-	public static final String POUND = "#";
+	 String POUND = "#";
 
-	public static final String QUESTION = "?";
+	 String QUESTION = "?";
 
-	public static final String QUOTE = "\"";
+	 String QUOTE = "\"";
 
-	public static final String RETURN = "\r";
+	 String RETURN = "\r";
 
-	public static final String RETURN_NEW_LINE = "\r\n";
+	 String RETURN_NEW_LINE = "\r\n";
 
-	public static final String SEMICOLON = ";";
+	 String SEMICOLON = ";";
 
-	public static final String SLASH = FORWARD_SLASH;
+	 String SLASH = FORWARD_SLASH;
 
-	public static final String SPACE = " ";
+	 String SPACE = " ";
 
-	public static final String STAR = "*";
+	 String STAR = "*";
 
-	public static final String TAB = "\t";
+	 String TAB = "\t";
 
-	public static final String TILDE = "~";
+	 String TILDE = "~";
 
-	public static final String TRUE = "true";
+	 String TRUE = "true";
 
-	public static final String UNDERLINE = "_";
+	 String UNDERLINE = "_";
 
-	public static final String UTF8 = "UTF-8";
+	 String UTF8 = "UTF-8";
 
-	public static final String TEXT_XML = "text/xml";
+	 String TEXT_XML = "text/xml";
 
-	public static final int SECOND = 1000;
+	 int SECOND = 1000;
 
-	public static final String LUCENE_DIR = "lucene.dir";
+	 String LUCENE_DIR = "lucene.dir";
 
-	public static final String LUCENE_STORE_TYPE = "lucene.store.type";
+	 String LUCENE_STORE_TYPE = "lucene.store.type";
 
-	public static final String LUCENE_ANALYZER = "lucene.analyzer";
+	 String LUCENE_ANALYZER = "lucene.analyzer";
 
-	public static final String MODIFIED = "modified";
+	 String MODIFIED = "modified";
 
-	public static final String HTTP_WITH_SLASH = "http://";
+	 String HTTP_WITH_SLASH = "http://";
 
-	public static final String HTTPS_WITH_SLASH = "http://";
+	 String HTTPS_WITH_SLASH = "http://";
 
-	public static final String SPRING_CONFIG_LOCATIONS[] = { "applicationContext.xml" };
+	 String SPRING_CONFIG_LOCATIONS[] = { "applicationContext.xml" };
 
-	public static final boolean SORTABLE = true;
+	 boolean SORTABLE = true;
 
-	public static final int SORTABLE_FIELD_MAX_SIZE = 20;
+	 int SORTABLE_FIELD_MAX_SIZE = 20;
 
-	public static final char[] LUCENE_SANITIZE_CHARS = { ':' };
+	 char[] LUCENE_SANITIZE_CHARS = { ':' };
+	
+	 String VIEW_LAYOUT_LAYOUT_VM = "layout/layout.vm";
 }
