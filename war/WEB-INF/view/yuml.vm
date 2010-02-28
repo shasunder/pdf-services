@@ -10,13 +10,11 @@
    </div>
 		<br/>
 	<div>
-   		<input type="submit" value="Yuml2Java" name="shout"/>
+   		<input type="submit" value="Convert" name="shout"/>
 	</div>
    <br/>
-   <div>   
-     <b>Java Code :</b>
-   </div>
-   <div>
+     <b>Java :</b>
+   <div style="padding-left: 14em;">
    		<textarea id="result" name="result" cols="80" rows="10" onfocus="this.rows=20" onblur="this.rows=10">$!form.result</textArea>
 		<a target="_blank" href="http://yuml.me/diagram/scruffy/class/$!form.yumlEncoded"> 
 		  <img width="200" height="200" src="http://yuml.me/diagram/scruffy/class/$!form.yumlEncoded"/>
@@ -39,6 +37,9 @@
     2. For yuml syntax <a href="http://yuml.me/diagram/scruffy/class/samples">follow me</a>.
    </div>
 </form>
-
+<br/>
+<br/>
+<a href="/"> home</a>
 
 </div>
+

@@ -1,3 +1,5 @@
+<div align="center">
+<br/>
 <b>$!message </b>
 <form method="post" action="/mail.html"> 
 <table>
@@ -42,7 +44,7 @@ Password:
 <tr>
 <td>
 
-   <b>Message :</b>
+   Message :
 </td>
 
 <td>		<textarea name="message" cols="80" rows="10">$!form.subject</textArea> <br/>
@@ -57,3 +59,7 @@ Password:
 </tr>
 </table>   
 </form>
+<br/>
+<br/>
+<a href="/"> home</a>
+</div>
