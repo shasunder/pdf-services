@@ -5,17 +5,26 @@
 <title>#if($!title)$!title#else$!defaultTitle#end
 </title>
 
-##parse($!scriptsandstyles)
 </head>
 
 <body id="gateway">
-#parse('layout/header.vm')
+<div id="header" style="float:right">
+	<h1><img alt="J ShoutBox" src="http://www.iproclaim.com/shout.gif" width="240" height="220"/></h1>
+</div> 
+
 ## CONTENT SECTION HERE
 <div id="content">
 $!screen_content
 </div>
 ## /CONTENT SECTION
-#parse('layout/footer.vm')
+<div id="footer" style="float:right">
+	The Java[Velocity,Spring,JDO] shoutbox...<br/>
+		By : sandeep.maloth@@@@gmail.com	
+		<br/>
+<a href="/"> home</a>
+</div>
+
+
 </body>
 </html>
 
