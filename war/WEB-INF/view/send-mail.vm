@@ -60,6 +60,17 @@ Password:
 </table>   
 </form>
 <br/>
-<br/>
+<div style="float:left">
+<a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>Usage</a>
+<div style="float:none">
+ <ul style="display:none;" align="left" id="usage">
+ <li>1. <b>RESTful URL</b> : /mail/from:{from email},to:{to email},subject:{subject},password:{password} <br/>Eg: <b>/mail/from:blah@gmail.com,to:blahtoh@gmail.com,subject:hi,body:how are you doing!,password:***</b> </li>
+ <li>2. Upload your local html file </li>
+ 
+ </ul>
+ </div>
+ <br/>
+ 
 <a href="/"> home</a>
+</div>
 </div>

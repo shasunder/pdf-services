@@ -33,7 +33,7 @@ public class MailController {
 		mail.setTo(to);
 		mail.setSubject(subject);
 		mail.setMessage(body);
-
+		mv.getModel().put("form", mail);
 		if (!validPassword(password)) {
 			mv.setViewName("send-mail");
 			mv.getModel().put("message", "Invalid password!!");

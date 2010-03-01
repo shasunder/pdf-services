@@ -177,6 +177,11 @@
 			<artifactId>jericho-html</artifactId>
 			<version>2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>jtidy</artifactId>
+			<version>r8-20060801</version>
+		</dependency>
 	</dependencies>
 
 	<build>

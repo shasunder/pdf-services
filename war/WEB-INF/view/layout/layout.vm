@@ -9,13 +9,13 @@
 </head>
 
 <body id="gateway">
-#parse($!header)
+#parse('layout/header.vm')
 ## CONTENT SECTION HERE
 <div id="content">
 $!screen_content
 </div>
 ## /CONTENT SECTION
-#parse($!footer)
+#parse('layout/footer.vm')
 </body>
 </html>
 
