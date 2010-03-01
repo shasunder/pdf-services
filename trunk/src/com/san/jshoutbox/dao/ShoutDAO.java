@@ -5,9 +5,15 @@ import java.util.List;
 
 import javax.jdo.PersistenceManager;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.san.jshoutbox.model.ShoutEntry;
+import com.san.jshoutbox.util.DateUtil;
 
 public class ShoutDAO {
+
+	private static Log logger = LogFactory.getLog(ShoutDAO.class);
 
 	public void shout(String shouter, String content, String ip) {
 
@@ -28,9 +34,9 @@ public class ShoutDAO {
 	public List<ShoutEntry> readAll() {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
-			javax.jdo.Query q = pm.newQuery("select from "
-					+ ShoutEntry.class.getName()+" order by date desc");
+			javax.jdo.Query q = pm.newQuery("select from " + ShoutEntry.class.getName() + " order by date desc");
 			List<ShoutEntry> entries = (List<ShoutEntry>) q.execute();
+			logger.debug(entries);
 			return entries;
 		} finally {
 			pm.close();

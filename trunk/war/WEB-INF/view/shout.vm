@@ -25,10 +25,12 @@
 <br/>
 <br/>
 <div style="float:left">
+#if($shouts)
 #foreach($shout in $shouts)
 	#if($shout.shouter)
 	<b>$!shout.shouter</b> >> $!shout.content. <font size=1px >$!shout.date </font> <br/>
 	#end
+#end
 #end
 </div>
 
