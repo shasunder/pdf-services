@@ -7,7 +7,10 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class MailController {
 	String viewName = "send-mail";
 
+	private static Log logger = LogFactory.getLog(MailController.class);
+
 	@RequestMapping(value = { "/mail.html", "/mail" }, method = RequestMethod.GET)
 	protected ModelAndView show() throws Exception {
 		ModelAndView mv = new ModelAndView(viewName);
@@ -25,7 +30,7 @@ public class MailController {
 	}
 
 	@RequestMapping(value = { "/mail/from:{from},to:{to},subject:{subject},body:{body},password:{password}" }, method = RequestMethod.GET)
-	protected ModelAndView sendUrl(@PathVariable("from") String from, @PathVariable("to") String to, @PathVariable("subject") String subject, @PathVariable("body") String body,
+	protected ModelAndView sendUrl(HttpServletRequest request, @PathVariable("from") String from, @PathVariable("to") String to, @PathVariable("subject") String subject, @PathVariable("body") String body,
 			@PathVariable("password") String password) throws Exception {
 		ModelAndView mv = new ModelAndView("send-mail-result");
 		MailCommand mail = new MailCommand();
@@ -39,7 +44,7 @@ public class MailController {
 			mv.getModel().put("message", "Invalid password!!");
 			return mv;
 		}
-
+		logger.info("Sending mail from IP : "+ request.getRemoteHost() +" message : "+ mail);
 		sendEmail(mail);
 		return mv;
 	}
@@ -62,7 +67,7 @@ public class MailController {
 	}
 
 	private String getPassword() {
-		//FIXME : pull this password from database!!!
+		// FIXME : pull this password from database!!!
 		return "myfavouritepassword";
 	}
 
