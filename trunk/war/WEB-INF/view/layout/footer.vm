@@ -1,9 +1,7 @@
-<div id="footer">
-	<div id="adinfo"><br/>
-	The Java[Velocity,Spring MVC,Spring, JDO] shoutbox...<br/>
-	<br/>
+<div id="footer" style="float:right">
+	The Java[Velocity,Spring,JDO] shoutbox...<br/>
 		By : sandeep.maloth@@@@gmail.com	
-		</div>
-
+		<br/>
+<a href="/"> home</a>
 </div>
 

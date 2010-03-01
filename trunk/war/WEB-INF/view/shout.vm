@@ -33,8 +33,6 @@
 	<b>$!shout.shouter</b> >> $!shout.content. <font size=1px >$!shout.date </font> <br/>
 	#end
 #end
-<br/>
-<br/>
-<a href="/"> home</a>
 </div>
+
 </div>
