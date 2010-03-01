@@ -120,7 +120,7 @@ public interface Constants {
 
 	 String HTTP_WITH_SLASH = "http://";
 
-	 String HTTPS_WITH_SLASH = "http://";
+	 String HTTPS_WITH_SLASH = "https://";
 
 	 String SPRING_CONFIG_LOCATIONS[] = { "applicationContext.xml" };
 

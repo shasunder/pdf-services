@@ -27,5 +27,8 @@
 		<scope>request</scope>
 		<class>org.apache.velocity.tools.view.tools.ImportTool</class>
 	</tool>
-	
+	<tool>
+		<key>escapeTool</key>
+		<class>org.apache.commons.lang.StringEscapeUtils</class>
+	</tool>
 </toolbox>

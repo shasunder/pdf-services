@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+<head> 
+	<meta content="text/html; charset=utf-8" http-equiv="content-type"> 
+<title>Html2XhtmlOnline - XHTML validation and conversion</title> 
+	<meta content="Html2XhtmlOnline enables you to easily and quickly convert html to xhtml without downloading or installing any new software." name="description"> 
+	<meta content="html 2 xhtml validation conversion checker convertor errors warnings tidy online jtidy text convertor online free open source" name="keywords"> 
+<head> 
+<body>	
+<div align="center">
+  <font size="10"><font color="purple">Html</font>2<font color="orange">Xhtml</font> convertor</font>
+	<br/>
+	<br/>
+<div>
+	<form method="post" action="/h2x" enctype="multipart/form-data">
+	    <input type="file" name="file" />
+	    <input type="submit"/>
+	</form>
+</div>
+<div>
+	<table>
+	#if($result)
+	<tr><td>XHTML :</td>
+	<td> 
+	<textarea cols="100" rows="20" >$escapeTool.escapeHtml($!result)</textarea>
+	</td>
+	</tr>
+	#end
+	#if($error)
+	<tr><td>Error / Warnings :</td>
+	<td> 
+		<textarea cols="100" rows="8" >$escapeTool.escapeHtml($!error)</textarea>
+	#end
+	</td>
+	</tr>
+</table>
+</div>
+<br/>
+
+
+</div>
+<a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>Usage</a>
+
+ <ul style="display:none" id="usage">
+ <li>1. <b>RESTful URL</b> : jshoutbox.appspot.com/(h2x or html2xhtml)/(http://){URL} <br/>Eg: <b>./h2x/yahoo.com</b> <br/>&nbsp;&nbsp;&nbsp;&nbsp; <b>./html2xhtml/http://yahoo.com </b></li>
+ <li>2. Upload your local html file </li>
+ 
+ </ul>
+ <br/>
+<a href="/"> home</a>
+</body>
+</html>
