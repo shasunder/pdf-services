@@ -5,7 +5,7 @@
 <title>#if($!title)$!title#else$!defaultTitle#end
 </title>
 
-#parse($!scriptsandstyles)
+##parse($!scriptsandstyles)
 </head>
 
 <body id="gateway">

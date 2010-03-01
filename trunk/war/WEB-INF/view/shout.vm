@@ -1,6 +1,3 @@
-#set($useJquery = "true")
-#set($module = "search")
-#set($modulePath = "shout")
 <div align="center">
 <br/>
 <br/>

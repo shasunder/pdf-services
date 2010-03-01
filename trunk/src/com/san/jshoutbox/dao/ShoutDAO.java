@@ -6,7 +6,6 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 
 import com.san.jshoutbox.model.ShoutEntry;
-import com.san.jshoutbox.util.DateUtil;
 
 public class ShoutDAO {
 
@@ -32,7 +31,6 @@ public class ShoutDAO {
 			javax.jdo.Query q = pm.newQuery("select from "
 					+ ShoutEntry.class.getName()+" order by date desc");
 			List<ShoutEntry> entries = (List<ShoutEntry>) q.execute();
-			System.out.println(entries);
 			return entries;
 		} finally {
 			pm.close();
