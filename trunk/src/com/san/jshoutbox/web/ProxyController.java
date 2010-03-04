@@ -1,5 +1,6 @@
 package com.san.jshoutbox.web;
 
+import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -43,24 +44,30 @@ public class ProxyController {
 	@RequestMapping(value = { "/proxy*", "/proxy/*" }, method = RequestMethod.POST)
 	protected ModelAndView post(HttpServletRequest request, @RequestParam(value = "url", required = true) String url) {
 		ModelAndView mv = new ModelAndView(viewName);
+		HttpURLConnection connection=null;
 		try {
-			URL urlObj = new URL(url);
-			HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+			URL urlObj= new URL(url);
+			String proxyPostResponsePage=null;
+			connection = (HttpURLConnection) urlObj.openConnection();
 			connection.setDoOutput(true);
 			connection.setRequestMethod("POST");
 
 			IOUtils.copy(request.getInputStream(), connection.getOutputStream());
 			if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-				String responseFromHost= connection.getContent().toString();
-				mv.addObject("page", responseFromHost);
+				proxyPostResponsePage= IOUtils.toString((InputStream)connection.getContent());
             } else {
                 // Server returned HTTP error code.
             }
-			//String proxyPage = proxifier.doIt(URLDecoder.decode(url, "utf-8"));
+		    String proxyPage = proxifier.doIt(URLDecoder.decode(url, "utf-8"), proxyPostResponsePage);
+		    mv.addObject("page", proxyPage);
 			mv.addObject("url", url);
 		} catch (Exception e) {
 			logger.error(e, e);
 			mv.addObject("error", e.getMessage());
+		}finally{
+			if(connection!=null){
+				connection.disconnect();
+			}
 		}
 		return mv;
 	}

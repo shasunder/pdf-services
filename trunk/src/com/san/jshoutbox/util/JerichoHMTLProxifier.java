@@ -19,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 public class JerichoHMTLProxifier {
 
 	private static Log logger = LogFactory.getLog(JerichoHMTLProxifier.class);
-	static String host =  "jshoutbox.appspot.com"; //"localhost:8888";//
+	static String host = "jshoutbox.appspot.com"; // "localhost:8888";//
 	static String proxy = "http://" + host + "/proxy/";
 	static String imageProxy = "http://" + host + "/image/";
 
@@ -33,26 +33,40 @@ public class JerichoHMTLProxifier {
 	}
 
 	public String doIt(String url) throws Exception {
-		String sanitizedURL =(containsHttp(url) ? "" : Constants.HTTP_WITH_SLASH )+ url;
-		url= sanitizedURL;
+		String sanitizedURL = (containsHttp(url) ? "" : Constants.HTTP_WITH_SLASH) + url;
+		url = sanitizedURL;
 		InputStream input = new URL(url).openStream();
-		String proxified = proxify(url, input);
+		try {
+			Source source = new Source(input);
+			String proxified = proxify(url, source);
+			return proxified;
+		} finally {
+			if (input != null)
+				input.close();
+		}
+	}
+
+	public String doIt(String url, String input) throws Exception {
+		String sanitizedURL = (containsHttp(url) ? "" : Constants.HTTP_WITH_SLASH) + url;
+		url = sanitizedURL;
+		Source source = new Source(input);
+		String proxified = proxify(url, source);
 		return proxified;
 	}
 
-	private String proxify(String url, InputStream input) throws IOException {
-		Source source = new Source(input);
+	public String proxify(String url, Source source) throws IOException {
+
 		source.fullSequentialParse();
 		OutputDocument outputDocument = new OutputDocument(source);
 
 		String requestHostPart = StringUtils.substringBetween(url, "://", "/");
-		String requestHost=StringUtils.substringBefore(url, "://")+ "://"+ requestHostPart;
-		requestHost= requestHostPart ==null ? url:StringUtils.substringBefore(url, "://")+ "://"+ requestHostPart;
-		
-		if(StringUtils.isEmpty(requestHost)){
-			requestHost=StringUtils.substringBefore(url, "/");
+		String requestHost = StringUtils.substringBefore(url, "://") + "://" + requestHostPart;
+		requestHost = requestHostPart == null ? url : StringUtils.substringBefore(url, "://") + "://" + requestHostPart;
+
+		if (StringUtils.isEmpty(requestHost)) {
+			requestHost = StringUtils.substringBefore(url, "/");
 		}
-		
+
 		proxyAnchor(requestHost, source, outputDocument);
 		proxyForm(requestHost, source, outputDocument);
 		proxyImage(requestHost, source, outputDocument);
@@ -66,7 +80,7 @@ public class JerichoHMTLProxifier {
 		List<Element> elements = source.getAllElements(HTMLElementName.A);
 		for (Element element : elements) {
 			Attribute hrefAttribute = element.getStartTag().getAttributes().get("href");
-			if(hrefAttribute==null){
+			if (hrefAttribute == null) {
 				continue;
 			}
 			String href = hrefAttribute.getValue();
@@ -80,7 +94,7 @@ public class JerichoHMTLProxifier {
 		List<Element> elements = source.getAllElements(HTMLElementName.FORM);
 		for (Element element : elements) {
 			Attribute actionAttribute = element.getStartTag().getAttributes().get("action");
-			if(actionAttribute==null){
+			if (actionAttribute == null) {
 				continue;
 			}
 			String actionValue = actionAttribute.getValue();
@@ -94,7 +108,7 @@ public class JerichoHMTLProxifier {
 		List<Element> elements = source.getAllElements(HTMLElementName.IMG);
 		for (Element element : elements) {
 			Attribute imgSrcAttribute = element.getStartTag().getAttributes().get("src");
-			if(imgSrcAttribute==null){
+			if (imgSrcAttribute == null) {
 				continue;
 			}
 			String actionValue = imgSrcAttribute.getValue();
@@ -108,7 +122,7 @@ public class JerichoHMTLProxifier {
 		String proxyTemp;
 		try {
 			String tempPath = containsHttp(path) ? path : (url + path);
-			proxyTemp = proxy + "?url=" + URLEncoder.encode(tempPath,"utf-8");
+			proxyTemp = proxy + "?url=" + URLEncoder.encode(tempPath, "utf-8");
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
