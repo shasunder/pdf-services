@@ -1,7 +1,6 @@
 package com.san.jshoutbox.util;
 
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
@@ -19,7 +18,7 @@ import org.apache.commons.logging.LogFactory;
 public class JerichoHMTLProxifier {
 
 	private static Log logger = LogFactory.getLog(JerichoHMTLProxifier.class);
-	static String host = "localhost:8888";// "jshoutbox.appspot.com";
+	static String host =  "jshoutbox.appspot.com"; //"localhost:8888";//
 	static String proxy = "http://" + host + "/proxy/";
 	static String imageProxy = "http://" + host + "/image/";
 
