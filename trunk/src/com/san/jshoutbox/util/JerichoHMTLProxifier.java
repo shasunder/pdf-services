@@ -1,5 +1,6 @@
 package com.san.jshoutbox.util;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -35,6 +36,11 @@ public class JerichoHMTLProxifier {
 		String sanitizedURL =(containsHttp(url) ? "" : Constants.HTTP_WITH_SLASH )+ url;
 		url= sanitizedURL;
 		InputStream input = new URL(url).openStream();
+		String proxified = proxify(url, input);
+		return proxified;
+	}
+
+	private String proxify(String url, InputStream input) throws IOException {
 		Source source = new Source(input);
 		source.fullSequentialParse();
 		OutputDocument outputDocument = new OutputDocument(source);
