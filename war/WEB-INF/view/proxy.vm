@@ -1,0 +1,15 @@
+<div align="right">
+<font color="green" ><b>Proxying URI</b></font>
+<div style="float:right">
+<form action="/proxy" method="get">
+ <input name="url" type="text" value="$!url" size="40" style=" font-style:bold;font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;"/>
+ <input type="submit" value="Go"/>
+ <a href="/"> Home</a>
+</form>
+</div>
+
+</div>
+$!error
+
+$!page
+
