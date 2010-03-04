@@ -1,5 +1,7 @@
 package com.san.jshoutbox.web;
 
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
 
@@ -24,11 +26,11 @@ public class ProxyController {
 
 	private static Log logger = LogFactory.getLog(ProxyController.class);
 
-	@RequestMapping(value = {"/proxy*", "/proxy/*" }, method = RequestMethod.GET)
-	protected ModelAndView show(HttpServletRequest request, @RequestParam(value="url", required=false) String url) {
+	@RequestMapping(value = { "/proxy*", "/proxy/*" }, method = RequestMethod.GET)
+	protected ModelAndView show(HttpServletRequest request, @RequestParam(value = "url", required = false) String url) {
 		ModelAndView mv = new ModelAndView(viewName);
 		try {
-			String proxyPage = proxifier.doIt(URLDecoder.decode(url,"utf-8"));
+			String proxyPage = proxifier.doIt(URLDecoder.decode(url, "utf-8"));
 			mv.addObject("page", proxyPage);
 			mv.addObject("url", url);
 		} catch (Exception e) {
@@ -37,9 +39,34 @@ public class ProxyController {
 		}
 		return mv;
 	}
-	
-	@RequestMapping(value = {"/image*", "/image/*"}, method = RequestMethod.GET)
-	protected void get(HttpServletResponse response,  @RequestParam("url") String url) {
+
+	@RequestMapping(value = { "/proxy*", "/proxy/*" }, method = RequestMethod.POST)
+	protected ModelAndView post(HttpServletRequest request, @RequestParam(value = "url", required = true) String url) {
+		ModelAndView mv = new ModelAndView(viewName);
+		try {
+			URL urlObj = new URL(url);
+			HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+			connection.setDoOutput(true);
+			connection.setRequestMethod("POST");
+
+			IOUtils.copy(request.getInputStream(), connection.getOutputStream());
+			if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+				String responseFromHost= connection.getContent().toString();
+				mv.addObject("page", responseFromHost);
+            } else {
+                // Server returned HTTP error code.
+            }
+			//String proxyPage = proxifier.doIt(URLDecoder.decode(url, "utf-8"));
+			mv.addObject("url", url);
+		} catch (Exception e) {
+			logger.error(e, e);
+			mv.addObject("error", e.getMessage());
+		}
+		return mv;
+	}
+
+	@RequestMapping(value = { "/image*", "/image/*" }, method = RequestMethod.GET)
+	protected void get(HttpServletResponse response, @RequestParam("url") String url) {
 		try {
 			IOUtils.copy(new URL(url).openStream(), response.getOutputStream());
 		} catch (Exception e) {
