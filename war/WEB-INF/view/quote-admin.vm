@@ -1,0 +1,88 @@
+<div align="center">
+<br/>
+<font color="green"><b>$!message </b> </font>
+
+<br/>
+<div >
+   <table>
+   <tr style="background:lightgrey">
+     <th>Id</th>
+     <th>Quote</th>
+     <th>Author</th>
+     <th>Rating</th>
+     <th>Users Rated</th>
+     <th>Ips</th>
+     <th>Save</th>
+      <th>Destroy</th>
+   </tr>
+#if($quotes)
+#foreach($quote in $quotes)
+      <tr>
+	      <form method="post" action="/quote/edit">
+        <td>
+	        <a href="/quote/$!quote.id"> $!quote.id</a> 
+	        <input type="hidden" size="1" name="id" value="$!quote.id"/>
+        </td>
+        <td>
+	        <input type="text" name="quote" value="$escapeTool.escapeHtml($!quote.quote)" size="80"/> 
+        </td>
+        <td>
+	        <input type="text" name="author" value="$escapeTool.escapeHtml($!quote.author)"/>
+        </td>
+        <td>
+	        <input type="text" size="1" name="rating" value="$!quote.rating"/>
+        </td>
+        <td>
+	        <input type="text" size="4" name="usersRated" value="$!quote.usersRated"/>
+        </td>
+         <td>
+	        <input type="text" size="10" name="ips" value="$!quote.ips"/>
+        </td>
+        <td>
+	     	<input name="submit" type="submit" value="Edit"/>
+	    </td>
+        <td>
+	        <a href="/quote/delete/$!quote.id">delete</a>
+        </td>
+	       </form>  
+	   </tr>
+#end
+#end
+  	<tr>
+	      <form method="post" action="/quote/add">
+        <td>
+	        &nbsp;
+        </td>
+        <td>
+	        <input type="text" name="quote" size="80"/> 
+        </td>
+        <td>
+	        <input type="text" name="author"/>
+        </td>
+        <td>
+	        <input type="text" size="1" name="rating" value="0"/>
+        </td>
+        <td>
+	        <input type="text" size="4" name="usersRated" value="0"/>
+        </td>
+        <td>
+	     	<input name="submit" type="submit" value="Add"/>
+	    </td>
+	       </form>  
+	   </tr>
+	  </table>
+</div>
+<br/>
+
+<div >
+<a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>Usage</a>
+<div style="float:none">
+ <ul style="display:none;" id="usage">
+ 	<li>1. Add a quote and view it using /quote/{id}  </li>
+ </ul>
+ </div>
+ <br/>
+ 
+<a href="/"> home</a>
+</div>
+</div>

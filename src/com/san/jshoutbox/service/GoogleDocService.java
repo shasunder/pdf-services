@@ -454,9 +454,12 @@ public class GoogleDocService {
 			throw new RuntimeException("null passed in for required parameters");
 		}
 
-		InputStream input = exportUrl.openStream();
-		IOUtils.copy(input, output);
-		output.flush();
+		MediaContent mc = new MediaContent();
+		mc.setUri(exportUrl.toString());
+		MediaSource ms = service.getMedia(mc);
+
+		//InputStream input = ms.getInputStream(); TODO: fix this
+		//IOUtils.copy(input, output);
 	}
 
 	public void downloadPresentation(String resourceId, OutputStream outputStream, String format) throws Exception {

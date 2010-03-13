@@ -1,0 +1,17 @@
+<html>
+<head>
+<link href="/static/css/star-rating.css" type="text/css" rel="stylesheet">
+</head>
+<body> 
+$!quote.quote<br/>
+-- <b>$!quote.author</b><br/>
+<ul class="rating star${quote.rating}"> 
+	<li class="one"><a href="/quote/rate/$quote.id/1" title="1 Star">1</a></li> 
+	<li class="two"><a href="/quote/rate/$quote.id/2" title="2 Stars">2</a></li> 
+	<li class="three"><a href="/quote/rate/$quote.id/3" title="3 Stars">3</a></li> 
+	<li class="four"><a href="/quote/rate/$quote.id/4" title="4 Stars">4</a></li> 
+	<li class="five"><a href="/quote/rate/$quote.id/5" title="5 Stars">5</a></li> 
+</ul>(by $!quote.usersRated users)<br/>
+</body>
+</html>
+ 
