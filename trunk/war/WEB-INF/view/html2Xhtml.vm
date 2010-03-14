@@ -8,28 +8,64 @@
 <head> 
 <body>	
 <div align="center">
-  <font size="10"><font color="purple">Html</font>2<font color="orange">Xhtml</font> convertor</font>
+<font size="10"><font color="purple">Html</font>2<font color="orange">Xhtml</font> convertor</font>
+<a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>?</a>
+<div >
+ <ul style="display:none;" align="left" id="usage">
+ <li><b>RESTful URL</b> : jshoutbox.appspot.com/(h2x or html2xhtml)/(http://){URL} <br/>Eg: ./h2x/yahoo.com <br/>&nbsp;&nbsp;&nbsp;&nbsp; ./html2xhtml/http://yahoo.com </li>
+ <li>Upload your local html file </li>
+  <li>Submit html as text</li>
+  <li>Submit URL to check XHTML compliance</li>
+ </ul>
+ </div>
+ <br/>
+  
 	<br/>
-	<br/>
-<div>
+	
+	<table>
+	<tr><td>&nbsp;</td>
 	<form method="post" action="/h2x" enctype="multipart/form-data">
+    <td>
 	    <input type="file" name="file" />
-	    <input type="submit"/>
+     </td>
+     <td> <input type="submit" value="Check file"/></td>
 	</form>
-</div>
+	</tr>
+	<tr><td >&nbsp;</td><td ><b>OR</b></td></tr>
+	<tr>
+	<td>&nbsp;</td>
+	<form method="post" action="/h2xText" >
+	<td>
+	    <textarea name="html" cols="50" rows="4">#if($html)$escapeTool.escapeHtml($html)#end</textarea>
+	
+	</td>
+	<td> <input type="submit" value="Check html"/></td>
+	</form>
+	</tr>
+	<tr><td >&nbsp;</td><td ><b>OR</b></td><tr>
+	<tr>
+	<td >&nbsp;</td>
+	<td><form id="urlForm" method="get" action="/h2x" >
+	    <input id="urlInput" type="text" name="url" value="$!url"/>
+		</form>
+	</td>
+	<td> <input type="button" value="Check url" onclick="document.getElementById('urlForm').action='/h2x/'+document.getElementById('urlInput').value; document.getElementById('urlForm').submit()"/></td>
+	</tr>
+</table>
+<hr/>
 <div>
 	<table>
 	#if($result)
 	<tr><td>XHTML :</td>
 	<td> 
-	<textarea cols="100" rows="20" >$escapeTool.escapeHtml($!result)</textarea>
+	<textarea cols="100" rows="15" >$escapeTool.escapeHtml($!result)</textarea>
 	</td>
 	</tr>
 	#end
 	#if($error)
 	<tr><td>Error / Warnings :</td>
 	<td> 
-		<textarea cols="100" rows="8" >$escapeTool.escapeHtml($!error)</textarea>
+		<textarea cols="100" rows="8" style="background:#if($error.contains("no error"))${esc.getHash()}4AA02C#else${esc.getHash()}F76541#end">$escapeTool.escapeHtml($!error)</textarea>
 	#end
 	</td>
 	</tr>
@@ -39,14 +75,7 @@
 
 
 </div>
-<a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>Usage</a>
 
- <ul style="display:none" id="usage">
- <li>1. <b>RESTful URL</b> : jshoutbox.appspot.com/(h2x or html2xhtml)/(http://){URL} <br/>Eg: <b>./h2x/yahoo.com</b> <br/>&nbsp;&nbsp;&nbsp;&nbsp; <b>./html2xhtml/http://yahoo.com </b></li>
- <li>2. Upload your local html file </li>
- 
- </ul>
- <br/>
 <a href="/"> home</a>
 </body>
 </html>
