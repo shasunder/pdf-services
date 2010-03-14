@@ -1,5 +1,6 @@
 package com.san.jshoutbox.web;
 
+import java.io.ByteArrayInputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +13,8 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -37,9 +40,10 @@ public class Html2XhtmlController {
 		result = html2Xhtml.convert(url);
 
 		ModelAndView modelAndView = new ModelAndView(viewName);
-		if(result!=null){
+		if (result != null) {
 			modelAndView.getModel().putAll(result);
 		}
+		modelAndView.getModel().put("url", url);
 		return modelAndView;
 	}
 
@@ -61,4 +65,30 @@ public class Html2XhtmlController {
 		return new ModelAndView(viewName, model);
 	}
 
+	@RequestMapping(value = { "/html2XhtmlText", "/h2xText" }, method = RequestMethod.POST)
+	public ModelAndView postText(Form form) throws Exception {
+		Map<String, Object> model = new HashMap<String, Object>();
+		Map<String, String> result = new HashMap<String, String>();
+		String html = form.getHtml();
+		if (html != null){
+			result = html2Xhtml.convert(new ByteArrayInputStream(html.getBytes()));
+			model.put("html", html);
+		}
+		model.putAll(result);
+		
+		return new ModelAndView(viewName, model);
+	}
+}
+
+class Form {
+	String html;
+	
+	public String getHtml() {
+		return html;
+	}
+	
+	public void setHtml(String html) {
+		this.html = html;
+	}
+	
 }

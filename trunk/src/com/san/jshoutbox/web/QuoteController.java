@@ -71,7 +71,7 @@ public class QuoteController {
 		quote.setRating(0);
 		quote.setDate(new Date());
 		quoteDAO.create(quote);
-		quotes = null;
+		quotes.add(quote);
 		ModelAndView mv = new ModelAndView("forward:/quote/admin");
 		mv.addObject("message", "Added!!");
 		return mv;
@@ -82,7 +82,6 @@ public class QuoteController {
 
 		ModelAndView mv = new ModelAndView("forward:/quote/admin");
 		quoteDAO.delete(id);
-		quotes = null;
 		mv.addObject("message", "Deleted!!");
 		return mv;
 	}
@@ -90,7 +89,6 @@ public class QuoteController {
 	@RequestMapping(value = { "/quote/edit" }, method = RequestMethod.POST)
 	public ModelAndView update(Quote quote) {
 		quoteDAO.update(quote);
-		quotes = null;
 		ModelAndView mv = new ModelAndView("redirect:/quote/admin");
 		mv.addObject("message", "Updated!!");
 		mv.addObject("quotes", quoteDAO.readAll());
