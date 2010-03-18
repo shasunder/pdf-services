@@ -28,7 +28,7 @@ content="" />
    <li><a href="/proxy"> HTTP Proxy</a></li>
    <li><a href="/doc2pdf"> Doc 2 Pdf online</a></li>
     <li><a href="/quote/random"> Quotes </a>(Add it to <a href="http://www.google.com/ig/adde?moduleurl=hosting.gmodules.com/ig/gadgets/file/116227824342427869913/random-quotes.xml&source=imag">igoogle</a>)</li>
-    <li><a href="/static/console.html"> Web console</a></li>
+    <li><a href="/static/applet/console.html"> Web console</a></li>
  </ul>
  </font>
  <br/>
