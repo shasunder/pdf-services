@@ -13,6 +13,7 @@ import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gdata.data.docs.DocumentListEntry;
 import com.san.jshoutbox.service.GoogleDocService;
+import com.san.jshoutbox.util.ValidateUser;
 
 @Controller
 public class GoogleDocsController {
@@ -27,7 +29,15 @@ public class GoogleDocsController {
 	private static Log logger = LogFactory.getLog(GoogleDocsController.class);
 
 	String viewName = "doc2pdf";
-
+	
+	@Autowired
+	ValidateUser validateUser;
+	
+	String password;
+	
+	GoogleDocsController(){
+		this.password = validateUser.getPassword(ValidateUser.USER_GDOC_CONVERSION_EMAIL);
+	}
 	@RequestMapping(value = { "/doc2pdf", "/d2p" }, method = RequestMethod.GET)
 	public ModelAndView show() throws Exception {
 		return new ModelAndView(viewName);
@@ -45,7 +55,7 @@ public class GoogleDocsController {
 			FileItemStream item = itemIterator.next();
 			String outFormat = "pdf";
 			String inFormat = item.getContentType();//"application/msword";
-			transform("mysimpleconversion@gmail.com", "sandeepmaloth", item.getName(), item.openStream(), response.getOutputStream(), inFormat, outFormat);
+			transform(ValidateUser.USER_GDOC_CONVERSION_EMAIL, password, item.getName(), item.openStream(), response.getOutputStream(), inFormat, outFormat);
 		}
 	}
 
