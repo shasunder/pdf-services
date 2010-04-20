@@ -28,7 +28,7 @@ public class UserController {
 	@Autowired
 	ValidateUser validateUser;
 
-	@RequestMapping(value = { "/user/admin" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/user/admin" }, method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView show(@RequestParam(value = "password", required = false) String password, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("user-admin");
 		if (validateUser.validate(ValidateUser.USER_ADMIN, password, request.getSession(true))) {

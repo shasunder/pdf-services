@@ -15,6 +15,8 @@ public class ValidateUser {
 
 	public static final String USER_ADMIN = "admin";
 	public static final String USER_ADMIN_EMAIL = "adminemail"; 
+	public static final String USER_GDOC_CONVERSION = "admingdoc"; 
+
 	public static final String USER_GDOC_CONVERSION_EMAIL = "mysimpleconversion@gmail.com"; 
 
 	public boolean validate(String userName, String password, HttpSession session) {
