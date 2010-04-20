@@ -46,13 +46,22 @@ public class GoogleDocsController {
 
 		ServletFileUpload upload = new ServletFileUpload();
 		FileItemIterator itemIterator = upload.getItemIterator(request);
-		if (!itemIterator.hasNext()) {
-			model.put("message", "File Not found");
-		} else {
-			FileItemStream item = itemIterator.next();
-			String outFormat = "pdf";
-			String inFormat = item.getContentType();// "application/msword";
-			transform(ValidateUser.USER_GDOC_CONVERSION_EMAIL, getPassword(), item.getName(), item.openStream(), response.getOutputStream(), inFormat, outFormat);
+		try {
+			if (!itemIterator.hasNext()) {
+
+				model.put("message", "File Not found");
+			} else {
+				FileItemStream item = itemIterator.next();
+				String outFormat = "pdf";
+				String inFormat = item.getContentType();// "application/msword";
+				response.setContentType("application/pdf");
+				response.setHeader("Content-disposition", "attachment; filename=" + item.getName() + ".pdf");
+				transform(ValidateUser.USER_GDOC_CONVERSION_EMAIL, getPassword(), item.getName(), item.openStream(), response.getOutputStream(), inFormat, outFormat);
+				response.flushBuffer();
+			}
+		} catch (Exception e) {
+			model.put("message", e.getMessage());
+			logger.error(e,e);
 		}
 	}
 
@@ -65,14 +74,14 @@ public class GoogleDocsController {
 	public void transform(String user, String pass, String title, InputStream in, OutputStream out, String inFormat, String downloadFormat) throws Exception {
 		GoogleDocService docService = getDocService(user, pass);
 		DocumentListEntry dle = docService.upload(in, inFormat, title + " - " + System.currentTimeMillis());
-		docService.downloadPresentation(dle.getResourceId(), out, downloadFormat);
+		docService.downloadPdf(dle.getResourceId(), out, downloadFormat);
 	}
 
 	private GoogleDocService getDocService(String user, String pass) throws Exception {
 		GoogleDocService docService = new GoogleDocService("pdf-services", GoogleDocService.DEFAULT_AUTH_PROTOCOL, GoogleDocService.DEFAULT_AUTH_HOST, GoogleDocService.DEFAULT_PROTOCOL,
 				GoogleDocService.DEFAULT_HOST);
-		docService.turnOnLogging();
-		logger.error("Logging in using :"+user +":"+pass);
+		// docService.turnOnLogging();
+		logger.info("Logging in using :" + user + ":" + pass);
 		docService.login(user, pass);
 		return docService;
 	}
