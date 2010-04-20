@@ -14,7 +14,8 @@ public class ValidateUser {
 	UserDAO userDAO;
 
 	public static final String USER_ADMIN = "admin";
-	public static final String USER_ADMIN_EMAIL = "admin-email";
+	public static final String USER_ADMIN_EMAIL = "adminemail"; 
+	public static final String USER_GDOC_CONVERSION_EMAIL = "mysimpleconversion@gmail.com"; 
 
 	public boolean validate(String userName, String password, HttpSession session) {
 		if (password == null && session.getAttribute(userName) != null) {
@@ -26,5 +27,11 @@ public class ValidateUser {
 		String storePassword = storedUser.getPassword();
 		session.setAttribute(userName, storePassword);
 		return (password.equals(storePassword));
+	}
+	
+	public String getPassword(String userName) {
+		User storedUser = userDAO.readByName(userName);
+		String storePassword = storedUser.getPassword();
+		return storePassword;
 	}
 }
