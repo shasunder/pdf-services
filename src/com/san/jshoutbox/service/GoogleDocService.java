@@ -1,5 +1,6 @@
 package com.san.jshoutbox.service;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
@@ -8,7 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,7 +16,6 @@ import org.apache.commons.io.IOUtils;
 
 import com.google.gdata.client.GoogleService;
 import com.google.gdata.client.Query;
-import com.google.gdata.client.docs.DocsService;
 import com.google.gdata.data.MediaContent;
 import com.google.gdata.data.PlainTextConstruct;
 import com.google.gdata.data.acl.AclEntry;
@@ -34,9 +33,8 @@ import com.google.gdata.data.media.MediaSource;
 import com.google.gdata.data.media.MediaStreamSource;
 import com.google.gdata.util.AuthenticationException;
 import com.google.gdata.util.ServiceException;
-
 public class GoogleDocService {
-	public DocsService service;
+	public ExtendedDocService service;
 	public GoogleService spreadsheetsService;
 
 	public static final String DEFAULT_AUTH_PROTOCOL = "https";
@@ -111,34 +109,16 @@ public class GoogleDocService {
 		DOWNLOAD_SPREADSHEET_FORMATS.put("html", "html");
 	}
 
-	/**
-	 * Constructor.
-	 * 
-	 * @param applicationName name of the application.
-	 * 
-	 * @throws RuntimeException
-	 */
 	public GoogleDocService(String applicationName) throws Exception {
 		this(applicationName, DEFAULT_AUTH_PROTOCOL, DEFAULT_AUTH_HOST, DEFAULT_PROTOCOL, DEFAULT_HOST);
 	}
 
-	/**
-	 * Constructor
-	 * 
-	 * @param applicationName name of the application
-	 * @param authProtocol the protocol to use for authentication
-	 * @param authHost the host to use for authentication
-	 * @param protocol the protocol to use for the http calls.
-	 * @param host the host that contains the feeds
-	 * 
-	 * @throws RuntimeException
-	 */
 	public GoogleDocService(String applicationName, String authProtocol, String authHost, String protocol, String host) throws RuntimeException {
 		if (authProtocol == null || authHost == null || protocol == null || host == null) {
 			throw new RuntimeException("null passed in required parameters");
 		}
 
-		service = new DocsService(applicationName);
+		service = new ExtendedDocService(applicationName);
 
 		// Creating a spreadsheets service is necessary for downloading spreadsheets
 		spreadsheetsService = new GoogleService(SPREADSHEETS_SERVICE_NAME, applicationName);
@@ -152,12 +132,6 @@ public class GoogleDocService {
 
 	/**
 	 * Set user credentials based on a username and password.
-	 * 
-	 * @param user username to log in with.
-	 * @param pass password for the user logging in.
-	 * 
-	 * @throws AuthenticationException
-	 * @throws RuntimeException
 	 */
 	public void login(String user, String pass) throws AuthenticationException, RuntimeException {
 		if (user == null || pass == null) {
@@ -173,11 +147,6 @@ public class GoogleDocService {
 
 	/**
 	 * Allow a user to login using an AuthSub token.
-	 * 
-	 * @param token the token to be used when logging in.
-	 * 
-	 * @throws AuthenticationException
-	 * @throws RuntimeException
 	 */
 	public void loginWithAuthSubToken(String token) throws AuthenticationException, RuntimeException {
 		if (token == null) {
@@ -194,14 +163,6 @@ public class GoogleDocService {
 
 	/**
 	 * Create a new item in the DocList.
-	 * 
-	 * @param title the title of the document to be created.
-	 * @param type the type of the document to be created. One of "spreadsheet", "presentation", or "document".
-	 * 
-	 * @throws RuntimeException
-	 * @throws ServiceException
-	 * @throws IOException
-	 * @throws MalformedURLException
 	 */
 	public DocumentListEntry createNew(String title, String type) throws Exception {
 		if (title == null || type == null) {
@@ -229,11 +190,6 @@ public class GoogleDocService {
 	 * @param category what types of documents to list: "all": lists all the doc objects (documents, spreadsheets, presentations) "folders": lists all doc objects including folders. "documents": lists
 	 * only documents. "spreadsheets": lists only spreadsheets. "pdfs": lists only pdfs. "presentations": lists only presentations. "starred": lists only starred objects. "trashed": lists trashed
 	 * objects.
-	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public DocumentListFeed getDocsListFeed(String category) throws Exception {
 		if (category == null) {
@@ -270,11 +226,6 @@ public class GoogleDocService {
 	 * Gets the entry for the provided object id.
 	 * 
 	 * @param resourceId the resource id of the object to fetch an entry for.
-	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public DocumentListEntry getDocsListEntry(String resourceId) throws Exception {
 		if (resourceId == null) {
@@ -289,11 +240,6 @@ public class GoogleDocService {
 	 * Gets the feed for all the objects contained in a folder.
 	 * 
 	 * @param folderResourceId the resource id of the folder to return the feed for the contents.
-	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public DocumentListFeed getFolderDocsListFeed(String folderResourceId) throws Exception {
 		if (folderResourceId == null) {
@@ -307,11 +253,6 @@ public class GoogleDocService {
 	 * Gets a feed containing the documents.
 	 * 
 	 * @param resourceId the resource id of the object to fetch revisions for.
-	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public RevisionFeed getRevisionsFeed(String resourceId) throws Exception {
 		if (resourceId == null) {
@@ -327,11 +268,6 @@ public class GoogleDocService {
 	 * Search the documents, and return a feed of docs that match.
 	 * 
 	 * @param searchParameters parameters to be used in searching criteria.
-	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public DocumentListFeed search(Map<String, String> searchParameters) throws Exception {
 		return search(searchParameters, null);
@@ -352,10 +288,6 @@ public class GoogleDocService {
 	 * "showfolders": Specifies whether the query should return folders as well as documents. Possible values are true and false.
 	 * @param category define the category to search. (documents, spreadsheets, presentations, starred, trashed, folders)
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public DocumentListFeed search(Map<String, String> searchParameters, String category) throws Exception {
 		if (searchParameters == null) {
@@ -411,10 +343,6 @@ public class GoogleDocService {
 	 * @param resourceId the resource id of object to be trashed.
 	 * @param delete true to delete the permanently, false to move it to the trash.
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public void trashObject(String resourceId, boolean delete) throws Exception {
 		if (resourceId == null) {
@@ -435,10 +363,6 @@ public class GoogleDocService {
 	 * @param resourceId the resource id of an object to be removed from the folder.
 	 * @param folderResourceId the resource id of the folder to remove the object from.
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public void removeFromFolder(String resourceId, String folderResourceId) throws Exception {
 		if (resourceId == null || folderResourceId == null) {
@@ -456,13 +380,14 @@ public class GoogleDocService {
 
 		MediaContent mc = new MediaContent();
 		mc.setUri(exportUrl.toString());
-		MediaSource ms = service.getMedia(mc);
+		//MediaSource ms = service.getMedia(mc);
 
-		//InputStream input = ms.getInputStream(); TODO: fix this
-		//IOUtils.copy(input, output);
+		InputStream input = service.getMediaAsInputStream(mc); //TODO: fix this
+		IOUtils.copy(input, output);
 	}
+	
 
-	public void downloadPresentation(String resourceId, OutputStream outputStream, String format) throws Exception {
+	public void downloadPdf(String resourceId, OutputStream outputStream, String format) throws Exception {
 		if (resourceId == null || outputStream == null || format == null) {
 			throw new RuntimeException("null passed in for required parameters");
 		}
@@ -479,10 +404,6 @@ public class GoogleDocService {
 	 * @param resourceId the resource id of the object to be moved to the folder.
 	 * @param folderId the id of the folder to move the object to.
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public DocumentListEntry moveObjectToFolder(String resourceId, String folderId) throws Exception {
 		if (resourceId == null || folderId == null) {
@@ -501,10 +422,6 @@ public class GoogleDocService {
 	 * 
 	 * @param resourceId the resource id of the object to retrieve the ACL for.
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public AclFeed getAclFeed(String resourceId) throws Exception {
 		if (resourceId == null) {
@@ -523,10 +440,6 @@ public class GoogleDocService {
 	 * @param scope the scope for the ACL.
 	 * @param resourceId the resource id of the object to set the ACL for.
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public AclEntry addAclRole(AclRole role, AclScope scope, String resourceId) throws Exception {
 		if (role == null || scope == null || resourceId == null) {
@@ -547,11 +460,6 @@ public class GoogleDocService {
 	 * @param role the new role of the ACL to be updated.
 	 * @param scope the new scope for the ACL.
 	 * @param resourceId the resource id of the object to be updated.
-	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public AclEntry changeAclRole(AclRole role, AclScope scope, String resourceId) throws Exception {
 		if (role == null || scope == null || resourceId == null) {
@@ -570,10 +478,6 @@ public class GoogleDocService {
 	 * @param email email address to remove the role of.
 	 * @param resourceId the resource id of the object to remove the role from.
 	 * 
-	 * @throws IOException
-	 * @throws MalformedURLException
-	 * @throws ServiceException
-	 * @throws RuntimeException
 	 */
 	public void removeAclRole(String scope, String email, String resourceId) throws Exception {
 		if (scope == null || email == null || resourceId == null) {
@@ -590,8 +494,6 @@ public class GoogleDocService {
 	 * 
 	 * @param resourceId the resource id of the object you want the format for.
 	 * @param ext extension of the file you want the format for.
-	 * 
-	 * @throws RuntimeException
 	 */
 	public String getDownloadFormat(String resourceId, String ext) throws RuntimeException {
 		if (resourceId == null || ext == null) {
@@ -618,8 +520,6 @@ public class GoogleDocService {
 	 * Gets the suffix of the resourceId. If the resourceId is "document:dh3bw3j_0f7xmjhd8", "dh3bw3j_0f7xmjhd8" will be returned.
 	 * 
 	 * @param resourceId the resource id to extract the suffix from.
-	 * 
-	 * @throws RuntimeException
 	 */
 	public String getResourceIdSuffix(String resourceId) throws RuntimeException {
 		if (resourceId == null) {
@@ -638,8 +538,6 @@ public class GoogleDocService {
 	 * Gets the prefix of the resourceId. If the resourceId is "document:dh3bw3j_0f7xmjhd8", "document" will be returned.
 	 * 
 	 * @param resourceId the resource id to extract the suffix from.
-	 * 
-	 * @throws RuntimeException
 	 */
 	public String getResourceIdPrefix(String resourceId) throws RuntimeException {
 		if (resourceId == null) {
@@ -694,9 +592,6 @@ public class GoogleDocService {
 	 * @param domain the domain of the server
 	 * @param path the path to add to the protocol/host
 	 * @param parameters parameters to be added to the URL.
-	 * 
-	 * @throws MalformedURLException
-	 * @throws RuntimeException
 	 */
 	private URL buildUrl(String domain, String path, String[] parameters) throws MalformedURLException, RuntimeException {
 		if (path == null) {
@@ -725,9 +620,6 @@ public class GoogleDocService {
 	 * @param domain the domain of the server
 	 * @param path the path to add to the protocol/host
 	 * @param parameters parameters to be added to the URL as key value pairs.
-	 * 
-	 * @throws MalformedURLException
-	 * @throws RuntimeException
 	 */
 	private URL buildUrl(String domain, String path, Map<String, String> parameters) throws MalformedURLException, RuntimeException {
 		if (path == null) {
