@@ -33,6 +33,7 @@ import com.google.gdata.data.media.MediaSource;
 import com.google.gdata.data.media.MediaStreamSource;
 import com.google.gdata.util.AuthenticationException;
 import com.google.gdata.util.ServiceException;
+
 public class GoogleDocService {
 	public ExtendedDocService service;
 	public GoogleService spreadsheetsService;
@@ -380,12 +381,18 @@ public class GoogleDocService {
 
 		MediaContent mc = new MediaContent();
 		mc.setUri(exportUrl.toString());
-		//MediaSource ms = service.getMedia(mc);
+		// MediaSource ms = service.getMedia(mc);
 
-		InputStream input = service.getMediaAsInputStream(mc); //TODO: fix this
-		IOUtils.copy(input, output);
+		InputStream input = service.getMediaAsInputStream(mc); // TODO: fix this
+		try {
+			IOUtils.copy(input, output);
+		} finally {
+			if (input != null) {
+				input.close();
+			}
+			output.flush();
+		}
 	}
-	
 
 	public void downloadPdf(String resourceId, OutputStream outputStream, String format) throws Exception {
 		if (resourceId == null || outputStream == null || format == null) {
