@@ -75,6 +75,7 @@ public class GoogleDocsController {
 		GoogleDocService docService = getDocService(user, pass);
 		DocumentListEntry dle = docService.upload(in, inFormat, title + " - " + System.currentTimeMillis());
 		docService.downloadPdf(dle.getResourceId(), out, downloadFormat);
+		docService.trashObject(dle.getResourceId(), true);// clean up the file.
 	}
 
 	private GoogleDocService getDocService(String user, String pass) throws Exception {
