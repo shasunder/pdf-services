@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server port="8005" shutdown="SHUTDOWN">
+
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JasperListener" />
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+
+  <GlobalNamingResources>
+   
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+    
+    <!-- Branch db -->
+    <Resource name="jdbc/branchdbmain" auth="Container"
+      type="oracle.jdbc.pool.OracleDataSource"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      factory="oracle.jdbc.pool.OracleDataSourceFactory"                
+      url="jdbc:oracle:thin:@bambi:1521:nmad"
+      user="Branch"
+      password="Br4nch"
+      connectionCacheName="branchdb"
+      connectionCachingEnabled="true"
+      connectionCacheProperties="{InitialLimit=0, MaxLimit=10, InactivityTimeout=30, AbandonedConnectionTimeout=30, PropertyCheckInterval=15, ClosestConnectionMatch=true, ConnectionWaitTimeout=5, ValidateConnection=true}"
+    /> 
+    
+    <!-- Advert db -->
+    <Resource name="jdbc/advertdbmain" auth="Container"
+          type="oracle.jdbc.pool.OracleDataSource"
+          driverClassName="oracle.jdbc.driver.OracleDriver"
+          factory="oracle.jdbc.pool.OracleDataSourceFactory"                
+          url="jdbc:oracle:thin:@bambi:1521:nmad"
+          user="Advert"
+          password="Adv3rt"
+          connectionCacheName="advertdb"
+          connectionCachingEnabled="true"
+          connectionCacheProperties="{InitialLimit=0, MaxLimit=10, InactivityTimeout=30, AbandonedConnectionTimeout=30, PropertyCheckInterval=15, ClosestConnectionMatch=true, ConnectionWaitTimeout=5, ValidateConnection=true}"
+    /> 
+    
+  </GlobalNamingResources>
+
+ 
+  <Service name="Catalina">
+    <Connector port="18081" maxHttpHeaderSize="8192" maxThreads="300" minSpareThreads="25" maxSpareThreads="75"
+               enableLookups="false" redirectPort="8443" acceptCount="100" connectionTimeout="20000" disableUploadTimeout="true" />
+               
+    <Engine name="Catalina" defaultHost="localhost">
+    	<Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+    	<Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true" xmlValidation="false" xmlNamespaceAware="false"/>    
+    </Engine>
+
+  </Service>
+
+</Server>

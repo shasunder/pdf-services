@@ -1,0 +1,28 @@
+<form method="POST" action="http://localhost:8080/branch-service/" content-type="text/xml">
+<table>
+<tr>
+<td>POST branch - /branch-service<td>
+<td>
+<textarea name="branch" rows="15" cols="40">
+ &lt;branch&gt;
+	 &lt;id&gt;1&lt;/id&gt;
+	 &lt;name&gt;test-branch&lt;/name&gt;
+ &lt;/branch&gt;
+</textarea>
+</td>
+</tr>
+<tr>
+<td>&nbsp;<td>
+<td><input type="submit" value="post"/></td>
+</tr>
+</table>
+</form>
+
+<br/>
+<a href="http://localhost:8080/branch-service/branchid/1" >GET /branch-service/branchid/1</a>
+<br/>
+<br/>
+HTTP forms do not support PUT and DELETE. Have to use http client hence.
+<br/>
+PUT /branch-service/ <br/>
+DELETE Branch - /branch-service/2<br/>

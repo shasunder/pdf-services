@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+   <context:property-placeholder location="classpath:application.properties" />
+    
+   <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+  
+   <!-- bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+       <property name="driverClassName" value="${jdbc.driverClassName}"/>
+       <property name="url" value="${jdbc.url}"/>
+       <property name="username" value="${jdbc.username}"/>
+       <property name="password" value="${jdbc.password}"/>
+    </bean-->   
+   <!-- velocity -->
+   <util:properties id="velocityProperties" location="classpath:velocity.properties" />
+   
+	<!-- Base Velocity layout view -->
+     <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">  
+         <property name="resourceLoaderPath" value="${velocity.template.path}" />  
+     </bean>  
+   
+   <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+	  <property name="cache" value="true"/>
+	  <property name="prefix" value=""/>
+	  <property name="suffix" value=".vm"/>
+	  <property name="toolboxConfigLocation" value="/WEB-INF/toolbox.xml"/>
+   </bean>
+   
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <property name="maxUploadSize" value="1000000"/>
+   </bean>
+	
+    <!-- controllers -->
+    <context:component-scan base-package="com.ipad" />   
+   
+    <!-- view resolvers -->
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+
+    <!--  XML view -->
+    <bean id="xmlView" class="com.ipad.web.view.XmlView"/>
+   
+   <!--  Exception resolver for Controller -->
+   <bean id="exceptionResolver" class="com.ipad.web.ExceptionResolver"/>
+
+   <!-- Interceptors to log controller access -->
+   <bean id="loggingInterceptor" class="com.ipad.web.LoggingInterceptor"/>
+	
+   <bean id="annotationMapper" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+   		<property name="order">
+			<value>1</value>
+		</property>
+		<property name="interceptors">
+			<list>
+				<ref bean="loggingInterceptor" />
+			</list>
+		</property>
+   </bean>	
+</beans>
+
