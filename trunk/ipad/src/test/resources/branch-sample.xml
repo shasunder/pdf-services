@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<branch suppressaddress="false" suppressseo="false" suppressmap="false" suppressbip="false" suppressmerchant="false" source="SAP">
+    <orgname>Elite Heating &amp; Plumbing Services</orgname>
+    <websiteurl displayable="true">http://www.ipad.com</websiteurl> 
+    <businessfunc>10002382</businessfunc>
+    <branchlocation id="{ID}">
+        <address displayable="true">
+            <addressline seq="1">41 Kingsway</addressline>
+            <locality>Caversham</locality>
+            <posttown>Reading</posttown>
+            <county>Berkshire</county>
+            <postcode>
+                <postcodearea>RG</postcodearea>
+                <postcodedistrict>4</postcodedistrict>
+                <postcodesector>6</postcodesector>
+                <postcodeunit>RA</postcodeunit>
+            </postcode>
+        </address>
+               <email displayable="true">info@Elite.com</email>
+        <phones displayable="true">
+            <phone prefix="Tel">0118 948 2552</phone>
+        </phones>                    
+    </branchlocation>
+</branch >
