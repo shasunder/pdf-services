@@ -7,7 +7,13 @@
         <from>^/pdf/jpedal/(\d+)/?$</from>
         <to>/jpedal/pdfById.do?pdfId=$1</to>
     </rule>
-
+    
+    <rule>
+        <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
+        <condition type="method">GET</condition>
+        <from>^/pdf/jpedal/url*$</from>
+        <to>/jpedal/pdfURL.do</to>
+    </rule>
     <rule>
         <note>Rewrite POST  as a request to /pdfCreate.do</note>
         <condition type="method">POST</condition>
