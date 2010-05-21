@@ -73,12 +73,12 @@ public class Pdf2ImageUtil {
 			w = bufferedImage.getWidth() > w ? bufferedImage.getWidth() : w;
 			h = h + bufferedImage.getHeight();
 		}
-		logger.info("width : "+w +" height :"+h);
+		logger.debug("width : "+w +" height :"+h);
 		BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 		Graphics2D graphics = image.createGraphics();
 		int i = 0, position=0;
 		for (BufferedImage bufferedImage : pdfToImage) {
-			logger.info("Writing image : " + ++i);
+			logger.debug("Writing image : " + ++i);
 			graphics.drawImage(bufferedImage, 0, position, null);
 			position +=bufferedImage.getHeight();
 		}
