@@ -11,5 +11,5 @@ Or
 <br/>
 <form method="post" action="create" enctype="multipart/form-data">
     <input type="file" name="file"/>
-    <input type="submit" value="Upload PDF/>
+    <input type="submit" value="Upload PDF"/>
 </form>
