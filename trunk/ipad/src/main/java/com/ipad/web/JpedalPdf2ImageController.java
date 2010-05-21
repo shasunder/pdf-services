@@ -5,6 +5,7 @@ package com.ipad.web;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
@@ -33,7 +34,8 @@ import com.ipad.service.PdfService;
  * <p>
  * Exceptions are trapped by spring managed exception resolver.
  * @see com.ipad.web.ExceptionResolver
- * <p>http://www.jpedal.org/simple_image_example.php
+ * <p>
+ * http://www.jpedal.org/simple_image_example.php
  * 
  * 
  */
@@ -55,27 +57,39 @@ public class JpedalPdf2ImageController {
 	FileUploadForm fileUploadForm, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		CommonsMultipartFile file = fileUploadForm.getFile();
 
-		List<BufferedImage> pdfToImages = JpedalPdf2ImageUtil.getInstance().pdfToImage(file.getInputStream());
-		logger.info("Received : " + file.getOriginalFilename());
-		
-		response.setContentType("image/png");
-		BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-		Pdf2ImageUtil.write(image, "png", response.getOutputStream());
-		response.flushBuffer();
+		InputStream inputStream = file.getInputStream();
+		try {
+			List<BufferedImage> pdfToImages = JpedalPdf2ImageUtil.getInstance().pdfToImage(inputStream);
+
+			logger.info("Received : " + file.getOriginalFilename());
+
+			response.setContentType("image/png");
+			BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
+			Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+			response.flushBuffer();
+		} finally {
+			inputStream.close();
+		}
 	}
 
 	@RequestMapping("/jpedal/pdfURL.do")
-	public void getUrl(@RequestParam("url") String url, @ModelAttribute("fileUploadForm")
+	public void getUrl(@RequestParam("url")
+	String url, @ModelAttribute("fileUploadForm")
 	FileUploadForm fileUploadForm, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 		URL urlObj = new URL(url);
-		List<BufferedImage> pdfToImages = JpedalPdf2ImageUtil.getInstance().pdfToImage(urlObj.openStream());
-		logger.info("Received : " + url);
-		
-		response.setContentType("image/png");
-		BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-		Pdf2ImageUtil.write(image, "png", response.getOutputStream());
-		response.flushBuffer();
+		InputStream in = urlObj.openStream();
+		try {
+			List<BufferedImage> pdfToImages = JpedalPdf2ImageUtil.getInstance().pdfToImage(in);
+			logger.info("Received : " + url);
+
+			response.setContentType("image/png");
+			BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
+			Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+			response.flushBuffer();
+		} finally {
+			in.close();
+		}
 	}
 
 	@RequestMapping("/jpedal/pdfUpdate.do")
