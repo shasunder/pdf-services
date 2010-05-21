@@ -33,7 +33,7 @@ public class PdfControllerTest {
   public void testGetByIdWhenPdfFound() throws Exception {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";
@@ -59,7 +59,7 @@ public class PdfControllerTest {
   public void testGetByIdWhenPdfNotFound() throws Exception {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";
@@ -91,7 +91,7 @@ public class PdfControllerTest {
   public void testGetByIdWhenServerError() throws Exception {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";
@@ -121,7 +121,7 @@ public class PdfControllerTest {
   public void testPostWhenCreationSuccessful() throws IOException {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     Pdf pdf = mockBuilder.getMockPdf();
@@ -150,7 +150,7 @@ public class PdfControllerTest {
   public void testPostWhenCreationFailure() throws IOException {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     Pdf pdf = mockBuilder.getMockPdf();
@@ -183,7 +183,7 @@ public class PdfControllerTest {
   @Test
   public void testGetByCompanyNamePostCodeWhenMatchFound() throws PdfException {
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";
@@ -210,7 +210,7 @@ public class PdfControllerTest {
   @Test
   public void testGetByCompanyNamePostCodeWhenMatchNotFound() throws PdfException {
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";
@@ -243,7 +243,7 @@ public class PdfControllerTest {
   public void testPutWhenUpdateSuccessful() throws IOException {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     Pdf pdf = mockBuilder.getMockPdf();
@@ -272,7 +272,7 @@ public class PdfControllerTest {
   public void testPutWhenUpdateFailed() throws IOException {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     Pdf pdf = mockBuilder.getMockPdf();
@@ -305,7 +305,7 @@ public class PdfControllerTest {
   @Test
   public void testDeleteWhenPdfFound() throws PdfException {
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";
@@ -330,7 +330,7 @@ public class PdfControllerTest {
   public void testDeleteWhenPdfNotFound() throws PdfException {
 
     // given
-    Pdf2ImageController pdfController = new Pdf2ImageController();
+    PdfBoxPdf2ImageController pdfController = new PdfBoxPdf2ImageController();
     MockHttpServletRequest mockRequest = new MockHttpServletRequest();
     MockHttpServletResponse mockResponse = new MockHttpServletResponse();
     String pdfId = "1";

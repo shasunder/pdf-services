@@ -1,0 +1,5 @@
+<h1>Pdf2Image using pdfbox <img src="content/static/images/logo-beta.jpg" alt="*Beta"/></h1> 
+<form method="post" action="create" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit"/>
+</form>
