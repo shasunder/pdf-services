@@ -5,6 +5,7 @@ package com.ipad.web;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -63,7 +64,19 @@ public class JpedalPdf2ImageController {
 		response.flushBuffer();
 	}
 
-	
+	@RequestMapping("/jpedal/pdfURL.do")
+	public void getUrl(@RequestParam("url") String url, @ModelAttribute("fileUploadForm")
+	FileUploadForm fileUploadForm, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+		URL urlObj = new URL(url);
+		List<BufferedImage> pdfToImages = JpedalPdf2ImageUtil.getInstance().pdfToImage(urlObj.openStream());
+		logger.info("Received : " + url);
+		
+		response.setContentType("image/png");
+		BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
+		Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+		response.flushBuffer();
+	}
 
 	@RequestMapping("/jpedal/pdfUpdate.do")
 	public ModelAndView put(@RequestParam("pdfId")
