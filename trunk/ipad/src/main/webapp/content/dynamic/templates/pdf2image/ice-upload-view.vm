@@ -1,0 +1,15 @@
+<h1>Pdf2image using ice <img src="content/static/images/logo-beta.jpg" alt="*Beta"/></h1> 
+<hr/>
+<form method="get" action="url" enctype="multipart/form-data">
+    <input type="text" name="url" size="50"/>
+    <input type="submit" value="Submit PDF url"/>
+    <font size="1">eg: http://www.aimgroup.eu/BROCHURE_CONGRESSI_4nov.pdf</font>
+</form>
+<br/>
+Or
+<br/>
+<br/>
+<form method="post" action="create" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit" value="Upload PDF"/>
+</form>
