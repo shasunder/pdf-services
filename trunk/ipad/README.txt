@@ -42,6 +42,12 @@ REST Urls:
 	DELETE : http://[HOST]:[PORT]/pdf2image/{id} 
 
 
+http://localhost:8080/pdf-service/pdf/ice/upload
+http://pdfservice.sandeepm.staxapps.net/pdf/jpedal/1
+http://pdfservice.sandeepm.staxapps.net/pdf/ice/1 
+http://pdfservice.sandeepm.staxapps.net/pdf/ice/url?url=http://www.aimgroup.eu/BROCHURE_CONGRESSI_4nov.pdf
+http://pdfservice.sandeepm.staxapps.net/pdf/pdfbox/1
+
 More details:
 ============
 Pdfbox library is used to convert pdf to iZine format. 
