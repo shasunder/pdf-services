@@ -1,15 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN" "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
 <urlrewrite>
+
+   <rule>
+        <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
+        <condition type="method">GET</condition>
+        <from>^/pdf/ice/(\d+)/?$</from>
+        <to>/ice/pdfById.do?pdfId=$1</to>
+    </rule>
+    
+       <rule>
+        <note></note>
+        <condition type="method">GET</condition>
+        <from>^/pdf/ice/upload/?$</from>
+        <to>/ice/pdfUploadView.do</to>
+    </rule>
+    
     <rule>
         <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
+        <condition type="method">GET</condition>
+        <from>^/pdf/ice/url*$</from>
+        <to>/ice/pdfURL.do</to>
+    </rule>
+     <rule>
+        <note></note>
+        <condition type="method">GET</condition>
+        <from>^/pdf/ice/page*$</from>
+        <to>/ice/pdfPage.do</to>
+    </rule>
+    
+    <rule>
+        <note>Rewrite POST  as a request to /pdfCreate.do</note>
+        <condition type="method">POST</condition>
+        <from>^/pdf/ice/create*$</from>
+        <to>/ice/pdfCreate.do</to>
+    </rule>
+    <rule>
+        <note>Rewrite POST  as a request to /pdfUpload.do</note>
+        <condition type="method">POST</condition>
+        <from>^/pdf/ice/upload*$</from>
+        <to>/ice/pdfUpload.do</to>
+    </rule>
+    
+    <rule>
+        <note></note>
         <condition type="method">GET</condition>
         <from>^/pdf/jpedal/(\d+)/?$</from>
         <to>/jpedal/pdfById.do?pdfId=$1</to>
     </rule>
     
     <rule>
-        <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
+        <note></note>
         <condition type="method">GET</condition>
         <from>^/pdf/jpedal/url*$</from>
         <to>/jpedal/pdfURL.do</to>
@@ -22,27 +63,7 @@
     </rule>
     
    <rule>
-        <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
-        <condition type="method">GET</condition>
-        <from>^/pdf/ice/(\d+)/?$</from>
-        <to>/ice/pdfById.do?pdfId=$1</to>
-    </rule>
-    
-    <rule>
-        <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
-        <condition type="method">GET</condition>
-        <from>^/pdf/ice/url*$</from>
-        <to>/ice/pdfURL.do</to>
-    </rule>
-    <rule>
-        <note>Rewrite POST  as a request to /pdfCreate.do</note>
-        <condition type="method">POST</condition>
-        <from>^/pdf/ice/create*$</from>
-        <to>/ice/pdfCreate.do</to>
-    </rule>
-    
-   <rule>
-        <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
+        <note></note>
         <condition type="method">GET</condition>
         <from>^/pdf/pdfbox/(\d+)/?$</from>
         <to>/pdfbox/pdfById.do?pdfId=$1</to>

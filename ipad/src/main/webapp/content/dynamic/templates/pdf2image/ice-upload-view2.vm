@@ -1,0 +1,32 @@
+<h1>Pdf2image upload using ice *Beta</h1> 
+<hr/>
+<br/>
+<br/>
+<form method="post" action="upload" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit" value="Upload PDF"/>
+</form>
+
+<form method="get" action="upload" >
+<input type="hidden" name="pageNo" value="$!pageNo"/>
+<select name="pdfName">
+#foreach ($mapentry in $pdfs.entrySet())
+<option value="$mapentry.key">$mapentry.key</option>
+#end
+</select>
+
+<input name="button" type="submit" value="go"/>
+</form>
+
+
+
+<hr/>
+<br/>
+
+<table>
+<tr>
+<td><img src="/pdf-service/pdf/ice/page?pdfName=$pdfName&pageNo=$pageNo"/></td>
+<td><img src="/pdf-service/pdf/ice/page?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, 1)"/></td>
+</tr>
+</table>
+<input type="button" onclick="window.location=('/pdf-service/pdf/ice/upload?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, 1)')" value="Next"/>
