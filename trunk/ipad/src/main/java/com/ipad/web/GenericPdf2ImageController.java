@@ -79,7 +79,7 @@ public class GenericPdf2ImageController {
 	public ModelAndView getView(@RequestParam(value = "viewType", required = true) String viewType, @RequestParam(value = "pdfName", required = true) String pdfName, HttpServletResponse response)
 			throws Exception {
 		if ("book".equalsIgnoreCase(viewType)) {
-			return new ModelAndView("forward:pdfBookView.do?pdfName=" + pdfName);
+			return new ModelAndView("forward:pdfBookView.do");
 
 		} else if ("image".equalsIgnoreCase(viewType)) {
 			Izine izine = DataPool.getInstance().getPdfs().get(pdfName);

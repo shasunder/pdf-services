@@ -32,7 +32,7 @@
 	    	<td><input type="radio" name="viewType" value="zip" /> Zip</td></tr>
     	</table>
     	
-	<input name="button" type="submit" value="view"/>
+	<input name="button" type="submit" value="view or save"/>
 </form>
 <br/>
 <a href="clear?pdfName=all">clear all uploaded</a>
