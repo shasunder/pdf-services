@@ -23,7 +23,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ipad.common.util.JpedalPdf2ImageUtil;
-import com.ipad.common.util.Pdf2ImageUtil;
+import com.ipad.common.util.PdfBoxPdf2ImageUtil;
 import com.ipad.service.PdfService;
 
 /**
@@ -64,8 +64,8 @@ public class JpedalPdf2ImageController {
 			logger.info("Received : " + file.getOriginalFilename());
 
 			response.setContentType("image/png");
-			BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-			Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+			BufferedImage image = PdfBoxPdf2ImageUtil.joinImages(pdfToImages);
+			PdfBoxPdf2ImageUtil.write(image, "png", response.getOutputStream());
 			response.flushBuffer();
 		} finally {
 			inputStream.close();
@@ -84,8 +84,8 @@ public class JpedalPdf2ImageController {
 			logger.info("Received : " + url);
 
 			response.setContentType("image/png");
-			BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-			Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+			BufferedImage image = PdfBoxPdf2ImageUtil.joinImages(pdfToImages);
+			PdfBoxPdf2ImageUtil.write(image, "png", response.getOutputStream());
 			response.flushBuffer();
 		} finally {
 			in.close();

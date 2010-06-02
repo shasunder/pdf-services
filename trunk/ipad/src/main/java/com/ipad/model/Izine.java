@@ -1,7 +1,10 @@
 package com.ipad.model;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
@@ -17,6 +20,15 @@ public class Izine {
 		return pages;
 	}
 
+	public List< BufferedImage> getPagesList() {
+		List<BufferedImage> pdfToImages = new ArrayList<BufferedImage>();
+		for (Map.Entry<Integer, BufferedImage> entry : pages.entrySet()) {
+			BufferedImage value = entry.getValue();
+			pdfToImages.add(value);
+		}
+		return pdfToImages;
+	}
+	
 	public void setPages(LinkedHashMap<Integer, BufferedImage> pages) {
 		this.pages = pages;
 	}

@@ -27,7 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ipad.common.PdfDataUtil;
 import com.ipad.common.util.IcePdf2ImageUtil;
-import com.ipad.common.util.Pdf2ImageUtil;
+import com.ipad.common.util.PdfBoxPdf2ImageUtil;
 import com.ipad.model.DataPool;
 import com.ipad.model.Izine;
 import com.ipad.service.PdfService;
@@ -76,8 +76,8 @@ public class IcePdf2ImageController {
 			logger.info("Received : " + file.getOriginalFilename());
 
 			response.setContentType("image/png");
-			BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-			Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+			BufferedImage image = PdfBoxPdf2ImageUtil.joinImages(pdfToImages);
+			PdfBoxPdf2ImageUtil.write(image, "png", response.getOutputStream());
 			response.flushBuffer();
 		} finally {
 			inputStream.close();
@@ -113,7 +113,7 @@ public class IcePdf2ImageController {
 		logger.info("Stream pdf page as PNG : " + pdfName + " pageNo:" + pageNo);
 		response.setContentType("image/png");
 		BufferedImage image = DataPool.getInstance().getPdfPage(pdfName, pageNo);
-		Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+		PdfBoxPdf2ImageUtil.write(image, "png", response.getOutputStream());
 		response.flushBuffer();
 	}
 
@@ -127,8 +127,8 @@ public class IcePdf2ImageController {
 			logger.info("Received : " + url);
 
 			response.setContentType("image/png");
-			BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-			Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+			BufferedImage image = PdfBoxPdf2ImageUtil.joinImages(pdfToImages);
+			PdfBoxPdf2ImageUtil.write(image, "png", response.getOutputStream());
 			response.flushBuffer();
 		} finally {
 			in.close();

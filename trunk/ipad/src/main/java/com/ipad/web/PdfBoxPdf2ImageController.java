@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ipad.common.util.Pdf2ImageUtil;
+import com.ipad.common.util.PdfBoxPdf2ImageUtil;
 import com.ipad.model.Pdf;
 import com.ipad.service.PdfService;
 import com.sun.imageio.plugins.common.ImageUtil;
@@ -61,12 +61,12 @@ public class PdfBoxPdf2ImageController {
 	FileUploadForm fileUploadForm, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		CommonsMultipartFile file = fileUploadForm.getFile();
 
-		List<BufferedImage> pdfToImages = Pdf2ImageUtil.getInstance().pdfToImage(file.getInputStream());
+		List<BufferedImage> pdfToImages = PdfBoxPdf2ImageUtil.getInstance().pdfToImage(file.getInputStream());
 		logger.info("Received : " + file.getOriginalFilename());
 		
 		response.setContentType("image/png");
-		BufferedImage image = Pdf2ImageUtil.joinImages(pdfToImages);
-		Pdf2ImageUtil.write(image, "png", response.getOutputStream());
+		BufferedImage image = PdfBoxPdf2ImageUtil.joinImages(pdfToImages);
+		PdfBoxPdf2ImageUtil.write(image, "png", response.getOutputStream());
 		response.flushBuffer();
 	}
 

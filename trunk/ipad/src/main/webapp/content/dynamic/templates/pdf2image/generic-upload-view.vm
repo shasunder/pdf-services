@@ -1,0 +1,41 @@
+<h1>Pdf2image upload and view *Beta</h1> 
+<hr/>
+<br/>
+<br/>
+<form method="post" action="upload" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <br/>
+    
+    <table>
+    	<tr><td>Choose PDF library :<input type="radio" name="pdfLib" value="ice" checked="checked"/> Ice pdf </td>
+	<td><input type="radio" name="pdfLib" value="pdfbox" /> PdfBox </td>
+    	<td><input type="radio" name="pdfLib" value="jpedal" /> Jpedal</td></tr>
+    </table> 
+    <input type="submit" value="Upload PDF"/>
+</form>
+<br/>
+
+<hr/>
+<br/>
+<form method="get" action="viewMode" >
+	Pdfs uploaded : 
+	<select name="pdfName">
+		#foreach ($mapentry in $pdfs.entrySet())
+		<option value="$mapentry.key">$mapentry.key</option>
+		#end
+	</select>
+	<br/>
+	
+	<table>
+	    	<tr><td>View or download as :<input type="radio" name="viewType" value="book" checked="checked"/> book </td>
+		<td><input type="radio" name="viewType" value="image" /> image </td>
+	    	<td><input type="radio" name="viewType" value="zip" /> Zip</td></tr>
+    	</table>
+    	
+	<input name="button" type="submit" value="view"/>
+</form>
+<br/>
+<a href="clear?pdfName=all">clear all uploaded</a>
+
+
+<br/>
