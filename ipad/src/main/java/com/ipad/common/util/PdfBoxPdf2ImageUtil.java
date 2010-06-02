@@ -19,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 
-public class Pdf2ImageUtil {
+public class PdfBoxPdf2ImageUtil {
 
 	/**
 	 * Extract image from PDF Document
@@ -86,7 +86,7 @@ public class Pdf2ImageUtil {
 		return image;
 	}
 
-	private Pdf2ImageUtil() {
+	private PdfBoxPdf2ImageUtil() {
 	}
 
 	@Override
@@ -94,11 +94,11 @@ public class Pdf2ImageUtil {
 		return ReflectionToStringBuilder.toString(this);
 	}
 
-	public static synchronized Pdf2ImageUtil getInstance() {
+	public static synchronized PdfBoxPdf2ImageUtil getInstance() {
 		return _instance;
 	}
 
-	private static Log logger = LogFactory.getLog(Pdf2ImageUtil.class.getName());
-	private static Pdf2ImageUtil _instance = new Pdf2ImageUtil();
+	private static Log logger = LogFactory.getLog(PdfBoxPdf2ImageUtil.class.getName());
+	private static PdfBoxPdf2ImageUtil _instance = new PdfBoxPdf2ImageUtil();
 
 }

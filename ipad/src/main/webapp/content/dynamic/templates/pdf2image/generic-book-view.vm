@@ -1,0 +1,23 @@
+<div>
+	<div align="center">
+	
+		<input type="button" onclick="window.location=('pdf/generic/book?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, -2)')" value="Prev"/>
+		<input type="button" onclick="window.location=('pdf/generic/book?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, 2)')" value="Next"/>
+		<a href="/pdf-service/pdf/generic/upload">home</a>
+	</div>
+	<hr/>
+	<table>
+		<tr>
+		<td><img src="/pdf-service/pdf/generic/page?pdfName=$pdfName&pageNo=$pageNo"/></td>
+		<td><img src="/pdf-service/pdf/generic/page?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, 1)"/></td>
+		</tr>
+	</table>
+	
+	<hr/>
+	<div align="center">
+	
+		<input type="button" onclick="window.location=('/pdf-service/pdf/generic/book?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, -2)')" value="Prev"/>
+		<input type="button" onclick="window.location=('/pdf-service/pdf/generic/book?pdfName=$pdfName&pageNo=$mathTool.add($pageNo, 2)')" value="Next"/>
+		<a href="/pdf-service/pdf/generic/upload">home</a>
+	</div>
+</div>

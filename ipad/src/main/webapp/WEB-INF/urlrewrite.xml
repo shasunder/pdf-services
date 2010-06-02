@@ -2,6 +2,55 @@
 <!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN" "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
 <urlrewrite>
 
+ 	<rule>
+        <condition type="method">GET</condition>
+        <from>^/pdf/generic/book/?$</from>
+        <to>/generic/pdfBookView.do</to>
+    </rule>
+ 	<rule>
+        <condition type="method">GET</condition>
+        <from>^/pdf/generic/upload/?$</from>
+        <to>/generic/pdfUploadView.do</to>
+    </rule>
+    
+    <rule>
+        <condition type="method">GET</condition>
+        <from>^/pdf/generic/viewMode/?$</from>
+        <to>/generic/viewMode.do</to>
+    </rule>
+    
+    <rule>
+        <condition type="method">GET</condition>
+        <from>^/pdf/generic/clear/?$</from>
+        <to>/generic/clear.do</to>
+    </rule>
+    
+    <rule>
+        <condition type="method">GET</condition>
+        <from>^/pdf/generic/url*$</from>
+        <to>/generic/pdfURL.do</to>
+    </rule>
+     <rule>
+        <condition type="method">GET</condition>
+        <from>^/pdf/generic/page*$</from>
+        <to>/generic/pdfPage.do</to>
+    </rule>
+    
+    <rule>
+        <condition type="method">POST</condition>
+        <from>^/pdf/generic/create*$</from>
+        <to>/generic/pdfCreate.do</to>
+    </rule>
+    <rule>
+        <condition type="method">POST</condition>
+        <from>^/pdf/generic/upload*$</from>
+        <to>/generic/pdfUpload.do</to>
+    </rule>
+    
+    
+
+<!-- Experimental ones below -->
+   
    <rule>
         <note>Rewrite GET /pdfid/{pdf id} as a request to /pdfById.do?pdfId={pdf id}</note>
         <condition type="method">GET</condition>
@@ -9,7 +58,7 @@
         <to>/ice/pdfById.do?pdfId=$1</to>
     </rule>
     
-       <rule>
+    <rule>
         <note></note>
         <condition type="method">GET</condition>
         <from>^/pdf/ice/upload/?$</from>

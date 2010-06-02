@@ -26,6 +26,8 @@ public class JpedalPdf2ImageUtil {
 		try {
 			decodePdf.openPdfFileFromInputStream(in, true);
 			for (int i = 1; i < decodePdf.getPageCount(); i++) {
+				logger.debug("Parsing image from PDF file ...."+i);
+				
 				BufferedImage buffImage = decodePdf.getPageAsImage(i);
 				result.add(buffImage);
 			}
