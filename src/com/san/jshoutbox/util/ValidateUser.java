@@ -2,6 +2,8 @@ package com.san.jshoutbox.util;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,8 @@ public class ValidateUser {
 	@Autowired
 	UserDAO userDAO;
 
+
+private static Log logger = LogFactory.getLog(ValidateUser.class);
 	public static final String USER_ADMIN = "admin";
 	public static final String USER_ADMIN_EMAIL = "adminemail"; 
 	public static final String USER_GDOC_CONVERSION = "admingdoc"; 
