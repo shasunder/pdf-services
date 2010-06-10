@@ -44,8 +44,9 @@ public class EbayUtil {
 	public FindItemsByKeywordsResponse toObject(String xml) {
 		Map<String, Class> aliases = new HashMap<String, Class>();
 		aliases.put("findItemsByKeywordsResponse", FindItemsByKeywordsResponse.class);
-		aliases.put("item", Item.class);
 		aliases.put("shipToLocations", String.class);
+		aliases.put("item", List.class);
+		
 		
 		FindItemsByKeywordsResponse objectMarshalled = (FindItemsByKeywordsResponse) XstreamUtil.fromXML(aliases, xml);
 		return objectMarshalled;
