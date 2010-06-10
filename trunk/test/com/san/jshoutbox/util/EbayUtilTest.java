@@ -16,26 +16,19 @@ public class EbayUtilTest {
 	@Test
 	public void testSearch() {
 
-		String result = getSampleResult();
+		FindItemsByKeywordsResponse result = getSampleResult();
 
 		logger.info(result);
 	}
 
 
-	@Test
-	public void testToObject() {
-		String xml = getSampleResult();
 
-		FindItemsByKeywordsResponse result = EbayUtil.getInstance().toObject(xml);
-		logger.info(result);
-	}
-
-	private String getSampleResult() {
+	private FindItemsByKeywordsResponse getSampleResult() {
 		EbayUrl ebayUrl = getSampleEbayUrl();
 		
 		ebayUrl.setEntriesPerPage(50).setGlobalId("EBAY-US");
 		logger.info(ebayUrl.toUrl());
-		String result = EbayUtil.getInstance().search(ebayUrl.toUrl());
+		FindItemsByKeywordsResponse result = EbayUtil.getInstance().search(ebayUrl.toUrl());
 		return result;
 	}
 
