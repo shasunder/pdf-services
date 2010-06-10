@@ -1,4 +1,4 @@
-package com.san.jshoutbox.model;
+package com.san.jshoutbox.model.ebay;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
