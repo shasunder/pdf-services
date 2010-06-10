@@ -8,8 +8,9 @@
 </head>
 
 <body id="gateway">
+<img src="/static/images/logo-beta.jpg"/>
 <div id="header" style="float:right">
-	<h1><img alt="J ShoutBox" src="http://www.iproclaim.com/shout.gif" width="240" height="220"/></h1>
+	<h1><img alt="J ShoutBox" src="static/images/shout.gif" width="240" height="220"/></h1>
 </div> 
 
 ## CONTENT SECTION HERE

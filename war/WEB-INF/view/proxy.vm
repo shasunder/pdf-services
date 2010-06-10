@@ -1,5 +1,5 @@
 <div align="right">
-<font color="green" ><b>Proxying URI</b></font>
+<font color="green" ><b>Proxying URI</b></font><img src="/static/images/logo-beta.jpg"/>
 <div style="float:right">
 <form action="/proxy" method="get">
  <input name="url" type="text" value="$!url" size="40" style=" font-style:bold;font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;"/>

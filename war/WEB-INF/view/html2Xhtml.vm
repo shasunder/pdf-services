@@ -8,7 +8,7 @@
 <head> 
 <body>	
 <div align="center">
-<font size="10"><font color="purple">Html</font>2<font color="orange">Xhtml</font> convertor</font>
+<font size="10"><font color="purple">Html</font>2<font color="orange">Xhtml</font> convertor <img src="/static/images/logo-beta.jpg"/></font>
 <a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>?</a>
 <div >
  <ul style="display:none;" align="left" id="usage">

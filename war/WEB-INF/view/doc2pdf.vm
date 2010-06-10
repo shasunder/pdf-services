@@ -8,7 +8,7 @@
 <head> 
 <body>	
 <div align="center">
-  <font size="10"><font color="purple">Word</font>2<font color="orange">Pdf</font> convertor</font>
+  <font size="10"><font color="purple">Word</font>2<font color="orange">Pdf</font> convertor</font> <img src="/static/images/logo-beta.jpg"/>
 	<br/>
 	<br/>
 <div>
@@ -27,8 +27,6 @@
 	$!pdfToText
 	</textarea>
 	#end
-	<img src="http://www.smeg-instruments.com/OLD/ENinstruments/work-in-progress_2.jpg"/>
-	
 </div>
 <br/>
 <a href="/"> home</a>
