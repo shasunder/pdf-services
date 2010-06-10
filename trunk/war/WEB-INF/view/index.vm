@@ -7,8 +7,9 @@ content="" />
 <title>Free java based online services</title>
 </head>
 <body>
+<img src="/static/images/logo-beta.jpg"/>
 <div style="float:left">
- <img src="http://weblogs.java.net/blog/felipegaucho/archive/ae_gwt_java.png"/>
+ <img src="/static/images/ae_gwt_java.png"/>
  </div>
 <div align="center">
 <h1>Welcome!</h1>

@@ -1,5 +1,6 @@
 <div align="center">
  <font size="10"><font color="green">Yuml</font>2<font color="purple">Java</font> convertor</font>
+ <img src="/static/images/logo-beta.jpg"/>
 <br/>
 <form method="post" action="/yuml"> 
    <div> 
