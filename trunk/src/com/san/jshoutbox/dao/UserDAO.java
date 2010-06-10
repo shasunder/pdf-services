@@ -67,7 +67,7 @@ public class UserDAO {
 	public User readByName(String name) {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
-			javax.jdo.Query q = pm.newQuery("select from " + User.class.getName() + " where name=="+name+" order by date desc");
+			javax.jdo.Query q = pm.newQuery("select from " + User.class.getName() + " where name=='"+name+"' order by date desc");
 			List<User> entries = (List<User>) q.execute();
 			logger.debug(entries);
 			return entries.get(0);
