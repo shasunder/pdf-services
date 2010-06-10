@@ -22,11 +22,11 @@ public class EbayUtil {
 
 	private static Log logger = LogFactory.getLog(EbayUtil.class);
 
-	public String search(String url) {
+	public FindItemsByKeywordsResponse search(String url) {
 		InputStream input = null;
 		try {
 			input = new URL(url).openStream();
-			return IOUtils.toString(input);
+			return toObject(IOUtils.toString(input));
 
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -41,13 +41,12 @@ public class EbayUtil {
 
 	}
 
-	public FindItemsByKeywordsResponse toObject(String xml) {
+	private FindItemsByKeywordsResponse toObject(String xml) {
 		Map<String, Class> aliases = new HashMap<String, Class>();
 		aliases.put("findItemsByKeywordsResponse", FindItemsByKeywordsResponse.class);
 		aliases.put("shipToLocations", String.class);
 		aliases.put("item", List.class);
-		
-		
+
 		FindItemsByKeywordsResponse objectMarshalled = (FindItemsByKeywordsResponse) XstreamUtil.fromXML(aliases, xml);
 		return objectMarshalled;
 	}
