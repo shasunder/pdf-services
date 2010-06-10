@@ -4,6 +4,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 
+import antlr.StringUtils;
+
 import com.san.jshoutbox.model.ebay.EbayUrl;
 import com.san.jshoutbox.model.ebay.FindItemsByKeywordsResponse;
 
@@ -44,6 +46,9 @@ public class EbayUtilTest {
 		String operation = "findItemsByKeywords";
 		String keywords = "iphone";
 
+		if(org.apache.commons.lang.StringUtils.isBlank(appName)){
+			throw new RuntimeException("app name not set");
+		}
 		EbayUrl ebayUrl = new EbayUrl(liveEndPoint, operation, appName, keywords);
 		return ebayUrl;
 	}
