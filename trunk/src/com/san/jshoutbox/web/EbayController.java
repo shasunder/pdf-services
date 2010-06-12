@@ -9,6 +9,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.velocity.anakia.NodeList;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,18 +50,15 @@ public class EbayController {
 		logger.info(url);
 		String result = EbayUtil.getInstance().search(url);
 		Document root = null;
-		NodeList itemNodes = null;
 		try {
 			SAXBuilder builder = new SAXBuilder("org.apache.xerces.parsers.SAXParser");
 			root = builder.build(new InputSource(new StringReader(result)));
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		ModelAndView mv = new ModelAndView(viewName);
 		mv.addObject("root", root);
-		mv.addObject("itemNodes", itemNodes);
-
+		mv.addObject("keyword", keyword);
 		return mv;
 	}
 
