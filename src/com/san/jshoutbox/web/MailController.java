@@ -19,18 +19,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.san.jshoutbox.util.ValidateUser;
+import com.san.jshoutbox.web.command.MailCommand;
 
 @Controller("mailController")
 public class MailController {
 	String viewName = "send-mail";
+	
 	@Autowired
 	ValidateUser validateUser;
 	private static Log logger = LogFactory.getLog(MailController.class);
 
 	@RequestMapping(value = { "/mail.html", "/mail" }, method = RequestMethod.GET)
 	protected ModelAndView show() throws Exception {
-		ModelAndView mv = new ModelAndView(viewName);
-		return mv;
+		return new ModelAndView(viewName);
 	}
 
 	@RequestMapping(value = { "/mail/from:{from},to:{to},subject:{subject},body:{body},password:{password}" }, method = RequestMethod.GET)

@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.admin;
 
 import java.util.Date;
 import java.util.List;

@@ -4,10 +4,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.san.jshoutbox.model.ebay.Item;
-import com.san.jshoutbox.model.ebay.PaymentMethod;
-import com.san.jshoutbox.model.ebay.SearchResult;
-import com.san.jshoutbox.model.ebay.ShippingInfo;
 import com.thoughtworks.xstream.XStream;
 
 public class XstreamUtil {
@@ -40,8 +36,5 @@ public class XstreamUtil {
 		xstream.alias("nodes", List.class);
 		xstream.alias("nodes", Set.class);
 		xstream.alias("nodes", Map.class);
-		xstream.addImplicitCollection(Item.class, "paymentMethod", PaymentMethod.class);
-		xstream.addImplicitCollection(SearchResult.class, "item", Item.class);
-
 	}
 }

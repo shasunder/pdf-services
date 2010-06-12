@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.command;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

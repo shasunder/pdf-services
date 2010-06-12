@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.convertors;
 
 import java.io.IOException;
 import java.io.StringWriter;
@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.san.jshoutbox.util.Constants;
+import com.san.jshoutbox.web.command.YumlCommand;
 
 @Controller("yumlController")
 public class YumlController {
