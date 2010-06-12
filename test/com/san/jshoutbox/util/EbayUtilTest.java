@@ -4,10 +4,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 
-import antlr.StringUtils;
-
 import com.san.jshoutbox.model.ebay.EbayUrl;
-import com.san.jshoutbox.model.ebay.FindItemsByKeywordsResponse;
 
 public class EbayUtilTest {
 
@@ -16,19 +13,19 @@ public class EbayUtilTest {
 	@Test
 	public void testSearch() {
 
-		FindItemsByKeywordsResponse result = getSampleResult();
+		String result = getSampleResult();
 
 		logger.info(result);
 	}
 
 
 
-	private FindItemsByKeywordsResponse getSampleResult() {
+	private String getSampleResult() {
 		EbayUrl ebayUrl = getSampleEbayUrl();
 		
 		ebayUrl.setEntriesPerPage(50).setGlobalId("EBAY-US");
 		logger.info(ebayUrl.toUrl());
-		FindItemsByKeywordsResponse result = EbayUtil.getInstance().search(ebayUrl.toUrl());
+		String result = EbayUtil.getInstance().search(ebayUrl.toUrl());
 		return result;
 	}
 
