@@ -1,17 +1,24 @@
 ##parse("common/beta.vm")
 <div>
  <form action="ebay" method="get">
-   <input type="text" name="keyword" value=""/>
+   <input type="text" name="keyword" value="$!keyword"/>
    <input type="submit" value="search"/>
  </form>
 </div>
  
 
 <br/>
+#set($elements = $root.getRootElement().getChildren())
 
-#set($items = $xpath.applyTo("findItemsByKeywordsResponse", $root))
-<ul>
-#foreach ($item in $items)
-   <li>$item title  $xpath.applyTo("title",$item) </li>
- #end
-</ul>
+<div>
+#foreach ($element in $elements)
+ #if($element.getName() eq "searchResult")
+   #set($searchResult = $element.getChildren())
+   #foreach ($item in $searchResult)
+   #set($viewItemURL=$item.getChild("viewItemURL",$item.getNamespace()).getText())
+       		   <div float="left	"> <img src="$item.getChild("galleryURL",$item.getNamespace()).getText()"/></div>
+          <div float="right"> <a href="$viewItemURL"> $item.getChild("title",$item.getNamespace()).getText() </a> </div>
+    #end  
+ #end 
+#end
+</div>
