@@ -1,0 +1,17 @@
+##parse("common/beta.vm")
+<div>
+ <form action="ebay" method="get">
+   <input type="text" name="keyword" value=""/>
+   <input type="submit" value="search"/>
+ </form>
+</div>
+ 
+
+<br/>
+
+#set($items = $xpath.applyTo("findItemsByKeywordsResponse", $root))
+<ul>
+#foreach ($item in $items)
+   <li>$item title  $xpath.applyTo("title",$item) </li>
+ #end
+</ul>
