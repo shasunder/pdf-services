@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.admin;
 
 import java.io.IOException;
 
@@ -19,6 +19,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.HtmlUtils;
+
 
 @Controller("velocityTemplateController")
 public class VelocityTemplateController implements ServletContextAware {

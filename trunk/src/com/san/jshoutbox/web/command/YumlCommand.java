@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.command;
 
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 

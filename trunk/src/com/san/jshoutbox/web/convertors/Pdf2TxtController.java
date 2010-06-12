@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.convertors;
 
 import java.util.HashMap;
 import java.util.Map;

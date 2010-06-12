@@ -1,4 +1,4 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.command;
 
 import javax.jdo.annotations.Persistent;
 

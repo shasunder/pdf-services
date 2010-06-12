@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.san.jshoutbox.dao.ShoutDAO;
 import com.san.jshoutbox.model.ShoutEntry;
 import com.san.jshoutbox.util.Constants;
+import com.san.jshoutbox.web.command.ShoutBoxCommand;
 import com.san.jshoutbox.web.view.CommonVelocityLayoutView;
 
 @Controller("shoutBoxController")
