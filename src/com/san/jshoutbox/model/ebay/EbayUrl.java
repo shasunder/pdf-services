@@ -2,24 +2,35 @@ package com.san.jshoutbox.model.ebay;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
+import com.san.jshoutbox.util.SimpleVelocityUtil;
+
 public class EbayUrl {
+	String fullUrl;
+
 	String endpoint;
 	String operationName;
-	String serviceVersion="1.0.0"; //default
+	String serviceVersion = "1.0.0"; // default
 	String securityAppName;
-	String globalId="EBAY-US";
+	String globalId = "EBAY-US";
 	String keywords;
-	Integer entriesPerPage=20;
+	Integer entriesPerPage = 20;
 
-	public EbayUrl(String endpoint, String operationName,  String securityAppName,String keywords) {
-		this.endpoint= endpoint;
+	public EbayUrl(String fullUrl) {
+		this.fullUrl = fullUrl;
+	}
+
+	public EbayUrl(String endpoint, String operationName, String securityAppName, String keywords) {
+		this.endpoint = endpoint;
 		this.operationName = operationName;
 		this.securityAppName = securityAppName;
 		this.keywords = keywords;
 	}
+
 	public String getEndpoint() {
 		return endpoint;
 	}
@@ -82,26 +93,25 @@ public class EbayUrl {
 		this.entriesPerPage = entriesPerPage;
 		return this;
 	}
-	
-	public String toUrl(){
-		StringBuilder sb=new StringBuilder();
+
+	public String toFullUrl(Map<String, Object> variables) {
+		return SimpleVelocityUtil.getInstance().evaluate(fullUrl, variables);
+	}
+	public String toUrl() {
+		StringBuilder sb = new StringBuilder();
 		try {
-		sb.append(endpoint)
-			.append("?OPERATION-NAME=").append(operationName)
-			.append("&SERVICE-VERSION=").append(serviceVersion)
-			.append("&SECURITY-APPNAME=").append(securityAppName)
-			.append("&GLOBAL-ID=").append(globalId)
-			.append("&keywords=").append(encode(keywords))
-			.append("&paginationInput.entriesPerPage=").append(entriesPerPage);
+			sb.append(endpoint).append("?OPERATION-NAME=").append(operationName).append("&SERVICE-VERSION=").append(serviceVersion).append("&SECURITY-APPNAME=").append(securityAppName).append(
+					"&GLOBAL-ID=").append(globalId).append("&keywords=").append(encode(keywords)).append("&paginationInput.entriesPerPage=").append(entriesPerPage);
 			return sb.toString();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
+
 	private String encode(String s) throws UnsupportedEncodingException {
-		return URLEncoder.encode(s,"UTF-8");
+		return URLEncoder.encode(s, "UTF-8");
 	}
-	
+
 	@Override
 	public String toString() {
 		return ReflectionToStringBuilder.toString(this);

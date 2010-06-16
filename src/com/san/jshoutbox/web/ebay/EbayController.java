@@ -1,15 +1,15 @@
-package com.san.jshoutbox.web;
+package com.san.jshoutbox.web.ebay;
 
 import java.io.StringReader;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.velocity.anakia.NodeList;
 import org.jdom.Document;
-import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.xml.sax.InputSource;
 
 import com.san.jshoutbox.model.ebay.EbayUrl;
+import com.san.jshoutbox.model.ebay.Site;
 import com.san.jshoutbox.util.EbayUtil;
 import com.san.jshoutbox.util.ValidateUser;
 
@@ -35,18 +36,30 @@ public class EbayController {
 	String securityAppName;
 	private static Log logger = LogFactory.getLog(EbayController.class);
 
-
 	@RequestMapping(value = { "/ebay" }, method = RequestMethod.GET)
 	protected ModelAndView show(@RequestParam(value = "keyword", required = false) String keyword, HttpServletRequest request) throws Exception {
 
 		init();
+		Object siteAttribute = request.getAttribute("site");
+		if (siteAttribute == null) {
+			logger.error("Site not found!!");
+			return new ModelAndView(viewName);
+		}
 
-		EbayUrl ebayUrl = ebayUtil.getDefaultEbayUrl();
+		Site site = (Site) siteAttribute;
+		logger.info(site);
 
-		ebayUrl.setSecurityAppName(securityAppName);
-		ebayUrl.setKeywords(StringUtils.defaultString(keyword, ""));
-
-		String url = ebayUrl.toUrl();
+		EbayUrl ebayUrl = new EbayUrl(site.getEbayUrl());
+		String keywords = StringUtils.defaultString(keyword, "");
+		if (keywords==null || !keywords.contains(site.getKeyword())) {
+			keywords = site.getKeyword();
+		}
+		
+		Map<String, Object> variables = new HashMap<String, Object>();
+		variables.put("keywords", keywords);
+		variables.put("appname", securityAppName);
+		
+		String url = ebayUrl.toFullUrl(variables);
 		logger.info(url);
 		String result = EbayUtil.getInstance().search(url);
 		Document root = null;

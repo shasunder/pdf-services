@@ -2,133 +2,137 @@ package com.san.jshoutbox.util;
 
 public interface Constants {
 
-	 String AMPERSAND = "&";
+	String AMPERSAND = "&";
 
-	 String BACK_SLASH = "\\";
+	String BACK_SLASH = "\\";
 
-	 String BLANK = "";
+	String BLANK = "";
 
-	 String CLOSE_BRACKET = "]";
+	String CLOSE_BRACKET = "]";
 
-	 String CLOSE_CURLY_BRACE = "}";
+	String CLOSE_CURLY_BRACE = "}";
 
-	 String CLOSE_PARENTHESIS = ")";
+	String CLOSE_PARENTHESIS = ")";
 
-	 String COLON = ":";
+	String COLON = ":";
 
-	 String COMMA = ",";
+	String COMMA = ",";
 
-	 String COMMA_AND_SPACE = ", ";
+	String COMMA_AND_SPACE = ", ";
 
-	 String DASH = "-";
+	String DASH = "-";
 
-	 String DOUBLE_APOSTROPHE = "''";
+	String DOUBLE_APOSTROPHE = "''";
 
-	 String DOUBLE_CLOSE_BRACKET = "]]";
+	String DOUBLE_CLOSE_BRACKET = "]]";
 
-	 String DOUBLE_OPEN_BRACKET = "[[";
+	String DOUBLE_OPEN_BRACKET = "[[";
 
-	 String DOUBLE_SLASH = "//";
+	String DOUBLE_SLASH = "//";
 
-	 String EQUAL = "=";
+	String EQUAL = "=";
 
-	 String GREATER_THAN = ">";
+	String GREATER_THAN = ">";
 
-	 String GREATER_THAN_OR_EQUAL = ">=";
+	String GREATER_THAN_OR_EQUAL = ">=";
 
-	 String FALSE = "false";
+	String FALSE = "false";
 
-	 String FORWARD_SLASH = "/";
+	String FORWARD_SLASH = "/";
 
-	 String FOUR_SPACES = "    ";
+	String FOUR_SPACES = "    ";
 
-	 String IS_NOT_NULL = "IS NOT NULL";
+	String IS_NOT_NULL = "IS NOT NULL";
 
-	 String IS_NULL = "IS NULL";
+	String IS_NULL = "IS NULL";
 
-	 String LESS_THAN = "<";
+	String LESS_THAN = "<";
 
-	 String LESS_THAN_OR_EQUAL = "<=";
+	String LESS_THAN_OR_EQUAL = "<=";
 
-	 String LIKE = "LIKE";
+	String LIKE = "LIKE";
 
-	 String MINUS = "-";
+	String MINUS = "-";
 
-	 String NBSP = "&nbsp;";
+	String NBSP = "&nbsp;";
 
-	 String NEW_LINE = "\n";
+	String NEW_LINE = "\n";
 
-	 String NOT_EQUAL = "!=";
+	String NOT_EQUAL = "!=";
 
-	 String NOT_LIKE = "NOT LIKE";
+	String NOT_LIKE = "NOT LIKE";
 
-	 String NULL = "null";
+	String NULL = "null";
 
-	 String OPEN_BRACKET = "[";
+	String OPEN_BRACKET = "[";
 
-	 String OPEN_CURLY_BRACE = "{";
+	String OPEN_CURLY_BRACE = "{";
 
-	 String OPEN_PARENTHESIS = "(";
+	String OPEN_PARENTHESIS = "(";
 
-	 String PERCENT = "%";
+	String PERCENT = "%";
 
-	 String PERIOD = ".";
+	String PERIOD = ".";
 
-	 String PIPE = "|";
+	String PIPE = "|";
 
-	 String PLUS = "+";
+	String PLUS = "+";
 
-	 String POUND = "#";
+	String POUND = "#";
 
-	 String QUESTION = "?";
+	String QUESTION = "?";
 
-	 String QUOTE = "\"";
+	String QUOTE = "\"";
 
-	 String RETURN = "\r";
+	String RETURN = "\r";
 
-	 String RETURN_NEW_LINE = "\r\n";
+	String RETURN_NEW_LINE = "\r\n";
 
-	 String SEMICOLON = ";";
+	String SEMICOLON = ";";
 
-	 String SLASH = FORWARD_SLASH;
+	String SLASH = FORWARD_SLASH;
 
-	 String SPACE = " ";
+	String SPACE = " ";
 
-	 String STAR = "*";
+	String STAR = "*";
 
-	 String TAB = "\t";
+	String TAB = "\t";
 
-	 String TILDE = "~";
+	String TILDE = "~";
 
-	 String TRUE = "true";
+	String TRUE = "true";
 
-	 String UNDERLINE = "_";
+	String UNDERLINE = "_";
 
-	 String UTF8 = "UTF-8";
+	String UTF8 = "UTF-8";
 
-	 String TEXT_XML = "text/xml";
+	String TEXT_XML = "text/xml";
 
-	 int SECOND = 1000;
+	int SECOND = 1000;
 
-	 String LUCENE_DIR = "lucene.dir";
+	String LUCENE_DIR = "lucene.dir";
 
-	 String LUCENE_STORE_TYPE = "lucene.store.type";
+	String LUCENE_STORE_TYPE = "lucene.store.type";
 
-	 String LUCENE_ANALYZER = "lucene.analyzer";
+	String LUCENE_ANALYZER = "lucene.analyzer";
 
-	 String MODIFIED = "modified";
+	String MODIFIED = "modified";
 
-	 String HTTP_WITH_SLASH = "http://";
+	String HTTP_WITH_SLASH = "http://";
 
-	 String HTTPS_WITH_SLASH = "https://";
+	String HTTPS_WITH_SLASH = "https://";
 
-	 String SPRING_CONFIG_LOCATIONS[] = { "applicationContext.xml" };
+	String SPRING_CONFIG_LOCATIONS[] = { "applicationContext.xml" };
 
-	 boolean SORTABLE = true;
+	boolean SORTABLE = true;
 
-	 int SORTABLE_FIELD_MAX_SIZE = 20;
+	int SORTABLE_FIELD_MAX_SIZE = 20;
 
-	 char[] LUCENE_SANITIZE_CHARS = { ':' };
+	char[] LUCENE_SANITIZE_CHARS = { ':' };
+
+	String VIEW_LAYOUT_LAYOUT_VM = "layout/layout.vm";
+
+	int MAX_QUERY_RESULT = 1000;
 	
-	 String VIEW_LAYOUT_LAYOUT_VM = "layout/layout.vm";
+	String EBAY_URL_DEFAULT = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${appname}&GLOBAL-ID=EBAY-US&keywords=${keywords}&paginationInput.entriesPerPage=3";
 }
