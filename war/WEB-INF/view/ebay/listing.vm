@@ -12,7 +12,7 @@
 
 <div>
 #foreach ($element in $elements)
- #if($element.getName() eq "searchResult")
+ #if($element.getName() eq "searchResult") 
    #set($searchResult = $element.getChildren())
    #foreach ($item in $searchResult)
    #set($viewItemURL=$item.getChild("viewItemURL",$item.getNamespace()).getText())
