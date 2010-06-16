@@ -8,16 +8,24 @@
  
 
 <br/>
-#set($elements = $root.getRootElement().getChildren())
+#set($rootEl = $root.getRootElement())
+#set($elements = $rootEl.getChildren())
 
 <div>
+#if(!$rootEl.getChild("searchResult", $rootEl.getNamespace()))
+ No result found for $keyword
+#end
+
 #foreach ($element in $elements)
  #if($element.getName() eq "searchResult") 
    #set($searchResult = $element.getChildren())
    #foreach ($item in $searchResult)
-   #set($viewItemURL=$item.getChild("viewItemURL",$item.getNamespace()).getText())
+      #set($viewItemURL=$item.getChild("viewItemURL",$item.getNamespace()).getText())
+      #set($sellingStatus=$item.getChild("sellingStatus",$item.getNamespace()))
+      #set($currentPrice=$sellingStatus.getChild("currentPrice",$sellingStatus.getNamespace()))
        		   <div float="left	"> <img src="$item.getChild("galleryURL",$item.getNamespace()).getText()"/></div>
           <div float="right"> <a href="$viewItemURL"> $item.getChild("title",$item.getNamespace()).getText() </a> </div>
+           $currentPrice.getText() $currentPrice.getAttribute("currencyId").getValue()
     #end  
  #end 
 #end
