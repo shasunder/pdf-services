@@ -1,6 +1,7 @@
 package com.san.jshoutbox.web.ebay;
 
 import java.io.StringReader;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,13 +51,13 @@ public class EbayController {
 		logger.info(site);
 
 		EbayUrl ebayUrl = new EbayUrl(site.getEbayUrl());
-		String keywords = StringUtils.defaultString(keyword, "");
-		if (keywords==null || !keywords.contains(site.getKeyword())) {
-			keywords = site.getKeyword();
+		String keywords = StringUtils.defaultString(keyword);
+		if (keywords==null || !keywords.contains(StringUtils.defaultString(site.getKeyword()))) {
+			keywords = site.getKeyword()+" " + keywords;
 		}
 		
 		Map<String, Object> variables = new HashMap<String, Object>();
-		variables.put("keywords", keywords);
+		variables.put("keywords", URLEncoder.encode(keywords,"UTF-8"));
 		variables.put("appname", securityAppName);
 		
 		String url = ebayUrl.toFullUrl(variables);
