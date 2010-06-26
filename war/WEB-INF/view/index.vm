@@ -7,15 +7,13 @@ content="" />
 <title>Free java based online services</title>
 </head>
 <body>
-<img src="/static/images/logo-beta.jpg"/>
 <div style="float:left">
- <img src="/static/images/ae_gwt_java.png"/>
+ <img src="/static/images/ae_gwt_java.png" width="600"/>
  </div>
-<div align="center">
-<h1>Welcome!</h1>
+<div  >
+<h1>Welcome to the world of services! #parse("common/beta.vm")</h1>
 </div>
 
-<div style="padding-left:20em">
  The following RESTful(Spring 3.0) services are powered by Google App Engine :
  
 <br/>
@@ -30,6 +28,7 @@ content="" />
    <li><a href="/doc2pdf"> Doc 2 Pdf online</a></li>
     <li><a href="/quote/random"> Quotes </a>(Add it to <a href="http://www.google.com/ig/adde?moduleurl=hosting.gmodules.com/ig/gadgets/file/116227824342427869913/random-quotes.xml&source=imag">igoogle</a>)</li>
     <li><a href="/static/applet/console.html"> DOS like console using applet</a>(Add it to <a href="http://www.google.com/ig/adde?hl=en&moduleurl=http://hosting.gmodules.com/ig/gadgets/file/116227824342427869913/web-console.xml&source=imag">igoogle</a>)</li>
+     <li><a href="/file/view"> File uploader</a></li>
  </ul>
  </font>
  <br/>
