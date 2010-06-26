@@ -1,0 +1,25 @@
+<div align="center">
+<h1>
+<font color="green">File</font><font color="orange">Uploader</font>#parse("common/beta.vm")
+</h1>
+<br/>
+<font color="green"><b>$!message </b> </font>
+
+<form method="post" action="/file/upload"  enctype="multipart/form-data"> 
+	   <table>
+	    <tr><th>Go on... Upload a file! (Max limit 1 MB)</th>
+	    <td>&nbsp;</th>
+	    </tr>
+				     <tr><td>Caption</td> <td> <input type="text" name="caption" value=""/></td> </tr>
+     <tr><td>Category</td> <td> <input type="text" name="category" value="image"/></td> </tr>
+		     <tr><td>Upload file</td> <td> <input name="file" type="file" value=""/></td> </tr>
+  	   <tr>  <td>   &nbsp; </td> 	   <td>
+   			<input type="submit" name="upload" value="Upload" ></input> 
+   			<a href="/">Cancel</a>
+       </td>
+       </tr>
+       </table>
+</form>
+
+
+</div>
