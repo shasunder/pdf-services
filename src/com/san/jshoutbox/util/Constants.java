@@ -135,4 +135,6 @@ public interface Constants {
 	int MAX_QUERY_RESULT = 1000;
 	
 	String EBAY_URL_DEFAULT = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=${appname}&GLOBAL-ID=EBAY-US&keywords=${keywords}&paginationInput.entriesPerPage=30";
+	
+	String LINE="------------------------------------";
 }
