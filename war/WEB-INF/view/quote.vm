@@ -14,4 +14,4 @@ $!quote.quote<br/>
 </ul>(by $!quote.usersRated users)<br/>
 </body>
 </html>
- 
+  #parse("common/ad-quote.vm")
