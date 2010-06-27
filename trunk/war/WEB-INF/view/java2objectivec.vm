@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+<head> 
+	<meta content="text/html; charset=utf-8" http-equiv="content-type"> 
+<title>Html2XhtmlOnline - XHTML validation and conversion</title> 
+	<meta content="java2ObjectiveCOnline enables you to easily and quickly convert java to ObjectiveC without downloading or installing any new software." name="description"> 
+	<meta content="java 2 ObjectiveC conversion iphone ipad checker convertor errors warnings tidy online java2objc objective c convertor online free open source" name="keywords"> 
+<head> 
+<body>
+<div align="center">
+ <font size="10"><font color="green">Java</font>2<font color="purple">ObjectiveC</font> convertor</font>
+ #parse("common/beta.vm")
+<br/>
+<form method="post" action="/java2objectivec"> 
+     <b>Input Java :</b>  <input type="button" value="sample"  onclick="sample()"/>
+     <br/>
+			    <textarea id="java" name="java" cols="80" rows="10" >$!form.java</textArea> <br/>
+		     <br/>
+   		<input type="submit" value="Convert"/>
+	</form>
+   <br/>
+     <b>Objective C :</b>
+     <br/>
+   		<textarea id="result" name="result" cols="80" rows="10" onfocus="this.rows=20" onblur="this.rows=10">$!form.result</textArea>
+		<br/>
+		
+		<script language="javascript">
+		 		 		#if($!form.result)
+		 		 document.getElementById("result").rows=20;
+  		#end 
+  		
+		 		 function sample(){
+		 		  var s="public class Hello{\npublic static void main(String args[]){ \n System.out.println(\"Hello duniya!\"); \n} \n}";
+		     document.getElementById("java").value=s;
+		  }
+		 </script>
+		  
+ 
+	
+	
+	<br/>
+	<div>
+   <b>Note: </b>
+   <br/>
+    1. Generates objective c interface and impl classes from java. Note there is a known bug for empty method and it breaks.
+   <br/>
+    2. The convertor uses <a href="http://code.google.com/p/java2objc/">java2objc</a> open source library by Inder. Thanks for all his work!
+    <br/>
+    3. The app is still in basic stage and can be improved based on your <a href="/shout">feedback</a>.
+   </div>
+   
+</form>
+<br/>
+<br/>
+<a href="/"> home</a>
+
+</div>
+<br/>
+#parse("common/ad.vm")
+</body>
+</html>

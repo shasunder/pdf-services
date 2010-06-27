@@ -1,6 +1,6 @@
 <div align="center">
  <font size="10"><font color="green">Yuml</font>2<font color="purple">Java</font> convertor</font>
- <img src="/static/images/logo-beta.jpg"/>
+#parse("common/beta.vm")
 <br/>
 <form method="post" action="/yuml"> 
    <div> 
@@ -11,7 +11,7 @@
    </div>
 		<br/>
 	<div>
-   		<input type="submit" value="Convert" name="shout"/>
+   		<input type="submit" value="Convert"/>
 	</div>
    <br/>
      <b>Java :</b>
