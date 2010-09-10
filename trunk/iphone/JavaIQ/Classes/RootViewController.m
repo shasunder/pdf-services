@@ -10,7 +10,6 @@
 NSArray *groups;
 NSArray *groupDetails;
 
-#pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
@@ -22,19 +21,15 @@ NSArray *groupDetails;
 	
 }
 
-
-#pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Only one section.
     return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Only one section, so return the number of items in the list.
-    return 10;
+    return [groups count];
 }
 
 
@@ -61,7 +56,6 @@ NSArray *groupDetails;
 }
 
 
-#pragma mark -
 #pragma mark Table view selection
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,14 +64,12 @@ NSArray *groupDetails;
      When a row is selected, create the detail view controller and set its detail item to the item associated with the selected row.
      */
     CategoryViewController *categoryViewController = [[CategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    
+    categoryViewController.group=[groups objectAtIndex:indexPath.row];
     // Push the category view controller.
     [[self navigationController] pushViewController:categoryViewController animated:YES];
     [categoryViewController release];
 }
 
-
-#pragma mark -
 #pragma mark Memory management
 
 - (void)dealloc {

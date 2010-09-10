@@ -8,6 +8,7 @@
 @implementation CategoryViewController
 
 @synthesize dataController;
+@synthesize group;
 
 
 #pragma mark -
@@ -16,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Create the data controller.
-	DataController *controller = [[DataController alloc] init];
+	DataController *controller = [[DataController alloc] init:self.group];
 	self.dataController = controller;
 	[controller release];
 	
@@ -40,23 +41,12 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // There are 2 sections, for Category title with description and categories.
-    return 2;
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    NSInteger rows = 0;
-    switch (section) {
-        case 0: rows=1;
-        case 1:
-            rows = [dataController countOfCategory];
-            break;
-        default:
-            break;
-    }
-    return rows;
+	return [dataController countOfCategory];
 }
 
 
