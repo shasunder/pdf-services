@@ -9,7 +9,6 @@
 }
 
 @property (nonatomic, retain) DataController *dataController;
-
 @property (nonatomic, retain) NSString *group;
 
 @end
