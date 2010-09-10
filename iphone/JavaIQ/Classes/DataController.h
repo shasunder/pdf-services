@@ -1,11 +1,11 @@
 
-@class Play;
+@class Record;
 
 @interface DataController : NSObject {
-    NSMutableArray *list;
+    NSMutableDictionary *questionBank;
 }
+@property (nonatomic, retain) NSMutableDictionary *questionBank;
 
-- (unsigned)countOfList;
-- (Play *)objectInListAtIndex:(unsigned)theIndex;
-
+- (unsigned)countOfCategory;
+-(NSString *) getQuestions; 
 @end

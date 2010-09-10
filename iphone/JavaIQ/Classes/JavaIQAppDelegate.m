@@ -22,13 +22,6 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    // Create the data controller.
-    DataController *controller = [[DataController alloc] init];
-    self.dataController = controller;
-    [controller release];
-    
-	rootViewController.dataController = dataController;
-    
     /*
 	 The navigation and root view controllers are created in the main nib file.
 	 Configure the window with the navigation controller's view and then show it.

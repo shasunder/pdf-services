@@ -1,10 +1,8 @@
 
 @class DataController;
 
-@interface RootViewController : UITableViewController {
-    DataController *dataController;
-}
+@interface RootViewController : UITableViewController {	
 
-@property (nonatomic, retain) DataController *dataController;
+}
 
 @end
