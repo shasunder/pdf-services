@@ -19,7 +19,6 @@
     // Update the view with current data before it is disrecorded.
     [super viewWillAppear:animated];
     
-    // Scroll the table view to the top before it appears
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
     self.title = record.question;
