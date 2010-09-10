@@ -1,90 +1,126 @@
 
 #import "DataController.h"
-#import "Play.h"
-
+#import "Record.h"
+#import "TouchXML.h"
 
 @interface DataController ()
-@property (nonatomic, copy, readwrite) NSMutableArray *list;
+
 - (void)createDemoData;
 @end
 
 
 @implementation DataController
 
-@synthesize list;
+@synthesize questionBank;
 
+NSString *QUESTIONS_URL=@"http://jshoutbox.appspot.com/file/102001";
 
 - (id)init {
     if (self = [super init]) {
-        [self createDemoData];
+        [self loadQuestions];
     }
     return self;
 }
 
-// Custom set accessor to ensure the new list is mutable
-- (void)setList:(NSMutableArray *)newList {
-    if (list != newList) {
-        [list release];
-        list = [newList mutableCopy];
-    }
-}
 
 // Accessor methods for list
-- (unsigned)countOfList {
-    return [list count];
+- (unsigned)countOfCategory {
+    return [questionBank count];
 }
 
-- (Play *)objectInListAtIndex:(unsigned)theIndex {
-    return [list objectAtIndex:theIndex];
+- (NSArray*) getCategories{
+	NSMutableArray *categories = [[NSMutableArray alloc] init];
+	[questionBank keyEnumerator];
+	for(NSValue *key in [self.questionBank allKeys])
+	{
+		[categories addObject:key];		
+	}
+	return categories;
 }
 
 
 - (void)dealloc {
-    [list release];
     [super dealloc];
 }
 
+-(void) loadQuestions{
+	NSError *error;
+	NSURLResponse *response;
+	NSData *dataReply;
+	NSString *stringReply;
 
-- (void)createDemoData {
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: QUESTIONS_URL]];
+	[request setHTTPMethod: @"GET"];
+	dataReply = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+	stringReply = [[NSString alloc] initWithData:dataReply encoding:NSUTF8StringEncoding];
+	
+	NSLog([@"Parsing questions from XML found at url :" stringByAppendingString:QUESTIONS_URL]);
+	[self parseQuestions:QUESTIONS_URL];
+}
+
+
+//Parse questionBank xml and populate list array
+-(void) parseQuestions:(NSString *)questionBankUrl{
+	
+	NSURL *url = [NSURL URLWithString: questionBankUrl];
+	
+    CXMLDocument *xmlDocument= [[[CXMLDocument alloc] initWithContentsOfURL:url options:CXMLDocumentTidyXML error:nil] autorelease];
     
-    /*
-     Create an array containing some demonstration data.
-     Each data item is a Play that contains information about a play -- its list of characters, its genre, and its year of publication.  Typically the data would be comprised of instances of custom classes rather than dictionaries, but using dictionaries means fewer distractions in the example.
-     */
-    
-    NSMutableArray *playList = [[NSMutableArray alloc] init];
-    Play *play;
-    NSArray *characters;
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    
-	play = [[Play alloc] init];
-	play.title = @"Julius Caesar";
-	play.genre = @"Tragegy";
-	[dateComponents setYear:1599];
-	play.date = [calendar dateFromComponents:dateComponents];
-	characters = [[NSArray alloc] initWithObjects:@"Antony", @"Artemidorus", @"Brutus", @"Caesar", @"Calpurnia", @"Casca", @"Cassius", @"Cicero", @"Cinna", @"Cinna the Poet", @"Citizens", @"Claudius", @"Clitus", @"Dardanius", @"Decius Brutus", @"First Citizen", @"First Commoner", @"First Soldier", @"Flavius", @"Fourth Citizen", @"Lepidus", @"Ligarius", @"Lucilius", @"Lucius", @"Marullus", @"Messala", @"Messenger", @"Metellus Cimber", @"Octavius", @"Pindarus", @"Poet", @"Popilius", @"Portia", @"Publius", @"Second Citizen", @"Second Commoner", @"Second Soldier", @"Servant", @"Soothsayer", @"Strato", @"Third Citizen", @"Third Soldier", @"Tintinius", @"Trebonius", @"Varro", @"Volumnius", @"Young Cato", nil];
-    play.characters = characters;
-	[characters release];
-	[playList addObject:play];
-    [play release];
-    
-	play = [[Play alloc] init];
-	play.title = @"King Lear";
-	play.genre = @"Tragegy";
-	[dateComponents setYear:1605];
-	play.date = [calendar dateFromComponents:dateComponents];
-    characters = [[NSArray alloc] initWithObjects:@"Captain", @"Cordelia", @"Curan", @"Doctor", @"Duke of Albany", @"Duke of Burgundy", @"Duke of Cornwall", @"Earl of Gloucester", @"Earl of Kent", @"Edgar", @"Edmund", @"Fool", @"Gentleman", @"Goneril", @"Herald", @"King of France", @"Knight", @"Lear", @"Messenger", @"Old Man", @"Oswald", @"Regan", @"Servant 1", @"Servant 2", @"Servant 3", nil];
-    play.characters = characters;
-	[characters release];
-	[playList addObject:play];
-    [play release];
-    
-	    
-    self.list = playList;
-    [playList release];
-    [dateComponents release];
-    [calendar release];
+	//get all the category nodes in the question bank xml :
+	//eg: <questionbank><category name="Basics"><question>q1</><answer>a1</> 
+	NSArray *nodes = [xmlDocument nodesForXPath:@"//category" error:nil];
+	
+	//temp variables to store key value pair.
+	NSString *strName,*strValue,*strCategory;
+	
+	questionBank =[[NSMutableDictionary alloc] init]; //temp map for storing node attribute/element name/values
+	
+    for (CXMLElement *node in nodes) {  // iterate through the category nodes
+		
+		NSLog(@"Processing attributes ");
+		
+        // process to set attributes of category node ----------------------------------------
+		NSArray *arAttr=[node attributes]; //fetch all attributes from the current node
+        NSUInteger i, countAttr = [arAttr count];
+		
+        for (i = 0; i < countAttr; i++) {  //fetch category name only eg: Basic,Collections,etc
+			strName=[[arAttr objectAtIndex:i] name];
+			strCategory=[[arAttr objectAtIndex:i] stringValue];
+			
+            if(([strName  isEqualToString:@"name"])){  
+                [questionBank setValue:strName forKey:strCategory]; 
+				break;
+            }
+        }
+		
+        // --------------------------------------------------------------------------------
+		
+		NSLog([@"Processing elements to fetch question and answers for category :" stringByAppendingString:strCategory]);
+		
+		// process to read question and answers child nodes of category parent node ----------------------------------------
+        NSUInteger j, nodeCount = [node childCount];
+        CXMLNode *questionNode,*answerNode;
+        NSMutableDictionary *qaMap=[[NSMutableDictionary alloc] init]; //q's and a's in a map
+		
+        for (j=0; j<nodeCount; j=j+4) {
+            questionNode=[node childAtIndex:j+1];
+			answerNode=[node childAtIndex:j+3];
+           
+			strName = [questionNode stringValue];
+            strValue=[answerNode stringValue];
+            if(strName && answerNode ){
+                [qaMap setValue:strValue forKey: strName];
+            }
+           
+            // ---------------------------------------------------------------------
+        }
+		[questionBank setValue:qaMap forKey:strCategory];
+		[qaMap release]; qaMap=nil;
+		
+	}
+	
+	NSLog(@"%@",[questionBank description]);	
+
 }
 
 @end

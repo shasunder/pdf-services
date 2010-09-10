@@ -1,24 +1,38 @@
 
 #import "CategoryViewController.h"
-#import "Play.h"
+#import "Record.h"
+#import "QuestionViewController.h"
+#import "DataController.h"
 
 
 @implementation CategoryViewController
 
-@synthesize play;
+@synthesize dataController;
 
 
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	// Create the data controller.
+	DataController *controller = [[DataController alloc] init];
+	self.dataController = controller;
+	[controller release];
+	
+	self.dataController = dataController;	
+	
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
-    // Update the view with current data before it is displayed.
+    // Update the view with current data before it is disrecorded.
     [super viewWillAppear:animated];
     
     // Scroll the table view to the top before it appears
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
-    self.title = play.title;
+    self.title = @"Java questions";
 }
 
 
@@ -26,26 +40,18 @@
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // There are three sections, for date, genre, and characters, in that order.
-    return 4;
+    // There are 2 sections, for Category title with description and categories.
+    return 2;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-	/*
-	 The number of rows varies by section.
-	 */
     NSInteger rows = 0;
     switch (section) {
-        case 0:
+        case 0: rows=1;
         case 1:
-            // For genre and date there is just one row.
-            rows = 1;
-            break;
-        case 2:
-            // For the characters section, there are as many rows as there are characters.
-            rows = [play.characters count];
+            rows = [dataController countOfCategory];
             break;
         default:
             break;
@@ -64,32 +70,8 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    // Cache a date formatter to create a string representation of the date object.
-    static NSDateFormatter *dateFormatter = nil;
-    if (dateFormatter == nil) {
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy"];
-    }
-    
-    // Set the text in the cell for the section/row.
-    
-    NSString *cellText = nil;
-    
-    switch (indexPath.section) {
-        case 0:
-            cellText = [dateFormatter stringFromDate:play.date];
-            break;
-        case 1:
-            cellText = play.genre;
-            break;
-        case 2:
-            cellText = [play.characters objectAtIndex:indexPath.row];
-            break;
-        default:
-            break;
-    }
-    
-    cell.textLabel.text = cellText;
+    NSArray *categories=[dataController getCategories];
+    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -102,21 +84,33 @@
  */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    NSString *title = nil;
+    NSString *question = nil;
     switch (section) {
         case 0:
-            title = NSLocalizedString(@"Date", @"Date section title");
-            break;
-        case 1:
-            title = NSLocalizedString(@"Genre", @"Genre section title");
-            break;
-        case 2:
-            title = NSLocalizedString(@"Main Characters", @"Main Characters section title");
+            question = NSLocalizedString(@"Basics", @"Basics of core java");//TODO: use data from xml
             break;
         default:
             break;
     }
-    return title;
+    return question;
+}
+
+
+#pragma mark -
+#pragma mark Table view selection
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    /*
+     When a row is selected, create the question view controller and set its detail item to the item associated with the selected row.
+     */
+    QuestionViewController *questionViewController = [[QuestionViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    
+    questionViewController.record = [dataController objectInListAtIndex:indexPath.row];
+    
+    // Push the question view controller.
+    [[self navigationController] pushViewController:questionViewController animated:YES];
+    [questionViewController release];
 }
 
 

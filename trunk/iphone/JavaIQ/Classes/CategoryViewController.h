@@ -1,10 +1,13 @@
 
-@class Play;
+@class Record;
+@class DataController;
 
 @interface CategoryViewController : UITableViewController {
-	Play *play;
+	DataController *dataController;
+	
+	
 }
 
-@property (nonatomic, retain) Play *play;
+@property (nonatomic, retain) DataController *dataController;
 
 @end
