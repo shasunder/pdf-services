@@ -11,9 +11,8 @@
 
 @implementation QuestionViewController
 
-
-@synthesize record;
 @synthesize dataController;
+@synthesize category;
 
 - (void)viewWillAppear:(BOOL)animated {
     // Update the view with current data before it is disrecorded.
@@ -21,7 +20,7 @@
     
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
-    self.title = record.question;
+    self.title = self.category;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -32,24 +31,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-	/*
-	 The number of rows varies by section.
-	 */
-    NSInteger rows = 0;
-    switch (section) {
-        case 0:
-        case 1:
-            // For genre and date there is just one row.
-            rows = 1;
-            break;
-        case 2:
-            // For the characters section, there are as many rows as there are characters.
-            rows = [record.answer length];
-            break;
-        default:
-            break;
-    }
-    return rows;
+	return 10; //TODO:
 }
 
 
@@ -65,48 +47,18 @@
     
     // Set the text in the cell for the section/row.
     
-    NSString *cellText = nil;
+    NSString *cellText = @"TODO : load question answers";
     
-    switch (indexPath.section) {
-        case 0:
-            cellText = record.category;
-            break;
-        case 1:
-            cellText = record.question;
-            break;
-        case 2:
-            cellText = record.answer;
-            break;
-        default:
-            break;
-    }
-    
+        
     cell.textLabel.text = cellText;
     return cell;
 }
 
-
-#pragma mark -
 #pragma mark Section header titles
 
-/*
- HIG note: In this case, since the content of each section is obvious, there's probably no need to provide a title, but the code is useful for illustration.
- */
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    NSString *question = nil;
-    switch (section) {
-        case 0:
-            question = NSLocalizedString(@"Question", @"Question");
-            break;
-        case 1:
-            question = NSLocalizedString(@"Answer", @"Answer for question");
-            break;
-       
-        default:
-            break;
-    }
-    return question;
+	return category;
 }
 
 

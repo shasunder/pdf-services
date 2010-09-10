@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Record;
 @class DataController;
 
 @interface QuestionViewController :UITableViewController {
-	Record *record;
 	DataController *dataController;
+	NSString *category;
 }
 
 @property (nonatomic, retain) DataController *dataController;
 
-@property (nonatomic, retain) Record *record;
+@property (nonatomic, retain) NSString *category;
+
 
 @end

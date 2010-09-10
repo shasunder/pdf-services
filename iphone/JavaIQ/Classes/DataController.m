@@ -32,7 +32,7 @@ NSString *QUESTIONS_URL=@"http://jshoutbox.appspot.com/file/102001"; //core java
 
 - (NSArray*) getCategories{
 	NSMutableArray *categories = [[NSMutableArray alloc] init];
-	[questionBank keyEnumerator];
+
 	for(NSValue *key in [self.questionBank allKeys]){
 		[categories addObject:key];		
 	}
@@ -40,6 +40,9 @@ NSString *QUESTIONS_URL=@"http://jshoutbox.appspot.com/file/102001"; //core java
 	return categories;
 }
 
+- (NSMutableDictionary *)getQuestionAnswerForCategory:(NSString *)category{
+	return [questionBank objectForKey:category];
+}
 
 -(void) loadQuestions{
 	NSError *error;

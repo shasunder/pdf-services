@@ -10,4 +10,6 @@
 
 - (unsigned)countOfCategory;
 -(NSString *) getQuestions; 
+-(NSMutableDictionary *)getQuestionAnswerForCategory:(NSString *)category;
+
 @end
