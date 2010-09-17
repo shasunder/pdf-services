@@ -1,14 +1,60 @@
-SimpleDrillDown
+Java IQ
+=======
+about
 -----
+ Java interview questions (java IQ) is a simple application to help basic as well as advanced java developers during
+ interview preparation. It may very well be used as a guide to revising basic concepts in Java/J2ee.
+ 
+ Features
+ The following java and related technologies are covered:
+   1. Core Java
+   2. J2ee - EJB, JMS, 
+   3. Design patterns
+   4. Architecture
+   5. UML
+   TODO:
+
+ Offline capabilities. Can view question/answers when you are travelling as it stores files locally except for updates ofcourse.
+
+The updated question/answer bank is available periodically and can be downloaded from the settings view.
+
+ 
+
+-------
 Flow of control: 
 main.m --> creates UIApplication and UI based on info.plist
            info.plist has MainWindow.xib file to be loaded on startup.
 		   Now the MainWindow.xib has the details about how objects are interconnected.
-SimpleDrillDownAppDelegate.m --> is the delegate for UIApplication(files owner).
+JavaIQAppDelegate.m --> is the delegate for UIApplication(files owner).
 		   This loads the RootViewController.m 
 RootViewController.m --> loads the top level table data and events are handled here(via DataController).
-
+CategoryViewController --> loads categories for the group eg: categories for core java like basic, threads,etc
+QuestionsViewController --> Actually displays the list of questions.
 		   
+
+------
+TODO:
+------
+1. Reset should show initial question bank from default database(clear updated files)
+2. Ratings based questions display (1,2,3)
+3. Create local default questions database
+4. Test on real iphone, ipod touch ios 3,4
+5. Create a product website.
+6. Get developer account created.
+7. Build questions database
+8. Improve xml to have ratings and question number (would be useful later for user ratings).
+
+Future
+------
+1. Integrate Advertisement with lite version.
+1. Allow users to turn off adverts for premium membership?
+2. Enhance web service to allow edit of text files on google app engine.
+3. Put default xml in application just as a faile safe feature.
+4. Make it ipad compatible
+5. Check for new version availability and let users know.
+
+
+
 ================================================================================
 DESCRIPTION:
 
