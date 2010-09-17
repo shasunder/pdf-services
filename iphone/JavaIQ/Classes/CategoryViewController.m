@@ -17,11 +17,6 @@ NSArray *categories;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	DataController *controller = [[DataController alloc] init:self.group];
-	self.dataController = controller;
-	[controller release];
-	
-	self.dataController = dataController;	
 	
 }
 
@@ -33,7 +28,7 @@ NSArray *categories;
     // Scroll the table view to the top before it appears
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
-    self.title = self.group;
+   
 }
 
 
@@ -65,14 +60,23 @@ NSArray *categories;
 }
 
 
+#pragma mark Section header titles
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+	return group;
+}
+
 #pragma mark Table view selection
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //When a row is selected, create the question view controller and set its detail item to the item associated with the selected row.
-    QuestionViewController *questionViewController = [[QuestionViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    QuestionViewController *questionViewController = [[QuestionViewController alloc] init];
     
+	questionViewController.dataController= self.dataController;
     questionViewController.category = [[dataController getCategories] objectAtIndex:indexPath.row];
+	
     
     // Push the question view controller.
     [[self navigationController] pushViewController:questionViewController animated:YES];

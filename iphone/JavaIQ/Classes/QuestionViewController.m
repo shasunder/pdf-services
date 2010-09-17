@@ -13,54 +13,28 @@
 
 @synthesize dataController;
 @synthesize category;
+@synthesize records;
 
-- (void)viewWillAppear:(BOOL)animated {
-    // Update the view with current data before it is disrecorded.
-    [super viewWillAppear:animated];
-    
-    [self.tableView reloadData];
-    [self.tableView setContentOffset:CGPointZero animated:NO];
-    self.title = self.category;
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	CGRect frame=CGRectMake(5,20,315,400);
+	UIWebView *webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
+	webView.backgroundColor=[UIColor whiteColor];
+	records= [dataController getQuestionsArrayForCategory:category];
+	
+	NSString *content=[[NSString alloc] init];
+	
+	for(Record *record in records){
+		content= [NSString stringWithFormat:@"%@<strong>%@</strong><br/>%@</br></br>",content, record.question,record.answer];
+	}
+	
+	[webView loadHTMLString:content baseURL:[NSURL URLWithString:@"http://dummy"]];
+
+	[self.view addSubview:webView];
+	self.navigationItem.title =category;
+	
+	
 }
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // There are three sections, for date, genre, and characters, in that order.
-    return 4;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-	return 10; //TODO:
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	static NSString *CellIdentifier = @"CellIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    }
-    
-    // Set the text in the cell for the section/row.
-    
-    NSString *cellText = @"TODO : load question answers";
-    
-        
-    cell.textLabel.text = cellText;
-    return cell;
-}
-
-#pragma mark Section header titles
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-	return category;
-}
-
 
 
 @end

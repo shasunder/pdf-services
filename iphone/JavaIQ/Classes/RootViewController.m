@@ -2,24 +2,23 @@
 #import "RootViewController.h"
 #import "DataController.h"
 #import "CategoryViewController.h"
-#import "Record.h"
+#import "SettingsViewController.h"
+#import "JavaIQAppDelegate.h"
 
 
 @implementation RootViewController
-
-NSArray *groups;
-NSArray *groupDetails;
+@synthesize dataController;
 
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.title = NSLocalizedString(@"Java IQ", @"Java interview questions");
-	groups = [[NSArray alloc] initWithObjects: @"Core Java", @"J2ee", @"Frameworks",@"Design Patterns",@"Architectures", @"Servers", @"Database",@"Xml",@"Tools",@"Miscellaneous",nil];
-	groupDetails = [[NSArray alloc] initWithObjects: @"Basics, Classes/objects, Threads, Collections", @"Servlets, Jdbc, Jsp, Ejb,Jms, Jndi", @"Spring, Hibernate, Struts, Velocity, Jquery,AJAX, Junit", @"Gang of Four, Architectural patterns, J2ee patterns,etc",@"SOA, MDA, OSGi, MVC" ,@"Tomcat, JBoss, Marklogic,Weblogic, Websphere ", @"Sql Basics - Joins/DML/DDL/stored procedure/triggers, Oracle, MySQL, MS Sql", @"Xml, Xsd,Dtd, Xquery, Xpath",@"Build servers - Hudson/Cruise control/Team city, Sonar, Performance tools - Grinder/Jmeter/Jprofiler, IDE - Eclipse/IDEA/Netbeans etc ", @"Agile practises - TDD/BDD/Scrum/XP,Waterfall, prototyping,\n Testing(QA) practises - functional/performance/smoke/unit tests, OS basics- Linux/Sun OS/Windows ,\n UML - class/use case/activity/deployment/sequence/etc, \n Cloud computing - Basics/Amazon EC2:S3/Google app engine", nil];
+	self.dataController = [[DataController alloc] init];
+	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"i" style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)];
 
-	
 }
+
 
 #pragma mark Table view data source
 
@@ -29,13 +28,16 @@ NSArray *groupDetails;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [groups count];
+
+    return [[dataController getGroupTitles] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
 	static NSString *CellIdentifier = @"CellIdentifier";
+	NSArray *groups = [dataController getGroupTitles];
+	NSArray *groupDetails = [dataController getGroupSubTitles:groups];
 
 	// Dequeue or create a cell of the appropriate type.
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -60,15 +62,26 @@ NSArray *groupDetails;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    /*
-     When a row is selected, create the detail view controller and set its detail item to the item associated with the selected row.
-     */
-    CategoryViewController *categoryViewController = [[CategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    categoryViewController.group=[groups objectAtIndex:indexPath.row];
+	NSArray *groups = [dataController getGroupTitles];
+    
+	CategoryViewController *categoryViewController = [[CategoryViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    categoryViewController.dataController = self.dataController;
+	categoryViewController.group=[groups objectAtIndex:indexPath.row];
+	[categoryViewController.dataController loadQuestions:categoryViewController.group]; 
     // Push the category view controller.
     [[self navigationController] pushViewController:categoryViewController animated:YES];
     [categoryViewController release];
 }
+
+
+-(void)showSettings{
+	SettingsViewController *mySettingsViewController= [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+	mySettingsViewController.dataController = self.dataController;
+	[[self navigationController] pushViewController:mySettingsViewController animated:YES];
+	[mySettingsViewController release];
+	
+}
+
 
 #pragma mark Memory management
 

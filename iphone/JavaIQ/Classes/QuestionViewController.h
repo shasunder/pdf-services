@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 @class DataController;
 
-@interface QuestionViewController :UITableViewController {
+@interface QuestionViewController :UIViewController {
 	DataController *dataController;
 	NSString *category;
+	NSArray *records;
 }
 
 @property (nonatomic, retain) DataController *dataController;
-
 @property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSArray *records;
+
+-(CGSize) getSizeOfText: (NSString *) text;
 
 
 @end
