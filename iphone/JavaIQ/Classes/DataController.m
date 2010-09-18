@@ -90,7 +90,8 @@
 	
 	if (fileContents == NULL) {
 		NSLog(@"No file found locally at :%@ ..using default files" ,filePath);
-		filePath = [NSString stringWithFormat:@"%@_%@", docDir, APP_NAME,fileName ];
+		NSString *defaultDirPath=[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"default"];
+		filePath = [NSString stringWithFormat:@"%@_%@", defaultDirPath, APP_NAME,fileName ];
 		fileContents = [NSData dataWithContentsOfFile:filePath];
 		
 		if (fileContents == NULL) {
@@ -197,7 +198,8 @@
 	
 	if (fileContents == NULL) {
 		NSLog(@"No file found at application path %@. Trying default path " ,filePath);
-		filePath = [NSString stringWithFormat:@"%@_%@", docDir, APP_NAME,fileName ];
+		NSString *defaultDirPath=[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"default"];
+		filePath = [NSString stringWithFormat:@"%@/%@_%@", defaultDirPath, APP_NAME,fileName ];
 		fileContents = [NSData dataWithContentsOfFile:filePath];
 	
 		if (fileContents == NULL) {

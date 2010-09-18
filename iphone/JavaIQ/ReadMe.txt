@@ -2,7 +2,7 @@ Java IQ
 =======
 about
 -----
- Java interview questions (java IQ) is a simple application to help basic as well as advanced java developers during
+ Java interview questions (java IQ) will help basic as well as advanced java developers during
  interview preparation. It may very well be used as a guide to revising basic concepts in Java/J2ee.
  
  Features

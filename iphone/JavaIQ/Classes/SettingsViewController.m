@@ -28,19 +28,18 @@
 
 	
 	expertise.selectedSegmentIndex =expertiseStr.intValue;
-	NSInteger *currentVersion = [defaults stringForKey:KEY_VERSION].intValue;
-	status.text= [NSString stringWithFormat:@"%@ (current version %d)", status.text ,currentVersion];
-	/*
-	NSString *title=@"Settings";
-	NSInteger *latestVersion=[dataController getLatestApplicationVersion].intValue;
-	NSInteger *currentVersion = [defaults stringForKey:KEY_VERSION].intValue;
-
-	if(latestVersion !=currentVersion){
-		title= @"Settings(Update found)";
+	NSString *currentVersion = [defaults stringForKey:KEY_VERSION];
+	if (currentVersion ==NULL) {
+		currentVersion =@"0.1";
 	}
-	*/
+	status.text= [NSString stringWithFormat:@"%@ (current version %@)", status.text ,currentVersion];
 
-	self.title = @"Settings";
+
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
+	label.textColor = [UIColor blackColor];
+	label.text = @"       Settings";
+	self.navigationItem.titleView = label;
+	
 	
 }
 
@@ -51,10 +50,10 @@
 	
 	[dataController loadGroupsUpdate];
 	[dataController loadCache];
-	NSInteger *latestVersion=[dataController getLatestApplicationVersion].intValue;
+	NSString *latestVersion=[dataController getLatestApplicationVersion];
 
 	status.text=[NSString stringWithFormat: @"Update completed successfully (version %@)",latestVersion];
-	[self store:KEY_VERSION : [NSString stringWithFormat:@"%d", latestVersion]];
+	[self store:KEY_VERSION : [NSString stringWithFormat:@"%@", latestVersion]];
 	status.backgroundColor= [UIColor orangeColor ];
 	NSLog(@"doUpdateCache completed");
 
@@ -68,8 +67,8 @@
 -(void)store:(NSString *)key :(NSString *)value{
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	
-	NSLog(@"Storing value: %@ for key %@ ",value,KEY_EXPERTISE);
-	[defaults setObject:value forKey:KEY_EXPERTISE];
+	NSLog(@"Storing value: %@ for key %@ ",value,key);
+	[defaults setObject:value forKey:key];
 	[defaults synchronize]; 
 }
 

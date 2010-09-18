@@ -13,10 +13,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.title = NSLocalizedString(@"Java IQ", @"Java interview questions");
+	self.title = @"Java IQ";
 	self.dataController = [[DataController alloc] init];
 	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"i" style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)];
-
+	
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,85)] autorelease];
+	label.textColor = [UIColor blackColor];
+	label.text = @"Java IQ";
+	self.navigationItem.titleView = label;
 }
 
 
@@ -83,6 +87,7 @@
 }
 
 
+
 #pragma mark Memory management
 
 - (void)dealloc {
@@ -90,5 +95,16 @@
     
     [super dealloc];
 }
+
+@end
+
+@implementation UINavigationBar (UINavigationBarCategory)
+
+- (void)drawRect:(CGRect)rect {
+	UIImage *image = [UIImage imageNamed: @"javaiq-navigation.png"];
+	
+	[image drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+}
+
 
 @end
