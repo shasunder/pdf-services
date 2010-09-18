@@ -17,7 +17,11 @@ NSArray *categories;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
+	label.textColor = [UIColor blackColor];
+	label.text = group;
+	self.navigationItem.titleView = label;
+	self.tableView.backgroundColor=[UIColor whiteColor];
 }
 
 
@@ -60,12 +64,6 @@ NSArray *categories;
 }
 
 
-#pragma mark Section header titles
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    
-	return group;
-}
 
 #pragma mark Table view selection
 

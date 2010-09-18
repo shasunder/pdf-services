@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	CGRect frame=CGRectMake(5,20,315,400);
+	CGRect frame=CGRectMake(5,20,315,420);
 	UIWebView *webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
 	webView.backgroundColor=[UIColor whiteColor];
 	records= [dataController getQuestionsArrayForCategory:category];
@@ -31,10 +31,20 @@
 	[webView loadHTMLString:content baseURL:[NSURL URLWithString:@"http://dummy"]];
 
 	[self.view addSubview:webView];
-	self.navigationItem.title =category;
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
+	label.textColor = [UIColor blackColor];
+	label.text = category;
+	self.navigationItem.titleView = label;
+	[self.navigationController setNavigationBarHidden:YES animated:YES];
 	
 	
 }
 
-
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	[super touchesBegan:touches withEvent:event];
+    NSUInteger numTaps = [[touches anyObject] tapCount];
+	NSLog(@"tapped");
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 @end
