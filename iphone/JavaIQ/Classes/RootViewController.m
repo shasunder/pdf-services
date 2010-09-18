@@ -15,7 +15,12 @@
     [super viewDidLoad];
 	self.title = @"Java IQ";
 	self.dataController = [[DataController alloc] init];
-	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"i" style:UIBarButtonItemStylePlain target:self action:@selector(showSettings)];
+	
+	UIButton *button = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
+	button.frame = CGRectMake(0, 0, 25, 25);
+	[button addTarget:self action:@selector(showSettings)  forControlEvents:UIControlEventTouchUpInside];
+	
+	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:button];
 	
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,85)] autorelease];
 	label.textColor = [UIColor blackColor];

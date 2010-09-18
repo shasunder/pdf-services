@@ -109,7 +109,7 @@
 							<int key="IBUIContentMode">7</int>
 							<bool key="IBUIUserInteractionEnabled">NO</bool>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<string key="IBUIText">Update database </string>
+							<string key="IBUIText">Update DB from internet </string>
 							<reference key="IBUIFont" ref="748501162"/>
 							<reference key="IBUITextColor" ref="519441605"/>
 							<nil key="IBUIHighlightedColor"/>
