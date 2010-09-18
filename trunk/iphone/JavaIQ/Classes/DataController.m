@@ -225,45 +225,39 @@
 	//get all the category nodes in the question bank xml : eg: <questionbank><category name="Basics"><question>q1</><answer>a1</> 
 	NSArray *nodes = [self getXMLNodes:@"//category" :xmlContent];
 	
+	
 	questionBank =[[NSMutableDictionary alloc] init]; // map for storing node attribute/element name/values
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	int expertise = [ [defaults stringForKey: KEY_EXPERTISE] intValue];
 	
     for (CXMLElement *node in nodes) {  // iterate through the category nodes
 		
 		//NSLog(@"Processing attributes ");
 		
-        // process to set attributes of category node
-		NSArray *arAttr=[node attributes]; //fetch all attributes from the current node
-        NSUInteger i, countAttr = [arAttr count];
-		
-        for (i = 0; i < countAttr; i++) {  //fetch category name only eg: Basic,Collections,etc
-			strName=[[arAttr objectAtIndex:i] name];
-			strCategory=[[arAttr objectAtIndex:i] stringValue];
-			
-            if(([strName  isEqualToString:@"name"])){  
-                [questionBank setValue:strName forKey:strCategory]; 
-				break;
-            }
-        }
-		
-        // --------------------------------------------------------------------------------
-		
-		NSLog(@"%@",[@"Processing elements to fetch question and answers for category :" stringByAppendingString:strCategory]);
+	    NSMutableDictionary *attributes= [self getAttributesForNode:node];
+		NSString *strCategory = [attributes objectForKey:@"name" ];
+		[questionBank setValue:@"name" forKey:strCategory]; 
+				
+		//NSLog(@"%@",[@"Processing elements to fetch question and answers for category :" stringByAppendingString:strCategory]);
 		
 		// process to read question and answers child nodes of category parent node 
-        NSUInteger j, nodeCount = [node childCount];
-        CXMLNode *questionNode,*answerNode;
         NSMutableDictionary *qaMap=[[NSMutableDictionary alloc] init]; //q's and a's in a map
 		
-        for (j=0; j<nodeCount; j=j+4) {
-            questionNode=[node childAtIndex:j+1];
-			answerNode=[node childAtIndex:j+3];
+		NSArray *qaNodes= [node nodesForXPath:@"qa" error:nil];
+		for (CXMLElement *qaNode in qaNodes) { 
+			attributes= [self getAttributesForNode:qaNode];
+			int rating = [[attributes objectForKey:@"rating"] intValue];
+			if (expertise==0 || expertise >= rating ) {
+				strName = [[[qaNode nodesForXPath:@"question" error:nil] objectAtIndex:0] stringValue];
+				strValue=[[[qaNode nodesForXPath:@"answer" error:nil] objectAtIndex:0] stringValue];
+				NSLog([NSString stringWithFormat:@"%@ : %@", strName, strValue]);
+				[qaMap setValue:strValue forKey: strName];
+				
+			}
 			
-			strName = [questionNode stringValue];
-            strValue=[answerNode stringValue];
-            if(strName && answerNode ){
-                [qaMap setValue:strValue forKey: strName];
-            }
 		}
+       
 		[questionBank setValue:qaMap forKey:strCategory];
 		[qaMap release]; 
 		

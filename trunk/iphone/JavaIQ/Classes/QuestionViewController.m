@@ -23,7 +23,9 @@
 	records= [dataController getQuestionsArrayForCategory:category];
 	
 	NSString *content=[[NSString alloc] init];
-	
+	if (records==NULL || [records count]==0) {
+		content=@"No records found for your skill level";
+	}
 	for(Record *record in records){
 		content= [NSString stringWithFormat:@"%@<strong>%@</strong><br/>%@</br></br>",content, record.question,record.answer];
 	}
@@ -33,7 +35,7 @@
 	[self.view addSubview:webView];
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
 	label.textColor = [UIColor blackColor];
-	label.text = category;
+	label.text = [NSString stringWithFormat:@"%@ (%d questions)", category, [records count]];
 	self.navigationItem.titleView = label;
 	[self.navigationController setNavigationBarHidden:YES animated:YES];
 	

@@ -22,6 +22,8 @@ NSArray *categories;
 	label.text = group;
 	self.navigationItem.titleView = label;
 	self.tableView.backgroundColor=[UIColor whiteColor];
+	
+	
 }
 
 
