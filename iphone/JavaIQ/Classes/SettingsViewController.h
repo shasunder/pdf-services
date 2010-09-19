@@ -14,15 +14,17 @@
 	IBOutlet UISegmentedControl *expertise;
 	IBOutlet UIButton *updateCache;
 	IBOutlet UILabel *status;
+	IBOutlet UIButton *reset;
 }
 @property (nonatomic, retain) DataController *dataController;
 @property (nonatomic, retain) UISegmentedControl *expertise;
 @property (nonatomic, retain) UIButton *updateCache;
 @property (nonatomic, retain) UILabel *status;
-
+@property (nonatomic, retain) UIButton *reset;
 
 -(IBAction) doUpdateCache:(id)sender;
 
 -(IBAction) doUpdateExpertise:(id)sender;
 
+-(IBAction) reset:(id)sender;
 @end
