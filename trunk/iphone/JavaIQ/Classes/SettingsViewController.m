@@ -32,7 +32,7 @@
 	if (currentVersion ==NULL) {
 		currentVersion =@"0.1";
 	}
-	status.text= [NSString stringWithFormat:@"%@ (current version %@)", status.text ,currentVersion];
+	status.text= [NSString stringWithFormat:@"Update DB from internet (current version %@)", currentVersion];
 
 
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
@@ -74,7 +74,11 @@
 
 -(IBAction)  reset:(id)sender{
 	[dataController resetData];
+	[self store:KEY_VERSION : @"0" ];
+	[self store:KEY_EXPERTISE :@"0"];
 	
+	NSLog(@"Reset complete");
+	[self viewDidLoad ];
 }
 
 #pragma mark Memory management

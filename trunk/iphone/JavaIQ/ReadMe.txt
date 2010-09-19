@@ -35,7 +35,6 @@ QuestionsViewController --> Actually displays the list of questions.
 ------
 TODO:
 ------
-1. Reset should show initial question bank from default database(clear updated files)
 3. Create local default questions database
 4. Test on real iphone, ipod touch ios 3,4
 6. Get developer account created. - in progress
@@ -44,6 +43,7 @@ TODO:
 
 Done
 ----
+1. Reset should show initial question bank from default database(clear updated files)
 2. Ratings based questions display (1,2,3)
 5. Create a product website.
 
