@@ -198,7 +198,7 @@
 	
 	if (fileContents == NULL) {
 		NSLog(@"No file found at application path %@. Trying default path " ,filePath);
-		NSString *defaultDirPath=[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"default"];
+		NSString *defaultDirPath=[[NSBundle mainBundle] resourcePath];
 		filePath = [NSString stringWithFormat:@"%@/%@_%@", defaultDirPath, APP_NAME,fileName ];
 		fileContents = [NSData dataWithContentsOfFile:filePath];
 	
@@ -214,7 +214,35 @@
 	[self parseQuestions:fileContents];
 }
 
+-(void)resetData{
+	NSError *error;
+	NSString *documentDBFolderPath=[self getDocumentsDirectory];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	
+	NSString *defaultDirPath=[[NSBundle mainBundle] resourcePath];
+	
+	NSArray *dirContents = [fileManager directoryContentsAtPath:documentDBFolderPath];
+	NSArray *defaultDirContents = [fileManager directoryContentsAtPath:defaultDirPath];
 
+	NSArray *onlyXmls = [dirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
+	
+	for (NSString *xmlPath in onlyXmls) {
+		NSString *actualXMLPath=[NSString stringWithFormat:@"%@/%@",documentDBFolderPath, xmlPath];
+		[fileManager removeItemAtPath:actualXMLPath error:&error];
+		
+	}
+	
+	NSArray *defaultXmls = [defaultDirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
+	
+	for (NSString *xmlPath in defaultXmls) {
+		NSString *actualXMLPath=[NSString stringWithFormat:@"%@/%@",defaultDirPath, xmlPath];
+		NSString *actualDestnXMLPath=[NSString stringWithFormat:@"%@/%@",documentDBFolderPath, xmlPath];
+		[fileManager copyItemAtPath:actualXMLPath toPath:actualDestnXMLPath error:&error];
+	}
+	
+	NSLog([error description]);
+	//[self loadGroups];
+}
 
 //Parse questionBank xml and populate list array
 -(void) parseQuestions:(NSData *)xmlContent{

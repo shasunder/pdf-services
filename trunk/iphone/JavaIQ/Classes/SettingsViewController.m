@@ -72,6 +72,11 @@
 	[defaults synchronize]; 
 }
 
+-(IBAction)  reset:(id)sender{
+	[dataController resetData];
+	
+}
+
 #pragma mark Memory management
 
 - (void)dealloc {

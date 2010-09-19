@@ -79,14 +79,14 @@
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							<int key="IBUIContentHorizontalAlignment">0</int>
 							<int key="IBUIContentVerticalAlignment">0</int>
-							<object class="NSFont" key="IBUIFont">
+							<object class="NSFont" key="IBUIFont" id="180590132">
 								<string key="NSName">Helvetica-Bold</string>
 								<double key="NSSize">15</double>
 								<int key="NSfFlags">16</int>
 							</object>
 							<int key="IBUIButtonType">1</int>
 							<string key="IBUINormalTitle">Update</string>
-							<object class="NSColor" key="IBUIHighlightedTitleColor">
+							<object class="NSColor" key="IBUIHighlightedTitleColor" id="299350142">
 								<int key="NSColorSpace">3</int>
 								<bytes key="NSWhite">MQA</bytes>
 							</object>
@@ -94,7 +94,7 @@
 								<int key="NSColorSpace">1</int>
 								<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 							</object>
-							<object class="NSColor" key="IBUINormalTitleShadowColor">
+							<object class="NSColor" key="IBUINormalTitleShadowColor" id="965234050">
 								<int key="NSColorSpace">3</int>
 								<bytes key="NSWhite">MC41AA</bytes>
 							</object>
@@ -162,6 +162,25 @@
 								<reference ref="4"/>
 								<reference ref="4"/>
 							</object>
+						</object>
+						<object class="IBUIButton" id="68359654">
+							<reference key="NSNextResponder" ref="943608354"/>
+							<int key="NSvFlags">292</int>
+							<string key="NSFrame">{{124, 271}, {85, 37}}</string>
+							<reference key="NSSuperview" ref="943608354"/>
+							<bool key="IBUIOpaque">NO</bool>
+							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+							<int key="IBUIContentHorizontalAlignment">0</int>
+							<int key="IBUIContentVerticalAlignment">0</int>
+							<reference key="IBUIFont" ref="180590132"/>
+							<int key="IBUIButtonType">1</int>
+							<string key="IBUINormalTitle">Reset</string>
+							<reference key="IBUIHighlightedTitleColor" ref="299350142"/>
+							<object class="NSColor" key="IBUINormalTitleColor">
+								<int key="NSColorSpace">1</int>
+								<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+							</object>
+							<reference key="IBUINormalTitleShadowColor" ref="965234050"/>
 						</object>
 					</object>
 					<string key="NSFrameSize">{320, 460}</string>
@@ -232,6 +251,24 @@
 					</object>
 					<int key="connectionID">26</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">reset</string>
+						<reference key="source" ref="68359654"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">28</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">reset:</string>
+						<reference key="source" ref="68359654"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">29</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -271,6 +308,7 @@
 							<reference ref="933967734"/>
 							<reference ref="921787935"/>
 							<reference ref="836896194"/>
+							<reference ref="68359654"/>
 						</object>
 						<reference key="parent" ref="774521768"/>
 					</object>
@@ -294,6 +332,11 @@
 						<reference key="object" ref="933967734"/>
 						<reference key="parent" ref="943608354"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">27</int>
+						<reference key="object" ref="68359654"/>
+						<reference key="parent" ref="943608354"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -307,6 +350,7 @@
 					<string>2.CustomClassName</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
+					<string>27.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>6.IBPluginDependency</string>
 					<string>9.IBPluginDependency</string>
@@ -319,6 +363,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>SettingsViewController</string>
 					<string>{{250, 224}, {320, 480}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -341,7 +386,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">26</int>
+			<int key="maxID">29</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -355,9 +400,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>doUpdateCache:</string>
 							<string>doUpdateExpertise:</string>
+							<string>reset:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -368,6 +415,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>doUpdateCache:</string>
 							<string>doUpdateExpertise:</string>
+							<string>reset:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -379,6 +427,10 @@
 								<string key="name">doUpdateExpertise:</string>
 								<string key="candidateClassName">id</string>
 							</object>
+							<object class="IBActionInfo">
+								<string key="name">reset:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -386,12 +438,14 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>expertise</string>
+							<string>reset</string>
 							<string>status</string>
 							<string>updateCache</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UISegmentedControl</string>
+							<string>UIButton</string>
 							<string>UILabel</string>
 							<string>UIButton</string>
 						</object>
@@ -401,6 +455,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>expertise</string>
+							<string>reset</string>
 							<string>status</string>
 							<string>updateCache</string>
 						</object>
@@ -409,6 +464,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">expertise</string>
 								<string key="candidateClassName">UISegmentedControl</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">reset</string>
+								<string key="candidateClassName">UIButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">status</string>

@@ -25,4 +25,6 @@
 	
 -(void) loadCache;
 
+-(void)resetData;
+
 @end
