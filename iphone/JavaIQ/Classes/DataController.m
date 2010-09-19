@@ -222,7 +222,6 @@
 	NSString *defaultDirPath=[[NSBundle mainBundle] resourcePath];
 	
 	NSArray *dirContents = [fileManager directoryContentsAtPath:documentDBFolderPath];
-	NSArray *defaultDirContents = [fileManager directoryContentsAtPath:defaultDirPath];
 
 	NSArray *onlyXmls = [dirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
 	
@@ -231,15 +230,15 @@
 		[fileManager removeItemAtPath:actualXMLPath error:&error];
 		
 	}
-	
-	NSArray *defaultXmls = [defaultDirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
+	/*
+	 NSArray *defaultDirContents = [fileManager directoryContentsAtPath:defaultDirPath];
+	 NSArray *defaultXmls = [defaultDirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
 	
 	for (NSString *xmlPath in defaultXmls) {
 		NSString *actualXMLPath=[NSString stringWithFormat:@"%@/%@",defaultDirPath, xmlPath];
 		NSString *actualDestnXMLPath=[NSString stringWithFormat:@"%@/%@",documentDBFolderPath, xmlPath];
 		[fileManager copyItemAtPath:actualXMLPath toPath:actualDestnXMLPath error:&error];
-	}
-	
+	}*/
 	NSLog([error description]);
 	//[self loadGroups];
 }
