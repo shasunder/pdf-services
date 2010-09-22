@@ -216,6 +216,7 @@
 
 -(void)resetData{
 	NSError *error;
+
 	NSString *documentDBFolderPath=[self getDocumentsDirectory];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	
@@ -225,12 +226,12 @@
 
 	NSArray *onlyXmls = [dirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
 	
-	for (NSString *xmlPath in onlyXmls) {
-		NSString *actualXMLPath=[NSString stringWithFormat:@"%@/%@",documentDBFolderPath, xmlPath];
-		[fileManager removeItemAtPath:actualXMLPath error:&error];
+		for (NSString *xmlPath in onlyXmls) {
+			NSString *actualXMLPath=[NSString stringWithFormat:@"%@/%@",documentDBFolderPath, xmlPath];
+			[fileManager removeItemAtPath:actualXMLPath error:&error];
 		
-	}
-	/*
+		}
+		/*
 	 NSArray *defaultDirContents = [fileManager directoryContentsAtPath:defaultDirPath];
 	 NSArray *defaultXmls = [defaultDirContents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self ENDSWITH '.xml'"]];
 	
@@ -239,7 +240,7 @@
 		NSString *actualDestnXMLPath=[NSString stringWithFormat:@"%@/%@",documentDBFolderPath, xmlPath];
 		[fileManager copyItemAtPath:actualXMLPath toPath:actualDestnXMLPath error:&error];
 	}*/
-	NSLog([error description]);
+	//NSLog([error description]);
 	//[self loadGroups];
 }
 
@@ -275,12 +276,18 @@
 		for (CXMLElement *qaNode in qaNodes) { 
 			attributes= [self getAttributesForNode:qaNode];
 			int rating = [[attributes objectForKey:@"rating"] intValue];
-			if (expertise==0 || expertise >= rating ) {
+			if (expertise==0 || rating >= expertise  ) {
+			  @try {
 				strName = [[[qaNode nodesForXPath:@"question" error:nil] objectAtIndex:0] stringValue];
+				//NSLog([NSString stringWithFormat:@"Question : %@ ", strName]);
 				strValue=[[[qaNode nodesForXPath:@"answer" error:nil] objectAtIndex:0] stringValue];
-				NSLog([NSString stringWithFormat:@"%@ : %@", strName, strValue]);
+				//NSLog([NSString stringWithFormat:@"%@ : %@", strName, strValue]);
 				[qaMap setValue:strValue forKey: strName];
-				
+				}
+			  @catch (NSException* ex) {
+					NSLog(@"Question/answer parsing failed: %@ : question => %@",ex,strName
+						  );
+			  }
 			}
 			
 		}
@@ -311,12 +318,17 @@
 	
     for (CXMLElement *node in nodes) {  // iterate through the group nodes
 		NSString *strKey;		
-		NSMutableDictionary *attributesMap = [self getAttributesForNode:node];
+		@try{
+			NSMutableDictionary *attributesMap = [self getAttributesForNode:node];
 		
-		strKey = [attributesMap objectForKey:@"title"];
+			strKey = [attributesMap objectForKey:@"title"];
 		
-		[groupMap setValue:attributesMap forKey:strKey]; 
-		[attributesMap release];		
+			[groupMap setValue:attributesMap forKey:strKey]; 
+			[attributesMap release];
+		}
+		@catch (NSException* ex) {
+			NSLog(@"Group parsing failed: %@ : question => %@",ex,strKey);
+		}
 	}
 
 	//NSLog(@"%@",[groupMap description]);	

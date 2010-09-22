@@ -14,11 +14,12 @@
 @synthesize dataController;
 @synthesize category;
 @synthesize records;
+UIWebView *webView;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	CGRect frame=CGRectMake(5,20,315,420);
-	UIWebView *webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
+	webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
 	webView.backgroundColor=[UIColor whiteColor];
 	records= [dataController getQuestionsArrayForCategory:category];
 	
@@ -49,4 +50,16 @@
 	NSLog(@"tapped");
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+	if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation== UIInterfaceOrientationLandscapeRight) {
+		webView.frame= CGRectMake(5,20,440,315);
+	}else {
+		webView.frame= CGRectMake(5,20,315,420);
+	}
+
+    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 @end

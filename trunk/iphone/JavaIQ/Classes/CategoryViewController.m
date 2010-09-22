@@ -83,5 +83,11 @@ NSArray *categories;
     [questionViewController release];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
 
 @end
