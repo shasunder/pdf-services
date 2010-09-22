@@ -47,7 +47,7 @@
 -(IBAction) doUpdateCache:(id)sender{
 	self.status.text=@"Updating...";
 	self.status.backgroundColor= [UIColor orangeColor ];
-	
+	[self	reloadInputViews];
 	[dataController loadGroupsUpdate];
 	[dataController loadCache];
 	NSString *latestVersion=[dataController getLatestApplicationVersion];
@@ -80,6 +80,12 @@
 	NSLog(@"Reset complete");
 	[self viewDidLoad ];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
 
 #pragma mark Memory management
 
