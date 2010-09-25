@@ -22,9 +22,11 @@
 	
 	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:button];
 	
-	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,85)] autorelease];
+	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,25)] autorelease];
 	label.textColor = [UIColor blackColor];
 	label.text = @"Java IQ";
+	[label setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20]];
+	label.backgroundColor=[UIColor clearColor];
 	self.navigationItem.titleView = label;
 }
 
