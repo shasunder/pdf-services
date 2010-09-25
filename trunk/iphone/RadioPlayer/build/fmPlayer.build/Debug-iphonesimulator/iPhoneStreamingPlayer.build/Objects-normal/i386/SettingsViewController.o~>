@@ -1,0 +1,19 @@
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m: In function '-[SettingsViewController viewDidLoad]':
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:25: error: 'KEY_EXPERTISE' undeclared (first use in this function)
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:25: error: (Each undeclared identifier is reported only once
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:25: error: for each function it appears in.)
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:29: error: 'expertise' undeclared (first use in this function)
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m: In function '-[SettingsViewController doUpdateCache:]':
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:52: warning: 'DataController' may not respond to '-loadGroupsUpdate'
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:52: warning: (Messages without a matching method signature
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:52: warning: will be assumed to return 'id' and accept
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:52: warning: '...' as arguments.)
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:53: warning: 'DataController' may not respond to '-loadCache'
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:54: warning: 'DataController' may not respond to '-getLatestApplicationVersion'
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:57: warning: 'SettingsViewController' may not respond to '-store::'
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m: In function '-[SettingsViewController reset:]':
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:74: error: 'KEY_EXPERTISE' undeclared (first use in this function)
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:76: warning: 'DataController' may not respond to '-loadGroups'
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m: At top level:
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:94: warning: property 'reset' requires method '-reset' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Volumes/volume2/projects/iphone/KannadaFM/Classes/SettingsViewController.m:94: warning: property 'reset' requires the method 'setReset:' to be defined - use @synthesize, @dynamic or provide a method implementation

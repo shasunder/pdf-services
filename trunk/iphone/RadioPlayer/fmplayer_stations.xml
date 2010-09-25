@@ -1,0 +1,20 @@
+<stations>
+ <category name="hindi">
+   <station name="Radio nimbooda" url="http://94.23.120.121:80"/>
+   <station name="Desi radio" url="http://76.73.126.219:80"/>
+   <station name="Desi music mix" url="http://64.27.2.167:8012/"/>
+   <station name="Radio NRI - Bollywood hits" url="http://216.246.14.77:80"/>
+ </category>
+ <category name="english">
+   <station name=".977 The hitz channel " url="http://scfire-dtc-aa01.stream.aol.com:80/stream/1074"/>
+   <station name="New age SKY FM - soothing sounds" url="http://scfire-mtc-aa02.stream.aol.com:80/stream/1002"/>
+ </category>
+ <category name="tamil">
+   <station name="A R Rehman radio" url="http://204.45.73.171:8004/"/>
+ </category>
+ <category name="kannada">
+   <station name="Kannada kasturi" url="http://www.kannadaaudio.net:8000"/>
+   <station name="Acchu radio -Mast maja madi" url="http://205.188.215.225:8082"/>
+ </category>
+
+</stations> 
