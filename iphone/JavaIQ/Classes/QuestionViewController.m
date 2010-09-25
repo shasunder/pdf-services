@@ -34,9 +34,11 @@ UIWebView *webView;
 	[webView loadHTMLString:content baseURL:[NSURL URLWithString:@"http://dummy"]];
 
 	[self.view addSubview:webView];
-	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
 	label.textColor = [UIColor blackColor];
-	label.text = [NSString stringWithFormat:@"%@ (%d questions)", category, [records count]];
+	label.text = [NSString stringWithFormat:@"%@ (%d)", category, [records count]];
+	label.backgroundColor =[UIColor clearColor];
+	[label setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20]];
 	self.navigationItem.titleView = label;
 	[self.navigationController setNavigationBarHidden:YES animated:YES];
 	

@@ -306,6 +306,7 @@
 -(void) parseGroups:(NSData *)xmlContent{
 	
 	NSLog(@"Parsing groups from XML");
+	NSLog([xmlContent description]);
 	
     CXMLDocument *xmlDocument= [[[CXMLDocument alloc] initWithData:xmlContent options:CXMLDocumentTidyXML error:nil] autorelease];
     

@@ -17,9 +17,11 @@ NSArray *categories;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
 	label.textColor = [UIColor blackColor];
 	label.text = group;
+	[label setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20]];
+	label.backgroundColor =[UIColor clearColor];
 	self.navigationItem.titleView = label;
 	self.tableView.backgroundColor=[UIColor whiteColor];
 	

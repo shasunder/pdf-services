@@ -35,9 +35,11 @@
 	status.text= [NSString stringWithFormat:@"Update DB from internet (current version %@)", currentVersion];
 
 
-	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,185)] autorelease];
+	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
 	label.textColor = [UIColor blackColor];
+	[label setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20]];
 	label.text = @"       Settings";
+	label.backgroundColor=[UIColor clearColor];
 	self.navigationItem.titleView = label;
 	
 	
@@ -77,6 +79,7 @@
 	[self store:KEY_VERSION : @"0" ];
 	[self store:KEY_EXPERTISE :@"0"];
 	
+	[dataController loadGroups];
 	NSLog(@"Reset complete");
 	[self viewDidLoad ];
 }
