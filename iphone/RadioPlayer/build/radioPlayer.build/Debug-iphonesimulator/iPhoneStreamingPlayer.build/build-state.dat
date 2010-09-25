@@ -1,0 +1,1400 @@
+TiPhoneStreamingPlayer
+v7
+r0
+t307138916.268747
+cCheck dependencies
+cProcessInfoPlistFile /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/Info.plist iPhoneInfo.plist
+cCompileXIB "/Volumes/volume2/projects/iphone/RadioPlayer/iPhone Resources/iPhoneStreamingPlayerViewController.xib"
+cCompileXIB "/Volumes/volume2/projects/iphone/RadioPlayer/iPhone Resources/MainWindow.xib"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbutton.png "Shared Resources/stopbutton.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/loadingbutton.png "Shared Resources/loadingbutton.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pausebutton.png "Shared Resources/pausebutton.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/playbuttonred.png "Shared Resources/playbuttonred.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbuttonred.png stopbuttonred.png
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png pickerview.png
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png "Shared Resources/pickerview.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/fm.png "Shared Resources/fm.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/fmplayer_stations.xml fmplayer_stations.xml
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iphone-metal.png "Shared Resources/iphone-metal.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/playbuttonsky.png "Shared Resources/playbuttonsky.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbuttonsky.png "Shared Resources/stopbuttonsky.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/steelmesh.jpg "Shared Resources/steelmesh.jpg"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/loading.png "Shared Resources/loading.png"
+cCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/update.png "Shared Resources/update.png"
+cProcessPCH /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch.gch iPhoneStreamingPlayer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/main.o /Volumes/volume2/projects/iphone/RadioPlayer/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerAppDelegate.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerViewController.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AudioStreamer.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner_Extensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSCharacterSet_Extensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSDictionary_JSONExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSScanner_Extensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDataSerializer.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDeserializer.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONScanner.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONSerializer.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CSerializedJSONData.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AdViewController.o /Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/DataController.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_CreationExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_CreationExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_PrivateExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_CreationExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_ElementTreeExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNamespaceNode.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_PrivateExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_XPathExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CTidy.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer normal i386
+cGenerateDSYMFile /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app.dSYM /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer
+cTouch /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C8547C50000000000000132
+t1283803077
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c000000004BFF3B7600000000001C8900
+t1275018102
+s1870080
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.h
+c000000004BFF3B620000000000000A23
+t1275018082
+s2595
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c000000004BFDFE57000000000018BC00
+t1274936919
+s1620992
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CFNetwork.framework/Headers/CFNetwork.h
+c000000004BFDFE2F00000000000004CF
+t1274936879
+s1231
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h
+c000000004C04730A0000000000000268
+t1275360010
+s616
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+c000000004C0473250000000000155C80
+t1275360037
+s1399936
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/MessageUI.framework/MessageUI
+c000000004C04728D0000000000090330
+t1275359885
+s590640
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/CoreAnimation.h
+c000000004C04586C0000000000000364
+t1275353196
+s868
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/pthread.h
+c000000004A5C14A700000000000038F0
+t1247548583
+s14576
+
+N/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c000000004BE32D960000000000CF2F70
+t1273179542
+s13578096
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/AdMob/AdMobDelegateProtocol.h
+c000000004C9A69E30000000000002109
+t1285188067
+s8457
+i<UIKit/UIKit.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/AdMob/AdMobView.h
+c000000004C9A69E30000000000000A76
+t1285188067
+s2678
+i<UIKit/UIKit.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/AdMob/libAdMob.a
+c000000004C9A69E3000000000023DC9C
+t1285188067
+s2350236
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.h
+c000000004C72BE640000000000001700
+t1282588260
+s5888
+i<UIKit/UIKit.h>
+i<Cocoa/Cocoa.h>
+i<pthread.h>
+i<AudioToolbox/AudioToolbox.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m
+c000000004C9A7BDB000000000000BFA7
+t1285192667
+s49063
+i"AudioStreamer.h"
+i<CFNetwork/CFNetwork.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/Constants.h
+c000000004C9E586C00000000000002BF
+t1285445740
+s703
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.h
+c000000004C9E1490000000000000020E
+t1285428368
+s526
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m
+c000000004C9E3BF80000000000001A27
+t1285438456
+s6695
+i"DataController.h"
+i"TouchXML.h"
+i"Constants.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.h
+c000000004C9CE1B1000000000000038D
+t1285349809
+s909
+i<UIKit/UIKit.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m
+c000000004C9CE1E0000000000000049B
+t1285349856
+s1179
+i"iPhoneStreamingPlayerAppDelegate.h"
+i"iPhoneStreamingPlayerViewController.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.h
+c000000004C9E53F30000000000000657
+t1285444595
+s1623
+i<UIKit/UIKit.h>
+i"AdViewController.h"
+i"DataController.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m
+c000000004C9E59C500000000000025D7
+t1285446085
+s9687
+i"iPhoneStreamingPlayerViewController.h"
+i"AudioStreamer.h"
+i<QuartzCore/CoreAnimation.h>
+i<MediaPlayer/MediaPlayer.h>
+i<CFNetwork/CFNetwork.h>
+i"DataController.h"
+i"Constants.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.h
+c000000004C9A69E30000000000000663
+t1285188067
+s1635
+i<UIKit/UIKit.h>
+i"AdMobDelegateProtocol.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m
+c000000004C9E4F0D0000000000000DE5
+t1285443341
+s3557
+i"AdMobView.h"
+i"AdViewController.h"
+i"Constants.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/fm.png
+c000000004C9B8DE2000000000000192F
+t1285262818
+s6447
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/iphone-metal.png
+c000000004C9DD49B000000000002BE8E
+t1285411995
+s179854
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/loading.png
+c000000004C9DE3C00000000000000DD6
+t1285415872
+s3542
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/loadingbutton.png
+c000000004C9DE0B70000000000001969
+t1285415095
+s6505
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/pausebutton.png
+c000000004C72BE640000000000000A5D
+t1282588260
+s2653
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/pickerview.png
+c000000004C9B91F800000000000042BA
+t1285263864
+s17082
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/playbuttonred.png
+c000000004C9B67D000000000000011E6
+t1285253072
+s4582
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/playbuttonsky.png
+c000000004C9DE1AF0000000000001CBE
+t1285415343
+s7358
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/steelmesh.jpg
+c000000004C9E2378000000000000418A
+t1285432184
+s16778
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/stopbutton.png
+c000000004C72BE640000000000000A6A
+t1282588260
+s2666
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/stopbuttonsky.png
+c000000004C9DE19E0000000000001CCE
+t1285415326
+s7374
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/update.png
+c000000004C9E444B00000000000013E5
+t1285440587
+s5093
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.h
+c000000004C9A69E3000000000000095B
+t1285188067
+s2395
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m
+c000000004C9A69E30000000000001674
+t1285188067
+s5748
+i"CDataScanner.h"
+i"CDataScanner_Extensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.h
+c000000004C9A69E300000000000005AD
+t1285188067
+s1453
+i"CDataScanner.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m
+c000000004C9A69E300000000000009EC
+t1285188067
+s2540
+i"CDataScanner_Extensions.h"
+i"NSCharacterSet_Extensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.h
+c000000004C9A69E3000000000000057A
+t1285188067
+s1402
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m
+c000000004C9A69E30000000000000731
+t1285188067
+s1841
+i"NSCharacterSet_Extensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.h
+c000000004C9A69E30000000000000598
+t1285188067
+s1432
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m
+c000000004C9A69E30000000000000613
+t1285188067
+s1555
+i"NSDictionary_JSONExtensions.h"
+i"CJSONDeserializer.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.h
+c000000004C9A69E30000000000000656
+t1285188067
+s1622
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m
+c000000004C9A69E30000000000000D65
+t1285188067
+s3429
+i"NSScanner_Extensions.h"
+i"NSCharacterSet_Extensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.h
+c000000004C9A69E30000000000000716
+t1285188067
+s1814
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m
+c000000004C9A69E30000000000001AB2
+t1285188067
+s6834
+i"CJSONDataSerializer.h"
+i"CSerializedJSONData.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.h
+c000000004C9A69E30000000000000681
+t1285188067
+s1665
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m
+c000000004C9A69E30000000000000B3A
+t1285188067
+s2874
+i"CJSONDeserializer.h"
+i"CJSONScanner.h"
+i"CDataScanner.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.h
+c000000004C9A69E3000000000000081C
+t1285188067
+s2076
+i"CDataScanner.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m
+c000000004C9A69E300000000000039AA
+t1285188067
+s14762
+i"CJSONScanner.h"
+i"NSCharacterSet_Extensions.h"
+i"CDataScanner_Extensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.h
+c000000004C9A69E30000000000000787
+t1285188067
+s1927
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m
+c000000004C9A69E300000000000008C6
+t1285188067
+s2246
+i"CJSONSerializer.h"
+i"CJSONDataSerializer.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.h
+c000000004C9A69E300000000000005A9
+t1285188067
+s1449
+i<Foundation/Foundation.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m
+c000000004C9A69E300000000000005FB
+t1285188067
+s1531
+i"CSerializedJSONData.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.h
+c000000004C6F16720000000000000AAD
+t1282348658
+s2733
+i"CXMLNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m
+c000000004C6F16720000000000001C42
+t1282348658
+s7234
+i"CXMLDocument.h"
+i<libxml/parser.h>
+i"CXMLNode_PrivateExtensions.h"
+i"CXMLElement.h"
+i"CTidy.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.h
+c000000004C6F167200000000000005FE
+t1282348658
+s1534
+i"CXMLDocument.h"
+i<libxml/parser.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m
+c000000004C6F1672000000000000067A
+t1282348658
+s1658
+i"CXMLDocument_PrivateExtensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.h
+c000000004C6F16720000000000000775
+t1282348658
+s1909
+i"CXMLNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m
+c000000004C6F167200000000000022FB
+t1282348658
+s8955
+i"CXMLElement.h"
+i"CXMLNode_PrivateExtensions.h"
+i"CXMLNode_CreationExtensions.h"
+i"CXMLNamespaceNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.h
+c000000004C6F1672000000000000059D
+t1282348658
+s1437
+i"CXMLElement.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m
+c000000004C6F16720000000000000850
+t1282348658
+s2128
+i"CXMLElement_CreationExtensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.h
+c000000004C6F16720000000000000580
+t1282348658
+s1408
+i"CXMLElement.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m
+c000000004C6F16720000000000000668
+t1282348658
+s1640
+i"CXMLElement_ElementTreeExtensions.h"
+i"CXMLElement_CreationExtensions.h"
+i"CXMLNode_CreationExtensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.h
+c000000004C6F1672000000000000014E
+t1282348658
+s334
+i<Foundation/Foundation.h>
+i"CXMLNode.h"
+i"CXMLElement.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m
+c000000004C6F16720000000000000906
+t1282348658
+s2310
+i"CXMLNamespaceNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.h
+c000000004C9CCC7F0000000000000B01
+t1285344383
+s2817
+i<Foundation/Foundation.h>
+i<libxml/tree.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m
+c000000004C6F16720000000000002778
+t1282348658
+s10104
+i"CXMLNode.h"
+i"CXMLNode_PrivateExtensions.h"
+i"CXMLDocument.h"
+i"CXMLElement.h"
+i"CXMLNode_CreationExtensions.h"
+i<libxml/xpath.h>
+i<libxml/xpathInternals.h>
+i<libxml/xmlIO.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.h
+c000000004C6F16720000000000000624
+t1282348658
+s1572
+i"CXMLNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m
+c000000004C6F16720000000000000A8D
+t1282348658
+s2701
+i"CXMLNode_PrivateExtensions.h"
+i"CXMLElement.h"
+i"CXMLDocument_PrivateExtensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.h
+c000000004C6F167200000000000005FC
+t1282348658
+s1532
+i"CXMLNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m
+c000000004C6F16720000000000000B1C
+t1282348658
+s2844
+i"CXMLNode_XPathExtensions.h"
+i"CXMLDocument.h"
+i"CXMLNode_PrivateExtensions.h"
+i<libxml/xpath.h>
+i<libxml/xpathInternals.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.h
+c000000004C6F16720000000000000814
+t1282348658
+s2068
+i"CXMLDocument.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m
+c000000004C6F16720000000000000720
+t1282348658
+s1824
+i"CXMLDocument_CreationExtensions.h"
+i"CXMLElement.h"
+i"CXMLNode_PrivateExtensions.h"
+i"CXMLDocument_PrivateExtensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.h
+c000000004C6F16720000000000000954
+t1282348658
+s2388
+i"CXMLNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m
+c000000004C6F16720000000000000FD7
+t1282348658
+s4055
+i"CXMLNode_CreationExtensions.h"
+i"CXMLDocument.h"
+i"CXMLElement.h"
+i"CXMLNode_PrivateExtensions.h"
+i"CXMLDocument_PrivateExtensions.h"
+i"CXMLNamespaceNode.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.h
+c000000004C6F16720000000000000762
+t1282348658
+s1890
+i<Foundation/Foundation.h>
+i"tidy.h"
+i"buffio.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m
+c000000004C6F16720000000000001D6D
+t1282348658
+s7533
+i"CTidy.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/TouchXML.h
+c000000004C6F167200000000000005F3
+t1282348658
+s1523
+i"CXMLDocument.h"
+i"CXMLDocument_CreationExtensions.h"
+i"CXMLElement.h"
+i"CXMLElement_CreationExtensions.h"
+i"CXMLElement_ElementTreeExtensions.h"
+i"CXMLNode.h"
+i"CXMLNode_CreationExtensions.h"
+i"CXMLNode_XPathExtensions.h"
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app
+t1285446087
+s748
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app.dSYM
+t1285446087
+s102
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/Info.plist
+t1285436422
+s712
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/MainWindow.nib
+t1285436422
+s1127
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/PkgInfo
+t1285436422
+s8
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/fm.png
+t1285436422
+s6447
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/fmplayer_stations.xml
+t1285436422
+s899
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer
+t1285446087
+s602188
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayerViewController.nib
+t1285443529
+s3730
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iphone-metal.png
+t1285436422
+s179854
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/loading.png
+t1285436422
+s3542
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/loadingbutton.png
+t1285436422
+s6505
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pausebutton.png
+t1285436422
+s2653
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png
+t1285445652
+s14294
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/playbuttonred.png
+t1285436422
+s4582
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/playbuttonsky.png
+t1285436422
+s7358
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/steelmesh.jpg
+t1285436422
+s16778
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbutton.png
+t1285436422
+s2666
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbuttonred.png
+t1285436422
+s4330
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbuttonsky.png
+t1285436422
+s7374
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/update.png
+t1285440592
+s5093
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AdViewController.o
+t1285446052
+s46408
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AudioStreamer.o
+t1285446051
+s127640
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner.o
+t1285446051
+s26540
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner_Extensions.o
+t1285446051
+s10052
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDataSerializer.o
+t1285446052
+s24148
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDeserializer.o
+t1285446052
+s11568
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONScanner.o
+t1285446052
+s33956
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONSerializer.o
+t1285446052
+s12380
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CSerializedJSONData.o
+t1285446052
+s8076
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CTidy.o
+t1285446053
+s3948
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument.o
+t1285446052
+s25280
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_CreationExtensions.o
+t1285446052
+s10748
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_PrivateExtensions.o
+t1285446052
+s9692
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement.o
+t1285446052
+s22144
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_CreationExtensions.o
+t1285446053
+s13228
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_ElementTreeExtensions.o
+t1285446053
+s9444
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNamespaceNode.o
+t1285446053
+s21356
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode.o
+t1285446053
+s43420
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_CreationExtensions.o
+t1285446052
+s19036
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_PrivateExtensions.o
+t1285446053
+s14324
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_XPathExtensions.o
+t1285446053
+s16908
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/DataController.o
+t1285446052
+s34472
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSCharacterSet_Extensions.o
+t1285446051
+s6936
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSDictionary_JSONExtensions.o
+t1285446051
+s7220
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSScanner_Extensions.o
+t1285446051
+s13548
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayer.LinkFileList
+c000000004C9E59A100000000000011B5
+t1285446049
+s4533
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerAppDelegate.o
+t1285446051
+s49328
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerViewController.o
+t1285446086
+s95840
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/main.o
+t1285446051
+s6316
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/fmplayer_stations.xml
+c000000004C9E21E70000000000000383
+t1285431783
+s899
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/iPhone Resources/MainWindow.xib
+c000000004C9CE2080000000000006FA3
+t1285349896
+s28579
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/iPhone Resources/iPhoneStreamingPlayerViewController.xib
+c000000004C9E4FC6000000000000A7FA
+t1285443526
+s43002
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/iPhoneStreamingPlayer_Prefix.pch
+c000000004C9CE02E00000000000000B9
+t1285349422
+s185
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/main.m
+c000000004C72BE640000000000000371
+t1282588260
+s881
+i<UIKit/UIKit.h>
+i<Cocoa/Cocoa.h>
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/pickerview.png
+c000000004C9B6E0600000000000037D6
+t1285254662
+s14294
+
+N/Volumes/volume2/projects/iphone/RadioPlayer/stopbuttonred.png
+c000000004C9B699100000000000010EA
+t1285253521
+s4330
+
+N/usr/include/libxml2/libxml/parser.h
+c000000004B90C69700000000000098A9
+t1267779223
+s39081
+
+N/usr/include/libxml2/libxml/tree.h
+c000000004B90C6970000000000008F14
+t1267779223
+s36628
+
+N/usr/include/libxml2/libxml/xmlIO.h
+c000000004B90C69700000000000028D0
+t1267779223
+s10448
+
+N/usr/include/libxml2/libxml/xpath.h
+c000000004B90C6970000000000003F47
+t1267779223
+s16199
+
+N/usr/include/libxml2/libxml/xpathInternals.h
+c000000004B90C6970000000000004BF8
+t1267779223
+s19448
+
+N/var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch.gch
+t1285446050
+s10212912
+
+NiPhoneInfo.plist
+c000000004C9B8EAB00000000000003BD
+t1285263019
+s957
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies307138916#307138916#0(169"[WARN]Warning: Multiple build commands for output file /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png1(22@162"Warning: Multiple build commands for output file /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png307138916#4294967295#0#0(1@0"0(0#1#0"2445471680#0"0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AdViewController.o /Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.240294
+e307138852.387140
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AdViewController.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@81"Compile /Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m307138852#307138852#0(0"0(0#0#73"/Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m2445471680#2264"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/IBSupport/AdViewController.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AdViewController.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AudioStreamer.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.055840
+e307138851.635735
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AudioStreamer.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Compile /Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m307138851#307138852#0(0"0(0#0#68"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m2445471680#2256"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/Classes/AudioStreamer.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/AudioStreamer.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.382025
+e307138851.516499
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m307138851#307138851#0(0"0(0#0#69"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m4231192#2256"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/CDataScanner.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner_Extensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.516655
+e307138851.614905
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner_Extensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@99"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m307138851#307138852#0(0"0(0#0#91"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m4231192#2289"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/CDataScanner_Extensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CDataScanner_Extensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDataSerializer.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.849048
+e307138852.045386
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDataSerializer.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m307138851#307138852#0(0"0(0#0#81"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m2445471680#2275"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDataSerializer.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDataSerializer.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDeserializer.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.925006
+e307138852.045640
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDeserializer.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@87"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m307138851#307138852#0(0"0(0#0#79"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m2445471680#2271"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONDeserializer.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONDeserializer.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONScanner.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.045755
+e307138852.244994
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONScanner.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m307138852#307138852#0(0"0(0#0#74"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m2445471680#2261"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONScanner.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONScanner.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONSerializer.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.047215
+e307138852.162502
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONSerializer.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@85"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m307138852#307138852#0(0"0(0#0#77"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m2445471680#2267"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CJSONSerializer.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CJSONSerializer.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CSerializedJSONData.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.162645
+e307138852.240137
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CSerializedJSONData.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@89"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m307138852#307138852#0(0"0(0#0#81"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m2445471680#2275"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/JSON/CSerializedJSONData.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CSerializedJSONData.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CTidy.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138853.411188
+e307138853.482972
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CTidy.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m307138853#307138853#0(0"0(0#0#66"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m2445471680#2246"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Tidy/CTidy.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CTidy.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.565404
+e307138852.752438
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@76"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m307138852#307138852#0(0"0(0#0#68"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m2445471680#2255"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_CreationExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.387283
+e307138852.520182
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_CreationExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@104"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m307138852#307138852#0(0"0(0#0#96"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m2445471680#2302"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLDocument_CreationExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_CreationExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_PrivateExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.752580
+e307138852.879270
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_PrivateExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m307138852#307138852#0(0"0(0#0#86"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m2445471680#2291"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLDocument_PrivateExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLDocument_PrivateExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.769341
+e307138852.990292
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m307138852#307138852#0(0"0(0#0#67"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m2445471680#2253"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_CreationExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.879414
+e307138853.048738
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_CreationExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m307138852#307138853#0(0"0(0#0#86"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m2445471680#2291"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_CreationExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_CreationExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_ElementTreeExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.990953
+e307138853.144555
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_ElementTreeExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@97"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m307138852#307138853#0(0"0(0#0#89"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m2445471680#2297"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLElement_ElementTreeExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLElement_ElementTreeExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNamespaceNode.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138853.048878
+e307138853.227732
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNamespaceNode.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@81"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m307138853#307138853#0(0"0(0#0#73"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m2445471680#2265"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNamespaceNode.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNamespaceNode.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138853.144702
+e307138853.411055
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m307138853#307138853#0(0"0(0#0#64"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m2445471680#2247"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_CreationExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.520328
+e307138852.769203
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_CreationExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@100"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m307138852#307138852#0(0"0(0#0#92"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m2445471680#2294"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/Creation/CXMLNode_CreationExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_CreationExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_PrivateExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138853.227877
+e307138853.352670
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_PrivateExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@90"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m307138853#307138853#0(0"0(0#0#82"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m2445471680#2283"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_PrivateExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_PrivateExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_XPathExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138853.352813
+e307138853.495236
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_XPathExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m307138853#307138853#0(0"0(0#0#80"/Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m2445471680#2279"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchXML/CXMLNode_XPathExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/CXMLNode_XPathExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/DataController.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138852.245133
+e307138852.565265
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/DataController.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController init]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:19: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController getXMLNodes::]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:35: warning: incompatible Objective-C types 'struct NSString *', expected 'struct NSData *' when passing argument 1 of 'initWithData:options:error:' from distinct Objective-C type
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController getCategories]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:127: warning: incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController getStationTitles:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: 'NSArray' may not respond to '-addObject:'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: (Messages without a matching method signature
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: will be assumed to return 'id' and accept
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: '...' as arguments.)
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController resetData]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:155: warning: 'directoryContentsAtPath:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:164)
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:153: warning: unused variable 'defaultDirPath'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController parseStations:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:171: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:196: warning: format not a string literal and no format arguments
+lSLF07#2@77"Compile /Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307138852#307138852#0(2440"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController init]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:19: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController getXMLNodes::]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:35: warning: incompatible Objective-C types 'struct NSString *', expected 'struct NSData *' when passing argument 1 of 'initWithData:options:error:' from distinct Objective-C type/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController getCategories]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:127: warning: incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController getStationTitles:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: 'NSArray' may not respond to '-addObject:'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: (Messages without a matching method signature/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: will be assumed to return 'id' and accept/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:137: warning: '...' as arguments.)/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController resetData]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:155: warning: 'directoryContentsAtPath:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:164)/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:153: warning: unused variable 'defaultDirPath'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m: In function '-[DataController parseStations:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:171: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m:196: warning: format not a string literal and no format arguments9(22@51"Format not a string literal and no format arguments307138852#109#135#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#19#0#19#0#51"format not a string literal and no format arguments0(22@166"Incompatible Objective-C types 'struct NSString *', expected 'struct NSData *' when passing argument 1 of 'initWithData:options:error:' from distinct Objective-C type307138852#362#250#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#35#0#35#0#0"0(22@95"Incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'307138852#730#180#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#127#0#127#0#58"incompatible Objective-C types assigning '*', expected '*'0(22@42"'NSArray' may not respond to '-addObject:'307138852#1032#127#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#137#0#137#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)307138852#1159#130#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#137#0#137#0#0"0(22@213"'directoryContentsAtPath:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h:164)307138852#1634#298#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#155#0#155#0#33"'*' is deprecated (declared at *)0(22@32"Unused variable 'defaultDirPath'307138852#1932#117#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#153#0#153#0#19"unused variable '*'0(22@51"Format not a string literal and no format arguments307138852#2168#136#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#171#0#171#0#51"format not a string literal and no format arguments0(22@51"Format not a string literal and no format arguments307138852#2304#136#0(6@69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m307131256#196#0#196#0#51"format not a string literal and no format arguments0(0#0#69"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m2445471680#2258"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/Classes/DataController.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/DataController.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSCharacterSet_Extensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.615045
+e307138851.767527
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSCharacterSet_Extensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@101"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m307138851#307138852#0(0"0(0#0#93"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m2445471680#2293"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSCharacterSet_Extensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSCharacterSet_Extensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSDictionary_JSONExtensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.635874
+e307138851.848901
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSDictionary_JSONExtensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@103"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m307138851#307138852#0(0"0(0#0#95"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m2445471680#2297"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSDictionary_JSONExtensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSDictionary_JSONExtensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSScanner_Extensions.o /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138851.767689
+e307138851.924868
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSScanner_Extensions.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@96"Compile /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m307138851#307138852#0(0"0(0#0#88"/Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m2445471680#2283"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/TouchJSON/Extensions/NSScanner_Extensions.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/NSScanner_Extensions.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerAppDelegate.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138850.855963
+e307138851.021636
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerAppDelegate.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@95"Compile /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m307138850#307138851#0(0"0(0#0#87"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m2445471680#2294"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerAppDelegate.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerAppDelegate.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerViewController.o /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138886.536577
+e307138886.830938
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerViewController.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController viewDidLoad]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:48: warning: incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:51: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:69: warning: initialization makes pointer from integer without a cast
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:70: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:72: warning: passing argument 1 of 'selectRow:inComponent:animated:' makes integer from pointer without a cast
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: 'iPhoneStreamingPlayerViewController' may not respond to '-createStreamer:'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: (Messages without a matching method signature
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: will be assumed to return 'id' and accept
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: '...' as arguments.)
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController categorySegmentsTouched:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:87: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:89: warning: incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:92: warning: 'UIPickerView' may not respond to '-reloadData'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController createStreamer:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:128: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController textFieldShouldReturn:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:245: warning: 'iPhoneStreamingPlayerViewController' may not respond to '-createStreamer'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController pickerView:didSelectRow:inComponent:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:289: warning: format not a string literal and no format arguments
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController updateStations:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:325: warning: 'DataController' may not respond to '-loadStationsUpdate'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController alertView:didDismissWithButtonIndex:]':
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:334: warning: 'iPhoneStreamingPlayerViewController' may not respond to '-goToAppStore'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: At top level:
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:354: warning: incomplete implementation of class 'iPhoneStreamingPlayerViewController'
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:354: warning: method definition for '-sliderMoved:' not found
+o/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:354: warning: method definition for '-updateProgress:' not found
+lSLF07#2@98"Compile /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138886#307138886#0(4600"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController viewDidLoad]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:48: warning: incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:51: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:69: warning: initialization makes pointer from integer without a cast/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:70: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:72: warning: passing argument 1 of 'selectRow:inComponent:animated:' makes integer from pointer without a cast/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: 'iPhoneStreamingPlayerViewController' may not respond to '-createStreamer:'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: (Messages without a matching method signature/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: will be assumed to return 'id' and accept/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:73: warning: '...' as arguments.)/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController categorySegmentsTouched:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:87: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:89: warning: incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:92: warning: 'UIPickerView' may not respond to '-reloadData'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController createStreamer:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:128: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController textFieldShouldReturn:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:245: warning: 'iPhoneStreamingPlayerViewController' may not respond to '-createStreamer'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController pickerView:didSelectRow:inComponent:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:289: warning: format not a string literal and no format arguments/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController updateStations:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:325: warning: 'DataController' may not respond to '-loadStationsUpdate'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: In function '-[iPhoneStreamingPlayerViewController alertView:didDismissWithButtonIndex:]':/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:334: warning: 'iPhoneStreamingPlayerViewController' may not respond to '-goToAppStore'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m: At top level:/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:354: warning: incomplete implementation of class 'iPhoneStreamingPlayerViewController'/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:354: warning: method definition for '-sliderMoved:' not found/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m:354: warning: method definition for '-updateProgress:' not found19(22@95"Incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'307138886#158#200#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#48#0#48#0#58"incompatible Objective-C types assigning '*', expected '*'0(22@51"Format not a string literal and no format arguments307138886#358#156#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#51#0#51#0#51"format not a string literal and no format arguments0(22@56"Initialization makes pointer from integer without a cast307138886#514#161#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#69#0#69#0#0"0(22@51"Format not a string literal and no format arguments307138886#675#156#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#70#0#70#0#51"format not a string literal and no format arguments0(22@97"Passing argument 1 of 'selectRow:inComponent:animated:' makes integer from pointer without a cast307138886#831#202#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#72#0#72#0#67"passing argument * of '*' makes integer from pointer without a cast0(22@75"'iPhoneStreamingPlayerViewController' may not respond to '-createStreamer:'307138886#1033#180#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#73#0#73#0#26"'*' may not respond to '*'0(13@108"(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)307138886#1213#150#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#73#0#73#0#0"0(22@51"Format not a string literal and no format arguments307138886#1805#156#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#87#0#87#0#51"format not a string literal and no format arguments0(22@95"Incompatible Objective-C types assigning 'struct NSArray *', expected 'struct NSMutableArray *'307138886#1961#200#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#89#0#89#0#58"incompatible Objective-C types assigning '*', expected '*'0(22@47"'UIPickerView' may not respond to '-reloadData'307138886#2161#152#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#92#0#92#0#26"'*' may not respond to '*'0(22@51"Format not a string literal and no format arguments307138886#2475#157#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#128#0#128#0#51"format not a string literal and no format arguments0(22@74"'iPhoneStreamingPlayerViewController' may not respond to '-createStreamer'307138886#2801#180#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#245#0#245#0#26"'*' may not respond to '*'0(22@51"Format not a string literal and no format arguments307138886#3164#157#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#289#0#289#0#51"format not a string literal and no format arguments0(22@57"'DataController' may not respond to '-loadStationsUpdate'307138886#3483#163#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#325#0#325#0#26"'*' may not respond to '*'0(22@72"'iPhoneStreamingPlayerViewController' may not respond to '-goToAppStore'307138886#3829#178#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#334#0#334#0#26"'*' may not respond to '*'0(23@13"At top level:307138886#4007#106#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#0#0#0#0#0"0(22@72"Incomplete implementation of class 'iPhoneStreamingPlayerViewController'307138886#4113#178#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#354#0#354#0#38"incomplete implementation of class '*'0(22@47"Method definition for '-sliderMoved:' not found307138886#4291#153#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#354#0#354#0#35"method definition for '*' not found0(22@50"Method definition for '-updateProgress:' not found307138886#4444#156#0(6@90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m307138885#354#0#354#0#35"method definition for '*' not found0(0#0#90"/Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m2445471680#2300"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/Classes/iPhoneStreamingPlayerViewController.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayerViewController.o0#
+
+CCompileC build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/main.o /Volumes/volume2/projects/iphone/RadioPlayer/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138850.853060
+e307138851.055693
+r1
+xCompileC
+xbuild/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/main.o
+x/Volumes/volume2/projects/iphone/RadioPlayer/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@59"Compile /Volumes/volume2/projects/iphone/RadioPlayer/main.m307138850#307138851#0(0"0(0#0#51"/Volumes/volume2/projects/iphone/RadioPlayer/main.m4231192#2230"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -include /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch -c /Volumes/volume2/projects/iphone/RadioPlayer/main.m -o /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/main.o0#
+
+CCompileXIB "/Volumes/volume2/projects/iphone/RadioPlayer/iPhone Resources/MainWindow.xib"
+r0
+
+CCompileXIB "/Volumes/volume2/projects/iphone/RadioPlayer/iPhone Resources/iPhoneStreamingPlayerViewController.xib"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/fm.png "Shared Resources/fm.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/fmplayer_stations.xml fmplayer_stations.xml
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iphone-metal.png "Shared Resources/iphone-metal.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/loading.png "Shared Resources/loading.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/loadingbutton.png "Shared Resources/loadingbutton.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pausebutton.png "Shared Resources/pausebutton.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png "Shared Resources/pickerview.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/pickerview.png pickerview.png
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/playbuttonred.png "Shared Resources/playbuttonred.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/playbuttonsky.png "Shared Resources/playbuttonsky.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/steelmesh.jpg "Shared Resources/steelmesh.jpg"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbutton.png "Shared Resources/stopbutton.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbuttonred.png stopbuttonred.png
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/stopbuttonsky.png "Shared Resources/stopbuttonsky.png"
+r0
+
+CCpResource build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/update.png "Shared Resources/update.png"
+r0
+
+CGenerateDSYMFile /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app.dSYM /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer
+s307138887.036844
+e307138887.100882
+r1
+xGenerateDSYMFile
+x/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app.dSYM
+x/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer
+lSLF07#2@151"GenerateDSYMFile build/Debug-iphonesimulator/iPhoneStreamingPlayer.app.dSYM build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer307138887#307138887#0(0"0(0#0#120"/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer2445471680#443"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer -o /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app.dSYM0#
+
+CLd /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer normal i386
+s307138886.831072
+e307138887.036659
+r1
+xLd
+x/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer
+xnormal
+xi386
+lSLF07#2@125"Link /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer307138886#307138887#0(0"0(0#0#0"2445471680#1174"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -L/Volumes/volume2/projects/iphone/RadioPlayer/AdMob -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -filelist /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/Objects-normal/i386/iPhoneStreamingPlayer.LinkFileList -mmacosx-version-min=10.6 -lxml2 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework QuartzCore -framework CFNetwork -framework AudioToolbox -lAdMob -framework MediaPlayer -weak_framework MessageUI -o /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/iPhoneStreamingPlayer0#
+
+CProcessInfoPlistFile /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app/Info.plist iPhoneInfo.plist
+r0
+
+CProcessPCH /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch.gch iPhoneStreamingPlayer_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s307138849.770576
+e307138850.852858
+r1
+xProcessPCH
+x/var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch.gch
+xiPhoneStreamingPlayer_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@43"Precompile iPhoneStreamingPlayer_Prefix.pch307138849#307138850#0(0"0(0#0#77"/Volumes/volume2/projects/iphone/RadioPlayer/iPhoneStreamingPlayer_Prefix.pch4231192#2112"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-generated-files.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-own-target-headers.hmap -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-all-target-headers.hmap -iquote /Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/iPhoneStreamingPlayer-project-headers.hmap -F/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator -I/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources/i386 -I/Volumes/volume2/projects/iphone/RadioPlayer/build/radioPlayer.build/Debug-iphonesimulator/iPhoneStreamingPlayer.build/DerivedSources -c /Volumes/volume2/projects/iphone/RadioPlayer/iPhoneStreamingPlayer_Prefix.pch -o /var/folders/SH/SHmGgjuEH4KG2sA2Or-7G++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/iPhoneStreamingPlayer_Prefix-frqekjuwhzxyezdrxzwxxkkmcmws/iPhoneStreamingPlayer_Prefix.pch.gch0#
+
+CTouch /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app
+s307138887.101011
+e307138887.104926
+r1
+xTouch
+x/Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app
+lSLF07#2@104"Touch /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app307138887#307138887#0(0"0(0#0#0"2445471680#304"    cd /Volumes/volume2/projects/iphone/RadioPlayer    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Volumes/volume2/projects/iphone/RadioPlayer/build/Debug-iphonesimulator/iPhoneStreamingPlayer.app0#
+

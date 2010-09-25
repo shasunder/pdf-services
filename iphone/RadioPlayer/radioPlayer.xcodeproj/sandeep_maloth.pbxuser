@@ -1,0 +1,1006 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* iPhoneStreamingPlayerAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {649, 377}}";
+			sepNavSelRange = "{552, 15}";
+			sepNavVisRange = "{0, 909}";
+			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
+		};
+	};
+	1D3623250D0F684500981E51 /* iPhoneStreamingPlayerAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {642, 494}}";
+			sepNavSelRange = "{529, 15}";
+			sepNavVisRange = "{68, 1009}";
+			sepNavWindowFrame = "{{38, 194}, {750, 558}}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* iPhoneStreamingPlayer */ = {
+		activeExec = 0;
+		executables = (
+			CC962FAE124A74C1006D41EB /* iPhoneStreamingPlayer */,
+		);
+	};
+	28D7ACF60DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {936, 637}}";
+			sepNavSelRange = "{713, 0}";
+			sepNavVisRange = "{625, 997}";
+			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
+		};
+	};
+	28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2084, 4641}}";
+			sepNavSelRange = "{8953, 0}";
+			sepNavVisRange = "{8562, 560}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = CC962FAE124A74C1006D41EB /* iPhoneStreamingPlayer */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* iPhoneStreamingPlayer */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* iPhoneStreamingPlayer */,
+		);
+		breakpoints = (
+			CC96303C124A86D7006D41EB /* iPhoneStreamingPlayerViewController.m:143 */,
+			CC0F19D7124A8C6F00644EDE /* iPhoneStreamingPlayerViewController.m:143 */,
+			CC0F19EF124A8E1400644EDE /* iPhoneStreamingPlayerViewController.m:143 */,
+			CC0379AA124AB73C00CAD05C /* AdViewController.m:36 */,
+			CC0379F2124ABC8F00CAD05C /* AdViewController.m:22 */,
+			CC0379FF124ABDBA00CAD05C /* AdViewController.m:9 */,
+			CC4A181E124D057600AED034 /* DataController.m:81 */,
+			CC4A1834124D064600AED034 /* DataController.m:133 */,
+			CC4A185A124D098900AED034 /* iPhoneStreamingPlayerViewController.m:143 */,
+			CC4A1869124D0A0900AED034 /* AdViewController.m:16 */,
+			CC4A1875124D0E1600AED034 /* iPhoneStreamingPlayerViewController.m:143 */,
+			CC4A1883124D0E8C00AED034 /* iPhoneStreamingPlayerViewController.m:143 */,
+			CC186828124D1EF000EE481E /* iPhoneStreamingPlayerViewController.m:88 */,
+			CC1868AA124D220E00EE481E /* iPhoneStreamingPlayerViewController.m:271 */,
+			CC186927124D2D3B00EE481E /* DataController.m:185 */,
+			CC794E60124E4B860077C815 /* iPhoneStreamingPlayerViewController.m:273 */,
+			CC794E6F124E4C2C0077C815 /* DataController.m:143 */,
+			CC794EF2124E64D50077C815 /* iPhoneStreamingPlayerViewController.m:319 */,
+			CC794F76124E718B0077C815 /* iPhoneStreamingPlayerViewController.m:328 */,
+			CC794FCD124E7D540077C815 /* iPhoneStreamingPlayerViewController.m:72 */,
+		);
+		codeSenseManager = CC962FC0124A74C7006D41EB /* Code sense */;
+		executables = (
+			CC962FAE124A74C1006D41EB /* iPhoneStreamingPlayer */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA1AED706398EBD00589147" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					198,
+					20,
+					99,
+					99,
+					29,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					395.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					464,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					468,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 307138844;
+			PBXWorkspaceStateSaveDate = 307138844;
+		};
+		perUserProjectItems = {
+			CC0379A0124AB4E700CAD05C = CC0379A0124AB4E700CAD05C /* PBXTextBookmark */;
+			CC0379AE124AB74000CAD05C = CC0379AE124AB74000CAD05C /* PBXTextBookmark */;
+			CC0379AF124AB74000CAD05C = CC0379AF124AB74000CAD05C /* PBXTextBookmark */;
+			CC0379B0124AB74000CAD05C = CC0379B0124AB74000CAD05C /* PBXTextBookmark */;
+			CC186797124D180200EE481E = CC186797124D180200EE481E /* PlistBookmark */;
+			CC186798124D180200EE481E = CC186798124D180200EE481E /* PBXTextBookmark */;
+			CC1867F9124D196200EE481E = CC1867F9124D196200EE481E /* PBXTextBookmark */;
+			CC4A1815124D050400AED034 = CC4A1815124D050400AED034 /* PBXTextBookmark */;
+			CC794E37124E1F050077C815 = CC794E37124E1F050077C815 /* PBXTextBookmark */;
+			CC794F30124E6A580077C815 = CC794F30124E6A580077C815 /* PBXTextBookmark */;
+			CC794F89124E737A0077C815 = CC794F89124E737A0077C815 /* PBXTextBookmark */;
+			CC794F93124E740A0077C815 = CC794F93124E740A0077C815 /* PBXTextBookmark */;
+			CC794FB3124E7B430077C815 = CC794FB3124E7B430077C815 /* PBXTextBookmark */;
+			CC795048124E89B10077C815 = CC795048124E89B10077C815 /* PBXTextBookmark */;
+			CC795056124E8AA70077C815 = CC795056124E8AA70077C815 /* PBXTextBookmark */;
+			CC79505F124E8AD20077C815 = CC79505F124E8AD20077C815 /* PBXTextBookmark */;
+			CC79508A124E8E5B0077C815 = CC79508A124E8E5B0077C815 /* PBXTextBookmark */;
+			CC79508C124E8E5B0077C815 = CC79508C124E8E5B0077C815 /* PBXTextBookmark */;
+			CC7950A9124E90F40077C815 = CC7950A9124E90F40077C815 /* PBXTextBookmark */;
+			CC7950AA124E90F40077C815 = CC7950AA124E90F40077C815 /* PBXTextBookmark */;
+			CC7950AB124E90F40077C815 = CC7950AB124E90F40077C815 /* PBXTextBookmark */;
+			CC8C10AD124E912A0001F05D /* PBXTextBookmark */ = CC8C10AD124E912A0001F05D /* PBXTextBookmark */;
+			CC8C10B8124E91340001F05D /* XCBuildMessageTextBookmark */ = CC8C10B8124E91340001F05D /* XCBuildMessageTextBookmark */;
+			CC8C10B9124E91340001F05D /* PBXTextBookmark */ = CC8C10B9124E91340001F05D /* PBXTextBookmark */;
+			CC8C10BC124E91480001F05D /* XCBuildMessageTextBookmark */ = CC8C10BC124E91480001F05D /* XCBuildMessageTextBookmark */;
+			CC8C10BD124E91480001F05D /* PBXTextBookmark */ = CC8C10BD124E91480001F05D /* PBXTextBookmark */;
+			CC9B65E1124BA2430074298C = CC9B65E1124BA2430074298C /* PBXBookmark */;
+			CC9B6622124BB50A0074298C = CC9B6622124BB50A0074298C /* PBXBookmark */;
+			CC9B66A6124BC64C0074298C = CC9B66A6124BC64C0074298C /* PBXBookmark */;
+		};
+		sourceControlManager = CC962FBF124A74C7006D41EB /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {686, 403}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 881}";
+		};
+	};
+	32CA4F630368D1EE00C91783 /* iPhoneStreamingPlayer_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {686, 403}}";
+			sepNavSelRange = "{133, 0}";
+			sepNavVisRange = "{0, 185}";
+		};
+	};
+	C9C2D8780EB6E09C00A3D071 /* AudioStreamer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 24518}}";
+			sepNavSelRange = "{3014, 0}";
+			sepNavVisRange = "{0, 1440}";
+		};
+	};
+	C9C2D8790EB6E09C00A3D071 /* AudioStreamer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {782, 2262}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{5132, 754}";
+		};
+	};
+	CC0369E3124AAA6C00CAD05C /* AdMobDelegateProtocol.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {649, 2717}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{489, 1367}";
+		};
+	};
+	CC0369E6124AAA6C00CAD05C /* AdMobView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {642, 910}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1108}";
+		};
+	};
+	CC0379A0124AB4E700CAD05C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9C2D8780EB6E09C00A3D071 /* AudioStreamer.m */;
+		name = "AudioStreamer.m: 55";
+		rLen = 0;
+		rLoc = 3014;
+		rType = 0;
+		vrLen = 1440;
+		vrLoc = 0;
+	};
+	CC0379AA124AB73C00CAD05C /* AdViewController.m:36 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4B948B124B83AF00970E22 /* AdViewController.m */;
+		functionName = "-currentViewControllerForAd:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 36;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.969155;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC0379AE124AB74000CAD05C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9C2D8790EB6E09C00A3D071 /* AudioStreamer.h */;
+		name = "AudioStreamer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 754;
+		vrLoc = 5132;
+	};
+	CC0379AF124AB74000CAD05C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC0369E6124AAA6C00CAD05C /* AdMobView.h */;
+		name = "AdMobView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1108;
+		vrLoc = 0;
+	};
+	CC0379B0124AB74000CAD05C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC0369E3124AAA6C00CAD05C /* AdMobDelegateProtocol.h */;
+		name = "AdMobDelegateProtocol.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1367;
+		vrLoc = 489;
+	};
+	CC0379F2124ABC8F00CAD05C /* AdViewController.m:22 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4B948B124B83AF00970E22 /* AdViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 22;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.971706;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC0379FF124ABDBA00CAD05C /* AdViewController.m:9 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4B948B124B83AF00970E22 /* AdViewController.m */;
+		functionName = "-awakeFromNib";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 9;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.97427;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC0F19D7124A8C6F00644EDE /* iPhoneStreamingPlayerViewController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-pickerView:didSelectRow:inComponent:";
+		hitCount = 3;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134636.00309;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC0F19EF124A8E1400644EDE /* iPhoneStreamingPlayerViewController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-createStreamer";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.966208;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC186797124D180200EE481E /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9E673410FE8C6510033BF43 /* iPhoneInfo.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleInfoDictionaryVersion,
+		);
+		name = /Volumes/volume2/projects/iphone/KannadaFM/iPhoneInfo.plist;
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	CC186798124D180200EE481E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 881;
+		vrLoc = 0;
+	};
+	CC1867F9124D196200EE481E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* iPhoneStreamingPlayer_Prefix.pch */;
+		name = "iPhoneStreamingPlayer_Prefix.pch: 6";
+		rLen = 0;
+		rLoc = 133;
+		rType = 0;
+		vrLen = 185;
+		vrLoc = 0;
+	};
+	CC186828124D1EF000EE481E /* iPhoneStreamingPlayerViewController.m:88 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-categorySegmentsTouched:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 88;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134615.000383;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC1868AA124D220E00EE481E /* iPhoneStreamingPlayerViewController.m:271 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-pickerView:didSelectRow:inComponent:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 271;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134615.01151;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC186927124D2D3B00EE481E /* DataController.m:185 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4A17B3124CF1C300AED034 /* DataController.m */;
+		functionName = "-parseStations:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 185;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134615.014575;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC4A17B2124CF1C200AED034 /* DataController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {642, 399}}";
+			sepNavSelRange = "{413, 0}";
+			sepNavVisRange = "{0, 526}";
+		};
+	};
+	CC4A17B3124CF1C300AED034 /* DataController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {663, 3185}}";
+			sepNavSelRange = "{3896, 0}";
+			sepNavVisRange = "{3725, 290}";
+		};
+	};
+	CC4A17B5124CF36600AED034 /* Constants.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {642, 416}}";
+			sepNavSelRange = "{157, 0}";
+			sepNavVisRange = "{0, 697}";
+		};
+	};
+	CC4A17D8124CF49700AED034 /* CXMLNode.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 1092}}";
+			sepNavSelRange = "{1277, 0}";
+			sepNavVisRange = "{0, 510}";
+		};
+	};
+	CC4A17EE124CFF3D00AED034 /* fmplayer_stations.xml */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {796, 399}}";
+			sepNavSelRange = "{365, 0}";
+			sepNavVisRange = "{0, 899}";
+		};
+	};
+	CC4A1815124D050400AED034 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC4A17D8124CF49700AED034 /* CXMLNode.h */;
+		name = "CXMLNode.h: 8";
+		rLen = 0;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 1419;
+		vrLoc = 0;
+	};
+	CC4A181E124D057600AED034 /* DataController.m:81 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4A17B3124CF1C300AED034 /* DataController.m */;
+		functionName = "-loadStations";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 81;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.977013;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC4A1834124D064600AED034 /* DataController.m:133 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4A17B3124CF1C300AED034 /* DataController.m */;
+		functionName = "-getStationTitles:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 133;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.979534;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC4A185A124D098900AED034 /* iPhoneStreamingPlayerViewController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.9818481;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC4A1869124D0A0900AED034 /* AdViewController.m:16 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4B948B124B83AF00970E22 /* AdViewController.m */;
+		functionName = "-awakeFromNib";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 16;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.985171;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC4A1875124D0E1600AED034 /* iPhoneStreamingPlayerViewController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.9915839;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC4A1883124D0E8C00AED034 /* iPhoneStreamingPlayerViewController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-buttonPressed:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.996416;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC4B948B124B83AF00970E22 /* AdViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {880, 1391}}";
+			sepNavSelRange = "{3105, 25}";
+			sepNavVisRange = "{2512, 1038}";
+		};
+	};
+	CC794E12124E17B40077C815 /* steelmesh.jpg */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
+		};
+	};
+	CC794E37124E1F050077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* iPhoneStreamingPlayerAppDelegate.m */;
+		name = "iPhoneStreamingPlayerAppDelegate.m: 15";
+		rLen = 15;
+		rLoc = 529;
+		rType = 0;
+		vrLen = 1009;
+		vrLoc = 68;
+	};
+	CC794E60124E4B860077C815 /* iPhoneStreamingPlayerViewController.m:273 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-pickerView:didSelectRow:inComponent:";
+		hitCount = 2;
+		ignoreCount = 0;
+		lineNumber = 273;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134634.09433;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC794E6F124E4C2C0077C815 /* DataController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CC4A17B3124CF1C300AED034 /* DataController.m */;
+		functionName = "-getStationUrl::";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134615.02209;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC794EF2124E64D50077C815 /* iPhoneStreamingPlayerViewController.m:319 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-showSettings";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 319;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134615.02434;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC794F1D124E67250077C815 /* RootViewController.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = RootViewController.h;
+		path = /Volumes/volume2/projects/iphone/JavaIQ/Classes/RootViewController.h;
+		sourceTree = "<absolute>";
+	};
+	CC794F30124E6A580077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC794F1D124E67250077C815 /* RootViewController.h */;
+		name = "RootViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 186;
+		vrLoc = 0;
+	};
+	CC794F76124E718B0077C815 /* iPhoneStreamingPlayerViewController.m:328 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-updateStations:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 328;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134615.026647;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC794F89124E737A0077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC4A17EE124CFF3D00AED034 /* fmplayer_stations.xml */;
+		name = "fmplayer_stations.xml: 9";
+		rLen = 0;
+		rLoc = 365;
+		rType = 0;
+		vrLen = 899;
+		vrLoc = 0;
+	};
+	CC794F93124E740A0077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC4A17B2124CF1C200AED034 /* DataController.h */;
+		name = "DataController.h: 14";
+		rLen = 0;
+		rLoc = 413;
+		rType = 0;
+		vrLen = 526;
+		vrLoc = 0;
+	};
+	CC794FB3124E7B430077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC4A17B3124CF1C300AED034 /* DataController.m */;
+		name = "DataController.m: 117";
+		rLen = 0;
+		rLoc = 3236;
+		rType = 0;
+		vrLen = 789;
+		vrLoc = 2752;
+	};
+	CC794FCD124E7D540077C815 /* iPhoneStreamingPlayerViewController.m:72 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-viewDidLoad";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 72;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134617.6573861;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CC795048124E89B10077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC4B948B124B83AF00970E22 /* AdViewController.m */;
+		name = "AdViewController.m: 92";
+		rLen = 25;
+		rLoc = 3105;
+		rType = 0;
+		vrLen = 1038;
+		vrLoc = 2512;
+	};
+	CC795056124E8AA70077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC795057124E8AA70077C815 /* SettingsViewController.m */;
+		name = "SettingsViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 937;
+		vrLoc = 357;
+	};
+	CC795057124E8AA70077C815 /* SettingsViewController.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = SettingsViewController.m;
+		path = /Volumes/volume2/projects/iphone/JavaIQ/Classes/SettingsViewController.m;
+		sourceTree = "<absolute>";
+	};
+	CC795059124E8AA70077C815 /* RootViewController.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = RootViewController.m;
+		path = /Volumes/volume2/projects/iphone/JavaIQ/Classes/RootViewController.m;
+		sourceTree = "<absolute>";
+	};
+	CC79505F124E8AD20077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC795059124E8AA70077C815 /* RootViewController.m */;
+		name = "RootViewController.m: 21";
+		rLen = 6;
+		rLoc = 526;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 159;
+	};
+	CC79508A124E8E5B0077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* iPhoneStreamingPlayerAppDelegate.h */;
+		name = "iPhoneStreamingPlayerAppDelegate.h: 17";
+		rLen = 15;
+		rLoc = 552;
+		rType = 0;
+		vrLen = 909;
+		vrLoc = 0;
+	};
+	CC79508C124E8E5B0077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.h */;
+		name = "iPhoneStreamingPlayerViewController.h: 20";
+		rLen = 0;
+		rLoc = 713;
+		rType = 0;
+		vrLen = 997;
+		vrLoc = 625;
+	};
+	CC7950A9124E90F40077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC4A17B5124CF36600AED034 /* Constants.h */;
+		name = "Constants.h: 11";
+		rLen = 0;
+		rLoc = 157;
+		rType = 0;
+		vrLen = 697;
+		vrLoc = 0;
+	};
+	CC7950AA124E90F40077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		name = "iPhoneStreamingPlayerViewController.m: 338";
+		rLen = 0;
+		rLoc = 9457;
+		rType = 0;
+		vrLen = 643;
+		vrLoc = 9016;
+	};
+	CC7950AB124E90F40077C815 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		name = "iPhoneStreamingPlayerViewController.m: 283";
+		rLen = 0;
+		rLoc = 7659;
+		rType = 0;
+		vrLen = 999;
+		vrLoc = 6943;
+	};
+	CC8C10AD124E912A0001F05D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		name = "iPhoneStreamingPlayerViewController.m: 269";
+		rLen = 0;
+		rLoc = 7223;
+		rType = 0;
+		vrLen = 1136;
+		vrLoc = 6876;
+	};
+	CC8C10B8124E91340001F05D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected identifier or '(' before '}' token";
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 317;
+		rType = 1;
+	};
+	CC8C10B9124E91340001F05D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		name = "iPhoneStreamingPlayerViewController.m: 319";
+		rLen = 0;
+		rLoc = 8953;
+		rType = 0;
+		vrLen = 553;
+		vrLoc = 8581;
+	};
+	CC8C10BC124E91480001F05D /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected identifier or '(' before '}' token";
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 317;
+		rType = 1;
+	};
+	CC8C10BD124E91480001F05D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		name = "iPhoneStreamingPlayerViewController.m: 323";
+		rLen = 0;
+		rLoc = 9038;
+		rType = 0;
+		vrLen = 976;
+		vrLoc = 8483;
+	};
+	CC962FAE124A74C1006D41EB /* iPhoneStreamingPlayer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = iPhoneStreamingPlayer;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	CC962FBF124A74C7006D41EB /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	CC962FC0124A74C7006D41EB /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	CC96303C124A86D7006D41EB /* iPhoneStreamingPlayerViewController.m:143 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 28D7ACF70DDB3853001CB0EB /* iPhoneStreamingPlayerViewController.m */;
+		functionName = "-pickerView:titleForRow:forComponent:";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 143;
+		location = iPhoneStreamingPlayer;
+		modificationTime = 307134614.958789;
+		originalNumberOfMultipleMatches = 1;
+		state = 2;
+	};
+	CC9B65DB124BA0330074298C /* stopredsquare.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = stopredsquare.png;
+		path = /Volumes/volume2/projects/iphone/RadioPlayer/stopredsquare.png;
+		sourceTree = "<absolute>";
+	};
+	CC9B65DD124BA1F80074298C /* stopbuttonred.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = stopbuttonred.png;
+		path = /Volumes/volume2/projects/iphone/RadioPlayer/stopbuttonred.png;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
+		};
+	};
+	CC9B65E1124BA2430074298C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = CC9B65DB124BA0330074298C /* stopredsquare.png */;
+	};
+	CC9B65F6124BA7370074298C /* pickerview.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = pickerview.png;
+		path = "/Volumes/volume2/projects/iphone/RadioPlayer/Shared Resources/pickerview.png";
+		sourceTree = "<absolute>";
+	};
+	CC9B6622124BB50A0074298C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = CC9B65DD124BA1F80074298C /* stopbuttonred.png */;
+	};
+	CC9B66A6124BC64C0074298C /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = CC9B65F6124BA7370074298C /* pickerview.png */;
+	};
+}
