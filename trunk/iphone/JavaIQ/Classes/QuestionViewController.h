@@ -7,19 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class DataController;
 
-@interface QuestionViewController :UIViewController {
+@interface QuestionViewController :UIViewController<UIAccelerometerDelegate> {
 	DataController *dataController;
 	NSString *category;
 	NSArray *records;
+	IBOutlet UIWebView *webView;
+	UIButton *backButton;
+
 }
 
 @property (nonatomic, retain) DataController *dataController;
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic, retain) NSArray *records;
-
--(CGSize) getSizeOfText: (NSString *) text;
-
+@property (nonatomic, retain) UIWebView *webView;
+@property (nonatomic, retain) UIButton *backButton;
 
 @end
