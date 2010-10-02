@@ -8,17 +8,33 @@
 
 #import "QuestionViewController.h"
 #import "Record.h"
+#import "DataController.h"
 
 @implementation QuestionViewController
 
 @synthesize dataController;
 @synthesize category;
 @synthesize records;
-UIWebView *webView;
+@synthesize webView;
+@synthesize backButton;
+BOOL navHidden = YES;
+
+
+-(void)hideShowNav { 
+	[self.navigationController setNavigationBarHidden:navHidden animated:YES];
+	NSString *icon= @"collapse-down.png";
+	if(!navHidden){
+		icon = @"collapse-up.png";
+	}
+	UIImage *backButtonImage = [UIImage imageNamed:icon];
+	[backButton setImage:backButtonImage forState:UIControlStateNormal];
+	navHidden= ! navHidden;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	CGRect frame=CGRectMake(5,20,315,420);
+	
+	CGRect frame=CGRectMake(0,0,320,460);
 	webView = [[[UIWebView alloc] initWithFrame:frame] autorelease];
 	webView.backgroundColor=[UIColor whiteColor];
 	records= [dataController getQuestionsArrayForCategory:category];
@@ -31,7 +47,16 @@ UIWebView *webView;
 		content= [NSString stringWithFormat:@"%@<strong>%@</strong><br/>%@</br></br>",content, record.question,record.answer];
 	}
 	
-	[webView loadHTMLString:content baseURL:[NSURL URLWithString:@"http://dummy"]];
+	NSString *contentHtml = [NSString stringWithFormat:@"<html> \n"
+								   "<head> \n"
+								   "<style type=\"text/css\"> \n"
+								   "body {font-family: \"%@\"; font-size: %d;} html{ -webkit-text-size-adjust: none;}\n"
+								   "</style> \n"
+								   "</head> \n"
+								   "<body>%@</body> \n"
+								   "</html>", @"AmericanTypewriter", 15, content];
+	
+	[webView loadHTMLString:contentHtml baseURL:[NSURL URLWithString:@"http://dummy"]];
 
 	[self.view addSubview:webView];
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
@@ -40,28 +65,29 @@ UIWebView *webView;
 	label.backgroundColor =[UIColor clearColor];
 	[label setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20]];
 	self.navigationItem.titleView = label;
-	[self.navigationController setNavigationBarHidden:YES animated:YES];
+		
+	backButton = [[UIButton buttonWithType:UIButtonTypeCustom ] retain];
+	[backButton addTarget:self action:@selector(hideShowNav) forControlEvents:UIControlEventTouchUpInside];
+	backButton.frame = CGRectMake(290, 0, 30, 30);
 	
+	[self hideShowNav];	
 	
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	[super touchesBegan:touches withEvent:event];
-    NSUInteger numTaps = [[touches anyObject] tapCount];
-	NSLog(@"tapped");
-	[self.navigationController setNavigationBarHidden:NO animated:YES];
+	[self.view addSubview:backButton];
+	
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
 	if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation== UIInterfaceOrientationLandscapeRight) {
-		webView.frame= CGRectMake(5,20,440,315);
+		webView.frame= CGRectMake(0,0,480,320);
+		backButton.frame = CGRectMake(450, 0, 30, 30);
 	}else {
-		webView.frame= CGRectMake(5,20,315,420);
+		webView.frame= CGRectMake(0,0,320,460);
+		backButton.frame = CGRectMake(290, 0, 30, 30);
 	}
 
     return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 @end

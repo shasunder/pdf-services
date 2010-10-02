@@ -4,42 +4,52 @@
 #import "CategoryViewController.h"
 #import "SettingsViewController.h"
 #import "JavaIQAppDelegate.h"
-
+#import <QuartzCore/QuartzCore.h>
+#import "AdViewController.h"
+#import "Constants.h"
 
 @implementation RootViewController
-@synthesize dataController;
 
-#pragma mark View lifecycle
+@synthesize dataController;
+@synthesize adViewController;
+
+- (UILabel *) getLabelForTitle {
+    UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,25)] autorelease];
+	label.textColor = [UIColor blackColor];
+	label.text = APP_TITLE;
+	[label setFont:[UIFont fontWithName:FONT_AMERICAN_TYPEWRITER size:20]];
+	label.backgroundColor=[UIColor clearColor];	
+  return label;
+}
+
+- (UIButton *) getButtonForSettings {
+    UIButton *button = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
+	button.frame = CGRectMake(0, 0, 25, 25);
+	[button addTarget:self action:@selector(showSettings) forControlEvents:UIControlEventTouchUpInside];
+  return button;
+}
 
 - (void)viewDidLoad {
+	
     [super viewDidLoad];
-	self.title = @"Java IQ";
+	self.title = APP_TITLE;
 	self.dataController = [[DataController alloc] init];
 	
-	UIButton *button = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
-	button.frame = CGRectMake(0, 0, 25, 25);
-	[button addTarget:self action:@selector(showSettings)  forControlEvents:UIControlEventTouchUpInside];
+	UIButton *button = [self getButtonForSettings];
+	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:button];	
 	
-	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:button];
-	
-	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,25)] autorelease];
-	label.textColor = [UIColor blackColor];
-	label.text = @"Java IQ";
-	[label setFont:[UIFont fontWithName:@"AmericanTypewriter" size:20]];
-	label.backgroundColor=[UIColor clearColor];
-	self.navigationItem.titleView = label;
+	self.navigationItem.titleView =  [self getLabelForTitle];
 }
 
 
-#pragma mark Table view data source
+#pragma Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	tableView.layer.opacity = 1.0;
     return 1;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return [[dataController getGroupTitles] count];
 }
 
@@ -48,23 +58,19 @@
    
 	static NSString *CellIdentifier = @"CellIdentifier";
 	NSArray *groups = [dataController getGroupTitles];
-	NSArray *groupDetails = [dataController getGroupSubTitles:groups];
-
-	// Dequeue or create a cell of the appropriate type.
+	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
+    
+	if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-	cell.backgroundView.backgroundColor = [UIColor clearColor];
-    
-    cell.textLabel.text = [groups objectAtIndex:indexPath.row]; //TODO: create another controller and set with categories
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:15];
 	
-	cell.detailTextLabel.lineBreakMode = UILineBreakModeWordWrap;
-	cell.detailTextLabel.text =[groupDetails objectAtIndex:indexPath.row];
-	cell.detailTextLabel.numberOfLines = 4;
-	cell.detailTextLabel.font=[UIFont boldSystemFontOfSize:8];;
+	cell.backgroundView.backgroundColor = [UIColor clearColor];    
+    cell.textLabel.text = [groups objectAtIndex:indexPath.row]; 
+    cell.textLabel.font = [UIFont fontWithName:FONT_AMERICAN_TYPEWRITER size:18];
+	cell.textLabel.textColor = [UIColor blackColor];
+	
 	return cell;
 }
 
@@ -94,10 +100,8 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-
 
 #pragma mark Memory management
 
@@ -108,6 +112,7 @@
 }
 
 @end
+
 
 @implementation UINavigationBar (UINavigationBarCategory)
 

@@ -3,12 +3,15 @@
 #import "Record.h"
 #import "QuestionViewController.h"
 #import "DataController.h"
+#import "AdMobView.h"
+#import "AdViewController.h"
 
 
 @implementation CategoryViewController
 
 @synthesize dataController;
 @synthesize group;
+@synthesize adViewController;
 
 NSArray *categories;
 
@@ -24,34 +27,28 @@ NSArray *categories;
 	label.backgroundColor =[UIColor clearColor];
 	self.navigationItem.titleView = label;
 	self.tableView.backgroundColor=[UIColor whiteColor];
-	
+	//TODO: ad view and set delegate for advert
 	
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    // Update the view with current data before it is disrecorded.
     [super viewWillAppear:animated];
-    
-    // Scroll the table view to the top before it appears
     [self.tableView reloadData];
     [self.tableView setContentOffset:CGPointZero animated:NO];
+	[self.tableView setSeparatorColor:[UIColor clearColor]]; 
    
 }
 
-
-#pragma mark -
 #pragma mark Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [dataController countOfCategory];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -64,13 +61,12 @@ NSArray *categories;
     }
 	
     cell.textLabel.text = [[dataController getCategories] objectAtIndex:indexPath.row];
-    return cell;
+	cell.textLabel.font= [UIFont fontWithName:@"AmericanTypewriter" size:18];
+  
+	return cell;
 }
 
-
-
 #pragma mark Table view selection
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     //When a row is selected, create the question view controller and set its detail item to the item associated with the selected row.
@@ -86,8 +82,7 @@ NSArray *categories;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 

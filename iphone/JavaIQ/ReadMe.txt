@@ -36,27 +36,42 @@ QuestionsViewController --> Actually displays the list of questions.
 TODO:
 ------
 4. Test on real iphone, ipod touch ios 3,4
-6. Get developer account created. - in progress
 7. Build questions database
-   - Improve xml to have ratings and question number (qno would be useful later for user ratings).
+12. Set app buy url in constants.h
+14. Build and deploy lite and premium versions of the app.
+
+
 
 Done
 ----
-
+1'. Integrate Advertisement with lite version.
 1. Reset should show initial question bank from default database(clear updated files)
 2. Ratings based questions display (1,2,3)
 3. Create local default questions database
 5. Create a product website.
+6. Get developer account created. - in progress
+8. Maintain ordering of questions and groups
+9. Ensure on update the xml is not corrupted (server error etc)
+10. Better logo (most are using current one)
+7'- Improve xml to have ratings and question number (qno would be useful later for user ratings).
+11. Advertisement
+13. Code cleanup 
 
 Future
 ------
-1. Integrate Advertisement with lite version.
+
 1. Allow users to turn off adverts for premium membership?
 2. Enhance web service to allow edit of text files on google app engine.
 3. Put default xml in application just as a faile safe feature.
 4. Make it ipad compatible
 5. Check for new version availability and let users know.
+14. Decide on accelerometer 
 
+optional :
+a. better navigation buttons
+b. update should show loading screen.
+c. REset/update should reload the groups in the main view also.
+d. Image caching
 
 
 ================================================================================

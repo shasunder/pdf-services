@@ -16,6 +16,20 @@
 @synthesize expertise;
 @synthesize updateCache;
 @synthesize status;
+@synthesize purchaseApp;
+@synthesize buyButton;
+@synthesize reset;
+@synthesize purchaseAppLabel1;
+@synthesize purchaseAppLabel2;
+
+//utils
+-(void)store:(NSString *)key :(NSString *)value{
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	NSLog(@"Storing value: %@ for key %@ ",value,key);
+	[defaults setObject:value forKey:key];
+	[defaults synchronize]; 
+}
 
 #pragma mark View lifecycle
 
@@ -26,13 +40,12 @@
 	NSString *expertiseStr = [defaults stringForKey: KEY_EXPERTISE];
 	NSLog(@"Stored value: %@ for key %@ ",expertiseStr, KEY_EXPERTISE);
 
-	
 	expertise.selectedSegmentIndex =expertiseStr.intValue;
 	NSString *currentVersion = [defaults stringForKey:KEY_VERSION];
 	if (currentVersion ==NULL) {
 		currentVersion =@"0.1";
 	}
-	status.text= [NSString stringWithFormat:@"Update DB from internet (current version %@)", currentVersion];
+	status.text= [NSString stringWithFormat:@"Update database(%@)", currentVersion];
 
 
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
@@ -42,6 +55,18 @@
 	label.backgroundColor=[UIColor clearColor];
 	self.navigationItem.titleView = label;
 	
+	if(IS_APP_LITE ==@"YES"){
+		[updateCache setTitleColor:[UIColor grayColor] forState:UIControlStateNormal ];
+	    [updateCache setEnabled:NO ];
+		[expertise setEnabled:NO];
+	}else{
+		[purchaseApp removeFromSuperview];
+		[buyButton removeFromSuperview];
+		[purchaseAppLabel1 removeFromSuperview];
+		[purchaseAppLabel2 removeFromSuperview];
+	}
+	
+	self.navigationItem.leftBarButtonItem.image = [UIImage imageNamed:@"back_button.png"];
 	
 }
 
@@ -54,27 +79,20 @@
 	[dataController loadCache];
 	NSString *latestVersion=[dataController getLatestApplicationVersion];
 
-	status.text=[NSString stringWithFormat: @"Update completed successfully (version %@)",latestVersion];
+	status.text=[NSString stringWithFormat: @"Updated successfully ( %@)",latestVersion];
 	[self store:KEY_VERSION : [NSString stringWithFormat:@"%@", latestVersion]];
 	status.backgroundColor= [UIColor orangeColor ];
 	NSLog(@"doUpdateCache completed");
 
 }
 
--(IBAction) doUpdateExpertise:(id)sender{
+-(IBAction)doUpdateExpertise:(id)sender{
 	NSString *value = [NSString stringWithFormat:@"%d", expertise.selectedSegmentIndex];
 	[self store:KEY_EXPERTISE :value];
 }
 
--(void)store:(NSString *)key :(NSString *)value{
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	
-	NSLog(@"Storing value: %@ for key %@ ",value,key);
-	[defaults setObject:value forKey:key];
-	[defaults synchronize]; 
-}
 
--(IBAction)  reset:(id)sender{
+-(IBAction)reset:(id)sender{
 	[dataController resetData];
 	[self store:KEY_VERSION : @"0" ];
 	[self store:KEY_EXPERTISE :@"0"];
@@ -85,10 +103,15 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
+
+-(IBAction)goToAppStore:(id)sender{
+	NSURL *appStoreUrl = [NSURL URLWithString:APP_BUY_URL];
+	[[UIApplication sharedApplication] openURL:appStoreUrl];
+	
+}
 
 #pragma mark Memory management
 

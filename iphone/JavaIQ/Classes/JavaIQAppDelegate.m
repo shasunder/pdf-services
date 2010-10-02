@@ -22,22 +22,9 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    /*
-	 The navigation and root view controllers are created in the main nib file.
-	 Configure the window with the navigation controller's view and then show it.
-	 */
     [window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
 	
-	/*//ROTATES VIEW TO LANDSCAPE MODE AND SETS THE STAGE SIZE
-	CGAffineTransform rotate = CGAffineTransformMakeRotation(1.57079633);
-	[window setTransform:rotate];
-	
-	CGRect contentRect = CGRectMake(0, 0, 480, 320); 
-	window.bounds = contentRect; 
-	[window setCenter:CGPointMake(160.0f, 240.0f)];
-	//==================================================== 
-	 */
 }
 
 
