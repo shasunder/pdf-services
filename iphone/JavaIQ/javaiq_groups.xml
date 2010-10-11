@@ -2,15 +2,13 @@
   <group title="Core Java" url="http://jshoutbox.appspot.com/file/102001" subtitle="Basics, Classes/objects, Threads, Collections..." description="Core java" />
   <group title="J2ee" url="http://jshoutbox.appspot.com/file/108001" subtitle="JDBC, EJB,  JMS, Servlets..." description="Java enterprise edition" />
   <group title="Frameworks" url="http://jshoutbox.appspot.com/file/107001" subtitle="Spring, Hibernate, Struts..." description="Popular opensource frameworks" />
-  <group title="Design patterns" url="http://jshoutbox.appspot.com/file/106001" subtitle="Gang of four,Java EE patterns,Arhitectural patterns..." description="Design patterns" />
-  <group title="Architecture" url="http://jshoutbox.appspot.com/file/104001" subtitle="Concepts, SOA, MDA,MVC..." description="Architecture" />
+  <group title="Architecture, Patterns, UML" url="http://jshoutbox.appspot.com/file/104001" subtitle="Gang of four,Java EE patterns,Arhitectural patterns..." description="Design patterns" />
+  <group title="Backend technologies" url="http://jshoutbox.appspot.com/file/105001" subtitle="SQL, Transactions,index..." description="Database basics" />
+  <group title="Frontend" url="http://jshoutbox.appspot.com/file/112001" subtitle="HTML, DHTML, AJAX, Javascript, Jquery, DOJO, GWT..." description="Client tier basics" />
+  <group title="Mock interview" url="http://jshoutbox.appspot.com/file/109001" subtitle="Mock sample question/answers..." description="Client tier basics" />
+  
   <!--group title="XML" url="http://jshoutbox.appspot.com/file/" subtitle="XML/XSD/XSL/Xquery/Xpath..." description="XML" /-->
   <!-- group title="Web tier" url="http://jshoutbox.appspot.com/file/" subtitle="Velocity/JSP/Taglib/JSF..." description="View technologies" /-->
-  <group title="Database" url="http://jshoutbox.appspot.com/file/105001" subtitle="SQL, Transactions,index..." description="Database basics" />
   <!--group title="Servers" url="http://jshoutbox.appspot.com/file/" subtitle="Tomcat,JBoss, MarkLogic, Apache, IIS,..." description="Server basics" /-->
-  <!--group title="Client Side" url="http://jshoutbox.appspot.com/file/102001" subtitle="HTML, DHTML, AJAX, Javascript, Jquery, Tibco GI, DOJO, GWT..." description="Client tier basics" /-->
-<group title="Mock interview" url="http://jshoutbox.appspot.com/file/109001" subtitle="Mock sample question/answers..." description="Client tier basics" />
-<group title="UML" url="http://jshoutbox.appspot.com/file/111001" subtitle="UML diagrams..." description="UML" />
-
 
 </groups>

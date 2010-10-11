@@ -17,8 +17,10 @@
 @synthesize records;
 @synthesize webView;
 @synthesize backButton;
-BOOL navHidden = YES;
+@synthesize expandButton;
 
+BOOL navHidden = YES;
+BOOL expand = YES;
 
 -(void)hideShowNav { 
 	[self.navigationController setNavigationBarHidden:navHidden animated:YES];
@@ -29,6 +31,40 @@ BOOL navHidden = YES;
 	UIImage *backButtonImage = [UIImage imageNamed:icon];
 	[backButton setImage:backButtonImage forState:UIControlStateNormal];
 	navHidden= ! navHidden;
+}
+
+-(void)expandOrCollapse { 
+	NSString *jsEval = expand ? @"displayClass('answer','block')" : @"displayClass('answer','none')";
+	[webView stringByEvaluatingJavaScriptFromString:jsEval];
+
+	NSString *icon= @"button-collapse.png";
+	if(!expand){
+		icon = @"button-expand.png";
+	}
+		
+	UIImage *expandButtonImage = [UIImage imageNamed:icon];
+	[expandButton setImage:expandButtonImage forState:UIControlStateNormal];
+	expand= ! expand;
+}
+
+-(NSString *)getJS{
+	return [NSString stringWithFormat:@"<script language =\"javascript\">"
+			"function displayClass(objClass, display){\n" 
+			"	var elements = document.getElementsByTagName('div');\n"
+			"	for (i=0; i<elements.length; i++){\n"
+			"		if (elements[i].className==objClass){\n"
+			"			elements[i].style.display= display; \n"
+			"		}"
+			"	}"
+			"}"
+			" "
+			"function hideShowRow(index){ \n "
+			"   var row = document.getElementById('answer'+index);"
+			"   var current =row.style.display;"
+			"   row.style.display = (current == 'block') ? 'none' : 'block';"
+			" } "
+			"</script>"];
+	
 }
 
 - (void)viewDidLoad {
@@ -43,20 +79,29 @@ BOOL navHidden = YES;
 	if (records==NULL || [records count]==0) {
 		content=@"No records found for your skill level";
 	}
+	int i=0;
 	for(Record *record in records){
-		content= [NSString stringWithFormat:@"%@<strong>%@</strong><br/>%@</br></br>",content, record.question,record.answer];
+		content= [NSString stringWithFormat:@"%@<div class=\"question\" onclick=\"hideShowRow(%d).style.display= 'block';\"><strong>%@</strong></div><br/><div id=\"answer%d\" class=\"answer\">%@</br></div></br>",content,i, record.question,i, record.answer];
+		i=i+1;
 	}
 	
 	NSString *contentHtml = [NSString stringWithFormat:@"<html> \n"
 								   "<head> \n"
-								   "<style type=\"text/css\"> \n"
-								   "body {font-family: \"%@\"; font-size: %d;} html{ -webkit-text-size-adjust: none;}\n"
-								   "</style> \n"
+								   "   <style type=\"text/css\"> \n"
+								   "    body {font-family: \"%@\"; font-size: %d;} html{ -webkit-text-size-adjust: none;}\n"
+								   "   </style> \n"
+							       "    %@ "   //javascript
 								   "</head> \n"
-								   "<body>%@</body> \n"
-								   "</html>", @"AmericanTypewriter", 15, content];
+								   "<body >%@</body> \n"
+							 "</html>", @"AmericanTypewriter", 15, [self getJS], content];
 	
-	[webView loadHTMLString:contentHtml baseURL:[NSURL URLWithString:@"http://dummy"]];
+	//NSLog(contentHtml);
+	NSString *defaultDirPath=[[NSBundle mainBundle] resourcePath];
+	defaultDirPath = [NSString stringWithFormat:@"%@",defaultDirPath];
+	NSURL *baseURL = [NSURL fileURLWithPath:defaultDirPath];
+
+	
+	[webView loadHTMLString:contentHtml baseURL:baseURL];
 
 	[self.view addSubview:webView];
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
@@ -68,12 +113,19 @@ BOOL navHidden = YES;
 		
 	backButton = [[UIButton buttonWithType:UIButtonTypeCustom ] retain];
 	[backButton addTarget:self action:@selector(hideShowNav) forControlEvents:UIControlEventTouchUpInside];
-	backButton.frame = CGRectMake(290, 0, 30, 30);
+	backButton.frame = CGRectMake(295, 0, 30, 30);
+	
+	
+	expandButton = [[UIButton buttonWithType:UIButtonTypeCustom ] retain];
+	[expandButton addTarget:self action:@selector(expandOrCollapse) forControlEvents:UIControlEventTouchUpInside];
+	expandButton.frame = CGRectMake(295, 20, 30, 30);
 	
 	[self hideShowNav];	
+	[self expandOrCollapse];
 	
 	[self.view addSubview:backButton];
-	
+	[self.view addSubview:expandButton];
+		
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -81,13 +133,16 @@ BOOL navHidden = YES;
 	if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation== UIInterfaceOrientationLandscapeRight) {
 		webView.frame= CGRectMake(0,0,480,320);
 		backButton.frame = CGRectMake(450, 0, 30, 30);
+		expandButton.frame = CGRectMake(450, 20, 30, 30);
 	}else {
 		webView.frame= CGRectMake(0,0,320,460);
-		backButton.frame = CGRectMake(290, 0, 30, 30);
+		backButton.frame = CGRectMake(295, 0, 30, 30);
+		expandButton.frame = CGRectMake(295, 20, 30, 30);
 	}
 
     return YES;//(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 
 
 @end
