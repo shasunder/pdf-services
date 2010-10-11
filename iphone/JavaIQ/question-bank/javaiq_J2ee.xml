@@ -1,0 +1,507 @@
+<questionbank group="J2EE">
+	<category name="EJB">
+		<qa id="1" rating="2">			<question><![CDATA[q:What are the different kinds of enterprise beans?]]></question>
+			<answer><![CDATA[<b>Stateless session bean</b>- An instance of these non-persistent EJBs provides a service without storing an interaction or conversation state between methods. Any instance can be used for any client.
+<b>Stateful session bean</b>- An instance of these non-persistent EJBs maintains state across methods and transactions. Each instance is associated with a particular client.
+<b>Entity bean</b>- An instance of these persistent EJBs represents an object view of the data, usually rows in a database. They have a primary key as a unique identifier. Entity bean persistence can be either container-managed or bean-managed. 
+<b>Message-driven bean</b>- An instance of these EJBs is integrated with the Java Message Service (JMS) to provide the ability for message-driven beans to act as a standard JMS message consumer and perform asynchronous processing between the server and the JMS message producer.]]></answer>
+		</qa>
+		<qa id="2" rating="2">			<question><![CDATA[q:What is Session Bean?]]></question>
+			<answer><![CDATA[A session bean is a non-persistent object that implements some business logic running on the server. One way to think of a session object is as a logical extension of the client program that runs on the server.
+Session beans are used to manage the interactions of entity and other session beans,access resources, and generally perform tasks on behalf of the client.
+There are two basic kinds of session bean- stateless and stateful. 
+Stateless session beans are made up of business methods that behave like procedures; they operate only on the arguments passed to them when they are invoked. Stateless beans are called stateless because they are transient; they do not maintain business state between method invocations.Each invocation of a stateless business method is independent from previous invocations. Because stateless session beans are stateless, they are easier for the EJB container to manage, so they tend to process requests faster and use less resources.
+Stateful session beans encapsulate business logic and state specific to a client. Stateful beans are called "stateful" because they do maintain business state between method invocations, held in memory and not persistent. Unlike stateless session beans, clients do not share stateful beans. When a client creates a stateful bean, that bean instance is dedicated to service only that client. This makes it possible to maintain conversational state, which is business state that can be shared by methods in the same stateful bean.]]></answer>
+		</qa>
+		<qa id="3" rating="2">			<question><![CDATA[q:What is Entity Bean?]]></question>
+			<answer><![CDATA[The entity bean is used to represent data in the database. It provides an object-oriented interface to data that would normally be accessed by the JDBC or some other back-end API. More than that, entity beans provide a component model that allows bean developers to focus their attention on the business logic of the bean, while the container takes care of managing persistence,transactions, and access control.
+
+There are two basic kinds of entity beans: container-managed ersistence (CMP) andbean-managed persistence (BMP). 
+
+Container-managed persistence beans are the simplest for the bean developer to create and the most difficult for the EJB server to support. This is because all the logic for synchronizing the bean's state with the database is handled automatically by the container. This means that the bean developer doesn't need to write any data access logic, while the EJB server is
+supposed to take care of all the persistence needs automatically. With CMP, the container manages the persistence of the entity bean. Vendor tools are used to map the entity fields to the database and absolutely no database access code is written in the bean class. 
+
+The bean-managed persistence (BMP) enterprise bean manages synchronizing its state with the database as directed by the container. The bean uses a database API to read and write its fields to the database, but the container tells it when to do each synchronization operation and manages the transactions for the bean automatically. Bean-managed persistence gives the bean developer the flexibility to perform persistence operations that are too complicated for the container or to use a data source that is not supported by the container.]]></answer>
+		</qa>
+		<qa id="4" rating="2">			<question><![CDATA[q:What are the methods of Entity Bean?]]></question>
+			<answer><![CDATA[An entity bean consists of 4 groups of methods: 
+
+1. create methods: To create a new instance of a CMP entity bean, and therefore insert data into the database, the create() method on the bean's home interface must be invoked. They look like this: EntityBeanClass ejbCreateXXX(parameters), where EntityBeanClass is an Entity Bean you are trying to instantiate, ejbCreateXXX(parameters) methods are used for creating Entity Bean instances according to the parameters specified and to some programmer-defined conditions. 
+
+A bean's home interface may declare zero or more create() methods, each of which must have corresponding ejbCreate() and ejbPostCreate() methods in the bean class. These creation methods are linked at run time, so that when a create() method is invoked on the home interface, the container delegates the invocation to the corresponding ejbCreate() and ejbPostCreate() methods on the bean class. 
+
+2. finder methods: The methods in the home interface that begin with "find" are called the find methods. These are used to query the EJB server for specific entity beans, based on the name of the method and arguments passed. Unfortunately, there is no standard query language defined for find methods, so each vendor will implement the find method differently. In CMP entity beans, the find methods are not implemented with matching methods in the bean class; containers implement them when the bean is deployed in a vendor specific manner. The deployer will use vendor specific tools to tell the container how a particular find method should behave. Some vendors will use object-relational mapping tools to define the behavior of a find method while others will simply require the deployer to enter the appropriate SQL command.
+
+There are two basic kinds of find methods: single-entity and multi-entity. Single-entity find methods return a remote reference to the one specific entity bean that matches the find request. If no entity beans are found, the method throws an ObjectNotFoundException . Every entity bean must define the single-entity find method with the method name findByPrimaryKey(), which takes the bean's primary key type as an argument.
+
+The multi-entity find methods return a collection ( Enumeration or Collection type) of entities that match the find request. If no entities are found, the multi-entity find returns an empty collection. 
+
+3. remove methods: These methods (you may have up to 2 remove methods, or don't have them at all) allow the client to physically remove Entity beans by specifying either Handle or a Primary Key for the Entity Bean. 
+
+4. home methods: These methods are designed and implemented by a developer, and EJB specification doesn't have any requirements for them except the need to throw a RemoteException is each home method.]]></answer>
+		</qa>
+		<qa id="5" rating="2">			<question><![CDATA[q:What are the methods of Entity Bean?What is the difference between Container-Managed Persistent (CMP) bean and Bean-Managed Persistent(BMP) ?]]></question>
+			<answer><![CDATA[Container-managed persistence beans are the simplest for the bean developer to create and the most difficult for the EJB server to support. This is because all the logic for synchronizing the bean's state with the database is handled automatically by the container. This means that the bean developer doesn't need to write any data access logic, while the EJB server is supposed to take care of all the persistence needs automatically. With CMP, the container manages the persistence of the entity bean. A CMP bean developer doesn't need to worry about JDBC code and transactions, because the Container performs database calls and transaction management instead of the programmer. Vendor tools are used to map the entity fields to the database and absolutely no database access code is written in the bean class. All table mapping is specified in the deployment descriptor. Otherwise, a BMP bean developer takes the load of linking an application and a database on his shoulders. 
+
+The bean-managed persistence (BMP) enterprise bean manages synchronizing its state with the database as directed by the container. The bean uses a database API to read and write its fields to the database, but the container tells it when to do each synchronization operation and manages the transactions for the bean automatically. Bean-managed persistence gives the bean developer the flexibility to perform persistence operations that are too complicated for the container or to use a data source that is not supported by the container.BMP beans are not 100% database-independent, because they may contain database-specific code, but CMP beans are unable to perform complicated DML (data manipulation language) statements. EJB 2.0 specification introduced some new ways of querying database (by using the EJB QL - query language).]]></answer>
+		</qa>
+		<qa id="6" rating="2">			<question><![CDATA[q:What are the methods of Entity Bean?What is the difference between Container-Managed Persistent (CMP) bean and Bean-Managed Persistent(BMP) ?]]></question>
+			<answer><![CDATA[Container-managed persistence beans are the simplest for the bean developer to create and the most difficult for the EJB server to support. This is because all the logic for synchronizing the bean's state with the database is handled automatically by the container. This means that the bean developer doesn't need to write any data access logic, while the EJB server is supposed to take care of all the persistence needs automatically. With CMP, the container manages the persistence of the entity bean. A CMP bean developer doesn't need to worry about JDBC code and transactions, because the Container performs database calls and transaction management instead of the programmer. Vendor tools are used to map the entity fields to the database and absolutely no database access code is written in the bean class. All table mapping is specified in the deployment descriptor. Otherwise, a BMP bean developer takes the load of linking an application and a database on his shoulders. 
+
+The bean-managed persistence (BMP) enterprise bean manages synchronizing its state with the database as directed by the container. The bean uses a database API to read and write its fields to the database, but the container tells it when to do each synchronization operation and manages the transactions for the bean automatically. Bean-managed persistence gives the bean developer the flexibility to perform persistence operations that are too complicated for the container or to use a data source that is not supported by the container.BMP beans are not 100% database-independent, because they may contain database-specific code, but CMP beans are unable to perform complicated DML (data manipulation language) statements. EJB 2.0 specification introduced some new ways of querying database (by using the EJB QL - query language).]]></answer>
+		</qa>
+		<qa id="7" rating="2">			<question><![CDATA[q:What are the callback methods in Entity beans?]]></question>
+			<answer><![CDATA[The bean class defines create methods that match methods in the home interface and business methods that match methods in the remote interface. The bean class also implements a set of callback methods that allow the container to notify the bean of events in its life cycle. The callback methods are defined in the javax.ejb.EntityBean interface that is implemented by all entity beans.The EntityBean interface has the following definition. Notice that the bean class implements these methods.
+
+public interface javax.ejb.EntityBean {
+ 	public void setEntityContext();
+public void unsetEntityContext();
+public void ejbLoad();
+public void ejbStore();
+public void ejbActivate();
+public void ejbPassivate();
+public void ejbRemove();
+}	 
+The setEntityContext() method provides the bean with an interface to the container called the EntityContext. The EntityContext interface contains methods for obtaining information about the context under which the bean is operating at any particular moment. The EntityContext interface is used to access security information about the caller; to determine the status of the current transaction or to force a transaction rollback; or to get a reference to the bean itself, its home, or its primary key. The EntityContext is set only once in the life of an entity bean instance, so its reference should be put into one of the bean instance's fields if it will be needed later.
+
+The unsetEntityContext() method is used at the end of the bean's life cycle before the instance is evicted from memory to dereference the EntityContext and perform any last-minute clean-up. 
+
+The ejbLoad() and ejbStore() methods in CMP entities are invoked when the entity bean's state is being synchronized with the database. The ejbLoad() is invoked just after the container has refreshed the bean container-managed fields with its state from the database. The ejbStore() method is invoked just before the container is about to write the bean container-managed fields to the database. These methods are used to modify data as it's being synchronized. This is common when the data stored in the database is different than the data used in the bean fields. 
+
+The ejbPassivate() and ejbActivate() methods are invoked on the bean by the container just before the bean is passivated and just after the bean is activated, respectively. Passivation in entity beans means that the bean instance is disassociated with its remote reference so that the container can evict it from memory or reuse it. It's a resource conservation measure the container employs to reduce the number of instances in memory. A bean might be passivated if it hasn't been used for a while or as a normal operation performed by the container to maximize reuse of resources. Some containers will evict beans from memory, while others will reuse instances for other more active remote references. The ejbPassivate() and ejbActivate() methods provide the bean with a notification as to when it's about to be passivated (disassociated with the remote reference) or activated (associated with a remote reference).]]></answer>
+		</qa>
+		<qa id="8" rating="2">			<question><![CDATA[q:What is software architecture of EJB?]]></question>
+			<answer><![CDATA[Session and Entity EJBs consist of 4 and 5 parts respetively:
+
+1. A remote interface (a client interacts with it), 
+
+2. A home interface (used for creating objects and for declaring business methods),
+
+3. A bean object (an object, which actually performs business logic and EJB-specific operations). 
+
+4. A deployment descriptor (an XML file containing all information required for maintaining the EJB) or a set of deployment descriptors (if you are using some container-specific features). 
+
+5.A Primary Key class - is only Entity bean specific.]]></answer>
+		</qa>
+		<qa id="9" rating="2">			<question><![CDATA[q:Can Entity Beans have no create() methods?]]></question>
+			<answer><![CDATA[Yes. In some cases the data is inserted NOT using Java application, so you may only need to retrieve the information, perform its processing, but not create your own information of this kind.]]></answer>
+		</qa>
+		<qa id="10" rating="2">			<question><![CDATA[q:What is bean managed transaction?]]></question>
+			<answer><![CDATA[If a developer doesn't want a Container to manage transactions, it's possible to implement all database operations manually by writing the appropriate JDBC code. This often leads to productivity increase, but it makes an Entity Bean incompatible with some databases and it enlarges the amount of code to be written. All transaction management is explicitly performed by a developer.]]></answer>
+		</qa>
+		<qa id="11" rating="2">			<question><![CDATA[q:What are transaction attributes?]]></question>
+			<answer><![CDATA[The transaction attribute specifies how the Container must manage transactions for a method when a client invokes the method via the enterprise bean's home or component interface or when the method is invoked as the result of the arrival of a JMS message. (Sun's EJB Specification) Below is a list of transactional attributes:
+
+1. NotSupported - transaction context is unspecified.
+
+2. Required - bean's method invocation is made within a transactional context. If a client is not associated with a transaction, a new transaction is invoked automatically. 
+
+3. Supports - if a transactional context exists, a Container acts like the transaction attribute is Required, else - like NotSupported.
+
+4. RequiresNew - a method is invoked in a new transaction context.
+
+5. Mandatory - if a transactional context exists, a Container acts like the transaction attribute is Required, else it throws a javax.ejb.TransactionRequiredException.
+
+6. Never - a method executes only if no transaction context is specified.]]></answer>
+		</qa>
+		<qa id="12" rating="2">			<question><![CDATA[q:What are transaction isolation levels in EJB?]]></question>
+			<answer><![CDATA[1. Transaction_read_uncommitted- Allows a method to read uncommitted data from a DB(fast but not wise).
+
+2. Transaction_read_committed- Guarantees that the data you are getting has been committed.
+
+3. Transaction_repeatable_read - Guarantees that all reads of the database will be the same during the transaction (good for read and update operations).
+
+4. Transaction_serializable- All the transactions for resource are performed serial.]]></answer>
+		</qa>
+		<qa id="13" rating="2">			<question><![CDATA[q:How EJB Invocation happens?]]></question>
+			<answer><![CDATA[Step 1: Retrieve Home Object reference from Naming Service via JNDI.
+step 2: Return Home Object reference to the client.
+step 3: Create me a new EJB Object through Home Object interface.
+step 4: Create EJB Object from the Ejb Object
+step 5: Return EJB Object reference to the client.
+step 6: Invoke business method using EJB Object reference.
+step 7: Delegate request to Bean (Enterprise Bean).]]></answer>
+		</qa>
+		<qa id="14" rating="2">			<question><![CDATA[q:Is it possible to share an HttpSession between a JSP and EJB? What happens when I change a value in the HttpSession from inside an EJB?]]></question>
+			<answer><![CDATA[You can pass the HttpSession as parameter to an EJB method, only if all objects in session are serializable.This has to be consider as "passed-by-value", that means that its read-only in the EJB. If anything is altered from inside the EJB, it wont be reflected back to the HttpSession of the Servlet Container.The pass-by-reference can be used between EJBs Remote Interfaces, as they are remote references. While it IS possible to pass an HttpSession as a parameter to an EJB object, it is considered to be bad practice in terms of object oriented design. This is because you are creating an unnecessary coupling between back-end objects (ejbs) and front-end objects (HttpSession). Create a higher-level of abstraction for your ejbs api. Rather than passing the whole, fat, HttpSession (which carries with it a bunch of http semantics), create a class that acts as a value object (or structure) that holds all the data you need to pass back and forth between front-end/back-end. Consider the case where your ejb needs to support a non-http-based client. This higher level of abstraction will be flexible enough to support it.]]></answer>
+		</qa>
+		<qa id="15" rating="2">			<question><![CDATA[q:The EJB container implements the EJBHome and EJBObject classes. For every request from a unique client, does the container create a separate instance of the generated EJBHome and EJBObject classes?]]></question>
+			<answer><![CDATA[The EJB container maintains an instance pool. The container uses these instances for the EJB Home reference irrespective of the client request. while refering the EJB Object classes the container creates a separate instance for each client request. The instance pool maintainence is up to the implementation of the container. If the container provides one, it is available otherwise it is not mandatory for the provider to implement it. Having said that, yes most of the container providers implement the pooling functionality to increase the performance of the application server. The way it is implemented is again up to the implementer.]]></answer>
+		</qa>
+		<qa id="16" rating="2">			<question><![CDATA[q:Can the primary key in the entity bean be a Java primitive type such as int?]]></question>
+			<answer><![CDATA[The primary key can't be a primitive type--use the primitive wrapper classes, instead. For example, you can use java.lang.Integer as the primary key class, but not int (it has to be a class, not a primitive)]]></answer>
+		</qa>
+		<qa id="17" rating="2">			<question><![CDATA[q:Can you control when passivation occurs?]]></question>
+			<answer><![CDATA[The developer, according to the specification, cannot directly control when passivation occurs. Although for Stateful Session Beans, the container cannot passivate an instance that is inside a transaction. So using transactions can be a a strategy to control passivation.
+
+The ejbPassivate() method is called during passivation, so the developer has control over what to do during this exercise and can implement the require optimized logic.
+
+Some EJB containers, such as BEA WebLogic, provide the ability to tune the container to minimize passivation calls.
+
+Taken from the WebLogic 6.0 DTD -"The passivation-strategy can be either "default" or "transaction". With the default setting the container will attempt to keep a working set of beans in the cache. With the "transaction" setting, the container will passivate the bean after every transaction (or method call for a non-transactional invocation).]]></answer>
+		</qa>
+		<qa id="18" rating="2">			<question><![CDATA[q:What is the advantage of using Entity bean for database operations, over directly using JDBC API to do database operations? When would I use one over the other?]]></question>
+			<answer><![CDATA[Entity Beans actually represents the data in a database. It is not that Entity Beans replaces JDBC API. There are two types of Entity Beans Container Managed and Bean Mananged. In Container Managed Entity Bean - Whenever the instance of the bean is created the container automatically retrieves the data from the DB/Persistance storage and assigns to the object variables in bean for user to manipulate or use them. For this the developer needs to map the fields in the database to the variables in deployment descriptor files (which varies for each vendor).
+
+In the Bean Managed Entity Bean - The developer has to specifically make connection, retrive values, assign them to the objects in the ejbLoad() which will be called by the container when it instatiates a bean object. Similarly in the ejbStore() the container saves the object values back the the persistance storage. ejbLoad and ejbStore are callback methods and can be only invoked by the container. Apart from this, when you use Entity beans you dont need to worry about database transaction handling, database connection pooling etc. which are taken care by the ejb container. But in case of JDBC you have to explicitly do the above features. what suresh told is exactly perfect. ofcourse, this comes under the database transations, but i want to add this. the great thing about the entity beans of container managed, whenever the connection is failed during the transaction processing, the database consistancy is mantained automatically. the container writes the data stored at persistant storage of the entity beans to the database again to provide the database consistancy. where as in jdbc api, we, developers has to do manually.]]></answer>
+		</qa>
+		<qa id="19" rating="2">			<question><![CDATA[q:What is EJB qL?]]></question>
+			<answer><![CDATA[EJB qL is a query Language provided for navigation across a network of enterprise beans and dependent objects defined by means of container managed persistence. EJB qL is introduced in the EJB 2.0 specification. The EJB qL query language defines finder methods for entity beans with container managed persistenceand is portable across containers and persistence managers. EJB qL is used for queries of two types of finder methods: Finder methods that are defined in the home interface of an entity bean and which return entity objects. Select methods, which are not exposed to the client, but which are used by the Bean Provider to select persistent values that are maintained by the Persistence Manager or to select entity objects that are related to the entity bean on which the query is defined.]]></answer>
+		</qa>
+		<qa id="20" rating="2">			<question><![CDATA[q:Brief description about local interfaces?]]></question>
+			<answer><![CDATA[EJB was originally designed around remote invocation using the Java Remote Method Invocation (RMI) mechanism, and later extended to support standard CORBA transport for these calls using RMI/IIOP. This design allowed for maximum flexibility in developing applications without consideration for the deployment scenario, and was a strong feature in support of a goal of component reuse in J2EE.
+Many developers are using EJBs locally -- that is, some or all of their EJB calls are between beans in a single container.
+With this feedback in mind, the EJB 2.0 expert group has created a local interface mechanism. The local interface may be defined for a bean during development, to allow streamlined calls to the bean if a caller is in the same container. This does not involve the overhead involved with RMI like marshalling etc. This facility will thus improve the performance of applications in which co-location is planned.
+Local interfaces also provide the foundation for container-managed relationships among entity beans with container-managed persistence.]]></answer>
+		</qa>
+		<qa id="21" rating="2">			<question><![CDATA[q:What are the special design care that must be taken when you work with local interfaces?]]></question>
+			<answer><![CDATA[It is important to understand that the calling semantics of local interfaces are different from those of remote interfaces. For example, remote interfaces pass parameters using call-by-value semantics, while local interfaces use call-by-reference.
+This means that in order to use local interfaces safely, application developers need to carefully consider potential deployment scenarios up front, then decide which interfaces can be local and which remote, and finally, develop the application code with these choices in mind.
+While EJB 2.0 local interfaces are extremely useful in some situations, the long-term costs of these choices, especially when changing requirements and component reuse are taken into account, need to be factored into the design decision.]]></answer>
+		</qa>
+		<qa id="22" rating="2">			<question><![CDATA[q:What happens if remove( ) is never invoked on a session bean?]]></question>
+			<answer><![CDATA[In case of a stateless session bean it may not matter if we call or not as in both cases nothing is done. The number of beans in cache is managed by the container.
+In case of stateful session bean, the bean may be kept in cache till either the session times out, in which case the bean is removed or when there is a requirement for memory in which case the data is cached and the bean is sent to free pool.]]></answer>
+		</qa>
+		<qa id="23" rating="2">			<question><![CDATA[q:What is the difference between Message Driven Beans and Stateless Session beans?]]></question>
+			<answer><![CDATA[In several ways, the dynamic creation and allocation of message-driven bean instances mimics the behavior of stateless session EJB instances, which exist only for the duration of a particular method call. However, message-driven beans are different from stateless session EJBs (and other types of EJBs) in several significant ways:
+
+Message-driven beans process multiple JMS messages asynchronously, rather than processing a serialized sequence of method calls.
+
+Message-driven beans have no home or remote interface, and therefore cannot be directly accessed by internal or external clients. Clients interact with message-driven beans only indirectly, by sending a message to a JMS queue or Topic.
+
+Note: Only the container directly interacts with a message-driven bean by creating bean instances and passing JMS messages to those instances as necessary.
+
+The Container maintains the entire lifecycle of a message-driven bean; instances cannot be created or removed as a result of client requests or other API calls.]]></answer>
+		</qa>
+		<qa id="24" rating="2">			<question><![CDATA[q:How can I call one EJB from inside of another EJB?]]></question>
+			<answer><![CDATA[EJBs can be clients of other EJBs. It just works. Use JNDI to locate the Home Interface of the other bean, then acquire an instance reference, and so forth.]]></answer>
+		</qa>
+		<qa id="25" rating="2">			<question><![CDATA[q:What is an EJB Context?]]></question>
+			<answer><![CDATA[EJBContext is an interface that is implemented by the container, and it is also a part of the bean-container contract. Entity beans use a subclass of EJBContext called EntityContext. Session beans use a subclass called SessionContext. These EJBContext objects provide the bean class with information about its container, the client using the bean and the bean itself. They also provide other functions. See the API docs and the spec for more details.]]></answer>
+		</qa>
+		<qa id="26" rating="2">			<question><![CDATA[q:The EJB container implements the EJBHome and EJBObject classes. For every request from a unique client, does the container create a separate instance of the generated EJBHome and EJBObject classes?]]></question>
+			<answer><![CDATA[The EJB container maintains an instance pool. The container uses these instances for the EJB Home reference irrespective of the client request. While refering the EJB Object classes the container creates a separate instance for each client request. The instance pool maintainence is up to the implementation of the container. If the container provides one, it is available otherwise it is not mandatory for the provider to implement it. Having said that, yes most of the container providers implement the pooling functionality to increase the performance of the application server. The way it is implemented is again up to the implementer.]]></answer>
+		</qa>
+	</category>
+	<category name="JDBC">
+		<qa id="27" rating="2">			<question><![CDATA[q:Why oracle Type 4 driver is named as oracle thin driver?]]></question>
+			<answer><![CDATA[Oracle provides a Type 4 JDBC driver, referred to as the Oracle "thin" driver. This driver includes its own implementation of a TCP/IP version of Oracle's Net8 written entirely in Java, so it is platform independent, can be downloaded to a browser at runtime, and does not require any Oracle software on the client side. This driver requires a TCP/IP listener on the server side, and the client connection string uses the TCP/IP port address, not the TNSNAMES entry for the database name.]]></answer>
+		</qa>
+		<qa id="28" rating="2">			<question><![CDATA[q:How do we load a database driver? How do you create a oracle jdbc Connection and statement object?]]></question>
+			<answer><![CDATA[we load the driver class by calling Class.forName() with the Driver class name as an argument. Once loaded, the Driver class creates an instance of itself. A client can connect to Database Server through JDBC Driver.
+<pre>
+	try{
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); //Or any other driver. ..should catch class not found exception here.
+		Connection dbConnection=DriverManager.getConnection(url,"loginName","Password")
+		Statement statement = dbConnection.createStatement();
+	} catch(java.lang.ClassNotFoundException e) {
+		...
+	}catch(SQLException se){
+	 ...
+	}
+</pre>
+JDBC URL Syntax::    jdbc: <subprotocol>: <subname>
+</pre>]]></answer>
+		</qa>
+		<qa id="29" rating="2">			<question><![CDATA[q:Explain JDBC statements?]]></question>
+			<answer><![CDATA[<pre>
+Statement: Execute simple sql queries without parameters.
+Statement createStatement()
+Creates an SQL Statement object.
+
+Prepared Statement: Execute precompiled sql queries with or without parameters.
+PreparedStatement prepareStatement(String sql)
+returns a new PreparedStatement object. PreparedStatement objects are precompiled
+SQL statements.
+
+Callable Statement: Execute a call to a database stored procedure.
+CallableStatement prepareCall(String sql)
+returns a new CallableStatement object. CallableStatement objects are SQL stored procedure call statements.
+</pre>]]></answer>
+		</qa>
+		<qa id="30" rating="2">			<question><![CDATA[q: How do you execute a SQL statement with the Statement object, and returning a jdbc resultSet?]]></question>
+			<answer><![CDATA[<pre>The Statement class has three methods for executing statements:
+executeQuery(), executeUpdate(), and execute(). For a SELECT statement, the method to use is executeQuery . For statements that create or modify tables, the method to use is executeUpdate. Note: Statements that create a table, alter a table, or drop a table are all examples of DDL
+statements and are executed with the method executeUpdate. execute() executes an SQL
+statement that is written as String object.
+
+ResultSet provides access to a table of data generated by executing a Statement. The table rows are retrieved in sequence. A ResultSet maintains a cursor pointing to its current row of data. The next() method is used to successively step through the rows of the tabular results.
+
+ResultSetMetaData Interface holds information on the types and properties of the columns in a ResultSet. It is constructed from the Connection object.
+</pre>]]></answer>
+		</qa>
+	</category>
+	<category name="JMS">
+		<qa id="31" rating="2">			<question><![CDATA[q:What is JMS?]]></question>
+			<answer><![CDATA[JMS is an acronym used for Java Messaging Service. It is Java's answer to creating software using asynchronous messaging. It is one of the official specifications of the J2EE technologies and is a key technology.]]></answer>
+		</qa>
+		<qa id="32" rating="2">			<question><![CDATA[q:How JMS is different from RPC?]]></question>
+			<answer><![CDATA[In RPC the method invoker waits for the method to finish execution and return the control back to the invoker. Thus it is completely synchronous in nature. While in JMS the message sender just sends the message to the destination and continues it's own processing. The sender does not wait for the receiver to respond. This is asynchronous behavior.]]></answer>
+		</qa>
+		<qa id="33" rating="2">			<question><![CDATA[q:What are the advantages of JMS?]]></question>
+			<answer><![CDATA[JMS is asynchronous in nature. Thus not all the pieces need to be up all the time for the application to function as a whole. Even if the receiver is down the MOM will store the messages on it's behalf and will send them once it comes back up. Thus at least a part of application can still function as there is no blocking.]]></answer>
+		</qa>
+		<qa id="34" rating="2">			<question><![CDATA[q:Are you aware of any major JMS products available in the market?]]></question>
+			<answer><![CDATA[IBM's MQ Series is one of the most popular product used as Message Oriented Middleware. Some of the other products are SonicMQ, iBus etc.All the J2EE compliant application servers come built with thier own implementation of JMS.]]></answer>
+		</qa>
+		<qa id="35" rating="2">			<question><![CDATA[q:What are the different types of messages available in the JMS API?]]></question>
+			<answer><![CDATA[Message, TextMessage, BytesMessage, StreamMessage, ObjectMessage, MapMessage are the different messages available in the JMS API.]]></answer>
+		</qa>
+		<qa id="36" rating="2">			<question><![CDATA[q:What are the different messaging paradigms JMS supports?]]></question>
+			<answer><![CDATA[Publish and Subscribe i.e. pub/suc and Point to Point i.e. p2p.]]></answer>
+		</qa>
+		<qa id="37" rating="2">			<question><![CDATA[q:What is the role of JMS in enterprise solution development?]]></question>
+			<answer><![CDATA[JMS is typically used in the following scenarios
+1. Enterprise Application Integration: - Where a legacy application is integrated with a new application via messaging.
+2. B2B or Business to Business: - Businesses can interact with each other via messaging because JMS allows organizations to cooperate without tightly coupling their business systems.
+3. Geographically dispersed units: - JMS can ensure safe exchange of data amongst the geographically dispersed units of an organization.
+4. One to many applications: - The applications that need to push data in packet to huge number of clients in a one-to-many fashion are good candidates for the use JMS. Typical such applications are Auction Sites, Stock Quote Services etc.]]></answer>
+		</qa>
+		<qa id="38" rating="2">			<question><![CDATA[q:What is the use of Message object?]]></question>
+			<answer><![CDATA[Message is a light weight message having only header and properties and no payload. Thus if theIf the receivers are to be notified abt an event, and no data needs to be exchanged then using Message can be very efficient.]]></answer>
+		</qa>
+		<qa id="39" rating="2">			<question><![CDATA[q:What is the basic difference between Publish Subscribe model and P2P model?]]></question>
+			<answer><![CDATA[Publish Subscribe model is typically used in one-to-many situation. It is unreliable but very fast. P2P model is used in one-to-one situation. It is highly reliable.]]></answer>
+		</qa>
+		<qa id="40" rating="2">			<question><![CDATA[q:What is the use of BytesMessage?]]></question>
+			<answer><![CDATA[BytesMessage contains an array of primitive bytes in it's payload. Thus it can be used for transfer of data between two applications in their native format which may not be compatible with other Message types. It is also useful where JMS is used purely as a transport between two systems and the message payload is opaque to the JMS client. Whenever you store any primitive type, it is converted into it's byte representation and then stored in the payload. There is no boundary line between the different data types stored. Thus you can even read a long as short. This would result in erroneous data and hence it is advisable that the payload be read in the same order and using the same type in which it was created by the sender.]]></answer>
+		</qa>
+		<qa id="41" rating="2">			<question><![CDATA[q:What is the use of StreamMessage?]]></question>
+			<answer><![CDATA[StreamMessage carries a stream of Java primitive types as it's payload. It contains some conveient methods for reading the data stored in the payload. However StreamMessage prevents reading a long value as short, something that is allwed in case of BytesMessage. This is so because the StreamMessage also writes the type information alonwgith the value of the primitive type and enforces a set of strict conversion rules which actually prevents reading of one primitive type as another.]]></answer>
+		</qa>
+		<qa id="42" rating="2">			<question><![CDATA[q:What is the use of TextMessage?]]></question>
+			<answer><![CDATA[TextMessage contains instance of java.lang.String as it's payload. Thus it is very useful for exchanging textual data. It can also be used for exchanging complex character data such as an XML document.]]></answer>
+		</qa>
+		<qa id="43" rating="2">			<question><![CDATA[q:What is the use of MapMessage?]]></question>
+			<answer><![CDATA[A MapMessage carries name-value pair as it's payload. Thus it's payload is similar to the java.util.Properties object of Java. The values can be Java primitives or their wrappers.]]></answer>
+		</qa>
+		<qa id="44" rating="2">			<question><![CDATA[q:What is the difference between BytesMessage and StreamMessage??]]></question>
+			<answer><![CDATA[BytesMessage stores the primitive data types by converting them to their byte representation. Thus the message is one contiguous stream of bytes. While the StreamMessage maintains a boundary between the different data types stored because it also stores the type information along with the value of the primitive being stored. BytesMessage allows data to be read using any type. Thus even if your payload contains a long value, you can invoke a method to read a short and it will return you something. It will not give you a semantically correct data but the call will succeed in reading the first two bytes of data. This is strictly prohibited in the StreamMessage. It maintains the type information of the data being stored and enforces strict conversion rules on the data being read.]]></answer>
+		</qa>
+		<qa id="45" rating="2">			<question><![CDATA[q:What is point-to-point messaging?]]></question>
+			<answer><![CDATA[With point-to-point message passing the sending application/client establishes a named message queue in the JMS broker/server and sends messages to this queue. The receiving client registers with the broker to receive messages posted to this queue. There is a one-to-one relationship between the sending and receiving clients.]]></answer>
+		</qa>
+		<qa id="46" rating="2">			<question><![CDATA[q:Can two different JMS services talk to each other? For instance, if A and B are two different JMS providers, can Provider A send messages directly to Provider B? If not, then can a subscriber to Provider A act as a publisher to Provider B?]]></question>
+			<answer><![CDATA[TODO:]]></answer>
+		</qa>
+		<qa id="47" rating="2">			<question><![CDATA[q:What is the advantage of persistent message delivery compared to nonpersistent delivery?]]></question>
+			<answer><![CDATA[If the JMS server experiences a failure, for example, a power outage, any message that it is holding in primary storage potentially could be lost. With persistent storage, the JMS server logs every message to secondary storage. (The logging occurs on the front end, that is, as part of handling the send operation from the message producing client.) The logged message is removed from secondary storage only after it has been successfully delivered to all consuming clients .]]></answer>
+		</qa>
+		<qa id="48" rating="2">			<question><![CDATA[q:Why doesn't the JMS API provide end-to-end synchronous message delivery and notification of delivery?]]></question>
+			<answer><![CDATA[Some messaging systems provide synchronous delivery to destinations as a mechanism for implementing reliable applications. Some systems provide clients with various forms of delivery notification so that the clients can detect dropped or ignored messages. This is not the model defined by the JMS API. 
+
+JMS API messaging provides guaranteed delivery via the once-and-only-once delivery semantics of PERSISTENT messages. In addition, message consumers can ensure reliable processing of messages by using either CLIENT_ACKNOWLEDGE mode or transacted sessions. This achieves reliable delivery with minimum synchronization and is the enterprise messaging model most vendors and developers prefer. 
+
+The JMS API does not define a schema of systems messages (such as delivery notifications). If an application requires acknowledgment of message receipt, it can define an application-level acknowledgment message.]]></answer>
+		</qa>
+		<qa id="49" rating="2">			<question><![CDATA[q:What are the various message types supported by JMS?]]></question>
+			<answer><![CDATA[*Stream Messages - Group of Java Primitives
+* Map Messages - Name Value Pairs. Name being a string& Value being a java primitive 
+* Text Messages - String messages (since being widely used a separate messaging Type has been supported) 
+* Object Messages - Group of serialize able java object 
+* Bytes Message - Stream of uninterrupted bytes]]></answer>
+		</qa>
+		<qa id="50" rating="2">			<question><![CDATA[q:What is MDB and What is the special feature of that?]]></question>
+			<answer><![CDATA[MDB is Message driven bean, which very much resembles the Stateless session bean. The incoming and out going messages can be handled by the Message driven bean. The ability to communicate asynchronously is the special feature about the Message driven bean.]]></answer>
+		</qa>
+		<qa id="51" rating="2">			<question><![CDATA[q:What are the types of messaging?]]></question>
+			<answer><![CDATA[There are two kinds of Messaging.
+* Synchronous Messaging: Synchronous messaging involves a client that waits for the server to respond to a message. 
+* Asynchronous Messaging: Asynchronous messaging involves a client that does not wait for a message from the server. An event is used to trigger a message from a server.]]></answer>
+		</qa>
+		<qa id="52" rating="2">			<question><![CDATA[q:What are the core JMS-related objects required for each JMS-enabled application?]]></question>
+			<answer><![CDATA[Each JMS-enabled client must establish the following:
+* A connection object provided by the JMS server (the message broker) 
+* Within a connection, one or more sessions, which provide a context for message sending and receiving 
+* Within a session, the appropriate sender or publisher or receiver or subscriber object (depending on whether the client is a message producer or consumer and uses a point-to-point or publish/subscribe strategy, respectively) 
+Within a session, a message object (to send or to receive)]]></answer>
+		</qa>
+	</category>
+	<category name="JSP">
+		<qa id="53" rating="2">			<question><![CDATA[q:What is a output comment?]]></question>
+			<answer><![CDATA[A comment that is sent to the client in the viewable page source.The JSP engine handles an output comment as uninterpreted HTML text, returning the comment in the HTML output sent to the client. You can see the comment by viewing the page source from your Web browser.
+JSP Syntax
+<!-- comment [ <%= expression %> ] -->
+
+Example 1
+<!-- This is a commnet sent to client on
+<%= (new java.util.Date()).toLocaleString() %>
+-->
+
+Displays in the page source:
+<!-- This is a commnet sent to client on January 24, 2004 -->]]></answer>
+		</qa>
+		<qa id="54" rating="2">			<question><![CDATA[q:What is a Hidden Comment?]]></question>
+			<answer><![CDATA[A comments that documents the JSP page but is not sent to the client. The JSP engine ignores a hidden comment, and does not process any code within hidden comment tags. A hidden comment is not sent to the client, either in the displayed JSP page or the HTML page source. The hidden comment is useful when you want to hide or "comment out" part of your JSP page.
+You can use any characters in the body of the comment except the closing --%> combination. If you need to use --%> in your comment, you can escape it by typing --%\>. 
+JSP Syntax
+<%-- comment --%>
+
+Examples
+<%@ page language="java" %>
+<html>
+<head><title>A Hidden Comment </title></head>
+<body>
+<%-- This comment will not be visible to the client in the page source --%>
+</body>
+</html>]]></answer>
+		</qa>
+		<qa id="55" rating="2">			<question><![CDATA[q:What is a Expression?]]></question>
+			<answer><![CDATA[An expression tag contains a scripting language expression that is evaluated, converted to a String, and inserted where the expression appears in the JSP file. Because the value of an expression is converted to a String, you can use an expression within text in a JSP file. Like
+<%= someexpression %> 
+<%= (new java.util.Date()).toLocaleString() %>
+You cannot use a semicolon to end an expression]]></answer>
+		</qa>
+		<qa id="56" rating="2">			<question><![CDATA[q:What is a Declaration?]]></question>
+			<answer><![CDATA[A declaration declares one or more variables or methods for use later in the JSP source file.
+A declaration must contain at least one complete declarative statement. You can declare any number of variables or methods within one declaration tag, as long as they are separated by semicolons. The declaration must be valid in the scripting language used in the JSP file. 
+
+<%! somedeclarations %>
+<%! int i = 0; %>
+<%! int a, b, c; %>]]></answer>
+		</qa>
+		<qa id="57" rating="2">			<question><![CDATA[q:What is a Scriptlet?]]></question>
+			<answer><![CDATA[A scriptlet can contain any number of language statements, variable or method declarations, or expressions that are valid in the page scripting language.Within scriptlet tags, you can
+1.Declare variables or methods to use later in the file (see also Declaration).
+2.Write expressions valid in the page scripting language (see also Expression). 
+3.Use any of the JSP implicit objects or any object declared with a <jsp:useBean> tag. 
+You must write plain text, HTML-encoded text, or other JSP tags outside the scriptlet.
+Scriptlets are executed at request time, when the JSP engine processes the client request. If the scriptlet produces output, the output is stored in the out object, from which you can display it.]]></answer>
+		</qa>
+		<qa id="58" rating="2">			<question><![CDATA[q:What are implicit objects? List them?]]></question>
+			<answer><![CDATA[Certain objects that are available for the use in JSP documents without being declared first. These objects are parsed by the JSP engine and inserted into the generated servlet. The implicit objects re listed below
+request
+response
+pageContext
+session
+application
+out
+config
+page
+exception]]></answer>
+		</qa>
+		<qa id="59" rating="2">			<question><![CDATA[q:Difference between forward and sendRedirect?]]></question>
+			<answer><![CDATA[When you invoke a forward request, the request is sent to another resource on the server, without the client being informed that a different resource is going to process the request. This process occurs completly with in the web container. When a sendRedirtect method is invoked, it causes the web container to return to the browser indicating that a new URL should be requested. Because the browser issues a completly new request any object that are stored as request attributes before the redirect occurs will be lost. This extra round trip a redirect is slower than forward.]]></answer>
+		</qa>
+		<qa id="60" rating="2">			<question><![CDATA[q:What are the different scope valiues for the <jsp:useBean>?]]></question>
+			<answer><![CDATA[The different scope values for <jsp:useBean> are
+1. page
+2. request
+3. session
+4. application]]></answer>
+		</qa>
+		<qa id="61" rating="2">			<question><![CDATA[q:Explain the life-cycle methods in JSP?]]></question>
+			<answer><![CDATA[The generated servlet class for a JSP page implements the HttpJspPage interface of the javax.servlet.jsp package. The HttpJspPage interface extends the JspPage interface which inturn extends the Servlet interface of the javax.servlet package. the generated servlet class thus implements all the methods of the these three interfaces. The JspPage interface declares only two mehtods - jspInit() and jspDestroy() that must be implemented by all JSP pages regardless of the client-server protocol. However the JSP specification has provided the HttpJspPage interfaec specifically for the JSp pages serving HTTP requests. This interface declares one method _jspService(). 
+The jspInit()- The container calls the jspInit() to initialize te servlet instance.It is called before any other method, and is called only once for a servlet instance.
+The _jspservice()- The container calls the _jspservice() for each request, passing it the request and the response objects.
+The jspDestroy()- The container calls this when it decides to take the instance out of service. It is the last method called n the servlet instance.]]></answer>
+		</qa>
+		<qa id="62" rating="2">			<question><![CDATA[q:How do I prevent the output of my JSP or Servlet pages from being cached by the browser?]]></question>
+			<answer><![CDATA[You will need to set the appropriate HTTP header attributes to prevent the dynamic content output by the JSP page from being cached by the browser. Just execute the following scriptlet at the beginning of your JSP pages to prevent them from being cached at the browser. You need both the statements to take care of some of the older browser versions.
+<%
+response.setHeader("Cache-Control","no-store"); //HTTP 1.1
+response.setHeader("Pragma\","no-cache"); //HTTP 1.0
+response.setDateHeader ("Expires", 0); //prevents caching at the proxy server
+%>]]></answer>
+		</qa>
+		<qa id="63" rating="2">			<question><![CDATA[q:How does JSP handle run-time exceptions?]]></question>
+			<answer><![CDATA[You can use the errorPage attribute of the page directive to have uncaught run-time exceptions automatically forwarded to an error processing page. For example:
+<%@ page errorPage=\"error.jsp\" %> redirects the browser to the JSP page error.jsp if an uncaught exception is encountered during request processing. Within error.jsp, if you indicate that it is an error-processing page, via the directive: <%@ page isErrorPage=\"true\" %> Throwable object describing the exception may be accessed within the error page via the exception implicit object. Note: You must always use a relative URL as the value for the errorPage attribute.]]></answer>
+		</qa>
+		<qa id="64" rating="2">			<question><![CDATA[q:How can I implement a thread-safe JSP page? What are the advantages and Disadvantages of using it?]]></question>
+			<answer><![CDATA[You can make your JSPs thread-safe by having them implement the SingleThreadModel interface. This is done by adding the directive <%@ page isThreadSafe="false" %> within your JSP page. With this, instead of a single instance of the servlet generated for your JSP page loaded in memory, you will have N instances of the servlet loaded and initialized, with the service method of each instance effectively synchronized. You can typically control the number of instances (N) that are instantiated for all servlets implementing SingleThreadModel through the admin screen for your JSP engine. More importantly, avoid using the tag for variables. If you do use this tag, then you should set isThreadSafe to true, as mentioned above. Otherwise, all requests to that page will access those variables, causing a nasty race condition. SingleThreadModel is not recommended for normal use. There are many pitfalls, including the example above of not being able to use <%! %>. You should try really hard to make them thread-safe the old fashioned way: by making them thread-safe .]]></answer>
+		</qa>
+		<qa id="65" rating="2">			<question><![CDATA[q:How do I use a scriptlet to initialize a newly instantiated bean?]]></question>
+			<answer><![CDATA[A jsp:useBean action may optionally have a body. If the body is specified, its contents will be automatically invoked when the specified bean is instantiated. Typically, the body will contain scriptlets or jsp:setProperty tags to initialize the newly instantiated bean, although you are not restricted to using those alone.
+
+The following example shows the today property of the Foo bean initialized to the current date when it is instantiated. Note that here, we make use of a JSP expression within the jsp:setProperty action.
+
+<jsp:useBean id="foo" class="com.Bar.Foo" >
+
+<jsp:setProperty name="foo" property="today" 
+value="<%=java.text.DateFormat.getDateInstance().format(new java.util.Date()) %>" / >
+
+<%-- scriptlets calling bean setter methods go here --%>
+
+</jsp:useBean >]]></answer>
+		</qa>
+		<qa id="66" rating="2">			<question><![CDATA[q:How can I prevent the word "null" from appearing in my HTML input text fields when I populate them with a resultset that has null values?]]></question>
+			<answer><![CDATA[You could make a simple wrapper function, like
+
+<%!
+String blanknull(String s) {
+return (s == null) ? \"\" : s;
+}
+%>
+
+then use it inside your JSP form, like
+
+<input type="text" name="lastName" value="<%=blanknull(lastName)% >" >]]></answer>
+		</qa>
+		<qa id="67" rating="2">			<question><![CDATA[q:What's a better approach for enabling thread-safe servlets and JSPs? SingleThreadModel Interface or Synchronization?]]></question>
+			<answer><![CDATA[Although the SingleThreadModel technique is easy to use, and works well for low volume sites, it does not scale well. If you anticipate your users to increase in the future, you may be better off implementing explicit synchronization for your shared data. The key however, is to effectively minimize the amount of code that is synchronzied so that you take maximum advantage of multithreading.
+Also, note that SingleThreadModel is pretty resource intensive from the server\'s perspective. The most serious issue however is when the number of concurrent requests exhaust the servlet instance pool. In that case, all the unserviced requests are queued until something becomes free - which results in poor performance. Since the usage is non-deterministic, it may not help much even if you did add more memory and increased the size of the instance pool.]]></answer>
+		</qa>
+		<qa id="68" rating="2">			<question><![CDATA[q:How can I enable session tracking for JSP pages if the browser has disabled cookies?]]></question>
+			<answer><![CDATA[We know that session tracking uses cookies by default to associate a session identifier with a unique user. If the browser does not support cookies, or if cookies are disabled, you can still enable session tracking using URL rewriting. URL rewriting essentially includes the session ID within the link itself as a name/value pair. However, for this to be effective, you need to append the session ID for each and every link that is part of your servlet response. Adding the session ID to a link is greatly simplified by means of a couple of methods: response.encodeURL() associates a session ID with a given URL, and if you are using redirection, response.encodeRedirectURL() can be used by giving the redirected URL as input. Both encodeURL() and encodeRedirectedURL() first determine whether cookies are supported by the browser; if so, the input URL is returned unchanged since the session ID will be persisted as a cookie.]]></answer>
+		</qa>
+		<qa id="69" rating="2">			<question><![CDATA[q:What is the difference b/w variable declared inside a declaration part and variable declared in scriplet part?]]></question>
+			<answer><![CDATA[Variable declared inside declaration part is treated as a global variable.that means after convertion jsp file into servlet that variable will be in outside of service method or it will be declared as instance variable.And the scope is available to complete jsp and to complete in the converted servlet class.where as if u declare a variable inside a scriplet that variable will be declared inside a service method and the scope is with in the service method.]]></answer>
+		</qa>
+		<qa id="70" rating="2">			<question><![CDATA[q:Is there a way to execute a JSP from the comandline or from my own application?]]></question>
+			<answer><![CDATA[There is a little tool called JSPExecutor that allows you to do just that. The developers (Hendrik Schreiber <hs@webapp.de> & Peter Rossbach <pr@webapp.de>) aim was not to write a full blown servlet engine, but to provide means to use JSP for generating source code or reports. Therefore most HTTP-specific features (headers, sessions, etc) are not implemented, i.e. no reponseline or header is generated. Nevertheless you can use it to precompile JSP for your website.]]></answer>
+		</qa>
+	</category>
+	<category name="Servlets">
+		<qa id="71" rating="2">			<question><![CDATA[q:Explain the directory structure of a web application.]]></question>
+			<answer><![CDATA[The directory structure of a web application consists of two parts. 
+A private directory called WEB-INF
+A public resource directory which contains public resource folder.
+WEB-INF folder consists of 
+1. web.xml
+2. classes directory
+3. lib directory]]></answer>
+		</qa>
+		<qa id="72" rating="2">			<question><![CDATA[q:Explain the life cycle methods of a Servlet.]]></question>
+			<answer><![CDATA[The javax.servlet.Servlet interface defines the three methods known as life-cycle method.
+public void init(ServletConfig config) throws ServletException
+public void service( ServletRequest req, ServletResponse res) throws ServletException, IOException
+public void destroy()
+First the servlet is constructed, then initialized with the init() method.
+Any request from client are handled initially by the service() method before delegating to the doXxx() methods in the case of HttpServlet.
+The servlet is removed from service, destroyed with the destroy() method, then garbaged collected and finalized.
+<img src="http://book.javanb.com/servlets-and-javaserver-pages-the-j2ee_technology-web-tier/FILES/02fig01.gif" alt="life cycle"/>]]></answer>
+		</qa>
+		<qa id="73" rating="2">			<question><![CDATA[q:What is the difference between the getRequestDispatcher(String path) method of javax.servlet.ServletRequest interface and javax.servlet.ServletContext interface?]]></question>
+			<answer><![CDATA[The getRequestDispatcher(String path) method of javax.servlet.ServletRequest interface accepts parameter the path to the resource to be included or forwarded to, which can be relative to the request of the calling servlet. If the path begins with a "/" it is interpreted as relative to the current context root.
+The getRequestDispatcher(String path) method of javax.servlet.ServletContext interface cannot accepts relative paths. All path must start with a "/" and are interpreted as relative to current context root.]]></answer>
+		</qa>
+		<qa id="74" rating="2">			<question><![CDATA[q:What are the common mechanisms used for session tracking?]]></question>
+			<answer><![CDATA[Cookies
+SSL sessions
+URL- rewriting]]></answer>
+		</qa>
+		<qa id="75" rating="2">			<question><![CDATA[q:Explain ServletContext.]]></question>
+			<answer><![CDATA[ServletContext interface is a window for a servlet to view it's environment. A servlet can use this interface to get information such as initialization parameters for the web applicationor servlet container's version. Every web application has one and only one ServletContext and is accessible to all active resource of that application.]]></answer>
+		</qa>
+		<qa id="76" rating="2">			<question><![CDATA[q:What is pre-initialization of a servlet?]]></question>
+			<answer><![CDATA[A container does not initialize the servlets asssoon as it starts up, it initializes a servlet when it receives a request for that servlet first time. This is called lazy loading. 
+The servlet specification defines the <load-on-startup> element, which can be specified in the deployment descriptor to make the servlet container load and initialize the servlet as soon as it starts up. The process of loading a servlet before any request comes in is called pre-loading or pre-initializing a servlet.]]></answer>
+		</qa>
+		<qa id="77" rating="2">			<question><![CDATA[q:What is the difference between doGet() and doPost()?]]></question>
+			<answer><![CDATA[A doGet() method is limited with 2k of data to be sent, and doPost() method doesn't have this limitation. A request string for doGet() looks like the following: 
+http://example.com/svt1?p1=v1&p2=v2&...&pN=vN
+doPost() method call doesn't need a long text tail after a servlet name in a request. All parameters are stored in a request itself, not in a request string, and it's impossible to guess the data transmitted to a servlet only looking at a request string.
+doGet is used to handle resource read while doPost is used for handling any edits like form post.]]></answer>
+		</qa>
+		<qa id="78" rating="2">			<question><![CDATA[q:What is the difference between HttpServlet and GenericServlet?]]></question>
+			<answer><![CDATA[A GenericServlet has a service() method aimed to handle requests. HttpServlet extends GenericServlet and adds support for doGet(), doPost(), doHead() methods (HTTP 1.0) plus doPut(), doOptions(), doDelete(), doTrace() methods (HTTP 1.1). 
+Both these classes are abstract.]]></answer>
+		</qa>
+		<qa id="79" rating="2">			<question><![CDATA[q:What is the difference between ServletContext and ServletConfig?]]></question>
+			<answer><![CDATA[ServletContext: Defines a set of methods that a servlet uses to communicate with its servlet container, for example, to get the MIME type of a file, dispatch requests, or write to a log file.The ServletContext object is contained within the ServletConfig object, which the Web server provides the servlet when the servlet is initialized 
+  ServletConfig: The object created after a servlet is instantiated and its default constructor is read. It is created to pass initialization information to the servlet.]]></answer>
+		</qa>
+	</category>
+</questionbank>

@@ -1,0 +1,215 @@
+<questionbank group="Architecture">
+	<category name="General">
+		<qa id="1" rating="2">			<question><![CDATA[q:what would one look for in an enterprise architect?]]></question>
+			<answer><![CDATA[<ul>
+<li><b>Visual Thinking</b> - the need to communicate with pictures rather than words</li>
+<li><b>The ability to communicate</b> complex ideas to widely different audiences.  Excellent written communication skills as well as the ability to both speak in small and large audiences.</li>
+<li><b>A firm grasp of process</b> engineering, lean or six sigma.</li>
+<li><b>A reasonable grounding in the notions of business capability modeling</b> and application-to-capability mapping (needed for simplification and redundancy review exercises).</li>
+<li><b>The ability to lead architectural review</b> sessions using the ATAM method of application architectural evaluation.</li>
+<li><b>A firm foundation in current ideas</b> in software architecture, including SOA,
+MDA, EDA, and basic OOD.  An understanding of the concept of pattern languages as well as deep knowledge of OO design patterns, architectural patterns, and messaging patterns.</li>
+<li><b>A solid understanding of software development processes</b> and methodologies: Agile, RUP, Spiral, Waterfall... and the ability to describe actual situations that may be appropriate for each one (yes, including Waterfall).</li>
+<li><b>Reasonable experience in network infrastructure</b>, including TCP networking, Firewalls, Routing, and Load Balancing. </li>
+<li><b>Solid understanding of encryption</b>, authorization, authentication, and security mechanisms, especially the foundational elements of the Public Key Infrastructure.</li>
+<li><b>Excellent knowledge of data management</b>, including operational uses of RDBMS, Extract-Translate-Load operations, business intelligence data management, and data distribution / caching strategies</li>
+</ul>]]></answer>
+		</qa>
+	</category>
+	<category name="SCEA notes">
+		<qa id="2" rating="2">			<question><![CDATA[q:1: Concepts]]></question>
+			<answer><![CDATA[<pre>
+UML
+    Diagrams
+	Static
+	    Class
+	Dynamic
+	    Interaction
+		Sequence
+		Collaboration
+Architectural Characteristics
+    Encapsulation
+    Inheritance
+    Interfaces</pre>]]></answer>
+		</qa>
+		<qa id="3" rating="2">			<question><![CDATA[q:2: Common Architectures]]></question>
+			<answer><![CDATA[<pre>Tiered Architecture
+    Two Tier
+    Three Tier
+    Multi Tier
+Non Functional Requirements
+    Performance
+    Availability
+    Scalability
+    Security
+    Maintainability
+    Extensibility
+    Reliability
+    Manageability
+Network Layouts
+    Benefits
+    Weaknesses</pre>]]></answer>
+		</qa>
+		<qa id="4" rating="2">			<question><![CDATA[q:3: Legacy Connectivity]]></question>
+			<answer><![CDATA[<pre>Appropriate Techniques
+Inappropriate Techniques</pre>]]></answer>
+		</qa>
+		<qa id="5" rating="2">			<question><![CDATA[q:4: Enterprise JavaBeans Technology]]></question>
+			<answer><![CDATA[<pre>Classes and Interfaces
+Types
+    Entity
+	ejbFind() returns the Primary Key
+    Session
+	Stateful
+	Stateless
+    Message Driven
+CMP
+    Benefits\
+    Costs
+Declarative Transactions
+    Instead of CMT use BMT instead for fine grained transactions
+Security
+Entity Beans with DAO
+More Notes:
+    It is only advisable to use EJBs if applications are transactional and distributed in nature.</pre>]]></answer>
+		</qa>
+		<qa id="6" rating="2">			<question><![CDATA[q:5: Enterprise JavaBeans Container Model]]></question>
+			<answer><![CDATA[<pre>Bean Pooling
+Passivation
+Resource Monitoring
+Lifecycle Management</pre>]]></answer>
+		</qa>
+		<qa id="7" rating="2">			<question><![CDATA[q:6: Protocols]]></question>
+			<answer><![CDATA[<pre>HTTP
+HTTPS
+IIOP
+JRMP
+More Notes:
+    CORBA
+	Moves state and not behaviour, RMI moves behaviour as well</pre>]]></answer>
+		</qa>
+		<qa id="8" rating="2">			<question><![CDATA[q:7: Applicability of J2EE Technology]]></question>
+			<answer><![CDATA[<pre>J2EE Implementation
+EJB Implementation
+J2EE Technologies</pre>]]></answer>
+		</qa>
+		<qa id="9" rating="2">			<question><![CDATA[q:8: Design Patterns]]></question>
+			<answer><![CDATA[<pre>
+Creational
+    Abstract Factory
+    Builder
+    Factory Method
+    Prototype
+    Singleton
+Structural
+    Adapter
+    Bridge
+    Composite
+    Decorator
+    Facade
+    Flyweight
+    Proxy
+Behavioral
+    Chain of Responsibility
+    Command
+    Interpreter
+    Iterator
+    Mediator
+    Memento
+    Observer
+    State
+    Strategy
+    Template Method
+    Visitor</pre>]]></answer>
+		</qa>
+		<qa id="10" rating="2">			<question><![CDATA[q:9: Messaging]]></question>
+			<answer><![CDATA[<pre>Synchronous
+Asynchronous
+Messaging & EJBs
+    Publish-Subscribe
+	1 sender - N receivers
+	Push Model
+    Point to Point
+	1 sender - 1 receiver
+	Pull Model</pre>]]></answer>
+		</qa>
+		<qa id="11" rating="2">			<question><![CDATA[q:10: Internationalization]]></question>
+			<answer><![CDATA[<pre>Customization Aspects
+Technology
+    Properties
+	Although the Properties file is a subclass of Hashtable, it should only be used to store Strings
+    Locale
+    ResourceBundle
+    Unicode
+    java.text package
+    InputStreamReader
+    OutputStreamWriter</pre>]]></answer>
+		</qa>
+		<qa id="12" rating="2">			<question><![CDATA[q:11: Security]]></question>
+			<answer><![CDATA[<pre>Applets
+    JAR Signing
+	Signing a JAR file means signing individual files inside the JAR, therefore it is possible to add more files to a JAR even after it has been signed without invalidating the signature for the other files inside the JAR
+Implementations]]></answer>
+		</qa>
+	</category>
+	<category name="SOA">
+		<qa id="13" rating="2">			<question><![CDATA[q: What are the advantages of SOA?]]></question>
+			<answer><![CDATA[<img src="http://in.sun.com/practice/software/soa/images/ig_soa_before.gif"/>
+With a Services-Oriented Architecture (SOA), users no longer have to login to multiple systems, search for relevant data and integrate the results manually. The data for business process activities is delivered as an integrated service, in a single application, on a single screen, with a single login.]]></answer>
+		</qa>
+		<qa id="14" rating="2">			<question><![CDATA[----
+q:Explain major features of SOA?]]></question>
+			<answer><![CDATA[SOA components are loosely coupled. When we say loosely coupled means every service is self contained and exist in alone logically. For instance we take the ‘payment gateway' service and attach it to a different system.
+ SOA services are black boxes. In SOA services hide there inner complexities. They only interact using messages and send services depending on those messages. By visualizing services as black boxes services become more loosely coupled.
+ SOA service should be self defined: - SOA services should be able to define themselves.
+ SOA Services are maintained in a listing: - SOA services are maintained in a central repository. Applications can search the services in the central repository and use them accordingly.
+ SOA components can be orchestrated and linked to achieve a particular functionality. SOA services can be used/orchestrated in a plug and play manner. For instance figure ‘Orchestration' shows two services ‘Security service' and ‘Order processing service'. You can achieve two types of orchestrations from it one. Using SOA we can manage work flow between services in a loosely coupled fashion.
+
+<img src="http://www.codeproject.com/KB/aspnet/SoftArch7/Orchestration.JPG"/>]]></answer>
+		</qa>
+		<qa id="15" rating="2">			<question><![CDATA[q:In SOA do we need to build systems from scratch?]]></question>
+			<answer><![CDATA[No. If you need to integrate or make an existing system as a business service, you just need to create loosely coupled wrappers which will wrap your custom systems and expose the systems functionality in generic fashion to the external world.]]></answer>
+		</qa>
+		<qa id="16" rating="3">			<question><![CDATA[q:Can you explain business layers and plumbing layers in SOA?]]></question>
+			<answer><![CDATA[In SOA we can divide any architecture in two layers. The first which has direct relevance to business as it carries out business functions. The second layer is a technical layer which talks about managing computer resources like database, web server etc. This division is needed to identify a service. Consider the figure ‘Simple order system'. It has various components which interact with each other to complete the order system functionality.
+<img src="http://www.codeproject.com/KB/aspnet/SoftArch7/SimpleorderSystem.JPG"/>
+<b>Fig - Simple order System</b>
+The simple order system can be divided in to two layers (see figure ‘business and plumbing layer' one which is business related and second which is more technical related. You can see the plumbing layer consisting of data access layer , AJAX , yes more of technical stuff.
+<img src="http://www.codeproject.com/KB/aspnet/SoftArch7/Businesslayer.JPG"/>
+<b>Fig - Business layer and plumbing layer</b>]]></answer>
+		</qa>
+		<qa id="17" rating="2">			<question><![CDATA[q:what's the difference between services and components?]]></question>
+			<answer><![CDATA[Services are logical grouping of components to achieve business functionality. Components are implementation approaches to make a service. The components can be in JAVA, C#, C++ but the services will be exposed in a general format like Web Services.]]></answer>
+		</qa>
+		<qa id="18" rating="3">			<question><![CDATA[q:Can you describe the complete architecture of SOA?]]></question>
+			<answer><![CDATA[Any vendor who implements SOA needs to fulfill the below SOA components
+<img src="http://www.codeproject.com/KB/aspnet/SoftArch7/ArchitectureofSOA.JPG"/>
+<b>Figure: - Architecture of SOA</b>
+The main goal of SOA is to connect disparate systems. In order that these disparate system work they should messages to each other. ESB (Enterprise service bus) acts like a reliable post office which guarantees delivery of messages between systems in a loosely coupled manner. ESB is a special layer which delivers messages between applications. In the figure we have shown a huge plump pipe. It's not hardware or some wire etc. It's a group of components/software which helps you to send and receive messages between the disparate applications. Do not try to code your own ESB, you can think of buying one from Microsoft, IBM, Oracle, progress etc. 
+
+SOA registry is like a reference database of services. It describes what each services do, where are they located and how can they communicate. It's a central reference of meta-data for services.
+
+SOA workflow allows us to define work flow using the services in SOA registry. We will read more about BPM in the further questions.
+
+Service broker reads the work flow and takes services from the SOA registry and ties them together. Service brokers are normally middleware like EAI (Enterprise application Integration) products. You can get a list of decent EAI from Sun, Microsoft, and IBM etc.
+
+Process manager is nothing but the collection of SOA registry, SOA workflow and service broker.
+
+SOA supervisor is traffic cop ensuring that services do not have issues. It deals mainly with performance issues of the system so that appropriate service levels are met. If any of the services have performance problems it sends messages to the proper infrastructure to fix the issue.]]></answer>
+		</qa>
+		<qa id="19" rating="3">			<question><![CDATA[q:What are ends, contract, address, and bindings?]]></question>
+			<answer><![CDATA[These three terminologies on which SOA service stands. Every service must expose one or more ends by which the service can be available to the client. End consists of three important things where, what and how:-
+
+* Contract (What)
+Contract is an agreement between two or more parties. It defines the protocol how client should communicate with your service. Technically, it describes parameters and return values for a method.
+* Address (Where)
+An Address indicates where we can find this service. Address is a URL, which points to the location of the service.
+* Binding (How)
+Bindings determine how this end can be accessed. It determines how communications is done. For instance, you expose your service, which can be accessed using SOAP over HTTP or BINARY over TCP. So for each of these communications medium two bindings will be created.
+
+Below figure, show the three main components of end. You can see the stock ticker is the service class, which has an end hosted on www.soa.com with HTTP and TCP binding support and using Stock Ticker interface type.
+<img src="http://www.codeproject.com/KB/aspnet/SoftArch7/EndpointArchitecture.JPG"/>
+<b> Endpoint Architecture</b>]]></answer>
+		</qa>
+	</category>
+</questionbank>

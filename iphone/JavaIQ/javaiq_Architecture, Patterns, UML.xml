@@ -1,0 +1,359 @@
+<questionbank group="Architecture, Patterns, UML...">
+	<category name="Agile methodologies">
+		<qa id="1" rating="2">			<question><![CDATA[q:PDF Notes on Agile quality are below]]></question>
+			<answer><![CDATA[<a href="AgileQuality.pdf">Agile TDD quality</a><br/><br/>
+<a href="AgileMethodologies.pdf">Agile XP with TDD</a><br/><br/>
+<a href="Scrum.pdf">Agile SCRUM</a>]]></answer>
+		</qa>
+	</category>
+	<category name="Gang of four (Creational, Structural...)">
+		<qa id="2" rating="2">			<question><![CDATA[q: Design patterns (GoF)]]></question>
+			<answer><![CDATA[Design patterns are recurring solutions to software design problems you find again and again in real-world application development. Patterns are about design and interaction of objects, as well as providing a communication platform concerning elegant, reusable solutions to commonly encountered programming challenges.<br/>
+
+The Gang of Four (GoF) patterns are generally considered the foundation for all other patterns. They are categorized in three groups: Creational, Structural, and Behavioral. Here you will find information on these important patterns.]]></answer>
+		</qa>
+		<qa id="3" rating="2">			<question><![CDATA[q: Creational Patterns]]></question>
+			<answer><![CDATA[<ul>
+<li>  <b>Singleton</b> : A class of which only a single instance can exist <br/><img src="images/singleton.gif"/></li>
+<li>  <b>Factory Method</b> : Creates an instance of several derived classes <br/><img src="images/factory.gif"/></li>
+<li>  <b>Abstract Factory</b> : Creates an instance of several families of classes <br/><img src="images/abstract.gif"/></li>
+<li>  <b>Builder</b> : Separates object construction from its representation <br/><img src="images/builder.gif"/></li>
+<li>  <b>Prototype</b> : A fully initialized instance to be copied or cloned <br/><img src="images/prototype.gif"/></li>
+</ul>]]></answer>
+		</qa>
+		<qa id="4" rating="2">			<question><![CDATA[q: Structural  Patterns]]></question>
+			<answer><![CDATA[<ul>
+<li><b>Adapter</b> : Match interfaces of different classes <br/><img src="images/adapter.gif"/></li>
+<li><b>Bridge</b> : Separates an object's interface from its implementation <br/><img src="images/bridge.gif"/></li>
+<li><b>Composite</b> : A tree structure of simple and composite objects <br/><img src="images/composite.gif"/></li>
+<li><b>Decorator</b> : Add responsibilities to objects dynamically <br/><img src="images/decorator.gif"/></li>
+<li><b>Facade</b> : A single class that represents an entire subsystem <br/><img src="images/facade.gif"/></li>
+<li><b>Flyweight</b> : A fine-grained instance used for efficient sharing <br/><img src="images/flyweight.gif"/></li>
+<li><b>Proxy</b> : An object representing another object <br/><img src="images/proxy.gif"/></li>
+</ul>]]></answer>
+		</qa>
+		<qa id="5" rating="2">			<question><![CDATA[q: Behavioral Patterns]]></question>
+			<answer><![CDATA[<ul>
+<li><b>Chain of Resp.</b> : A way of passing a request between a chain of objects<br/><img src="images/chain.gif"/></li>
+<li><b>Command</b> : Encapsulate a command request as an object<br/><img src="images/command.gif"/></li>
+<li><b>Interpreter</b> : A way to include language elements in a program<br/><img src="images/interpreter.gif"/></li>
+<li><b>Iterator</b> : Sequentially access the elements of a collection<br/><img src="images/iterator.gif"/></li>
+<li><b>Mediator</b> : Defines simplified communication between classes<br/><img src="images/mediator.gif"/></li>
+<li><b>Memento</b> : Capture and restore an object's internal state<br/><img src="images/memento.gif"/></li>
+<li><b>Observer</b> : A way of notifying change to a number of classes<br/><img src="images/observer.gif"/></li>
+<li><b>State</b> : Alter an object's behavior when its state changes<br/><img src="images/state.gif"/></li>
+<li><b>Strategy</b> : Encapsulates an algorithm inside a class<br/><img src="images/strategy.gif"/></li>
+<li><b>Template Method</b> : Defer the exact steps of an algorithm to a subclass<br/><img src="images/template.gif"/></li>
+<li><b>Visitor</b> : Defines a new operation to a class without change<br/><img src="images/visitor.gif"/></li>
+</ul>]]></answer>
+		</qa>
+	</category>
+	<category name="General">
+		<qa id="6" rating="2">			<question><![CDATA[q:what would one look for in an enterprise architect?]]></question>
+			<answer><![CDATA[<ul>
+<li><b>Visual Thinking</b> - the need to communicate with pictures rather than words</li>
+<li><b>The ability to communicate</b> complex ideas to widely different audiences.  Excellent written communication skills as well as the ability to both speak in small and large audiences.</li>
+<li><b>A firm grasp of process</b> engineering, lean or six sigma.</li>
+<li><b>A reasonable grounding in the notions of business capability modeling</b> and application-to-capability mapping (needed for simplification and redundancy review exercises).</li>
+<li><b>The ability to lead architectural review</b> sessions using the ATAM method of application architectural evaluation.</li>
+<li><b>A firm foundation in current ideas</b> in software architecture, including SOA,
+MDA, EDA, and basic OOD.  An understanding of the concept of pattern languages as well as deep knowledge of OO design patterns, architectural patterns, and messaging patterns.</li>
+<li><b>A solid understanding of software development processes</b> and methodologies: Agile, RUP, Spiral, Waterfall... and the ability to describe actual situations that may be appropriate for each one (yes, including Waterfall).</li>
+<li><b>Reasonable experience in network infrastructure</b>, including TCP networking, Firewalls, Routing, and Load Balancing. </li>
+<li><b>Solid understanding of encryption</b>, authorization, authentication, and security mechanisms, especially the foundational elements of the Public Key Infrastructure.</li>
+<li><b>Excellent knowledge of data management</b>, including operational uses of RDBMS, Extract-Translate-Load operations, business intelligence data management, and data distribution / caching strategies</li>
+</ul>]]></answer>
+		</qa>
+	</category>
+	<category name="J2ee patterns">
+		<qa id="7" rating="2">			<question><![CDATA[q:J2ee patterns at a glance]]></question>
+			<answer><![CDATA[<img src="images/CJP2Catalog.gif"/> <br/>
+ref: <a href="www.corej2eepatterns.com">corej2eepatterns.com</a>]]></answer>
+		</qa>
+		<qa id="8" rating="2">			<question><![CDATA[q: Explain j2ee patterns]]></question>
+			<answer><![CDATA[<ul>
+<li><b>Intercepting Filter</b> intercepts incoming requests and outgoing responses and applies a filter. These filters may be added and removed in a declarative manner, allowing them to be applied unobtrusively in a variety of combinations. After this preprocessing and/or post-processing is complete, the final filter in the group vectors control to the original target object. For an incoming request, this is often a Front Controller, but may be a View.<br/></li>
+<li><b>Front Controller</b> is a container to hold the common processing logic that occurs within the presentation tier and that may otherwise be erroneously placed in a View. A controller handles requests and manages content retrieval, security, view management, and navigation, delegating to a Dispatcher component to dispatch to a View.<br/></li>
+<li><b>Application Controller</b> centralizes control, retrieval, and invocation of view and command processing. While a Front Controller acts as a centralized access point and controller for incoming requests, the Application Controller is responsible for identifying and invoking commands, and for identifying and dispatching to views.<br/></li>
+<li><b>Context Object</b> encapsulates state in a protocol-independent way to be shared throughout your application. Using Context Object makes testing easier, facilitating a more generic test environment with reduced dependence upon a specific container.<br/></li>
+<li><b>View Helper</b> encourages the separation of formatting-related code from other business logic. It suggests using Helper components to encapsulate logic relating to initiating content retrieval, validation, and adapting and formatting the model. The View component is then left to encapsulate the presentation formatting. Helper components typically delegate to the business services via a Business Delegate or an Application Service, while a View may be composed of multiple subcomponents to create its template.<br/></li>
+<li><b>Composite View</b> suggests composing a View from numerous atomic pieces. Multiple smaller views, both static and dynamic, are pieced together to create a single template. The Service to Worker and Dispatcher View patterns represent a common combination of other patterns from the catalog. The two patterns share a common structure, consisting of a controller working with a Dispatcher, Views, and Helpers. Service to Worker and Dispatcher View have similar participant roles, but differ in the division of labor among those roles. Unlike Service to Worker, Dispatcher View defers business processing until view processing has been performed.<br/></li>
+<li><b>Business Delegate</b> reduces coupling between remote tiers and provides an entry point for accessing remote services in the business tier. A Business Delegate might also cache data as necessary to improve performance. A Business Delegate encapsulates a Session Facade and maintains a one-to-one relationship with that Session Facade. An Application Service uses a Business Delegate to invoke a Session Facade.<br/></li>
+<li><b>Service Locator</b> encapsulates the implementation mechanisms for looking up business service components. A Business Delegate uses a Service Locator to connect to a Session Facade. Other clients that need to locate and connect to Session Facade, other business-tier services, and web services can use a Service Locator.<br/></li>
+<li><b>Session Facade</b> provides coarse-grained services to the clients by hiding the complexities of the business service interactions. A Session Facade might invoke several Application Service implementations or Business Objects. A Session Facade can also encapsulate a Value List Handler.<br/></li>
+<li><b>Application Service</b> centralizes and aggregates behavior to provide a uniform service layer to the business tier services. An Application Service might interact with other services or Business Objects. An Application Service can invoke other Application Services and thus create a layer of services in your application.<br/></li>
+<li><b>Business Object</b> implements your conceptual domain model using an object model. Business Objects separate business data and logic into a separate layer in your application. Business Objects typically represent persistent objects and can be transparently persisted using Domain Store.<br/></li>
+<li><b>Composite Entity</b> implements a Business Object using local entity beans and POJOs. When implemented with bean-managed persistence, a Composite Entity uses Data Access Objects to facilitate persistence.<br/></li>
+<li><b>The Transfer Object</b> pattern provides the best techniques and strategies to exchange data across tiers (that is, across system boundaries) to reduce the network overhead by minimizing the number of calls to get data from another tier.<br/></li>
+<li><b>The Transfer Object Assembler</b> constructs a composite Transfer Object from various sources. These sources could be EJB components, Data Access Objects, or other arbitrary Java objects. This pattern is most useful when the client needs to obtain data for the application model or part of the model.<br/></li>
+<li><b>The Value List Handler</b> uses the GoF iterator pattern to provide query execution and processing services. The Value List Handler caches the results of the query execution and return subsets of the result to the clients as requested. By using this pattern, it is possible to avoid overheads associated with finding large numbers of entity beans. The Value List Handler uses a Data Access Object to execute a query and fetch the results from a persistent store.<br/></li>
+<li><b>Data Access Object</b> enables loose coupling between the business and resource tiers. Data Access Object encapsulates all the data access logic to create, retrieve, delete, and update data from a persistent store. Data Access Object uses Transfer Object to send and receive data.<br/></li>
+<li><b>Service Activator</b> enables asynchronous processing in your enterprise applications using JMS. A Service Activator can invoke Application Service, Session Facade or Business Objects. You can also use several Service Activators to provide parallel asynchronous processing for long running tasks.<br/></li>
+<li><b>Domain Store</b> provides a powerful mechanism to implement transparent persistence for your object model. It combines and links several other patterns including Data Access Objects.<br/></li>
+<li><b>Web Service Broker</b> exposes and brokers one or more services in your application to external clients as a web service using XML and standard web protocols. A Web Service Broker can interact with Application Service and Session Facade. A Web Service Broker uses one or more Service Activators to perform asynchronous processing of a request.</li>
+</ul>]]></answer>
+		</qa>
+	</category>
+	<category name="JSR">
+		<qa id="9" rating="2">			<question><![CDATA[q:JSR 186 - Portlet specification]]></question>
+			<answer><![CDATA[<a href="JSR168.pdf">JSR 168</a>]]></answer>
+		</qa>
+		<qa id="10" rating="2">			<question><![CDATA[q:JSR 286 - Portlet specification - improved]]></question>
+			<answer><![CDATA[<a href="JSR286.pdf">JSR 286</a>]]></answer>
+		</qa>
+		<qa id="11" rating="2">			<question><![CDATA[q:JSR 94 - Java rules engine specification]]></question>
+			<answer><![CDATA[<a href="JSR94.pdf">JSR 94</a>]]></answer>
+		</qa>
+	</category>
+	<category name="SCEA notes">
+		<qa id="12" rating="2">			<question><![CDATA[q:1: Concepts]]></question>
+			<answer><![CDATA[<pre>
+UML
+    Diagrams
+	Static
+	    Class
+	Dynamic
+	    Interaction
+		Sequence
+		Collaboration
+Architectural Characteristics
+    Encapsulation
+    Inheritance
+    Interfaces</pre>]]></answer>
+		</qa>
+		<qa id="13" rating="2">			<question><![CDATA[q:2: Common Architectures]]></question>
+			<answer><![CDATA[<pre>Tiered Architecture
+    Two Tier
+    Three Tier
+    Multi Tier
+Non Functional Requirements
+    Performance
+    Availability
+    Scalability
+    Security
+    Maintainability
+    Extensibility
+    Reliability
+    Manageability
+Network Layouts
+    Benefits
+    Weaknesses</pre>]]></answer>
+		</qa>
+		<qa id="14" rating="2">			<question><![CDATA[q:3: Legacy Connectivity]]></question>
+			<answer><![CDATA[<pre>Appropriate Techniques
+Inappropriate Techniques</pre>]]></answer>
+		</qa>
+		<qa id="15" rating="2">			<question><![CDATA[q:4: Enterprise JavaBeans Technology]]></question>
+			<answer><![CDATA[<pre>Classes and Interfaces
+Types
+    Entity
+	ejbFind() returns the Primary Key
+    Session
+	Stateful
+	Stateless
+    Message Driven
+CMP
+    Benefits\
+    Costs
+Declarative Transactions
+    Instead of CMT use BMT instead for fine grained transactions
+Security
+Entity Beans with DAO
+More Notes:
+    It is only advisable to use EJBs if applications are transactional and distributed in nature.</pre>]]></answer>
+		</qa>
+		<qa id="16" rating="2">			<question><![CDATA[q:5: Enterprise JavaBeans Container Model]]></question>
+			<answer><![CDATA[<pre>Bean Pooling
+Passivation
+Resource Monitoring
+Lifecycle Management</pre>]]></answer>
+		</qa>
+		<qa id="17" rating="2">			<question><![CDATA[q:6: Protocols]]></question>
+			<answer><![CDATA[<pre>HTTP
+HTTPS
+IIOP
+JRMP
+</pre>
+More Notes:
+    CORBA
+	Moves state and not behaviour, RMI moves behaviour as well]]></answer>
+		</qa>
+		<qa id="18" rating="2">			<question><![CDATA[q:7: Applicability of J2EE Technology]]></question>
+			<answer><![CDATA[<pre>J2EE Implementation
+EJB Implementation
+J2EE Technologies</pre>]]></answer>
+		</qa>
+		<qa id="19" rating="2">			<question><![CDATA[q:8: Design Patterns]]></question>
+			<answer><![CDATA[<pre>
+Creational
+    Abstract Factory
+    Builder
+    Factory Method
+    Prototype
+    Singleton
+Structural
+    Adapter
+    Bridge
+    Composite
+    Decorator
+    Facade
+    Flyweight
+    Proxy
+Behavioral
+    Chain of Responsibility
+    Command
+    Interpreter
+    Iterator
+    Mediator
+    Memento
+    Observer
+    State
+    Strategy
+    Template Method
+    Visitor</pre>]]></answer>
+		</qa>
+		<qa id="20" rating="2">			<question><![CDATA[q:9: Messaging]]></question>
+			<answer><![CDATA[<pre>Synchronous
+Asynchronous
+Messaging & EJBs
+    Publish-Subscribe
+	1 sender - N receivers
+	Push Model
+    Point to Point
+	1 sender - 1 receiver
+	Pull Model</pre>]]></answer>
+		</qa>
+		<qa id="21" rating="2">			<question><![CDATA[q:10: Internationalization]]></question>
+			<answer><![CDATA[<pre>Customization Aspects
+Technology
+    Properties
+	Although the Properties file is a subclass of Hashtable, it should only be used to store Strings
+    Locale
+    ResourceBundle
+    Unicode
+    java.text package
+    InputStreamReader
+    OutputStreamWriter</pre>]]></answer>
+		</qa>
+		<qa id="22" rating="2">			<question><![CDATA[q:11: Security]]></question>
+			<answer><![CDATA[<pre>Applets
+    JAR Signing
+	Signing a JAR file means signing individual files inside the JAR, therefore it is possible to add more files to a JAR even after it has been signed without invalidating the signature for the other files inside the JAR
+Implementations]]></answer>
+		</qa>
+	</category>
+	<category name="SOA">
+		<qa id="23" rating="2">			<question><![CDATA[q: What are the advantages of SOA?]]></question>
+			<answer><![CDATA[<img src="images/ig_soa_before.gif"/><br/><br/>
+With a Services-Oriented Architecture (SOA), users no longer have to login to multiple systems, search for relevant data and integrate the results manually. The data for business process activities is delivered as an integrated service, in a single application, on a single screen, with a single login.]]></answer>
+		</qa>
+		<qa id="24" rating="2">			<question><![CDATA[q:What is SOA?]]></question>
+			<answer><![CDATA[SOA stands for service oriented architecture. Before we define SOA lets first define a service. In real world service is what we pay for and we get the intended service. For instance you go to a hotel and order food. Your order first goes to the counter and then it goes to the kitchen where the food is prepared and finally the waiter serves the food.<br/><br/>
+
+
+So in order to order a item from a hotel you need the three logical departments / services to work together (counter, kitchen and waiter). <br/><br/>
+
+In the same manner in software world these services are termed as business services. They are self contained and logical. So let's first define a business service, SOA definition will be just an extension of the same.]]></answer>
+		</qa>
+		<qa id="25" rating="2">			<question><![CDATA[q:Explain major features of SOA?]]></question>
+			<answer><![CDATA[SOA components are loosely coupled. When we say loosely coupled means every service is self contained and exist in alone logically. For instance we take the 'payment gateway' service and attach it to a different system.<br/><br/>
+SOA services are black boxes. In SOA services hide there inner complexities. They only interact using messages and send services depending on those messages. By visualizing services as black boxes services become more loosely coupled.<br/><br/>
+SOA service should be self defined: - SOA services should be able to define themselves.<br/><br/>
+SOA Services are maintained in a listing: - SOA services are maintained in a central repository. Applications can search the services in the central repository and use them accordingly.<br/><br/>
+SOA components can be orchestrated and linked to achieve a particular functionality. SOA services can be used/orchestrated in a plug and play manner. For instance figure 'Orchestration' shows two services 'Security service' and 'Order processing service'. You can achieve two types of orchestrations from it one. Using SOA we can manage work flow between services in a loosely coupled fashion.<br/><br/>
+
+<img src="images/Orchestration.JPG"/>]]></answer>
+		</qa>
+		<qa id="26" rating="2">			<question><![CDATA[q:In SOA do we need to build systems from scratch?]]></question>
+			<answer><![CDATA[No. If you need to integrate or make an existing system as a business service, you just need to create loosely coupled wrappers which will wrap your custom systems and expose the systems functionality in generic fashion to the external world.]]></answer>
+		</qa>
+		<qa id="27" rating="3">			<question><![CDATA[q:Can you explain business layers and plumbing layers in SOA?]]></question>
+			<answer><![CDATA[In SOA we can divide any architecture in two layers. The first which has direct relevance to business as it carries out business functions. The second layer is a technical layer which talks about managing computer resources like database, web server etc. This division is needed to identify a service. Consider the figure 'Simple order system'. It has various components which interact with each other to complete the order system functionality.<br/><br/>
+<img src="images/SimpleorderSystem.JPG"/>
+<b>Fig - Simple order System</b><br/><br/>
+The simple order system can be divided in to two layers (see figure 'business and plumbing layer' one which is business related and second which is more technical related. You can see the plumbing layer consisting of data access layer , AJAX , yes more of technical stuff.<br/><br/>
+<img src="images/Businesslayer.JPG"/><br/>
+<b>Fig - Business layer and plumbing layer</b>]]></answer>
+		</qa>
+		<qa id="28" rating="2">			<question><![CDATA[q:what's the difference between services and components?]]></question>
+			<answer><![CDATA[Services are logical grouping of components to achieve business functionality. Components are implementation approaches to make a service. The components can be in JAVA, C#, C++ but the services will be exposed in a general format like Web Services.]]></answer>
+		</qa>
+		<qa id="29" rating="3">			<question><![CDATA[q:Can you describe the complete architecture of SOA?]]></question>
+			<answer><![CDATA[Any vendor who implements SOA needs to fulfill the below SOA components
+<img src="images/ArchitectureofSOA.JPG"/>
+<b>Figure: - Architecture of SOA</b><br/><br/>
+The main goal of SOA is to connect disparate systems. In order that these disparate system work they should messages to each other. ESB (Enterprise service bus) acts like a reliable post office which guarantees delivery of messages between systems in a loosely coupled manner. ESB is a special layer which delivers messages between applications. In the figure we have shown a huge plump pipe. It's not hardware or some wire etc. It's a group of components/software which helps you to send and receive messages between the disparate applications. Do not try to code your own ESB, you can think of buying one from Microsoft, IBM, Oracle, progress etc. <br/><br/>
+
+SOA registry is like a reference database of services. It describes what each services do, where are they located and how can they communicate. It's a central reference of meta-data for services.
+<br/><br/>
+
+SOA workflow allows us to define work flow using the services in SOA registry. We will read more about BPM in the further questions.<br/><br/>
+
+Service broker reads the work flow and takes services from the SOA registry and ties them together. Service brokers are normally middleware like EAI (Enterprise application Integration) products. You can get a list of decent EAI from Sun, Microsoft, and IBM etc.<br/><br/>
+
+Process manager is nothing but the collection of SOA registry, SOA workflow and service broker.<br/><br/>
+
+SOA supervisor is traffic cop ensuring that services do not have issues. It deals mainly with performance issues of the system so that appropriate service levels are met. If any of the services have performance problems it sends messages to the proper infrastructure to fix the issue.<br/><br/>]]></answer>
+		</qa>
+		<qa id="30" rating="3">			<question><![CDATA[q:What are ends, contract, address, and bindings?]]></question>
+			<answer><![CDATA[These three terminologies on which SOA service stands. Every service must expose one or more ends by which the service can be available to the client. End consists of three important things where, what and how.<br/><br/>
+
+* Contract (What)
+Contract is an agreement between two or more parties. It defines the protocol how client should communicate with your service. Technically, it describes parameters and return values for a method.<br/><br/>
+* Address (Where)
+An Address indicates where we can find this service. Address is a URL, which points to the location of the service.<br/><br/>
+* Binding (How)
+Bindings determine how this end can be accessed. It determines how communications is done. For instance, you expose your service, which can be accessed using SOAP over HTTP or BINARY over TCP. So for each of these communications medium two bindings will be created.<br/><br/>
+
+Below figure, show the three main components of end. You can see the stock ticker is the service class, which has an end hosted on www.soa.com with HTTP and TCP binding support and using Stock Ticker interface type.<br/><br/>
+<img src="images/EndpointArchitecture.JPG"/>
+<b> Endpoint Architecture</b>]]></answer>
+		</qa>
+	</category>
+	<category name="UML">
+		<qa id="31" rating="2">			<question><![CDATA[q:Please read the below pdf which quickly summarizes UML]]></question>
+			<answer><![CDATA[<a href="UML.pdf">UML details</a>]]></answer>
+		</qa>
+		<qa id="32" rating="2">			<question><![CDATA[q:What is UML?]]></question>
+			<answer><![CDATA[UML is Unified Modeling Language. It is a graphical language for visualizing specifying constructing and documenting the artifacts of the system. It allows you to create a blue print of all the aspects of the system, before actually physically implementing the system.]]></answer>
+		</qa>
+		<qa id="33" rating="2">			<question><![CDATA[q:What is modeling?]]></question>
+			<answer><![CDATA[Modeling is a proven and well-accepted engineering technique which helps build a model.]]></answer>
+		</qa>
+		<qa id="34" rating="2">			<question><![CDATA[q:What are the advantages of creating a model?]]></question>
+			<answer><![CDATA[Model is a simplification of reality; it is a blueprint of the actual system that needs to be built. Model helps to visualize the system. Model helps to specify the structural and behavior of the system. Model helps make templates for constructing the system. Model helps document the system.]]></answer>
+		</qa>
+		<qa id="35" rating="2">			<question><![CDATA[q:What are the different views that are considered when building an object-oriented software system?]]></question>
+			<answer><![CDATA[Normally there are 5 views. Use Case view - This view exposes the requirements of a system. Design View - Capturing the vocabulary. Process View - modeling the distribution of the systems processes and threads. Implementation view - addressing the physical implementation of the system. Deployment view - focus on the modeling the components required for deploying the system.]]></answer>
+		</qa>
+		<qa id="36" rating="2">			<question><![CDATA[q:What are diagrams?]]></question>
+			<answer><![CDATA[Diagrams are graphical representation of a set of elements most often shown made of things and associations.]]></answer>
+		</qa>
+		<qa id="37" rating="2">			<question><![CDATA[q:What are the major three types of modeling used?]]></question>
+			<answer><![CDATA[Major three types of modeling are structural, behavioral, and architectural.]]></answer>
+		</qa>
+		<qa id="38" rating="2">			<question><![CDATA[q:Mention the different kinds of modeling diagrams used?]]></question>
+			<answer><![CDATA[Modeling diagrams that are commonly used are, there are 9 of them. Use case diagram, Class Diagram, Object Diagram, Sequence Diagram, statechart Diagram, Collaboration Diagram, Activity Diagram, Component diagram, Deployment Diagram.]]></answer>
+		</qa>
+		<qa id="39" rating="2">			<question><![CDATA[q:What is Architecture?]]></question>
+			<answer><![CDATA[Architecture is not only taking care of the structural and behavioral aspect of a software system but also taking into account the software usage, functionality, performance, reuse, economic and technology constraints.]]></answer>
+		</qa>
+		<qa id="40" rating="2">			<question><![CDATA[q:What is SDLC?]]></question>
+			<answer><![CDATA[SDLC is Software Development Life Cycle. SDLC of a system included processes that are Use case driven, Architecture centric and Iterative and Incremental. This Life cycle is divided into phases. Phase is a time span between two milestones. The milestones are Inception, Elaboration, Construction, and Transition. Process Workflows that evolve through these phase are Business Modeling, Requirement gathering, Analysis and Design, Implementation, Testing, Deployment. Supporting Workflows are Configuration and change management, Project management.]]></answer>
+		</qa>
+		<qa id="41" rating="2">			<question><![CDATA[q:What are Relationships?]]></question>
+			<answer><![CDATA[There are different kinds of relationships: Dependencies, Generalization, and Association. Dependencies are relations ships between two entities that that a change in specification of one thing may affect another thing. Most commonly it is used to show that one class uses another class as an argument in the signature of the operation. Generalization is relationships specified in the class subclass scenario, it is shown when one entity inherits from other. Associations are structural relationships that are: a room has walls, Person works for a company. Aggregation is a type of association where there is a has a relation ship, That is a room has walls, ño if there are two classes room and walls then the relation ship is called a association and further defined as an aggregation.]]></answer>
+		</qa>
+		<qa id="42" rating="2">			<question><![CDATA[q:How are the diagrams divided?]]></question>
+			<answer><![CDATA[The nine diagrams are divided into static diagrams and dynamic diagrams.
+Static Diagrams (Also called Structural Diagram): Class diagram, Object diagram, Component Diagram, Deployment diagram.
+Dynamic Diagrams (Also called Behavioral Diagrams): Use Case Diagram, Sequence Diagram, Collaboration Diagram, Activity diagram, Statechart diagram.]]></answer>
+		</qa>
+		<qa id="43" rating="2">			<question><![CDATA[q:What are Messages?]]></question>
+			<answer><![CDATA[A message is the specification of a communication, when a message is passed that results in action that is in turn an executable statement.]]></answer>
+		</qa>
+		<qa id="44" rating="2">			<question><![CDATA[q:What is an Use Case?]]></question>
+			<answer><![CDATA[A use case specifies the behavior of a system or a part of a system, óse cases are used to capture the behavior that need to be developed. It involves the interaction of actors and the system.]]></answer>
+		</qa>
+	</category>
+</questionbank>

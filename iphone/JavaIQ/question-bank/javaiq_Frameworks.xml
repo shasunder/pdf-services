@@ -1,0 +1,740 @@
+<questionbank group="Frameworks">
+	<category name="Hibernate">
+		<qa id="1" rating="2">			<question><![CDATA[q:What is ORM ?]]></question>
+			<answer><![CDATA[ORM stands for object/relational mapping. ORM is the automated persistence of objects in a Java application to the tables in a relational database.]]></answer>
+		</qa>
+		<qa id="2" rating="2">			<question><![CDATA[q:What does ORM consists of ?]]></question>
+			<answer><![CDATA[An ORM solution consists of the followig four pieces:
+API for performing basic CRUD operations
+API to express queries refering to classes
+Facilities to specify metadata
+Optimization facilities : dirty checking,lazy associations fetching]]></answer>
+		</qa>
+		<qa id="3" rating="2">			<question><![CDATA[q:What are the ORM levels ?]]></question>
+			<answer><![CDATA[The ORM levels are:
+Pure relational (stored procedure.)
+Light objects mapping (JDBC)
+Medium object mapping
+Full object Mapping (composition,inheritance, polymorphism, persistence by reachability)]]></answer>
+		</qa>
+		<qa id="4" rating="2">			<question><![CDATA[q:What is Hibernate?]]></question>
+			<answer><![CDATA[Hibernate is a pure Java object-relational mapping (ORM) and persistence framework that allows you to map plain old Java objects to relational database tables using (XML) configuration files.Its purpose is to relieve the developer from a significant amount of relational data persistence-related programming tasks.]]></answer>
+		</qa>
+		<qa id="5" rating="2">			<question><![CDATA[q:Why do you need ORM tools like hibernate?]]></question>
+			<answer><![CDATA[The main advantage of ORM like hibernate is that it shields developers from messy SQL. Apart from this, ORM provides following benefits:
+Improved productivity
+High-level object-oriented API
+Less Java code to write
+No SQL to write
+Improved performance
+Sophisticated caching
+Lazy loading
+Eager loading
+Improved maintainability
+A lot less code to write
+Improved portability
+ORM framework generates database-specific SQL for you]]></answer>
+		</qa>
+		<qa id="6" rating="2">			<question><![CDATA[q:What Does Hibernate Simplify?]]></question>
+			<answer><![CDATA[Hibernate simplifies:
+Saving and retrieving your domain objects
+Making database column and table name changes
+Centralizing pre save and post retrieve logic
+Complex joins for retrieving related items
+Schema creation from object model]]></answer>
+		</qa>
+		<qa id="7" rating="2">			<question><![CDATA[q:What is the need for Hibernate xml mapping file?]]></question>
+			<answer><![CDATA[Hibernate mapping file tells Hibernate which tables and columns to use to load and store objects. Typical mapping file look as follows:]]></answer>
+		</qa>
+		<qa id="8" rating="2">			<question><![CDATA[q:What are the most common methods of Hibernate configuration?]]></question>
+			<answer><![CDATA[The most common methods of Hibernate configuration are:
+Programmatic configuration
+XML configuration (hibernate.cfg.xml)]]></answer>
+		</qa>
+		<qa id="9" rating="2">			<question><![CDATA[q:What are the important tags of hibernate.cfg.xml?]]></question>
+			<answer><![CDATA[Following are the important tags of hibernate.cfg.xml:]]></answer>
+		</qa>
+		<qa id="10" rating="2">			<question><![CDATA[q:.What are the Core interfaces are of Hibernate framework?]]></question>
+			<answer><![CDATA[The five core interfaces are used in just about every Hibernate application. Using these interfaces, you can store and retrieve persistent objects and control transactions.
+Session interface
+SessionFactory interface
+Configuration interface
+Transaction interface
+Query and Criteria interfaces]]></answer>
+		</qa>
+		<qa id="11" rating="2">			<question><![CDATA[q:What role does the Session interface play in Hibernate?]]></question>
+			<answer><![CDATA[The Session interface is the primary interface used by Hibernate applications. It is a single-threaded, short-lived object representing a conversation between the application and the persistent store. It allows you to create query objects to retrieve persistent objects.
+
+Session session = sessionFactory.openSession();
+Session interface role:
+Wraps a JDBC connection
+Factory for Transaction
+Holds a mandatory (first-level) cache of persistent objects, used when navigating the object graph or looking up objects by identifier]]></answer>
+		</qa>
+		<qa id="12" rating="2">			<question><![CDATA[q:.What role does the SessionFactory interface play in Hibernate?]]></question>
+			<answer><![CDATA[The application obtains Session instances from a SessionFactory. There is typically a single SessionFactory for the whole application created during application initialization. The SessionFactory caches generate SQL statements and other mapping metadata that Hibernate uses at runtime. It also holds cached data that has been read in one unit of work and may be reused in a future unit of work
+
+SessionFactory sessionFactory = configuration.buildSessionFactory();]]></answer>
+		</qa>
+		<qa id="13" rating="2">			<question><![CDATA[q:.What is the general flow of Hibernate communication with RDBMS?]]></question>
+			<answer><![CDATA[The general flow of Hibernate communication with RDBMS is :
+Load the Hibernate configuration file and create configuration object. It will automatically load all hbm mapping files
+Create session factory from configuration object
+Get one session from this session factory
+Create HQL Query
+Execute query to get list containing Java objects]]></answer>
+		</qa>
+		<qa id="14" rating="2">			<question><![CDATA[q:.What is Hibernate Query Language (HQL)?]]></question>
+			<answer><![CDATA[Hibernate offers a query language that embodies a very powerful and flexible mechanism to query, store, update, and retrieve objects from a database. This language, the Hibernate query Language (HQL), is an object-oriented extension to SQL.]]></answer>
+		</qa>
+		<qa id="15" rating="2">			<question><![CDATA[q:.How do you map Java Objects with Database tables?]]></question>
+			<answer><![CDATA[First we need to write Java domain objects (beans with setter and getter).
+Write hbm.xml, where we map java class to table and database columns to Java class variables.
+Example :
+<hibernate-mapping>
+  <class name="com.test.User"  table="user">
+   <property  column="USER_NAME" length="]]></answer>
+		</qa>
+		<qa id="16" rating="2">			<question><![CDATA[q:.What's the difference between load() and get()?]]></question>
+			<answer><![CDATA[load() vs. get() :-
+load() 	get() 
+Only use the load() method if you are sure that the object exists. 	If you are not sure that the object exists, then use one of the get() methods. 
+load() method will throw an exception if the unique id is not found in the database. 	get() method will return null if the unique id is not found in the database. 
+load() just returns a proxy by default and database won't be hit until the proxy is first invoked.  	get() will hit the database immediately.]]></answer>
+		</qa>
+		<qa id="17" rating="2">			<question><![CDATA[q:.What is the difference between and merge and update ?]]></question>
+			<answer><![CDATA[Use update() if you are sure that the session does not contain an already persistent instance with the same identifier, and merge() if you want to merge your modifications at any time without consideration of the state of the session.]]></answer>
+		</qa>
+		<qa id="18" rating="2">			<question><![CDATA[q:.How do you define sequence generated primary key in hibernate?]]></question>
+			<answer><![CDATA[Using <generator> tag.
+Example:-
+<id column="USER_ID" name="id" type="java.lang.Long"> 
+   <generator class="sequence"> 
+     <param name="table">SEQUENCE_NAME</param>
+   <generator>
+</id>]]></answer>
+		</qa>
+		<qa id="19" rating="2">			<question><![CDATA[q:.Define cascade and inverse option in one-many mapping?]]></question>
+			<answer><![CDATA[cascade - enable operations to cascade to child entities.
+cascade="all|none|save-update|delete|all-delete-orphan"
+inverse - mark this collection as the "inverse" end of a bidirectional association.
+inverse="true|false" 
+Essentially "inverse" indicates which end of a relationship should be ignored, so when persisting a parent who has a collection of children, should you ask the parent for its list of children, or ask the children who the parents are?]]></answer>
+		</qa>
+		<qa id="20" rating="2">			<question><![CDATA[q:.What do you mean by Named  SQL query?]]></question>
+			<answer><![CDATA[Named SQL queries are defined in the mapping xml document and called wherever required.
+Example:
+<sql-query name = "empdetails">
+   <return alias="emp" class="com.test.Employee"/>
+      SELECT emp.EMP_ID AS {emp.empid},
+                 emp.EMP_ADDRESS AS {emp.address},
+                 emp.EMP_NAME AS {emp.name} 
+      FROM Employee EMP WHERE emp.NAME LIKE :name
+</sql-query>
+
+Invoke Named Query :
+List people = session.getNamedQuery("empdetails")
+		     .setString("TomBrady", name)
+		     .setMaxResults(]]></answer>
+		</qa>
+		<qa id="21" rating="2">			<question><![CDATA[q:.How do you invoke Stored Procedures?]]></question>
+			<answer><![CDATA[<sql-query name="selectAllEmployees_SP" callable="true">
+ <return alias="emp" class="employee">
+   <return-property name="empid" column="EMP_ID"/>       
+
+   <return-property name="name" column="EMP_NAME"/>       
+   <return-property name="address" column="EMP_ADDRESS"/>
+    { ? = call selectAllEmployees() }
+ </return>
+</sql-query>]]></answer>
+		</qa>
+		<qa id="22" rating="2">			<question><![CDATA[q:.Define HibernateTemplate?]]></question>
+			<answer><![CDATA[org.springframework.orm.hibernate.HibernateTemplate is a helper class which provides different methods for querying/retrieving data from the database. It also converts checked HibernateExceptions into unchecked DataAccessExceptions.]]></answer>
+		</qa>
+		<qa id="23" rating="2">			<question><![CDATA[q:.What are the benefits does HibernateTemplate provide?]]></question>
+			<answer><![CDATA[The benefits of HibernateTemplate are :
+HibernateTemplate, a Spring Template class simplifies interactions with Hibernate Session.
+Common functions are simplified to single method calls.
+Sessions are automatically closed.
+Exceptions are automatically caught and converted to runtime exceptions.]]></answer>
+		</qa>
+		<qa id="24" rating="2">			<question><![CDATA[q:.How do you switch between relational databases without code changes?]]></question>
+			<answer><![CDATA[Using Hibernate SQL Dialects , we can switch databases. Hibernate will generate appropriate hql queries based on the dialect defined.]]></answer>
+		</qa>
+		<qa id="25" rating="2">			<question><![CDATA[q:.If you want to see the Hibernate generated SQL statements on console, what should we do?]]></question>
+			<answer><![CDATA[In Hibernate configuration file set as follows: 
+<property name="show_sql">true</property>]]></answer>
+		</qa>
+		<qa id="26" rating="2">			<question><![CDATA[q:.What are derived properties?]]></question>
+			<answer><![CDATA[The properties that are not mapped to a column, but calculated at runtime by evaluation of an expression are called derived properties. The expression can be defined using the formula attribute of the element.
+People who read this, also read:-
+BREW Interview Questions
+JSF-MyFaces Tag Reference
+SCBCD Certification
+Let Spring Manage JSF Beans
+Tibco Interview Questions]]></answer>
+		</qa>
+		<qa id="27" rating="2">			<question><![CDATA[q:.What is component mapping in Hibernate?]]></question>
+			<answer><![CDATA[A component is an object saved as a value, not as a reference
+A component can be saved directly without needing to declare interfaces or identifier properties
+Required to define an empty constructor
+Shared references not supported
+Example:]]></answer>
+		</qa>
+		<qa id="28" rating="2">			<question><![CDATA[q:.What is the difference between sorted and ordered collection in hibernate?]]></question>
+			<answer><![CDATA[sorted collection vs. order collection :-
+sorted collection 	order collection 
+A sorted collection is sorting a collection by utilizing the sorting features provided by the Java collections framework. The sorting occurs in the memory of JVM which running Hibernate, after the data being read from database using java comparator. 	Order collection is sorting a collection by specifying the order-by clause for sorting this collection when retrieval. 
+If your collection is not large, it will be more efficient way to sort it. 	If your collection is very large, it will be more efficient way to sort it .]]></answer>
+		</qa>
+		<qa id="29" rating="2">			<question><![CDATA[q:.What is the advantage of Hibernate over jdbc?]]></question>
+			<answer><![CDATA[Hibernate Vs. JDBC :-
+JDBC 	Hibernate 
+With JDBC, developer has to write code to map an object model's data representation to a relational data model and its corresponding database schema.  	Hibernate is flexible and powerful ORM solution to map Java classes to database tables. Hibernate itself takes care of this mapping using XML files so developer does not need to write code for this. 
+With JDBC, the automatic mapping of Java objects with database tables and vice versa conversion is to be taken care of by the developer manually with lines of code.  	Hibernate provides transparent persistence and developer does not need to write code explicitly to map database tables tuples to application objects during interaction with RDBMS.  
+JDBC supports only native Structured Query Language (SQL). Developer has to find out the efficient way to access database, i.e. to select effective query from a number of queries to perform same task.  	Hibernate provides a powerful query language Hibernate Query Language (independent from type of database) that is expressed in a familiar SQL like syntax and includes full support for polymorphic queries. Hibernate also supports native SQL statements. It also selects an effective way to perform a database manipulation task for an application.  
+Application using JDBC to handle persistent data (database tables) having database specific code in large amount. The code written to map table data to application objects and vice versa is actually to map table fields to object properties. As table changed or database changed then it's essential to change object structure as well as to change code written to map table-to-object/object-to-table. 	Hibernate provides this mapping itself. The actual mapping between tables and application objects is done in XML files. If there is change in Database or in any table then the only need to change XML file properties.  
+With JDBC, it is developer's responsibility to handle JDBC result set and convert it to Java objects through code to use this persistent data in application. So with JDBC, mapping between Java objects and database tables is done manually.  	Hibernate reduces lines of code by maintaining object-table mapping itself and returns result to application in form of Java objects. It relieves programmer from manual handling of persistent data, hence reducing the development time and maintenance cost.  
+With JDBC, caching is maintained by hand-coding.  	Hibernate, with Transparent Persistence, cache is set to application work space. Relational tuples are moved to this cache as a result of query. It improves performance if client application reads same data many times for same write. Automatic Transparent Persistence allows the developer to concentrate more on business logic rather than this application code.  
+In JDBC there is no check that always every user has updated data. This check has to be added by the developer.  	Hibernate enables developer to define version type field to application, due to this defined field Hibernate updates version field of database table every time relational tuple is updated in form of Java class object to that table. So if two users retrieve same tuple and then modify it and one user save this modified tuple to database, version is automatically updated for this tuple by Hibernate. When other user tries to save updated tuple to database then it does not allow saving it because this user does not have updated data.]]></answer>
+		</qa>
+		<qa id="30" rating="2">			<question><![CDATA[q:.What are the Collection types in Hibernate ?]]></question>
+			<answer><![CDATA[Bag
+Set
+List
+Array
+Map]]></answer>
+		</qa>
+		<qa id="31" rating="2">			<question><![CDATA[q:.What are the ways to express joins in HQL?]]></question>
+			<answer><![CDATA[HQL provides four ways of expressing (inner and outer) joins:-
+An implicit association join
+An ordinary join in the FROM clause
+A fetch join in the FROM clause.
+A theta-style join in the WHERE clause.]]></answer>
+		</qa>
+		<qa id="32" rating="2">			<question><![CDATA[q:.Define cascade and inverse option in one-many mapping?]]></question>
+			<answer><![CDATA[cascade - enable operations to cascade to child entities.
+cascade="all|none|save-update|delete|all-delete-orphan"
+
+inverse - mark this collection as the "inverse" end of a bidirectional association.
+inverse="true|false" 
+Essentially "inverse" indicates which end of a relationship should be ignored, so when persisting a parent who has a collection of children, should you ask the parent for its list of children, or ask the children who the parents are?]]></answer>
+		</qa>
+		<qa id="33" rating="2">			<question><![CDATA[q:.What is Hibernate proxy?]]></question>
+			<answer><![CDATA[The proxy attribute enables lazy initialization of persistent instances of the class. Hibernate will initially return CGLIB proxies which implement the named interface. The actual persistent object will be loaded when a method of the proxy is invoked.]]></answer>
+		</qa>
+		<qa id="34" rating="2">			<question><![CDATA[q:.How can Hibernate be configured to access an instance variable directly and not through a setter method ?]]></question>
+			<answer><![CDATA[By mapping the property with access="field" in Hibernate metadata. This forces hibernate to bypass the setter method and access the instance variable directly while initializing a newly loaded object.]]></answer>
+		</qa>
+		<qa id="35" rating="2">			<question><![CDATA[q:.How can a whole class be mapped as immutable?]]></question>
+			<answer><![CDATA[Mark the class as mutable="false" (Default is true),. This specifies that instances of the class are (not) mutable. Immutable classes, may not be updated or deleted by the application.]]></answer>
+		</qa>
+		<qa id="36" rating="2">			<question><![CDATA[q:.What is the use of dynamic-insert and dynamic-update attributes in a class mapping?]]></question>
+			<answer><![CDATA[Criteria is a simplified API for retrieving entities by composing Criterion objects. This is a very convenient approach for functionality like "search" screens where there is a variable number of conditions to be placed upon the result set.
+dynamic-update (defaults to false): Specifies that UPDATE SQL should be generated at runtime and contain only those columns whose values have changed
+dynamic-insert (defaults to false): Specifies that INSERT SQL should be generated at runtime and contain only the columns whose values are not null.]]></answer>
+		</qa>
+		<qa id="37" rating="2">			<question><![CDATA[q:.What do you mean by fetching strategy ?]]></question>
+			<answer><![CDATA[A fetching strategy is the strategy Hibernate will use for retrieving associated objects if the application needs to navigate the association. Fetch strategies may be declared in the O/R mapping metadata, or over-ridden by a particular HQL or Criteria query.]]></answer>
+		</qa>
+		<qa id="38" rating="2">			<question><![CDATA[q:.What is automatic dirty checking?]]></question>
+			<answer><![CDATA[Automatic dirty checking is a feature that saves us the effort of explicitly asking Hibernate to update the database when we modify the state of an object inside a transaction.]]></answer>
+		</qa>
+		<qa id="39" rating="2">			<question><![CDATA[q:.What is transactional write-behind?]]></question>
+			<answer><![CDATA[Hibernate uses a sophisticated algorithm to determine an efficient ordering that avoids database foreign key constraint violations but is still sufficiently predictable to the user. This feature is called transactional write-behind.]]></answer>
+		</qa>
+		<qa id="40" rating="2">			<question><![CDATA[q:.What are Callback interfaces?]]></question>
+			<answer><![CDATA[Callback interfaces allow the application to receive a notification when something interesting happens to an object for example, when an object is loaded, saved, or deleted. Hibernate applications don't need to implement these callbacks, but they're useful for implementing certain kinds of generic functionality.]]></answer>
+		</qa>
+		<qa id="41" rating="2">			<question><![CDATA[q:.What are the types of Hibernate instance states ?]]></question>
+			<answer><![CDATA[Three types of instance states:
+Transient -The instance is not associated with any persistence context
+Persistent -The instance is associated with a persistence context
+Detached -The instance was associated with a persistence context which has been closed  currently not associated]]></answer>
+		</qa>
+		<qa id="42" rating="2">			<question><![CDATA[q:.What are the types of inheritance models in Hibernate?]]></question>
+			<answer><![CDATA[There are three types of inheritance models in Hibernate:
+Table per class hierarchy
+Table per subclass
+Table per concrete class]]></answer>
+		</qa>
+	</category>
+	<category name="Spring">
+		<qa id="43" rating="1">			<question><![CDATA[q:What is Spring ?]]></question>
+			<answer><![CDATA[Spring is an open source framework created to address the complexity of enterprise application development. One of the chief advantages of the Spring framework is its layered architecture, which allows you to be selective about which of its components you use while also providing a cohesive framework for J2EE application development.]]></answer>
+		</qa>
+		<qa id="44" rating="2">			<question><![CDATA[q:What is IOC (or Dependency Injection)?]]></question>
+			<answer><![CDATA[The basic concept of the Inversion of Control pattern (one type is dependency injection) is that you do not create your objects but describe how they should be created. You don't directly connect your components and services together in code but describe which services are needed by which components in a configuration file. A container (in the case of the Spring framework, the IOC container) is then responsible for hooking it all up.
+i.e., Applying IoC, objects are given their dependencies at creation time by some external entity that coordinates each object in the system. That is, dependencies are injected into objects. So, IoC means an inversion of responsibility with regard to how an object obtains references to collaborating objects.]]></answer>
+		</qa>
+		<qa id="45" rating="2">			<question><![CDATA[q:What are the different types of IOC (dependency injection) ?]]></question>
+			<answer><![CDATA[There are three types of dependency injection:
+Constructor Injection (e.g. Pico container, Spring etc): Dependencies are provided as constructor parameters.
+Setter Injection (e.g. Spring): Dependencies are assigned through JavaBeans properties (ex: setter methods).
+Interface Injection (e.g. Avalon): Injection is done through an interface.
+Note: Spring supports only Constructor and Setter Injection]]></answer>
+		</qa>
+		<qa id="46" rating="2">			<question><![CDATA[q:What are the benefits of IOC (Dependency Injection)?]]></question>
+			<answer><![CDATA[Benefits of IOC (Dependency Injection) are as follows:
+
+ 
+Minimizes the amount of code in your application. With IOC containers you do not care about how services are created and how you get references to the ones you need. You can also easily add additional services by adding a new constructor or a setter method with little or no extra configuration.
+Make your application more testable by not requiring any singletons or JNDI lookup mechanisms in your unit test cases. IOC containers make unit testing and switching implementations very easy by manually allowing you to inject your own objects into the object under test.
+Loose coupling is promoted with minimal effort and least intrusive mechanism. The factory design pattern is more intrusive because components or services need to be requested explicitly whereas in IOC the dependency is injected into requesting piece of code. Also some containers promote the design to interfaces not to implementations design concept by encouraging managed objects to implement a well-defined service interface of your own.
+IOC containers support eager instantiation and lazy loading of services. Containers also provide support for instantiation of managed objects, cyclical dependencies, life cycles management, and dependency resolution between managed objects etc.]]></answer>
+		</qa>
+		<qa id="47" rating="2">			<question><![CDATA[q:What are the advantages of Spring framework?]]></question>
+			<answer><![CDATA[The advantages of Spring are as follows:
+Spring has layered architecture. Use what you need and leave you don't need now.
+Spring Enables POJO Programming. There is no behind the scene magic here. POJO programming enables continuous integration and testability.
+Dependency Injection and Inversion of Control Simplifies JDBC
+Open source and no vendor lock-in.]]></answer>
+		</qa>
+		<qa id="48" rating="Spring contains and manages the life cycle and configuration of application objects.
+MVC Framework:
+Spring comes with MVC web application framework, built on core Spring functionality. This framework is highly configurable via strategy interfaces, and accommodates multiple view technologies like JSP, Velocity, Tiles, iText, and POI. But other frameworks can be easily used instead of Spring MVC Framework.
+Transaction Management:
+Spring framework provides a generic abstraction layer for transaction management. This allowing the developer to add the pluggable transaction managers, and making it easy to demarcate transactions without dealing with low-level issues. Spring's transaction support is not tied to J2EE environments and it can be also used in container less environments.
+JDBC Exception Handling:
+The JDBC abstraction layer of the Spring offers a meaningful exception hierarchy, which simplifies the error handling strategy. Integration with Hibernate, JDO, and iBATIS: Spring provides best Integration services with Hibernate, JDO and iBATIS
+r:2">			<question><![CDATA[q:What are features of Spring ?]]></question>
+			<answer><![CDATA[Lightweight:
+spring is lightweight when it comes to size and transparency. The basic version of spring framework is around 1MB. And the processing overhead is also very negligible.
+Inversion of control (IOC):
+Loose coupling is achieved in spring using the technique Inversion of Control. The objects give their dependencies instead of creating or looking for dependent objects.
+Aspect oriented (AOP):
+Spring supports Aspect oriented programming and enables cohesive development by separating application business logic from system services.
+Containe]]></answer>
+		</qa>
+		<qa id="49" rating="2">			<question><![CDATA[q:How many modules are there in Spring? What are they?]]></question>
+			<answer><![CDATA[Spring comprises of seven modules. They are..
+<b>The core container</b>
+The core container provides the essential functionality of the Spring framework. A primary component of the core container is the BeanFactory, an implementation of the Factory pattern. The BeanFactory applies the Inversion of Control (IOC) pattern to separate an application's configuration and dependency specification from the actual application code.
+<b>Spring context</b>
+The Spring context is a configuration file that provides context information to the Spring framework. The Spring context includes enterprise services such as JNDI, EJB, e-mail, internalization, validation, and scheduling functionality.
+<b>Spring AOP</b>
+The Spring AOP module integrates aspect-oriented programming functionality directly into the Spring framework, through its configuration management feature. As a result you can easily AOP-enable any object managed by the Spring framework. The Spring AOP module provides transaction management services for objects in any Spring-based application. With Spring AOP you can incorporate declarative transaction management into your applications without relying on EJB components.
+<b>Spring DAO</b>
+The Spring JDBC DAO abstraction layer offers a meaningful exception hierarchy for managing the exception handling and error messages thrown by different database vendors. The exception hierarchy simplifies error handling and greatly reduces the amount of exception code you need to write, such as opening and closing connections. Spring DAO's JDBC-oriented exceptions comply to its generic DAO exception hierarchy.
+<b>Spring ORM</b>
+The Spring framework plugs into several ORM frameworks to provide its Object Relational tool, including JDO, Hibernate, and iBatis SQL Maps. All of these comply to Spring's generic transaction and DAO exception hierarchies.
+<b>Spring Web module</b>
+The Web context module builds on top of the application context module, providing contexts for Web-based applications. As a result, the Spring framework supports integration with Jakarta Struts. The Web module also eases the tasks of handling multi-part requests and binding request parameters to domain objects.
+<b>Spring MVC framework</b>
+The Model-View-Controller (MVC) framework is a full-featured MVC implementation for building Web applications. The MVC framework is highly configurable via strategy interfaces and accommodates numerous view technologies including JSP, Velocity, Tiles, iText, and POI.
+
+<img src="http://www.ibm.com/developerworks/web/library/wa-spring1/spring_framework.gif"/>]]></answer>
+		</qa>
+		<qa id="50" rating="2">			<question><![CDATA[q:What is Bean Factory ?]]></question>
+			<answer><![CDATA[A BeanFactory is like a factory class that contains a collection of beans. The BeanFactory holds Bean Definitions of multiple beans within itself and then instantiates the bean whenever asked for by clients.
+BeanFactory is able to create associations between collaborating objects as they are instantiated. This removes the burden of configuration from bean itself and the beans client.
+BeanFactory also takes part in the life cycle of a bean, making calls to custom initialization and destruction methods.]]></answer>
+		</qa>
+		<qa id="51" rating="2">			<question><![CDATA[q:What is Application Context?]]></question>
+			<answer><![CDATA[A bean factory is fine to simple applications, but to take advantage of the full power of the Spring framework, you may want to move up to Springs more advanced container, the application context. On the surface, an application context is same as a bean factory.Both load bean definitions, wire beans together, and dispense beans upon request. But it also provides:
+A means for resolving text messages, including support for internationalization.
+A generic way to load file resources.
+Events to beans that are registered as listeners.]]></answer>
+		</qa>
+		<qa id="52" rating="2">			<question><![CDATA[q:What are the common implementations of the Application Context ?]]></question>
+			<answer><![CDATA[The three commonly used implementation of 'Application Context' are
+<b>ClassPathXmlApplicationContext </b> It Loads context definition from an XML file located in the classpath, treating context definitions as classpath resources. The application context is loaded from the application's classpath by using the code .
+
+ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+<b>FileSystemXmlApplicationContext </b> It loads context definition from an XML file in the filesystem. The application context is loaded from the file system by using the code .
+ApplicationContext context = new FileSystemXmlApplicationContext("bean.xml");
+<b>XmlWebApplicationContext </b> It loads context definition from an XML file contained within a web application.]]></answer>
+		</qa>
+		<qa id="53" rating="2">			<question><![CDATA[q:How is a typical spring implementation look like ?]]></question>
+			<answer><![CDATA[For a typical Spring Application we need the following files:
+An interface that defines the functions.
+An Implementation that contains properties, its setter and getter methods, functions etc.,
+Spring AOP (Aspect Oriented Programming)
+A XML file called Spring configuration file.
+Client program that uses the function.]]></answer>
+		</qa>
+		<qa id="54" rating="2">			<question><![CDATA[q:What is the typical Bean life cycle in Spring Bean Factory Container ?]]></question>
+			<answer><![CDATA[Bean life cycle in Spring Bean Factory Container is as follows:
+The spring container finds the bean's definition from the XML file and instantiates the bean.
+Using the dependency injection, spring populates all of the properties as specified in the bean definition
+If the bean implements the BeanNameAware interface, the factory calls setBeanName() passing the bean's ID.
+If the bean implements the BeanFactoryAware interface, the factory calls setBeanFactory(), passing an instance of itself.
+If there are any BeanPostProcessors associated with the bean, their post- ProcessBeforeInitialization() methods will be called.
+If an init-method is specified for the bean, it will be called.
+Finally, if there are any BeanPostProcessors associated with the bean, their postProcessAfterInitialization() methods will be called.]]></answer>
+		</qa>
+		<qa id="55" rating="2">			<question><![CDATA[q:What do you mean by Bean wiring ?]]></question>
+			<answer><![CDATA[The act of creating associations between application components (beans) within the Spring container is reffered to as Bean wiring.]]></answer>
+		</qa>
+		<qa id="56" rating="2">			<question><![CDATA[q:What do you mean by Auto Wiring?]]></question>
+			<answer><![CDATA[The Spring container is able to autowire relationships between collaborating beans. This means that it is possible to automatically let Spring resolve collaborators (other beans) for your bean by inspecting the contents of the BeanFactory. The autowiring functionality has five modes.
+no
+byName
+byType
+constructor
+autodirect]]></answer>
+		</qa>
+		<qa id="57" rating="2">			<question><![CDATA[q:What is DelegatingVariableResolver?]]></question>
+			<answer><![CDATA[Spring provides a custom JavaServer Faces VariableResolver implementation that extends the standard Java Server Faces managed beans mechanism which lets you use JSF and Spring together. This variable resolver is called as DelegatingVariableResolver]]></answer>
+		</qa>
+		<qa id="58" rating="2">			<question><![CDATA[q:How to integrate  Java Server Faces (JSF) with Spring?]]></question>
+			<answer><![CDATA[JSF and Spring do share some of the same features, most noticeably in the area of IOC services. By declaring JSF managed-beans in the faces-config.xml configuration file, you allow the FacesServlet to instantiate that bean at startup. Your JSF pages have access to these beans and all of their properties.We can integrate JSF and Spring in two ways:
+DelegatingVariableResolver  - Spring comes with a JSF variable resolver that lets you use JSF and Spring together.
+<pre>
+
+<faces-config>
+   <application>
+      <variable-resolver>
+         org.springframework.web.jsf.DelegatingVariableResolver
+      </variable-resolver>
+   </application>
+</faces-config>
+</pre>
+The DelegatingVariableResolver will first delegate value lookups to the default resolver of the underlying JSF implementation, and then to Spring's 'business context' WebApplicationContext. This allows one to easily inject dependencies into one's JSF-managed beans.
+FacesContextUtils:custom VariableResolver works well when mapping one's properties to beans in faces-config.xml, but at times one may need to grab a bean explicitly. The FacesContextUtils class makes this easy. It is similar to WebApplicationContextUtils, except that it takes a FacesContext parameter rather than a ServletContext parameter.
+ApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());]]></answer>
+		</qa>
+		<qa id="59" rating="2">			<question><![CDATA[q:What is  Java Server Faces (JSF) - Spring integration mechanism?]]></question>
+			<answer><![CDATA[Spring provides a custom JavaServer Faces VariableResolver implementation that extends the standard JavaServer Faces managed beans mechanism. When asked to resolve a variable name, the following algorithm is performed:
+Does a bean with the specified name already exist in some scope (request, session, application)? If so, return it
+Is there a standard JavaServer Faces managed bean definition for this variable name? If so, invoke it in the usual way, and return the bean that was created.
+Is there configuration information for this variable name in the Spring WebApplicationContext for this application? If so, use it to create and configure an instance, and return that instance to the caller.
+If there is no managed bean or Spring definition for this variable name, return null instead.
+BeanFactory also takes part in the life cycle of a bean, making calls to custom initialization and destruction methods.
+As a result of this algorithm, you can transparently use either JavaServer Faces or Spring facilities to create beans on demand.]]></answer>
+		</qa>
+		<qa id="60" rating="2">			<question><![CDATA[q:What is Significance of JSF- Spring integration ?]]></question>
+			<answer><![CDATA[Spring - JSF integration is useful when an event handler wishes to explicitly invoke the bean factory to create beans on demand, such as a bean that encapsulates the business logic to be performed when a submit button is pressed.]]></answer>
+		</qa>
+		<qa id="61" rating="2">			<question><![CDATA[q:How to integrate your Struts application with Spring?]]></question>
+			<answer><![CDATA[To integrate your Struts application with Spring, we have two options:
+Configure Spring to manage your Actions as beans, using the ContextLoaderPlugin, and set their dependencies in a Spring context file.
+Subclass Spring's ActionSupport classes and grab your Spring-managed beans explicitly using a getWebApplicationContext() method.]]></answer>
+		</qa>
+		<qa id="62" rating="2">			<question><![CDATA[q:What are ORM's Spring supports ?]]></question>
+			<answer><![CDATA[Spring supports the following ORM's :
+Hibernate
+iBatis
+JPA (Java Persistence API)
+TopLink
+JDO (Java Data Objects)
+OJB]]></answer>
+		</qa>
+		<qa id="63" rating="2">			<question><![CDATA[q:What are the ways to access Hibernate using Spring ?]]></question>
+			<answer><![CDATA[There are two approaches to Spring's Hibernate integration:
+Inversion of Control with a HibernateTemplate and Callback
+Extending HibernateDaoSupport and Applying an AOP Interceptor]]></answer>
+		</qa>
+		<qa id="64" rating="2">			<question><![CDATA[q:How to integrate Spring and Hibernate using HibernateDaoSupport?]]></question>
+			<answer><![CDATA[Spring and Hibernate can integrate using Spring's SessionFactory called LocalSessionFactory. The integration process is of 3 steps.
+Configure the Hibernate SessionFactory
+Extend your DAO Implementation from HibernateDaoSupport
+Wire in Transaction Support with AOP]]></answer>
+		</qa>
+		<qa id="65" rating="2">			<question><![CDATA[q:What are Bean scopes in Spring Framework ?]]></question>
+			<answer><![CDATA[The Spring Framework supports exactly five scopes (of which three are available only if you are using a web-aware ApplicationContext). The scopes supported are listed below:
+* singleton
+Scopes a single bean definition to a single object instance per Spring IoC container.
+* prototype
+Scopes a single bean definition to any number of object instances.
+*request
+Scopes a single bean definition to the lifecycle of a single HTTP request; that is each and every HTTP request will have its own instance of a bean created off the back of a single bean definition. Only valid in the context of a web-aware Spring ApplicationContext.
+*session
+Scopes a single bean definition to the lifecycle of a HTTP Session. Only valid in the context of a web-aware Spring ApplicationContext.
+*global session
+Scopes a single bean definition to the lifecycle of a global HTTP Session. Typically only valid when used in a portlet context. Only valid in the context of a web-aware Spring ApplicationContext.]]></answer>
+		</qa>
+		<qa id="66" rating="2">			<question><![CDATA[q:What is AOP?]]></question>
+			<answer><![CDATA[Aspect-oriented programming, or AOP, is a programming technique that allows programmers to modularize crosscutting concerns, or behavior that cuts across the typical divisions of responsibility, such as logging and transaction management. The core construct of AOP is the aspect, which encapsulates behaviors affecting multiple classes into reusable modules.]]></answer>
+		</qa>
+		<qa id="67" rating="2">			<question><![CDATA[q:How the AOP used in Spring?]]></question>
+			<answer><![CDATA[AOP is used in the Spring Framework: To provide declarative enterprise services, especially as a replacement for EJB declarative services. The most important such service is declarative transaction management, which builds on the Spring Framework's transaction abstraction.To allow users to implement custom aspects, complementing their use of OOP with AOP.]]></answer>
+		</qa>
+		<qa id="68" rating="2">			<question><![CDATA[q:What do you mean by Aspect ?]]></question>
+			<answer><![CDATA[A modularization of a concern that cuts across multiple objects. Transaction management is a good example of a crosscutting concern in J2EE applications. In Spring AOP, aspects are implemented using regular classes (the schema-based approach) or regular classes annotated with the @Aspect annotation (@AspectJ style).]]></answer>
+		</qa>
+		<qa id="69" rating="2">			<question><![CDATA[q:What do you mean by JointPoint?]]></question>
+			<answer><![CDATA[A point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.]]></answer>
+		</qa>
+		<qa id="70" rating="2">			<question><![CDATA[q:What do you mean by Advice?]]></question>
+			<answer><![CDATA[Action taken by an aspect at a particular join point. Different types of advice include "around," "before" and "after" advice. Many AOP frameworks, including Spring, model an advice as an interceptor, maintaining a chain of interceptors "around" the join point.]]></answer>
+		</qa>
+		<qa id="71" rating="2">			<question><![CDATA[q:What are the types of Advice?]]></question>
+			<answer><![CDATA[Types of advice:
+Before advice: Advice that executes before a join point, but which does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).
+After returning advice: Advice to be executed after a join point completes normally: for example, if a method returns without throwing an exception.
+After throwing advice: Advice to be executed if a method exits by throwing an exception.
+After (finally) advice: Advice to be executed regardless of the means by which a join point exits (normal or exceptional return).
+Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception]]></answer>
+		</qa>
+		<qa id="72" rating="2">			<question><![CDATA[q:What are the types of the transaction management Spring supports ?]]></question>
+			<answer><![CDATA[Spring Framework supports:
+Programmatic transaction management.
+Declarative transaction management.]]></answer>
+		</qa>
+		<qa id="73" rating="2">			<question><![CDATA[q:What are the benefits of the Spring Framework transaction management ?]]></question>
+			<answer><![CDATA[The Spring Framework provides a consistent abstraction for transaction management that delivers the following benefits:
+Provides a consistent programming model across different transaction APIs such as JTA, JDBC, Hibernate, JPA, and JDO.
+Supports declarative transaction management.
+Provides a simpler API for programmatic transaction management than a number of complex transaction APIs such as JTA.
+Integrates very well with Spring's various data access abstractions.]]></answer>
+		</qa>
+		<qa id="74" rating="2">			<question><![CDATA[q:Why most users of the Spring Framework choose declarative transaction management ?]]></question>
+			<answer><![CDATA[Most users of the Spring Framework choose declarative transaction management because it is the option with the least impact on application code, and hence is most consistent with the ideals of a non-invasive lightweight container.]]></answer>
+		</qa>
+		<qa id="75" rating="it is possible to specify transaction behavior (or lack of it) down to individual method level. It is
+possible to make a setRollbackOnly() call within a transaction context if necessary. The differences are:
+Unlike EJB CMT, which is tied to JTA, the Spring Framework's declarative transaction management works in any environment. It can work with JDBC, JDO, Hibernate or other transactions under the covers, with configuration changes only.
+The Spring Framework enables declarative transaction management to be applied to any class, not merely special classes such as EJBs.
+The Spring Framework offers declarative rollback rules: this is a feature with no EJB equivalent. Both programmatic and declarative support for rollback rules is provided.
+The Spring Framework gives you an opportunity to customize transactional behavior, using AOP. With EJB CMT, you have no way to influence the container's transaction management other than setRollbackOnly().
+The Spring Framework does not support propagation of transaction contexts across remote calls, as do high-end application servers.
+r:2">			<question><![CDATA[q:Explain the similarities and differences between EJB CMT and the Spring Framework's declarative transaction management ?]]></question>
+			<answer><![CDATA[The basic approach is simila]]></answer>
+		</qa>
+		<qa id="76" rating="2">			<question><![CDATA[q:When to use programmatic and declarative transaction management ?]]></question>
+			<answer><![CDATA[Programmatic transaction management is usually a good idea only if you have a small number of transactional operations. 
+On the other hand, if your application has numerous transactional operations, declarative transaction management is usually worthwhile. It keeps transaction management out of business logic, and is not difficult to configure.]]></answer>
+		</qa>
+		<qa id="77" rating="2">			<question><![CDATA[q:Explain about the Spring DAO support ?]]></question>
+			<answer><![CDATA[The Data Access Object (DAO) support in Spring is aimed at making it easy to work with data access technologies like JDBC, Hibernate or JDO in a consistent way. This allows one to switch between the persistence technologies fairly easily and it also allows one to code without worrying about catching exceptions that are specific to each technology.]]></answer>
+		</qa>
+		<qa id="78" rating="2">			<question><![CDATA[q:What are the exceptions thrown by the Spring DAO classes ?]]></question>
+			<answer><![CDATA[Spring DAO classes throw exceptions which are subclasses of DataAccessException(org.springframework.dao.DataAccessException).Spring provides a convenient translation from technology-specific exceptions like SQLException to its own exception class hierarchy with the DataAccessException as the root exception. These exceptions wrap the original exception.]]></answer>
+		</qa>
+		<qa id="79" rating="2">			<question><![CDATA[q:What is SQLExceptionTranslator ?]]></question>
+			<answer><![CDATA[SQLExceptionTranslator, is an interface to be implemented by classes that can translate between SQLExceptions and Spring's own data-access-strategy-agnostic org.springframework.dao.DataAccessException.]]></answer>
+		</qa>
+		<qa id="80" rating="2">			<question><![CDATA[q:What is Spring's JdbcTemplate ?]]></question>
+			<answer><![CDATA[Spring's JdbcTemplate is central class to interact with a database through JDBC. JdbcTemplate provides many convenience methods for doing things such as converting database data into primitives or objects, executing prepared and callable statements, and providing custom database error handling. 
+JdbcTemplate template = new JdbcTemplate(myDataSource);]]></answer>
+		</qa>
+		<qa id="81" rating="Is one of the most common used interfaces for writing data to database.
+Has one method createPreparedStatement(Connection)
+Responsible for creating a PreparedStatement.
+Does not need to handle SQLExceptions.
+r:2">			<question><![CDATA[q:What is PreparedStatementCreator ?]]></question>
+			<answer><![CDATA[PreparedStatementCreato]]></answer>
+		</qa>
+		<qa id="82" rating="Has one method getSql()
+Typically implemented by PreparedStatementCreator implementers.
+Useful for debugging.
+r:2">			<question><![CDATA[q:What is SQLProvider ?]]></question>
+			<answer><![CDATA[SQLProvide]]></answer>
+		</qa>
+		<qa id="83" rating="2">			<question><![CDATA[q:What is RowCallbackHandler ?]]></question>
+			<answer><![CDATA[The RowCallbackHandler interface extracts values from each row of a ResultSet.
+Has one method processRow(ResultSet)
+Called for each row in ResultSet.
+Typically stateful.]]></answer>
+		</qa>
+		<qa id="84" rating="2">			<question><![CDATA[q:What are the differences between EJB and Spring ?]]></question>
+			<answer><![CDATA[<b>Transaction management</b>
+E: Must use a JTA transaction manager.Supports transactions that span remote method calls.
+S: Supports multiple transaction environments through its PlatformTransactionManager interface, including JTA, Hibernate, JDO, and JDBC.
+Does not natively support distributed transactions it must be used with a JTA transaction manager.
+
+<b>Declarative transaction support</b>
+E:Can define transactions declaratively through the deployment descriptor.
+Can define transaction behavior per method or per class by using the wildcard character *.
+Cannot declaratively define rollback behavior this must be done programmatically.
+S: Can define transactions declaratively through the Spring configuration file or through class metadata.
+Can define which methods to apply transaction behavior explicitly or by using regular expressions.
+Can declaratively define rollback behavior per method and per exception type.
+<b>Persistence</b>
+E: Supports programmatic bean-managed persistence and declarative container managed persistence.	
+S: Provides a framework for integrating with several persistence technologies, including JDBC, Hibernate, JDO, and iBATIS.
+<b>Declarative security</b>
+E:Supports declarative security through users and roles. The management and implementation of users and roles is container specific.
+Declarative security is configured in the deployment descriptor.
+S: No security implementation out-of-the box.
+Acegi, an open source security framework built on top of Spring, provides declarative security through the Spring configuration file or class metadata.
+Distributed computing	Provides container-managed remote method calls.	Provides proxying for remote calls via RMI, JAX-RPC, and web services.]]></answer>
+		</qa>
+	</category>
+	<category name="Struts">
+		<qa id="85" rating="1">			<question><![CDATA[q:What is Struts?]]></question>
+			<answer><![CDATA[The core of the Struts framework is a flexible control layer based on standard technologies like Java Servlets, JavaBeans, ResourceBundles, and XML, as well as various Jakarta Commons packages. Struts encourages application architectures based on the Model 2 approach, a variation of the classic Model-View-Controller (MVC) design paradigm.
+Struts provides its own Controller component and integrates with other technologies to provide the Model and the View. For the Model, Struts can interact with standard data access technologies, like JDBC and EJB, as well as most any third-party packages, like Hibernate, iBATIS, or Object Relational Bridge. For the View, Struts works well with JavaServer Pages, including JSTL and JSF, as well as Velocity Templates, XSLT, and other presentation systems.
+
+The Struts framework provides the invisible underpinnings every professional web application needs to survive. Struts helps you create an extensible 
+development environment for your application, based on published standards and proven design patterns.
+Jakarta Struts is open source implementation of MVC (Model-View-Controller) pattern for the development of web based applications.]]></answer>
+		</qa>
+		<qa id="86" rating="2">			<question><![CDATA[q:What is ActionServlet? How is request processing in struts?]]></question>
+			<answer><![CDATA[The class org.apache.struts.action.ActionServlet is the called the ActionServlet. In the the Jakarta Struts Framework this class plays the role of controller in the MVC pattern. All the requests to the server goes through the controller. Controller is responsible for handling all the requests.
+ActionServlet is configured as Servlet in the web.xml file and usually mapped to *.do url pattern.
+This controller delegates the request to org.apache.struts.action.RequestProcessor which using struts-config.xml configurations, populates the form bean, applies validation and called the corresponding Action class.
+<img src="http://publib.boulder.ibm.com/infocenter/wchelp/v6r0m0/topic/com.ibm.commerce.developer.doc/images/locale/sdstrutskeycompons.gif"/>]]></answer>
+		</qa>
+		<qa id="87" rating="2">			<question><![CDATA[q:How you will make available any Message Resources Definitions file to the Struts Framework Environment?]]></question>
+			<answer><![CDATA[Message Resources Definitions file are simple .properties files and these files contains the messages that can be used in the struts project. Message Resources Definitions files can be added to the struts-config.xml file through <message-resources /> tag.
+Example:
+
+<message-resources parameter=\"MessageResources\" />.]]></answer>
+		</qa>
+		<qa id="88" rating="2">			<question><![CDATA[q:What is Action Class.Explain?]]></question>
+			<answer><![CDATA[Once the controller receives a client request, it delegates the handling of the request to a helper class. This helper knows how to execute the business operation associated with the requested action. In the Struts framework this helper class is descended of org.apache.struts.action.Action class. It acts as a bridge between a client-side user action and business operation. The Action class decouples the client request from the business model. This decoupling allows for more than one-to-one mapping between the user request and an action.
+
+The most important method is the execute() method:
+<pre>
+public ActionForward execute(ActionMapping mapping,
+ 	ActionForm form, HttpServletRequest request, HttpServletResponse response)
+throws Exception;	 
+</pre>
+The execute() method is called by the controller when a request is received from a client. The controller creates an instance of the Action class if one doesn't already exist. The struts framework will create only a single instance of each Action class in your application. 
+
+Action are mapped in the struts configuration file(struts-config.xml) and this configuration is loaded into memory at startup and made available to the framework at runtime. Each Action element is represented in memory by an instance of the org.apache.struts.action.ActionMapping class . The ActionMapping object contains a path attribute that is matched against a portion of the URI of the incoming request.
+
+<pre>
+<action>
+ 	path= "/somerequest"
+ 	type="com.somepackage.someAction"
+ 	scope="request"
+ 	name="someForm"
+ 	validate="true"
+ 	input="somejsp.jsp"
+ 	<b><forward name="Success" path="/action/xys" redirect="true"/></b>
+ 	<forward name="Failure" path="/somejsp.jsp" redirect="true"/>
+</action>
+</pre>
+
+Once this is done the controller should determine which view to return to the client. The execute method signature in Action class has a return type org.apache.struts.action.ActionForward class. The ActionForward class represents a destination to which the controller may send control once an action has completed to render the view.]]></answer>
+		</qa>
+		<qa id="89" rating="2">			<question><![CDATA[q:What is ActionForm?]]></question>
+			<answer><![CDATA[Struts ActionForm objects are used to pass client input data back and forth between the user and the business layer. The framework automatically collects the input from the request and passes this data to an Action using a form bean, which is then passed to the business layer.]]></answer>
+		</qa>
+		<qa id="90" rating="2">			<question><![CDATA[q:What is Struts Validator Framework?]]></question>
+			<answer><![CDATA[It can be use to validate the data on the users browser as well as on the server side. Struts Framework generates the java scripts and it can be used validate the form data on the client browser if required. Server side validation of form can be accomplished by sub classing your From Bean with DynaValidatorForm class.
+The Validator framework was developed by David Winterfeldt as third-party add-on to Struts. Now the Validator framework is a part of Jakarta Commons project and it can be used with or without Struts. The Validator framework comes integrated with the Struts Framework and can be used without doing any extra settings.]]></answer>
+		</qa>
+		<qa id="91" rating="2">			<question><![CDATA[q:Give the Details of XML files used in Validator Framework?]]></question>
+			<answer><![CDATA[The Validator Framework uses two XML configuration files validator-rules.xml and validation.xml. The validator-rules.xml defines the standard validation routines, these are reusable and used in validation.xml. to define the form specific validations. The validation.xml defines the validations applied to a form bean.]]></answer>
+		</qa>
+		<qa id="92" rating="2">			<question><![CDATA[q:How you will display validation fail errors on jsp page?]]></question>
+			<answer><![CDATA[<html:errors/>]]></answer>
+		</qa>
+		<qa id="93" rating="2">			<question><![CDATA[q:How you will enable front-end validation based on the xml in validation.xml?]]></question>
+			<answer><![CDATA[The <html:javascript> tag will allow front-end validation based on the setting in validation.xml. For example the code: <html:javascript formName=\"logonForm\" dynamicJavascript=\"true\" staticJavascript=\"true\" /> generates the client side java script for the form \"logonForm\" as defined in the validation.xml file. The <html:javascript> when added in the jsp file generates the client site validation script.]]></answer>
+		</qa>
+		<qa id="94" rating="2">			<question><![CDATA[q:What are the different types of struts actions?]]></question>
+			<answer><![CDATA[There are 5 types:
+<ul><li>Include Action-- Similar to Include in our jsp</li>
+<li>Forward Action-- Instead of directly forwarding from one JSP to Another We user Forward Action (If we do that directly it violates Struts MVC Architechture).</li>
+<li>Dispatch Action-- Handling multiple operations in multiple methods. one method per operation instead of merging the entire logic in single execute method of action class.</li>
+<li>Look up Dispatch Action-- Purpose is Similar to Dispatch action.Implementation is different Recommended not to use this.</li>
+<li>Switch Action-- to switch between different modules in struts application. SwitchAction 
+is useful only if you have multiple modules in your Struts application</li>
+</ul>]]></answer>
+		</qa>
+		<qa id="95" rating="2">			<question><![CDATA[q: What is the difference between LookupDispatchAction and DispatchAction?]]></question>
+			<answer><![CDATA[The difference between LookupDispatchAction and DispatchAction is that the actual method that gets called in LookupDispatchAction is based on a lookup of a key value instead of specifying the method name directly.]]></answer>
+		</qa>
+		<qa id="96" rating="2">			<question><![CDATA[q:Explain in detail the various action classes?]]></question>
+			<answer><![CDATA[<pre>
+The important Dispatchers that struts provides includes : DispatchAction ActionDispatcher LookupDispatchAction and MappingDispatchAction.
+
+<b>DispatchAction</b>: In this type of aggregation the action class must extend DispatchAction class as shown.
+
+public final class CRUDDispatchAction extends DispatchAction {
+
+public ActionForward create(ActionMapping mapping 
+ActionForm form 
+HttpServletRequest request 
+HttpServletResponse response) throws Exception {
+return (mapping.findForward( success ));
+}
+... 
+
+and the action mapping will be as 
+
+<action path /crudDispatchAction type com.companyname.projname.CRUDDispatchAction name formName scope request input homeDef parameter methodToCall >
+<forward name success path targetDefName />
+</action>
+
+in your jsp you can call this action as 
+
+<html:link action crudDispatchAction?methodToCall create >Create</html:link>
+... 
+
+Observe that the above class extends DispatchAction and so you cannot use this method if your class already extends your (some) super class (eg. the class where the session is validated/invalidated). Here the user has to send a query string variable (methodToCall) to set the action name to call.
+
+<b>ActionDispatcher</b>: This flavor of aggregation is same as DispatchAction except that we need not extend ActionDispatcher so we can use this method even if our class extends a super class. The following code snippet shows this scenario.
+
+
+public final class CRUDActionDispatcher extends Action {
+
+protected ActionDispatcher dispatcher new ActionDispatcher(this ActionDispatcher.DEFAULT_FLAVOR);
+
+public ActionForward execute(ActionMapping mapping 
+ActionForm form 
+HttpServletRequest request 
+HttpServletResponse response) throws Exception {
+return dispatcher.execute(mapping form request response);
+
+The DEFAULT_FLAVOR field suggests that the default parameter is method if none is specified as parameter in struts-config.xml (eg . methodToCall).
+ActionDispatcher flavor also needs methodToCall parameter to be set (using hidden variable or a query string) as in case of DispatchAction.
+
+<b>LookupDispatchAction</b>: This type of aggregation is useful in situations where in you have multiple submit buttons in a single form. The class must extend LookupDispatchAction. However the great thing about this type is that its java script free. That means you need not set any hidden variables or pass query string however you must use submit buttons as shown.
+
+<html:submit property submit ><bean:message key button.create /></html: submit >
+<html:submit property submit ><bean:message key button.read /></html: submit >
+... 
+The example Action class will be as follows 
+
+public class CRUDLookUpDispatchAction extends LookupDispatchAction {
+
+protected Map getKeyMethodMap() {
+Map map new HashMap();
+map.put( button.create create );
+
+return map;
+}
+public ActionForward create(ActionMapping mapping 
+ActionForm form 
+HttpServletRequest request 
+HttpServletResponse response) throws Exception {
+return (mapping.findForward( success ));
+}
+Observe the getKeyMethodMap() method. The submit button names are specified in a Map and their keys comes from MessageResources file. Struts picks up the name from this file and redirects it to the value specified in the Map. The calling code in jsp however has multiple submit buttons only differing in their names.
+
+<b>MappingDispatchAction</b>: This aggregation extends MappingDispatchAction class. This is the most useful type among the four types available. But as seen in other cases you can use this type only when your action does not extend any other action. The good thing about this type is that the action mappings can differ and so need not be the same as in all other cases. To illustrate this consider the below mappings.
+
+<action path /createMappingAction type com.bodhtree.CRUDMappingDispatchAction scope request input homeDef parameter create >
+<forward name success path targetDef />
+</action>
+<action path /readMappingAction type com.bodhtree.CRUDMappingDispatchAction name formName scope request input homeDef parameter read >
+<forward name success path targetDef />
+</action> 
+
+Notice that in the first action mapping there is no form bean while in the second the bean name is specified. This means that the user has the flexibility to change the mapping according to his needs and hence not been contained to use a constant mapping for all the CRUD actions. Note that in all the other types of aggregations we must use the same mapping for all the CRUD actions.
+
+
+</pre>]]></answer>
+		</qa>
+		<qa id="97" rating="2">			<question><![CDATA[q:How do you configure internationalization(i18n) in struts?]]></question>
+			<answer><![CDATA[Two components are useful :
+<ul>
+<li><b>Message</b> class that references a resource bundle containing Locale-dependent strings. </li>
+<li><b>JSP custom tag, <bean:message /></b>, which is used in the View layer to present the actual strings managed by the Controller.</li>
+</ul>The property file ApplicationResources_[en].properties contains the key/value pairs for the default language of your application.
+These property files are made struts aware by setting <message-resources> sub-element to the struts-config.xml
+
+<pre>
+	<message-resources parameter="example.ApplicationResources"/>
+</pre>
+
+In the JSP use:
+<bean:message key="app.name" />:]]></answer>
+		</qa>
+		<qa id="98" rating="2">			<question><![CDATA[q:Name some custom tag libraries provided in struts?]]></question>
+			<answer><![CDATA[The customg tags provided by Struts framework are grouped into four distinct libraries
+<pre>
+1. HTML
+2. Bean
+3. Logic
+4. Template
+</pre>]]></answer>
+		</qa>
+	</category>
+</questionbank>
