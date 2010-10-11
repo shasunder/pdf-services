@@ -1,0 +1,168 @@
+<questionbank group="Backend technologies">
+	<category name="Sql">
+		<qa id="1" rating="1">			<question><![CDATA[q:What is SQL?]]></question>
+			<answer><![CDATA[SQL stands for 'Structured Query Language'.]]></answer>
+		</qa>
+		<qa id="2" rating="1">			<question><![CDATA[q:What is SELECT statement?]]></question>
+			<answer><![CDATA[The SELECT statement lets you select a set of values from a table in a database. The values selected from the database table would depend on the various conditions that are specified in the SQL query.]]></answer>
+		</qa>
+		<qa id="3" rating="2">			<question><![CDATA[q:How can you compare a part of the name rather than the entire name?]]></question>
+			<answer><![CDATA[SELECT * FROM people WHERE empname LIKE '%ab%'
+Would return a recordset with records consisting empname the sequence 'ab' in empname .]]></answer>
+		</qa>
+		<qa id="4" rating="1">			<question><![CDATA[q:What is the INSERT/DELETE statement?]]></question>
+			<answer><![CDATA[The INSERT statement lets you insert information into a database.<br/>
+Use the DELETE statement to remove records or any particular column values from a database.]]></answer>
+		</qa>
+		<qa id="5" rating="2">			<question><![CDATA[q:How could I get distinct entries from a table?]]></question>
+			<answer><![CDATA[The SELECT statement in conjunction with DISTINCT lets you select a set of distinct values from a table in a database. The values selected from the database table would of course depend on the various conditions that are specified in the SQL query. Example
+SELECT DISTINCT empname FROM emptable]]></answer>
+		</qa>
+		<qa id="6" rating="2">			<question><![CDATA[q:How to get the results of a Query sorted in any order?]]></question>
+			<answer><![CDATA[You can sort the results and return the sorted results to your program by using ORDER BY keyword thus saving you the pain of carrying out the sorting yourself. The ORDER BY keyword is used for sorting.<br/><br/>
+
+SELECT empname, age, city FROM emptable ORDER BY empname]]></answer>
+		</qa>
+		<qa id="7" rating="2">			<question><![CDATA[q:How can I find the total number of records in a table?]]></question>
+			<answer><![CDATA[You could use the COUNT keyword , example
+SELECT COUNT(*) FROM emp WHERE age&gt;40]]></answer>
+		</qa>
+		<qa id="8" rating="2">			<question><![CDATA[q: Differentiate Having clause and Where clause?]]></question>
+			<answer><![CDATA[Both are used for filtering of records based on filtered criteria.
+Having is used in a "group by" clause in a query.
+"Where clause" has preference over "having clause" in a query.<br/><br/>
+
+Having Clause: This clause is used for specifying a search condition for a group or an aggregate. It can only be used with a SELECT statement. It"s often used with GROUP BY clause without which its synonymous to a WHERE clause.
+
+E.g.:
+<pre>
+ SELECT Id, Name, Age FROM Customers
+GROUP BY Age
+HAVING Age>10
+ORDER BYAge;
+
+</pre>
+Where Clause: This clause is used to narrow down the dataset being dealt with following a condition.
+
+<pre>
+
+SELECT Id, Name, Age FROM Customers
+WHERE Age>10
+</pre>
+
+It is strongly recommended to use a Where clause with every Select Statement to avoid a table scan and reduce the number of rows to be returned. It can be used with Select, Update, Delete etc statements]]></answer>
+		</qa>
+		<qa id="9" rating="2">			<question><![CDATA[q:What is GROUP BY?]]></question>
+			<answer><![CDATA[The GROUP BY keywords have been added to SQL because aggregate functions (like SUM) return the aggregate of all column values every time they are called. Without the GROUP BY functionality, finding the sum for each individual group of column values was not possible.]]></answer>
+		</qa>
+		<qa id="10" rating="2">			<question><![CDATA[q:What is the difference among "dropping a table", "truncating a table" and "deleting all records" from a table.]]></question>
+			<answer><![CDATA[<ul>
+<li>Dropping :  (Table structure  + Data are deleted), Invalidates the dependent objects ,Drops the indexes</li>
+<li>Truncating:  (Data alone deleted), Performs an automatic commit, Faster than delete</li>
+<li>Delete : (Data alone deleted), Doesn't perform automatic commit</li>
+</ul>]]></answer>
+		</qa>
+		<qa id="11" rating="2">			<question><![CDATA[q:What are the Large object types suported by Oracle?]]></question>
+			<answer><![CDATA[Blob and Clob.]]></answer>
+		</qa>
+		<qa id="12" rating="2">			<question><![CDATA[q:Difference between a "where" clause and a "having" clause.]]></question>
+			<answer><![CDATA[Having clause is used only with group functions whereas Where is not used with.]]></answer>
+		</qa>
+		<qa id="13" rating="2">			<question><![CDATA[q:What's the difference between a primary key and a unique key?]]></question>
+			<answer><![CDATA[Both primary key and unique enforce uniqueness of the column on which they are defined. But by default primary key creates a clustered index on the column, where are unique creates a nonclustered index by default. Another major difference is that, primary key doesn't allow NULLs, but unique key allows one NULL only.]]></answer>
+		</qa>
+		<qa id="14" rating="2">			<question><![CDATA[q:What are cursors? Explain different types of cursors. What are the disadvantages of cursors? How can you avoid cursors?]]></question>
+			<answer><![CDATA[Cursors allow row-by-row prcessing of the resultsets.
+
+<ul>
+<li>Types of cursors: Static, Dynamic, Forward-only, Keyset-driven. See books online for more information.</li>
+<li>Disadvantages of cursors: Each time you fetch a row from the cursor, it results in a network roundtrip, where as a normal SELECT query makes only one rowundtrip, however large the resultset is. Cursors are also costly because they require more resources and temporary storage (results in more IO operations). Furthere, there are restrictions on the SELECT statements that can be used with some types of cursors.</li>
+<li>Most of the times, set based operations can be used instead of cursors.</li>
+</ul>]]></answer>
+		</qa>
+		<qa id="15" rating="2">			<question><![CDATA[q:What are triggers? How to invoke a trigger on demand?]]></question>
+			<answer><![CDATA[Triggers are special kind of stored procedures that get executed automatically when an INSERT, UPDATE or DELETE operation takes place on a table. 
+Triggers can't be invoked on demand. They get triggered only when an associated action (INSERT, UPDATE, DELETE) happens on the table on which they are defined.<br/><br/>
+
+Triggers are generally used to implement business rules, auditing. Triggers can also be used to extend the referential integrity checks, but wherever possible, use constraints for this purpose, instead of triggers, as constraints are much faster.]]></answer>
+		</qa>
+		<qa id="16" rating="2">			<question><![CDATA[q:What is a join and explain different types of joins.]]></question>
+			<answer><![CDATA[Joins are used in queries to explain how different tables are related. Joins also let you select data from a table depending upon data from another table.<br/><br/>
+
+Types of joins: INNER JOINs, OUTER JOINs, CROSS JOINs. <br/><br/>
+
+OUTER JOINs are further classified as LEFT OUTER JOINS, RIGHT OUTER JOINS and FULL OUTER JOINS.]]></answer>
+		</qa>
+		<qa id="17" rating="2">			<question><![CDATA[q: What is outer join? Explain Left outer join, Right outer join and Full outer join.]]></question>
+			<answer><![CDATA[OUTER JOIN: In An outer join, rows are returned even when there are no matches through the JOIN criteria on the second table.<br/><br/>
+
+LEFT OUTER JOIN: A left outer join or a left join returns results from the table mentioned on the left of the join irrespective of whether it finds matches or not. If the ON clause matches 0 records from table on the right, it will still return a row in the result but with NULL in each column.<br/><br/>
+
+Example: To display employees irrespective of whether they have got bonus. <br/>
+Select * From employee LEFT OUTER JOIN bonus ON employee.bonusID=bonus.bonusID<br/><br/>
+
+RIGHT OUTER JOIN: A right outer join or a right join returns results from the table mentioned on the right of the join irrespective of whether it finds matches or not. If the ON clause matches 0 records from table on the left, it will still return a row in the result but with NULL in each column.<br/><br/>
+
+Example: To display Bonus irrespective of whether they are an employee or not.<br/>
+Select * From employee RIGHT OUTER JOIN bonus ON employee.bonusID=bonus.bonusID<br/><br/>
+
+FULL OUTER JOIN: A full outer join will combine results of both left and right outer join. Hence the records from both tables will be displayed with a NULL for missing matches from either of the tables.<br/><br/>
+
+Example: To display employees who have a bonus and to display bonus even if he is not an employee.<br/>
+Select * From employee FULL OUTER JOIN bonus ON employee.bonusID=bonus.bonusID]]></answer>
+		</qa>
+		<qa id="18" rating="2">			<question><![CDATA[q:What is a self join?]]></question>
+			<answer><![CDATA[Self join is just like any other join, except that two instances of the same table will be joined in the query.]]></answer>
+		</qa>
+		<qa id="19" rating="3">			<question><![CDATA[q:What is index? Define its types.]]></question>
+			<answer><![CDATA[Index is created on a column in tables. It helps in providing fast access to data based on the values stored in the column.<br/><br/>
+
+E.g.: If an index is created on primary key of a table and then search for a row based on primary key value then SQL Server first finds that value in the index and then uses the index to locate the row in the table instead of performing a complete table scan.<br/><br/>
+
+Types of indexes:
+<ul>
+<li>Clustered: Stores the actual row at the leaf level of the index.</li>
+<li>Nonclustered: Stores only the values from the indexed column and row locators that point to the actual row at leaf level instead of the actual row itself.</li>
+<li>Composite: Index containing more than one column (max 16).</li>
+<li>Unique: Ensures the uniqueness of each value in the indexed column.</li>
+</ul>]]></answer>
+		</qa>
+	</category>
+	<category name="Transaction">
+		<qa id="20" rating="2">			<question><![CDATA[q:Define transaction and its properties?]]></question>
+			<answer><![CDATA[A transaction is a set of operations that works as a single unit. The transactions can be categorized into explicit, autocommit, and implicit transactions. Every transaction should follow four properties called the ACID properties i.e. atomicity, consistency, isolation, and durability.
+<br/><br/>
+<ul>
+<li>Atomicity - Transaction ensures either modification is committed or not committed.</li>
+<li>Consistency - The data should be in consistent state when transaction process is completed. This means that all related tables are updated.</li>
+<li>Isolation - SQL server supports concurrency when mean that data can be access or shared by many users. A transaction works in isolation and doesn"t allow other transaction to work concurrently on the same piece of data.</li>
+<li>Durability  - Data is permanent once transaction is completed and it can be recovered even if system fails.</li>
+</ul>]]></answer>
+		</qa>
+		<qa id="21" rating="3">			<question><![CDATA[q:Define transaction isolation levels]]></question>
+			<answer><![CDATA[There are four transaction isolation levels:<br/>
+
+1. Read uncommitted isolation levels<br/>
+This is the lowest isolation level which can also be called as dirty read. Using this, you can read uncommitted data which can be rolled back at any point. With this level, SQL server uses share lock while reading data.<br/><br/>
+
+2. Read committed isolation levels<br/>
+With this level, uncommitted data can"t be read. This is default isolation level and uses shared lock while reading data.<br/><br/>
+
+3. Repeatable read isolation levels<br/>
+It locks all the data that is used in the query.<br/><br/>
+
+4.Serializable isolation levels <br/>
+It locks data set until the transaction will be completed<br/><br/>]]></answer>
+		</qa>
+		<qa id="22" rating="3">			<question><![CDATA[q:What is Isolation Levels?]]></question>
+			<answer><![CDATA[Isolation keeps the transactions of multiple users isolated from each other. Transaction isolation level controls the degree of locking which occurs when selecting data. This is necessary to avoid situations like:
+
+<ul>
+<li>Lost updates- when two transactions read the same data.</li>
+<li>Dirty read- Occurs when a transaction reads data that has not been updated.</li>
+<li>Non repeatable reads- occur when different results are read multiple times.</li>
+<li>Phantoms- Occurs when row data matches the first time but does not match subsequent times.</li>
+</ul>]]></answer>
+		</qa>
+	</category>
+</questionbank>
