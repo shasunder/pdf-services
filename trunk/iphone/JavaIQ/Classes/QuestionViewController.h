@@ -16,6 +16,7 @@
 	NSArray *records;
 	IBOutlet UIWebView *webView;
 	UIButton *backButton;
+	UIButton *expandButton;
 
 }
 
@@ -24,5 +25,6 @@
 @property (nonatomic, retain) NSArray *records;
 @property (nonatomic, retain) UIWebView *webView;
 @property (nonatomic, retain) UIButton *backButton;
+@property (nonatomic, retain) UIButton *expandButton;
 
 @end

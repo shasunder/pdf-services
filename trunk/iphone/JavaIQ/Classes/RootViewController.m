@@ -23,7 +23,10 @@
 }
 
 - (UIButton *) getButtonForSettings {
-    UIButton *button = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
+    UIButton *button = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
+	UIImage *buttonImage = [UIImage imageNamed:@"settings.png"];
+	[button setImage:buttonImage forState:UIControlStateNormal];
+
 	button.frame = CGRectMake(0, 0, 25, 25);
 	[button addTarget:self action:@selector(showSettings) forControlEvents:UIControlEventTouchUpInside];
   return button;
@@ -107,7 +110,7 @@
 
 - (void)dealloc {
     
-    
+    //[dataController dealloc];
     [super dealloc];
 }
 

@@ -335,15 +335,19 @@
 		NSString *fileName = [NSString stringWithFormat:@"%@.xml",currentGroup];
 		NSString *filePath = [NSString stringWithFormat:@"%@/%@_%@", docDir, APP_NAME,fileName ];
 				
-		NSLog(@"Downloading file from internet using url :%@",categoryURL);
+		//NSLog(@"Downloading file from internet using url :%@",categoryURL);
 		fileContents = [self getContentFromInternet:categoryURL];
 		
 		NSString *contentStr=[[NSString alloc] initWithData:fileContents encoding:NSUTF8StringEncoding];
-		BOOL isValid= [self doesContainSubstring:contentStr:@"<questionbank" ];
+		BOOL isValid= [self doesContainSubstring:contentStr:@"questionbank" ];
 		if(isValid){
 			NSLog(@"Writing XML found at url : %@ to file path :%@ ",categoryURL, filePath);
 			[fileContents writeToFile:filePath atomically:YES];
+		}else {
+			NSLog(@"FAILED writing XML found at url : %@ to file path :%@ ",categoryURL, filePath);
+			NSLog(contentStr);
 		}
+
 		[contentStr release];
 		
 		
