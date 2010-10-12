@@ -106,12 +106,12 @@ SessionFactory sessionFactory = configuration.buildSessionFactory();]]></answer>
 Write hbm.xml, where we map java class to table and database columns to Java class variables.
 Example :
 <pre>
-&lt;hibernate-mapping&gt;
-  &lt;class name="com.test.User"  table="user"&gt;
-   &lt;property  column="USER_NAME" name="userName" not-null="true"  type="java.lang.String"/&gt;
-   &lt;property  column="USER_PASSWORD" name="userPassword" not-null="true"  type="java.lang.String"/&gt;
- &lt;/class&gt;
-&lt;/hibernate-mapping&gt;
+<hibernate-mapping>
+  <class name="com.test.User"  table="user">
+   <property  column="USER_NAME" name="userName" not-null="true"  type="java.lang.String"/>
+   <property  column="USER_PASSWORD" name="userPassword" not-null="true"  type="java.lang.String"/>
+ </class>
+</hibernate-mapping>
 </pre>]]></answer>
 		</qa>
 		<qa id="16" rating="2">			<question><![CDATA[q:.What's the difference between load() and get()?]]></question>
@@ -128,11 +128,11 @@ load() just returns a proxy by default and database won't be hit until the proxy
 			<answer><![CDATA[Using <generator> tag.
 Example -
 <pre>
-&lt;id column="USER_ID" name="id" type="java.lang.Long"&gt; 
-   &lt;generator class="sequence"&gt; 
-     &lt;param name="table"&gt;SEQUENCE_NAME&lt;/param&gt;
-   &lt;generator&gt;
-&lt;/id&gt;
+<id column="USER_ID" name="id" type="java.lang.Long"> 
+   <generator class="sequence"> 
+     <param name="table">SEQUENCE_NAME</param>
+   <generator>
+</id>
 </pre.]]></answer>
 		</qa>
 		<qa id="19" rating="2">			<question><![CDATA[q:.Define cascade and inverse option in one-many mapping?]]></question>
@@ -148,13 +148,13 @@ Example -
 			<answer><![CDATA[Named SQL queries are defined in the mapping xml document and called wherever required.
 Example:
 <pre>
-&lt;sql-query name = "empdetails"&gt;
-   &lt;return alias="emp" class="com.test.Employee"/&gt;
+<sql-query name = "empdetails">
+   <return alias="emp" class="com.test.Employee"/>
       SELECT emp.EMP_ID AS {emp.empid},
                  emp.EMP_ADDRESS AS {emp.address},
                  emp.EMP_NAME AS {emp.name} 
       FROM Employee EMP WHERE emp.NAME LIKE :name
-&lt;/sql-query&gt;
+</sql-query>
 </pre>
 Invoke Named Query :
 <pre>
@@ -166,15 +166,15 @@ List people = session.getNamedQuery("empdetails")
 		</qa>
 		<qa id="21" rating="2">			<question><![CDATA[q:.How do you invoke Stored Procedures?]]></question>
 			<answer><![CDATA[<pre>
-&lt;sql-query name="selectAllEmployees_SP" callable="true"&gt;
- &lt;return alias="emp" class="employee"&gt;
-   &lt;return-property name="empid" column="EMP_ID"/&gt;       
+<sql-query name="selectAllEmployees_SP" callable="true">
+ <return alias="emp" class="employee">
+   <return-property name="empid" column="EMP_ID"/>       
 
-   &lt;return-property name="name" column="EMP_NAME"/&gt;       
-   &lt;return-property name="address" column="EMP_ADDRESS"/&gt;
+   <return-property name="name" column="EMP_NAME"/>       
+   <return-property name="address" column="EMP_ADDRESS"/>
     { ? = call selectAllEmployees() }
- &lt;/return&gt;
-&lt;/sql-query&gt;
+ </return>
+</sql-query>
 </pre>]]></answer>
 		</qa>
 		<qa id="22" rating="2">			<question><![CDATA[q:.Define HibernateTemplate?]]></question>
@@ -309,8 +309,10 @@ Entity Relationships are bidirectional or unidirectional <br/><br/>]]></answer>
 <li>Table per concrete class</li>
 </ul>]]></answer>
 		</qa>
-		<qa id="43" rating="2">			<question><![CDATA[q:Click below for more question/answers in pdf format]]></question>
-			<answer><![CDATA[<a href="Hibernate.pdf">Lot more questions..</a>]]></answer>
+		<qa id="43" rating="2">			<question><![CDATA[q:More PDF References]]></question>
+			<answer><![CDATA[<a href="HibernateReferenceGavinKing.pdf">Hibernate 3.3 Reference by GavinKing </a><br/><br/>
+<a href="HibernateByExampleBasics.pdf">Hibernate by example quick start guide</a><br/><br/>
+<a href="Hibernate.pdf">More interview questions..</a>]]></answer>
 		</qa>
 	</category>
 	<category name="Spring">
@@ -461,13 +463,13 @@ ApplicationContext context = new FileSystemXmlApplicationContext("bean.xml");<br
 
 <pre>
 
-&lt;faces-config&gt;
-   &lt;application&gt;
-      &lt;variable-resolver&gt;
+<faces-config>
+   <application>
+      <variable-resolver>
          org.springframework.web.jsf.DelegatingVariableResolver
-      &lt;/variable-resolver&gt;
-   &lt;/application&gt;
-&lt;/faces-config&gt;
+      </variable-resolver>
+   </application>
+</faces-config>
 </pre>
 The DelegatingVariableResolver will first delegate value lookups to the default resolver of the underlying JSF implementation, and then to Spring's 'business context' WebApplicationContext. This allows one to easily inject dependencies into one's JSF-managed beans.<br/><br/>
 
@@ -616,7 +618,38 @@ JdbcTemplate template = new JdbcTemplate(myDataSource);]]></answer>
 <li>Typically stateful.</li>
 </ul>]]></answer>
 		</qa>
-		<qa id="84" rating="2">			<question><![CDATA[q:What are the differences between EJB and Spring ?]]></question>
+		<qa id="84" rating="2">			<question><![CDATA[q:Explain Spring transaction management?]]></question>
+			<answer><![CDATA[Spring :
+<ul>
+<li>Provides a consistent programming model across different transaction APIs such as JTA, JDBC, Hibernate, JPA, and JDO.</li>
+<li>Supports declarative transaction management </li>
+<li>Provides a simpler API for programmatic transaction management than a number of complex transaction APIs such as JTA</li>
+<li>Integrates very well with Spring's various data access abstractions</li>
+</ul><br/><br/>
+Spring propagation and isolation settings are below
+<ul>
+<li><b>PropagationSettings</b></li>
+<li>PROPAGATION_MANDATORY</li>
+<li>PROPAGATION_NESTED</li>
+<li>PROPAGATION_NEVER</li>
+<li>PROPAGATION_NOT_SUPPORTED</li>
+<li>PROPAGATION_REQUIRED</li>
+<li>PROPAGATION_REQUIRES_NEW</li>
+<li>PROPAGATION_SUPPORTS</li>
+</ul>
+<ul>
+<li><b>IsolationSettings</b>:</li>
+<li>ISOLATION_DEFAULT</li>
+<li>ISOLATION_READ_COMMITTED</li>
+<li>ISOLATION_READ_UNCOMMITTED</li>
+<li>ISOLATION_REPEATABLE_READ</li>
+<li>ISOLATION_SERIALIZABLE</li>
+</ul>
+
+
+More details(spring,JTA,isolation,AOP,etc) explained well in <a href="SpringTransactions.pdf">this PDF</a> (thanks to Frances Zhao, Paul Parkinson)]]></answer>
+		</qa>
+		<qa id="85" rating="2">			<question><![CDATA[q:What are the differences between EJB and Spring ?]]></question>
 			<answer><![CDATA[<b>Transaction management</b>
 EJB - Must use a JTA transaction manager.Supports transactions that span remote method calls.<br/>
 Spring -  Supports multiple transaction environments through its PlatformTransactionManager interface, including JTA, Hibernate, JDO, and JDBC.
@@ -644,7 +677,7 @@ Distributed computing	Provides container-managed remote method calls.	Provides p
 		</qa>
 	</category>
 	<category name="Struts">
-		<qa id="85" rating="1">			<question><![CDATA[q:What is Struts?]]></question>
+		<qa id="86" rating="1">			<question><![CDATA[q:What is Struts?]]></question>
 			<answer><![CDATA[The core of the Struts framework is a flexible control layer based on standard technologies like Java Servlets, JavaBeans, ResourceBundles, and XML, as well as various Jakarta Commons packages. Jakarta Struts is open source implementation of MVC (Model-View-Controller) pattern for the development of web based applications.<br/><br/>
 
 Struts provides its own Controller component and integrates with other technologies to provide the Model and the View. For the Model, Struts can interact with standard data access technologies, like JDBC and EJB, as well as most any third-party packages, like Hibernate, iBATIS, or Object Relational Bridge. For the View, Struts works well with JavaServer Pages, including JSTL and JSF, as well as Velocity Templates, XSLT, and other presentation systems.<br/><br/>
@@ -652,20 +685,20 @@ Struts provides its own Controller component and integrates with other technolog
 The Struts framework provides the invisible underpinnings every professional web application needs to survive. Struts helps you create an extensible 
 development environment for your application, based on published standards and proven design patterns.]]></answer>
 		</qa>
-		<qa id="86" rating="2">			<question><![CDATA[q:What is ActionServlet? How is request processing in struts?]]></question>
+		<qa id="87" rating="2">			<question><![CDATA[q:What is ActionServlet? How is request processing in struts?]]></question>
 			<answer><![CDATA[The class org.apache.struts.action.ActionServlet is the called the ActionServlet.All the requests to the server goes through the controller. Controller is responsible for handling all the requests.<br/><br/>
 ActionServlet is configured as Servlet in the web.xml file and usually mapped to *.do url pattern.<br/>
 This controller delegates the request to org.apache.struts.action.RequestProcessor which using struts-config.xml configurations, populates the form bean, applies validation and called the corresponding Action class.<br/><br/>
 
 <img src="images/struts.gif"/>]]></answer>
 		</qa>
-		<qa id="87" rating="2">			<question><![CDATA[q:How you will make available any Message Resources Definitions file to the Struts Framework Environment?]]></question>
-			<answer><![CDATA[Message Resources Definitions file are simple .properties files and these files contains the messages that can be used in the struts project. Message Resources Definitions files can be added to the struts-config.xml file through &lt;message-resources /&gt; tag.<br/>
+		<qa id="88" rating="2">			<question><![CDATA[q:How you will make available any Message Resources Definitions file to the Struts Framework Environment?]]></question>
+			<answer><![CDATA[Message Resources Definitions file are simple .properties files and these files contains the messages that can be used in the struts project. Message Resources Definitions files can be added to the struts-config.xml file through <message-resources /> tag.<br/>
 
 Example:<br/><br/>
-&lt;message-resources parameter=\"MessageResources\" /&gt;.]]></answer>
+<message-resources parameter=\"MessageResources\" />.]]></answer>
 		</qa>
-		<qa id="88" rating="2">			<question><![CDATA[q:What is Action Class.Explain?]]></question>
+		<qa id="89" rating="2">			<question><![CDATA[q:What is Action Class.Explain?]]></question>
 			<answer><![CDATA[Once the controller receives a client request, it delegates the handling of the request to a helper class. This helper knows how to execute the business operation associated with the requested action. In the Struts framework this helper class is descended of org.apache.struts.action.Action class. It acts as a bridge between a client-side user action and business operation. The Action class decouples the client request from the business model. This decoupling allows for more than one-to-one mapping between the user request and an action.<br/><br/>
 
 The most important method is the execute() method:
@@ -680,38 +713,38 @@ The execute() method is called by the controller when a request is received from
 Action are mapped in the struts configuration file(struts-config.xml) and this configuration is loaded into memory at startup and made available to the framework at runtime. Each Action element is represented in memory by an instance of the org.apache.struts.action.ActionMapping class . The ActionMapping object contains a path attribute that is matched against a portion of the URI of the incoming request.<br/>
 
 <pre>
-&lt;action&gt;
+<action>
  	path= "/somerequest"
  	type="com.somepackage.someAction"
  	scope="request"
  	name="someForm"
  	validate="true"
  	input="somejsp.jsp"
- 	&lt;b&gt;&lt;forward name="Success" path="/action/xys" redirect="true"/&gt;&lt;/b&gt;
- 	&lt;forward name="Failure" path="/somejsp.jsp" redirect="true"/&gt;
-&lt;/action&gt;
+ 	<b><forward name="Success" path="/action/xys" redirect="true"/></b>
+ 	<forward name="Failure" path="/somejsp.jsp" redirect="true"/>
+</action>
 </pre>
 <br/><br/>
 Once this is done the controller should determine which view to return to the client. The execute method signature in Action class has a return type org.apache.struts.action.ActionForward class. The ActionForward class represents a destination to which the controller may send control once an action has completed to render the view.]]></answer>
 		</qa>
-		<qa id="89" rating="2">			<question><![CDATA[q:What is ActionForm?]]></question>
+		<qa id="90" rating="2">			<question><![CDATA[q:What is ActionForm?]]></question>
 			<answer><![CDATA[Struts ActionForm objects are used to pass client input data back and forth between the user and the business layer. The framework automatically collects the input from the request and passes this data to an Action using a form bean, which is then passed to the business layer.]]></answer>
 		</qa>
-		<qa id="90" rating="2">			<question><![CDATA[q:What is Struts Validator Framework?]]></question>
+		<qa id="91" rating="2">			<question><![CDATA[q:What is Struts Validator Framework?]]></question>
 			<answer><![CDATA[It can be use to validate the data on the users browser as well as on the server side. Struts Framework generates the java scripts and it can be used validate the form data on the client browser if required. Server side validation of form can be accomplished by sub classing your From Bean with DynaValidatorForm class.<br/><br/>
 
 The Validator framework was developed by David Winterfeldt as third-party add-on to Struts. Now the Validator framework is a part of Jakarta Commons project and it can be used with or without Struts. The Validator framework comes integrated with the Struts Framework and can be used without doing any extra settings.]]></answer>
 		</qa>
-		<qa id="91" rating="2">			<question><![CDATA[q:Give the Details of XML files used in Validator Framework?]]></question>
+		<qa id="92" rating="2">			<question><![CDATA[q:Give the Details of XML files used in Validator Framework?]]></question>
 			<answer><![CDATA[The Validator Framework uses two XML configuration files validator-rules.xml and validation.xml. The validator-rules.xml defines the standard validation routines, these are reusable and used in validation.xml. to define the form specific validations. The validation.xml defines the validations applied to a form bean.]]></answer>
 		</qa>
-		<qa id="92" rating="2">			<question><![CDATA[q:How you will display validation fail errors on jsp page?]]></question>
-			<answer><![CDATA[&lt;html:errors/&gt;]]></answer>
+		<qa id="93" rating="2">			<question><![CDATA[q:How you will display validation fail errors on jsp page?]]></question>
+			<answer><![CDATA[<html:errors/>]]></answer>
 		</qa>
-		<qa id="93" rating="2">			<question><![CDATA[q:How you will enable front-end validation based on the xml in validation.xml?]]></question>
-			<answer><![CDATA[The &lt;html:javascript&gt; tag will allow front-end validation based on the setting in validation.xml. For example the code: &lt;html:javascript formName="logonForm" dynamicJavascript="true" staticJavascript="true" /&gt; generates the client side java script for the form "logonForm" as defined in the validation.xml file. The &lt;html:javascript&gt; when added in the jsp file generates the client site validation script.]]></answer>
+		<qa id="94" rating="2">			<question><![CDATA[q:How you will enable front-end validation based on the xml in validation.xml?]]></question>
+			<answer><![CDATA[The <html:javascript> tag will allow front-end validation based on the setting in validation.xml. For example the code: <html:javascript formName="logonForm" dynamicJavascript="true" staticJavascript="true" /> generates the client side java script for the form "logonForm" as defined in the validation.xml file. The <html:javascript> when added in the jsp file generates the client site validation script.]]></answer>
 		</qa>
-		<qa id="94" rating="2">			<question><![CDATA[q:What are the different types of struts actions?]]></question>
+		<qa id="95" rating="2">			<question><![CDATA[q:What are the different types of struts actions?]]></question>
 			<answer><![CDATA[There are 5 types:
 <ul><li>Include Action-- Similar to Include in our jsp</li>
 <li>Forward Action-- Instead of directly forwarding from one JSP to Another We user Forward Action (If we do that directly it violates Struts MVC Architechture).</li>
@@ -721,10 +754,10 @@ The Validator framework was developed by David Winterfeldt as third-party add-on
 is useful only if you have multiple modules in your Struts application</li>
 </ul>]]></answer>
 		</qa>
-		<qa id="95" rating="2">			<question><![CDATA[q: What is the difference between LookupDispatchAction and DispatchAction?]]></question>
+		<qa id="96" rating="2">			<question><![CDATA[q: What is the difference between LookupDispatchAction and DispatchAction?]]></question>
 			<answer><![CDATA[The difference between LookupDispatchAction and DispatchAction is that the actual method that gets called in LookupDispatchAction is based on a lookup of a key value instead of specifying the method name directly.]]></answer>
 		</qa>
-		<qa id="96" rating="2">			<question><![CDATA[q:Explain in detail the various action classes?]]></question>
+		<qa id="97" rating="2">			<question><![CDATA[q:Explain in detail the various action classes?]]></question>
 			<answer><![CDATA[The important Dispatchers that struts provides includes : DispatchAction ActionDispatcher LookupDispatchAction and MappingDispatchAction.
 
 <b>DispatchAction</b>: In this type of aggregation the action class must extend DispatchAction class as shown.
@@ -743,16 +776,16 @@ public ActionForward create(ActionMapping mapping
 
 and the action mapping will be as 
 <pre>
-&lt;action path /crudDispatchAction type com.companyname.projname.CRUDDispatchAction name formName scope request input homeDef parameter methodToCall &gt;
-&lt;forward name success path targetDefName /&gt;
-&lt;/action&gt;
+<action path /crudDispatchAction type com.companyname.projname.CRUDDispatchAction name formName scope request input homeDef parameter methodToCall >
+<forward name success path targetDefName />
+</action>
 </pre>
 <br/>
 
 in your jsp you can call this action as 
 <br/>
 
-&lt;html:link action crudDispatchAction?methodToCall create &gt;Create&lt;/html:link&gt;
+<html:link action crudDispatchAction?methodToCall create >Create</html:link>
 ... 
 <br/><br/>
 
@@ -782,8 +815,8 @@ ActionDispatcher flavor also needs methodToCall parameter to be set (using hidde
 
 <b>LookupDispatchAction</b>: This type of aggregation is useful in situations where in you have multiple submit buttons in a single form. The class must extend LookupDispatchAction. However the great thing about this type is that its java script free. That means you need not set any hidden variables or pass query string however you must use submit buttons as shown.<br/><br/>
 
-&lt;html:submit property submit &gt;&lt;bean:message key button.create /&gt;&lt;/html: submit &gt;
-&lt;html:submit property submit &gt;&lt;bean:message key button.read /&gt;&lt;/html: submit &gt;
+<html:submit property submit ><bean:message key button.create /></html: submit >
+<html:submit property submit ><bean:message key button.read /></html: submit >
 ... 
 The example Action class will be as follows 
 <pre>
@@ -810,19 +843,19 @@ Observe the getKeyMethodMap() method. The submit button names are specified in a
 <b>MappingDispatchAction</b>: This aggregation extends MappingDispatchAction class. This is the most useful type among the four types available. But as seen in other cases you can use this type only when your action does not extend any other action. The good thing about this type is that the action mappings can differ and so need not be the same as in all other cases. To illustrate this consider the below mappings.<br/><br/>
 
 <pre>
- &lt;action path /createMappingAction type com.bodhtree.CRUDMappingDispatchAction scope request input homeDef parameter create &gt;
-	&lt;forward name success path targetDef /&gt;
- &lt;/action&gt;
- &lt;action path /readMappingAction type com.bodhtree.CRUDMappingDispatchAction name formName scope request input homeDef parameter read &gt;
-	&lt;forward name success path targetDef /&gt;
- &lt;/action&gt; 
+ <action path /createMappingAction type com.bodhtree.CRUDMappingDispatchAction scope request input homeDef parameter create >
+	<forward name success path targetDef />
+ </action>
+ <action path /readMappingAction type com.bodhtree.CRUDMappingDispatchAction name formName scope request input homeDef parameter read >
+	<forward name success path targetDef />
+ </action> 
 
 </pre>
 <br/>
 
 Notice that in the first action mapping there is no form bean while in the second the bean name is specified. This means that the user has the flexibility to change the mapping according to his needs and hence not been contained to use a constant mapping for all the CRUD actions. Note that in all the other types of aggregations we must use the same mapping for all the CRUD actions.]]></answer>
 		</qa>
-		<qa id="97" rating="2">			<question><![CDATA[q:How do you configure internationalization(i18n) in struts?]]></question>
+		<qa id="98" rating="2">			<question><![CDATA[q:How do you configure internationalization(i18n) in struts?]]></question>
 			<answer><![CDATA[Two components are useful :
 <ul>
 <li><b>Message</b> class that references a resource bundle containing Locale-dependent strings. </li>
@@ -831,16 +864,16 @@ Notice that in the first action mapping there is no form bean while in the secon
 <br/>
 
 The property file ApplicationResources_[en].properties contains the key/value pairs for the default language of your application.
-These property files are made struts aware by setting &lt;message-resources&gt; sub-element to the struts-config.xml<br/>
+These property files are made struts aware by setting <message-resources> sub-element to the struts-config.xml<br/>
 
 <pre>
-	&lt;message-resources parameter="example.ApplicationResources"/&gt;
+	<message-resources parameter="example.ApplicationResources"/>
 </pre>
 
 In the JSP use:
-&lt;bean:message key="app.name" /&gt;]]></answer>
+<bean:message key="app.name" />]]></answer>
 		</qa>
-		<qa id="98" rating="2">			<question><![CDATA[q:Name some custom tag libraries provided in struts?]]></question>
+		<qa id="99" rating="2">			<question><![CDATA[q:Name some custom tag libraries provided in struts?]]></question>
 			<answer><![CDATA[The customg tags provided by Struts framework are grouped into four distinct libraries
 <ol>
 <li>HTML</li>

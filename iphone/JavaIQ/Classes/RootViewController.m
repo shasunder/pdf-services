@@ -7,11 +7,25 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AdViewController.h"
 #import "Constants.h"
+#import "AdMobView.h"
 
 @implementation RootViewController
 
 @synthesize dataController;
 @synthesize adViewController;
+
+- (void) insertAd {
+	//ad view
+	adViewController = [[AdViewController alloc] init];
+	[adViewController setCurrentViewController:self];
+	
+	AdMobView *adView = [AdMobView requestAdWithDelegate:adViewController]; 
+	adView.frame = CGRectMake(0,370, 320, 48);
+	adViewController.view = adView;
+	[self.view addSubview:adView];
+	[adView retain];
+	
+}
 
 - (UILabel *) getLabelForTitle {
     UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,85,25)] autorelease];
@@ -42,6 +56,7 @@
 	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:button];	
 	
 	self.navigationItem.titleView =  [self getLabelForTitle];
+	[self insertAd];	
 }
 
 

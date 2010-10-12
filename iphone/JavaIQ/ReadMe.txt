@@ -92,13 +92,8 @@ QuestionsViewController --> Actually displays the list of questions.
 ------
 TODO:
 ------
-4. Test on real iphone, ipod touch ios 3,4
-7'. Improve questions database. 
-     Done core-java, design patterns, j2ee(jsp, servlets)
-     	 update image paths to have image/ prefix
-	TODO: Architecture, database, frameworks, uml, mock interview, frontend technologies(javascript, html, velocity, jquery)
-		Upload pdfs
-	       
+
+15.Release a lighter version of the app with ads in category screen as well. (already implemented)	       
 12. Set app buy url in constants.h
 14. Build and deploy lite and premium versions of the app.
      - Release premium app fro free first. Then release lite version with the buy url for premium app. 
@@ -121,7 +116,12 @@ Done
 7'- Improve xml to have ratings and question number (qno would be useful later for user ratings).
 11. Advertisement
 13. Code cleanup 
-
+4. Test on real iphone, ipod touch ios 3,4
+7'. Improve questions database. 
+     Done core-java, design patterns, j2ee(jsp, servlets)
+     	 update image paths to have image/ prefix
+	TODO: Architecture, database, frameworks, uml, mock interview, frontend technologies(javascript, html, velocity, jquery)
+		Upload pdfs
 Future
 ------
 

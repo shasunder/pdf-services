@@ -25,7 +25,7 @@ SELECT empname, age, city FROM emptable ORDER BY empname]]></answer>
 		</qa>
 		<qa id="7" rating="2">			<question><![CDATA[q:How can I find the total number of records in a table?]]></question>
 			<answer><![CDATA[You could use the COUNT keyword , example
-SELECT COUNT(*) FROM emp WHERE age&gt;40]]></answer>
+SELECT COUNT(*) FROM emp WHERE age>40]]></answer>
 		</qa>
 		<qa id="8" rating="2">			<question><![CDATA[q: Differentiate Having clause and Where clause?]]></question>
 			<answer><![CDATA[Both are used for filtering of records based on filtered criteria.
@@ -155,7 +155,7 @@ It locks all the data that is used in the query.<br/><br/>
 It locks data set until the transaction will be completed<br/><br/>]]></answer>
 		</qa>
 		<qa id="22" rating="3">			<question><![CDATA[q:What is Isolation Levels?]]></question>
-			<answer><![CDATA[Isolation keeps the transactions of multiple users isolated from each other. Transaction isolation level controls the degree of locking which occurs when selecting data. This is necessary to avoid situations like:
+			<answer><![CDATA[Isolation(I in ACID) keeps the transactions of multiple users isolated from each other. Transaction isolation level controls the degree of locking which occurs when selecting data. This is necessary to avoid situations like:
 
 <ul>
 <li>Lost updates- when two transactions read the same data.</li>
@@ -163,6 +163,46 @@ It locks data set until the transaction will be completed<br/><br/>]]></answer>
 <li>Non repeatable reads- occur when different results are read multiple times.</li>
 <li>Phantoms- Occurs when row data matches the first time but does not match subsequent times.</li>
 </ul>]]></answer>
+		</qa>
+		<qa id="23" rating="3">			<question><![CDATA[q: Explain JDBC supported Isolation Levels ?]]></question>
+			<answer><![CDATA[An isolation level defines how concurrent transactions that access a shared resource are
+isolated from one another for read purposes.<br/><br/>
+
+<b>Dirty reads, non-repeatable reads, and phantom reads</b> are the three main conditions where
+an application reads data within a transaction that has been altered outside of the
+transaction.<br/><br/>
+
+<ul>
+<li><b>Dirty</b> reads occur when data that has been updated in a transaction and not yet committed
+is read by another transaction.</li>
+<li><b>Non-repeatable</b> reads occur when a transaction reads data, a second transaction
+subsequently updates that data, and the first transaction reads the data again after the
+second transaction's update.</li>
+<li><b>Phantom</b> reads occur when a transaction reads a range of data (rows), a second
+transaction subsequently deletes or inserts data (a row) in this range, and the first
+transaction reads the range of data again after the second transaction's delete or insert.
+</li>
+</ul>
+
+<br/><br/>
+The read issues described may or may not be a concern for an application. Whether it is
+a problem or not depends entirely upon the business context. There are also resource and
+performance costs involved that must be considered in the design of the system. Isolation
+levels can be used to prevent (or allow) these situations.<br/><br/>
+
+The most common use of isolation levels is when accessing a database. Different
+vendors have proprietary isolation levels, locking mechanisms, the standard
+isolation levels defined in the JDBC API are below. <br/>
+<ul>
+<li><b>TRANSACTION_NONE</b>: transactions are not supported.</li>
+<li><b>TRANSACTION_READ_UNCOMMITTED</b>: dirty reads, non-repeatable reads and phantom reads can occur.</li>
+<li><b>TRANSACTION_READ_COMMITTED</b>: dirty reads are prevented; nonrepeatable reads and phantom reads can occur.</li>
+<li><b>TRANSACTION_REPEATABLE_READ</b>: reads and non-repeatable reads are prevented; phantom reads can occur.</li>
+<li><b>TRANSACTION_SERIALIZABLE</b>: dirty reads, non-repeatable reads and phantom reads are prevented.</li>
+</ul>
+<br/>
+Note: Thi list is provided in order of the weakest to strongest isolation with an inverse correlation as far as performance is
+concerned.]]></answer>
 		</qa>
 	</category>
 </questionbank>

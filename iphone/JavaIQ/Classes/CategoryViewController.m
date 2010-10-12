@@ -18,6 +18,19 @@ NSArray *categories;
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void) insertAd {
+	//ad view
+	  adViewController = [[AdViewController alloc] init];
+	[adViewController setCurrentViewController:self];
+	
+	AdMobView *adView = [AdMobView requestAdWithDelegate:adViewController]; 
+	adView.frame = CGRectMake(0,370, 320, 48);
+	adViewController.view = adView;
+	[self.view addSubview:adView];
+	[adView retain];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	UILabel * label = [[[UILabel alloc] initWithFrame:CGRectMake(0,0,185,50)] autorelease];
@@ -27,7 +40,8 @@ NSArray *categories;
 	label.backgroundColor =[UIColor clearColor];
 	self.navigationItem.titleView = label;
 	self.tableView.backgroundColor=[UIColor whiteColor];
-	//TODO: ad view and set delegate for advert
+
+	[self insertAd];	
 	
 }
 
