@@ -11,7 +11,7 @@
 //change these
 #define GROUPS_URL @"http://jshoutbox.appspot.com/file/103001"
 #define IS_APP_LITE @"NO"
-#define APP_BUY_URL @"http://todo"
+#define APP_BUY_URL @"itms://itunes.apple.com/us/app/java-jee-iq/id396544385?mt=8"
 #define APP_TITLE @"Java IQ"
 #define ADMOB_PUBLISHER_ID @"a14ca727b598405" //for java iq
 

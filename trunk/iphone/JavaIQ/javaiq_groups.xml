@@ -6,7 +6,8 @@
   <group title="Backend technologies" url="http://jshoutbox.appspot.com/file/105001" subtitle="SQL, Transactions,index..." description="Database basics" />
   <group title="Frontend" url="http://jshoutbox.appspot.com/file/112001" subtitle="HTML, DHTML, AJAX, Javascript, Jquery, DOJO, GWT..." description="Client tier basics" />
   <group title="Mock interview" url="http://jshoutbox.appspot.com/file/109001" subtitle="Mock sample question/answers..." description="Client tier basics" />
-  
+    <group title="Help" url="http://jshoutbox.appspot.com/file/119001" subtitle="..." description="" />
+
   <!--group title="XML" url="http://jshoutbox.appspot.com/file/" subtitle="XML/XSD/XSL/Xquery/Xpath..." description="XML" /-->
   <!-- group title="Web tier" url="http://jshoutbox.appspot.com/file/" subtitle="Velocity/JSP/Taglib/JSF..." description="View technologies" /-->
   <!--group title="Servers" url="http://jshoutbox.appspot.com/file/" subtitle="Tomcat,JBoss, MarkLogic, Apache, IIS,..." description="Server basics" /-->
