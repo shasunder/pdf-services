@@ -1,0 +1,31 @@
+<questionbank group="J2EE">
+	<category name="Help">
+		<qa id="1" rating="2">			
+			<question><![CDATA[Features]]></question>
+			<answer><![CDATA[This app has the following features:
+			<ol>
+			<li>Organized content for java/j2ee and related technologies. </li>
+			<li>The first screen gives a broad grouping of technologies. Once selected, the next screen has more detailed categories. On next selection the content of that specific category is rendered </li>
+			<li>The sub category content can be minimized/maximized for the entire content as well as individual question</li>
+			</ol>]]></answer>
+		</qa>
+	</category>
+	<category name="Please rate this app">
+		<qa id="1" rating="2">			
+			<question><![CDATA[Please rate this app if you found it interesting or not.]]></question>
+			<answer><![CDATA[Any suggestions for content, improvement, etc are welcome. Every feedback(good or bad) is important for us to help us improve the app with future release.<br/> So please please rate this app from  <a href="itms://itunes.apple.com/us/app/java-iq-lite/id396524024?mt=8">here</a> ]]>			</answer>
+		</qa>
+	</category>
+	<category name="Purchase this app">
+		<qa id="1" rating="2">			
+			<question><![CDATA[Purchase.]]></question>
+			<answer><![CDATA[Go ad free, set expertise level to see relevant QA's and get regular in app database updates for less than a cup of java (a $):) <br/> If you like this app, please purchase it from <a href="itms://itunes.apple.com/us/app/java-jee-iq/id396544385?mt=8">here</a> ]]>			</answer>
+		</qa>
+	</category>
+	<!-- category name="Share with friend">
+		<qa id="1" rating="2">			
+			<question><![CDATA[Share.]]></question>
+			<answer><![CDATA[ If you like this app, please share it by email <a href="mailto:friend@?subject=Java IQ - iphone app&body=An interesting app for java geeks. URL : itms://itunes.apple.com/us/app/java-jee-iq/id396544385?mt=8 ">here</a> ]]>			</answer>
+		</qa>
+	</category -->
+</questionbank>
