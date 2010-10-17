@@ -12,6 +12,7 @@
 @implementation AdViewController
 
 @synthesize currentViewController;
+@synthesize adMobAd;
 
 - (void)awakeFromNib {
 	CGSize sizeToRequest =  CGSizeMake(320,48);//self.view.frame.size;
@@ -72,7 +73,7 @@
 - (NSString *)testAdActionForAd:(AdMobView *)adMobView {
   return @"url"; // see AdMobDelegateProtocol.h for a listing of valid values here
 }
-*/
+
 
 - (NSArray *)testDevices {
 	      return [NSArray arrayWithObjects:
@@ -84,6 +85,7 @@
 - (NSString *)testAdActionForAd:(AdMobView *)adMobView {
 	return @"url"; // see AdMobDelegateProtocol.h for a listing of valid values here
 }
+ */
 
 // Sent when an ad request loaded an ad; this is a good opportunity to attach
 // the ad view to the hierachy.

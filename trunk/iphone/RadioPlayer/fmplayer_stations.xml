@@ -15,6 +15,7 @@
  <category name="kannada">
    <station name="Kannada kasturi" url="http://www.kannadaaudio.net:8000"/>
    <station name="Acchu radio -Mast maja madi" url="http://205.188.215.225:8082"/>
+   <station name="Radio city - bangalore" url="mms://216.185.43.237/radiocity 1"/>
  </category>
 
 </stations> 

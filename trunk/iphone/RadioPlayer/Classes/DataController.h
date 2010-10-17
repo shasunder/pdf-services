@@ -1,12 +1,15 @@
+#import "OrderedDictionary.h"
 
 @class Record;
 
 @interface DataController : NSObject {
-    NSMutableDictionary *stationsMap;
+    OrderedDictionary *stationsMap;
 	NSString *currentStationCategory; //The current group
+	NSMutableArray *backgrounds;
 }
-@property (nonatomic, retain) NSMutableDictionary *stationsMap;
+@property (nonatomic, retain) OrderedDictionary *stationsMap;
 @property (nonatomic, retain) NSString *currentStationCategory;
+@property (nonatomic, retain) NSMutableArray *backgrounds;
 
 - (NSArray*) getCategories;
 
@@ -15,6 +18,7 @@
 
 
 -(void) loadStations;
+-(void) loadStationsUpdate;
 -(void) parseStations:(NSData *)xmlContent;
 
 -(void)resetData;
