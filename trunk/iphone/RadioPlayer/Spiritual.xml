@@ -1,0 +1,57 @@
+<stations>
+
+<category name="Mantras">
+	<station name="GANDARVA.FM" url="http://69.162.126.13:9090"/>
+	<station name="Hare Krishna Temple LA" url="http://67.228.69.104:25872"/>
+	<station name="Lectures Hare Krishna Temple LA" url="http://216.3.109.212:8015"/>
+	<station name="Transmission FM - New Age 2" url="http://87.230.84.182:9000"/>
+	
+</category>
+<category name="Bhajans">
+	<station name="Sai Bhakti Radio" url="http://65.60.52.122:8712"/>
+</category>
+<category name="Bhagvad">
+	<station name="Bhagvad Gita: Discover Divine Messages for Spiritual Engligtenment and Purposeful Living through the G" url="http://65.18.172.173:10000"/>
+</category>
+
+<category name="Ambient">
+	<station name="Chillout - D I G I T A L L Y - I M P O R T E D - ambient psy chillout, check out our trippy flavors" url="http://scfire-mtc-aa03.stream.aol.com:80/stream/1035"/>
+	<station name="Ambient - D I G I T A L L Y - I M P O R T E D - a blend of ambient, downtempo, and chillout" url="http://205.188.215.228:8006"/>
+	<station name="1.FM - The Chillout Lounge" url="http://64.71.184.99:8010"/>
+	<station name="Nirvana Radio - Music for Meditation and Relaxation" url="http://91.121.72.50:9106"/>
+	<station name="ZenRadio.FM: ZenRadio.FM | Musique de relaxation - Ambient zenradio music - Ambiance Zen Radio  - Ne" url="http://91.121.135.61:8800"/>
+	<station name="radioio.com : Ambient" url="http://76.76.18.109:8874"/>
+	<station name="181.FM - Chilled" url="http://scfire-mtc-aa03.stream.aol.com:80/stream/1092"/>
+	<station name="M2 CHILLOUT : ONLY AMBIENT and LOUNGE - Live From Paris France - m2radio.fr" url="http://91.121.99.205:9000"/>
+	<station name="THE BUZZOUTROOM: ... Chilled-out Ambient Downbeats" url="http://216.59.35.35:8034"/>
+	<station name="LOUNGE-RADIO.COM - swiss made - enjoy this light summer-plate consisting of downtempo, chillout and " url="http://85.11.55.3:8080"/>
+	<station name="Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]" url="http://scfire-mtc-aa03.stream.aol.com:80/stream/1018"/>
+	<station name="Drone Zone: Atmospheric ambient space music. Serve Best Chilled. Safe with most medications. [SomaFM" url="http://scfire-mtc-aa01.stream.aol.com:80/stream/1032"/>
+	<station name="SmoothLounge.com - Music To Move You (by SmoothJazz.com)" url="http://206.217.217.125:80"/>
+	<station name="Cryosleep - Zero Beat Guaranteed" url="http://207.200.96.225:8022"/>
+	<station name="GotRadio - New Age Nuance" url="http://66.216.18.253:5088"/>
+	<station name="Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]" url="http://207.200.96.226:8000"/>
+	<station name="Chillout - D I G I T A L L Y - I M P O R T E D - ambient psy chillout, check out our trippy flavors" url="http://scfire-mtc-aa01.stream.aol.com:80/stream/1035"/>
+	<station name="Ambient - D I G I T A L L Y - I M P O R T E D - a blend of ambient, downtempo, and chillout" url="http://205.188.215.228:8006"/>
+	<station name="Groove Salad from SomaFM [aac] [SomaFM]" url="http://205.234.246.42:3000"/>
+	<station name="1.FM - The Chillout Lounge" url="http://64.71.184.99:8010"/>
+	<station name="p s y r a d i o * f m - chillchannel" url="http://81.88.36.44:8020"/>
+	<station name="Radio Horyzont.pl - Leniwe dzwieki non stop " url="http://188.165.217.130:9050"/>
+	<station name="Nirvana Radio - Music for Meditation and Relaxation" url="http://91.121.72.50:9106"/>
+	<station name="ZenRadio.FM: ZenRadio.FM | Musique de relaxation - Ambient zenradio music - Ambiance Zen Radio  - Ne" url="http://91.121.135.61:8800"/>
+	<station name="radioio.com : Ambient" url="http://76.76.18.109:8874"/>
+	<station name="Radio Ultimae: transmissions from a panoramic world" url="http://205.188.215.227:8000"/>
+	<station name="181.FM - Chilled" url="http://scfire-mtc-aa03.stream.aol.com:80/stream/1092"/>
+	<station name="M2 CHILLOUT : ONLY AMBIENT and LOUNGE - Live From Paris France - m2radio.fr" url="http://91.121.99.205:9000"/>
+	<station name="C H R O M A N O V A * FM presents Ambient and Chillout Sets 24/7* | ambient-radio.de" url="http://91.143.81.239:9001"/>
+	<station name="THE BUZZOUTROOM: ... Chilled-out Ambient Downbeats" url="http://216.59.35.35:8034"/>
+	<station name="LOUNGE-RADIO.COM - swiss made - enjoy this light summer-plate consisting of downtempo, chillout and " url="http://85.11.55.3:8080"/>
+	<station name="Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]" url="http://scfire-mtc-aa03.stream.aol.com:80/stream/1018"/>
+	<station name="Drone Zone: Atmospheric ambient space music. Serve Best Chilled. Safe with most medications. [SomaFM" url="http://scfire-mtc-aa01.stream.aol.com:80/stream/1032"/>
+	<station name="SmoothLounge.com - Music To Move You (by SmoothJazz.com)" url="http://206.217.217.125:80"/>
+	<station name="Bluemars - Music for the Space Traveler" url="http://207.200.96.225:8020"/>
+	<station name="Cryosleep - Zero Beat Guaranteed" url="http://207.200.96.225:8022"/>
+	<station name="GotRadio - New Age Nuance" url="http://66.216.18.253:5088"/>
+	<station name="Groove Salad: a nicely chilled plate of ambient beats and grooves. [SomaFM]" url="http://74.63.47.82:8066"/>
+</category>
+</stations>
