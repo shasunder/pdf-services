@@ -33,5 +33,5 @@
 // users tap on ads. Set to a view controller higher up in the view controller
 // hierarchy, such as the navigation controller or split view controller.
 @property (nonatomic,assign) IBOutlet UIViewController *currentViewController;
-
+@property (nonatomic,assign) IBOutlet AdMobView *adMobAd;
 @end
