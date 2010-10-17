@@ -15,6 +15,9 @@
 @synthesize adViewController;
 
 - (void) insertAd {
+	if(IS_APP_LITE !=@"YES"){
+		return;
+	}	
 	//ad view
 	adViewController = [[AdViewController alloc] init];
 	[adViewController setCurrentViewController:self];

@@ -5,7 +5,7 @@
 #import "DataController.h"
 #import "AdMobView.h"
 #import "AdViewController.h"
-
+#import "Constants.h"
 
 @implementation CategoryViewController
 
@@ -19,12 +19,15 @@ NSArray *categories;
 #pragma mark View lifecycle
 
 - (void) insertAd {
+	if(IS_APP_LITE !=@"YES"){
+		return;
+	}
 	//ad view
 	  adViewController = [[AdViewController alloc] init];
 	[adViewController setCurrentViewController:self];
 	
 	AdMobView *adView = [AdMobView requestAdWithDelegate:adViewController]; 
-	adView.frame = CGRectMake(0,370, 320, 48);
+	adView.frame = CGRectMake(0,390, 320, 48);
 	adViewController.view = adView;
 	[self.view addSubview:adView];
 	[adView retain];
