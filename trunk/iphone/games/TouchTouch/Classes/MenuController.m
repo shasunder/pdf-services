@@ -7,7 +7,7 @@
 //
 
 #import "MenuController.h"
-
+#import "Constants.h"
 
 @implementation MenuController
 @synthesize game;
@@ -24,13 +24,12 @@
 
 - (void) loadButtons {
 		
-	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:@"background-wood4.png"];
-	[game addChild:backgroundImage];
+	[game setBackground:DEFAULT_BACKGROUND];
 		
-	[game addButton:self : @"Balloon" :@"level-balloon.png" selector:  @selector(startStageBalloon:) : -75 : -100];
-	[game addButton:self : @"Butterfly":@"level-butterfly.png" selector:  @selector(startStageButterfly:) : 75 : -100 ];
-	[game addButton:self : @"UFO":@"level-butterfly.png" selector:  @selector(startStageButterfly:) : -75 : 50 ];
-	[game addButton:self : @"Animals":@"level-butterfly.png" selector:  @selector(startStageButterfly:) : 75 : 50 ];
+	[self addButton:self : @"Balloon" :@"level-balloon.png" selector:  @selector(startStageBalloon:) : -75 : -100];
+	[self addButton:self : @"Butterfly":@"level-butterfly.png" selector:  @selector(startStageButterfly:) : 75 : -100 ];
+	[self addButton:self : @"UFO":@"level-ufo.png" selector:  @selector(startStageUFO:) : -75 : 50 ];
+	[self addButton:self : @"Animals":@"level-butterfly.png" selector:  @selector(startStageButterfly:) : 75 : 50 ];
 	
 	[game addButton:self : @"Back":@"button.png" selector:  @selector(startDifficulty:) : 0 : 175
 	 ];
@@ -46,6 +45,11 @@
 
 - (void)startStageButterfly:(SPEvent*)event{
 	[game startStage:2];
+	
+}
+
+- (void)startStageUFO:(SPEvent*)event{
+	[game startStage:3];
 	
 }
 
@@ -74,8 +78,34 @@
 	
 }
 
+
+- (SPButton *) addButton:(NSObject *) thatObject: (NSString *) buttonLabel :(NSString *)imageName selector: (NSObject *) selector :(NSInteger)posX : (NSInteger)posY  {
+	
+	SPButton *button = [SPButton buttonWithUpState:[SPTexture textureWithContentsOfFile:imageName]];
+	button.x = game.width/2-button.width/2 + posX;
+	button.y = game.height/2-button.height/2 + posY;
+	
+	[button addEventListener:selector atObject:thatObject forType:SP_EVENT_TYPE_TRIGGERED];
+	
+	SPTextField *label = [SPTextField textFieldWithText:buttonLabel];
+	label.x = button.x;
+	label.y = button.y + button.height+ 2;
+	label.fontName = DEFAULT_FONTNAME_BOLD;
+	label.width = 90;
+	label.height = 14;
+	label.fontSize=14;
+	label.color = COLOR_DARKBROWN;
+	
+	[game.playFieldSprite addChild:button];
+	[game.playFieldSprite addChild:label];
+	return button;
+	
+}
+
+
 - (void)start{
 	[self loadComponents];		
 }
+
 
 @end

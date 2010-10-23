@@ -12,6 +12,8 @@
 #import "MenuController.h"
 #import "DifficultyController.h"
 #import "SplashController.h"
+#import "Constants.h"
+#import "UFOLevelController.h"
 
 @implementation Game
 
@@ -45,6 +47,13 @@ BalloonLevelController *levelController;
 	[playFieldSprite removeAllChildren];
 }
 
+- (void)setBackground:(NSString *)name{
+	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:name];
+	[self addChild:backgroundImage];
+	
+	
+}
+
 - (void)startStage:(NSInteger ) stageNo{
 	[self clear];
 	if(levelController){
@@ -55,6 +64,9 @@ BalloonLevelController *levelController;
 		levelController = [[BalloonLevelController alloc] init] ;
 	}else if (stageNo == 2) {
 		levelController = [[ButterflyLevelController alloc] init] ;
+		
+	}else if (stageNo == 3) {
+		levelController = [[UFOLevelController alloc] init] ;
 		
 	}else if (stageNo == -1) {
 		levelController = [[MenuController alloc] init] ;
@@ -90,12 +102,13 @@ BalloonLevelController *levelController;
 }
 
 - (SPButton *) addButton:(NSObject *) thatObject: (NSString *) buttonLabel :(NSString *)imageName selector: (NSObject *) selector :(NSInteger)posX : (NSInteger)posY  {
+
 	SPButton *button = [SPButton buttonWithUpState:[SPTexture textureWithContentsOfFile:imageName]];
 	button.x = self.width/2-button.width/2 + posX;
 	button.y = self.height/2-button.height/2 + posY;
-	button.fontName = @"Marker Felt";
-	button.fontSize = 20;
-	//button.fontColor = [UIColor whiteColor];
+	button.fontName =DEFAULT_FONTNAME_BOLD;
+	button.fontSize = 16;
+	button.fontColor = COLOR_DARKBROWN;
 	button.text = buttonLabel;
 	
 	[button addEventListener:selector atObject:thatObject forType:SP_EVENT_TYPE_TRIGGERED];

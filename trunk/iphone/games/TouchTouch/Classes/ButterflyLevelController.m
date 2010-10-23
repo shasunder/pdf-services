@@ -7,7 +7,7 @@
 //
 
 #import "ButterflyLevelController.h"
-
+#import "Constants.h"
 
 @implementation ButterflyLevelController
 
@@ -28,11 +28,9 @@
 	game.scoreTextField = [SPTextField textFieldWithText:[NSString stringWithFormat:@"Score: %d", game.score]];
 	game.levelTextField = [SPTextField textFieldWithText:[NSString stringWithFormat:@"Level: %d", game.level]];
 	
-	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:@"flowers.png"];
-	[game addChild:backgroundImage];
+	[game setBackground:BACKGROUND_BUTTERFLY];	
 	
-	
-	game.scoreTextField.fontName = @"Marker Felt";
+	game.scoreTextField.fontName =DEFAULT_FONTNAME_BOLD;
 	game.scoreTextField.x = 160;
 	game.scoreTextField.y = 7;
 	game.scoreTextField.vAlign = SPVAlignTop;
@@ -41,7 +39,7 @@
 	
 	[game addChild:game.scoreTextField];
 	
-	game.levelTextField.fontName = @"Marker Felt";
+	game.levelTextField.fontName =DEFAULT_FONTNAME_BOLD;
 	game.levelTextField.x = 0;
 	game.levelTextField.y = 7;
 	game.levelTextField.vAlign = SPVAlignTop;
@@ -91,8 +89,7 @@
 		resetButtonVisible = YES;
 	}
 	
-	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:@"screenoverlay.png"];
-	[game.playFieldSprite addChild:backgroundImage];
+	[game setBackground:BACKGROUND_BUTTERFLY];	
 	[game addButton:self : @"Home": @"button.png" selector:  @selector(startMenu:) : 0 : -50];
 	[game addButton:self : @"Replay":@"button.png" selector:  @selector(onReset:) : 0 : 0];
 	if(game.level > 19){

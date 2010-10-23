@@ -7,7 +7,7 @@
 //
 
 #import "DifficultyController.h"
-
+#import "Constants.h"
 
 @implementation DifficultyController
 @synthesize game;
@@ -24,18 +24,16 @@
 
 - (void) loadButtons {
 	
-	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:@"background-wood4.png"];
-	[game addChild:backgroundImage];
+	[game setBackground:DEFAULT_BACKGROUND];
 	
-	[game addButton:self : @"Newbie" :@"button.png" selector:  @selector(setDifficulty:) : 0 : -150];
-	[game addButton:self : @"Medium":@"button.png" selector:  @selector(setDifficulty:) : 0 :-100 ];
-	[game addButton:self : @"Expert":@"button.png" selector:  @selector(setDifficulty:) : 0 : -50 ];
+	[game addButton:self : @"Newbie" :@"button.png" selector:  @selector(startMenu:) : 0 : -150];
+	[game addButton:self : @"Medium":@"button.png" selector:  @selector(startMenu:) : 0 :-90 ];
+	[game addButton:self : @"Expert":@"button.png" selector:  @selector(startMenu:) : 0 : -30 ];
 
 	
 	[game addButton:self : @"Settings" :@"button.png" selector:  @selector(setDifficulty:) : 0 : 50];
 
-	[game addButton:self : @"Start":@"button.png" selector:  @selector(startMenu:) : 0 : 100 ];
-
+	
 	
 }
 
