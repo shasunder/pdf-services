@@ -7,6 +7,7 @@
 //
 
 #import "BalloonLevelController.h"
+#import "Constants.h"
 
 @implementation BalloonLevelController
 
@@ -28,11 +29,10 @@
 	game.scoreTextField = [SPTextField textFieldWithText:[NSString stringWithFormat:@"Score: %d", game.score]];
 	game.levelTextField = [SPTextField textFieldWithText:[NSString stringWithFormat:@"Level: %d", game.level]];
 	
-	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:@"flowers.png"];//background-sky
-	[game addChild:backgroundImage];
+	[game setBackground:BACKGROUND_BALLOON];
 	
 	
-	game.scoreTextField.fontName = @"Marker Felt";
+	game.scoreTextField.fontName = DEFAULT_FONTNAME_BOLD;
 	game.scoreTextField.x = 160;
 	game.scoreTextField.y = 7;
 	game.scoreTextField.vAlign = SPVAlignTop;
@@ -41,7 +41,7 @@
 	
 	[game addChild:game.scoreTextField];
 	
-	game.levelTextField.fontName = @"Marker Felt";
+	game.levelTextField.fontName = DEFAULT_FONTNAME_BOLD;
 	game.levelTextField.x = 0;
 	game.levelTextField.y = 7;
 	game.levelTextField.vAlign = SPVAlignTop;
@@ -88,8 +88,7 @@
 		resetButtonVisible = YES;
 	}
 	
-	SPImage *backgroundImage = [SPImage imageWithContentsOfFile:@"screenoverlay.png"];
-	[game.playFieldSprite addChild:backgroundImage];
+	[game setBackground:BACKGROUND_BALLOON];
 
 	[game addButton:self : @"Home": @"button.png" selector:  @selector(startMenu:) : 0 : -50];
 	[game addButton:self : @"Replay" : @"button.png" selector:  @selector(onReset:) : 0 : 0];

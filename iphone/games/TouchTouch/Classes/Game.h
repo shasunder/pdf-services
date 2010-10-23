@@ -37,6 +37,7 @@ AVAudioPlayer *audioPlayer;
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 
 -(void)clear;
+- (void) setBackground:(NSString *)name;
 - (void)startStage:(NSInteger ) stageNo;
 - (void) playMusic: (NSString *) path;
 - (void) addButton: (NSObject *) thatObject: (NSString *) buttonLabel selector: (NSObject *) selector:(NSInteger )posX : (NSInteger )posY;
