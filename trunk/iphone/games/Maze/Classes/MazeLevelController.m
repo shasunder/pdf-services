@@ -10,12 +10,12 @@
 #import "Constants.h"
 #import "chipmunk.h"
 #import <AVFoundation/AVFoundation.h>
+#define kFilterFactor 0.09//0.05
 
 @implementation MazeLevelController
 
 @synthesize game;
 @synthesize accelerometer;
-@synthesize lastAcceleration;
 
 
 cpBody *ballBody;
@@ -25,15 +25,44 @@ int i=0;
 AVAudioPlayer *audioPlayer;
 int COLL_BALL=0;
 int COLL_WALL=1;
-float WALL_ELASTICITY=0.5;
+float WALL_ELASTICITY=0.0;
 float WALL_FRICTION=0.0;
+
+int mazeRowsPos[10][11]	= { 
+	{0, 0, 1 ,1, 0, 0, 0, 0, 0, 0 ,0},
+	{0, 0, 0 ,1, 0, 0, 1, 1, 1, 1 ,1},
+	{0, 0, 1 ,1, 0, 0, 0, 1, 1, 0 ,0},
+	{1, 1, 1 ,0, 0, 0, 0, 1, 1, 0 ,0},
+	{0, 1, 1 ,1, 0, 0, 1, 1, 1, 0 ,1},
+	{0, 0, 0 ,0, 0, 1, 1, 1, 0, 0 ,0},
+	{0, 0, 1 ,1, 1, 1, 1, 1, 0, 0 ,0},
+	{0, 0, 0 ,0, 0, 1, 1, 1, 1, 1 ,1},
+	{0, 1, 1 ,1, 1, 0, 0, 0, 0, 0 ,0},
+	{0, 0, 0 ,0, 0, 0, 0, 0, 0, 0 ,0},
+
+					}; 
+
+int mazeColsPos[10][11] = { 
+	{0, 0, 0 ,0, 1, 1, 0, 1, 1, 0, 0},
+	{1, 1, 0 ,0, 1, 0, 0, 1, 0, 0, 0},
+	{1, 1, 0 ,1, 1, 1, 0, 0, 0, 0, 0},
+	{1, 0, 0 ,1, 1, 1, 1, 0, 0, 0, 0},
+	{0, 0, 0 ,1, 1, 1, 1, 0, 0, 0, 0},
+	{1, 0, 0 ,1, 1, 0, 0, 0, 0, 0, 0},
+	{1, 1, 0 ,0, 0, 0, 0, 0, 0, 0, 0},
+	{1, 1, 0 ,1, 0, 0, 0, 0, 0, 0, 0},
+	{1, 1, 0 ,1, 0, 0, 0, 0, 0, 0, 0},
+	{1, 1, 0 ,1, 0, 0, 0, 0, 0, 0, 0}
+
+						}; 
+
 
 //load components 
 
 - (void) loadBackgroundMusic {
 	NSLog(@"Loading music");
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"music" ofType:@"caf"];  
-	[game playMusic: path];
+	//[game playMusic: path];
 
 	
 }
@@ -74,42 +103,30 @@ float WALL_FRICTION=0.0;
 	[self loadBackgroundMusic];
 	[game addChild:game.playFieldSprite];
 	
-	ball = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"metalBall.png"]];
-	ball.x=60;	ball.y=200;
-	
-	floor = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"horizontalBar.png"]];
-	floor.x = 0; floor.y=40;
-	
-	roof = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"horizontalBar.png"]];
-	roof.x = 0; roof.y=360;
-	
-	verticalWallRight = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"verticalBar.png"]];
-	verticalWallRight.x = 310; verticalWallRight.y=50;
-	
-	verticalWallLeft = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"verticalBar.png"]];
-	verticalWallLeft.x = 0; verticalWallLeft.y=50;
-		
-	verticalWallMid = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"verticalBar.png"]];
-	verticalWallMid.x = 160; verticalWallMid.y=-50;
-	
-	[game.playFieldSprite addChild:ball];
-	[game.playFieldSprite addChild:floor];
-	[game.playFieldSprite addChild:roof];
-	[game.playFieldSprite addChild:verticalWallRight];
-	[game.playFieldSprite addChild:verticalWallLeft];
-	[game.playFieldSprite addChild:verticalWallMid];
-	
-	[ball addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-	[verticalWallRight addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-	[verticalWallLeft addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-	[verticalWallMid addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-	[floor addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-	[roof addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
-
-	
+	[self loadDirectionKeys]; //temp
 	
 }
+- (void) addDirectionButton: (int) x :  (int) y  {
+  SPImage *image = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"violetBall.png"]];
+	image.x = x; 
+	image.y= y;
+	
+	[game.playFieldSprite addChild:image];
+	[image addEventListener:@selector(touchesDirectionBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+
+}
+
 // load components end
+
+-(void) loadDirectionKeys{
+    [self addDirectionButton: 0 : 400];
+	[self addDirectionButton: 80 : 400];
+	[self addDirectionButton: 40 : 370];
+	[self addDirectionButton: 40 : 430];
+	[self addDirectionButton: 39 : 400];
+	
+}
+
 
 
 - (void)onReset:(SPEvent*)event
@@ -138,12 +155,76 @@ float WALL_FRICTION=0.0;
 	[self loadComponents];
 	[self setupChipmuck];
 	
+	
 	self.accelerometer = [UIAccelerometer sharedAccelerometer];
 	self.accelerometer.updateInterval =  0.2; 
 	self.accelerometer.delegate = self;
 	
-			
 }
+
+
+static void addBall( int x, int y, cpBody *ballBodyLocal , SPImage *ballLocal, cpSpace *space, Game *game ){
+	//ball body and shape
+	
+	ballBodyLocal->p = cpv(x, y);
+	cpSpaceAddBody(space, ballBodyLocal);
+	
+	ballLocal.x=x;	
+	ballLocal.y=y;
+	[game.playFieldSprite addChild:ballLocal];
+
+	cpShape *ballShape = cpCircleShapeNew(ballBodyLocal, 14.0, cpvzero);
+	ballShape->e = 0.0; 
+	ballShape->u = 0.0; 
+	ballShape->collision_type = COLL_BALL;
+	ballShape->data = ballLocal; 
+		
+	cpSpaceAddShape(space, ballShape);
+
+}
+
+- (void) addWall :(int)x : (int)y :(cpVect*) verts1 :(BOOL) isVertical   {
+	NSString *imageName= isVertical ? @"verticalBar.png" :@"horizontalBar.png";
+    SPImage *image = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:imageName]];
+	image.x = x; 
+	image.y=y;
+	
+	[game.playFieldSprite addChild:image];
+	[image addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+	
+	cpBody *body = cpBodyNew(INFINITY, INFINITY);
+	body->p = isVertical ? cpv(x -5, y + 35) :  cpv(x + 160, y - 5);
+	
+	cpShape *shape = cpPolyShapeNew(body, 4, verts1, cpv(0,0));
+	shape->e = WALL_ELASTICITY; shape->u = WALL_FRICTION; shape->collision_type = COLL_WALL;
+	shape->data = floor;
+
+	cpSpaceAddStaticShape(space, shape);
+
+}
+
+- (void) addBrick :(int)x : (int)y :(cpVect*) verts1 :(BOOL) isVertical   {
+	NSString *imageName= isVertical ? @"verticalBarSmall.png" :@"horizontalBarSmall.png";
+    SPImage *image = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:imageName]];
+	image.x = x; 
+	image.y=y;
+	
+	[game.playFieldSprite addChild:image];
+	[image addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+	
+	cpBody *body = cpBodyNew(INFINITY, INFINITY);
+	body->p = isVertical ? cpv(x - 12, y + 1) :  cpv(x + 0, y - 9);
+	
+	cpShape *shape = cpPolyShapeNew(body, 4, verts1, cpv(0,0));
+	shape->e = WALL_ELASTICITY; shape->u = WALL_FRICTION; shape->collision_type = COLL_WALL;
+	shape->data = floor;
+	
+	cpSpaceAddStaticShape(space, shape);
+	
+}
+
+
+
 
 //--chipmunk begins
 
@@ -156,79 +237,49 @@ float WALL_FRICTION=0.0;
 
 	[NSTimer scheduledTimerWithTimeInterval:1.0f/60.0f target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 
-	//ball body and shape
-	
+	//ball
+	ball = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"metalBall.png"]];
 	ballBody = cpBodyNew(100.0, INFINITY);
-	ballBody->p = cpv(60, 250);
+	addBall(60,250, ballBody , ball, space, game);
+	[ball addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
+
+	ball2 = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"metalBall.png"]];
+	ballBody2 = cpBodyNew(100.0, INFINITY);
+	addBall(60,50, ballBody2 , ball2, space, game);
+	[ball2 addEventListener:@selector(touchesBegan:) atObject:self forType:SP_EVENT_TYPE_TOUCH];
 	
-	cpSpaceAddBody(space, ballBody);
-	
-	cpShape *ballShape = cpCircleShapeNew(ballBody, 20.0, cpvzero);
-	ballShape->e = 2.5; ballShape->u = 0.0; ballShape->collision_type = COLL_BALL;
-	ballShape->data = ball; 
-		
-	cpSpaceAddShape(space, ballShape);
 	
 	// Create our floor's body and set it's position
-	cpBody *floorBody = cpBodyNew(INFINITY, INFINITY);
-	floorBody->p = cpv(160, 20);
-	
-	// Define our shape's vertexes
-	cpVect verts1[] = {  cpv(158.0f, 5.0f), cpv(158.0f, -4.0f), cpv(-159.0f, -5.0f),cpv(-159.0f, 4.0f) };
-	
-	
-	// Create all shapes
-	cpShape *floorShape = cpPolyShapeNew(floorBody, 4, verts1, cpv(0,0));
-	floorShape->e = WALL_ELASTICITY; floorShape->u = WALL_FRICTION; floorShape->collision_type = COLL_WALL;
-	floorShape->data = floor;
+	cpVect hVertices[] = {  cpv(160, 3), cpv(160, -3), cpv(-160, -3),cpv(-160,3) };
+	cpVect vVertices[] = { cpv(3, 260), cpv(3, -260), cpv(-3, -260), cpv(-3, 260) };
 
-	cpSpaceAddStaticShape(space, floorShape);
+	cpVect hBrickVertices[] = {  cpv(14, 0.4), cpv(14, -0.4), cpv(-14, -0.4),cpv(-14, 0.4) };
+	cpVect vBrickVertices[] = { cpv(0.4, 12), cpv(0.4, -12), cpv(-0.4, -12), cpv(-0.4, 12) };
+	
+	//build maze with bricks
+	int x=0,y=0;
+	for (int i = 0; i< 10; i++) {
+		for (int j = 0; j< 11; j++){
+			if(mazeRowsPos[i][j] ==1){
+				[self addBrick: x+5 :  y + 80: hBrickVertices : NO];
+			}
+			if(mazeColsPos[i][j] ==1){
+				[self addBrick:  x + 30 :  y + 52: vBrickVertices : YES];
+			}
+			x= x+ 30;
+		}
+		y=y+30;
+		x=0;
+	}
 	
 	
-	//custom
-	cpBody *roofBody = cpBodyNew(INFINITY, INFINITY);
-	roofBody->p = cpv(160, 340);
+		
+	[self addWall: 315 : 40 : vVertices :YES ]; //wall right
+	[self addWall: -9 : 40 : vVertices :YES ]; //wall left
 	
-	cpShape *roofShape = cpPolyShapeNew(roofBody, 4, verts1, cpv(0,0));
-	roofShape->e = WALL_ELASTICITY; roofShape->u = WALL_FRICTION; roofShape->collision_type = COLL_WALL;
-	roofShape->data = roof;
-	
-	cpSpaceAddStaticShape(space, roofShape);
-	
-	//wall right
-	cpVect verts[] = { cpv(5, 259.0), cpv(5, -259.0), cpv(-5, -259.0f), cpv(-5, 259.0f) };
-	
-	
-	cpBody *verticalBodyRight = cpBodyNew(INFINITY, INFINITY);
-	verticalBodyRight->p = cpv(280, 200); //Cog?
-	
-	cpShape *verticalShapeRight = cpPolyShapeNew(verticalBodyRight, 4, verts, cpv(0.0,0.0 ));
-	verticalShapeRight->e =WALL_ELASTICITY; verticalShapeRight->u = WALL_FRICTION;verticalShapeRight->collision_type = COLL_WALL; 
-	verticalShapeRight->data = verticalWallRight;
-	
-	cpSpaceAddStaticShape(space, verticalShapeRight);
-	
-	//wall left	
-	
-	cpBody *verticalBodyLeft = cpBodyNew(INFINITY, INFINITY);
-	verticalBodyLeft->p = cpv(-25, 200); //Cog?
-	
-	cpShape *verticalShapeLeft = cpPolyShapeNew(verticalBodyLeft, 4, verts, cpv(0.0,0.0 ));
-	verticalShapeLeft->e = WALL_ELASTICITY; verticalShapeLeft->u = WALL_FRICTION; verticalShapeRight->collision_type = COLL_WALL;
-	verticalShapeLeft->data = verticalWallLeft;
-	cpSpaceAddStaticShape(space, verticalShapeLeft);
-	
-	
-	//wall mid	
-	
-	cpBody *verticalBodyMid = cpBodyNew(INFINITY, INFINITY);
-	verticalBodyMid->p = cpv(140, -10); //Cog?
-	
-	cpShape *verticalShapeMid = cpPolyShapeNew(verticalBodyMid, 4, verts, cpv(0.0,0.0 ));
-	verticalShapeMid->e = WALL_ELASTICITY; verticalShapeMid->u = WALL_FRICTION; verticalShapeMid->collision_type = COLL_WALL;
-	verticalShapeMid->data = verticalWallMid;
-	
-	cpSpaceAddStaticShape(space, verticalShapeMid);
+	[self addWall: 0 : 40 : hVertices : NO]; //roof
+	[self addWall: 0 : 350 : hVertices : NO]; //floor
+
 	
 	//init
 	prepareSound(); //TODO: optimize sound play
@@ -249,10 +300,10 @@ void prepareSound(){
 }
 
 void checkThresholdVelocity(cpBody *body) {
-	int thresholdVelocity=75;
+	int thresholdVelocity=40;
 	if(body->v.x > thresholdVelocity || body->v.x < -thresholdVelocity || body->v.y >thresholdVelocity || body->v.y < -thresholdVelocity  ){
-		body->v.x = 50 *  (body->v.x / body->v.x);
- 	    body->v.y =50 *  (body->v.y / body->v.y);
+		body->v.x = 0;
+ 	    body->v.y = 0;
 		// NSLog(@"reduced  %f %f",body->v.x,body->v.y);
 		
 	}
@@ -263,6 +314,7 @@ void checkThresholdVelocity(cpBody *body) {
 int wallCollision(cpShape *a, cpShape *b, cpContact *contacts,
 				  int numContacts, cpFloat normal_coef, void *data){
 	checkThresholdVelocity(ballBody);
+	checkThresholdVelocity(ballBody2);
 	return 1;
 }
 
@@ -271,10 +323,11 @@ int ballCollision(cpShape *a, cpShape *b, cpContact *contacts,
 {
 	NSLog(@"collision %f %f",ballBody->v.x,ballBody->v.y);
 	checkThresholdVelocity(ballBody);
+	checkThresholdVelocity(ballBody2);
+
+	//prepareSound();	//TODO:optimize
 	
-	prepareSound();	//TODO:optimize
-	
-	[audioPlayer play];
+	//[audioPlayer play];
 	
 	return 1;
 }
@@ -286,6 +339,25 @@ int ballCollision(cpShape *a, cpShape *b, cpContact *contacts,
 	
 	cpSpaceHashEach(space->activeShapes, &updateShape, nil);
 	//ballBody->v.x= 50;
+	
+}
+
+-(void)touchesDirectionBegan:(SPTouchEvent*)event {
+	SPDisplayObject* currentObject = (SPDisplayObject*)[event target];
+	float touchX=currentObject.x;
+	float touchY=currentObject.y;
+	int force=20;
+	if(touchX == 0){
+		ballBody->v.x= -force;
+	}else if(touchX == 80){
+		ballBody->v.x= force;
+	}else if(touchY == 370){
+		ballBody->v.y= -force;
+	}else if(touchY == 430){
+		ballBody->v.y= force;
+	}else if(touchX == 39){
+		ballBody->v.x= 0;ballBody->v.y= 0;
+	}
 	
 }
 
@@ -304,46 +376,39 @@ int ballCollision(cpShape *a, cpShape *b, cpContact *contacts,
 	}
 	
 	ballBody->v.x= 50 * directionX;
-	ballBody->v.y=ballBody->v.y+ 10 *directionY;
+	ballBody->v.y=ballBody->v.y+ 50 *directionY;
 	
 	NSLog(@"touch x,y =  %f, %f", touchX, 480-touchY );
 	NSLog(@"Ball x,y =  %f, %f",ballBody->p.x, ballBody->p.y );
 	
 }	
 
-static BOOL accelerationIsShaking(UIAcceleration* last, UIAcceleration* current, double threshold) {
-	double
-	deltaX = fabs(last.x - current.x),
-	deltaY = fabs(last.y - current.y),
-	deltaZ = fabs(last.z - current.z);
-	
-	return
-	(deltaX > threshold && deltaY > threshold) ||
-	(deltaX > threshold && deltaZ > threshold) ||
-	(deltaY > threshold && deltaZ > threshold);
-}
+
 
 
 - (void)accelerometer:(UIAccelerometer*)accelerometer didAccelerate:(UIAcceleration*)acceleration {
 	cpSpaceStep(space, 1.0f/20.0f);
 	
 	cpSpaceHashEach(space->activeShapes, &updateShape, nil);
-	float vX,vY;
-	int forceX=50, forceY=10;
-	if (acceleration.x>0) vX = 1; else vX = -1;
-    if (acceleration.y>0) vY = 1; else vY = -1;
-    
 	
-	if (self.lastAcceleration) {
-		if (accelerationIsShaking(self.lastAcceleration, acceleration, 0.2)) {
-			ballBody->v.x= forceX * vX;
-			ballBody->v.y=ballBody->v.y+ forceY *vY;
-			NSLog(@"ballBody->v %f,%f", vX * forceX,vY * forceY );
-		}
+	static float prevX=0, prevY=0;
+	
+	float accelX = acceleration.x * kFilterFactor + (1- kFilterFactor)*prevX;
+	float accelY = acceleration.y * kFilterFactor + (1- kFilterFactor)*prevY;
+	
+	prevX = accelX;
+	prevY = accelY;
+	
+	if(accelX > 0.04 || accelX < -0.04 || accelY >0.04 || accelY < -0.04 ){
+		cpVect v = cpv( accelX, accelY);
+		v = cpvmult(v, 80);
+		ballBody->v.x = v.x;
+		ballBody->v.y = -v.y;
+		ballBody2->v.x = v.x;
+		ballBody2->v.y = -v.y;
 	}
-	
-	self.lastAcceleration = acceleration;
-	
+	//NSLog(@"accel x,y : %f,%f", accelX,accelY );
+		
 	
 }
 
