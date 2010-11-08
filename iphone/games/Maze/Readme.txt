@@ -9,3 +9,7 @@ Done:
 2. Create a polygon box so that the ball doesnt fly off.
 4. Create a new project call it maze.
 5. Integrate sparrow and chipmuck
+
+
+REf:
+http://www.alldiabeticinternational.org/childrendec2005maze1.html for mazes

@@ -10,27 +10,24 @@
 #import "Sparrow.h" 
 #import "Game.h" 
 #import "chipmunk.h"
+#import "OrderedDictionary.h"
 
 @interface MazeLevelController : NSObject<UIAccelerometerDelegate> {
-	
-	SPImage *floor;
-	SPImage *roof; 
 	SPImage *ball; 
-	SPImage *verticalWallRight;
+	SPImage *ball2;
+	
 	SPImage *verticalWallLeft;
 	SPImage *verticalWallMid;
 	
 	cpSpace *space; 
 	UIAccelerometer *accelerometer;
-	UIAcceleration* lastAcceleration;
-	
+		
 	Game *game;
 
 }
 @property (nonatomic, retain) Game *game;
 
 @property ( retain) UIAccelerometer *accelerometer;
-@property(retain) UIAcceleration* lastAcceleration;
 
 - (void)setupChipmuck; 
 - (void)tick:(NSTimer *)timer; 

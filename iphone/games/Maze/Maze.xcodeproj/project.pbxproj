@@ -41,6 +41,10 @@
 		CC4F3EC91286020900514ABF /* metalClang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC4F3EC81286020900514ABF /* metalClang.mp3 */; };
 		CC4F3ECC1286021500514ABF /* horizontalBar.png in Resources */ = {isa = PBXBuildFile; fileRef = CC4F3ECA1286021500514ABF /* horizontalBar.png */; };
 		CC4F3ECD1286021500514ABF /* verticalBar.png in Resources */ = {isa = PBXBuildFile; fileRef = CC4F3ECB1286021500514ABF /* verticalBar.png */; };
+		CC86174A12870B7800842595 /* horizontalBarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = CC86174912870B7800842595 /* horizontalBarSmall.png */; };
+		CC86174C12870B8500842595 /* verticalBarSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = CC86174B12870B8500842595 /* verticalBarSmall.png */; };
+		CC8617B2128712FB00842595 /* violetBall.png in Resources */ = {isa = PBXBuildFile; fileRef = CC8617B1128712FB00842595 /* violetBall.png */; };
+		CC861871128728A400842595 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CC861870128728A400842595 /* OrderedDictionary.m */; };
 		DE3F093811B7B9DC009D4DB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */; };
 		DE3F093A11B7B9DC009D4DB0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */; };
 		DE3F097811B7BABD009D4DB0 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3F097711B7BABD009D4DB0 /* OpenAL.framework */; };
@@ -131,6 +135,11 @@
 		CC4F3EC81286020900514ABF /* metalClang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = metalClang.mp3; sourceTree = "<group>"; };
 		CC4F3ECA1286021500514ABF /* horizontalBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontalBar.png; sourceTree = "<group>"; };
 		CC4F3ECB1286021500514ABF /* verticalBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticalBar.png; sourceTree = "<group>"; };
+		CC86174912870B7800842595 /* horizontalBarSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontalBarSmall.png; sourceTree = "<group>"; };
+		CC86174B12870B8500842595 /* verticalBarSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticalBarSmall.png; sourceTree = "<group>"; };
+		CC8617B1128712FB00842595 /* violetBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = violetBall.png; sourceTree = "<group>"; };
+		CC86186F128728A400842595 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		CC861870128728A400842595 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		DE3F093711B7B9DC009D4DB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DE3F093911B7B9DC009D4DB0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DE3F097711B7BABD009D4DB0 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -164,6 +173,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CC86186F128728A400842595 /* OrderedDictionary.h */,
+				CC861870128728A400842595 /* OrderedDictionary.m */,
 				CC4F3E511285FC6D00514ABF /* MazeLevelController.h */,
 				CC4F3E521285FC6D00514ABF /* MazeLevelController.m */,
 				CC4F3E531285FC6D00514ABF /* Constants.h */,
@@ -214,6 +225,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC8617B1128712FB00842595 /* violetBall.png */,
+				CC86174B12870B8500842595 /* verticalBarSmall.png */,
+				CC86174912870B7800842595 /* horizontalBarSmall.png */,
 				CC4F3ECA1286021500514ABF /* horizontalBar.png */,
 				CC4F3ECB1286021500514ABF /* verticalBar.png */,
 				CC4F3EC81286020900514ABF /* metalClang.mp3 */,
@@ -368,6 +382,9 @@
 				CC4F3EC91286020900514ABF /* metalClang.mp3 in Resources */,
 				CC4F3ECC1286021500514ABF /* horizontalBar.png in Resources */,
 				CC4F3ECD1286021500514ABF /* verticalBar.png in Resources */,
+				CC86174A12870B7800842595 /* horizontalBarSmall.png in Resources */,
+				CC86174C12870B8500842595 /* verticalBarSmall.png in Resources */,
+				CC8617B2128712FB00842595 /* violetBall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +414,7 @@
 				CC4F3EBE128601AB00514ABF /* cpSpace.c in Sources */,
 				CC4F3EBF128601AB00514ABF /* cpSpaceHash.c in Sources */,
 				CC4F3EC0128601AB00514ABF /* cpVect.c in Sources */,
+				CC861871128728A400842595 /* OrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

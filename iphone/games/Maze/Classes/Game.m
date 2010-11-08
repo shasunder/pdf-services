@@ -32,7 +32,7 @@ MazeLevelController *levelController;
 	
 	if (self = [super initWithWidth:width height:height]){
 		playFieldSprite = [SPSprite sprite];
-		[self startStage:-3];
+		[self startStage:1];
 		
     }
     return self;
