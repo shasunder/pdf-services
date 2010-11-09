@@ -11,6 +11,7 @@
 #import "DifficultyController.h"
 #import "SplashController.h"
 #import "Constants.h"
+#import "MenuController.h"
 
 @implementation Game
 
@@ -18,6 +19,7 @@
 @synthesize scoreTextField;
 @synthesize levelTextField;
 @synthesize playFieldSprite;
+@synthesize timeTextField;
 
 @synthesize  currentStage;
 @synthesize  score;
@@ -32,7 +34,7 @@ MazeLevelController *levelController;
 	
 	if (self = [super initWithWidth:width height:height]){
 		playFieldSprite = [SPSprite sprite];
-		[self startStage:1];
+		[self startStage:-3];//1
 		
     }
     return self;
@@ -57,7 +59,12 @@ MazeLevelController *levelController;
 		[levelController release];
 	}
 	
-	if (stageNo == 1) {
+	NSLog(@"%d",difficulty);
+		
+	if (stageNo == -1) {
+		levelController = [[MenuController alloc] init] ;
+	}
+	else if (stageNo == 1) {
 		levelController = [[MazeLevelController alloc] init] ;
 	}else if (stageNo == -2) {
 		levelController = [[DifficultyController alloc] init] ;
@@ -93,11 +100,12 @@ MazeLevelController *levelController;
 
 	SPButton *button = [SPButton buttonWithUpState:[SPTexture textureWithContentsOfFile:imageName]];
 	button.x = self.width/2-button.width/2 + posX;
-	button.y = self.height/2-button.height/2 + posY;
+	button.y = self.height/2-button.height/2 + posY -40;
 	button.fontName =DEFAULT_FONTNAME_BOLD;
 	button.fontSize = 16;
-	button.fontColor = COLOR_DARKBROWN;
+	button.fontColor = COLOR_WHITE;
 	button.text = buttonLabel;
+	button.rotation = SP_D2R(90);
 	
 	[button addEventListener:selector atObject:thatObject forType:SP_EVENT_TYPE_TRIGGERED];
 	

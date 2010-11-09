@@ -26,26 +26,43 @@
 	
 	[game setBackground:DEFAULT_BACKGROUND];
 	
-	[game addButton:self : @"Newbie" :@"button.png" selector:  @selector(startMenu:) : 0 : -150];
-	[game addButton:self : @"Medium":@"button.png" selector:  @selector(startMenu:) : 0 :-90 ];
-	[game addButton:self : @"Expert":@"button.png" selector:  @selector(startMenu:) : 0 : -30 ];
+	SPImage *image = [SPImage imageWithTexture:[SPTexture textureWithContentsOfFile:@"menuBackground.png"]];
+	image.x = 30; 
+	image.y=80;
+	[game.playFieldSprite addChild:image];
+	
+	[game addButton:self : @"Newbie" :@"button.png" selector:  @selector(setDifficulty1:) : 150 : 0];
+	[game addButton:self : @"Medium":@"button.png" selector:  @selector(setDifficulty2:) : 100 :0 ];
+	[game addButton:self : @"Expert":@"button.png" selector:  @selector(setDifficulty3:) : 50 : 0 ];
 
 	
-	[game addButton:self : @"Settings" :@"button.png" selector:  @selector(setDifficulty:) : 0 : 50];
+	[game addButton:self : @"Settings" :@"button.png" selector:  @selector(startSettings:) : 0 : 0];
 
 	
 	
 }
 
 
-- (void)setDifficulty:(SPEvent*)event{
+- (void)setDifficulty1:(SPEvent*)event{
 	game.difficulty = 1;
-	//[game startStage:1];
+	[game startStage:-1];
 	
 }
 
-- (void)startMenu:(SPEvent*)event{
-	[game startStage:1];
+- (void)setDifficulty2:(SPEvent*)event{
+	game.difficulty = 2;
+	[game startStage:-1];
+	
+}
+
+- (void)setDifficulty3:(SPEvent*)event{
+	game.difficulty = 3;
+	[game startStage:-1];
+	
+}
+
+- (void)startSettings:(SPEvent*)event{
+	[game startStage:-1];
 	
 }
 

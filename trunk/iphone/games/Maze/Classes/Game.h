@@ -21,6 +21,7 @@ NSInteger difficulty;
 
 SPTextField *scoreTextField;
 SPTextField *levelTextField;
+SPTextField *timeTextField;
 
 AVAudioPlayer *audioPlayer;
 }
@@ -33,6 +34,7 @@ AVAudioPlayer *audioPlayer;
 @property (nonatomic, retain) SPSprite *playFieldSprite;
 @property (nonatomic, retain) SPTextField *scoreTextField;
 @property (nonatomic, retain) SPTextField *levelTextField;
+@property (nonatomic, retain) SPTextField *timeTextField;
 
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 
