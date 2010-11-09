@@ -13,11 +13,8 @@
 #import "OrderedDictionary.h"
 
 @interface MazeLevelController : NSObject<UIAccelerometerDelegate> {
-	SPImage *ball; 
-	SPImage *ball2;
 	
-	SPImage *verticalWallLeft;
-	SPImage *verticalWallMid;
+
 	
 	cpSpace *space; 
 	UIAccelerometer *accelerometer;
@@ -28,6 +25,7 @@
 @property (nonatomic, retain) Game *game;
 
 @property ( retain) UIAccelerometer *accelerometer;
+
 
 - (void)setupChipmuck; 
 - (void)tick:(NSTimer *)timer; 

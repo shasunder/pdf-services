@@ -12,10 +12,12 @@
 #define DEFAULT_FONTNAME @"AmericanTypewriter"
 #define DEFAULT_FONTNAME_BOLD @"AmericanTypewriter-Bold"
 #define COLOR_DARKBROWN 0x3B1701
+#define COLOR_WHITE 0xffffff
 
-#define BACKGROUND_BALLOON @"wood2.jpg"
+#define BACKGROUND_MAZE1 @"wood2.jpg"
 
 #define BACKGROUND_MUSIC_MP3 @"opening"
+
 
 @interface Constants : NSObject {
 
