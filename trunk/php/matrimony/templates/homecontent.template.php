@@ -111,9 +111,9 @@
     <tr>
       <td align="left" valign="middle"> <h2>Welcome!</h2><!-- img src="images/txt_welcome.gif" width="199" height="11" /--></td>
     </tr>
-    <tr>
+    <!-- tr>
       <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
-    </tr>
+    </tr -->
     <tr>
       <td bgcolor="#f7fbe3" style="padding:8px;"><p>Featured content represents the best that Wikipedia has to offer. These are the articles, pictures, and other contributions that showcase the polished result of the collaborative efforts that drive Wikipedia. </p>
         <p>All featured content undergoes a thorough review process to ensure that it meets the highest standards and can serve as an example of our end goals. A small bronze star (The featured content star) in the top right corner of a page indicates that the content is featured. This page gives links to all of Wikipedia's featured content and showcases one randomly selected example of each type of content. You can view another random content selection. </p>
