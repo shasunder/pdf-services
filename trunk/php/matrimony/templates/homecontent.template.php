@@ -14,18 +14,18 @@
   <tr>
     <td style="background-image:url(images/search_left.gif); background-repeat:repeat-y;"> </td>
     <td bgcolor="#FAF9F8" height="220"><br />
-	<form name="homepage" action="search.php?type=gs" method="post" > 
+	<form name="homepage" action="search.php?type=gs" method="post" >
 	<div class="h_search_sub_head" >Looking for </div>
 	<div class="h_search_sub_head1">
 	 <input name="gender" type="radio" value="F" id="fgender"  checked="checked" onclick="gen('fgender','txtagefrm','txtageto','18','40');"/>
-	  Female 
+	  Female
 	 <input name="gender" type="radio" value="M" id="mgender" onclick="gen('mgender','txtagefrm','txtageto','21','40');"/>
 	  Male </div>
 	  <div class="h_search_sub_head" >Age</div>
 	  <div class="h_search_sub_head1" >
-        
-        From 
-        <input type="text" name="txtagefrm" id="txtagefrm" value="18"  maxlength="2" style="width:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onkeyup="return char_val(this,'0123456789');"/>	  
+
+        From
+        <input type="text" name="txtagefrm" id="txtagefrm" value="18"  maxlength="2" style="width:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onkeyup="return char_val(this,'0123456789');"/>
         To <input type="text" name="txtageto" id="txtageto"  maxlength="2" value="40" style="width:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onkeyup="return char_val(this,'0123456789');" /> </div>
 		<div class="gap" >
         </div>
@@ -44,12 +44,12 @@
         <label for="textfield"></label>
         <input type="checkbox" name="chkphoto" value="Photo" id="chkphoto" />
         <label for="checkbox"></label>
-        Profiles with Photo 
+        Profiles with Photo
 		</div>
 		<div class="gap" >
         </div>
 		<div class="h_search_sub_head1">
-        
+
 		<input type="image" src="images/btn_search.gif" width="48" height="20" name="submit" value="submit" onclick="return SELECTreligion('ddlReligion','ddlCommunity')" /></div>
 <input type="hidden" name="searchindex" id="searchindex" value="generalsrc"/>
 		</form>
@@ -71,7 +71,7 @@
   <tr>
     <td style="background-image:url(images/reg_l.gif); background-repeat:repeat-y;"> </td>
     <td bgcolor="#f8fcfc" height="220"><br />
-<form name="home_register" method="post" action="register.php">	
+<form name="home_register" method="post" action="register.php">
 	<div class="h_search_sub_head" >Name</div>
 	<div class="h_search_sub_head1">
 	  <input type="text" name="textName" id="textName" style="width:155px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; " maxlength="25"  onblur="if(this.value == ''){this.value = 'Name';}" onfocus="if(this.value == 'Name'){this.value = '';}" onclick="if(this.value=='Name'){this.value='';}"/></div>
@@ -79,7 +79,7 @@
 	  <div class="h_search_sub_head1" >
 	    <input type="text" name="age" id="txtagefrm" maxlength="2" style="width:100px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; " onkeyup="return char_val(this,'0123456789');"onblur="if(this.value == ''){this.value = 'Age';}" onfocus="if(this.value == 'Age'){this.value = '';}"/></div>
 		<div class="h_search_sub_head" >Gender</div>
-		<div class="h_search_sub_head1" > 
+		<div class="h_search_sub_head1" >
 	  <input name="gender1" type="radio" value="female" id="gender"  />
 	  Female
 	  <input name="gender1" type="radio" value="male" id="gender" />
@@ -94,9 +94,9 @@
 		<div class="gap">
         </div>
 		<div class="h_search_sub_head1">
-        
+
 		<input type="image" name="reg_submit" value="submit" img src="images/btn_register.gif" width="66" height="21" onclick="if(document.getElementById('emailError').innerHTML!='' && document.getElementById('emailError').style.color!='green'){document.getElementById('txtEmail').value=''}" /></div>
-</form>		
+</form>
 		</td>
     <td style="background-image:url(images/reg_r.gif); background-repeat:repeat-y;"> </td>
   </tr>
@@ -109,7 +109,7 @@
 <div style="width:375px; height:inherit; float:left; padding:5px; margin-left:7px;">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td align="left" valign="middle"><img src="images/txt_welcome.gif" width="199" height="11" /></td>
+      <td align="left" valign="middle"> <h2>Welcome!</h2><!-- img src="images/txt_welcome.gif" width="199" height="11" /--></td>
     </tr>
     <tr>
       <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
@@ -125,11 +125,11 @@
 </div><br />
 
 
-<div style="width:785px; margin:auto; background-color:#FFFFFF; height:120px; padding:0px 0px 5px 0;">
+<!--div style="width:785px; margin:auto; background-color:#FFFFFF; height:120px; padding:0px 0px 5px 0;">
 <div style=" height:inherit; float:left; padding:5px; margin-left:2px;">
 <table width="275" style=" border:1px #CACACA  solid" >
-<tr><td rowspan="5" height="110px"><img src="./images/model.jpg" /></td> 
-<td class="search"><span style="color:#578BA4"><b>Latest Profile</b></span></td>  
+<tr><td rowspan="5" height="110px"><img src="./images/model.jpg" /></td>
+<td class="search"><span style="color:#578BA4"><b>Latest Profile</b></span></td>
 </tr>
 <tr><td ><span style="color:#A0A0A4">Uma</span></td></tr>
 <tr><td><span  style="color:#FF7F00">Age:</span> 25</td></tr>
@@ -139,11 +139,11 @@
 </div>
 <div style=" height:inherit; float:left; padding:5px; margin-left:2px;">
 <table width="250" height="111"  style=" border:1px #CACACA solid" >
-<tr><td width="32" rowspan="2"><img  src="./images/astro.jpg"/></td> 
-<td width="206" height="34" colspan="2" align="left" valign="top"  class="search"><span style="color:#578BA4"><b>Astrology</b></span></td>  
+<tr><td width="32" rowspan="2"><img  src="./images/astro.jpg"/></td>
+<td width="206" height="34" colspan="2" align="left" valign="top"  class="search"><span style="color:#578BA4"><b>Astrology</b></span></td>
 </tr>
 <tr>
-<td height="34" align="center" valign="top"  class="search"><b>comming soon...</b></td>  
+<td height="34" align="center" valign="top"  class="search"><b>comming soon...</b></td>
 </tr>
 <tr>
 <td align="right" colspan="2" valign="bottom"><img src="./images/more.gif" /></td>
@@ -162,15 +162,15 @@
 			<img src="images/image6.jpg" width="200" height="100">
 			<img src="images/image5.jpg" width="200" height="100">
 			<img src="images/image4.jpg" width="200" height="100">
-			<img src="images/image1.jpg" width="200" height="100">	
+			<img src="images/image1.jpg" width="200" height="100">
 			<img src="images/image3.jpg" width="200" height="100">
-		</div>	
 		</div>
-</td> 
+		</div>
+</td>
 </tr>
 </table>
 </div>
-</div> 
+</div -->
 <? $browser = get_browser(); if($browser->browser!="IE"){ ?>
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -178,7 +178,7 @@
   </tr>
 </table>
 <? } ?>
-<div style="width:800px; height: inherit;">
+<!-- div style="width:800px; height: inherit;">
  <table width="97%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td colspan="2" align="left" valign="bottom"><img src="images/homepg_m_profiles.gif" width="185" height="45" /></td>
@@ -188,8 +188,8 @@
   <tr>
     <td height="34" class="m_profile_left"></td>
     <td height="50" align="center" valign="top"><img src="images/homepg_religion_btn.gif" width="126" height="21" /></td>
-    <td align="left" valign="top"><a href="?rel=Hindu" style="text-decoration:none; color:black;"> Hindu </a>|<a href="?rel=Chrisitian" style="text-decoration:none; color:black;"> Chrisitian </a>|<a href="?rel=Muslim" style="text-decoration:none; color:black;"> Muslim </a>|<a href="?rel=Jain" style="text-decoration:none; color:black;"> Jain </a>|<a href="?rel=Buddhist" style="text-decoration:none; color:black;"> 
-Buddhist </a>|<a href="?rel=Bahais" style="text-decoration:none; color:black;"> Baha'is </a>|<a href="?rel=Chinese Folks" style="text-decoration:none; color:black;"> Chinese Folks </a>|<a href="?rel=Confucianist" style="text-decoration:none; color:black;"> Confucianist </a>|<a href="?rel=Ethnoreligionist" style="text-decoration:none; color:black;"> Ethnoreligionist </a>|<a href="?rel=Jewish" style="text-decoration:none; color:black;"> Jewish </a>|<a href="?rel=Neoreligionist" style="text-decoration:none; color:black;"> Neoreligionist </a>|<a href="?rel=Shintoist" style="text-decoration:none; color:black;"> Shintoist </a>|<a href="?rel=Sikh" style="text-decoration:none; color:black;"> Sikh </a>|<a href="?rel=Spiritist" style="text-decoration:none; color:black;"> Spiritist </a>|<a href="?rel=Taoist" style="text-decoration:none; color:black;"> Taoist </a>|<a href="?rel=Zorastrian" style="text-decoration:none; color:black;"> Zorastrian </a> <!--| <a href="?searchindex=home&rel=Inter-Religion" style="text-decoration:none; color:black;"> Inter-Religion </a>|<a href="" style="text-decoration:none; color:black;"> More <img src="images/site_arrow.gif" style="border:0px" /> </a>--></td>
+    <td align="left" valign="top"><a href="?rel=Hindu" style="text-decoration:none; color:black;"> Hindu </a>|<a href="?rel=Chrisitian" style="text-decoration:none; color:black;"> Chrisitian </a>|<a href="?rel=Muslim" style="text-decoration:none; color:black;"> Muslim </a>|<a href="?rel=Jain" style="text-decoration:none; color:black;"> Jain </a>|<a href="?rel=Buddhist" style="text-decoration:none; color:black;">
+Buddhist </a>|<a href="?rel=Bahais" style="text-decoration:none; color:black;"> Baha'is </a>|<a href="?rel=Chinese Folks" style="text-decoration:none; color:black;"> Chinese Folks </a>|<a href="?rel=Confucianist" style="text-decoration:none; color:black;"> Confucianist </a>|<a href="?rel=Ethnoreligionist" style="text-decoration:none; color:black;"> Ethnoreligionist </a>|<a href="?rel=Jewish" style="text-decoration:none; color:black;"> Jewish </a>|<a href="?rel=Neoreligionist" style="text-decoration:none; color:black;"> Neoreligionist </a>|<a href="?rel=Shintoist" style="text-decoration:none; color:black;"> Shintoist </a>|<a href="?rel=Sikh" style="text-decoration:none; color:black;"> Sikh </a>|<a href="?rel=Spiritist" style="text-decoration:none; color:black;"> Spiritist </a>|<a href="?rel=Taoist" style="text-decoration:none; color:black;"> Taoist </a>|<a href="?rel=Zorastrian" style="text-decoration:none; color:black;"> Zorastrian </a> <!- -| <a href="?searchindex=home&rel=Inter-Religion" style="text-decoration:none; color:black;"> Inter-Religion </a>|<a href="" style="text-decoration:none; color:black;"> More <img src="images/site_arrow.gif" style="border:0px" /> </a>- -></td>
     <td class="m_profile_right"></td>
   </tr>
   <tr>
@@ -206,7 +206,7 @@ Buddhist </a>|<a href="?rel=Bahais" style="text-decoration:none; color:black;"> 
   </tr>
 </table>
 
-</div>
+</div -->
 </td>
   </tr>
 </table>

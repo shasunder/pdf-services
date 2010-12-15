@@ -224,7 +224,7 @@ background-position:0% -24px;
 background-position:100% -24px;
 }
 /*footer page CSS */
-.fr_fullpage {width:800px; height:83px; background-image:url(../images/fr_bg_full.jpg); background-repeat:repeat-x; }
+.fr_fullpage {width:800px; height:83px;  background-repeat:repeat-x; }/*background-image:url(../images/fr_bg_full.jpg); */
 .fr_top_content {width:800px; height:41px; padding-top:16px; color:#181d19; text-align:center; }
 .ht_top_content {width:800px; height:41px; padding-top:10px; color:#181d19; text-align:center; }
 .fr_bottom_pg {width:770px; height:26px; padding:0 15px 0 15px;}
