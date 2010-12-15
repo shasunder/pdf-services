@@ -85,8 +85,8 @@ function MM_jumpMenu(targ,selObj,restore)
 
 <table width="795" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="64" rowspan="2"><img src="images/logo.gif" width="61" height="91" /></td>
-    <td width="398" height="65" align="left" valign="middle"><p><img src="images/bride&amp;groom.gif" width="228" height="22" /></p></td>
+    <!-- td width="64" rowspan="2"><img src="images/logo.gif" width="61" height="91" /></td -->
+    <td width="398" height="65" align="left" valign="middle"><p><img src="images/logo.gif"/></p></td>
     <td width="333"><table width="333" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="12" align="right" valign="middle"><img src="images/header_login_left.gif" width="6" height="38" /></td>
