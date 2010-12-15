@@ -1,0 +1,4 @@
+1.Create Database and user name
+2.Execute Matrimony.sql script
+3.Open config.inc(In common folder)
+4.Use database name and password in connection string 
