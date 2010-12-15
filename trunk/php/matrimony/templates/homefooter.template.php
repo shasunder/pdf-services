@@ -1,14 +1,14 @@
 <div id="headend" style="display:none;">:###:</div>
 <br />
 <? if($fname=='index' && !$_SESSION['valid']){ ?>
-<div style="width:800px;">
-<!--<img src="images/success_stories.jpg" />-->
+<!-- div style="width:800px;">
+<!- -<img src="images/success_stories.jpg" />- ->
 	<table width="800" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 		<td align="center" valign="bottom"><img src="images/footer_add.jpg" /></td>
 	  </tr>
 	</table>
-</div>
+</div -->
 </td></tr>
 </table>
 <? } ?>
