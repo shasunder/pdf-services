@@ -80,7 +80,7 @@ function MM_jumpMenu(targ,selObj,restore)
 		<!-- Light Box for forget Password  Ends here   -->
 
 
-<div class="header_top"> </div>
+<!-- div class="header_top"> </div -->
 <div class="header_middle">
 
 <table width="795" border="0" cellspacing="0" cellpadding="0">
@@ -140,6 +140,7 @@ function MM_jumpMenu(targ,selObj,restore)
     </tr>
 </table>
 </div>
+<br/>
 <!-- div class="header_submenu">
 <? if($_SESSION['valid']=='loginvalid'){
 		$pname = "search.php?searchindex=home";
