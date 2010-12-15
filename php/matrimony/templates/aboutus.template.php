@@ -8,7 +8,7 @@
 
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
 <tr>
-<td width="622" valign="top"> 
+<td width="622" valign="top">
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
@@ -25,23 +25,23 @@
 	</div>
 
 	<div style="border:1px green solid; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
- 
-  <div><span class="style2"><strong>Benivolent Soft Tech</strong></span><br/>
+
+  <div><span class="style2"><strong>Tucantis Services Ltd</strong></span><br/>
   </div>
 
   <div align="justify">
-    <p><b>Benivolent Soft Tech</b> is one of the leading world-wide Information Technology (IT) Services Company that gives IT consulting, technology and outsourcing services. Using our enhanced global delivery model, innovative plat forming approach and industry proficiency, we provide cost-effective services that enable our clients to use IT to enhance business concert, step up time-to-market, raises productivity and improve customer service.
-      <br/>   
+    <p><b>Tucantis Services Ltd</b> is one of the leading world-wide Information Technology (IT) Services Company that gives IT consulting, technology and outsourcing services. Using our enhanced global delivery model, innovative plat forming approach and industry proficiency, we provide cost-effective services that enable our clients to use IT to enhance business concert, step up time-to-market, raises productivity and improve customer service.
+      <br/>
       </p>
     </div>
 	<div align="justify">
-    <p><b>Benivolent Soft Tech</b> meets their goals by rising and delivering innovative software that enables interoperability between applications and development sources, coordinates processes that span systems and people, and helps companies’ wisdom and act in response to events and opportunities more quickly and with more certainty and control. Communally, these capabilities bestow companies what Benivolent proudly enlightens “Generous in Service…”
-      <br/>   
+    <p><b>Tucantis Services Ltd</b> meets their goals by rising and delivering innovative software that enables interoperability between applications and development sources, coordinates processes that span systems and people, and helps companies’ wisdom and act in response to events and opportunities more quickly and with more certainty and control. Communally, these capabilities bestow companies what Benivolent proudly enlightens “Generous in Service…”
+      <br/>
       </p>
     </div>
   <div align="justify"><br clear="all"/>
-    <p><b>Benivolent Soft Tech</b> brings collectively years of experience, not only in Software Development and Website Designing, but also in vertical industries and business perceptive, enabling to develop solutions that imitate and enhance our customer's real world business desires and requirements and also we are good in managing large IT applications in real time as well as in delivering high value services.</p>
-    <p>Please Visit and Register Here: <strong>www.bride&amp;groom.org</strong></p>
+    <p><b>Tucantis Services Ltd</b> brings collectively years of experience, not only in Software Development and Website Designing, but also in vertical industries and business perceptive, enabling to develop solutions that imitate and enhance our customer's real world business desires and requirements and also we are good in managing large IT applications in real time as well as in delivering high value services.</p>
+    <p>Please Visit and Register Here: <a href="/"><strong>marrybanjara.com</strong></a></p>
 	</div></td>
     <td background="./images/lightbox_right.gif">&nbsp;</td>
   </tr>

@@ -140,12 +140,12 @@ function MM_jumpMenu(targ,selObj,restore)
     </tr>
 </table>
 </div>
-<div class="header_submenu">
+<!-- div class="header_submenu">
 <? if($_SESSION['valid']=='loginvalid'){
 		$pname = "search.php?searchindex=home";
 	} else {
 		$pname = "register.php?reg=home";
 } ?>
-			<!-- div class="ht_top_content"><a href="?lng=Assameme" style="text-decoration:none; color:black;"> Assameme </a>|<a href="?lng=Bengali" style="text-decoration:none; color:black;"> Bengali </a>|<a href="?lng=Gujarati" style="text-decoration:none; color:black;"> Gujarati </a>|<a href="?lng=Hindi" style="text-decoration:none; color:black;"> Hindi </a>|<a href="?lng=Kannada" style="text-decoration:none; color:black;"> Kannada </a>|<a href="?lng=Malayalee" style="text-decoration:none; color:black;"> Malayalee </a>|<a href="?lng=Marathi" style="text-decoration:none; color:black;"> Marathi </a>|<a href="?lng=Marwadi" style="text-decoration:none; color:black;"> Marwadi </a>|<a href="?lng=oriya" style="text-decoration:none; color:black;"> oriya </a>|<a href="?lng=Parsi" style="text-decoration:none; color:black;"> Parsi </a>|<a href="?lng=Punjabi" style="text-decoration:none; color:black;"> Punjabi </a>|<a href="?lng=Sindhi" style="text-decoration:none; color:black;"> Sindhi </a>|<a href="?lng=Tamil" style="text-decoration:none; color:black;"> Tamil </a>|<a href="?lng=Telugu" style="text-decoration:none; color:black;"> Telugu </a>|<a href="?lng=Urdu" style="text-decoration:none; color:black;"> Urdu </a></div -->
-</div>
+			<div class="ht_top_content"><a href="?lng=Assameme" style="text-decoration:none; color:black;"> Assameme </a>|<a href="?lng=Bengali" style="text-decoration:none; color:black;"> Bengali </a>|<a href="?lng=Gujarati" style="text-decoration:none; color:black;"> Gujarati </a>|<a href="?lng=Hindi" style="text-decoration:none; color:black;"> Hindi </a>|<a href="?lng=Kannada" style="text-decoration:none; color:black;"> Kannada </a>|<a href="?lng=Malayalee" style="text-decoration:none; color:black;"> Malayalee </a>|<a href="?lng=Marathi" style="text-decoration:none; color:black;"> Marathi </a>|<a href="?lng=Marwadi" style="text-decoration:none; color:black;"> Marwadi </a>|<a href="?lng=oriya" style="text-decoration:none; color:black;"> oriya </a>|<a href="?lng=Parsi" style="text-decoration:none; color:black;"> Parsi </a>|<a href="?lng=Punjabi" style="text-decoration:none; color:black;"> Punjabi </a>|<a href="?lng=Sindhi" style="text-decoration:none; color:black;"> Sindhi </a>|<a href="?lng=Tamil" style="text-decoration:none; color:black;"> Tamil </a>|<a href="?lng=Telugu" style="text-decoration:none; color:black;"> Telugu </a>|<a href="?lng=Urdu" style="text-decoration:none; color:black;"> Urdu </a></div>
+</div -->
 <div id="headend" style="display:none;">:###:</div>
