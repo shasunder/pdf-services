@@ -195,7 +195,7 @@ body {margin:0px; padding:0px;}
 	background:url("../images/menu_right.gif") no-repeat right top;
 	padding:5px 15px 5px 6px;
 	margin-right:1px;
-	color:#FFF;
+	color:#1a4369;
 	font-weight:bold;
 	font-size:11.5px;
 	font-family:verdana;
@@ -255,7 +255,7 @@ filter: alpha(opacity=80);
 
 /* Home search - register - menu */
 
-.h_search_head {height:17px; font-family:Arial, Helvetica, sans-serif font-size:13px; font-weight:bold; color:#353333; width:157px; padding-top:4px; padding-left:7px;}
+.h_search_head {height:17px; font-family:Arial, Helvetica, sans-serif font-size:13px; font-weight:bold; color:#1a4369; width:157px; padding-top:4px; padding-left:7px;}
 .h_search_sub_head {width:164px; height:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;  font-weight:normal;}
 .h_search_sub_head1 {width:164px; height:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;  }
 .gap {width:164px; height:7px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;  }
