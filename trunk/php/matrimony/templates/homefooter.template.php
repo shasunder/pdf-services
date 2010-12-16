@@ -1,5 +1,7 @@
 <div id="headend" style="display:none;">:###:</div>
 <br />
+<br />
+<br />
 <? if($fname=='index' && !$_SESSION['valid']){ ?>
 <!-- div style="width:800px;">
 <!- -<img src="images/success_stories.jpg" />- ->

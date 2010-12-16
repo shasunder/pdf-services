@@ -30,14 +30,16 @@
 		<div class="gap" >
         </div>
 		<div class="h_search_sub_head1">
-        <select name="ddlReligion" id="ddlReligion" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onchange="FillCommunity('ddlReligion','ddlCommunity');">
-        </select></div>
+		<input type="hidden" name="ddlReligion" value="Hindu"/>
+        <!-- select name="ddlReligion" id="ddlReligion" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onchange="FillCommunity('ddlReligion','ddlCommunity');">
+        </select --></div>
 		<div class="gap" >
         </div>
 		<div class="h_search_sub_head1" >
-        <select name="ddlCommunity" id="ddlCommunity" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;">
+		<input type="hidden" name="ddlCommunity" value="Lambani"/>
+        <!-- select name="ddlCommunity" id="ddlCommunity" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;">
           <option>- Select Caste  -</option>
-        </select></div>
+        </select --></div>
 		<div class="gap" >
         </div>
 		<div class="h_search_sub_head1" >
@@ -115,11 +117,19 @@
       <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
     </tr -->
     <tr>
-      <td bgcolor="#f7fbe3" style="padding:8px;"><p>Featured content represents the best that Wikipedia has to offer. These are the articles, pictures, and other contributions that showcase the polished result of the collaborative efforts that drive Wikipedia. </p>
-        <p>All featured content undergoes a thorough review process to ensure that it meets the highest standards and can serve as an example of our end goals. A small bronze star (The featured content star) in the top right corner of a page indicates that the content is featured. This page gives links to all of Wikipedia's featured content and showcases one randomly selected example of each type of content. You can view another random content selection. </p>
-        <p>&nbsp;</p></td>
+      <td bgcolor="#f7fbe3" style="padding:8px;"><p> We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province. </p>
+	  <p>Our history goes back to some 2000 years and is as colourful as the costumes our women wear.</p>
+	  <p>There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community.
+But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.</p> 
+<p>This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates </p>
+<p>
+We aim to provide service at a very affordable price <strong>(starting at Rs.500 only)</strong>.
+We would be glad to hear from you!</p>
+<br/><br/>
+</td>
     </tr>
   </table>
+  <br/>
 </div>
 
 </div><br />
