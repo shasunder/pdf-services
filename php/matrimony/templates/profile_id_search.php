@@ -1,4 +1,6 @@
 <body onLoad="timedCount();">
+<script type="text/javascript" src="ajax/admin_ajaxjs.js">
+    </script>
 <form name="profileidsearch" action="search.php" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
 <tr>
@@ -46,10 +48,26 @@
 						</div> 
 						<div class="search_24"> 
 							<input name="txtproid" type="text" class="textbox" id="txtproid" style="width:130px;"  onkeyup="document.getElementById('txtproid').value=document.getElementById('txtproid').value.toUpperCase();" onBlur="txt_empty('txtproid','proidError','Please Enter Profile ID');" maxlength="10"/>
+							<div  id="err"style="display:none">Please  enter your profileId </div>
+                       
 						</div>
 						<div class="search_24">
 							<label for="Submit"></label>
-							<input type="submit" name="search" class="s_btn" value="Search" onClick="return Submit('txtproid','proidError','Please Enter Profile ID','');"/>
+							
+	
+                              <?php 
+	if(($_SESSION['valid']=='loginvalid')&&($_SESSION['ProfileId']))
+	{?>
+<input type="text"  id="profileidsave" name="profileidsave" style="width:130px;" >
+<input type="submit" name="search" class="s_btn" value="Search" onClick="return Submit('txtproid','proidError','Please Enter Profile ID','');"/>
+<input type="submit" name="Savesearchprofile" class="s_btn" value="Savesearch" onClick="return titlesave('profileidsave');" /> 
+<?php }
+
+else
+{?>
+<a href="register.php"><img src="images/btn_register.gif"></a>
+<?php }
+	?>
 						</div>
 					</div>
 

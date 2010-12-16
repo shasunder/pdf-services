@@ -600,3 +600,53 @@ function confrminactive(ask,url) {
 		window.location.href=url;
 	}
 }
+
+function save1(session)
+{
+	//alert("ddd");
+	
+	var id=document.getElementById('profileid').value;
+		
+		if(id=="")
+		{
+			document.getElementById('err').style.display="block";
+		}
+	else
+	{
+	    //alert("gg");
+      // window.location="savesearch.php?id="+id+"&session="+session;
+	}
+
+}
+function profilesave(session,searchid)
+{
+	//alert("ddd");
+	
+	var id=searchid;
+		
+	
+       window.location="savesearch.php?id="+id+"&session="+session;
+	
+
+}
+function choose(id)
+{
+	alert(id);
+	var choice=document.getElementById(id).selected.value;
+	alert(choice);
+
+}
+
+
+function titlesave(title)
+{
+var re=document.getElementById(title).value;
+if(re =="")
+	{
+	document.getElementById('titleerr').innerHTML="Enter the title";
+	return false;
+    }
+
+
+
+}

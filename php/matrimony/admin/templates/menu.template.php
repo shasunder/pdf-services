@@ -84,15 +84,16 @@ function toggleSuggest() {
 		<tr>
 		  <td class="menucell"><a href="AddPartArea.php" class="menulink">Add Part Of Area </a></td>
 		</tr>
-	</tbody></table>
+	</tbody></table>-->
 	<table class="menu" width="100%" border="0" cellpadding="2" cellspacing="1">
 	<tbody><tr><td class="menuhead">Paid Options</td></tr>
-		<tr><td class="menucell"><a href="#" class="menulink style1">Featured Ad Options</a></td></tr>
-		<tr><td class="menucell"><a href="#" class="menulink style1">Extended Ad Options</a></td></tr>
-		<tr><td class="menucell"><a href="manageMembership.php" class="menulink">Manage Mempership Type</a></td></tr>
-		<tr><td class="menucell"><a href="Addmembership.php" class="menulink">Add Mempership Type </a></td></tr>
+		<!--<tr><td class="menucell"><a href="#" class="menulink style1">Featured Ad Options</a></td></tr>
+		<tr><td class="menucell"><a href="#" class="menulink style1">Extended Ad Options</a></td></tr>-->
+		<!--<tr><td class="menucell"><a href="membership.php" class="menulink">Membership Type</a></td></tr>-->
+		<tr><td class="menucell"><a href="managemembership.php" class="menulink">Manage Membership  </a></td></tr>
+        <tr><td class="menucell"><a href="payment.php" class="menulink">Payment Details</a></td></tr>
 	</tbody></table>
-	<table class="menu" width="100%" border="0" cellpadding="2" cellspacing="1">
+	<!--<table class="menu" width="100%" border="0" cellpadding="2" cellspacing="1">
 	<tbody><tr><td class="menuhead">Edit</td></tr>
 			<tr><td class="menucell"><a href="Mailingtemplates.php" class="menulink">Email Templates</a></td></tr>
 	</tbody></table>
@@ -111,5 +112,5 @@ function toggleSuggest() {
 			<tr><td class="menucell"><a href="" class="menulink style1">Payment History</a></td>
 			</tr>
 	</tbody></table> -->
-</div><br> <b>To Day Date</b><br><b><?php echo date('d-M-Y') ?><br><br><br>
+</div><br> <b>Today Date</b><br><b><?php echo date('d-M-Y') ?><br><br><br>
 </td><td valign="top" id="main">

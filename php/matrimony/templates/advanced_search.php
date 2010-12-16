@@ -454,7 +454,7 @@ Occasionally </div>
  <div class="sch_menu_in_h"> <span style=" vertical-align:text-bottom; width:25px; "> <img src="./images/search_h_arrow.gif"  /> </span> Others  </div>
  <div class="sch_menu_in"> 
  
- <div style="height:120px;  display:none; " id="others1" > <div style="height:70px;"> <div class="search_width_i">
+ <div style="height:140px;  display:none; " id="others1" > <div style="height:70px;"> <div class="search_width_i">
  <div class="search_48_head" style="width:55%">Date Posted </div>
  </div>
  <div class="search_100" style="height:20px;" >
@@ -497,10 +497,23 @@ Occasionally </div>
 <div class="sch_plus" id="others2"> <img src="./images/plus.gif" width="13" height="13" onClick="div_tab('others','2','1');"/><span class="style5"> More options (Photo, horoscope) </span></div>
 
  </div>
-<div style="padding-top:4px; padding-bottom:4px;width:100%;" align="center">
-<input type="submit" value="Search" id="Submit" class="s_btn"  />
-</div>
- </div>
+<div class="sch_menu_in_h"> <span style=" vertical-align:text-bottom; width:25px; "> <img src="./images/search_h_arrow.gif"  /> </span>Search Title  </div>
+<div class="sch_menu_in" style="margin-left:15px; height:35px;">
+<?php if((isset($_SESSION['valid']))&&(isset($_SESSION['ProfileId'])))
+                        {?>
+                        <input type="text" id="Adsavetitle" name="Adsavetitle" value=""/>
+                        <div id="titleerr"></div>
+                        </div>
+                        <div style="margin-left:15px; margin-bottom:10px;">
+   <input name="Advancesave" type="submit" class="s_btn" style="text-align:center" value="Save Search" onClick="return titlesave('Adsavetitle');"/>
+                        	<input type="submit" value="Search" id="Submit" class="s_btn"  />
+                        <?php }
+                        else{?>
+                        	<input type="submit" value="Search" id="Submit" class="s_btn"  />
+                        <?php }?>
+                        </div>
+
+
  </td>
     <td background="./images/lightbox_right.gif">&nbsp;</td>
   </tr>

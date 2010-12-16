@@ -1,5 +1,5 @@
 <html><head>
-<title>Bride&Groom</title>
+<title>MarryBanjara</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="../css/Styles1.css"/>
 <link href="../css/Calendar.css" rel="stylesheet" type="text/css" />
@@ -45,6 +45,6 @@ a{
 </style>
 </head><div FirebugVersion="1.3.2" style="display: none;" id="_firebugConsole"></div><body>
 <table id="aheader" width="100%"><tbody><tr>
-<td><div id="logo">Bride&Groom Admin </div></td>
+<td><div id="logo">MarryBanjara Admin </div></td>
 <td align="right"><div style="padding: 3px; font-size: 11px;"></div>
 </td></tr></tbody></table>

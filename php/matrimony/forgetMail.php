@@ -14,10 +14,10 @@ class forgetmail extends matrimony
 		$pass = $rows['Password'];
 		$message="Password has been sent your Email";
 		
-		$from = "info@bride&groom.com";
+		$from = "info@MarryBanjara.com";
 		$to = $_REQUEST['mail'];
-		$subject = "Bride&groom Password";
-		$body.="<b>Your password for:</b><a href='bride&groom.com'>bride&groom.com</a> is: $pass";
+		$subject = "MarryBanjara Password";
+		$body.="<b>Your password for:</b><a href='MarryBanjara.com'>MarryBanjara.com</a> is: $pass";
 		
 		$host = "mail.benivolent.com";
 		$username = "bst@benivolent.com";

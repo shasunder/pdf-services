@@ -106,6 +106,13 @@
 	  <tr>
 		<td height="30"><img src="./images/EmailMan.gif"></td>
 		<td height="30"><a style="text-decoration:none; color:#FF6633; cursor:pointer;">Horoscope</a></td></tr>
+        <!--
+        <td height="30"><img src="./images/saveSearch.gif"/></td>
+        <td height="30"><a  href="mysearch.php?session=<?= $myhome->myhomeResult['ProfileId'];?>" style="text-decoration:none; color:#FF6633; cursor:pointer;">Shortlisted Profiles</a></td></tr>
+        -->
+        
+         <td height="30"><img src="./images/saveSearch.gif"/></td>       
+        <td height="30"><a  href="searchrules.php?session=<?= $myhome->myhomeResult['ProfileId'];?>" style="text-decoration:none; color:#FF6633; cursor:pointer;">Saved Searches</a></td></tr>
 	</table>
 	</div>
 	</div>
@@ -185,6 +192,40 @@ Declined Interests</a></td></tr>
 	    </div>
 	</div>
 	</div>
+    
+    
+    
+    
+<div style="width:550px; height:190px;" >
+<div  style="width:200px"><span class="style2" ><strong>Payment Details</strong></span></div><br/>
+  <div style="width:550px;">
+	  <div align="justify" style=" width:250px; height:180px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/blue_bg.gif); background-repeat: repeat-x;  ">
+      <!--
+        <div style="  padding: 10px 0px 10px 5px;width:180px; "  ><font  style="line-height: 13px;">
+              <b>Received</b></font></div>
+       -->
+	    <table width="240">
+          <tr>
+            <td height="30"><img src="./images/EmailMan.gif"></td>
+		<td height="30"><a  href="myaccountprofiles.php"  style="text-decoration:none; color:#FF6633; cursor:pointer;"> Account Details</a></td>
+        </tr>
+        </table>
+	    </div>
+
+	 <div align="justify" style=" width:250px; height:180px;   float:left; margin-right:15px;">
+        
+	    </div>
+	</div>
+	</div>    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 <br>	
 	
 	

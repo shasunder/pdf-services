@@ -5,11 +5,11 @@ class regmail
 {
 	function rmail(){
 		require_once "Mail.php";
-		$from = "info@bride&groom.com";
+		$from = "info@MarryBanjara.com";
 		$to = $_SESSION['EmailId'];
-		$subject = "Bride&groom Registration Confirmation";
+		$subject = "MarryBanjara Registration Confirmation";
 		$body.="Dear <b>".$_SESSION['LoginId'].",</b><br /><br />
-		Thanks for your registration,To continue please click : <a href='Bride&groom.com'>Bride&groom.com</a>";
+		Thanks for your registration,To continue please click : <a href='MarryBanjara.com'>MarryBanjara.com</a>";
 		$host = "mail.benivolent.com";
 		$username = "bst@benivolent.com";
 		$password = "admin";

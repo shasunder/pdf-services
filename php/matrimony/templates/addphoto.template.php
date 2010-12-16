@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Bride&Groom</title>
+<title>MarryBanjara</title>
 <link href="./css/styles.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="debug.css" media="all" />
 	<style type="text/css">

@@ -1,7 +1,7 @@
 <?php
 class matrimony
 {	
-	function bgautoId($Id,$tname,$bgid,$cat){/*---------- for bride&groom profile autoid generate -----------*/
+	function bgautoId($Id,$tname,$bgid,$cat){/*---------- for MarryBanjara profile autoid generate -----------*/
 		$arg1 = " WHERE ProfileCategory ='$cat'";
 		$arg2 = "Max(".$Id.")";
 		$this->switchqry($tname,'SELECT',$arg1,$arg2);

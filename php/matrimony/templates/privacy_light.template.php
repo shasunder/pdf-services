@@ -35,7 +35,7 @@
       <tr>
         <td width="521" valign="top">
 		<div align="justify">
-    <p><b>Bride&groom.org</b> is an online matrimonial portal endeavoring constantly to provide you with premium matrimonial services. This privacy statement is common to all the matrimonial sites operated under Bride&groom.com Since we are strongly committed to your right to privacy, we have drawn out a privacy statement with regard to the information we collect from you.
+    <p><b>MarryBanjara.org</b> is an online matrimonial portal endeavoring constantly to provide you with premium matrimonial services. This privacy statement is common to all the matrimonial sites operated under MarryBanjara.com Since we are strongly committed to your right to privacy, we have drawn out a privacy statement with regard to the information we collect from you.
       <br/>   
       </p>
 	  <p><b></b> We use a secure server for credit card transactions to protect the credit card information of our clients and Cookies are used to store the login information.
@@ -46,10 +46,10 @@
       </p>
 	  <p><b></b> If you establish a credit account with us to pay the fees we charge, we collect some additional information, including a billing address, a credit card number and a credit card expiration date and tracking information from checks or money orders.
       <br/>
-	  <p><b>How the site uses the information it collects/tracks?</b><br />Bride&groom collects information from our clients primarily to ensure that we are able to fulfill your requirements and to deliver Personalised experience.
+	  <p><b>How the site uses the information it collects/tracks?</b><br />MarryBanjara collects information from our clients primarily to ensure that we are able to fulfill your requirements and to deliver Personalised experience.
       <br/>      
       </p>
-	  <p><b>With whom the site shares the information it collects/tracks?</b><br />The information collected from any of our clients is not shared with any individual or organization without the former's approval. Bride&groom.com does not sell, rent, or loan any identifiable information at the individual level regarding its customers to any third party. Any information you give us is held with the utmost care and security. We are also bound to cooperate fully should a situation arise where we are required by law or legal process to provide information about a customer.
+	  <p><b>With whom the site shares the information it collects/tracks?</b><br />The information collected from any of our clients is not shared with any individual or organization without the former's approval. MarryBanjara.com does not sell, rent, or loan any identifiable information at the individual level regarding its customers to any third party. Any information you give us is held with the utmost care and security. We are also bound to cooperate fully should a situation arise where we are required by law or legal process to provide information about a customer.
       <br/>      
       </p>
 	  <p><b>Do all visitors have to pay?</b><br />NO, All visitors to our site may browse the site, search the ads and view any articles or features our site has to offer without entering any personal information or paying money.
@@ -61,7 +61,7 @@
 	   <p><b>Notice</b><br />We may change this Privacy Policy from time to time based on your comments or as a result of a change of policy in our company. 
       <br/>      
       </p>
-	  <p>If you have any questions regarding our Privacy Statement, please write in to <b>privacy@Bride&groom.com</b>
+	  <p>If you have any questions regarding our Privacy Statement, please write in to <b>privacy@MarryBanjara.com</b>
 
       <br/>      
       </p>
