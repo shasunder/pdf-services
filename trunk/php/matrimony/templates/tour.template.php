@@ -21,7 +21,7 @@
 				</div>
 
 <div style="border:1px #008080 solid; padding:5px; font-family:Tahoma; font-size:11px; height:inherit; width:536px; ">
-<div align="left" ><img src="images/bride&groom.gif"/> </div>
+<div align="left" ><img src="images/MarryBanjara.gif"/> </div>
 <!-- first div-->
 <div style="width:525px; height:inherit; margin-top:5px; margin-left:12px; display:block" id="tour1">This Tour will help you to understand how to make use of our website better. <br/><br/>
 <div style="margin-left:15px; color:#a80b21; font-weight:bold;">

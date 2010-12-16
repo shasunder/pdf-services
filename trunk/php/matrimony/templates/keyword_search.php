@@ -45,7 +45,8 @@
 	</div>
 <div class="search_width1">
 <div class="search_48">
-   <input name="gender" id="fgender" value="F" type="radio" checked="checked" onClick="gen('fgender','txtagefrm','txtageto','18','40');"/> Female
+   <input name="gender" id="fgender" value="F" type="radio" checked="checked" onClick="gen('fgender','txtagefrm','txtageto','18','40');"/> 
+   Female
    <input name="gender" id="mgender" value="M" type="radio" onClick="gen('mgender','txtagefrm','txtageto','21','40');"/> Male</div>
 <div class="search_48">
 	<label for="textfield"></label>
@@ -92,8 +93,29 @@
 </div>
 <div class="search_line"> </div> 
 </div>
-<div style="padding-top:7px; padding-bottom:7px;width:100%;" align="center">
-	<input type="submit"  class="s_btn" value="Search" style="width:60px; text-align:center" name="Search" id="Search" onClick="return Submit('txtkeyword','keyError','Please Enter Any Word','');"/>
+
+<div class="search_48_head" style="width:100%;">Search Title</div>
+<div style="padding-top:7px; padding-bottom:7px;width:100%; float:left; margin-left:15px; height:40px;">
+
+<?php if((isset($_SESSION['valid']))&&(isset($_SESSION['ProfileId'])))
+                        {?>
+                            <input type="text" id="keytitle" name="keytitle" value=""/>
+                            <div id="titleerr"></div>
+                            </div>
+                        <div style="margin-left:15px; margin-bottom:10px;">
+                        	<input name="keysave" type="submit" class="s_btn" style="text-align:center" value="Save Search" onClick="return titlesave('keytitle');" />
+        	<input type="submit"  class="s_btn" value="Search" style="width:60px; text-align:center" name="Search" id="Search" onClick="return Submit('txtkeyword','keyError','Please Enter Any Word','');"/>
+                        <?php }
+                        else if(($_SESSION['valid']=='loginvalid')&&($_SESSION['ProfileId'])){?>
+                     <input type="submit"  class="s_btn" value="Search" style="width:60px; text-align:center" name="Search" id="Search" onClick="return Submit('txtkeyword','keyError','Please Enter Any Word','');"/>   
+                        <?php }
+                        
+                        else {
+                        ?>
+                        <a href="register.php"><img src="images/btn_register.gif"></a>	
+                       <?php  }?>
+	
+      
 </div>
 </div></td>
     <td background="./images/lightbox_right.gif">&nbsp;</td>

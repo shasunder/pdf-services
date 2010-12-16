@@ -1,0 +1,26 @@
+Instructions
+
+Admin
+1.Add the templates which are new to the already existing templates folder in Admin folder ,additionally  replace the already existing template.
+2.Add the  provided files to the admin folder.
+
+Normal
+1.Add the templates which are new to the already existing templates folder in templates folder outside ,additionally  replace the already existing template(if its provided).
+2.Add the  provided files to the matrimonial  folder.
+
+
+Ajax
+1.Replace the admin_ajax.js
+
+
+js
+1.Replace the message.js
+2.Replace the general.js
+
+
+Sql
+1.Additionally added tables and details  have been sent.just import it.
+
+Images& Css
+1.Add the images and css files to the already existing images and css folder.
+

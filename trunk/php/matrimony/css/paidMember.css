@@ -1,0 +1,270 @@
+@charset "utf-8";
+/* CSS Document */
+.paidMember
+{
+	width:800px;
+	margin:0px;
+	padding:0px;
+	height:auto;
+	float:left;
+}
+.paidMember .header
+{
+	width:800px;
+	margin:0px;
+	padding:0px;
+	height:auto;
+	float:left;
+}
+.membershipBtn
+{
+width:180px;
+height:34px;
+margin:0px;
+padding:0px;
+float:left;
+}
+.matrimonyBanner
+{
+width:800px;
+margin:0px;
+padding:0px;
+float:left;
+height:123px;
+background-image:url(../images/matrimonyBanner.gif);
+}
+.matrimonyBanner .left
+{
+	width:350px;
+	height:auto;
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+.matrimonyBanner .left h1
+{
+	
+	margin:0px;
+	color:#892941;
+	padding:10px 0px 0px 16px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+}
+.matrimonyBanner .left ul
+{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+.matrimonyBanner .left ul li
+{
+	padding:0px 0px 0px 65px;
+	margin:0px;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	background:url(../images/heartIcon.gif) 12% 5px no-repeat;
+	color:#a2595d;
+	line-height:20px;
+	font-weight:bold;
+	
+}
+.matrimonyBanner .right
+{
+	width:auot;
+	height:auto;
+	margin:0px;
+	padding:60px 0px 0px 0px;
+	float:left;
+}
+.registerBtn
+{
+	width:254px;
+	width:46px;
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+.middlecontainer
+{
+	width:800px;
+	height:auto;
+	margin:0px;
+	padding:25px 0px 0px 0px;
+	float:left;
+}
+.middlecontainer .bg
+{
+	width:800px;
+	height:510px;
+	margin:0px;
+	padding:0px;
+	background:url(../images/centerBannerbg.gif);
+	float:left;
+}
+.middlecontainer .bg .monthview
+{
+	width:208px;
+	height:405px;
+	padding:0px 0px 0px 0px;
+	margin:0px;
+	float:left;
+}
+.middlecontainer .bg .tableview
+{
+	width:auto;
+	height:350px;
+	padding:0px 0px 0px 0px;
+	margin:0px;
+	float:left;
+}
+.title
+{
+width:190px;
+height:auto;
+margin:0px;
+padding:0px;
+color:#65530b;
+font-weight:bold;
+font-family:"OCR-B 10 BT", Arial, Helvetica, sans-serif;
+font-size:18px;
+height:60px;
+overflow:hidden;
+}
+.title2
+{
+width:190px;
+margin:0px;
+padding:20px 0px 0px 0px;
+color:#194b0a;
+font-weight:bold;
+font-family:"OCR-B 10 BT", Arial, Helvetica, sans-serif;
+font-size:18px;
+/*background:url(../images/greenBulitien.png) 10% 35px no-repeat;*/
+line-height:90px;
+overflow:hidden;
+}
+.title3
+{
+width:190px;
+margin:0px;
+padding:70px 0px 0px 0px;
+color:#194b0a;
+font-weight:bold;
+font-family:"OCR-B 10 BT", Arial, Helvetica, sans-serif;
+font-size:18px;
+/*background:url(../images/greenBulitien.png) 10% 80px no-repeat;
+*/line-height:60px;
+overflow:hidden;
+}
+.title4
+{
+width:190px;
+margin:0px;
+padding:70px 0px 0px 0px;
+color:#194b0a;
+font-weight:bold;
+font-family:"OCR-B 10 BT", Arial, Helvetica, sans-serif;
+font-size:18px;
+/*background:url(../images/greenBulitien.png) 10% 60px no-repeat;*/
+line-height:
+overflow:hidden;
+}
+.paidMemberfooter
+{
+	width:100%;
+	height:auto;
+	padding:0px;
+	float:left;
+	margin:0px;
+	float:left;
+}
+.paidMemberfooter .privilege
+{
+font-size:22px;
+margin:0px;
+padding:22px 0px 0px 10px; 
+float:left;
+color:#ffffff;
+font-weight:bold;
+font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+width:250px;
+}
+.paidMemberfooter .relationShip
+{
+padding:5px 0px 0px 50px;
+margin:0px;
+float:left;
+width:320px;
+background:url(../images/orange.gif) 5% 22px no-repeat;
+color:#f1f118;
+font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+line-height:46px;
+}
+.paidMemberfooter .ChooseAssisted
+{
+padding:0px 0px 0px 10px;
+margin:0px;
+float:left;
+width:475px;
+font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+line-height:18px;
+font-size:12px;
+color:#fff;
+font-weight:bold;
+}
+.paidMemberfooter .bynowbtn
+{
+	width:169px;
+	height:39px;
+	padding:0px 0px 0px 110px;
+	margin:0px;
+	float:left;
+}
+.fotterbtn
+{
+	width:100%;
+	height:auto;
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+.fotterbtn ul
+{
+padding:0px 0px 0px 2px; 
+margin:0px;
+list-style:none;
+
+}
+.fotterbtn ul li 
+{
+	font-size:12px;
+	color:#114305;
+	font-family:"Perpetua Titling MT",Arial, Helvetica, sans-serif;
+	float:left;
+	padding:0px 0px 0px 5px;
+	margin:0px;
+	line-height:20px;
+}
+.fotterbtn ul li a 
+{
+	font-size:9px;
+	color:#114305;
+	font-family:"Perpetua Titling MT",Arial, Helvetica, sans-serif;
+	float:left;
+	padding:0px 0px 0px 5px;
+}
+.Iagree
+{
+	width:auto;
+	margin:0px;
+	padding:20px 0px 0px 5px;
+	height:auto;
+	float:left;
+	font-size:12px;
+	color:#fff;
+	font-weight:bold;
+}
+	
+
+

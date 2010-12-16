@@ -114,14 +114,20 @@ function cont200(){
 /*..........for search result.........*/
 function searchlimit(pageurl,limit,pages,srcname){	
 	browser_support();
-	url=url+"?limit="+limit+"&page="+pages+"&searchindex="+srcname;
+	//alert(pageurl);
+	//alert(limit);
+	//alert(pages);
+	//alert(srcname);
+	var url=pageurl+"?limit="+limit+"&page="+pages+"&searchindex="+srcname;
 	url=url+"&sid="+Math.random();
+	//alert(url);
 	xmlHttp.onreadystatechange=searchPage;
 	xmlHttp.open("GET",url,true);
 	xmlHttp.send(null);
 }
 function searchPage(){
 	if (xmlHttp.readyState==4){
+		//alert(xmlHttp.responseText);
 		msg = xmlHttp.responseText;
 		str = msg.split(':###:</div>');
 		document.getElementById('wholedisplay').innerHTML = "";

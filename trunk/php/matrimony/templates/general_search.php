@@ -34,7 +34,7 @@
             <div class="schmenu_rt" ></div>
           </div>
                 <input type="hidden" name="searchindex" id="searchindex" value="generalsrc" />
-                <div class="sch_con" style="height:1150px;"><br>
+                <div class="sch_con" style="height:1200px;"><br>
                   <div class="sch_s_head" ><strong> General Search </strong></div>
                   <br />
                   <div class="search_100" > This is a general search releted to Partner.</div>
@@ -291,17 +291,37 @@
                         </div>
                         <br />
                         <!-- <div class="search_line"> </div>-->
-                        <div class="search_100" style="height:20px;" >
-                          <div style="width:180px; float:left; padding-left:240px;">
-                            <label>
-                              <input name="submit" type="submit"  class="s_btn" style="width:60px; text-align:center" value="Search" />
-                            </label>
+                        <div class="search_width">
+                          <div class="search_48_head" style="width:55%">
+                        <?php if((isset($_SESSION['valid']))&&(isset($_SESSION['ProfileId'])))
+                        {?>
+                           Search Title:
+                           </div>
+                           </div>
+                           <div class="search_100" style="height:20px;" >
+                          <div style="height:30px;">
+                            <input type="text" id="savetitle1" name="savetitle1" value=""/>
+                            <div id="titleerr"></div>
+                            </div>
+                            <br />
+                        	<input name="generalsave" type="submit" class="s_btn" style="text-align:center" value="Save Search" onClick="return titlesave('savetitle1');"/>
+                            
+                        	 <input name="submit" type="submit"  class="s_btn" style="width:60px; text-align:center" value="Search" />
+                        	
+                        <?php }
+                        else{?>
+                        	 <input name="submit" type="submit"  class="s_btn" style="width:60px; text-align:center" value="Search" />
+                        <?php }?>
+                             
+                             
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div></td>
+                
+                 
           <td background="./images/lightbox_right.gif"></td>
         </tr>
         <tr>

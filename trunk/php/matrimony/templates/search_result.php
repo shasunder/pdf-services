@@ -40,19 +40,20 @@
 <? } else { ?>	<div style="height:15px;"> </div>		
 <div class="sch_b_arrow"><?	if ($commonsearch->prev_page >= 1) { ?>
 <div style='float:left;'>
-	<a><img src="images/l_arrow.jpg" style="border:0px;cursor:pointer;" onClick="searchlimit('<?= $commonsearch->pagename?>','<?= $commonsearch->limit?>','<?= $commonsearch->prev_page?>','<?=$_REQUEST['searchindex']?>');"/> </a>
+	<a><img src="images/l_arrow.jpg" style="border:0px;cursor:pointer;" onClick="searchlimit('<?= $commonsearch->pagename?>','<?= $commonsearch->limit?>','<?= $commonsearch->prev_page?>','<?php if($_REQUEST['searchindex'] != ""){echo $_REQUEST['searchindex'];}else{echo $_REQUEST['stype1']; }?>');"/> </a>
 </div> <? } else {
 echo ("<div style='float:left; padding-bottom:0px;border:0px solid blue;'>
-							<img src='images/l_arrow_url.gif' style='border:0px;cursor:pointer;'/></div>");}
+						<img src='images/l_arrow_url.gif' style='border:0px;cursor:pointer;'/></div>");}
 echo "<div style='float:left;padding-left:10px;padding-right:10px;'>".$commonsearch->pageval." - ".$commonsearch->endval." of ".$commonsearch->totalval."</div>";					
 if ($commonsearch->endval >= ($commonsearch->total_items)) {
 echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:0px;cursor:pointer;'/></div>");} else { ?>
 <div style="float:left;">
-	<a href="javascript:void(0)"><img src="images/r_arrow.jpg"  style="border:0px;cursor:pointer;" onClick="searchlimit('<?= $commonsearch->pagename?>','<?= $commonsearch->limit?>','<?= $commonsearch->next_page?>','<?=$_REQUEST['searchindex']?>');"/></a>
+	<a href="javascript:void(0)"><img src="images/r_arrow.jpg"  style="border:0px;cursor:pointer;" onClick="searchlimit('<?= $commonsearch->pagename?>','<?= $commonsearch->limit?>','<?= $commonsearch->next_page?>','<?php if($_REQUEST['searchindex'] != ""){echo $_REQUEST['searchindex'];}else{echo $_REQUEST['stype1']; }?>');"/></a>
 </div><? } ?>
 </div><br />
 <div class="sch_s_v">
-	<div class="sch_select_all"><input name="chkall[]" id="chkall" type="checkbox" value="" />  Select All </div> 
+	<div class="sch_select_all">
+	<input name="chkall[]" id="chkall" type="checkbox" value="" />  Select All </div> 
 	<div class="sch_view"> Forward </div>
 </div>
 <div class="sch_border"> </div>
@@ -92,7 +93,9 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 			| <?= $commonsearch->page_val[$j][Star];?>:  <?= $commonsearch->page_val[$j][Raasi];?> 
 			| <?= $commonsearch->page_val[$j][City];?>, <?= $commonsearch->page_val[$j][State];?>, <?= $commonsearch->page_val[$j][ResidingCountry];?> 
 			| <?= $commonsearch->page_val[$j][EducationQual];?> | <?= $commonsearch->page_val[$j][EducationSpecialization];?> <br /></span>
-			<? if($_SESSION['valid']=='loginvalid'){?> <a href="myProfile.php?page=view&pid=<?= $commonsearch->page_val[$j][ProfileId];?>" target="_blank" style="text-decoration:none;"><span class="red">Full Profile >></span></a><? } ?>
+			<? if($_SESSION['valid']=='loginvalid'){?> 
+			<?php if($vprofile < $pcount ){?>
+			<a style="cursor:pointer" onClick="profilecount('view','<?= $commonsearch->page_val[$j][ProfileId];?>');");><span class="red">Full Profile >></span></a><? } } ?>
 		</div>
 	</div><? if($commonsearch->imgnum != 0){ ?>
 	<div  style="height:20px; width:80px; padding-left:23px;">
@@ -109,7 +112,8 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 	if($commonsearch->msgnum>0){ ?>
 		<input name="button"  type="button" class="s_btn" style="text-decoration:none;cursor:pointer;" onClick="document.getElementById('fade').style.display='block';msg_light('./ajax/message_class.php','<?= $_SESSION['ProfileId']?>','Reply','N','<?= $commonsearch->page_val[$j][ProfileId];?>','message','');" value="Sent Message" />
 	<? } ?>
-		<input name="button"  type="button" class="s_btn" style="text-decoration:none;cursor:pointer;" onClick="document.getElementById('fade').style.display='block';msg_light('./ajax/search_express.php','<?= $_SESSION['ProfileId']?>','','','<?= $commonsearch->page_val[$j][ProfileId];?>','','express');" value="Expres Interest" />
+		<input name="button"  type="button" class="s_btn" style="text-decoration:none;cursor:pointer;" onClick="document.getElementById('fade').style.display='block';msg_light('./ajax/search_express.php','<?= $_SESSION['ProfileId']?>','','','<?= $commonsearch->page_val[$j][ProfileId];?>','','express');" value="Express Interest" />
+      <!--    <input name="button"  type="button" class="s_btn" style="text-decoration:none;cursor:pointer;" onclick="profilesave('<?= $_SESSION['ProfileId']?>','<?= $commonsearch->page_val[$j][ProfileId];?>')" value="saveProfile" />  -->
 	</div>
 	<? } ?>
 	</div>
