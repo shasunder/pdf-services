@@ -1,7 +1,32 @@
 <table width="800" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
   <tr>
-    <td><div style="width:800px; height:122px;"><img src="images/banner.gif" /></div>
+    <td>
+    <br/>
+    <div style="padding-left:10px;float:left; "><img src="images/banner.jpg" /></div>
 
+<div style="width:375px; height:inherit; float:right; padding:5px; margin-left:7px;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="left" valign="middle"> <h2>Welcome!</h2><!-- img src="images/txt_welcome.gif" width="199" height="11" /--></td>
+    </tr>
+    <!-- tr>
+      <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
+    </tr -->
+    <tr>
+      <td bgcolor="#f7fbe3" style="padding:8px;"><p> We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province. </p>
+	  <p>Our history goes back to some 2000 years and is as colourful as the costumes our women wear.</p>
+	  <p>There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community.
+But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.</p> 
+<p>This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates </p>
+<p>
+We aim to provide service at a very affordable price <strong>(starting at Rs.500 only)</strong>.
+We would be glad to hear from you!</p>
+<br/><br/>
+</td>
+    </tr>
+  </table>
+  <br/>
+</div>
 
 <br />
 <div style="width:785px; margin:auto; background-color:#FFFFFF;  height:250px; padding:0px 0px 10px 0px; ">
@@ -108,29 +133,7 @@
     <td><img src="images/reg_b_r.gif" width="13" height="16" /></td>
   </tr>
 </table> </div>
-<div style="width:375px; height:inherit; float:left; padding:5px; margin-left:7px;">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td align="left" valign="middle"> <h2>Welcome!</h2><!-- img src="images/txt_welcome.gif" width="199" height="11" /--></td>
-    </tr>
-    <!-- tr>
-      <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
-    </tr -->
-    <tr>
-      <td bgcolor="#f7fbe3" style="padding:8px;"><p> We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province. </p>
-	  <p>Our history goes back to some 2000 years and is as colourful as the costumes our women wear.</p>
-	  <p>There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community.
-But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.</p> 
-<p>This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates </p>
-<p>
-We aim to provide service at a very affordable price <strong>(starting at Rs.500 only)</strong>.
-We would be glad to hear from you!</p>
-<br/><br/>
-</td>
-    </tr>
-  </table>
-  <br/>
-</div>
+
 
 </div><br />
 
