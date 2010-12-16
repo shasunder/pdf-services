@@ -119,12 +119,13 @@ function MM_jumpMenu(targ,selObj,restore)
   <tr>
     <td colspan="2" >
 <div class="homebutton22" >
+
 <ul>
 	<li></li>
-	<li <? if($fname=='index'){ ?> class="current" <? } ?>><a href="./"><span>Home</span></a></li>
-	<li <? if($fname=='aboutus'){ ?> class="current" <? } ?>><a href="aboutus.php"><span>About Us</span></a></li>
+	<li <? if($fname=='index'){ ?> class="current" <? } ?>><h1><a href="./"><span>Home</span></a></h1></li>
+	<!-- li <? if($fname=='aboutus'){ ?> class="current" <? } ?>><a href="aboutus.php"><span>About Us</span></a></li -->
 	<? if(!$_SESSION['valid']=='loginvalid'){ ?> 
-		<li <? if($fname=='register'){ ?> class="current" <? } ?>><a href="register.php"><span>Register</span></a></li>
+		<!--li <? if($fname=='register'){ ?> class="current" <? } ?>><a href="register.php"><span>Register</span></a></li -->
 	<? } ?>
 	<li <? if($fname=='search'){ ?> class="current" <? } ?>><a href="search.php"><span>Search</span></a></li>
 	<? if($_SESSION['valid']=='loginvalid'){ ?> 

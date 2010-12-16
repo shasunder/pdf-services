@@ -77,7 +77,7 @@ class commonCls {
 	}
 	function getHeaderPage(){
 		$this->title="Matrimonials, Matrimonial, Indian Bride &amp; Groom, Marriage - Bride&amp;Groom.com";
-		$this->keywords="Matrimonial, Matrimony, Indian Matrimonial - India Matrimonials";
+		$this->keywords="Matrimonial, Matrimony, Indian Matrimonial - India Matrimonials , Banjara Matrimonial, Banjara Matrimonials, Banjara Matrimony, Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Agnivanshi Rajputs, and are also known as Banjari, Pindari, Bangala, Banjori, Banjuri, Brinjari, Lamani, Lamadi, Lambani, Labhani, Lambara, Lavani, Lemadi, Lumadale, Labhani Muka, Goola, Gurmarti, Gormati, Kora, Sugali, Sukali, Tanda, Vanjari, Vanzara,and Wanji.";
 		$this->desc="Matrimonials - Indian Matrimonial - Marriage -Bride &amp; Groom, The No.1 Matrimonial Services Provider. Add your Free Matrimonial Profile Now! and Contact Partners for FREE!";
 	}
 
