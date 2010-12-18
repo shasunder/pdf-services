@@ -1,2 +1,26 @@
 /* Custom overrides */
 .header_submenu {background-image:none;}
+.banner-text {
+height:320px;
+padding:0 33px;
+position:absolute;
+right:250px;
+top:196px;
+}
+.regbutton {
+background:url("../images/register.jpg") no-repeat scroll 0 0 transparent;
+color:#FFFFFF;
+display:block;
+font:bold 15px "Arial",Helvetica,Tahoma;
+height:16px;
+padding:7px;
+width:130px;
+}
+
+a {
+text-decoration:none;
+}
+
+.box{
+	background-color:#FAF9F8
+}
