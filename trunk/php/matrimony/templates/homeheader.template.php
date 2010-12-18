@@ -47,11 +47,22 @@ include("common/common.class.php");
 
 <body <? if($fname=='index' && !$_SESSION['valid']){ ?>onload="FillReligion('ddlReligion');"<? } ?> >
 <div class="page">
-		
+		<div id="fade" class="matri_overlayout" style="border:0px;display:'none';z-index:1000;width:1200px"></div>
+		<!-- Light Box for search starts -->
+		<div id="light"></div>
+    	<div style="width:100%;position:absolute;z-index:9000;left:0px;display:'none'" align="center" id="over_divmsg">
+			<div id="inner_msg" align="left" style="display:none;"></div>
+		</div>
+		<!-- Light Box for search  Ends here   -->
+		<!-- Light Box for forget Password starts -->
+		<div style="width:100%;position:absolute;z-index:200000;left:0px" align="center" id="alignpwd">
+		<div style="width:800px;position:relative" ><div id="cpass" align="left" style="display:none;z-index:100000000"></div></div></div>
+		<!-- Light Box for forget Password  Ends here   -->
+					
 
 
 <!-- div class="header_top"> </div -->
-<div style="width:100%;">
+<div>
 	<div style="float:left">
 		<img src="images/logo.gif"/>
 	</div>
@@ -120,7 +131,7 @@ include("common/common.class.php");
                     <li <? if($fname=='managephoto'){ ?> class="current" <? } ?>><a href="managephoto.php"><span>Manage Photo</span></a></li>
                     <? } ?>
 
-                    <li <? if($fname=='services'){ ?> class="current" <? } ?>><a href="services.php"><span>Services</span></a></li>
+                    <!-- li <? if($fname=='services'){ ?> class="current" <? } ?>><a href="services.php"><span>Services</span></a></li -->
 
                     <li <? if($fname=='paidmembership'){ ?> class="current" <? } ?>><a href="paidmembership.php"><span>Upgrade</span></a></li>
                   </ul>
