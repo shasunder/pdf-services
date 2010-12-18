@@ -1,26 +1,102 @@
 /* Custom overrides */
-.header_submenu {background-image:none;}
-.banner-text {
-height:320px;
-padding:0 33px;
-position:absolute;
-right:250px;
-top:196px;
+h1 {
+	font-size: 21px;
 }
+div{
+/*	border: 2px solid green;*/
+}
+#Layer1 {
+	position: absolute;
+	left: 369px;
+	top: 146px;
+	width: 338px;
+	height: 23px;
+	z-index: 1;
+}
+
+.style1 {
+	color: #CCCCCC
+}
+
+.style3 {
+	color: #990000
+}
+
+.style1 {
+	color: #418181;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.header_submenu {
+	background-image: none;
+}
+
+.banner-text {
+	height: 320px;
+	padding: 0 33px;
+	position: absolute;
+	right: 250px;
+	top: 196px;
+}
+
 .regbutton {
-background:url("../images/register.jpg") no-repeat scroll 0 0 transparent;
-color:#FFFFFF;
-display:block;
-font:bold 15px "Arial",Helvetica,Tahoma;
-height:16px;
-padding:7px;
-width:130px;
+	background: url("../images/register.jpg") no-repeat scroll 0 0
+		transparent;
+	color: #FFFFFF;
+	display: block;
+	font: bold 15px "Arial", Helvetica, Tahoma;
+	height: 16px;
+	padding: 7px;
+	width: 130px;
+}
+
+.button {
+	background: none repeat scroll 0 0 #F26A26;
+	border: 0 none;
+	color: #FFFFFF;
+	cursor: pointer;
+	font: bold 12px "Arial", Helvetica, Tahoma;
+	overflow: visible;
+	padding: 3px;
+}
+
+.loginButton {
+	background: none repeat scroll 0 0 #F26A26;
+	border: 0 none;
+	color: #FFFFFF;
+	cursor: pointer;
+	font: bold 12px "Arial", Helvetica, Tahoma;
+	overflow: visible;
+	padding: 3px;
 }
 
 a {
-text-decoration:none;
+	text-decoration: none;
 }
 
-.box{
-	background-color:#FAF9F8
+.mainBox {
+	border-top: 1px solid #f8ca9e;
+	width: 98%;
+}
+
+.box {
+	border: 1px solid #f8ca9e;
+}
+.box-border {
+	border: 2px solid #f8ca9e;
+}
+.orangeBox {
+	border: 0px solid #f8983b;
+	background-color: #f8b653;
+}
+.search-box {
+	border: 0px solid #f8983b;
+	background:none repeat scroll 0 0 #91312C;
+	color:#FFFFFF;
+	
+}
+.homebutton22 {
+	border-bottom: 0px solid #f8b352;
 }
