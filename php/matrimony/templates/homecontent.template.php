@@ -32,7 +32,7 @@
 			                           &nbsp; between   
 			                      	   <input type="text" name="txtagefrm" id="txtagefrm" value="18" maxlength="2" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/> 
 			                      	   To <input type="text" name="txtageto" id="txtageto" maxlength="2" value="40" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/>
-			                            <input type="hidden" name="ddlReligion" value="Hindu"/> 
+			                            <input type="hidden" name="ddlReligion" id="ddlReligion" value="Hindu"/> 
 			                        	<input type="hidden" name="ddlCommunity" value="Lambani"/> 
 			                          
 			                      	</td>
@@ -172,14 +172,7 @@
           </table>
           </div>
           </div -->
-          <? $browser = get_browser(); if($browser->browser!="IE"){ ?> 
-
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td colspan="3" align="center" height="2px">&nbsp;</td>
-            </tr>
-          </table>
-          <? } ?>
+         
           <!-- div style="width:800px; height: inherit;">
            <table width="97%" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -212,6 +205,3 @@
         </td>
       </tr>
     </table>
-<script type="text/javascript">
-initImageGallery('imageSlideshowHolder2');
-</script>

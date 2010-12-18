@@ -1,7 +1,5 @@
 <div id="headend" style="display:none;">:###:</div>
 <br />
-<br />
-<br />
 
 	<div class="page">
 		<div class="fr_fullpage">
@@ -22,6 +20,8 @@
 			</div>
 		</div>
 	</div>
+	</div>
+
 </div>
 
 </body>
