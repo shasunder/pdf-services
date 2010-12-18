@@ -86,7 +86,7 @@ body {
 .sch_con {
 	width: 565px;
 	height: inherit;
-	border: 1px solid #126569;
+	border: 1px solid #f8ca9e;
 	background-color: #ffffff;
 }
 
@@ -326,7 +326,7 @@ body {
 	color: #ab0606;
 	margin-left: 10px;
 	margin-right: 10px;
-	border-bottom: 1px dotted #ab0606;
+	border-bottom: 1px dotted #AB0606;
 }
 
 .search_width {
@@ -622,8 +622,8 @@ body {
 	color: #990000;
 	height: 18px;
 	padding-left: 8px;
-	background-color: #dae9ea;
-	border: 1px solid #a4d5d5;
+	background-color: #f8ca9e;
+	border: 1px solid #f8ca9e;
 }
 
 .multi_box_text {
@@ -659,21 +659,13 @@ body {
 
 /*  Search FROM BUTTON*/
 .s_btn {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	font-weight: bold;
-	color: #fff;
-	background-image: url(../images/btn_regi.gif);
-	background-repeat: repeat-x;
-	padding-left: 5px;
-	padding-right: 5px;
-	border: 0.5px solid #0c777c;
-	height: 20px;
-	padding-top: 1px;
-	width: auto;
-	text-align: center;
-	overflow: visible;
-	cursor: pointer;
+	background:none repeat scroll 0 0 #da273c;
+	border:0 none;
+	color:#FFFFFF;
+	cursor:pointer;
+	font:bold 11px "Arial",Helvetica,Tahoma;
+	overflow:visible;
+	padding:1px;
 }
 
 /*--for forget pass--*/

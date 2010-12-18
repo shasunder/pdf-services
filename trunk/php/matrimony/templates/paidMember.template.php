@@ -5,32 +5,34 @@ ob_start();
 include("common/config.inc.php");
 include_once("common/function.php");
 $qry="SELECT Id,Type,Month,Profiles,Amount,Paypal  from tm_membership ";
-		
-				$Result= mysql_query($qry);
-	$ResultCount=mysql_num_rows($Result);
 	
-	
-	$qry1="SELECT distinct(Type) FROM tm_membership ";
-	$Result1= mysql_query($qry1);
-	
-	$qry2="SELECT distinct(Month) FROM tm_membership ";
-	$Result2= mysql_query($qry2);
-	?>
+$Result= mysql_query($qry);
+$ResultCount=mysql_num_rows($Result);
+
+
+$qry1="SELECT distinct(Type) FROM tm_membership ";
+$Result1= mysql_query($qry1);
+
+$qry2="SELECT distinct(Month) FROM tm_membership ";
+$Result2= mysql_query($qry2);
+?>
 	
 		
     <div class="paidMember">
     <!--header-->
     	<div class="header">
         	<div class="membershipBtn">
-        	<a href="#"><img src="images/membershipbtn.gif" border="0"/></a></div>
+        		<!--  a href="#"><img src="images/membershipbtn.gif" border="0"/></a-->
+        	</div>
             <div class="matrimonyBanner">
             	<div class="left">
-            	<h1>Why You Required Paid Membership ?</h1>
+            	<h1>Why Paid Membership ?</h1>
                 	<ul>
                     	<li>Top Ranking Display</li>
                         <li>See Contact Information</li>
                         <li>Highlighted Display</li>
                         <li>Send Personalized Messages</li>
+                        <li>Advanced search and save</li>
                     </ul>
                 </div>
                 <div class="right">
@@ -131,7 +133,7 @@ $qry="SELECT Id,Type,Month,Profiles,Amount,Paypal  from tm_membership ";
        
         </div>
         
-       
+     <!--  footer membership message -->  
     <div class="fotterbtn">
     	<ul>
         	<li><a href="#">Send & receive e-mails</a></li>
@@ -149,7 +151,7 @@ $qry="SELECT Id,Type,Month,Profiles,Amount,Paypal  from tm_membership ";
     
     
     </div>
-     </div>
+</div>
     
     
 

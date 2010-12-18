@@ -2,7 +2,7 @@
 <script type="text/javascript" src="ajax/admin_ajaxjs.js">
     </script>
 <form name="profileidsearch" action="search.php" method="post">
-<br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
+<br /><table width="809" border="0" cellpadding="0" cellspacing="0"  align="center">
 <tr>
 <td width="622" valign="top"> 
 <table width="180" border="0" cellspacing="0" cellpadding="0">
@@ -90,8 +90,8 @@ else
 </table>
 </td>
 <td width="241" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
-<?php //include("advertisement/add_right.php");  ?>
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
+<?php include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>
 </td>

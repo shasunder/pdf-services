@@ -43,6 +43,10 @@ include("common/common.class.php");
 	<script language="javascript" type="text/javascript" src="./js/calender/Calendar_search.js"></script>	
 	<script language="javascript" type="text/javascript" src="./js/calender/calendar-en_search.js"></script>		
 	<script language="javascript" type="text/javascript" src="./js/calender/calendar-setup.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery/jquery-1.2.3.pack.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery/plugins/jquery.form.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/jquery/jquery-custom.js"></script>
+	
 </head>
 
 <body <? if($fname=='index' && !$_SESSION['valid']){ ?>onload="FillReligion('ddlReligion');"<? } ?> >
@@ -83,10 +87,8 @@ include("common/common.class.php");
                         <table>
                           <tr>
                             <td width="77" align="left" valign="middle">
-                            <label>
 	                            <input type="text" value='ID/Email'  size="25" name="matrimonyid" id="matrimonyid" 
 	                            onblur="if(this.value == ''){ this.value = 'ID/Email';}" onfocus="if (this.value == 'ID/Email') {this.value = '';}" onclick="if (this.value == 'ID/Email') { this.value = ''; }"/>
-                            </label> 
                             </td>
 
                             <td width="81" align="center" valign="middle">
@@ -100,7 +102,9 @@ include("common/common.class.php");
 						 </tr>
 						 <tr>
                             <td colspan="3" width="125" align="right" class="headerforgetpswd">
-                            <a href="javascript:void(0)" onclick="document.getElementById('fade').style.display='block';showmain('1');" style="text-decoration:none;" class="headerforgetpswd">Forgot Password ?</a></td>
+                            <a href="<? if($fname=='index'){ ?>javascript:toggleRegistration(); <? } else {?> register.php<? } ?>" style="text-decoration:none;" class="anchor-text">Sign up</a>&nbsp;
+                            <a href="javascript:void(0)" onclick="document.getElementById('fade').style.display='block';showmain('1');" style="text-decoration:none;" class="headerforgetpswd">Forgot Password ?</a>
+                            </td>
                             <? }?>
                           </tr>
                         </table>
@@ -114,7 +118,7 @@ include("common/common.class.php");
 		 <div class="homebutton22">
                   <ul>
                     <li <? if($fname=='index'){ ?> class="current" <? } ?>>
-                      <h1><a href="./"><span>Home</span></a></h1>
+                      <a href="./"><span>Home</span></a>
                     </li>
                     <!-- li <? if($fname=='aboutus'){ ?> class="current" <? } ?>><a href="aboutus.php"><span>About Us</span></a></li -->
                     <? if(!$_SESSION['valid']=='loginvalid'){ ?>

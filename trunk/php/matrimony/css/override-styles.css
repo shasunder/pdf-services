@@ -95,8 +95,20 @@ a {
 	border: 0px solid #f8983b;
 	background:none repeat scroll 0 0 #91312C;
 	color:#FFFFFF;
-	
+}
+
+.register-box {
+	border: 1px solid #f8983b;
+	background:none repeat scroll 0 0 #91312C;
+	color:#FFFFFF;
 }
 .homebutton22 {
 	border-bottom: 0px solid #f8b352;
+}
+
+.anchor-text {
+	color:#EC3248;
+}
+label{
+	color:#EC3248;
 }
