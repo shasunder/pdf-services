@@ -1,6 +1,6 @@
 <body onLoad="FillEducation('ddleducategory');FillReligion('ddlReligion');FillFeet('ddlheightfrm');FillFeet('ddlheightto');timedCount();">
 <form name="search" action="<?= $_SERVER['PHP_SELF']?>" method="post">
-<br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
+<br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
 <td width="622" valign="top"> 
       <table width="616" border="0"  cellspacing="0" cellpadding="0">
@@ -253,7 +253,7 @@
                         </div>
                       </div>
                       <div style="height:188px;  border:0px solid #999999; float:left; margin-top:12px;">
-                        <div class="sch_s_head" style="height:20px; margin:0px; padding:3px 0 0 10px; background:#05B2BD; color:#FFFFFF" ><strong> Show Result </strong>Based On </div>
+                        <div class="sch_s_head" style="height:20px; margin:0px; padding:3px 0 0 10px; background:#f8ca9e; color:#FFFFFF" ><strong> Show Result </strong>Based On </div>
                         <div class="search_width">
                           <div class="search_48_head" style="width:55%">Date Posted </div>
                         </div>
@@ -332,8 +332,8 @@
     </table>
 </td>
 <td width="241" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
-<?php //include("advertisement/add_right.php");  ?>
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
+<?php include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>
 </td>

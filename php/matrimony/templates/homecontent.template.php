@@ -1,24 +1,90 @@
-<div style="float: left;margin:0px;width:100%" class="mainBox">
-	<div style="float: left;">
-	<img src="images/banner.jpg" > 
-		</div>
+<script type="text/javascript">
+	function toggleRegistration(){
+		hideAndShow(["registerForm","mainRegisterText"]);
+	}
 
-	<div style="float: right;margin-top:50px;margin-right:100px">
-	  An exclusive Matrimony<br>Service For The <h1>Banjara Community</h1>
-	      <div>
-		 <b>Not a member?</b><br>
-		 <a class="regbutton txtc" href="register.php">Register FREE</a>
+	function validateRegistration(){
+		if(this.value==''){
+			txt_empty('txtEmail','emailError','Enter your EmailId');
+		}else{
+			email_validation('txtEmail','emailError','Enter your valid EmailId','EmailId','tm_profile');
+		}
+	}
+</script>
+	
+<div style="float: left;margin:0px;width:100%" class="mainBox">
+	<div style="float: left;width:53%;border-right:1px solid #f8ca9e;">
+		<img src="images/banner.jpg" > 
+	</div>
+
+	<div id="mainRegisterText" style="width:46%;float: right;height:250px;border:0px solid;">
+	  <br/><br/><br/><br/>
+	  	<div>
+	  		An exclusive Matrimony<br>Service For The <h1>Banjara Community</h1>
+		 	<b>Not a member?</b><br/>
+			 <a class="regbutton txtc" href="javascript:toggleRegistration()">Register FREE</a>
 	      </div>
 	      <div style="padding-top:10px">
 		      <div style="padding-left:10px;">
 		       <div style="margin-left:150px;margin-top:-20px;position:absolute;"><img src="images/special-offer.gif"/></div> 
-			Upgrade from <b>Rs.500</b> only
+			<a href="paidmembership.php" class="anchor-text">Upgrade</a> from just<b>Rs.500</b> only
 		      </div>
 	      </div>
 	      <br/>
 	      
 	</div>
+
+	   <!-- register -->
+          <div id="registerForm" style="width:46%;float:right;height:290px; display:none; ">
+          	<div class="register-box" style="padding:20px;margin-top:10px;width:70%;height:230px;margin-left:10px;border:1px solid #f8ca9e;">
+          		<a style="float:right;color:#fff" href="javascript:toggleRegistration()">x&nbsp;&nbsp;</a>
+          	 <form name="home_register" method="post" action="register.php">
+                     
+	              <table>
+	                <thead>
+	                 	<tr align="left"> <th colspan="2"><label style="font-size:24px">Sign up</label> <label style="font-size:12px;color:#fff">( Free! ) </label></th></tr>
+	                </thead>
+	                <tr><td>&nbsp;</td></tr>
+					<tr>
+						<td>
+							<input type="text" name="textName" id="textName" style="width: 155px;" maxlength="25" onblur="if(this.value == ''){this.value = 'Name';}" onfocus="if(this.value == 'Name'){this.value = '';}" 
+								   onclick="if(this.value=='Name'){this.value='';}" value="Name">
+						</td>
+					</tr>
+					<tr>
+						<td>
+						 <input type="text" name="age" id="txtagefrm" maxlength="2" style="width: 50px;" onkeyup="return char_val(this,'0123456789');" onblur="if(this.value == ''){this.value = 'Age';}" 
+						 onclick="if(this.value == 'Age'){this.value = '';}" value="Age">
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+	  					  <input name="gender1" type="radio" value="female" id="gender"> Female <input name="gender1" type="radio" value="male" id="gender"> Male
+						</td>
+					</tr>
+					<tr>
+						<td>
+	  					   <input name="txtEmail" id="txtEmail" type="text" style="width: 155px;" value="Email" maxlength="40" onblur="validateRegistration()"onclick="if(this.value == 'Email'){this.value = '';}"> <input name="emailtextfield" type="hidden" id="emailtextfield">
+	                     	<div class="vali_red_email" id="emailError">
+	                        </div>
+	                   </td>
+					</tr>
+	                <tr>
+	                  <td colspan="2">
+	                        <div class="h_search_sub_head1">
+	                          <input type="submit" name="reg_submit" value="Register"  class="button" width="66" height="21" onclick=
+	                          "validateRegistration();if(document.getElementById('emailError').innerHTML!='')return false; else if(document.getElementById('emailError').style.color!='green'){document.getElementById('txtEmail').value=''; return true;}">
+	                        </div>
+	                     
+	                  </td>
 	
+	                </tr>
+	              </table>
+             </form>
+             </div>
+          </div>
+
 	<!-- search -->
 		  <div style="width:100%; float:left;height:40px;padding-top:5px " class="search-box">
 					
@@ -50,7 +116,7 @@
 		             </form>
 		  </div>
 
-
+	<!-- Main content text -->
          <div style="float:left;padding-left:5px;width:99%;margin-top:10px " class="box-border">
                <p>We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province.</p>
 
@@ -66,61 +132,8 @@
           </div>
 </div>
 
-          <br>
-           
-<!-- 
-          <div style="float:left; padding: 0px 50px 10px 0px;">
-           
-
-            <div style="width:50%">
-              <table >
-                <tr>
-                  <td>Register</td>
-                </tr>
-
-                <tr>
-                  <td>
-                    <div class="box">
-                      <form name="home_register" method="post" action="register.php">
-                          Name
-                          <input type="text" name="textName" id="textName" style="width: 155px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;" maxlength="25" onblur="if(this.value == ''){this.value = 'Name';}" onfocus="if(this.value == 'Name'){this.value = '';}" onclick=
-                          "if(this.value=='Name'){this.value='';}">
-
-                        <div class="h_search_sub_head">
-                          Age
-                          <input type="text" name="age" id="txtagefrm" maxlength="2" style="width: 100px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;" onkeyup="return char_val(this,'0123456789');" onblur="if(this.value == ''){this.value = 'Age';}" onfocus=
-                          "if(this.value == 'Age'){this.value = '';}">
-                        </div>
-
-                        <div class="h_search_sub_head">
-                          Gender
-                          <input name="gender1" type="radio" value="female" id="gender"> Female <input name="gender1" type="radio" value="male" id="gender"> Male
-                        </div>
-
-                        <div class="h_search_sub_head">
-                          E-mail
-                          <input name="txtEmail" id="txtEmail" type="text" style="width: 155px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;" value="" maxlength="40" onblur=
-                          "if(this.value==''){txt_empty('txtEmail','emailError','Enter your EmailId');}else{email_validation('txtEmail','emailError','Enter your valid EmailId','EmailId','tm_profile');}"> <input name="emailtextfield" type="hidden" id="emailtextfield">
-                        </div>
-
-                        <div class="vali_red_email" id="emailError">
-                        </div>
-
-                        <div class="h_search_sub_head1">
-                          <input type="submit" name="reg_submit" value="Register"  class="button" width="66" height="21" onclick=
-                          "if(document.getElementById('emailError').innerHTML!='' &amp;&amp; document.getElementById('emailError').style.color!='green'){document.getElementById('txtEmail').value=''}">
-                        </div>
-                      </form>
-                    </div>
-                  </td>
-
-                  <td style="background-image: url(images/reg_r.gif); background-repeat: repeat-y;">
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-           -->
+          <br/>
+  
     <table width="800" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
       <tr>
         <td>
