@@ -2,140 +2,159 @@
   <tr>
     <td>
     <br/>
-    <div style="padding-left:10px;float:left; "><img src="images/banner.jpg" /></div>
+		<div style="padding-left: 10px; float: left;">
+		
+		<img src="images/banner.jpg" />
+		
+		<div class="banner-text">
+		
+			<div class="font17 clr4 paddt10 btxt">An exclusive Matrimony<br>Service For The<h1>Banjara Community</h1></div>
+			
+			<div class="paddtb10"><b>Not a member?</b><br>
+				<a class="regbutton txtc" href="register.php">Register FREE</a></div>
+				<br/>
+				<br/>
+				<br/>
+				
+				<img src="images/special-offer.gif" />
+				<div style="padding-left:100px;margin: -30px;">Upgrade from <b>Rs.500</b> only</div>
+			</div>
+		</div>
 
-<div style="width:375px; height:inherit; float:right; padding:5px; margin-left:7px;">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td align="left" valign="middle"> <h2>Welcome!</h2><!-- img src="images/txt_welcome.gif" width="199" height="11" /--></td>
-    </tr>
-    <!-- tr>
-      <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
-    </tr -->
-    <tr>
-      <td bgcolor="#f7fbe3" style="padding:8px;"><p> We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province. </p>
-	  <p>Our history goes back to some 2000 years and is as colourful as the costumes our women wear.</p>
-	  <p>There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community.
-But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.</p> 
-<p>This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates </p>
-<p>
-We aim to provide service at a very affordable price <strong>(starting at Rs.500 only)</strong>.
-We would be glad to hear from you!</p>
-<br/><br/>
-</td>
-    </tr>
-  </table>
-  <br/>
+
+		<div style="width:375px; height:inherit; float:right; padding:5px; margin-left:7px;">
+		<table width="100%">
+			<tr>
+				<td align="left" valign="middle">
+				<h2>Welcome!</h2>
+				<!-- img src="images/txt_welcome.gif" width="199" height="11" /--></td>
+			</tr>
+			<!-- tr>
+     		 <td style="background-image:url(images/welcome_bottom_line.gif); height:10px; background-repeat:repeat-x;"> </td>
+    		</tr -->
+			<tr>
+				<td bgcolor="#f7fbe3" style="padding: 8px;">
+				<p>We Banjara are basically from the Indian state of Rajasthan,
+				North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh
+				province.</p>
+				<p>Our history goes back to some 2000 years and is as colourful as
+				the costumes our women wear.</p>
+				<p>There are so many doctors,engineers, lecturers, dentists and
+				other professionals in our banjara community. But there are very few
+				affordable lambani community matrimonial on the internet. Most are
+				charging ridiculously high prices for our community members.</p>
+				<p>This is a platform for those searching for their lambani life
+				partners and is dedicated for all lambani /banjara community people
+				who are looking for soul mates</p>
+				<p>We aim to provide service at a very affordable price <strong>(starting
+				at Rs.500 only)</strong>. We would be glad to hear from you!</p>
+				<br />
+				<br />
+				</td>
+			</tr>
+		</table>
+		<br/>
 </div>
 
 <br />
-<div style="width:785px; margin:auto; background-color:#FFFFFF;  height:250px; padding:0px 0px 10px 0px; ">
- <div style="width:196px; height:inherit; float:left;">  <table width="196" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="12"><img src="images/search_t_left.gif" width="19" height="35" /></td>
-    <td width="219" align="left" valign="middle" class="h_search_head" style="background-image: url(images/search_top.gif); background-repeat:repeat-x;"> Search </td>
-    <td width="15"><img src="images/search_t_right.gif" width="13" height="35" /></td>
-  </tr>
-  <tr>
-    <td style="background-image:url(images/search_left.gif); background-repeat:repeat-y;"> </td>
-    <td bgcolor="#FAF9F8" height="220"><br />
-	<form name="homepage" action="search.php?type=gs" method="post" >
-	<div class="h_search_sub_head" >Looking for </div>
-	<div class="h_search_sub_head1">
-	 <input name="gender" type="radio" value="F" id="fgender"  checked="checked" onclick="gen('fgender','txtagefrm','txtageto','18','40');"/>
-	  Female
-	 <input name="gender" type="radio" value="M" id="mgender" onclick="gen('mgender','txtagefrm','txtageto','21','40');"/>
-	  Male </div>
-	  <div class="h_search_sub_head" >Age</div>
-	  <div class="h_search_sub_head1" >
-
-        From
-        <input type="text" name="txtagefrm" id="txtagefrm" value="18"  maxlength="2" style="width:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onkeyup="return char_val(this,'0123456789');"/>
-        To <input type="text" name="txtageto" id="txtageto"  maxlength="2" value="40" style="width:20px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onkeyup="return char_val(this,'0123456789');" /> </div>
-		<div class="gap" >
-        </div>
-		<div class="h_search_sub_head1">
-		<input type="hidden" name="ddlReligion" value="Hindu"/>
-        <!-- select name="ddlReligion" id="ddlReligion" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onchange="FillCommunity('ddlReligion','ddlCommunity');">
-        </select --></div>
-		<div class="gap" >
-        </div>
-		<div class="h_search_sub_head1" >
-		<input type="hidden" name="ddlCommunity" value="Lambani"/>
-        <!-- select name="ddlCommunity" id="ddlCommunity" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;">
-          <option>- Select Caste  -</option>
-        </select --></div>
-		<div class="gap" >
-        </div>
-		<div class="h_search_sub_head1" >
-        <label for="textfield"></label>
-        <input type="checkbox" name="chkphoto" value="Photo" id="chkphoto" />
-        <label for="checkbox"></label>
-        Profiles with Photo
+	<div style="width: 785px; margin: auto; background-color: #FFFFFF; height: 250px; padding: 0px 0px 10px 0px;">
+		<div style="width: 196px; height: inherit; float: left;">
+		<table width="196" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="219" align="left" valign="middle" class="h_search_head" style="">
+				Search</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="box">
+					<br/>
+					<form name="homepage" action="search.php?type=gs" method="post">
+						<div class="h_search_sub_head1">
+							<input name="gender" type="radio" value="F" id="fgender" checked="checked" onclick="gen('fgender','txtagefrm','txtageto','18','40');" />
+							<label for="fgender">Female </label>
+							<input name="gender" type="radio" value="M" id="mgender" onclick="gen('mgender','txtagefrm','txtageto','21','40');" />
+							<label for="mgender">Male</label>
+						</div>
+						<div class="h_search_sub_head1">Age From <input type="text"
+							name="txtagefrm" id="txtagefrm" value="18" maxlength="2"
+							style="width: 20px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;"
+							onkeyup="return char_val(this,'0123456789');" /> To <input
+							type="text" name="txtageto" id="txtageto" maxlength="2" value="40"
+							style="width: 20px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;"
+							onkeyup="return char_val(this,'0123456789');" /></div>
+						<div class="gap"></div>
+						<input type="hidden" name="ddlReligion" value="Hindu" />
+						<input type="hidden" name="ddlCommunity" value="Lambani" /> 
+							<!-- select name="ddlReligion" id="ddlReligion" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;" onchange="FillCommunity('ddlReligion','ddlCommunity');">
+		 					</select -->
+							<!-- select name="ddlCommunity" id="ddlCommunity" style="width:162px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px;">
+			          		<option>- Select Caste  -</option></select -->
+						<div class="h_search_sub_head1"><label for="textfield"></label> <input
+							type="checkbox" name="chkphoto" value="Photo" id="chkphoto" /> <label
+							for="checkbox"></label> Profiles with Photo</div>
+						<div class="gap"></div>
+						<div class="h_search_sub_head1">
+							<input type="image" src="images/btn_search.gif" width="48" height="20" name="submit" value="submit" onclick="return SELECTreligion('ddlReligion','ddlCommunity')" /></div>
+							<input type="hidden" name="searchindex" id="searchindex" value="generalsrc" />
+					</form>
+					</div>
+				</td>
+			</tr>
+		</table>
 		</div>
-		<div class="gap" >
-        </div>
-		<div class="h_search_sub_head1">
-
-		<input type="image" src="images/btn_search.gif" width="48" height="20" name="submit" value="submit" onclick="return SELECTreligion('ddlReligion','ddlCommunity')" /></div>
-<input type="hidden" name="searchindex" id="searchindex" value="generalsrc"/>
-		</form>
-		</td>
-    <td style="background-image:url(images/search_right.gif); background-repeat:repeat-y;"> </td>
-  </tr>
-  <tr>
-    <td><img src="images/search_b_left.gif" width="19" height="16" /></td>
-    <td style="background-image:url(images/search_b.gif); background-repeat:repeat-x;" ></td>
-    <td><img src="images/search_b_right.gif" width="13" height="16" /></td>
-  </tr>
-</table> </div>
-<div style="width:196px; height:inherit; float:left;">  <table width="196" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="19"><img src="images/reg_t_l.gif" width="19" height="35" /></td>
-    <td width="185" align="left" valign="middle" class="h_search_head" style="background-image: url(images/reg_t.gif); background-repeat:repeat-x;"> Register</td>
-    <td width="42"><img src="images/reg_t_r.gif" width="13" height="35" /></td>
-  </tr>
-  <tr>
-    <td style="background-image:url(images/reg_l.gif); background-repeat:repeat-y;"> </td>
-    <td bgcolor="#f8fcfc" height="220"><br />
-<form name="home_register" method="post" action="register.php">
-	<div class="h_search_sub_head" >Name</div>
-	<div class="h_search_sub_head1">
-	  <input type="text" name="textName" id="textName" style="width:155px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; " maxlength="25"  onblur="if(this.value == ''){this.value = 'Name';}" onfocus="if(this.value == 'Name'){this.value = '';}" onclick="if(this.value=='Name'){this.value='';}"/></div>
-	  <div class="h_search_sub_head" >Age</div>
-	  <div class="h_search_sub_head1" >
-	    <input type="text" name="age" id="txtagefrm" maxlength="2" style="width:100px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; " onkeyup="return char_val(this,'0123456789');"onblur="if(this.value == ''){this.value = 'Age';}" onfocus="if(this.value == 'Age'){this.value = '';}"/></div>
-		<div class="h_search_sub_head" >Gender</div>
-		<div class="h_search_sub_head1" >
-	  <input name="gender1" type="radio" value="female" id="gender"  />
-	  Female
-	  <input name="gender1" type="radio" value="male" id="gender" />
-	  Male</div>
-	  <div class="h_search_sub_head" >E-mail</div>
-		<div class="h_search_sub_head1" >
-        <label for="textfield"></label>
-		<input name="txtEmail" id="txtEmail" type="text"  style="width:155px; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:11px; " value=""  maxlength="40" onBlur="if(this.value==''){txt_empty('txtEmail','emailError','Enter your EmailId');}else{email_validation('txtEmail','emailError','Enter your valid EmailId','EmailId','tm_profile');}" />
-		<input name="emailtextfield" type="hidden" id="emailtextfield"  />
-        </div>
-		<div class="vali_red_email" id="emailError"></div>
-		<div class="gap">
-        </div>
-		<div class="h_search_sub_head1">
-
-		<input type="image" name="reg_submit" value="submit" img src="images/btn_register.gif" width="66" height="21" onclick="if(document.getElementById('emailError').innerHTML!='' && document.getElementById('emailError').style.color!='green'){document.getElementById('txtEmail').value=''}" /></div>
-</form>
-		</td>
-    <td style="background-image:url(images/reg_r.gif); background-repeat:repeat-y;"> </td>
-  </tr>
-  <tr>
-    <td><img src="images/reg_b_l.gif" width="19" height="16" /></td>
-    <td style="background-image:url(images/reg_b.gif); background-repeat:repeat-x;" ></td>
-    <td><img src="images/reg_b_r.gif" width="13" height="16" /></td>
-  </tr>
-</table> </div>
+		<div style="width: 196px; height: inherit; float: left;">
+		<table width="196">
+			<tr>
+				<td>Register</td>
+			</tr>
+			<tr>
+				<td>
+				<div class="box">
+				<form name="home_register" method="post" action="register.php">
+				<div class="h_search_sub_head">Name</div>
+				<div class="h_search_sub_head1"><input type="text" name="textName"
+					id="textName"
+					style="width: 155px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;"
+					maxlength="25" onblur="if(this.value == ''){this.value = 'Name';}"
+					onfocus="if(this.value == 'Name'){this.value = '';}"
+					onclick="if(this.value=='Name'){this.value='';}" /></div>
+				<div class="h_search_sub_head">Age</div>
+				<div class="h_search_sub_head1"><input type="text" name="age"
+					id="txtagefrm" maxlength="2"
+					style="width: 100px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;"
+					onkeyup="return char_val(this,'0123456789');"
+					onblur="if(this.value == ''){this.value = 'Age';}"
+					onfocus="if(this.value == 'Age'){this.value = '';}" /></div>
+				<div class="h_search_sub_head">Gender</div>
+				<div class="h_search_sub_head1"><input name="gender1" type="radio"
+					value="female" id="gender" /> Female <input name="gender1"
+					type="radio" value="male" id="gender" /> Male</div>
+				<div class="h_search_sub_head">E-mail</div>
+				<div class="h_search_sub_head1"><label for="textfield"></label> <input
+					name="txtEmail" id="txtEmail" type="text"
+					style="width: 155px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px;"
+					value="" maxlength="40"
+					onBlur="if(this.value==''){txt_empty('txtEmail','emailError','Enter your EmailId');}else{email_validation('txtEmail','emailError','Enter your valid EmailId','EmailId','tm_profile');}" />
+				<input name="emailtextfield" type="hidden" id="emailtextfield" /></div>
+				<div class="vali_red_email" id="emailError"></div>
+				<div class="gap"></div>
+				<div class="h_search_sub_head1"><input type="image"
+					name="reg_submit" value="submit" img src="images/btn_register.gif"
+					width="66" height="21"
+					onclick="if(document.getElementById('emailError').innerHTML!='' && document.getElementById('emailError').style.color!='green'){document.getElementById('txtEmail').value=''}" /></div>
+				</form>
+				</div>
+				</td>
+				<td
+					style="background-image: url(images/reg_r.gif); background-repeat: repeat-y;">
+				</td>
+			</tr>
+		</table>
+		</div>
 
 
-</div><br />
+		</div>
+		<br />
 
 
 <!--div style="width:785px; margin:auto; background-color:#FFFFFF; height:120px; padding:0px 0px 5px 0;">

@@ -19,6 +19,7 @@ include("common/common.class.php");
 <link href="css/register_style.css" rel="stylesheet" type="text/css" />
 <link href="css/addvertise_company.css" rel="stylesheet" type="text/css" />
 <link href="./css/Matrimony_Calendar.css" rel="stylesheet" type="text/css" />
+<link href="css/override-styles.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 <!--
 #Layer1 {
