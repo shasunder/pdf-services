@@ -16,14 +16,9 @@ $Result1= mysql_query($qry1);
 $qry2="SELECT distinct(Month) FROM tm_membership ";
 $Result2= mysql_query($qry2);
 ?>
-	
-		
-    <div class="paidMember">
+    <div class="paidMember" float="left">
     <!--header-->
     	<div class="header">
-        	<div class="membershipBtn">
-        		<!--  a href="#"><img src="images/membershipbtn.gif" border="0"/></a-->
-        	</div>
             <div class="matrimonyBanner">
             	<div class="left">
             	<h1>Why Paid Membership ?</h1>
@@ -44,10 +39,7 @@ $Result2= mysql_query($qry2);
     <div class="middlecontainer">
     	<div class="bg">
        <div class="monthview">
-       	<table width="100%" border="0">
-        <tr>
-    <td class="title">&nbsp;</td>
-  </tr>
+       
              	<table width="100%" border="0">
   <tr><?php 
  $i=0;
@@ -153,6 +145,6 @@ $Result2= mysql_query($qry2);
     </div>
 </div>
     
-    
+    </div>
 
 

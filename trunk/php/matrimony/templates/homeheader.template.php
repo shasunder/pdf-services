@@ -101,9 +101,9 @@ include("common/common.class.php");
                             </td>
 						 </tr>
 						 <tr>
-                            <td colspan="3" width="125" align="right" class="headerforgetpswd">
-                            <a href="<? if($fname=='index'){ ?>javascript:toggleRegistration(); <? } else {?> register.php<? } ?>" style="text-decoration:none;" class="anchor-text">Sign up</a>&nbsp;
-                            <a href="javascript:void(0)" onclick="document.getElementById('fade').style.display='block';showmain('1');" style="text-decoration:none;" class="headerforgetpswd">Forgot Password ?</a>
+                            <td colspan="2" align="right" class="headerforgetpswd" nowrap="nowrap">
+                            	<a href="<? if($fname=='index'){ ?>javascript:toggleRegistration(); <? } else {?> register.php<? } ?>" style="text-decoration:none;" class="anchor-text">Sign up</a>&nbsp;&nbsp;
+                           		<a href="javascript:void(0)" onclick="document.getElementById('fade').style.display='block';showmain('1');" style="text-decoration:none;" class="headerforgetpswd">Forgot Password ?</a>
                             </td>
                             <? }?>
                           </tr>
