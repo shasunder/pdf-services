@@ -2,8 +2,8 @@
 <form name="advancesearch" action="search.php" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
-<td width="622" valign="top"> 
-<table width="558" border="0" cellspacing="0" cellpadding="0">
+<td  valign="top"> 
+<table  border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" height="25px" width="25px" /></span></td>
     <td width="550" background="./images/lightbox_top.gif">&nbsp;</td>

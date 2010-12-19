@@ -118,7 +118,7 @@ $result= "delete from tm_savesearch  WHERE id=".$id;
 </table> 
 </td>
 <td width="241" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <?php //include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>

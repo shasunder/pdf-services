@@ -10,6 +10,8 @@
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
 	<tr>
 <td width="604" valign="top"> 
+<div style="padding-left:50px">
+
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
@@ -25,7 +27,7 @@
 					<div class="schmenu_rt" ></div>
 			</div>
 
-	<div style="border:1px green solid; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
+	<div style="border:1px #F8CA9E solid; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
  
   <div><span class="style2"><strong>Privacy Policy</strong></span><br/>
   </div>
@@ -61,7 +63,7 @@
 	   <p><b>Notice</b><br />We may change this Privacy Policy from time to time based on your comments or as a result of a change of policy in our company. 
       <br/>      
       </p>
-	  <p>If you have any questions regarding our Privacy Statement, please write in to <b>privacy@MarryBanjara.com</b>
+	  <p>If you have any questions regarding our Privacy Statement, please write in to <b>service@marrybanjara.com</b>
 
       <br/>      
       </p>
@@ -81,9 +83,10 @@
     <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
   </tr>
 </table>
+</div>
 </td>
 <td width="205" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <?php //include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>

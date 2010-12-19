@@ -8,13 +8,14 @@
 
 </head>
 <body onLoad="timedCount();">
-<br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
+<br /><table border="0" cellpadding="0" cellspacing="0" >
 <tr>
-<td width="604" valign="top"> 
+<td  valign="top" width="100%"> 
+<div style="padding-left:50px;width:120%">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
-    <td width="550" background="./images/lightbox_top.gif">&nbsp;</td>
+    <td  background="./images/lightbox_top.gif">&nbsp;</td>
     <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" width="25" height="25" /></span></td>
   </tr>
   <tr>
@@ -22,10 +23,10 @@
     <td>
 	<div style=" width:250px; height:26px; " >
     <div style="float:left; width:6px; height:22px;"><img src="./images/fr_left.gif" /> </div>
-    <div style="float:left; width:auto; height:22px; padding-top:4px;background-image:url(./images/fr_center.gif); font-family:Tahoma; font-size:11px; font-weight:bold; color:#fff;">My Matches</div>
+    <div style="float:left; width:auto; height:22px; padding-top:4px;background-image:url(./images/fr_center.gif); font-family:Tahoma; font-size:11px; font-weight:bold; color:#1A4369;">My Matches</div>
     <div style="float:left; width:6px; "><img src="./images/fr_right.gif" /> </div>
   </div>
-<div style="border:1px green solid; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
+<div style="border:1px  solid #f8ca9e; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
 
 
 
@@ -238,9 +239,10 @@ Declined Interests</a></td></tr>
     <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
   </tr>
 </table>
+</div>
 </td>
 <td width="205" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <?php //include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>

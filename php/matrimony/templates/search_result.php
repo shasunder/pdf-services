@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <body onLoad="timedCount();">
 <div class="page" id="wholedisplay">
-<br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
+<br /><table  border="0" cellpadding="0" cellspacing="0"  width="700px">
 <tr>
-<td width="604" valign="top"> 
+<td valign="top"> 
 <form name="editProfile">
 
-<table width="570" border="0" cellspacing="0" cellpadding="0">
+<table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="25"><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" /></span></td>
-<td width="554" background="./images/lightbox_top.gif">&nbsp;</td>
+<td  background="./images/lightbox_top.gif">&nbsp;</td>
 <td width="31"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" /></span></td>
 </tr>
 <tr>
@@ -69,7 +69,11 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 	<div class="prof_full" >
 	<? $commonsearch->image_fetch($commonsearch->page_val[$j][ProfileId],'sr'); if($commonsearch->imgnum != 0){ ?>
 		<div  class="sch_img" id="imgdiv_<?=j;?>" >
-			<a href="imageView.php?pid=<?= $commonsearch->page_val[$j][ProfileId];?>" target="_blank" onClick="window.open(this.href,'newwindow','width=600,height=570,scrollbars=no,resize=0');return false;">
+			<? if($_SESSION['valid']=='loginvalid'){?>
+				<a href="imageView.php?pid=<?= $commonsearch->page_val[$j][ProfileId];?>" target="_blank" onClick="window.open(this.href,'newwindow','width=600,height=570,scrollbars=no,resize=0');return false;">
+			<?  } else {?>
+				<a  href="login.php");>
+			<?php }?>
 			<img src="member_image/<?= $commonsearch->img_data[0][image_thumb]; ?>" width="85" height="87" name="img_<?=$j;?>" style="border:1px solid  #CCCCCC;" onMouseOver="document.getElementById('show<?=$j?>').style.display='';" onMouseOut="document.getElementById('show<?=$j?>').style.display='none';"/></a></div>
 			<input type="hidden" name="txtimgcnt_<?=$j;?>" id="txtimgcnt_<?=$j;?>" value="1" />
 				<div style="position:relative;"> 
@@ -95,7 +99,10 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 			| <?= $commonsearch->page_val[$j][EducationQual];?> | <?= $commonsearch->page_val[$j][EducationSpecialization];?> <br /></span>
 			<? if($_SESSION['valid']=='loginvalid'){?> 
 			<?php if($vprofile < $pcount ){?>
-			<a style="cursor:pointer" onClick="profilecount('view','<?= $commonsearch->page_val[$j][ProfileId];?>');");><span class="red">Full Profile >></span></a><? } } ?>
+				<a style="cursor:pointer" onClick="profilecount('view','<?= $commonsearch->page_val[$j][ProfileId];?>');");><span class="red">Full Profile >></span></a>
+			<? } } else {?>
+			<a style="cursor:pointer" href="login.php");><span class="red">Full Profile >></span></a>
+			<?php }?>
 		</div>
 	</div><? if($commonsearch->imgnum != 0){ ?>
 	<div  style="height:20px; width:80px; padding-left:23px;">
@@ -154,7 +161,7 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 <td width="205" valign="top" height="">
 <div id="headend" style="display:none;">:####:</div>
 <div id="adddiv">
-	<div id="rightadd" style=" position:absolute; top:170px; right:200px; width:230px; z-index:1002; float:left;" > Right Add
+	<div id="rightadd" style=" position:absolute; top:170px; right:200px; width:230px; z-index:1002; float:left;" >
 		<?php //include("advertisement/add_right.php");  ?>
 		<br clear="all"/>
 	</div>

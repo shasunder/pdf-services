@@ -8,9 +8,10 @@
 </head>
 <body onLoad="timedCount();">
 <form name="editProfile">
-<br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
+<br /><table  border="0" cellpadding="0" cellspacing="0" >
 <tr>
-<td width="622" valign="top"> 
+<td valign="top"> 
+<div style="padding-left:50px">
 <table width="600px" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" /></span></td>
@@ -396,9 +397,10 @@ Education Category</div>
     <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
   </tr>
 </table> 
+</div>
 </td>
 <td width="241" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <?php //include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>

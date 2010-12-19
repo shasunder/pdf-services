@@ -37,9 +37,6 @@
                 <div class="sch_con" style="height:1200px;"><br>
                   <div class="sch_s_head" ><strong> General Search </strong></div>
                   <br />
-                  <div class="search_100" > This is a general search releted to Partner.</div>
-                  <div class="sch_b_arrow"></div>
-                  <div class="search_line"> </div>
                   <div style="height:159px;">
                     <div class="search_width">
                       <div class="search_48_head">Looking for </div>
@@ -97,7 +94,8 @@
                       Seperated </div>
                     <div class="search_line"> </div>
                   </div>
-                  <div style="height:50px;">
+                  <input name="ddlReligion" type="hidden" value="Hindu"/>
+                  <!-- div style="height:50px;">
                     <div class="search_width">
                       <div class="search_48_head" style="width:55%">Religion </div>
                       <div class="search_48" style="width:30%"> </div>
@@ -111,9 +109,9 @@
                       </div>
                       <div class="search_48_red"style="width:30%"></div>
                     </div>
-                  </div>
-                  <div style="height:170px;">
-                    <div class="search_width">
+                  </div -->
+                  <div style="">
+                    <!-- div class="search_width">
                       <div class="search_48_head" style="width:55%">Caste/ Division </div>
                     </div>
                     <div class="search_width1" style="height:90px; ">
@@ -131,9 +129,13 @@
                             </select></td>
                           </tr>
                         </table>
-                        <input type="hidden" name="communityhd" id="communityhd" value="" />
                       </div>
-                    </div>
+                    </div -->
+                    
+                     <input type="hidden" name="ddlCommunityout" id="communityhd" value="" />
+                    
+                        <input type="hidden" name="communityhd" id="communityhd" value="" />
+                    
                     <div class="search_width">
                       <div class="search_48_red" style="width:55%"></div>
                       <div class="search_48_red" style="width:30%"></div>
