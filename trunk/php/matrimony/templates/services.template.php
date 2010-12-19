@@ -10,6 +10,7 @@
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
 <tr>
 <td width="604" valign="top"> 
+<div style="padding-left:50px">
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
@@ -25,12 +26,12 @@
 					<div class="schmenu_rt" ></div>
 			</div>
 
-	<div style="border:1px green solid; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
+	<div style="border:1px #F8CA9E solid; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
  
   <div><span class="style2"><strong>Matrimony Services</strong></span><br/>
   </div>
   <div align="justify" >
-    <p>This site provides matrimonial services to Hindu, Muslim, Christian, Sikh, Jain and other religions across all countries. This web interface provides the easiest way to find your life partner. Aspiring brides and grooms can avail this online service. This search is powerful than the matrimonial classifieds. </p>
+    <p>This site provides matrimonial services to various religions across many countries. This web interface provides the easiest way to find your life partner. Aspiring brides and grooms can avail this online service. This search is powerful than the matrimonial classifieds. </p>
     <p>This is one matrimonial website where you can search and view all the profiles without even registering and contact any member instantly with just a registration. Your personal information is very safe as it is not displayed anywhere anytime to anyone. </p>
     <p>This matrimonial services website is free and works on the original theme of the Internet. Post your matrimonial advertisement with photograph for free and see the results within a few days. </p>
     <p>On this matrimonial services website, you can post your profile, search for life partner, use the message box to establish communication, block your photograph, block receiving emails, read various matrimonial related articles, view the useful links information, search the matrimonial services directory and a bunch of other utilities. </p>
@@ -70,9 +71,10 @@ Hence all our projects are exclusively targeted towards the  needy of all kinds,
     <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
   </tr>
 </table>
+</div>
 </td>
 <td width="205" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <?php //include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>

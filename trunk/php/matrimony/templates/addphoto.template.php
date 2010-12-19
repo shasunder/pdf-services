@@ -101,12 +101,14 @@
 </script>
 </head>
 <body onLoad="timedCount();">
-<br /><table width="809" border="0" cellpadding="0" cellspacing="0" >
+<br /><table  border="0" cellpadding="0" cellspacing="0" >
 <tr>
-<td width="622" valign="top"> 
+
+<td  valign="top">
+<div style="padding-left:50px"> 
 	<form name="sample" method="post" action="<?php echo $_SERVER['PHP_SELF']?>" enctype="multipart/form-data"  >
 	
-	<table width="620" border="0" cellspacing="0" cellpadding="0">
+	<table border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 		<td width="25"><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" /></span></td>
 		<td width="544" background="./images/lightbox_top.gif">&nbsp;</td>
@@ -233,9 +235,10 @@
 	  </tr>
 	</table>
 </form>
+</div>
 </td>
 <td width="241" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <?php //include("advertisement/add_right.php");  ?>
 <br clear="all"/>
 </div>

@@ -14,7 +14,7 @@
 <input type="hidden" id="txt2" value="">
 <table width="800" border="0" cellspacing="0" cellpadding="0" align="center">
   <tr>
-    <td><div class="body" style="height: inherit;">
+    <td><div class="body" style="height: inherit;padding-left:50px;">
 <div id="leftadd" ></div>
   <div style="width:600px; float:left; position:relative;"> 
 <table width="600" border="0" cellspacing="0" cellpadding="0">
@@ -273,7 +273,7 @@ Please contact our team for any details. We are just a little way away from you!
 </table>
 </div>
 <div id="rightadd"style="width:187px; float:left; margin-top:8px; ">
-Right Add
+
 <?php //include("advertisement/add_right.php");  ?>
 </div>
 

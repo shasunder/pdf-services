@@ -67,7 +67,7 @@
 </table> 
 </td>
 <td width="241" valign="top">
-<div id="rightadd" style="width:189px; z-index:1002; float:right;" >Right Add
+<div id="rightadd" style="width:189px; z-index:1002; float:right;" >
 <br clear="all"/>
 </div>
 </td>
