@@ -327,6 +327,7 @@ CREATE TABLE `tm_profile` (
   `Adminstatus` enum('A','B') ,
   `visit_id` int(10) unsigned NOT NULL,
   `contrycode` int(10) unsigned ,
+  `register_stage` text,
   PRIMARY KEY  USING BTREE (`tm_autoid`),
   KEY `unique` (`ProfileId`,`tmid_count`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
@@ -360,7 +361,7 @@ DROP PROCEDURE IF EXISTS `Insert_Family`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
-CREATE DEFINER=`marryban_test`@`localhost` PROCEDURE `Insert_Family`(
+CREATE PROCEDURE `Insert_Family`(
   `ValProfileId` VARCHAR(40),
   `ValFamilyvalue` VARCHAR(15),
   `ValFamilytype` VARCHAR(15),
@@ -402,7 +403,7 @@ DROP PROCEDURE IF EXISTS `Insert_PartnerPreference`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
-CREATE DEFINER=`marryban_test`@`localhost` PROCEDURE `Insert_PartnerPreference`(
+CREATE PROCEDURE `Insert_PartnerPreference`(
 
 
   ValProfileId varchar(40) ,
@@ -470,7 +471,7 @@ DROP PROCEDURE IF EXISTS `Insert_Profile`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
-CREATE DEFINER=`marryban_test`@`localhost` PROCEDURE `Insert_Profile`(
+CREATE PROCEDURE `Insert_Profile`(
   `ValLoginId` varchar(40),
   `ValEmailId` varchar(40),
   `ValPassword` varchar(60),
@@ -611,7 +612,7 @@ DROP PROCEDURE IF EXISTS `Insert_Profile2`;
 DELIMITER $$
 
 /*!50003 SET @TEMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER' */ $$
-CREATE DEFINER=`marryban_test`@`localhost` PROCEDURE `Insert_Profile2`(
+CREATE PROCEDURE `Insert_Profile2`(
 
 
   `ValProfileId` varchar(40) ,
