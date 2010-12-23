@@ -3,6 +3,7 @@ ob_start();
 session_start();
 $fname=basename($_SERVER['PHP_SELF'],".php"); 
 include("common/common.class.php");
+//echo print_r($_SESSION);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -20,6 +21,7 @@ include("common/common.class.php");
     <link href="./css/Matrimony_Calendar.css" rel="stylesheet" type="text/css" />
     <link href="css/override-styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/image-slideshow-4.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles-layouts.css" />
 
 	<script type="text/javascript" src="js/image-slideshow-4.js"></script>
 	<script type="text/JavaScript">
@@ -50,7 +52,7 @@ include("common/common.class.php");
 </head>
 
 <body <? if($fname=='index' && !$_SESSION['valid']){ ?>onload="FillReligion('ddlReligion');"<? } ?> >
-<div class="page">
+<div class="page_main">
 		<div id="fade" class="matri_overlayout" style="border:0px;display:'none';z-index:1000;width:1200px"></div>
 		<!-- Light Box for search starts -->
 		<div id="light"></div>
@@ -72,7 +74,7 @@ include("common/common.class.php");
 	</div>
 	<!-- login -->
 	<div style="float:right;margin:5px;padding:1px;" >
-			<table width="330" height="23" border="0" cellpadding="0" cellspacing="0">
+			<table width="330" border="0" cellpadding="0" cellspacing="0">
                   <tr>
                     <? if($_SESSION['valid']=='loginvalid'){ ?>
 
@@ -87,7 +89,7 @@ include("common/common.class.php");
                         <table>
                           <tr>
                             <td width="77" align="left" valign="middle">
-	                            <input type="text" value='ID/Email'  size="25" name="matrimonyid" id="matrimonyid" 
+	                            <input type="text" value='Email'  size="25" name="matrimonyid" id="matrimonyid" 
 	                            onblur="if(this.value == ''){ this.value = 'ID/Email';}" onfocus="if (this.value == 'ID/Email') {this.value = '';}" onclick="if (this.value == 'ID/Email') { this.value = ''; }"/>
                             </td>
 
@@ -102,7 +104,7 @@ include("common/common.class.php");
 						 </tr>
 						 <tr>
                             <td colspan="2" align="right" class="headerforgetpswd" nowrap="nowrap">
-                            	<a href="<? if($fname=='index'){ ?>javascript:toggleRegistration(); <? } else {?> register.php<? } ?>" style="text-decoration:none;" class="anchor-text">Sign up</a>&nbsp;&nbsp;
+                            	<a href="register.php" style="text-decoration:none;" class="anchor-text">Sign up</a>&nbsp;&nbsp;
                            		<a href="javascript:void(0)" onclick="document.getElementById('fade').style.display='block';showmain('1');" style="text-decoration:none;" class="headerforgetpswd">Forgot Password ?</a>
                             </td>
                             <? }?>
@@ -152,4 +154,3 @@ include("common/common.class.php");
 } ?>
 			<div class="ht_top_content"><a href="?lng=Assameme" style="text-decoration:none; color:black;"> Assameme </a>|<a href="?lng=Bengali" style="text-decoration:none; color:black;"> Bengali </a>|<a href="?lng=Gujarati" style="text-decoration:none; color:black;"> Gujarati </a>|<a href="?lng=Hindi" style="text-decoration:none; color:black;"> Hindi </a>|<a href="?lng=Kannada" style="text-decoration:none; color:black;"> Kannada </a>|<a href="?lng=Malayalee" style="text-decoration:none; color:black;"> Malayalee </a>|<a href="?lng=Marathi" style="text-decoration:none; color:black;"> Marathi </a>|<a href="?lng=Marwadi" style="text-decoration:none; color:black;"> Marwadi </a>|<a href="?lng=oriya" style="text-decoration:none; color:black;"> oriya </a>|<a href="?lng=Parsi" style="text-decoration:none; color:black;"> Parsi </a>|<a href="?lng=Punjabi" style="text-decoration:none; color:black;"> Punjabi </a>|<a href="?lng=Sindhi" style="text-decoration:none; color:black;"> Sindhi </a>|<a href="?lng=Tamil" style="text-decoration:none; color:black;"> Tamil </a>|<a href="?lng=Telugu" style="text-decoration:none; color:black;"> Telugu </a>|<a href="?lng=Urdu" style="text-decoration:none; color:black;"> Urdu </a></div>
 </div -->
-<div id="headend" style="display:none;">:###:</div>

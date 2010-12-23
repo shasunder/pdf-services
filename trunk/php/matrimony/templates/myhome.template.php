@@ -14,18 +14,8 @@
 <div style="padding-left:50px;width:120%">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
-    <td  background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" width="25" height="25" /></span></td>
-  </tr>
-  <tr>
-    <td background="./images/lightbox_left.gif"></td>
     <td>
-	<div style=" width:250px; height:26px; " >
-    <div style="float:left; width:6px; height:22px;"><img src="./images/fr_left.gif" /> </div>
-    <div style="float:left; width:auto; height:22px; padding-top:4px;background-image:url(./images/fr_center.gif); font-family:Tahoma; font-size:11px; font-weight:bold; color:#1A4369;">My Matches</div>
-    <div style="float:left; width:6px; "><img src="./images/fr_right.gif" /> </div>
-  </div>
+
 <div style="border:1px  solid #f8ca9e; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
 
 
@@ -231,12 +221,6 @@ Declined Interests</a></td></tr>
 	
 	
 </td>
-    <td background="./images/lightbox_right.gif">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-    <td background="./images/lightbox_bottom.gif">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
   </tr>
 </table>
 </div>

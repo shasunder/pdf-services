@@ -38,14 +38,15 @@ body {
 	padding-right:30px;
 }
 
-.page {
+.page_main {
 	width: 70%;
-	height: inherit;
-	background-color: #ffffff;
+	height:1200px;
+	background: url("../images/body_bg.gif") repeat-y scroll center center transparent;
 	margin: auto;
 	border: 0px solid #b1cd96;
-	font-size: 11px;
 	color: #333333;
+	float:center;
+	font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
 }
 
 .page_left {
@@ -1384,9 +1385,3 @@ body {
 	width: inherit;
 	height: 10px;
 }
-/
-*
-custom
- 
-*
-&
