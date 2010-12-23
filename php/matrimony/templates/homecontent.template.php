@@ -12,17 +12,17 @@
 	}
 </script>
 	
-<div style="float: left;margin:0px;width:100%" class="mainBox">
-	<div style="float: left;width:53%;border-right:1px solid #f8ca9e;">
+<div style="float: left;margin:0px;width:100%;height:100%;" class="mainBox">
+	<div style="float: left;border-right:1px solid #f8ca9e;">
 		<img src="images/banner.jpg" > 
 	</div>
 
-	<div id="mainRegisterText" style="width:46%;float: right;height:250px;border:0px solid;">
+	<div id="mainRegisterText" style="float: left;height:250px;border:0px solid;padding-left:20px">
 	  <br/><br/><br/><br/>
 	  	<div>
 	  		An exclusive Matrimony<br>Service For The <h1>Banjara Community</h1>
 		 	<b>Not a member?</b><br/>
-			 <a class="regbutton txtc" href="javascript:toggleRegistration()">Register FREE</a>
+			 <a class="regbutton txtc" href="register.php">Register FREE</a>
 	      </div>
 	      <div style="padding-top:10px">
 		      <div style="padding-left:10px;">
@@ -34,80 +34,26 @@
 	      
 	</div>
 
-	   <!-- register -->
-          <div id="registerForm" style="width:46%;float:right;height:290px; display:none; ">
-          	<div class="register-box" style="padding:20px;margin-top:10px;width:70%;height:230px;margin-left:10px;border:1px solid #f8ca9e;">
-          		<a style="float:right;color:#fff" href="javascript:toggleRegistration()">x&nbsp;&nbsp;</a>
-          	 <form name="home_register" method="post" action="register.php">
-                     
-	              <table>
-	                <thead>
-	                 	<tr align="left"> <th colspan="2"><label style="font-size:24px">Sign up</label> <label style="font-size:12px;color:#fff">( Free! ) </label></th></tr>
-	                </thead>
-	                <tr><td>&nbsp;</td></tr>
-					<tr>
-						<td>
-							<input type="text" name="textName" id="textName" style="width: 155px;" maxlength="25" onblur="if(this.value == ''){this.value = 'Name';}" onfocus="if(this.value == 'Name'){this.value = '';}" 
-								   onclick="if(this.value=='Name'){this.value='';}" value="Name">
-						</td>
-					</tr>
-					<tr>
-						<td>
-						 <input type="text" name="age" id="txtagefrm" maxlength="2" style="width: 50px;" onkeyup="return char_val(this,'0123456789');" onblur="if(this.value == ''){this.value = 'Age';}" 
-						 onclick="if(this.value == 'Age'){this.value = '';}" value="Age">
-						</td>
-					</tr>
-					
-					<tr>
-						<td>
-	  					  <input name="gender1" type="radio" value="female" id="gender"> Female <input name="gender1" type="radio" value="male" id="gender"> Male
-						</td>
-					</tr>
-					<tr>
-						<td>
-	  					   <input name="txtEmail" id="txtEmail" type="text" style="width: 155px;" value="Email" maxlength="40" onblur="validateRegistration()"onclick="if(this.value == 'Email'){this.value = '';}"> <input name="emailtextfield" type="hidden" id="emailtextfield">
-	                     	<div class="vali_red_email" id="emailError">
-	                        </div>
-	                   </td>
-					</tr>
-	                <tr>
-	                  <td colspan="2">
-	                        <div class="h_search_sub_head1">
-	                          <input type="submit" name="reg_submit" value="Register"  class="button" width="66" height="21" onclick=
-	                          "validateRegistration();if(document.getElementById('emailError').innerHTML!='')return false; else if(document.getElementById('emailError').style.color!='green'){document.getElementById('txtEmail').value=''; return true;}">
-	                        </div>
-	                     
-	                  </td>
-	
-	                </tr>
-	              </table>
-             </form>
-             </div>
-          </div>
-
+		
 	<!-- search -->
-		  <div style="width:100%; float:left;height:40px;padding-top:5px " class="search-box">
+		  <div style="width:99%; float:left;height:40px;padding:5px " class="search-box">
 					
 		            <form name="homepage" action="search.php?type=gs" method="post">
-		                      <table align="center">
+		                      <table align="center" style="padding-left:120px;">
 			                      <tr>
 			                      	<td>
 			                      	<font size="3"><b>Quick Search :</b></font>
 			                      	 <input name="gender" type="radio" value="F" id="fgender" checked="checked" onclick="gen('fgender','txtagefrm','txtageto','18','40');"> <label for="fgender">Female</label> <input name="gender" type="radio" value="M" id="mgender" onclick=
 			                          "gen('mgender','txtagefrm','txtageto','21','40');"> <label for="mgender">Male</label>
-			                           &nbsp; between   
+			                           &nbsp; aged    
 			                      	   <input type="text" name="txtagefrm" id="txtagefrm" value="18" maxlength="2" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/> 
 			                      	   To <input type="text" name="txtageto" id="txtageto" maxlength="2" value="40" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/>
 			                            <input type="hidden" name="ddlReligion" id="ddlReligion" value="Hindu"/> 
 			                        	<input type="hidden" name="ddlCommunity" value="Lambani"/> 
 			                          
-			                      	</td>
-			                      	<td>
-			                          <input type="checkbox" name="chkphoto" value="Photo" id="chkphoto"/>Photo
-			                      	</td>
-			                      	<td>
+			                          &nbsp;&nbsp;<input type="checkbox" name="chkphoto" value="Photo" id="chkphoto"/>Photo
 			                      	  <input type="hidden" name="searchindex" id="searchindex" value="generalsrc">
-			                          <input type="submit" value="Search" name="submit"  onclick="return SELECTreligion('ddlReligion','ddlCommunity')" class="button"/>
+			                          &nbsp;&nbsp;<input type="submit" value="Search" name="submit"  onclick="return SELECTreligion('ddlReligion','ddlCommunity')" class="button"/>
 			                      	</td>
 			                      </tr>                      
 		                      </table>
@@ -134,12 +80,12 @@
 
           <br/>
   
-    <table width="800" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+    <!--table width="800" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
       <tr>
         <td>
  
           <br>
-           <!--div style="width:785px; margin:auto; background-color:#FFFFFF; height:120px; padding:0px 0px 5px 0;">
+           <div style="width:785px; margin:auto; background-color:#FFFFFF; height:120px; padding:0px 0px 5px 0;">
           <div style=" height:inherit; float:left; padding:5px; margin-left:2px;">
           <table width="275" style=" border:1px #CACACA  solid" >
           <tr><td rowspan="5" height="110px"><img src="./images/model.jpg" /></td>
@@ -184,9 +130,9 @@
           </tr>
           </table>
           </div>
-          </div -->
+          </div>
          
-          <!-- div style="width:800px; height: inherit;">
+          <div style="width:800px; height: inherit;">
            <table width="97%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td colspan="2" align="left" valign="bottom"><img src="images/homepg_m_profiles.gif" width="185" height="45" /></td>
@@ -214,7 +160,7 @@
             </tr>
           </table>
 
-          </div -->
+          </div>
         </td>
       </tr>
-    </table>
+    </table -->

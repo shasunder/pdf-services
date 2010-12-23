@@ -10,26 +10,28 @@ $matrimony->seturl();
 if(!$_SESSION['valid']){
 	$pcat= array("Assameme","Bengali","Bodo","Dogri","Gujarati","Hindi","Kannada","Kashmiri","Konkani","Maithili","Malayalee","Manipuri","Marathi","Marwadi","Nepali","oriya","Parsi","Punjabi","Sanskrit","Santhali","Sindhi","Tamil","Telugu","Urdu","Others");
 	for($i=0; $i<sizeof($pcat); $i++) { if($_SESSION['lng']==$pcat[$i]) { $spcat[$i]='selected';  } else { $spcat[$i]=''; } }
-	include("templates/registrationMain.template.php");
+	include("templates/registerSimple.template.php");
 } else {
-	$whrst2=" where ProfileId='".$_SESSION['ProfileId']."' and State!=''";
-	$matrimony->switchqry('tm_profile','SELECT',$whrst2,'ResidingCountry');
-	$numst2=mysql_num_rows($matrimony->qry_result);
 	
-	$whrst3=" where ProfileId='".$_SESSION['ProfileId']."'";
-	$matrimony->switchqry('tm_partnerpreference','SELECT',$whrst3,'ProfileId');
-	$numst3=mysql_num_rows($matrimony->qry_result);
+	$whrst2=" where ProfileId='".$_SESSION['ProfileId']."'";
+	$matrimony->switchqry('tm_profile','SELECT',$whrst2,'register_stage');
+	$row= mysql_fetch_row($matrimony->qry_result);
+	if($row == null ){
+		die('where'.$whrst2.'stage'.$stage.'profile id:'.$_SESSION['ProfileId']);
+		include("templates/registerSimple.template.php");
+		return;
+	}
+	$stage = $row[0];
 	
-	$whrst4=" where ProfileId='".$_SESSION['ProfileId']."'";
-	$matrimony->switchqry('tm_family','SELECT',$whrst4,'ProfileId');
-	$numst4=mysql_num_rows($matrimony->qry_result);
-
-	if($numst2==0){
+	if($stage =='simple'){
+		include("templates/registrationMain.template.php");
+	}
+	else if($stage=='first'){
 		include("templates/registrationStep2.template.php");
-	}else if($numst4==0){ 
-		include("templates/registrationStep4.template.php");
-	} else if($numst3==0){ 
+	}else if($stage=='second'){ 
 		include("templates/registrationStep3.template.php");
+	} else if($stage=='third'){ 
+		include("templates/registrationStep4.template.php");
 	}  else {
 		header("location:./");
 	}
