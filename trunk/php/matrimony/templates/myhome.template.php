@@ -16,7 +16,7 @@
   <tr>
     <td>
 
-<div style="border:1px  solid #f8ca9e; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:510px; padding:20px; color:#333333; margin-bottom:1.5px; ">
+<div style="border:1px  solid #f8ca9e; padding:0px; font-family:Tahoma; font-size:11px; height:inherit; width:610px; padding:20px; color:#333333; margin-bottom:1.5px; ">
 
 
 

@@ -2,7 +2,7 @@
  
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img  src="'./images/lightbox_l_t.gif"/></span></td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img  src="'"/></span></td>
     <td width="544" background="images/lightbox_top_d.gif"> </td>
     <td width="31"><span style="width:25px; height:25px; float:left;"><img src="images/lightbox_r_t_d.gif" /></span></td>
   </tr>

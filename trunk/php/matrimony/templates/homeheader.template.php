@@ -90,12 +90,11 @@ include("common/common.class.php");
                           <tr>
                             <td width="77" align="left" valign="middle">
 	                            <input type="text" value='Email'  size="25" name="matrimonyid" id="matrimonyid" 
-	                            onblur="if(this.value == ''){ this.value = 'ID/Email';}" onfocus="if (this.value == 'ID/Email') {this.value = '';}" onclick="if (this.value == 'ID/Email') { this.value = ''; }"/>
+	                            onblur="if(this.value == ''){ this.value = 'Email';}" onfocus="if (this.value == 'Email') {this.value = '';}" onclick="if (this.value == 'ID/Email') { this.value = ''; }"/>
                             </td>
 
                             <td width="81" align="center" valign="middle">
-                            	<input type="password" size="10" name="txtpassword" id="txtpassword" value="password" onblur="if (this.value == ''){this.value = 'password';}" onfocus="if (this.value == 'password'){this.value = '';}"
-                            	onclick="if (this.value == 'password'){this.value= '';}"/> 
+                            	<input type="password" size="10" name="txtpassword" id="txtpassword" value="" />
                             </td>
 
                             <td width="51" align="center" valign="middle">

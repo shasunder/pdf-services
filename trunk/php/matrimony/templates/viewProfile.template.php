@@ -19,12 +19,12 @@
 <div style="padding-left:50px">
 <table width="600px" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" /></span></td>
-    <td width="554" background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="31"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" /></span></td>
+    <td width="25"><span style="width:25px; height:25px; float:right;"><img src="" /></span></td>
+    <td width="554" background="">&nbsp;</td>
+    <td width="31"><span style="width:25px; height:25px; float:left;"><img src="" /></span></td>
   </tr>
   <tr>
-    <td background="./images/lightbox_left.gif"></td>
+    <td background=""></td>
     <td>
 <div  class="sch_menu_t1">
 				<div class="schmenu_lt" ></div>
@@ -64,9 +64,9 @@
     <div class="sch_prof">
 	<span class="prof-head">
 	<?= $myProfile->profileResult['FirstName']." ".$myProfile->profileResult['MiddleName']." ".$myProfile->profileResult['LastName'];?>(<?= $myProfile->profileResult['ProfileId'];?>) </span><span class="prof_text"><br />
-     <?= $myProfile->profileResult['Age'];?> yrs,<?= $myProfile->profileResult['Height'];?> |<?= $myProfile->profileResult['Religion'];?>: <?= $myProfile->profileResult['CastDivision'];?>  <br />
-	 <? if($myProfile->profileResult['State']){ ?>
-     <? if($myProfile->profileResult['Subcaste']!=''){ ?>Subcaste: <?= $myProfile->profileResult['Subcaste'];?>| <? } ?>  <?= $myProfile->profileResult['Star'];?>:  <?= $myProfile->profileResult['Raasi'];?> |  <?= $myProfile->profileResult['City'];?>, <?= $myProfile->profileResult['State'];?>, <?= $myProfile->profileResult['ResidingCountry'];?>  |  <?= $myProfile->profileResult['EducationQual'];?> | <?= $myProfile->profileResult['EducationSpecialization']; } else { echo $myProfile->profileResult['ResidingCountry']; } ?>  <br />
+     <?= $myProfile->profileResult['Age'];?> yrs,<?= $myProfile->profileResult['Height'];?> | <?= $myProfile->profileResult['CastDivision'];?>  <br />
+	 <? if($myProfile->profileResult['City']){ ?>
+     <? if($myProfile->profileResult['Subcaste']!=''){ ?>Subcaste: <?= $myProfile->profileResult['Subcaste'];?>| <? } ?>  <?= $myProfile->profileResult['Star'];?>:  <?= $myProfile->profileResult['Raasi'];?> |  <?= $myProfile->profileResult['City'];?>, <?= $myProfile->profileResult['ResidingCountry'];?>  |  <?= $myProfile->profileResult['EducationQual'];?> | <?= $myProfile->profileResult['EducationSpecialization']; } else { echo $myProfile->profileResult['ResidingCountry']; } ?>  <br />
 		<!--<div class="search_48" style="width:72%;">
 			<strong>Till You didnt complete your Profile .....<br /><br />Please complete step2....
 			<a href="register.php" style="text-decoration:none; color:#FF6633; cursor:pointer;">Complete Profile</a></strong></div>-->
@@ -416,12 +416,12 @@ Star</div>
 
 
  </td>
-    <td background="./images/lightbox_right.gif">&nbsp;</td>
+    <td background="">&nbsp;</td>
   </tr>
   <tr>
-    <td><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-    <td background="./images/lightbox_bottom.gif">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
+    <td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
+    <td background="">&nbsp;</td>
+    <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
 </table> 
 </div>

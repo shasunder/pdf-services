@@ -1,32 +1,4 @@
-<body onLoad="Fillfamilysoccupation('ddlOccupation');Fillfamilysoccupation('ddlccupationn');">
 <form name="form1" action="insert_register.php" method="POST">
-<!--<div>
-<table align="center"  cellpadding="0" cellspacing="0" >
-<tr>
-<td  background="./images/bg_03.jpg" height="92px" width="11"></td>
-<td width="148"  background="./images/bg_05.jpg" align="center" valign="middle">
-<span style="color:#36706F"><b>STEP 1</b></span><br /><span style=" color:#36706F" >Registration</span></td>
-<td width="148" background="./images/bg_05.jpg" align="center" valign="middle">
-<span style="color:#36706F"><b>STEP 2</b></span><br /><span style=" color:#36706F" >Registration</span></td>
-<td width="148"  background="./images/bg_05.jpg" align="center" valign="middle">
-<span style=" color:#36706F"><b>STEP 3</b></span><br /><span style=" color:#36706F" >Registration</span></td>
-<td width="148" background="./images/bg_05.jpg" align="center" valign="middle">
-<span style=" color:#FFFFFF"><b>STEP 4</b></span><br /><span style=" color:#FFFFFF" >Registration</span></td>
-<td  background="./images/bg_07.jpg" height="92px" width="17"> </td>
-</tr>
-</table>
-</div>-->
-
-<table width="643" border="0" cellspacing="0" cellpadding="0" align="center">
-  <tr>
-    <td width="25"><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" /></span></td>
-    <td width="650" background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="31"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" /></span></td>
-  </tr>
-  <tr >
-    <td background="./images/lightbox_left.gif"></td>
-    <td>
-
 
 <div>
   <div id="register_bg" >
@@ -157,14 +129,9 @@
 			<div id="reg_bottom"></div>                  
 		 	</div>
 </div>
-</td>
-    <td background="./images/lightbox_right.gif">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-    <td background="./images/lightbox_bottom.gif">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
-  </tr>
-</table>
 </form>
-</body>
+
+<script type="text/javascript">
+Fillfamilysoccupation('ddlOccupation');
+Fillfamilysoccupation('ddlccupationn');
+</script>

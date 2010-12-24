@@ -48,12 +48,12 @@ class message_light extends matrimony
 <div class="sch_page">
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
-    <td width="550" background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" width="25" height="25" /></span></td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
+    <td width="550" background="">&nbsp;</td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
   <tr>
-    <td background="./images/lightbox_left.gif"></td>
+    <td background=""></td>
     <td>
 
 	<div  class="add_head" style="border:solid 1px #126569">Message More Details 
@@ -99,12 +99,12 @@ class message_light extends matrimony
 		<!--<div class="sch_btm"></div>-->
 	</div>
 </td>
-<td background="./images/lightbox_right.gif">&nbsp;</td>
+<td background="">&nbsp;</td>
 </tr>
 <tr>
-<td><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-<td background="./images/lightbox_bottom.gif">&nbsp;</td>
-<td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
+<td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
+<td background="">&nbsp;</td>
+<td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
 </tr>
 </table> 
 	
@@ -115,12 +115,12 @@ class message_light extends matrimony
 <div class="sch_page">
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
-    <td width="550" background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" width="25" height="25" /></span></td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
+    <td width="550" background="">&nbsp;</td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
   <tr>
-    <td background="./images/lightbox_left.gif"></td>
+    <td background=""></td>
     <td>
 
 	<div  class="add_head" style="border:solid 1px #126569">Interest More Details 
@@ -162,12 +162,12 @@ class message_light extends matrimony
 		<!--<div class="sch_btm"></div>-->
 	</div>
 </td>
-<td background="./images/lightbox_right.gif">&nbsp;</td>
+<td background="">&nbsp;</td>
 </tr>
 <tr>
-<td><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-<td background="./images/lightbox_bottom.gif">&nbsp;</td>
-<td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
+<td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
+<td background="">&nbsp;</td>
+<td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
 </tr>
 </table> 
 </div>
