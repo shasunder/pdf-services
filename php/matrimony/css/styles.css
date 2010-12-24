@@ -221,6 +221,7 @@ body {
 
 .prof_text {
 	line-height: 17px;
+	font-size: 12px;
 }
 
 .prof_full {
@@ -855,8 +856,7 @@ body {
 .mesmenu {
 	cursor: pointer;
 	width: auto;
-	background-color: #dae07e;
-	border: 1px solid #cad071;
+	border: 1px solid #F8CA9E;
 	height: 17px;
 	color: #024447;
 	font-size: 11px;
@@ -874,12 +874,10 @@ body {
 .mesmenu_active {
 	cursor: pointer;
 	width: auto;
-	background-color: #dae07e;
-	border: 1px solid #cad071;
+	border: 1px solid #F8CA9E;
 	height: 17px;
 	color: red;
 	font-size: 11px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	vertical-align: middle;
 	margin-top: 15px;
@@ -1156,7 +1154,6 @@ body {
 	width: 740px;
 	font-size: 93%;
 	line-height: normal;
-	border-bottom: 2px solid #f8b352;
 	margin-bottom: 0; /*margin between menu and rest of page*/
 	overflow: hidden;
 }
@@ -1250,6 +1247,7 @@ body {
 	color: #cecdcd;
 	padding-top: 6px;
 	font-size: 10px;
+	padding-left:80px;
 }
 
 .poweredlink label {

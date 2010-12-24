@@ -116,3 +116,9 @@ label{
 .error{
 	color:red
 }
+
+.footerLink{
+	font-size: 11px;
+	padding-left:150px;
+	color:#CECDCD;
+}

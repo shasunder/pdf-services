@@ -39,7 +39,6 @@ class insert_main extends matrimony
 			
 			$fields="ProfileId,register_stage,ProfileCategory,CreatedBy,LoginId,Emailid,Gender,Password,ProfileStatus,FirstName,Age,Religion,CastDivision,Subcaste,tm_autoid,tmid_count,visit_id,Adminstatus,DOJ,DOM";
 			$argValues="'".$bgID."','simple','Hindi','$email','$rparr1[txtName]','$rparr1[txtEmail]','$rparr1[txtGender]','$rparr1[txtPwd]','A','$rparr1[txtName]','$rparr1[txtAge]','$religion','$community','$rparr1[txtCaste]',tm_autoid,'".$retid."',1,'B',now(),now()";
-			echo  $fields.'\n<br/>'.$argValues;
 			$this->switchqry('tm_profile','INSERT',$fields,$argValues);
 			$this->RegSession_Register();
 			session_register('register_simple');
@@ -69,8 +68,8 @@ class insert_main extends matrimony
 			$rparr1 = $this->postarrfn();
 			$dobdb=implode("-",array($rparr1[ddlYear],$rparr1[ddlMonth],$rparr1[ddlDate]));
 			
-			$setValues="register_stage='first',ProfileStatus='A', FirstName='$rparr1[txtFname]', MiddleName='$rparr1[txtMname]', LastName='$rparr1[txtLname]',DOB='".$dobdb."',Age='$rparr1[txtAge]',MaritialStatus='$rparr1[ddlMarital]',NoofChildren='$rparr1[ddlChildren]',ChildrenLivingStatus='$rparr1[radioChildStatus]',Citizenchip='$rparr1[citizenHd]',ResidingCountry='$rparr1[countryHd]',Subcaste='$rparr1[txtCaste]',Tele_Country='$rparr1[txtCcode]',Tele_std='$rparr1[txtAcode]',Tee_mobile='$rparr1[txtMobile]',Tele_Phone='$rparr1[txtPhone]', contrycode='$rparr1[ddlCountry]";
-			
+			$setValues="register_stage='first',ProfileStatus='A', FirstName='$rparr1[txtFname]', MiddleName='$rparr1[txtMname]', LastName='$rparr1[txtLname]',DOB='".$dobdb."',MaritialStatus='$rparr1[ddlMarital]',NoofChildren='$rparr1[ddlChildren]',ChildrenLivingStatus='$rparr1[radioChildStatus]',Citizenchip='$rparr1[citizenHd]',ResidingCountry='$rparr1[countryHd]',Subcaste='$rparr1[txtCaste]',Tele_Country='$rparr1[txtCcode]',Tele_std='$rparr1[txtAcode]',Tee_mobile='$rparr1[txtMobile]',Tele_Phone='$rparr1[txtPhone]', contrycode='$rparr1[ddlCountry]' where ProfileId='$proid'";
+			//die($setValues);
 			if($proid){$this->switchqry('tm_profile','UPDATE',$setValues,''); }
 			header("Location:register.php");
 			break;
@@ -89,8 +88,12 @@ class insert_main extends matrimony
 			$rparr3 = $this->postarrfn();
 			$exheightfrm = $this->getheightcm($rparr3[ddlfeet]);			
 			$exheightto = $this->getheightcm($rparr3[ddlfeet1]);			
-			$argValues="register_stage='third','".$proid."','$rparr3[txtage1]','$rparr3[txtage2]','$rparr3[radiomarital]','$rparr3[motherHd]','$rparr3[religionHd]','$rparr3[communityHd]','$rparr3[txtcaste]','$rparr3[categoryHd]','$rparr3[occHd]','$rparr3[emptypeHd]','$rparr3[citizenHd]','$rparr3[countryHd]','$rparr3[stateHd]','$rparr3[cityHd]','$rparr3[rfood]','$rparr3[txtabout]','$rparr3[statusHd]','$exheightfrm','$exheightto','$rparr3[rdosham]'";
+			$argValues="'".$proid."','$rparr3[txtage1]','$rparr3[txtage2]','$rparr3[radiomarital]','$rparr3[motherHd]','$rparr3[religionHd]','$rparr3[communityHd]','$rparr3[txtcaste]','$rparr3[categoryHd]','$rparr3[occHd]','$rparr3[emptypeHd]','$rparr3[citizenHd]','$rparr3[countryHd]','$rparr3[stateHd]','$rparr3[cityHd]','$rparr3[rfood]','$rparr3[txtabout]','$rparr3[statusHd]','$exheightfrm','$exheightto','$rparr3[rdosham]'";
+
 			if($proid){$this->switchqry('tm_partnerpreference','INSERT','',$argValues);}
+			$setValues="register_stage='third' where ProfileId='$proid'";
+			if($proid){$this->switchqry('tm_profile','UPDATE',$setValues,''); }
+			
 			header("Location:register.php");
 		break;
 		}

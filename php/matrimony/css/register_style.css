@@ -15,9 +15,9 @@ body {
 #register_bg {
 	width: 682px;
 	border: 1px #f9f2fb solid;
-	margin-top: 15px;
+	margin-top: 75px;
 	background-color: #FFFFFF;
-	margin: auto;
+	margin-left: 20px;
 }
 
 #head {

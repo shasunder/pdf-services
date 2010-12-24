@@ -12,12 +12,12 @@
 <div style="padding-left:50px">
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_t.gif" width="25" height="25" /></span></td>
-    <td width="550" background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" width="25" height="25" /></span></td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
+    <td width="550" background="">&nbsp;</td>
+    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
   <tr>
-    <td background="./images/lightbox_left.gif"></td>
+    <td background=""></td>
     <td>
 	<div  class="sch_menu_t1">
 		<div class="schmenu_lt" ></div>
@@ -44,12 +44,12 @@
     <p><b>Tucantis Services Ltd</b> brings collectively years of experience, not only in Software Development and Website Designing, but also in vertical industries and business perceptive, enabling to develop solutions that imitate and enhance our customer's real world business desires and requirements and also we are good in managing large IT applications in real time as well as in delivering high value services.</p>
     <p>Please Visit and Register Here: <a href="/"><strong>marrybanjara.com</strong></a></p>
 	</div></td>
-    <td background="./images/lightbox_right.gif">&nbsp;</td>
+    <td background="">&nbsp;</td>
   </tr>
   <tr>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-    <td background="./images/lightbox_bottom.gif">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
+    <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
+    <td background="">&nbsp;</td>
+    <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
 </table>
 </div>

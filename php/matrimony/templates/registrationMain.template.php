@@ -1,7 +1,3 @@
-
-<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
-<tr>
-<td>
 <form name="regMain" action="insert_register.php" method="post" >
 <div class="">  
         <input type="hidden" name="index" value="first">
@@ -214,16 +210,16 @@
 
   </div>
 </form>
-</td>
-</tr>
-</table> 
 
 
-<script language="javascript">
+<script language="javascript" type="text/javascript">
 FillProfile('ddlProfile');
 FillMonth('ddlMonth');
+FillYears('ddlYear');
 FillDate('ddlDate');
 FillMarital('ddlMarital');
 FillChild('ddlChildren');
+//defaults
+//$('#ddlMarital').val('single');
 
 </script>

@@ -1,32 +1,5 @@
 <? session_start(); ?>
-<body onLoad="FillBlood('ddlblood');FillFeet('ddlfeet');FillKgs('ddlkgs');FillPhysical('ddlphysical');FillEducation('ddle_category'); FillOccupation('ddlocc');FillEmptype('ddlemptype');FillIncome('ddlincome');FillStar('ddlstar');FillRassi('ddlrassi');getLocation('','<?= $_SESSION['state']?>','','statediv','second','state','');">
 <form  name="regStepTwo" method="post" action="insert_register.php" >
-<!--<div>
-<table align="center"  cellpadding="0" cellspacing="0" >
-<tr>
-<td  background="./images/bg_03.jpg" height="92px" width="11"></td>
-<td width="148"  background="./images/bg_05.jpg" align="center" valign="middle">
-<span style="color:#36706F"><b>STEP 1</b></span><br /><span style=" color:#36706F" >Registration</span></td>
-<td width="148" background="./images/bg_05.jpg" align="center" valign="middle">
-<span style="color:#FFFFFF"><b>STEP 2</b></span><br /><span style=" color:#FFFFFF" >Registration</span></td>
-<td width="148"  background="./images/bg_05.jpg" align="center" valign="middle">
-<span style=" color:#36706F"><b>STEP 3</b></span><br /><span style=" color:#36706F" >Registration</span></td>
-<td width="148" background="./images/bg_05.jpg" align="center" valign="middle">
-<span style=" color:#36706F"><b>STEP 4</b></span><br /><span style=" color:#36706F" >Registration</span></td>
-<td  background="./images/bg_07.jpg" height="92px" width="17"> </td>
-</tr>
-</table>
-</div>-->
-<table width="643" border="0" cellspacing="0" cellpadding="0" align="center">
-  <tr>
-    <td width="25" ><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_t.gif" /></span></td>
-    <td width="650"  background="./images/lightbox_top.gif">&nbsp;</td>
-    <td width="31"><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_t.gif" /></span></td>
-  </tr>
-  <tr >
-    <td background="./images/lightbox_left.gif"></td>
-    <td>
-	<div>
 
         <div id="register_bg">
 		<div  id="head">Registration<span class="step_text">Step - 2</span></div>
@@ -183,15 +156,14 @@
 			<div class="sub_head1">Address of Communication</div> <br />
 			<div id="city">
 				<div class="width">
-					<div class="form_31_head">State/Province<span class="star">*</span></div>
 					<div class="form_31_head">City<span class="star">*</span></div>
 					<div class="form_31_head">Zip/Pincode</div>
 		  		</div>
 			<div class="width" >
-				<div id="statediv" class="form_31_red" style="height:20px;">
-					  <select name="ddlstate" id="ddlstate" class="textfield" style="width:100px; height:18px; width:175px;font-size:11px" onBlur="ddlEmptyChk('ddlstate','stateError','Please select the State');removecolor('city');" onChange="ddlClear('ddlstate','stateError');" onFocus="setcolor('city');">
+				<div id="statediv1" class="form_31_red1" style="height:20px;width:175px;" >
+					  <!-- select name="ddlstate" id="ddlstate" class="textfield" style="width:175px; height:18px; font-size:11px" >
 					    <option>- Select -</option>
-				      </select>
+				      </select -->
 					  <input type="hidden" class="textfield1" name="txtcountry" id="txtcountry" value="<?=$row['ResidingCountry'];?>">		
 					  <input type="hidden" name="txtcon" id="txtcon" value="<?=$_SESSION['state']?>"/> 
 				</div>
@@ -209,7 +181,7 @@
 			<div class="form_31_red" id="cityError"></div>
      		<div class="form_31_red" id="codeError"></div>
 	       </div>
-		   <div class="width">
+		   <div class="width" style="float:left">
 					<div class="form_100_head">Address<span class="star">*</span></div>
 				
 		   <div class="form_100" >
@@ -334,16 +306,25 @@
    		       <input type="reset" name="Submit22" value="Reset" id="Submit2"  class="btn" onClick="DIVClear('foodError|smokeError|liqurError|complexionError|typeError|bloodError|heightError|weightError|statusError|stateError|cityError|addressError|categoryError|qualError|occError|emptypeError|incomeError|gothramError|starError|rassiError');document.regStepTwo.reset();"/>
   </div>
  </div>
-</div>
-</td>
-    <td background="./images/lightbox_right.gif">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><span style="width:25px; height:25px; float:right;"><img src="./images/lightbox_l_b.gif" width="25" height="25" /></span></td>
-    <td background="./images/lightbox_bottom.gif">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="./images/lightbox_r_b.gif" width="25" height="25" /></span></td>
-  </tr>
-</table>
 
 </form>
-</body>
+
+<script type="text/javascript">
+FillBlood('ddlblood');
+FillFeet('ddlfeet');
+FillKgs('ddlkgs');
+FillPhysical('ddlphysical');
+FillEducation('ddle_category');
+FillOccupation('ddlocc');
+FillEmptype('ddlemptype');
+FillIncome('ddlincome');
+FillStar('ddlstar');
+FillRassi('ddlrassi');
+getLocation('','<?= $_SESSION['state']?>','','statediv','second','state','');
+
+$('input[value=Non-Vegetatrian][id=rfood]').attr('checked',true);
+$('input[value=Non-Smoker][id=rsmoke]').attr('checked',true);
+$('input[value=Non-liquor][id=rliquor]').attr('checked',true);
+$('input[value=Non-Vegetatrian][id=rfood]').attr('checked',true);
+
+</script>

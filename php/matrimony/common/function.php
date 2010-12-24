@@ -50,6 +50,7 @@ class matrimony
 		$query="delete from $tname".$arg1; }
 	  else if($action=="SELECT"){ 
 		$query="select $arg2 from $tname".$arg1; }
+		
       $this->qry_result = mysql_query($query) or die("could not execute query".mysql_error());
 	}
 	function commonsrc($cmnarr){/*---------- for getting general and advance search common criteria where condition as string-----------*/
