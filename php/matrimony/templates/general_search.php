@@ -1,16 +1,10 @@
-<body onLoad="FillEducation('ddleducategory');FillReligion('ddlReligion');FillFeet('ddlheightfrm');FillFeet('ddlheightto');timedCount();">
+
 <form name="search" action="<?= $_SERVER['PHP_SELF']?>" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
-<td width="622" valign="top"> 
-      <table width="616" border="0"  cellspacing="0" cellpadding="0">
+<td width="100%" valign="top"> 
+      <table width="100%" border="0"  cellspacing="0" cellpadding="0">
         <tr>
-          <td width="25"><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
-          <td width="550"  background="">&nbsp;</td>
-          <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
-        </tr>
-        <tr>
-          <td background=""></td>
           <td><div  class="sch_menu_t1">
             <div class="schmenu_lt" ></div>
             <div class="schmenu_cr">
@@ -34,7 +28,7 @@
             <div class="schmenu_rt" ></div>
           </div>
                 <input type="hidden" name="searchindex" id="searchindex" value="generalsrc" />
-                <div class="sch_con" style="height:1200px;"><br>
+                <div class="sch_con" style="height:1000px;"><br>
                   <div class="sch_s_head" ><strong> General Search </strong></div>
                   <br />
                   <div style="height:159px;">
@@ -324,12 +318,6 @@
                 </div></td>
                 
                  
-          <td background=""></td>
-        </tr>
-        <tr>
-          <td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
-          <td background="">&nbsp;</td>
-          <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
         </tr>
     </table>
 </td>
@@ -388,6 +376,10 @@ function compareDatesOnly(date1, date2) {
 	//days are equal
 	return -1;
 }
+</script>
+
+<script language="javascript">
+FillEducation('ddleducategory');FillReligion('ddlReligion');FillFeet('ddlheightfrm');FillFeet('ddlheightto');timedCount();
 </script>
 
 <script type="text/javascript">

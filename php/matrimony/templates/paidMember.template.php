@@ -16,12 +16,16 @@ $Result1= mysql_query($qry1);
 $qry2="SELECT distinct(Month) FROM tm_membership ";
 $Result2= mysql_query($qry2);
 ?>
-    <div class="paidMember" float="left">
+    <div class="paidMember" >
     <!--header-->
-    	<div class="header">
-            <div class="matrimonyBanner">
-            	<div class="left">
-            	<h1>Why Paid Membership ?</h1>
+    	<div class="" style=" font-size:12px;">
+            <div class="">
+            <br/>
+            <h1>Privilege Matrimony</h1>
+            <br/>
+            
+            	<div >
+            		&nbsp;&nbsp;<b>Why Paid Membership ?</b>
                 	<ul>
                     	<li>Top Ranking Display</li>
                         <li>See Contact Information</li>
@@ -30,23 +34,27 @@ $Result2= mysql_query($qry2);
                         <li>Advanced search and save</li>
                     </ul>
                 </div>
-                <div class="right">
-                	<a href="#"><img src="images/registerBtn.gif" border="0"/></a>
-                </div>
+                <?php if($_SESSION['valid']!='loginvalid'){ ?>
+                Please login/register(FREE) to upgrade to premium membership
+                <?php } else{?>
+                Please choose your membership option below:
+                <div style="padding-top:15px"></div>	
+                 <?php } ?>
+                
             </div>
         </div>
      <!--header-->
-    <div class="middlecontainer">
+    <div class="middlecontainer" style="font-size:12px">
     	<div class="bg">
-       <div class="monthview">
+       <div class="monthview" style="padding-top:19px">
        
-             	<table width="100%" border="0">
-  <tr><?php 
+             	<table style="width:70%" border="0">
+                <?php 
  $i=0;
      while($row2 = mysql_fetch_array($Result2))
 			{	?>
   <tr>
-    <td class="title2" align="center"><?php echo $row2['Month'] ." Months";?></td>
+    <td ><?php echo $row2['Month'] ." Months";?></td>
  <?php }?>
   </tr>
 </table>
@@ -54,12 +62,12 @@ $Result2= mysql_query($qry2);
        </div>
         	<div class="tableview">
              <form method="post" action="https://www.paypal.com/cgi-bin/webscr"  name="myform">
-            	<table width="100%" border="0">
+            	<table style="width:50%" border="0">
   <tr><?php 
  $i=0;
      while($row1 = mysql_fetch_array($Result1))
 			{	?>
-    <td align="center" valign="middle" class="title"><?php echo $row1['Type'];?></td>
+    <td  class="title" style="padding-left:12px"><?php echo $row1['Type'];?></td>
     <?php }?>
   </tr>
  <tr>
@@ -71,8 +79,8 @@ $Result2= mysql_query($qry2);
 
 			 ?>
               
-            <td align="center" valign="middle" class="title2">
-            <input name="classic" type="radio" value="classic<?php echo $row['Id'];?>" id='classic'/><?php echo $row['Amount'] ;?>
+            <td >
+            <input name="classic" type="radio" value="classic<?php echo $row['Id'];?>" id='classic'/>&nbsp;Rs.<?php echo $row['Amount'] ;?>
             </td> 
             
             
@@ -92,30 +100,47 @@ $Result2= mysql_query($qry2);
 </table>
 
             
-          </div>
+</div>
           
-        <div class="paidMemberfooter">
-        	<div class="privilege">PRIVILEGE MATRIMONY</div>
-            <div class="relationShip"><b>0000 (3 Months)</b><span style="color:#fff; font-size:12px;"><b>Get Matched by a Relationship Manager</b></span></div>
-          <?php if($_SESSION['valid']=='loginvalid'){ ?> <div class="Iagree">
-<input name="" type="checkbox" value="" onchange="vote('classic','<?php echo $_SESSION['ProfileId'];?>');"/> I Agree</div><?php } else {?>
-<div >
-<a href="login.php"><img src="images/buyNowbtn.gif" border="0" /></a>
-</div>
-<?php } ?>
-            <div class="ChooseAssisted">Choose Assisted Matchmaking Service.Get Expert help by Appointing<br />Relationship Manager to find u a perfect match.
-</div>
+          
+		<br/>
+            <div class="relationShip">
+            	<img alt="coin" src="images/orange.jpg"/><span style=" font-size:12px;"><b>Get Matched by a Relationship Manager. Choose Assisted Matchmaking Service.Get Expert help by Appointing<br />Relationship Manager to find u a perfect match.</b></span>
+            	<br/>
+            	<br/>
+            	<b>Pay by </b>&nbsp;<input type="radio" name="payMode" id="payMode" value="paypal" checked/> Paypal 
+            	<input type="radio" name="payMode" id="payMode" value="google"/>Google checkout 
+            	<input type="radio" name="payMode" id="payMode" value="bank"/>Bank transfer
+            </div>
+          <?php if($_SESSION['valid']=='loginvalid'){ ?> 
+          <div class="">
+          <br/>
+			<input name="" type="checkbox" value="" onchange="vote('classic','<?php echo $_SESSION['ProfileId'];?>');"/><b> I Agree</b>
+		 	<br/>
+		 	<br/>
+		 	
+		  </div>
+		  <?php } else {?>
+			<div >
+				
+				<div style="margin-left:350px">
+					<a href="login.php"><img src="images/buyNowbtn.png" border="0" height="30px"/></a> &nbsp;(need to login first)
+				</div>
+			</div>
+		<?php } ?>
 
-<div class="bynowbtn" id="paypal" style="display:none">
+
+ <?php if($_SESSION['valid']=='loginvalid'){ ?> 
+<div class="bynowbtn" id="paypal" style="float:right;padding-right:100px">
 	
-   <input type="hidden" value="_s-xclick" name="cmd"> 
+  	 <input type="hidden" value="_s-xclick" name="cmd"> 
 	 <input type="hidden" id="payvalue" value="" name="hosted_button_id">
-	  <input type="image" src="images/buyNowbtn.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" > 
-	<img height="1" width="1" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" > 
+	  <input type="image" src="images/buyNowbtn.png" height="30px" name="submit" alt="PayPal - The safer, easier way to pay online!" > 
 	  
 
 </div>
-
+ <?php } ?>
+<br/><br/><br/>
 
 
 </form>
@@ -125,24 +150,6 @@ $Result2= mysql_query($qry2);
        
         </div>
         
-     <!--  footer membership message -->  
-    <div class="fotterbtn">
-    	<ul>
-        	<li><a href="#">Send & receive e-mails</a></li>
-            <li>|</li>
-            <li><a href="#">Chat online</a> </li>
-            <li>|</li>
-            <li><a href="#">View horoscope of members</a></li>
-            <li>|</li>
-            <li><a href="#">Get better visibility for your profile</a></li>
-            <li>|</li>
-            <li><a href="#">Participate in online matrimony meet</a></li>
-            
-        </ul>
-        
-    
-    
-    </div>
 </div>
     
     </div>

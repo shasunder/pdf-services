@@ -26,7 +26,7 @@ function displayPage(){
 
 	if($WebPage=='ManageUser')
 	{	
-	  $arguments='ProfileId,LoginId,FirstName, EmailId, CreatedBy, ProfileCategory, Gender, MaritialStatus, ResidingCOuntry, DOJ,tm_autoid,visit_id,LastVisted,ProfileStatus';
+	  $arguments='ProfileId,LoginId,FirstName, EmailId, CreatedBy, ProfileCategory, Gender, MaritialStatus, ResidingCOuntry, DOJ,tm_autoid,visit_id,LastVisted,ProfileStatus,Adminstatus';
 	  $page="tm_profile";
 	  $conditionValue="";
 	  $search="";
@@ -530,7 +530,8 @@ function displayPage(){
 			$limit=""; 
 			//} 
 	}//IF	
-
+	$pageCount=1000;
+	
 	$limit = $condition == "1" ?  " LIMIT ".$start.",".$pageCount : "";
 	if($_REQUEST['id']=='1') {
 		//echo "sfsa".$arguments.$page.$conditionValue.$search.$orderBy.$limit.$WebPage;
@@ -570,7 +571,7 @@ function displayPage(){
 			$contentValue[$k]=$rowValue;
 		} 
 	}
-	//print_r($contentValue);
+	//print_r($this->query.$arguments.'-page-'.$page.'-condition-'.$conditionValue.'-search-'.$search);
 	echo "<div style='display:none'>split</div>";   //echo $search;  
 	if($WebPage=='ManageUser'){ //echo $search; ?> 
 			<table id="paginate_response" class="grid" width="100%" cellpadding="6" cellspacing="1">
@@ -583,7 +584,7 @@ function displayPage(){
 					<td class="gridhead" width="10%" align="center">Last Login Date</td>
 					<td class="gridhead" width="10%" align="center">Created By </td>
 					<td class="gridhead" width="2%" align="center">Profile Status</td>
-					<td class="gridhead" width="3%" align="center">View</td>
+					<td class="gridhead" width="2%" align="center">Admin Status</td>
 					<td class="gridhead" width="3%" align="center">Edit</td>
 					<td class="gridhead" width="3%" align="center">Send Email</td>
 					<td class="gridhead" width="3%" align="center">Send SMS</td>
@@ -697,6 +698,7 @@ function displayPage(){
 				 $this->Result[$no]['ProfileID'] =$contentValue[$j]['ProfileId'];
 				 $this->Result[$no]['cs_Email'] =$contentValue[$j]['EmailId'];
 				 $this->Result[$no]['cs_ActiveStatus'] =$contentValue[$j]['ProfileStatus'];
+				  $this->Result[$no]['cs_AdminStatus'] =$contentValue[$j]['Adminstatus'];
 				 $this->Result[$no]['cs_DOA'] =$contentValue[$j]['DOA'];
 				 $this->Result[$no]['cs_DOM'] =$contentValue[$j]['DOA'];
 				 $this->Result[$no]['cs_VisitCount'] =$contentValue[$j]['visit_id'];
@@ -805,11 +807,11 @@ function displayPage(){
 				<td align="center">'.$this->Result[$i]['ProfileID'].'</td>
 				<td align="center">'.$this->Result[$i]['LoginId'].'</td>
 				<td align="left">'.$this->Result[$i]['cs_Name'].'</td>
-				<td><a href="mailto:'.$this->Result[$i]['cs_Email'].'">'.$this->Result[$i]['cs_Email'].'</a></td>
+				<td><a href="AddUser.php?Id='.$this->Result[$i]['ProfileID'].'&action=view">'.$this->Result[$i]['cs_Email'].'</a></td>
 				<td align="center">	'.$this->Result[$i]['cs_VisitCount'].'</td> 
 				<td height="22" align="left" valign="middle" bgcolor="#FEFDDF">'.$this->Result[$i]['cs_DOLV'].'</td><td align="left">'.$this->Result[$i]['CreatedBy'].'</td>				
 				<td align="center">'.$this->Result[$i]['cs_ActiveStatus'].'</td>
-				<td align="center"><a href="AddUser.php?Id='.$this->Result[$i]['ProfileID'].'&action=view"><img src="../images/edit.gif" border="0"></a></td>
+				<td align="center">'.$this->Result[$i]['cs_AdminStatus'].'</td>
 				<td align="center"><a href="AddUser.php?Id='.$this->Result[$i]['ProfileID'].'&action=edit"><img src="../images/edit.gif" border="0"></a></td>
 				<td align="center"><a class="adlink" href="" target="_blank">Send Email</a>	</td>
 				<td align="center"><a class="adlink" href="" target="_blank">Send Sms</a></td>

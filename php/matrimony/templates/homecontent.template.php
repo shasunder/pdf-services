@@ -48,8 +48,8 @@
 			                           &nbsp; aged    
 			                      	   <input type="text" name="txtagefrm" id="txtagefrm" value="18" maxlength="2" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/> 
 			                      	   To <input type="text" name="txtageto" id="txtageto" maxlength="2" value="40" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/>
-			                            <input type="hidden" name="ddlReligion" id="ddlReligion" value="Hindu"/> 
-			                        	<input type="hidden" name="ddlCommunity" value="Lambani"/> 
+			                            <input type="hidden" name="ddlReligion" id="ddlReligion" value=""/> 
+			                        	<input type="hidden" name="ddlCommunity" value=""/> 
 			                          
 			                          &nbsp;&nbsp;<input type="checkbox" name="chkphoto" value="Photo" id="chkphoto"/>Photo
 			                      	  <input type="hidden" name="searchindex" id="searchindex" value="generalsrc">

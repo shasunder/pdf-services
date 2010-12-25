@@ -90,34 +90,24 @@ background-image:url(../images/matrimonyBanner.gif);
 	width:800px;
 	height:auto;
 	margin:0px;
-	padding:25px 0px 0px 0px;
 	float:left;
 }
 .middlecontainer .bg
 {
 	width:800px;
-	height:510px;
 	margin:0px;
 	padding:0px;
-	background:url(../images/centerBannerbg.gif);
+/*	background:url(../images/centerBannerbg.gif);*/	
 	float:left;
 }
-.middlecontainer .bg .monthview
+.bg .monthview
 {
-	width:208px;
-	height:405px;
+	width:108px;
 	padding:0px 0px 0px 0px;
 	margin:0px;
 	float:left;
 }
-.middlecontainer .bg .tableview
-{
-	width:auto;
-	height:350px;
-	padding:0px 0px 0px 0px;
-	margin:0px;
-	float:left;
-}
+
 .title
 {
 width:190px;
@@ -127,8 +117,7 @@ padding:0px;
 color:#65530b;
 font-weight:bold;
 font-family:"OCR-B 10 BT", Arial, Helvetica, sans-serif;
-font-size:18px;
-height:60px;
+font-size:12px;
 overflow:hidden;
 }
 .title2
@@ -139,9 +128,8 @@ padding:20px 0px 0px 0px;
 color:#194b0a;
 font-weight:bold;
 font-family:"OCR-B 10 BT", Arial, Helvetica, sans-serif;
-font-size:18px;
+font-size:12px;
 /*background:url(../images/greenBulitien.png) 10% 35px no-repeat;*/
-line-height:90px;
 overflow:hidden;
 }
 .title3
@@ -185,7 +173,6 @@ font-size:22px;
 margin:0px;
 padding:22px 0px 0px 10px; 
 float:left;
-color:#ffffff;
 font-weight:bold;
 font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
 width:250px;
@@ -196,10 +183,8 @@ padding:5px 0px 0px 50px;
 margin:0px;
 float:left;
 width:320px;
-background:url(../images/orange.gif) 5% 22px no-repeat;
 color:#f1f118;
 font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
-line-height:46px;
 }
 .paidMemberfooter .ChooseAssisted
 {
@@ -210,7 +195,6 @@ width:475px;
 font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
 line-height:18px;
 font-size:12px;
-color:#fff;
 font-weight:bold;
 }
 .paidMemberfooter .bynowbtn
@@ -262,7 +246,6 @@ list-style:none;
 	height:auto;
 	float:left;
 	font-size:12px;
-	color:#fff;
 	font-weight:bold;
 }
 	
