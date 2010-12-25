@@ -49,7 +49,9 @@ class matrimony
 	  else if($action=="DELETE"){ 
 		$query="delete from $tname".$arg1; }
 	  else if($action=="SELECT"){ 
-		$query="select $arg2 from $tname".$arg1; }
+		$query="select $arg2 from $tname".$arg1; 
+	  //die($query);
+	  }
 		
       $this->qry_result = mysql_query($query) or die("could not execute query".mysql_error());
 	}

@@ -1,14 +1,9 @@
-<body onLoad="FillFeet('ddlheightfrm');FillFeet('ddlheightto');FillPhysical('ddlphysical');FillReligion('ddlReligion');FillMotherTongue('ddlmother');FillStar('ddlstar');FillEducation('ddle_category');FillOccupation('ddlocc');FillEmptype('ddlemptype');">
+
 <form name="advancesearch" action="search.php" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
 <td  valign="top"> 
 <table  border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="25"><span style="width:25px; height:25px; float:right;"><img src="" height="25px" width="25px" /></span></td>
-    <td width="550" background="">&nbsp;</td>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src=""  height="25px" width="25px" /></span></td>
-  </tr>
   <tr>
     <td background=""></td>
     <td>
@@ -515,12 +510,6 @@ Occasionally </div>
 
 
  </td>
-    <td background="">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
-    <td background="">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
 </table>
 </td>
@@ -586,4 +575,7 @@ Calendar.setup ({
 	inputField : "jscal_field_date_start", ifFormat : "%Y-%m-%d", showsTime : false, button : "jscal_trigger_date_start", singleClick : true, step : 1, dateStatusFunc : dateInRange1
 })
 
+</script>
+<script type="text/javascript">
+FillFeet('ddlheightfrm');FillFeet('ddlheightto');FillPhysical('ddlphysical');FillReligion('ddlReligion');FillMotherTongue('ddlmother');FillStar('ddlstar');FillEducation('ddle_category');FillOccupation('ddlocc');FillEmptype('ddlemptype');
 </script>

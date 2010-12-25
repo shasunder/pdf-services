@@ -622,9 +622,9 @@ body {
 	width: 520px;
 	color: #990000;
 	height: 18px;
-	padding-left: 8px;
-	background-color: #f8ca9e;
-	border: 1px solid #f8ca9e;
+	padding: 8px;
+/*	background-color: #f8ca9e;
+	border: 1px solid #f8ca9e; */
 }
 
 .multi_box_text {
@@ -645,12 +645,13 @@ body {
 	font-weight: bold;
 	vertical-align: middle;
 	margin-top: 15px;
+	padding:10px;
 }
 
 .sch_menu_in {
 	width: 530px;
 	height: inherit;
-	border: 1px solid #cedfe0;
+	border: 0px solid #cedfe0;
 	background-color: #FFFFFF;
 	margin-top: 10px;
 	margin: auto;
