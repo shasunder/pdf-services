@@ -5,8 +5,8 @@
     <td class="light_forgetpwdtop"> 
 	<table width="486" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="323" align="left" valign="top" class="light_forgetpwdhead">Forget Password </td>
-    <td width="163" align="right"><a href = "javascript:void(0)" onclick = "document.getElementById('fade').style.display='none';document.getElementById('cpass').style.display='none';">
+    <td width="323" align="left" valign="top" class="light_forgetpwdhead">Forgot Password </td>
+    <td width="212	" align="right"><a href = "javascript:void(0)" onclick = "document.getElementById('fade').style.display='none';document.getElementById('cpass').style.display='none';">
 <img src="images/forgetpwd_close.gif" width="19" height="18" border="0" /></a></td>
   </tr>
 </table>
@@ -18,7 +18,8 @@
     <td class="light_forgetpwdctr">
 	<table width="465" border="0" cellspacing="0" cellpadding="0" style=" color:#FFFFFF;" id="contentArea">
   <tr>
-    <td height="48" colspan="2" align="left" valign="top">Please enter your E-mail ID. We will send your password to the E-mail address you have provided at the time of registration. </td>
+    <td height="48" colspan="2" align="left" valign="top" style="font-size:12px">
+    Please enter E-mail ID provided at the time of registration to send your password to. </td>
     </tr>
   <tr>
     <td colspan="2"><strong>E- mail </strong></td>

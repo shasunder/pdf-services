@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-$fname=basename($_SERVER['PHP_SELF'],".php"); 
+$fname=basename($_SERVER['PHP_SELF'],".php");
 include("common/common.class.php");
 //echo print_r($_SESSION);
 ?>
@@ -33,7 +33,7 @@ include("common/common.class.php");
 	}
 	//-->
 	</script>
-	
+
 	<script type="text/javascript" language="javascript" src="ajax/admin_ajaxjs.js"></script>
 	<script type="text/javascript" language="javascript" src="ajax/country.js"></script>
 	<script type="text/javascript" language="javascript" src="js/onload.js"></script>
@@ -41,14 +41,14 @@ include("common/common.class.php");
 	<script type="text/javascript" language="javascript" src="js/general.js"></script>
 	<script type="text/javascript" language="javascript" src="ajax/message.js"></script>
 	<script type="text/javascript" src="js/advetisement.js"></script>
-	<script language="javascript" type="text/javascript" src="./js/calender/ValidateFormElements_search.js"></script>		
-	<script language="javascript" type="text/javascript" src="./js/calender/Calendar_search.js"></script>	
-	<script language="javascript" type="text/javascript" src="./js/calender/calendar-en_search.js"></script>		
+	<script language="javascript" type="text/javascript" src="./js/calender/ValidateFormElements_search.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/calender/Calendar_search.js"></script>
+	<script language="javascript" type="text/javascript" src="./js/calender/calendar-en_search.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/calender/calendar-setup.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery/jquery-1.2.3.pack.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery/plugins/jquery.form.js"></script>
 	<script language="javascript" type="text/javascript" src="./js/jquery/jquery-custom.js"></script>
-	
+
 </head>
 
 <body <? if($fname=='index' && !$_SESSION['valid']){ ?>onload="FillReligion('ddlReligion');"<? } ?> >
@@ -64,7 +64,7 @@ include("common/common.class.php");
 		<div style="width:100%;position:absolute;z-index:200000;left:0px" align="center" id="alignpwd">
 		<div style="width:800px;position:relative" ><div id="cpass" align="left" style="display:none;z-index:100000000"></div></div></div>
 		<!-- Light Box for forget Password  Ends here   -->
-					
+
 
 
 <!-- div class="header_top"> </div -->
@@ -89,7 +89,7 @@ include("common/common.class.php");
                         <table>
                           <tr>
                             <td width="77" align="left" valign="middle">
-	                            <input type="text" value='Email'  size="25" name="matrimonyid" id="matrimonyid" 
+	                            <input type="text" value='Email'  size="25" name="matrimonyid" id="matrimonyid"
 	                            onblur="if(this.value == ''){ this.value = 'Email';}" onfocus="if (this.value == 'Email') {this.value = '';}" onclick="if (this.value == 'ID/Email') { this.value = ''; }"/>
                             </td>
 
@@ -98,7 +98,7 @@ include("common/common.class.php");
                             </td>
 
                             <td width="51" align="center" valign="middle">
-                            	<input type="submit" class="loginButton" name="reg_submit" value="Login"   /> 
+                            	<input type="submit" class="loginButton" name="reg_submit" value="Login"   />
                             </td>
 						 </tr>
 						 <tr>
@@ -139,6 +139,8 @@ include("common/common.class.php");
                     <!-- li <? if($fname=='services'){ ?> class="current" <? } ?>><a href="services.php"><span>Services</span></a></li -->
 
                     <li <? if($fname=='paidmembership'){ ?> class="current" <? } ?>><a href="paidmembership.php"><span>Upgrade</span></a></li>
+                    <li><a href="board/"><span>Forum</span></a></li>
+
                   </ul>
                 </div>
       </div>
@@ -148,7 +150,7 @@ include("common/common.class.php");
 <!-- div class="header_submenu">
 <? if($_SESSION['valid']=='loginvalid'){
 		$pname = "search.php?searchindex=home";
-	} else { 
+	} else {
 		$pname = "register.php?reg=home";
 } ?>
 			<div class="ht_top_content"><a href="?lng=Assameme" style="text-decoration:none; color:black;"> Assameme </a>|<a href="?lng=Bengali" style="text-decoration:none; color:black;"> Bengali </a>|<a href="?lng=Gujarati" style="text-decoration:none; color:black;"> Gujarati </a>|<a href="?lng=Hindi" style="text-decoration:none; color:black;"> Hindi </a>|<a href="?lng=Kannada" style="text-decoration:none; color:black;"> Kannada </a>|<a href="?lng=Malayalee" style="text-decoration:none; color:black;"> Malayalee </a>|<a href="?lng=Marathi" style="text-decoration:none; color:black;"> Marathi </a>|<a href="?lng=Marwadi" style="text-decoration:none; color:black;"> Marwadi </a>|<a href="?lng=oriya" style="text-decoration:none; color:black;"> oriya </a>|<a href="?lng=Parsi" style="text-decoration:none; color:black;"> Parsi </a>|<a href="?lng=Punjabi" style="text-decoration:none; color:black;"> Punjabi </a>|<a href="?lng=Sindhi" style="text-decoration:none; color:black;"> Sindhi </a>|<a href="?lng=Tamil" style="text-decoration:none; color:black;"> Tamil </a>|<a href="?lng=Telugu" style="text-decoration:none; color:black;"> Telugu </a>|<a href="?lng=Urdu" style="text-decoration:none; color:black;"> Urdu </a></div>

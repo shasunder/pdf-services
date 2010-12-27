@@ -5,11 +5,6 @@
 <td width="622" valign="top"> 
 <table width="215" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:right;"><img src=""  width="25" height="25"/></span></td>
-    <td width="550" background="">&nbsp;</td>
-    <td width="25"><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
-  </tr>
-  <tr>
     <td background=""></td>
     <td>
 
@@ -119,11 +114,6 @@
 </div>
 </div></td>
     <td background="">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
-    <td background="">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
 </table>
 </td>

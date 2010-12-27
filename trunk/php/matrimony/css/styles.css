@@ -1,6 +1,7 @@
 /* CSS Document */
 body {
 	margin: 0px;
+	font-size:12px;
 	padding: 0px;
 }
 
@@ -40,7 +41,7 @@ body {
 
 .page_main {
 	width: 70%;
-	height:1200px;
+	/*height:1200px; */
 	background: url("../images/body_bg.gif") repeat-y scroll center center transparent;
 	margin: auto;
 	border: 0px solid #b1cd96;
