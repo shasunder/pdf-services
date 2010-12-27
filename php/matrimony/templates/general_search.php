@@ -2,7 +2,7 @@
 <form name="search" action="<?= $_SERVER['PHP_SELF']?>" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
-<td width="100%" valign="top"> 
+<td width="100%" valign="top">
       <table width="100%" border="0"  cellspacing="0" cellpadding="0">
         <tr>
           <td><div  class="sch_menu_t1">
@@ -125,11 +125,11 @@
                         </table>
                       </div>
                     </div -->
-                    
+
                      <input type="hidden" name="ddlCommunityout" id="communityhd" value="" />
-                    
+
                         <input type="hidden" name="communityhd" id="communityhd" value="" />
-                    
+
                     <div class="search_width">
                       <div class="search_48_red" style="width:55%"></div>
                       <div class="search_48_red" style="width:30%"></div>
@@ -162,13 +162,13 @@
                                   <td width="227" align="center"><select name="ddlcitizen" size="5" multiple="multiple" id="ddlcitizen" style="width:210px; height:80px;" class="multi_box_text">
                                       <?
 				$country=explode("|",$countryValue);
-				$countCountry=count($country);				    									   					    
+				$countCountry=count($country);
 				for($i=0;$i<count($country);$i++)
 				{ ?>
                                       <option style="width:112px;" value='<?=$i;?>'>
                                         <?= $country[$i];?>
                                       </option>
-                                      <? }							
+                                      <? }
 		?>
                                     </select>
                                   </td>
@@ -301,23 +301,23 @@
                             </div>
                             <br />
                         	<input name="generalsave" type="submit" class="s_btn" style="text-align:center" value="Save Search" onClick="return titlesave('savetitle1');"/>
-                            
+
                         	 <input name="submit" type="submit"  class="s_btn" style="width:60px; text-align:center" value="Search" />
-                        	
+
                         <?php }
                         else{?>
                         	 <input name="submit" type="submit"  class="s_btn" style="width:60px; text-align:center" value="Search" />
                         <?php }?>
-                             
-                             
+
+
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div></td>
-                
-                 
+
+
         </tr>
     </table>
 </td>
@@ -379,7 +379,9 @@ function compareDatesOnly(date1, date2) {
 </script>
 
 <script language="javascript">
-FillEducation('ddleducategory');FillReligion('ddlReligion');FillFeet('ddlheightfrm');FillFeet('ddlheightto');timedCount();
+FillFeet('ddlheightfrm');FillFeet('ddlheightto');
+FillEducation('ddleducategory');FillReligion('ddlReligion');
+FillFeet('ddlheightfrm');FillFeet('ddlheightto');timedCount();
 </script>
 
 <script type="text/javascript">

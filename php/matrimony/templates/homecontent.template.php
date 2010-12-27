@@ -26,8 +26,8 @@
 	      </div>
 	      <div style="padding-top:10px">
 		      <div style="padding-left:10px;">
-		       <div style="margin-left:150px;margin-top:-20px;position:absolute;"><img src="images/special-offer.gif"/></div> 
-			<a href="paidmembership.php" class="anchor-text">Upgrade</a> from just<b>Rs.500</b> only
+		       <div style="margin-left:190px;margin-top:-20px;position:absolute;"><img src="images/special-offer.gif"/></div> 
+			<a href="paidmembership.php" class="anchor-text">Upgrade</a> from just <b>Rs.500</b> only
 		      </div>
 	      </div>
 	      <br/>
