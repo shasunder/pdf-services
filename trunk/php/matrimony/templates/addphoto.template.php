@@ -173,7 +173,9 @@
 		<div class="search_100" style="cursor:pointer;" > Password protection :
 			<span class="red"><a href="javascript:void(0)" onClick="display(1,'pasw_content');document.getElementById('pwdError').innerHTML = '';document.getElementById('conpwdError').innerHTML = '';" class="red"> Click here to protect your photo.</a></span>
 		</div>
-		
+		<div class="search_100">
+			If you are unable to upload your photo,please check the size of your image and reduce it. If you still have problems, please send them to <b>service@marrybanjara.com</b> along with your login id.
+		</div>
 		<div class="search_100"  id="pasw_content" style="display:none;">
 			<label for="radiobutton"></label>
 			Password :		
