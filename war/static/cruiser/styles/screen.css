@@ -1,0 +1,157 @@
+input.span-19,textarea.span-19 {
+	width: 720px !important;
+	height: 500px;
+	overflow: hidden;
+}
+
+img.search {
+	margin-bottom: -8px
+}
+
+.ui-widget-content a {
+}
+
+.advancedSearch {
+	width: 380px;
+	background-color: #F5F5F4;
+	border: 1px solid #c3d9ff;
+	padding: 0.5em;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+.auditBox {
+	margin: 10px 0px 0px 0px;
+	width: 280px;
+	background-color: #F5F5F4;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border: 1px solid #c3d9ff;
+}
+
+fieldset {
+	border: 1px solid #c3d9ff;
+}
+
+.span-1 {
+	width: 30px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-2 {
+	width: 70px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-3 {
+	width: 110px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-4 {
+	width: 150px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-5 {
+	width: 190px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-6 {
+	width: 230px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-7 {
+	width: 270px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-8 {
+	width: 310px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-9 {
+	width: 350px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-10 {
+	width: 390px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-11 {
+	width: 430px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-12 {
+	width: 470px;
+	border: 1px solid #c3d9ff;
+}
+
+.span-13 {
+	width: 510px;
+}
+
+.span-14 {
+	width: 550px;
+}
+
+.span-15 {
+	width: 590px;
+}
+
+.span-16 {
+	width: 630px;
+}
+
+.span-17 {
+	width: 670px;
+}
+
+.span-18 {
+	width: 710px;
+}
+
+.span-19 {
+	width: 750px;
+}
+
+.span-20 {
+	width: 790px;
+}
+
+.span-21 {
+	width: 830px;
+}
+
+.span-22 {
+	width: 870px;
+}
+
+.span-23 {
+	width: 910px;
+}
+
+.span-24,div.span-24 {
+	width: 950px;
+	margin-right: 0;
+}
+
+input[type=text],input[type=password],input.text,input.title,textarea,select
+	{
+	background-color: #fff;
+	border: 1px solid #c3d9ff;
+	height: 20px;
+}
+
+.header {
+	text-align: left;
+	background: none repeat scroll 0 0 #C3D9FF; /*url(../images/bg_header.jpg) no-repeat;*/
+	color:#003366;
+	padding: 3px;
+}
