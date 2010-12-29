@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Web cruiser</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<link href="styles/styles.css" type="text/css" rel="stylesheet" />
+	<link href="styles/print.css" type="text/css" rel="stylesheet" media="print" />
+	<link href="styles/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+	<!-- debug - - >
+	<script type="text/javascript" src="scripts/debug/firebug-lite.js"></script>
+	<script type="text/javascript" src="scripts/debug/firebug-lite-debug.js"></script>
+	< !- - /debug -->
+
+
+ 	<script src="scripts/jquery-1.4.min.js"></script>
+  	<script src="scripts/jquery-ui-1.8.min.js"></script>
+  	<script src="scripts/jquery-jpmc-1.0.js"></script>
+  	<script src="scripts/jquery-cookie-1.0.js"></script>
+
+  	<!--
+  	TODO:
+  	1. define xml
+  	2. cookie settings
+  	3. parse xml - -show stopper
+  	4. generate dynamic tabs
+  	5. generate dynamic iframes
+
+
+  	$(parseXml(xml)).find('location[name="UK"]>site').attr('url');
+  	$(parseXml(xml)).find('location[name="UK"]>site[tag="news"]')[0];
+
+  	 -->
+
+  <script type="text/javascript">
+  	var tabsTopLevelContainerId= '#tabsTopLevel';
+	var locationId='UK';
+	var panelId='news';
+	var cookieName='cruiser.xml';
+	var xml='<world><location name="UK"> <site url="http://bbc.co.uk" tag="news" /> <site url="http://news.bbc.co.uk/weather" tag="weather" /> <site url="http://uk.finance.yahoo.com/" tag="finance" /> <site url="http://www.bbc.co.uk/news/politics/" tag="politics" /> <site url="http://youtube.co.uk/" tag="entertainment" /></location>'
+			+'<location name="India"> <site url="http://ndtv.com" tag="news" /> <site url="http://in.weather.yahoo.com/" tag="weather" /><site url="http://finance.yahoo.co.in/" tag="finance" /> <site url="http://www.indiadaily.com/pol.asp" tag="politics" /><site url="http://youtube.co.in/" tag="entertainment" /></location>'
+			+'<location name="Bangalore"> <site url="http://www.deccanherald.com/" tag="news" /> <site url="http://in.weather.yahoo.com/" tag="weather" /><site url="http://finance.yahoo.co.in/" tag="finance" /> <site url="http://www.indiadaily.com/pol.asp" tag="politics" /><site url="http://youtube.co.in/" tag="entertainment" /></location>'
+			+'<location name="Mysore"> <site url="http://www.starofmysore.com/" tag="news" /> <site url="http://in.weather.yahoo.com/" tag="weather" /><site url="http://finance.yahoo.co.in/" tag="finance" /> <site url="http://www.indiadaily.com/pol.asp" tag="politics" /><site url="http://youtube.co.in/" tag="entertainment" /></location>'
+
+			+'</world>';
+
+	//do on load
+	$(document).ready(function() {
+		xml = $.cookie(cookieName) ==null ? formatXml(xml) :  $.cookie(cookieName);
+	    $(tabsTopLevelContainerId).tabs();
+		$(tabsTopLevelContainerId).tabs('disable','options');
+	    $(tabsTopLevelContainerId).tabs({
+	        select: function(event, ui) {
+	        	var url='';
+	        	panelId= ui.panel.id!='options' ? ui.panel.id : panelId;
+	        	loadSite();
+	        	$(tabsTopLevelContainerId).tabs('disable','options');
+
+	        }
+	   	 });
+
+	});
+
+	function loadOptions(linkId){
+
+		$('#optionsText').val(xml);
+		$('#panel'+locationId).attr('class','');
+		$('#panel'+linkId).attr('class','current');
+		$(tabsTopLevelContainerId).tabs('enable','options');
+		$(tabsTopLevelContainerId).tabs('select','options');
+		$('#iframeContainer').hide();
+	}
+
+	function loadSite(){
+
+		url = $(parseXml(xml)).find('location[name="'+locationId+'"]>site[tag="'+panelId+'"]').attr('url');
+		showUrl(url);
+
+	}
+	function showUrl(url){
+        $('#iframeContainer').attr('src', url);
+        $('#iframeContainer').show();
+	}
+
+	function search(){
+		var url = 'http://www.google.co.uk/search?q=' + $('#search').val();
+		showUrl(url);
+	}
+
+	function wiki(){
+		var url = 'http://en.wikipedia.org/wiki/' + $('#wiki').val();
+		showUrl(url);
+	}
+
+	function dictionary(){
+		var url = 'http://dictionary.reference.com/browse/'+$('#dictionary').val();
+		showUrl(url);
+	}
+
+	function testXml(xml){
+		var data = parseXml(xml);
+		 $(data).find('location[name="UK"]>state>sites>site').each( function(){
+             alert($(this).text()); // 1, 2
+ 		});
+	}
+
+	function parseXml(str) {
+		  if (window.ActiveXObject) {
+		    var doc = new ActiveXObject('Microsoft.XMLDOM');
+		    doc.loadXML(str);
+		    return doc;
+		  } else if (window.DOMParser) {
+		    return (new DOMParser).parseFromString(str, 'text/xml');
+		  } else
+		    return "";
+	}
+
+	function setLocation(loc){
+		$(tabsTopLevelContainerId).tabs('select',panelId);
+		$('#panel'+locationId).attr('class','');
+		$('#panelOptions').attr('class','');
+		locationId = loc;
+		$('#panel'+locationId).attr('class','current');
+		loadSite();
+		//alert(locationId);
+	}
+
+	function showMoreEmailSearchResults(){
+		$('#emailSearchResultRow1').clone().appendTo('#emailSearchResultTable');
+	}
+
+	/* Min/maximize panel. Follows convention - '[panelId]MinMax' as toggle button id */
+	function minMaxPanel(panelId){
+		var panelId = "#" + panelId;
+		hideShow( [ panelId  ]);
+		var minMax = $(panelId+"MinMax");
+		$(minMax).attr('src')=='images/expanded.png' ? $(minMax).attr('src','images/collapsed.png') : $(minMax).attr('src','images/expanded.png');
+
+	}
+
+	function store(){
+		xml=$('#optionsText').val();
+		$.cookie(cookieName,xml);
+	}
+
+	function formatXml(xml) {
+	    var formatted = '';
+	    var reg = /(>)(<)(\/*)/g;
+	    xml = xml.replace(reg, '$1\r\n$2$3');
+	    var pad = 0;
+	    jQuery.each(xml.split('\r\n'), function(index, node) {
+	        var indent = 0;
+	        if (node.match( /.+<\/\w[^>]*>$/ )) {
+	            indent = 0;
+	        } else if (node.match( /^<\/\w/ )) {
+	            if (pad != 0) {
+	                pad -= 1;
+	            }
+	        } else if (node.match( /^<\w[^>]*[^\/]>.*$/ )) {
+	            indent = 1;
+	        } else {
+	            indent = 0;
+	        }
+
+	        var padding = '';
+	        for (var i = 0; i < pad; i++) {
+	            padding += '  ';
+	        }
+
+	        formatted += padding + node + '\r\n';
+	        pad += indent;
+	    });
+
+	    return formatted;
+	}
+
+   </script>
+</head>
+
+<body>
+
+<noscript>
+	<h3>This page requires JavaScript 1.1</h3>
+	This page requires a browser that supports JavaScript 1.1<br />
+	Your browser either does not support JavaScript, or it has JavaScript disabled.
+	To view this page correctly, please upgrade your browser or enable JavaScript support.
+</noscript>
+
+<!--  div id="banner">
+
+ 	<div id="logo">
+		<h1 ><label>Web cruiser</label></h1>
+ 	</div>
+
+</div-->
+
+
+<div id="container">
+
+	<div id="left">
+
+		<div class="leftPanel">
+
+			<h2><img class ="" src="images/expanded.png" onclick="javascript:minMaxPanel('leftPanelContent');" id="leftPanelContentMinMax" />&nbsp;<label>Cruiser</label>
+			</h2>
+			<div id="leftPanelContent">
+				<ul>
+					<li id="panelUK" class="current"><a class="page" href="javascript:setLocation('UK')">UK </a></li>
+					<li id="panelIndia" ><a class="page" href="javascript:setLocation('India')">India </a></li>
+					<li id="panelMysore"><a class="page" href="javascript:setLocation('Mysore')">Mysore </a></li>
+					<li id="panelBangalore"><a class="page" href="javascript:setLocation('Bangalore')">Bangalore </a></li>
+					<li id="panelOptions"><a class="page" href="javascript:loadOptions('Options')">Options</a></li>
+				</ul>
+				Google<br/>
+				&nbsp;<input type="text" name="search" id="search" onchange="search()" style="width:94px" value="" />
+				<br/>
+				Wiki<br/>
+
+				&nbsp;<input type="text" name="wiki" id="wiki" onchange="wiki()" style="width:94px" value="" />
+				<br/>
+				Dictionary<br/>
+				&nbsp;<input type="text" name="dictionary" id="dictionary" onchange="dictionary()" style="width:94px" value="" />
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div id="main">
+
+
+
+	<div id="mainPanelBottom" class="mainPanel">
+	    <div id="tabsTopLevel">
+			<div id="mainPanelBottomContent">
+				<ul>
+			        <li><a href="#news"><span>News</span></a></li>
+			        <li><a href="#weather"><span>Weather</span></a></li>
+			        <li><a href="#finance"><span>Finance</span></a></li>
+					<li><a href="#politics"><span>Politics</span></a></li>
+					<li><a href="#entertainment"><span>Entertainment</span></a></li>
+					<li><a href="#options"><span>Options</span></a></li>
+			    </ul>
+
+
+			    <!--  site data  -->
+			    <div id="news">
+			    </div>
+
+			    <div id="weather">
+			    </div>
+
+				<div id="finance">
+				</div>
+
+			    <div id="politics" class=" span-30 last">
+				</div>
+
+				<div id="entertainment">
+				</div>
+
+				<div id="options">
+					<textarea class="span-19" id="optionsText" rows="100" cols="200" onchange="store();"></textarea>
+				</div>
+				<iframe id='iframeContainer' src='' width='100%' height='700px' style="border:0px 1px 0px 0px;"/>
+
+		  	</div>
+		</div>
+	</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

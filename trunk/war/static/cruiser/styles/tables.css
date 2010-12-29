@@ -1,0 +1,51 @@
+/***************************************************************
+STANDARD TABLE
+***************************************************************/
+table {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+th {
+	text-align: left;
+	background: none repeat scroll 0 0 #C3D9FF; /*url(../images/bg_header.jpg) no-repeat;*/
+	color:#003366;
+	padding: 6px;
+}
+td {
+	text-align: left;
+	padding: 5px;
+}
+tr.odd {
+	background: #F3F9FF;
+}
+tr.selectedRow td {
+	background: #E5ECF9;
+	border-top: 1px solid #C3D9FF;
+	border-bottom: 1px solid #C3D9FF;
+}
+th a {
+	text-decoration: none;
+	color:#003366;
+}
+td a {
+	text-decoration: none;
+	color: #000099;
+}
+td a:hover {
+	text-decoration: none;
+	color: #6699CC;
+}
+.sortable a {
+  display: block;
+  font-size: 100%; 
+  text-decoration: none;  
+  height: 100%;
+  width: 100%;
+  color:#003366;
+  /*padding: 6px 6px 6px 12px;*/
+ /* background: url(../images/arrow_off.gif) no-repeat center right;*/
+}
+.sortable a:hover {
+  
+}

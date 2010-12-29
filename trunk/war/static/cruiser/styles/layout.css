@@ -1,0 +1,152 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 75% arial, verdana, helvetica, sans-serif;
+	color: #333;
+	/* background: #ffffff url(../images/bg.gif) repeat-y left;*/
+	font-family: font-family: Verdana,Arial,sans-serif;
+}
+
+
+/*********************************************************************************
+	PAGE LAYOUT
+**********************************************************************************/
+#mainContent {
+	float: left;
+	width: 100%;
+	padding: 0;
+	margin-top: 4px;
+}
+#banner {
+	clear: both;
+	float: left;
+	width: 100%;
+	background: #ffffff;
+	padding-bottom: 5px;
+	padding-top: 0px;
+}
+#logo {
+	float: left;
+	/*padding-left: 15px;*/
+	padding-top: 5px;
+}
+#container {
+	width: 100%;
+	float: left;
+	margin-right: -200px;
+}
+#main {
+	float:left;
+	width: 90%;
+}
+.mainPanel {
+	background: url(../images/header_bg.jpg) repeat-x;
+	float: left;
+  	width: 100%;
+}
+#TaskList {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+#left {
+	float: left;
+	width: 7.5%;
+}
+.leftPanel {
+	background: url(../images/header_bg.jpg) repeat-x;
+	float: left;
+}
+
+.tasks {
+	background: url(../images/tasksgroup.gif) no-repeat;
+	padding-left: 30px;
+	margin-left: 5px;
+	padding-top: 7px;
+	font-size: 120%;
+	height: 23px;
+}
+.taskInbox {
+	background: url(../images/taskInbox.gif) no-repeat;
+	padding-left: 35px;
+	margin-left: 5px;
+	padding-top: 7px;
+	padding-bottom: 0px;
+	margin: 0px;
+	font-size: 120%;
+	height: 23px;
+}
+.selectedTask {
+	background: url(../images/task.gif) no-repeat;
+	padding-left: 30px;
+	margin-left: 5px;
+	padding-top: 7px;
+	/*font-size: 120%;*/
+	height: 23px;
+	float: left;
+}
+
+
+#advanced-search
+{
+  float: left;
+  padding: 15px;
+  width: 30%;
+  margin: 0;
+}
+
+
+
+#description, #comments{
+	border: 1px solid #ccc;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+#tabbedPanel {
+	float: left;
+}
+
+#footer {
+	border-top: #aeaeae 1px solid;
+	font-size: 90%;
+	float: left;
+	margin-bottom: 25px;
+	width: 955px;
+	height: 48px;
+	background: url(../images/bkgrd_footer.jpg) repeat-x #fff;
+	color: #666;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+.links {
+	float: left;
+}
+#copyrightInfo {
+	padding-right: 10px;
+	float: right;
+	text-align: right;
+}
+
+/*********************************************************************************
+	GENERIC STYLES
+**********************************************************************************/
+
+img {
+	border: 0px;
+}
+.clearing {
+	height: 0;
+	clear: both;
+}
+.helpWindow {
+	width: 230px;
+	height: 200px;
+	padding-left: 20px;
+	padding-right: 10px;
+	background: url(../images/speechbubble.gif) no-repeat;
+	z-index: 1;
+    position:absolute;
+}
