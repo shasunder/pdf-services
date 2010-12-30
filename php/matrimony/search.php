@@ -5,6 +5,21 @@ include("common/function.php");
 $matrimony = new matrimony();
 $matrimony->seturl();
 
+$fg=$_SESSION['ProfileId'];
+if($fg !=null){
+$pquery="select * from tm_paymentdetail where Profileid='".$fg."'";
+$pqueryresult=mysql_query($pquery);
+
+//echo  $pquery;
+
+while ($row=mysql_fetch_array($pqueryresult))
+{
+	$pcount=$row['ProfileCount'];
+	$vprofile=$row['Viewedprofiles'];
+
+}
+}
+
 class commonsearch extends matrimony
 {
 	function search_case($argcase){/*---------- for all search-----------*/
@@ -25,7 +40,7 @@ class commonsearch extends matrimony
 				$this->switchqry($this->tbname,'SELECT',$this->whrarg,$this->dbfldarg);
 				$gen=$this->f;
 				$srcnum = mysql_num_rows($this->qry_result);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				return $gen;
 				break;
 			}
@@ -49,11 +64,11 @@ class commonsearch extends matrimony
 				}else{ $this->whrarg = $_SESSION['whrarg']; }
 				$this->switchqry($this->tbname,'SELECT',$this->whrarg,$this->dbfldarg);
 				$srcnum = mysql_num_rows($this->qry_result);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				$gen=$this->f;
-				return $gen;		
+				return $gen;
 				break;
-			}		
+			}
 			case "profileidsrc":{
 				$rpsrcparr = $this->postarrfn();
 				$this->tbname = "tm_profile tmp,tm_family tmf";
@@ -63,9 +78,9 @@ class commonsearch extends matrimony
 				}else{ $this->whrarg = $_SESSION['whrarg']; }
 				$this->switchqry($this->tbname,'SELECT',$this->whrarg,$this->dbfldarg);
 				$srcnum = mysql_num_rows($this->qry_result);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				$gen=$this->f;
-				return $gen;				
+				return $gen;
 				break;
 			}
 			case "keywordsrc":{
@@ -85,19 +100,19 @@ class commonsearch extends matrimony
 				$srcnum = mysql_num_rows($this->qry_result);
 				$this->pagination($srcnum);
 				$gen=$this->f;
-				return $gen;		
+				return $gen;
 				break;
 			}
 			case "similar":{
 				$this->tbname = "tm_profile tmp,tm_family tmf";
-				if($_REQUEST[gender]){		
+				if($_REQUEST[gender]){
 				$this->whrarg = " WHERE tmp.Gender = '$_REQUEST[gender]' AND tmp.Age = '$_REQUEST[age]' AND tmp.Height = '$_REQUEST[height]' AND tmp.Religion like '%$_REQUEST[religion]%' AND tmp.CastDivision like '%$_REQUEST[caste]%' AND tmp.Subcaste like '%$_REQUEST[subcaste]%' AND tmp.Star like '%$_REQUEST[star]%' AND tmp.Raasi like '%$_REQUEST[raasi]%' AND tmp.City like '%$_REQUEST[city]%' AND tmp.State like '%$_REQUEST[state]%' AND tmp.ResidingCountry like '%$_REQUEST[country]%' AND tmp.EducationQual like '%$_REQUEST[eduquali]%' AND tmp.EducationSpecialization like '%$_REQUEST[eduspl]%' AND tmp.Adminstatus = 'A'";
 				$_SESSION['whrarg'] = $this->whrarg;
 				}else{ $this->whrarg = $_SESSION['whrarg']; }
 				$this->switchqry($this->tbname,'SELECT',$this->whrarg,$this->dbfldarg);
 				$srcnum = mysql_num_rows($this->qry_result);
 				$this->pagination($srcnum);
-			}		
+			}
 			/*case "home":{
 				$this->tbname = "tm_profile tmp,tm_family tmf";
 				if($_REQUEST[rel]){
@@ -112,43 +127,43 @@ class commonsearch extends matrimony
 				$this->switchqry($this->tbname,'SELECT',$this->whrarg,$this->dbfldarg);
 				$srcnum = mysql_num_rows($this->qry_result);
 				$this->pagination($srcnum);
-			} */		
+			} */
 		}
 	}
-	
+
 function search_case1($argcase,$query){/*---------- for all search-----------*/
 		$this->dbfldarg = "distinct tmp.FirstName,tmp.MiddleName,tmp.LastName,tmp.ProfileId,tmp.Gender,tmp.Age,tmp.Height,tmp.Religion,tmp.CastDivision,tmp.Subcaste,tmp.Star,tmp.Raasi,tmp.City,tmp.State,tmp.ResidingCountry,tmp.EducationQual,tmp.EducationSpecialization";
 		switch($argcase){
 			case "generalsrc":{
 				$gsgenquery=mysql_query($query);
 				$srcnum = mysql_num_rows($gsgenquery);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				break;
 			}
 			case "advancesrc":{
 				$gsgenquery=mysql_query($query);
 				$srcnum = mysql_num_rows($gsgenquery);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				break;
-			}		
+			}
 			case "profileidsrc":{
 				$gsgenquery=mysql_query($query);
 				$srcnum = mysql_num_rows($gsgenquery);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				break;
 			}
 			case "keywordsrc":{
 				$gsgenquery=mysql_query($query);
 				$srcnum = mysql_num_rows($gsgenquery);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				break;
 			}
 			case "similar":{
 				$gsgenquery=mysql_query($query);
 				$srcnum = mysql_num_rows($gsgenquery);
-				$this->pagination($srcnum);	
+				$this->pagination($srcnum);
 				break;
-			}		
+			}
 			/*case "home":{
 				$this->tbname = "tm_profile tmp,tm_family tmf";
 				if($_REQUEST[rel]){
@@ -163,7 +178,7 @@ function search_case1($argcase,$query){/*---------- for all search-----------*/
 				$this->switchqry($this->tbname,'SELECT',$this->whrarg,$this->dbfldarg);
 				$srcnum = mysql_num_rows($this->qry_result);
 				$this->pagination($srcnum);
-			} */		
+			} */
 		}
 	}
 }
@@ -173,7 +188,7 @@ $searchType = $_REQUEST['type'] ? $_REQUEST['type'] : 'gs';
 
 if(($_REQUEST['searchindex'] != "")){
 $commonsearch->search_case($searchcase);
-	
+
 if($_REQUEST['generalsave'] != "")
 {
 $gsquery=$commonsearch->search_case("generalsrc");
@@ -187,7 +202,7 @@ if($_REQUEST['Advancesave']!= "")
 $gsquery1=$commonsearch->search_case("advancesrc");
 $generatequery1='insert into tm_savesearch values("0","'.$_SESSION['ProfileId'].'","'.$_REQUEST['Adsavetitle'].'","'.$gsquery1.'","advancesrc")';
 //echo $generatequery1;
-mysql_query($generatequery1);	
+mysql_query($generatequery1);
 
 }
 
@@ -196,7 +211,7 @@ if($_REQUEST['keysave'] != "")
 $gsquery2=$commonsearch->search_case("keywordsrc");
 $generatequery2='insert into tm_savesearch values("0","'.$_SESSION['ProfileId'].'","'.$_REQUEST['keytitle'].'","'.$gsquery2.'","keywordsrc")';
 //echo $generatequery2;
-mysql_query($generatequery2);	
+mysql_query($generatequery2);
 
 }
 
@@ -205,7 +220,7 @@ if($_REQUEST['profileidsave'] != "")
 	$gsquery3=$commonsearch->search_case("keywordsrc");
 $generatequery3='insert into tm_savesearch values("0","'.$_SESSION['ProfileId'].'","'.$_REQUEST['profileidsave'].'","'.$gsquery3.'","profileidsrc")';
 //echo $generatequery2;
-mysql_query($generatequery3);	
+mysql_query($generatequery3);
 }
 
 	include("templates/homeheader.template.php");
@@ -222,7 +237,7 @@ $commonsearch->search_case($_REQUEST['stype1'],$_REQUEST['query']);
 //include("templates/homeheader.template.php");
 include("templates/search_result.php");
 //include("templates/homefooter.template.php");
-	
+
 }
 
 else {
