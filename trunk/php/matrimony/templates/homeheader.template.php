@@ -139,7 +139,7 @@ include("common/common.class.php");
                     <!-- li <? if($fname=='services'){ ?> class="current" <? } ?>><a href="services.php"><span>Services</span></a></li -->
 
                     <li <? if($fname=='paidmembership'){ ?> class="current" <? } ?>><a href="paidmembership.php"><span>Upgrade</span></a></li>
-                    <li><a href="board/"><span>Forum</span></a></li>
+                    <!-- li><a href="board/"><span>Forum</span></a></li -->
 
                   </ul>
                 </div>

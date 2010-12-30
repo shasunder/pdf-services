@@ -4,7 +4,7 @@
 <div class="page" id="wholedisplay">
 <br /><table  border="0" cellpadding="0" cellspacing="0"  width="700px">
 <tr>
-<td valign="top"> 
+<td valign="top">
 <form name="editProfile">
 
 <table border="0" cellspacing="0" cellpadding="0">
@@ -24,22 +24,22 @@
 <div class="schmenu_rt" ></div>
 <div class="schmenu_lt" ></div>
 <div class="schmenu_cr"><div class="schmenu" ><a href="search.php?type=kes"> By Keyword(s) </a> </div></div>
-<div class="schmenu_rt" ></div>			
+<div class="schmenu_rt" ></div>
 </div>
 <div style="width:100%; border:0px solid green;">
-<div class="sch_con" > 
+<div class="sch_con" >
 <? if($commonsearch->total_items == 0){?>
 <div style="height:100px;">
 <div class="sch_prof" style="width:98%;height:20px;text-align:center;padding-top:20px;color:#990000;font-weight:bold;font-size:12px;">Sorry , Search Result is Empty.</div>
 </div>
-<? } else { ?>	<div style="height:15px;"> </div>		
+<? } else { ?>	<div style="height:15px;"> </div>
 <div class="sch_b_arrow"><?	if ($commonsearch->prev_page >= 1) { ?>
 <div style='float:left;'>
 	<a><img src="images/l_arrow.jpg" style="border:0px;cursor:pointer;" onClick="searchlimit('<?= $commonsearch->pagename?>','<?= $commonsearch->limit?>','<?= $commonsearch->prev_page?>','<?php if($_REQUEST['searchindex'] != ""){echo $_REQUEST['searchindex'];}else{echo $_REQUEST['stype1']; }?>');"/> </a>
 </div> <? } else {
 echo ("<div style='float:left; padding-bottom:0px;border:0px solid blue;'>
 						<img src='images/l_arrow_url.gif' style='border:0px;cursor:pointer;'/></div>");}
-echo "<div style='float:left;padding-left:10px;padding-right:10px;'>".$commonsearch->pageval." - ".$commonsearch->endval." of ".$commonsearch->totalval."</div>";					
+echo "<div style='float:left;padding-left:10px;padding-right:10px;'>".$commonsearch->pageval." - ".$commonsearch->endval." of ".$commonsearch->totalval."</div>";
 if ($commonsearch->endval >= ($commonsearch->total_items)) {
 echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:0px;cursor:pointer;'/></div>");} else { ?>
 <div style="float:left;">
@@ -48,16 +48,16 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 </div><br />
 <div class="sch_s_v">
 	<div class="sch_select_all">
-	<input name="chkall[]" id="chkall" type="checkbox" value="" />  Select All </div> 
+	<input name="chkall[]" id="chkall" type="checkbox" value="" />  Select All </div>
 	<div class="sch_view"> Forward </div>
 </div>
 <div class="sch_border"> </div>
-<? $i = 0; for($j=0;$j<count($commonsearch->page_val);$j++){ $i++; ?>				
+<? $i = 0; for($j=0;$j<count($commonsearch->page_val);$j++){ $i++; ?>
 <div style="height:225px;" >
 <div class="sch_s_v">
 	<div class="sch_select_all"><input name="chkthis[]" id="chkthis" type="checkbox" value="" />  Select this Profile </div>
-	<div class="sch_view"> 
-		<a href="javascript:void(0)" onClick="similar_result('<?= $commonsearch->pagename?>','similar','ss','<?=$commonsearch->page_val[$j][Gender];?>','<?= $commonsearch->page_val[$j][Age];?>','<?= $commonsearch->page_val[$j][Height];?>','<?= $commonsearch->page_val[$j][Religion];?>','<?= $commonsearch->page_val[$j][CastDivision];?>','<?= $commonsearch->page_val[$j][Subcaste];?>','<?= $commonsearch->page_val[$j][Star];?>','<?= $commonsearch->page_val[$j][Raasi];?>','<?= $commonsearch->page_val[$j][City];?>','<?= $commonsearch->page_val[$j][State];?>','<?= $commonsearch->page_val[$j][ResidingCountry];?>','<?= $commonsearch->page_val[$j][EducationQual];?>','<?= $commonsearch->page_val[$j][EducationSpecialization];?>');" style="text-decoration:none;" class="prof-head">View Similar Profile</a> 
+	<div class="sch_view">
+		<a href="javascript:void(0)" onClick="similar_result('<?= $commonsearch->pagename?>','similar','ss','<?=$commonsearch->page_val[$j][Gender];?>','<?= $commonsearch->page_val[$j][Age];?>','<?= $commonsearch->page_val[$j][Height];?>','<?= $commonsearch->page_val[$j][Religion];?>','<?= $commonsearch->page_val[$j][CastDivision];?>','<?= $commonsearch->page_val[$j][Subcaste];?>','<?= $commonsearch->page_val[$j][Star];?>','<?= $commonsearch->page_val[$j][Raasi];?>','<?= $commonsearch->page_val[$j][City];?>','<?= $commonsearch->page_val[$j][State];?>','<?= $commonsearch->page_val[$j][ResidingCountry];?>','<?= $commonsearch->page_val[$j][EducationQual];?>','<?= $commonsearch->page_val[$j][EducationSpecialization];?>');" style="text-decoration:none;" class="prof-head">View Similar Profile</a>
 	</div>
 </div><br />
 <div <? if (($i % 2) == 0) { echo $divcolor = "class='sch_box_o'"; } else { echo $divcolor = "class='sch_box'";	}?>>
@@ -71,14 +71,14 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 			<?php }?>
 			<img src="member_image/<?= $commonsearch->img_data[0][image_thumb]; ?>" width="85" height="87" name="img_<?=$j;?>" style="border:1px solid  #CCCCCC;" onMouseOver="document.getElementById('show<?=$j?>').style.display='';" onMouseOut="document.getElementById('show<?=$j?>').style.display='none';"/></a></div>
 			<input type="hidden" name="txtimgcnt_<?=$j;?>" id="txtimgcnt_<?=$j;?>" value="1" />
-				<div style="position:relative;"> 
+				<div style="position:relative;">
 			<? $browser = get_browser(); if($browser->browser=="IE"){ ?>
-				<div style='position:absolute; display:none; border:2px solid #126569; z-index:5000;  top:15px;left:0px; width:130px; height:128px; cursor:pointer;' id='show<?= $j;?>'>    
+				<div style='position:absolute; display:none; border:2px solid #126569; z-index:5000;  top:15px;left:0px; width:130px; height:128px; cursor:pointer;' id='show<?= $j;?>'>
 			<? }else { ?>
 				<div style='position:absolute; display:none; border:2px solid #126569; z-index:5000;  top:15px;left:110px; width:130px; height:128px; cursor:pointer;' id='show<?= $j;?>'>
-			<? } ?><img src="member_image/<?=$commonsearch->img_data[0][image_thumb];?>" style='width:130px;height:128px;border:0px;' name="lgt_img_<?=$j?>"/> </div>	
-				</div>								
-			<? } else { ?>							
+			<? } ?><img src="member_image/<?=$commonsearch->img_data[0][image_thumb];?>" style='width:130px;height:128px;border:0px;' name="lgt_img_<?=$j?>"/> </div>
+				</div>
+			<? } else { ?>
 				<div  class="sch_img" ><? if($commonsearch->page_val[$j][Gender] == M){?>
 					<img src="images/boy_img.jpg" width="85" height="87" style="border:1px solid  #CCCCCC;" /><? }else{?>
 					<img src="images/lady_img.jpg" width="85" height="87" style="border:1px solid  #CCCCCC;" /><? } ?>
@@ -87,13 +87,17 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 		<div class="sch_prof">
 			<span class="prof-head"><?= $commonsearch->page_val[$j][FirstName]." ".$commonsearch->page_val[$j][MiddleName]." ".$commonsearch->page_val[$j][LastName];?>(<?= $commonsearch->page_val[$j][ProfileId];?>)</span>
 			<span class="prof_text"><br /><?= $commonsearch->page_val[$j][Age];?> yrs,<?= $commonsearch->page_val[$j][Height];?>
-			| <?= $commonsearch->page_val[$j][Religion];?>: <?= $commonsearch->page_val[$j][CastDivision];?> 
+			| <?= $commonsearch->page_val[$j][Religion];?>: <?= $commonsearch->page_val[$j][CastDivision];?>
 			<? if($commonsearch->page_val[$j][Subcaste]!=''){ ?> | Subcaste: <?= $commonsearch->page_val[$j][Subcaste];?><? } ?> <br />
-			| <?= $commonsearch->page_val[$j][Star];?>:  <?= $commonsearch->page_val[$j][Raasi];?> 
-			| <?= $commonsearch->page_val[$j][City];?>, <?= $commonsearch->page_val[$j][State];?>, <?= $commonsearch->page_val[$j][ResidingCountry];?> 
+			| <?= $commonsearch->page_val[$j][Star];?>:  <?= $commonsearch->page_val[$j][Raasi];?>
+			| <?= $commonsearch->page_val[$j][City];?>, <?= $commonsearch->page_val[$j][State];?>, <?= $commonsearch->page_val[$j][ResidingCountry];?>
 			| <?= $commonsearch->page_val[$j][EducationQual];?> | <?= $commonsearch->page_val[$j][EducationSpecialization];?> <br /></span>
-			<? if($_SESSION['valid']=='loginvalid'){?> 
-			<?php if($vprofile < $pcount ){?>
+			<? if($_SESSION['valid']=='loginvalid'){?>
+			<?php
+			if($vprofile ==null){
+			   echo '<Br/><span style="font-size:10px;color:grey">To view full profile details and contact member,</span><a href="paidmembership.php" style="color:#EC3248;">click here to Upgrade</a>';
+			}
+			if($vprofile < $pcount ){?>
 				<a style="cursor:pointer" onClick="profilecount('view','<?= $commonsearch->page_val[$j][ProfileId];?>');");><span class="red">Full Profile >></span></a>
 			<? } } else {?>
 			<a style="cursor:pointer" href="login.php");><span class="red">Full Profile >></span></a>
@@ -101,7 +105,7 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 		</div>
 	</div><? if($commonsearch->imgnum != 0){ ?>
 	<div  style="height:20px; width:80px; padding-left:23px;">
-		<div class="sch_l_arrow"><img src="images/l_arrow_url.gif" onClick="if(document.getElementById('txtimgcnt_<?=$j;?>').value > 1){if(document.getElementById('txtimgcnt_<?=$j;?>').value==2){srcimgprev('<?= $commonsearch->img_data[0][image_thumb]; ?>','<?=$j;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==3){srcimgprev('<?= $commonsearch->img_data[1][image_thumb]; ?>','<?=$j;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==4){srcimgprev('<?= $commonsearch->img_data[2][image_thumb]; ?>','<?=$j;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==5){srcimgprev('<?= $commonsearch->img_data[3][image_thumb]; ?>','<?=$j;?>')}};" name="imglarr_<?=$j?>" style="cursor:pointer;"/></div> 
+		<div class="sch_l_arrow"><img src="images/l_arrow_url.gif" onClick="if(document.getElementById('txtimgcnt_<?=$j;?>').value > 1){if(document.getElementById('txtimgcnt_<?=$j;?>').value==2){srcimgprev('<?= $commonsearch->img_data[0][image_thumb]; ?>','<?=$j;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==3){srcimgprev('<?= $commonsearch->img_data[1][image_thumb]; ?>','<?=$j;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==4){srcimgprev('<?= $commonsearch->img_data[2][image_thumb]; ?>','<?=$j;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==5){srcimgprev('<?= $commonsearch->img_data[3][image_thumb]; ?>','<?=$j;?>')}};" name="imglarr_<?=$j?>" style="cursor:pointer;"/></div>
 		<div class="sch_link"><span id="sp_<?= $j?>"> 1</span> -  <?=$commonsearch->imgnum;?> </div>
 		<div class="sch_r_arrow"><? if($commonsearch->imgnum == 1){ ?><img src="images/r_arrow_url.gif"/><? } else { ?><img src="images/r_arrow.jpg" onClick="if(document.getElementById('txtimgcnt_<?=$j;?>').value < <?= $commonsearch->imgnum;?>){if(document.getElementById('txtimgcnt_<?=$j;?>').value==1){srcimgnext('<?= $commonsearch->img_data[1][image_thumb]; ?>','<?=$j;?>','<?=$commonsearch->imgnum;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==2){srcimgnext('<?= $commonsearch->img_data[2][image_thumb]; ?>','<?=$j;?>','<?=$commonsearch->imgnum;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==3){srcimgnext('<?= $commonsearch->img_data[3][image_thumb]; ?>','<?=$j;?>','<?=$commonsearch->imgnum;?>')} else if(document.getElementById('txtimgcnt_<?=$j;?>').value==4){srcimgnext('<?= $commonsearch->img_data[4][image_thumb]; ?>','<?=$j;?>','<?=$commonsearch->imgnum;?>')}};" name="imgrarr_<?=$j?>" style="cursor:pointer;"/><? } ?></div>
 	</div><? } ?>
@@ -122,16 +126,16 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 	<div class="sch_border_b"> </div>
 </div><br /><? } ?>
 <div class="sch_s_v">
-	<div class="sch_select_all"><input name="" type="checkbox" value="" /> Select All</div> 
-	<div class="sch_view"> Forward </div> 
+	<div class="sch_select_all"><input name="" type="checkbox" value="" /> Select All</div>
+	<div class="sch_view"> Forward </div>
 </div> <br />
 <div class="sch_b_arrow" id="pagediv"><? if ($commonsearch->prev_page >= 1) { ?>
 	<div style='float:left;'>
 		<a><img src="images/l_arrow.jpg" style="border:0px;cursor:pointer;" onClick="searchlimit('<?= $commonsearch->pagename?>','<?= $commonsearch->limit?>','<?= $commonsearch->prev_page?>','<?=$_REQUEST['searchindex']?>');"/> </a>
-	</div> 
+	</div>
 	<?  } else { echo ("<div style='float:left; padding-bottom:0px;border:0px solid blue;'>
 								<img src='images/l_arrow_url.gif' style='border:0px;'/></div>");}
-	echo "<div style='float:left;padding-left:10px;padding-right:10px;'>" .$commonsearch->pageval." - ".$commonsearch->endval." of ".$commonsearch->totalval."</div>";					
+	echo "<div style='float:left;padding-left:10px;padding-right:10px;'>" .$commonsearch->pageval." - ".$commonsearch->endval." of ".$commonsearch->totalval."</div>";
 	if ($commonsearch->endval >= ($commonsearch->total_items)) {
 	echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:0px;'/></div>");} else { ?>
 	<div style="float:left;">
@@ -145,7 +149,7 @@ echo ("<div style='float:left;'><img src='images/r_arrow_url.gif' style='border:
 </td>
 <td background="">&nbsp;</td>
 </tr>
-</table> 
+</table>
 </form>
 </td>
 <td width="205" valign="top" height="">
