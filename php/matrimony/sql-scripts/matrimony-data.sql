@@ -107,3 +107,38 @@ INSERT INTO `tm_partnerpreference` (`ProfileId`,`pAgeFrom`,`pAgeTO`,`pMaritialSt
  ('BGTML10','24','27','UnMarried','Tamil','Hindu','Nadar','','Bachelors - Engineering/ Computers,Masters - Engineering/ Computers,Bachelors - Arts/ Science/Commerce/ Others,Masters - Arts/ Science/ Commerce/ Others','Salaried','Government,Private','Australia,India,Singapore,United Kingdom,United States','India','','Chennai/Madras','Non-Vegetatrian','About Partner','Normal','5ft 6in 167cm','5ft 8in 172cm','No'),
  ('BGTML2','18','21','UnMarried','Tamil','Hindu','Kongu Vellala Gounder','','Masters - Arts/ Science/ Commerce/ Others','Salaried','Private','Guadeloupe','India','Tamil Nadu','Chennai/Madras','Non-Vegetatrian','AboutPartner..','Normal','5ft  2in  157cm','5ft  7in  170cm','Dont Know');
 /*!40000 ALTER TABLE `tm_partnerpreference` ENABLE KEYS */;
+
+
+--
+-- Dumping data for table `tm_membership`
+--
+
+INSERT INTO `tm_membership` (`Id`, `Type`, `Month`, `Profiles`, `Amount`, `Paypal`) VALUES
+(1, 'classic', '3', 20, 2450, 'L8Z6YJDVJ96PU'),
+(2, 'Gold', '3', 25, 2500, 'Q3Z572M2PNWM4'),
+(3, 'Platinum', '3', 30, 2600, 'ghgfhghg'),
+(4, 'classic', '6', 20, 3100, 'ghgfhgfhgfhgfh'),
+(5, 'Gold', '6', 35, 3200, 'ghfhgfhgfhgfhgfh'),
+(6, 'Platinum', '6', 45, 3500, 'gfyudfyhgfgh'),
+(7, 'classic', '9', 35, 5464, 'dgdfgdfgfdgdfg'),
+(8, 'Gold', '9', 45, 5556, 'fdgfdgdfgdf'),
+(9, 'Platinum', '9', 50, 5645, 'dfgdfgfdgdfgdf');
+
+
+--
+-- Dumping data for table `tm_paymentdetail`
+--
+
+INSERT INTO `tm_paymentdetail` (`Id`, `Typeid`, `Viewedprofiles`, `Status`, `Profileid`, `ProfileCount`) VALUES
+(1, 1, 10, 'P', 'BGGRT1', 20);
+
+-- 
+
+--
+-- Dumping data for table `tm_savesearch`
+--
+
+INSERT INTO `tm_savesearch` (`Id`, `Profileid`, `Title`, `Query`, `Type`) VALUES
+(33, 'BGGRT1', 'ghgfhfghh', 'select distinct tmp.FirstName,tmp.MiddleName,tmp.LastName,tmp.ProfileId,tmp.Gender,tmp.Age,tmp.Height,tmp.Religion,tmp.CastDivision,tmp.Subcaste,tmp.Star,tmp.Raasi,tmp.City,tmp.State,tmp.ResidingCountry,tmp.EducationQual,tmp.EducationSpecialization from tm_profile tmp,tm_family tmf WHERE tmp.ProfileId != ''BGGRT1'' AND tmp.ProfileId = tmf.ProfileId AND tmp.Gender = ''F'' AND tmp.Age BETWEEN ''18'' AND ''40'' AND tmp.Adminstatus = ''A'' AND tmp.MaritialStatus IN (''UnMarried'')', 'generalsrc'),
+(31, 'BGGRT1', 'BGTML', 'select distinct tmp.FirstName,tmp.MiddleName,tmp.LastName,tmp.ProfileId,tmp.Gender,tmp.Age,tmp.Height,tmp.Religion,tmp.CastDivision,tmp.Subcaste,tmp.Star,tmp.Raasi,tmp.City,tmp.State,tmp.ResidingCountry,tmp.EducationQual,tmp.EducationSpecialization from tm_profile tmp,tm_family tmf WHERE tmp.ProfileId != ''BGGRT1'' AND tmp.ProfileId = tmf.ProfileId AND tmp.Gender = '''' AND tmp.Age BETWEEN '''' AND '''' AND tmp.Adminstatus = ''A'' AND (tmp.LoginId like ''%%'' OR tmp.FirstName like ''%%'' OR tmp.Citizenchip like ''%%'' OR tmp.CastDivision like ''%%'' OR tmp.ResidingCountry like ''%%'' OR tmp.EducationCat like ''%%'' OR tmp.ProfileCategory like ''%%'' OR tmp.Star like ''%%'' OR tmp.Occupation like ''%%'' OR tmp.Employementtype like ''%%'' OR tmp.MaritialStatus like ''%%'' OR tmp.Religion like ''%%'' OR tmp.Subcaste like ''%%'' OR tmp.PhysicalStatus like ''%%'' OR tmp.ChildrenLivingStatus like ''%%'' OR tmp.KujaDhosam like ''%%'' OR tmp.Food like ''%%'' OR tmp.Smoking like ''%%'' OR tmp.Drinking like ''%%'' OR tmf.Familyvalue like ''%%'' OR tmf.Familytype like ''%%'' OR tmf.Familystatus like ''%%'' OR tmf.Aboutfamily like ''%%'') LIMIT 0, 5', 'profileidsrc');
+
