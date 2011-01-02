@@ -20,11 +20,11 @@
 <table width="600" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25"><span style="width:25px; height:25px; float:right;"><img src="" /></span></td>
-    <td width="554" background="">&nbsp;</td>
+    <td width="554" >&nbsp;</td>
     <td width="31"><span style="width:25px; height:25px; float:left;"><img src="" /></span></td>
   </tr>
   <tr>
-    <td background=""></td>
+    <td ></td>
     <td>
 
 <div  class="sch_menu_t1">
@@ -489,11 +489,11 @@ Star</div>
    <br />
 </div>
  </td>
-    <td background="">&nbsp;</td>
+    <td >&nbsp;</td>
   </tr>
   <tr>
     <td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
-    <td background="">&nbsp;</td>
+    <td >&nbsp;</td>
     <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
   </tr>
 </table> 

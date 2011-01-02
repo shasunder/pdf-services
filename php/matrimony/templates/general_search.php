@@ -1,4 +1,4 @@
-
+<div style="padding-left:20px">
 <form name="search" action="<?= $_SERVER['PHP_SELF']?>" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
@@ -54,38 +54,33 @@
                       <div class="search_48_red" id="ageError"></div>
                     </div>
                     <div class="search_width">
-                      <div class="search_48_head" style="width:90%">Height </div>
-                    </div>
-                    <div class="search_width">
-                      <div class="search_48" style="width:30%">
-                        <label>
-                        <select class="selecttbox" name="ddlheightfrm"  id="ddlheightfrm"size="1"  tabindex="5" style="width: 165px;" >
-                        </select>
-                        </label>
-                      </div>
-                      <div class="search_48" style="width:5%" >to</div>
-                      <div class="search_48" style="width:30%">
-                        <label>
-                        <select class="selecttbox" name="ddlheightto"  id="ddlheightto"size="1"  tabindex="5" style="width: 165px;" >
+                      <div class="search_48_head" style="width:90%">Height  &nbsp;&nbsp;
+                      <select class="selecttbox" name="ddlheightfrm"  id="ddlheightfrm"size="1"  tabindex="5" style="width: 105px;" >
+                        </select> to
+                        <select class="selecttbox" name="ddlheightto"  id="ddlheightto"size="1"  tabindex="5" style="width: 105px;" >
                           <option value="7ft - 213cm" selected="selected">7ft - 213cm</option>
                         </select>
-                        </label>
                       </div>
                     </div>
+                    <br/>
                     <div class="search_width">
-                      <div class="search_48_head" style="width:90%">Maritial Status </div>
-                    </div>
-                    <div class="search_100" >
-                      <input type="checkbox" name="chkany" value="DM" id="any1" />
+                      <div class="search_48_head" style="width:90%">Maritial Status
+                      <span style="font-weight:normal">
+                       <input type="checkbox" name="chkany" value="DM" id="any1" />
                       Any
                       <input type="checkbox" name="chkunmarried" value="UnMarried" id="any2" checked="checked"/>
-                      Un Married
+                      Single
                       <input type="checkbox" name="chkwidow" value="Widow\Widower" id="any3" />
                       Widow\Widower
                       <input type="checkbox" name="chkdivorced" value="Divorced" id="any4" />
                       Divorced
                       <input type="checkbox" name="chkseperated" value="Seperated" id="any5" />
-                      Seperated </div>
+                      Seperated
+                      </span>
+                      </div>
+
+                    </div>
+                   <br/>
                     <div class="search_line"> </div>
                   </div>
                   <input name="ddlReligion" type="hidden" value="Hindu"/>
@@ -131,17 +126,12 @@
                         <input type="hidden" name="communityhd" id="communityhd" value="" />
 
                     <div class="search_width">
-                      <div class="search_48_red" style="width:55%"></div>
-                      <div class="search_48_red" style="width:30%"></div>
-                    </div>
-                    <div class="search_width">
-                      <div class="search_48_head">Sub Caste </div>
-                      <div class="search_48_head"></div>
+                      <div class="search_48_head">Sub Caste &nbsp;&nbsp; <input type="text" name="txtsubcaste" id="txtsubcaste" class="textbox" /></div>
                     </div>
                     <div class="search_width">
                       <div class="search_48_head">
                         <label>
-                        <input type="text" name="txtsubcaste" id="txtsubcaste" class="textbox" />
+
                         </label>
                       </div>
                       <div class="search_48_head"></div>
@@ -149,13 +139,15 @@
                     <div class="search_line"> </div>
                   </div>
                   <div style="height:450px;">
-                    <div style="height:450px;">
-                      <div style="height:450px;">
-                        <div style="height:160px; margin-top:10px;">
+                    <div style="">
+                      <div style="">
+                        <div style=" margin-top:10px;">
                           <div class="search_width">
-                            <div class="search_48_head" style="width:55%">Citizenship</div>
+                            <div class="search_48_head" style="width:55%">
+                            <img id="citizenshipContentMinMax" onclick="javascript:minMaxPanel('citizenshipContent');" src="images/collapsed.png" />
+                            Citizenship</div>
                           </div>
-                          <div class="search_width1" style="height:90px;">
+                          <div class="search_width1" style="height:90px;display:none" id="citizenshipContent">
                             <div class="search_48" style="width:98%; padding-left:1px;">
                               <table width="551" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -189,11 +181,13 @@
                           </div>
                           <div class="search_line"> </div>
                         </div>
-                        <div style="height:148px;">
+                        <div style="">
                           <div class="search_width">
-                            <div class="search_48_head" style="width:55%">Country Living In </div>
+                            <div class="search_48_head" style="width:55%">
+                            <img id="countryLivingContentMinMax" onclick="javascript:minMaxPanel('countryLivingContent');" src="images/collapsed.png" />
+                            Country Living In </div>
                           </div>
-                          <div class="search_width1" style="height:90px;">
+                          <div class="search_width1" style="height:90px; display:none" id="countryLivingContent">
                             <div class="search_48" style="width:98%; padding-left:1px;">
                               <table width="551" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -219,11 +213,13 @@
                           </div>
                           <div class="search_line"> </div>
                         </div>
-                        <div style="height:148px;">
+                        <div style="">
                           <div class="search_width">
-                            <div class="search_48_head" style="width:55%">Education</div>
+                            <div class="search_48_head" style="width:55%">
+                            <img id="educationContentMinMax" onclick="javascript:minMaxPanel('educationContent');" src="images/collapsed.png" />
+                            Education</div>
                           </div>
-                          <div class="search_width1" style="height:90px;">
+                          <div class="search_width1" style="display:none" id="educationContent">
                             <div class="search_48" style="width:98%; padding-left:1px;">
                               <table width="551" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
@@ -330,8 +326,7 @@
 </tr>
 </table>
 </form>
-</body>
-</html>
+</div>
 
 <script type="text/javascript">
 function dateInRange1(dateIn){
@@ -380,8 +375,10 @@ function compareDatesOnly(date1, date2) {
 
 <script language="javascript">
 FillFeet('ddlheightfrm');FillFeet('ddlheightto');
-FillEducation('ddleducategory');FillReligion('ddlReligion');
-FillFeet('ddlheightfrm');FillFeet('ddlheightto');timedCount();
+FillEducation('ddleducategory');
+//FillReligion('ddlReligion');
+FillFeet('ddlheightfrm');FillFeet('ddlheightto');
+//timedCount();
 </script>
 
 <script type="text/javascript">

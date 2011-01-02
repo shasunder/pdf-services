@@ -22,7 +22,7 @@
 
 <div  style="width:200px"><span class="style2" ><strong>Personal Details</strong></span></div><br/>
   
-<div align="justify" style="height:100px; border:1px solid #EBF4F5;">
+<div align="justify" style="height:100px; ">
 <div style="width:380px; float:left; padding-left:15px;">
 	<div class="sch_prof">
 		<span class="prof-head">
@@ -57,7 +57,7 @@
 
 	<div style="float:right; width:95px;" align="center"><strong><a href="managephoto.php" style="text-decoration:none; color:#FF0000">
 	<? if($myhome->imgnum != 0){ ?>
-		Manage Photo
+		Edit
 	<? } else { ?>
 		Add Photo
 	<? } ?>
@@ -69,7 +69,7 @@
 <div  style="width:200px"><span class="style2" ><strong>Personal Settings</strong></span></div><br/>
 
 <div style="width:550px; height:140px;" >
-<div align="justify" style=" width:250px; height:130px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/blue_bg.gif); background-repeat: repeat-x; ">
+<div align="justify" style=" width:250px; height:130px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-repeat: repeat-x; ">
 <div style="  padding:10px 0px 10px 5px;width:180px;"  ><font  style="line-height: 13px;"><b>Profile Settings</b></font></div>
 
 <table width="241">
@@ -85,7 +85,7 @@
  
     </div>
 
-	<div align="justify" style=" width:250px; height:130px;  border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/ligt_color_bg.gif); background-repeat: repeat-x; ">
+	<div align="justify" style=" width:250px; height:130px;  border:1px solid #EBF4F5; float:left; margin-right:15px;  background-repeat: repeat-x; ">
 	<div style="  padding: 10px 0px 10px 5px;width:180px; "  ><font  style="line-height: 13px;"><b>Enhance Profile</b></font></div>
 	<table width="239">
 	  <tr>
@@ -111,7 +111,7 @@
 <div  style="width:200px"><span class="style2" ><strong>Personalised Messages</strong></span></div><br/>
   
 <div style="width:550px; height:150px;" >
-<div align="justify" style=" width:250px; height:140px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/blue_bg.gif); background-repeat: repeat-x; ">
+<div align="justify" style=" width:250px; height:140px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-repeat: repeat-x; ">
 <div style="  padding:10px 0px 10px 5px;width:180px;"  ><font  style="line-height: 13px;"><b>Received</b></font></div>
 
 <table width="241">
@@ -128,7 +128,7 @@ Rejected messages</a></td></tr>
 	
 	
 	 
-	  <div align="justify" style=" width:250px; height:140px;  border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/ligt_color_bg.gif); background-repeat: repeat-x; ">
+	  <div align="justify" style=" width:250px; height:140px;  border:1px solid #EBF4F5; float:left; margin-right:15px;  background-repeat: repeat-x; ">
         <div style="  padding: 10px 0px 10px 5px;width:180px; "  ><font  style="line-height: 13px;">
               <b>Sent</b></font></div>
 	    <table width="239">
@@ -145,7 +145,7 @@ Rejected Messages</a></td></tr>
 <div style="width:550px; height:190px;" >
 <div  style="width:200px"><span class="style2" ><strong>Express Interests</strong></span></div><br/>
   <div style="width:550px;">
-	  <div align="justify" style=" width:250px; height:180px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/blue_bg.gif); background-repeat: repeat-x;  ">
+	  <div align="justify" style=" width:250px; height:180px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-repeat: repeat-x;  ">
         <div style="  padding: 10px 0px 10px 5px;width:180px; "  ><font  style="line-height: 13px;">
               <b>Received</b></font></div>
 	    <table width="240">
@@ -166,7 +166,7 @@ Declined Interests</a></td></tr>
         </table>
 	    </div>
 
-	 <div align="justify" style=" width:250px; height:180px;  border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/ligt_color_bg.gif); background-repeat: repeat-x; ">
+	 <div align="justify" style=" width:250px; height:180px;  border:1px solid #EBF4F5; float:left; margin-right:15px;  background-repeat: repeat-x; ">
         <div style="  padding: 10px 0px 10px 5px;width:180px; "  ><font  style="line-height: 13px;">
               <b>Sent</b></font></div>
 	    <table width="241">
@@ -190,7 +190,7 @@ Declined Interests</a></td></tr>
 <div style="width:550px; height:190px;" >
 <div  style="width:200px"><span class="style2" ><strong>Payment Details</strong></span></div><br/>
   <div style="width:550px;">
-	  <div align="justify" style=" width:250px; height:180px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-image:url(./images/blue_bg.gif); background-repeat: repeat-x;  ">
+	  <div align="justify" style=" width:250px; height:180px; border:1px solid #EBF4F5; float:left; margin-right:15px; background-repeat: repeat-x;  ">
       <!--
         <div style="  padding: 10px 0px 10px 5px;width:180px; "  ><font  style="line-height: 13px;">
               <b>Received</b></font></div>
