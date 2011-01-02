@@ -78,10 +78,10 @@ include("common/common.class.php");
                   <tr>
                     <? if($_SESSION['valid']=='loginvalid'){ ?>
 
-                    <td width="250" align="center" valign="middle"><b>Welcome <? echo ucfirst($_SESSION['LoginId']); ?>
+                    <td  align="center" valign="middle"><b>Welcome <? echo ucfirst($_SESSION['LoginId']); ?>! &nbsp;&nbsp;&nbsp;
                     </b></td>
 
-                    <td width="110" align="left" class="headerforgetpswd"><a href="./signout.php" style="cursor:pointer; text-decoration:none; outline:0;" class="headerforgetpswd"><strong>Logout</strong></a> </td>
+                    <td  align="left" class="headerforgetpswd"><a href="./signout.php" style="cursor:pointer; text-decoration:none; outline:0;" class="headerforgetpswd"><strong>Logout</strong></a> </td>
                     <? } else { ?>
 
                     <td>

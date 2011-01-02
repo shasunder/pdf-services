@@ -1,4 +1,4 @@
-
+<div style="padding-left:20px">
 <form name="advancesearch" action="search.php" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
@@ -522,8 +522,7 @@ Occasionally </div>
 </tr>
 </table>
 </form>
-</body>
-</html>
+</div>
 
 <script type="text/javascript">
 function dateInRange1(dateIn){

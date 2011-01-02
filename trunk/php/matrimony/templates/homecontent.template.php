@@ -11,10 +11,10 @@
 		}
 	}
 </script>
-	
+
 <div style="float: left;margin:0px;width:100%;height:100%;" class="mainBox">
 	<div style="float: left;border-right:1px solid #f8ca9e;">
-		<img src="images/banner.jpg" > 
+		<img src="images/banner.jpg" >
 	</div>
 
 	<div id="mainRegisterText" style="float: left;height:250px;border:0px solid;padding-left:20px">
@@ -26,18 +26,18 @@
 	      </div>
 	      <div style="padding-top:10px">
 		      <div style="padding-left:10px;">
-		       <div style="margin-left:190px;margin-top:-20px;position:absolute;"><img src="images/special-offer.gif"/></div> 
+		       <div style="margin-left:190px;margin-top:-20px;position:absolute;"><img src="images/special-offer.gif"/></div>
 			<a href="paidmembership.php" class="anchor-text">Upgrade</a> from just <b>Rs.500</b> only
 		      </div>
 	      </div>
 	      <br/>
-	      
+
 	</div>
 
-		
+
 	<!-- search -->
 		  <div style="width:99%; float:left;height:40px;padding:5px " class="search-box">
-					
+
 		            <form name="homepage" action="search.php?type=gs" method="post">
 		                      <table align="center" style="padding-left:120px;">
 			                      <tr>
@@ -45,25 +45,25 @@
 			                      	<font size="3"><b>Quick Search :</b></font>
 			                      	 <input name="gender" type="radio" value="F" id="fgender" checked="checked" onclick="gen('fgender','txtagefrm','txtageto','18','40');"> <label for="fgender">Female</label> <input name="gender" type="radio" value="M" id="mgender" onclick=
 			                          "gen('mgender','txtagefrm','txtageto','21','40');"> <label for="mgender">Male</label>
-			                           &nbsp; aged    
-			                      	   <input type="text" name="txtagefrm" id="txtagefrm" value="18" maxlength="2" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/> 
+			                           &nbsp; aged
+			                      	   <input type="text" name="txtagefrm" id="txtagefrm" value="18" maxlength="2" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/>
 			                      	   To <input type="text" name="txtageto" id="txtageto" maxlength="2" value="40" style="width: 20px;" onkeyup="return char_val(this,'0123456789');"/>
-			                            <input type="hidden" name="ddlReligion" id="ddlReligion" value=""/> 
-			                        	<input type="hidden" name="ddlCommunity" value=""/> 
-			                          
+			                            <input type="hidden" name="ddlReligion" id="ddlReligion" value=""/>
+			                        	<input type="hidden" name="ddlCommunity" value=""/>
+
 			                          &nbsp;&nbsp;<input type="checkbox" name="chkphoto" value="Photo" id="chkphoto"/>Photo
 			                      	  <input type="hidden" name="searchindex" id="searchindex" value="generalsrc">
 			                          &nbsp;&nbsp;<input type="submit" value="Search" name="submit"  onclick="return SELECTreligion('ddlReligion','ddlCommunity')" class="button"/>
 			                      	</td>
-			                      </tr>                      
+			                      </tr>
 		                      </table>
-		
-		
+
+
 		             </form>
 		  </div>
 
 	<!-- Main content text -->
-         <div style="float:left;padding-left:5px;width:99%;margin-top:10px " class="box-border">
+         <div style="float:left;padding-left:5px;width:99%;margin-top:0px " class="box-border">
                <p>We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province.</p>
 
                   <p>Our history goes back to some 2000 years and is as colourful as the costumes our women wear.</p>
@@ -74,16 +74,16 @@
 
                   <p>We aim to provide service at a very affordable price <strong>(starting at Rs.500 only)</strong>. We would be glad to hear from you!</p>
                   <br>
-            
+
           </div>
 </div>
 
           <br/>
-  
+
     <!--table width="800" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
       <tr>
         <td>
- 
+
           <br>
            <div style="width:785px; margin:auto; background-color:#FFFFFF; height:120px; padding:0px 0px 5px 0;">
           <div style=" height:inherit; float:left; padding:5px; margin-left:2px;">
@@ -131,7 +131,7 @@
           </table>
           </div>
           </div>
-         
+
           <div style="width:800px; height: inherit;">
            <table width="97%" border="0" cellspacing="0" cellpadding="0">
             <tr>

@@ -4,29 +4,19 @@ ob_start();
 
 include("common/config.inc.php");
 include_once("common/function.php");
-$qry="SELECT Id,Type,Month,Profiles,Amount,Paypal  from tm_membership ";
 
-$Result= mysql_query($qry);
-$ResultCount=mysql_num_rows($Result);
-
-
-$qry1="SELECT distinct(Type) FROM tm_membership ";
-$Result1= mysql_query($qry1);
-
-$qry2="SELECT distinct(Month) FROM tm_membership ";
-$Result2= mysql_query($qry2);
 ?>
-    <div class="paidMember" style=" font-size:12px;">
+    <div class="paidMember" style=" font-size:12px;margin-left:30px">
     <!--header-->
     	<div class="" >
             <div class="">
             <br/>
-            <h1>Privilege Matrimony</h1>
+            <h1 style="margin:0px">Privilege Matrimony</h1>
             <br/>
 
             	<div >
             		&nbsp;&nbsp;<b>Why Paid Membership ?</b>
-                	<ul>
+                	<ul style="list-style:none">
                     	<li>Top Ranking Display</li>
                         <li>See Contact Information</li>
                         <li>Highlighted Display</li>
@@ -37,7 +27,7 @@ $Result2= mysql_query($qry2);
                 <?php if($_SESSION['valid']!='loginvalid'){ ?>
                 Please login/register(FREE) to upgrade to premium membership
                 <?php } else{?>
-                Please choose your membership option below:
+
                 <div style="padding-top:15px"></div>
                  <?php } ?>
 
@@ -75,13 +65,14 @@ $Result2= mysql_query($qry2);
 
 		  			<div id="optionPaypal">
 
-		  				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		  				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" onsubmit="return insertMembership();">
 		  					<input type="hidden" name="cmd" value="_s-xclick">
 		  					<table>
-		  					<tr><td><input type="hidden" name="on0" value="Membership options">Choose membership option</td></tr><tr><td><select name="os0">
-		  						<option value="3 months">3 months £7.10</option>
-		  						<option value="6 months">6 months £10.70</option>
-		  						<option value="9 months">9 months £14.20</option>
+		  					<tr><td><input type="hidden" name="on0" value="Membership options">Choose membership option</td></tr><tr><td>
+		  					<select name="os0" id="paypalOptions">
+		  						<option value="3 months">3 months Rs. 500</option>
+		  						<option value="6 months">6 months Rs. 750</option>
+		  						<option value="9 months">9 months Rs. 1000</option>
 		  					</select> </td></tr>
 		  					</table>
 		  					<br/>
@@ -97,15 +88,15 @@ $Result2= mysql_query($qry2);
 		  			</div>
 		  			<div id="optionGoogle">
 
-		  				<form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/850675057200700" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
+		  				<form onsubmit="return insertMembership();" action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/850675057200700" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
 		  				    <table cellpadding="5" cellspacing="0" width="1%">
 		  				    <tr><td><input type="hidden" name="on0" value="Membership options">Choose membership option</td></tr>
 		  				        <tr>
 		  				            <td align="right" width="1%">
-		  				                <select name="item_selection_1">
-		  				                    <option value="1">£7.10 - 3 months</option>
-		  				                    <option value="2">£10.70 - 6 months</option>
-		  				                    <option value="3">£14.20 - 9 months</option>
+		  				                <select name="item_selection_1" id="googleOptions">
+		  				                    <option value="1">Rs. 500 - 3 months</option>
+		  				                    <option value="2">Rs. 750 - 6 months</option>
+		  				                    <option value="3">Rs. 1000 - 9 months</option>
 		  				                </select>
 		  				                <input name="item_option_name_1" type="hidden" value="3 months"/>
 		  				                <input name="item_option_price_1" type="hidden" value="7.1"/>
@@ -168,7 +159,6 @@ $Result2= mysql_query($qry2);
 
     </div>
 
-
 <script type="text/javascript">
 
 	hide(["optionGoogle","optionBank"]);
@@ -185,6 +175,34 @@ $Result2= mysql_query($qry2);
 		}else if(type =='bank'){
 			$("#optionBank").show();
 		}
+
+	}
+
+	function insertMembership(){
+
+	var paymentMode=$('input[name="payMode"]:checked').val()
+	//alert(paymentMode);
+	var memberTypeId ="-1";
+	if(paymentMode =='paypal'){
+		paypalOption= $('#paypalOptions').val();
+		if(paypalOption =='3 months'){
+			memberTypeId =1;
+		}if(paypalOption =='6 months'){
+			memberTypeId =2;
+		}if(paypalOption =='9 months'){
+			memberTypeId =3;
+		}
+	}else if(paymentMode =='google'){
+		memberTypeId = $('#googleOptions option:selected').val();
+	}
+
+
+
+	$.post('ajax/membership.php',{ memberType: memberTypeId,action:'membership', payMode: paymentMode }, function(data) {
+				//  alert(data);
+			});
+
+	return true;
 
 	}
 </script>

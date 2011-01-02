@@ -1,4 +1,5 @@
-<body onLoad="timedCount();">
+<div style="padding-left:20px">
+
 <form name="keywordsearch" action="search.php" method="post">
 <br /><table width="809" border="0" cellpadding="0" cellspacing="0" align="center">
 <tr>
@@ -126,4 +127,7 @@
 </tr>
 </table>
 </form>
-</body>
+</div>
+<script type="text/javascript">
+timedCount();
+</script>

@@ -1,4 +1,5 @@
-<body onLoad="timedCount();">
+<div style="padding-left:20px">
+
 <script type="text/javascript" src="ajax/admin_ajaxjs.js">
     </script>
 <form name="profileidsearch" action="search.php" method="post">
@@ -88,4 +89,7 @@ else
 </tr>
 </table>
 </form>
-</body>
+</div>
+<script type="text/javascript">
+timedCount();
+</script>

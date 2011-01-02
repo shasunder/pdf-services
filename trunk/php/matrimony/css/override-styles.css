@@ -78,6 +78,8 @@ a {
 
 .mainBox {
 	border-top: 1px solid #f8ca9e;
+	border-right: 1px solid #f8ca9e;
+	border-left: 1px solid #f8ca9e;
 	width: 98%;
 }
 
@@ -85,7 +87,7 @@ a {
 	border: 1px solid #f8ca9e;
 }
 .box-border {
-	border: 2px solid #f8ca9e;
+	border: 3px solid #f8ca9e;
 }
 .orangeBox {
 	border: 0px solid #f8983b;

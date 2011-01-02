@@ -14,12 +14,7 @@
 <div style="padding-left:50px">
 <table width="600px" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="25"><span style="width:25px; height:25px; float:right;"><img src="" /></span></td>
-    <td width="554" background="">&nbsp;</td>
-    <td width="31"><span style="width:25px; height:25px; float:left;"><img src="" /></span></td>
-  </tr>
-  <tr>
-    <td background=""></td>
+    <td ></td>
     <td>
 
 <div  class="sch_menu_t1">
@@ -389,12 +384,7 @@ Education Category</div>
 </div>
  
   </td>
-    <td background="">&nbsp;</td>
-  </tr>
-  <tr>
-    <td><span style="width:25px; height:25px; float:right;"><img src="" width="25" height="25" /></span></td>
-    <td background="">&nbsp;</td>
-    <td><span style="width:25px; height:25px; float:left;"><img src="" width="25" height="25" /></span></td>
+    <td >&nbsp;</td>
   </tr>
 </table> 
 </div>
