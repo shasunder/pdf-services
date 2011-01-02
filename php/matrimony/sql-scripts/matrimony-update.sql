@@ -44,6 +44,8 @@ CREATE TABLE IF NOT EXISTS `tm_paymentdetail` (
   `Id` int(45) NOT NULL AUTO_INCREMENT,
   `Typeid` int(10) unsigned NOT NULL,
   `Viewedprofiles` int(45) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_updated` datetime,
   `Status` varchar(45) NOT NULL,
   `Profileid` varchar(45) NOT NULL,
   `ProfileCount` int(45) NOT NULL,
