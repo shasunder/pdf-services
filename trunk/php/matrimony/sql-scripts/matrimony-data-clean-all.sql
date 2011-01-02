@@ -1,0 +1,11 @@
+﻿delete FROM tm_profile;
+delete from  tm_partnerpreference;
+delete from tm_family;
+delete from tm_image;
+delete from tm_interest;
+delete from tm_interestmsg;
+delete from tm_message;
+delete from tm_partnerpreference;
+delete from tm_membership;
+delete from tm_paymentdetail;
+delete from tm_savesearch;
