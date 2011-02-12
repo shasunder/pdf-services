@@ -1,0 +1,72 @@
+/* SIDE ROUNDED CORNERS*/
+.blue_t {
+	background:#fff url() 0px top repeat-x;
+	}
+.blue_b{
+	background: url() 0px bottom repeat-x;
+}
+.blue_r{
+	background: url() right 0px repeat-y;
+	}
+.blue_l{
+	background: url() 0px 0px repeat-y;
+	}
+.blue_tl {
+	background: url() left top no-repeat;
+	}
+.blue_tr{
+	background: url() right 0px no-repeat;
+	}
+.blue_bl{
+	background: url() left bottom no-repeat;
+	}
+.blue_br{
+	background: url() right bottom no-repeat;
+	padding:0 0 1em 0;
+	}
+
+
+/*SEARCH ROUNDED CORNERS*/	
+.search_t {
+	background: #fff url() 0px top repeat-x;
+	border: 1px #DFF2FF solid;
+	}
+.search_b{
+	background: url() 0px bottom repeat-x;
+}
+.search_r{
+	background: url() right 0px repeat-y;
+	}
+.search_l{
+	background: url() 0px 0px repeat-y;
+	}
+.search_tl {
+	background: url() left top no-repeat;
+	}
+.search_tr{
+	background: url() right 0px no-repeat;
+	}
+.search_bl{
+	background: url() left bottom no-repeat;
+	}
+.search_br{
+	background: url() right bottom no-repeat;
+	padding:1em;
+	}
+/*END OF SEARCH ROUNDED CORNERS*/
+
+/*SIDE BAR*/
+#sidebar {
+	float:left;
+	margin-left:18px;
+	width:16em;
+}
+* html #sidebar { 
+	margin-left:10px;
+	}
+#sidebar h3{
+	font:1.01em "Trebuchet MS";
+	text-transform:uppercase;
+	padding:.8em 1em;
+	font-weight:bold;
+	}
