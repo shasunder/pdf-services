@@ -33,12 +33,13 @@
 			[websiteDetails setObject:@"http://touch.facebook.com/|||http://touch.facebook.com/logout.php|||email:pass:login_form" forKey:@"Facebook"];
 			[websiteDetails setObject:@"http://orkut.com|||https://orkut.com/?logout&hl=en|||Email:Passwd:gaia_loginform" forKey:@"Orkut"];
 			
-				
-			[self store:KEY_WEBSITE_DETAILS : websiteDetails];
 		}
 		
-		[websiteDetails setObject:@"https://www.google.com/accounts/ServiceLogin?uilel=3&service=youtube&btmpl=mobile&passive=true&continue=http%3A%2F%2Fm.youtube.com%2Fsignin%3Faction_handle_signin%3DTrue%26warned%3D1%26nomobiletemp%3D1%26hl%3Den_US%26next%3Dhttp%253A%252F%252Fm.youtube.com%252Findex%253Fdesktop_uri%253D%25252F%2526gl%253DGB%2526rdm%253D10%2523%252Fhome%253Fbmb%253D1&hl=en_US&ltmpl=mobile|||http://www.youtube.com/?logout|||Email:Passwd:gaia_loginform" forKey:@"Youtube"];
+		if([websiteDetails objectForKey:@"Youtube"] == nil){
+			[websiteDetails setObject:@"https://www.google.com/accounts/ServiceLogin?uilel=3&service=youtube&btmpl=mobile&passive=true&continue=http%3A%2F%2Fm.youtube.com%2Fsignin%3Faction_handle_signin%3DTrue%26warned%3D1%26nomobiletemp%3D1%26hl%3Den_US%26next%3Dhttp%253A%252F%252Fm.youtube.com%252Findex%253Fdesktop_uri%253D%25252F%2526gl%253DGB%2526rdm%253D10%2523%252Fhome%253Fbmb%253D1&hl=en_US&ltmpl=mobile|||http://www.youtube.com/?logout|||Email:Passwd:gaia_loginform" forKey:@"Youtube"];
+		}
 		
+		[self store:KEY_WEBSITE_DETAILS : websiteDetails];
 		
 		NSLog([websiteDetails description]);
 
