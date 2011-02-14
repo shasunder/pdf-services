@@ -153,7 +153,7 @@ static NSString *serviceName = @"com.bri8.searchService";
 
 	NSLog(@"Loaded accounts... (%d)",[accounts count]);
 
-}
+} 
 
 -(void)commitAccounts{
 	
