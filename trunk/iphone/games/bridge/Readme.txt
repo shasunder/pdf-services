@@ -1,4 +1,4 @@
-Bridge Builder
+Bridge
   A game to build a bridge and have it tested. User gets points for building bridges. New levels will have increasing complexity.
 
 TODO:
