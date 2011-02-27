@@ -19,3 +19,8 @@ IMPORTANT : learn how to delegate from the Game instance to controllers..
 
 
 Done:
+
+
+
+Useful links:
+Google doc: https://docs.google.com/document/d/1fusPTRp0KyWskb4uqQWpU7uNjW5BaTED1Z0b35Aoeqc/edit?hl=en#

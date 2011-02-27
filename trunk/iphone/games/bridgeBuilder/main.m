@@ -1,17 +1,16 @@
 //
 //  main.m
-//  AppScaffold
+//  bridge
 //
-//  Created by Daniel Sperl on 14.01.10.
-//  Copyright Incognitek 2010. All rights reserved.
+//  Created by sandeep m on 27/02/2011.
+//  Copyright bri 2011. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 int main(int argc, char *argv[]) {
-    
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+	NSAutoreleasePool *pool = [NSAutoreleasePool new];
+	int retVal = UIApplicationMain(argc, argv, nil, @"bridgeAppDelegate");
+	[pool release];
+	return retVal;
 }
