@@ -9,7 +9,11 @@
     b2Fixture *ballFixture;
     b2Fixture *bottomFixture;
     b2MouseJoint *mouseJoint;
+	
+
+	
 }
+
 
 + (id) scene;
 
