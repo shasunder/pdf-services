@@ -13,18 +13,21 @@
 
 @synthesize scene;
 
+CocosUtility *cocosUtil;
 
+CCSprite* wood;
+CCSprite* steel;
 
 -(id) init
 {
 	if( (self=[super init] )) {
-					
-		CGSize size = [[CCDirector sharedDirector] winSize];
 		
-		CCSprite* wood = [CCSprite spriteWithFile:@"material-wood.png" ];
+		self.isTouchEnabled = YES;	
+				
+		wood = [CCSprite spriteWithFile:@"material-wood.png" ];
 		wood.position =  CGPointMake( 400 , 300);
-		
-		CCSprite* steel = [CCSprite spriteWithFile:@"material-steel.png" ];
+		 
+		steel = [CCSprite spriteWithFile:@"material-steel.png" ];
 		steel.position =  CGPointMake( 450 , 300);
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
@@ -49,6 +52,7 @@
 		background.position =ccp(480.f/2,320.f/2); 
 		[self addChild:background z:-1];
 		
+		cocosUtil = [[CocosUtility alloc] init];
 	}
 	
 	return self;
@@ -59,4 +63,35 @@
 	self.scene = scene1;
 }
 
+
+-(void) registerWithTouchDispatcher{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+}
+
+
+-(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+	NSLog(@"Touch Began ");
+	CGPoint location = [touch locationInView: [touch view]];
+	location = [[CCDirector sharedDirector] convertToGL:location];
+	//check if button pressed
+	if( [cocosUtil containsTouchLocation: touch : wood ] ){
+		wood.opacity = 128;steel.opacity = 184;
+		NSLog(@"Touched : wood");
+	}else if( [cocosUtil containsTouchLocation: touch : steel ] ){
+		wood.opacity = 184;steel.opacity = 128;
+		NSLog(@"Touched : steel");
+	}
+	
+	return YES;
+
+}
+
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
+		NSLog(@"Touch end ");
+}
+
+- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
+	NSLog(@"Touch moved ");
+
+}
 @end

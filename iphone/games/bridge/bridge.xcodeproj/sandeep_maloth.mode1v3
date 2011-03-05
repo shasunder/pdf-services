@@ -269,10 +269,7 @@
 								<string>CC1BC7DF13219084001C3359</string>
 								<string>CCABBB351321DE74003B6DDC</string>
 								<string>CC1AD695131AC98C00E69E5D</string>
-								<string>CC1AD672131AC91E00E69E5D</string>
 								<string>CC1AD671131AC91100E69E5D</string>
-								<string>50F4144210692EE7002A0D5E</string>
-								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -280,8 +277,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>23</integer>
-									<integer>17</integer>
+									<integer>13</integer>
+									<integer>9</integer>
+									<integer>8</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
@@ -306,7 +304,7 @@
 							<real>227</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>64 107 1042 660 0 0 1280 778 </string>
+						<string>118 118 1042 660 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -324,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CocosUtility.m</string>
+								<string>EditViewLayer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CocosUtility.m</string>
+										<string>EditViewLayer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CCC4D7D31322D83200DA511F</string>
+										<string>CCC4D8151322DE0D00DA511F</string>
 										<key>history</key>
 										<array>
 											<string>CC1AD6A8131ACB2700E69E5D</string>
@@ -371,15 +369,17 @@
 											<string>CCC4D6421322BBAD00DA511F</string>
 											<string>CCC4D6741322BF1100DA511F</string>
 											<string>CCC4D71A1322D0AD00DA511F</string>
-											<string>CCC4D78C1322D35E00DA511F</string>
 											<string>CCC4D79C1322D44500DA511F</string>
 											<string>CCC4D79D1322D44500DA511F</string>
-											<string>CCC4D7BF1322D7BF00DA511F</string>
-											<string>CCC4D7C01322D7BF00DA511F</string>
 											<string>CCC4D7CA1322D80700DA511F</string>
-											<string>CCC4D7CC1322D80700DA511F</string>
-											<string>CCC4D7D11322D83200DA511F</string>
-											<string>CCC4D7D21322D83200DA511F</string>
+											<string>CCC4D7DA1322D95800DA511F</string>
+											<string>CCC4D7DC1322D95800DA511F</string>
+											<string>CCC4D7E71322DA8000DA511F</string>
+											<string>CCC4D7ED1322DAB200DA511F</string>
+											<string>CCC4D7FB1322DBEF00DA511F</string>
+											<string>CCC4D7FC1322DBEF00DA511F</string>
+											<string>CCC4D7FD1322DBEF00DA511F</string>
+											<string>CCC4D7FE1322DBEF00DA511F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -393,7 +393,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {793, 573}}</string>
 								<key>RubberWindowFrame</key>
-								<string>64 107 1042 660 0 0 1280 778 </string>
+								<string>118 118 1042 660 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -413,7 +413,7 @@
 								<key>Frame</key>
 								<string>{{0, 578}, {793, 41}}</string>
 								<key>RubberWindowFrame</key>
-								<string>64 107 1042 660 0 0 1280 778 </string>
+								<string>118 118 1042 660 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -585,7 +585,7 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 	</array>
 	<key>WindowString</key>
-	<string>64 107 1042 660 0 0 1280 778 </string>
+	<string>118 118 1042 660 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -601,12 +601,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CocosUtility.m</string>
+								<string>EditViewLayer.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -623,8 +625,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
