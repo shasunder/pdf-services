@@ -11,7 +11,7 @@
 	EditViewLayer *editView =[EditViewLayer node];
 	EditControlLayer *editControl =[EditControlLayer node];
 
-//	[editView setScene:scene];
+	//[editView setScene:scene];
 //	[editControl setScene:scene];
 	
 	[scene addChild: editView z:0 tag:1];
