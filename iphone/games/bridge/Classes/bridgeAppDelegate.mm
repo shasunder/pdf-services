@@ -1,7 +1,7 @@
 
 #import "bridgeAppDelegate.h"
 #import "cocos2d.h"
-#import "BridgeEditor.h"
+#import "EditorScene.h"
 
 @implementation bridgeAppDelegate
 
@@ -20,7 +20,9 @@
 	
 	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 		
-	[[CCDirector sharedDirector] runWithScene: [BridgeEditor scene]];
+	EditorScene *scene = [EditorScene scene]; //auto release
+	
+	[[CCDirector sharedDirector] runWithScene:  scene];
 }
 
 

@@ -27,7 +27,6 @@
 		50674865107A3B340090963A /* ZAttributedStringPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 50674862107A3B340090963A /* ZAttributedStringPrivate.h */; };
 		506EDB88102F4C4000A389B3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 506EDB87102F4C4000A389B3 /* libz.dylib */; };
 		506EDBA5102F4C9F00A389B3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506EDBA4102F4C9F00A389B3 /* AVFoundation.framework */; };
-		506EDC31102F528A00A389B3 /* BridgePlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 506EDC30102F528A00A389B3 /* BridgePlayer.mm */; };
 		506EE1A91030508200A389B3 /* libcocos2d libraries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 506EE05E10304ED200A389B3 /* libcocos2d libraries.a */; };
 		507ED42211C62F83002ED3FC /* CCAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 507ED38A11C62F83002ED3FC /* CCAction.h */; };
 		507ED42311C62F83002ED3FC /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 507ED38B11C62F83002ED3FC /* CCAction.m */; };
@@ -293,15 +292,19 @@
 		CC1AD65F131AC7A900E69E5D /* Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1AD65C131AC7A900E69E5D /* Ball.png */; };
 		CC1AD660131AC7A900E69E5D /* logo8.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1AD65D131AC7A900E69E5D /* logo8.png */; };
 		CC1AD661131AC7A900E69E5D /* Paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1AD65E131AC7A900E69E5D /* Paddle.png */; };
-		CC1AD698131AC9A900E69E5D /* BridgeEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1AD697131AC9A900E69E5D /* BridgeEditor.m */; };
+		CC1AD698131AC9A900E69E5D /* EditorScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */; };
 		CC1AD6C6131B0E2200E69E5D /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1AD6C5131B0E2200E69E5D /* sprites.png */; };
+		CCABBB1A1321DDB5003B6DDC /* EditControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */; };
+		CCABBB411321DF1D003B6DDC /* EditViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCABBB401321DF1D003B6DDC /* EditViewLayer.m */; };
 		CCAE6571131C3A2E007F85A5 /* background-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6570131C3A2E007F85A5 /* background-blue.png */; };
 		CCAE6577131C3B4A007F85A5 /* material-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6575131C3B4A007F85A5 /* material-steel.png */; };
 		CCAE6578131C3B4A007F85A5 /* material-wood.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6576131C3B4A007F85A5 /* material-wood.png */; };
 		CCAE657D131C3CA7007F85A5 /* land-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE657C131C3CA7007F85A5 /* land-right.png */; };
 		CCAE6585131C3D59007F85A5 /* land-left.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6584131C3D59007F85A5 /* land-left.png */; };
 		CCAE65CB131C3F3F007F85A5 /* wood2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCAE65CA131C3F3F007F85A5 /* wood2.jpg */; };
-		CCE464B0132033560072DE4D /* HelloWorldScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE464AF132033560072DE4D /* HelloWorldScene.m */; };
+		CCB263961321791500CA6458 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB263951321791500CA6458 /* Line.m */; };
+		CCB508591322805D0098BBA5 /* bridge-grid-background.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB508571322805D0098BBA5 /* bridge-grid-background.png */; };
+		CCB5085A1322805D0098BBA5 /* bridge-grid.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCB508581322805D0098BBA5 /* bridge-grid.tmx */; };
 		CCE464E2132036BE0072DE4D /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE464DF132036BE0072DE4D /* meta_tiles.png */; };
 		CCE464E3132036BE0072DE4D /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCE464E0132036BE0072DE4D /* TileMap.tmx */; };
 		CCE464E4132036BE0072DE4D /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE464E1132036BE0072DE4D /* tmw_desert_spacing.png */; };
@@ -343,8 +346,6 @@
 		50674862107A3B340090963A /* ZAttributedStringPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAttributedStringPrivate.h; sourceTree = "<group>"; };
 		506EDB87102F4C4000A389B3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		506EDBA4102F4C9F00A389B3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		506EDC2F102F528A00A389B3 /* BridgePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgePlayer.h; sourceTree = "<group>"; };
-		506EDC30102F528A00A389B3 /* BridgePlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgePlayer.mm; sourceTree = "<group>"; };
 		506EE05E10304ED200A389B3 /* libcocos2d libraries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcocos2d libraries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		507ED38A11C62F83002ED3FC /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		507ED38B11C62F83002ED3FC /* CCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAction.m; sourceTree = "<group>"; };
@@ -612,9 +613,13 @@
 		CC1AD65C131AC7A900E69E5D /* Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ball.png; sourceTree = "<group>"; };
 		CC1AD65D131AC7A900E69E5D /* logo8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo8.png; sourceTree = "<group>"; };
 		CC1AD65E131AC7A900E69E5D /* Paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Paddle.png; sourceTree = "<group>"; };
-		CC1AD696131AC9A900E69E5D /* BridgeEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeEditor.h; sourceTree = "<group>"; };
-		CC1AD697131AC9A900E69E5D /* BridgeEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgeEditor.m; sourceTree = "<group>"; };
+		CC1AD696131AC9A900E69E5D /* EditorScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorScene.h; sourceTree = "<group>"; };
+		CC1AD697131AC9A900E69E5D /* EditorScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorScene.m; sourceTree = "<group>"; };
 		CC1AD6C5131B0E2200E69E5D /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = SOURCE_ROOT; };
+		CCABBB181321DDB5003B6DDC /* EditControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditControlLayer.h; sourceTree = "<group>"; };
+		CCABBB191321DDB5003B6DDC /* EditControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditControlLayer.m; sourceTree = "<group>"; };
+		CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewLayer.h; sourceTree = "<group>"; };
+		CCABBB401321DF1D003B6DDC /* EditViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewLayer.m; sourceTree = "<group>"; };
 		CCAE6570131C3A2E007F85A5 /* background-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-blue.png"; sourceTree = SOURCE_ROOT; };
 		CCAE6575131C3B4A007F85A5 /* material-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "material-steel.png"; sourceTree = SOURCE_ROOT; };
 		CCAE6576131C3B4A007F85A5 /* material-wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "material-wood.png"; sourceTree = SOURCE_ROOT; };
@@ -623,8 +628,10 @@
 		CCAE65C8131C3F13007F85A5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CCAE65C9131C3F13007F85A5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CCAE65CA131C3F3F007F85A5 /* wood2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood2.jpg; sourceTree = SOURCE_ROOT; };
-		CCE464AE132033560072DE4D /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
-		CCE464AF132033560072DE4D /* HelloWorldScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorldScene.m; sourceTree = "<group>"; };
+		CCB263941321791500CA6458 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		CCB263951321791500CA6458 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		CCB508571322805D0098BBA5 /* bridge-grid-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-grid-background.png"; sourceTree = "<group>"; };
+		CCB508581322805D0098BBA5 /* bridge-grid.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "bridge-grid.tmx"; sourceTree = "<group>"; };
 		CCE464DF132036BE0072DE4D /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
 		CCE464E0132036BE0072DE4D /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
 		CCE464E1132036BE0072DE4D /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
@@ -724,6 +731,8 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CCABBAF31321DCDB003B6DDC /* sprite */,
+				CC1BC7DF13219084001C3359 /* layers */,
 				CC1AD695131AC98C00E69E5D /* scene */,
 				CC1AD672131AC91E00E69E5D /* common */,
 				CC1AD671131AC91100E69E5D /* model */,
@@ -1134,6 +1143,8 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CCB508571322805D0098BBA5 /* bridge-grid-background.png */,
+				CCB508581322805D0098BBA5 /* bridge-grid.tmx */,
 				CCE464DF132036BE0072DE4D /* meta_tiles.png */,
 				CCE464E0132036BE0072DE4D /* TileMap.tmx */,
 				CCE464E1132036BE0072DE4D /* tmw_desert_spacing.png */,
@@ -1177,14 +1188,38 @@
 		CC1AD695131AC98C00E69E5D /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				CCE464AE132033560072DE4D /* HelloWorldScene.h */,
-				CCE464AF132033560072DE4D /* HelloWorldScene.m */,
-				506EDC2F102F528A00A389B3 /* BridgePlayer.h */,
-				506EDC30102F528A00A389B3 /* BridgePlayer.mm */,
-				CC1AD696131AC9A900E69E5D /* BridgeEditor.h */,
-				CC1AD697131AC9A900E69E5D /* BridgeEditor.m */,
+				CC1AD696131AC9A900E69E5D /* EditorScene.h */,
+				CC1AD697131AC9A900E69E5D /* EditorScene.m */,
 			);
 			name = scene;
+			sourceTree = "<group>";
+		};
+		CC1BC7DF13219084001C3359 /* layers */ = {
+			isa = PBXGroup;
+			children = (
+				CCABBB351321DE74003B6DDC /* edit */,
+			);
+			name = layers;
+			sourceTree = "<group>";
+		};
+		CCABBAF31321DCDB003B6DDC /* sprite */ = {
+			isa = PBXGroup;
+			children = (
+				CCB263941321791500CA6458 /* Line.h */,
+				CCB263951321791500CA6458 /* Line.m */,
+			);
+			name = sprite;
+			sourceTree = "<group>";
+		};
+		CCABBB351321DE74003B6DDC /* edit */ = {
+			isa = PBXGroup;
+			children = (
+				CCABBB181321DDB5003B6DDC /* EditControlLayer.h */,
+				CCABBB191321DDB5003B6DDC /* EditControlLayer.m */,
+				CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */,
+				CCABBB401321DF1D003B6DDC /* EditViewLayer.m */,
+			);
+			name = edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1415,6 +1450,8 @@
 				CCE464E2132036BE0072DE4D /* meta_tiles.png in Resources */,
 				CCE464E3132036BE0072DE4D /* TileMap.tmx in Resources */,
 				CCE464E4132036BE0072DE4D /* tmw_desert_spacing.png in Resources */,
+				CCB508591322805D0098BBA5 /* bridge-grid-background.png in Resources */,
+				CCB5085A1322805D0098BBA5 /* bridge-grid.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1427,10 +1464,11 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1F3B9A2D0EF2145700286867 /* bridgeAppDelegate.mm in Sources */,
-				506EDC31102F528A00A389B3 /* BridgePlayer.mm in Sources */,
 				50F4143910692D7D002A0D5E /* GLES-Render.mm in Sources */,
-				CC1AD698131AC9A900E69E5D /* BridgeEditor.m in Sources */,
-				CCE464B0132033560072DE4D /* HelloWorldScene.m in Sources */,
+				CC1AD698131AC9A900E69E5D /* EditorScene.m in Sources */,
+				CCB263961321791500CA6458 /* Line.m in Sources */,
+				CCABBB1A1321DDB5003B6DDC /* EditControlLayer.m in Sources */,
+				CCABBB411321DF1D003B6DDC /* EditViewLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
