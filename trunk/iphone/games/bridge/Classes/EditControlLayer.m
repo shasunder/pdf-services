@@ -11,8 +11,12 @@
 
 @implementation EditControlLayer
 
+@synthesize scene;
+
 CCDirector *director;
 NSMutableArray * touchesArray;
+CCSprite* grid;
+CocosUtility *cocosUtil;
 
 -(id) init{
 
@@ -20,6 +24,12 @@ NSMutableArray * touchesArray;
 		director = [CCDirector sharedDirector];
 		touchesArray=[[NSMutableArray alloc ] init];
 		self.isTouchEnabled = YES;		
+		
+		
+		grid = [CCSprite spriteWithFile:@"bridge-grid-background.png"];
+		grid.position =ccp(480.f/2,320.f/2); 
+		[self addChild:grid z:0];
+		cocosUtil = [[CocosUtility alloc] init];
 		
 	}
 	
@@ -33,7 +43,6 @@ NSMutableArray * touchesArray;
 }
 
 
-
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
 	
 	CGPoint location = [touch locationInView: [touch view]];
@@ -41,8 +50,17 @@ NSMutableArray * touchesArray;
 	
 	[touchesArray addObject:NSStringFromCGPoint(location)];
 	
+	//check if touch within grid 
+	
+	if(! [cocosUtil containsTouchLocation: touch : grid ] ){
+		//not within grid. clear all touches
+		[touchesArray removeAllObjects];
+		return;
+	}
+	
 	
 	if([touchesArray count]==2){
+		
 		
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
@@ -66,9 +84,10 @@ NSMutableArray * touchesArray;
 		// set scale for vertical or horizontal
 		//TODO: check if touches withing grid
 		//TODO: snap to grid co-ordinates 
+	
 		
-		float beamX = (deltaX > 0 && deltaY > 0) ? end.x : start.x;
-		float beamY = (deltaX > 0 && deltaY > 0) ? end.y : start.y;
+		float beamX = (deltaX > 0) ? end.x : start.x;
+		float beamY = (deltaY > 0) ? end.y : start.y;
 		
 		if(fabs(deltaX) > deltaRange && fabs(deltaY) > deltaRange ){
 			NSLog(@":::::Oblique:::::");
@@ -100,6 +119,11 @@ NSMutableArray * touchesArray;
 		
 	}
 	return YES;
+}
+
+
+-(void)setScene:(CCScene *)scene1{
+	self.scene = scene1;
 }
 
 

@@ -11,15 +11,14 @@
 
 @implementation EditViewLayer
 
-CCDirector *director;
-CCSprite* grid;
+@synthesize scene;
+
+
 
 -(id) init
 {
 	if( (self=[super init] )) {
-			
-		director = [CCDirector sharedDirector];
-		
+					
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		
 		CCSprite* wood = [CCSprite spriteWithFile:@"material-wood.png" ];
@@ -44,10 +43,7 @@ CCSprite* grid;
 		[self addChild:landRight];
 		[self addChild:landLeft];
 		
-		
-		grid = [CCSprite spriteWithFile:@"bridge-grid-background.png"];
-		grid.position =ccp(480.f/2,320.f/2); 
-		[self addChild:grid z:0];
+
 		
 		CCSprite* background = [CCSprite spriteWithFile:@"background-blue.png"];
 		background.position =ccp(480.f/2,320.f/2); 
@@ -59,6 +55,8 @@ CCSprite* grid;
 }
 
 
-
+-(void)setScene:(CCScene *)scene1{
+	self.scene = scene1;
+}
 
 @end
