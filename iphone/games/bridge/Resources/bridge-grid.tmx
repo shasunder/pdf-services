@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
+<map version="1.0" orientation="orthogonal" width="8" height="5" tilewidth="32" tileheight="32">
+ <tileset name="tiles" firstgid="1" tilewidth="32" tileheight="32">
+  <image source="bridge-grid-background.png" trans="ff00ff"/>
+ </tileset>
+ <layer name="Layer 0" width="8" height="5">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAA3DiRJCUAAAwEfolBwdSlIi//+F7c5sFEKIXZmYmrl249adew/mHi08WVpZ23j24tWbrXcfdj7tfTn49uPo18nZn4t/SiY98KAAAAA=
+  </data>
+ </layer>
+</map>
