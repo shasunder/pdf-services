@@ -305,6 +305,7 @@
 		CCB263961321791500CA6458 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB263951321791500CA6458 /* Line.m */; };
 		CCB508591322805D0098BBA5 /* bridge-grid-background.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB508571322805D0098BBA5 /* bridge-grid-background.png */; };
 		CCB5085A1322805D0098BBA5 /* bridge-grid.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCB508581322805D0098BBA5 /* bridge-grid.tmx */; };
+		CCC4D7B21322D67C00DA511F /* CocosUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC4D7B11322D67C00DA511F /* CocosUtility.m */; };
 		CCE464E2132036BE0072DE4D /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE464DF132036BE0072DE4D /* meta_tiles.png */; };
 		CCE464E3132036BE0072DE4D /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCE464E0132036BE0072DE4D /* TileMap.tmx */; };
 		CCE464E4132036BE0072DE4D /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE464E1132036BE0072DE4D /* tmw_desert_spacing.png */; };
@@ -632,6 +633,8 @@
 		CCB263951321791500CA6458 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		CCB508571322805D0098BBA5 /* bridge-grid-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-grid-background.png"; sourceTree = "<group>"; };
 		CCB508581322805D0098BBA5 /* bridge-grid.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "bridge-grid.tmx"; sourceTree = "<group>"; };
+		CCC4D7B01322D67C00DA511F /* CocosUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosUtility.h; sourceTree = "<group>"; };
+		CCC4D7B11322D67C00DA511F /* CocosUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocosUtility.m; sourceTree = "<group>"; };
 		CCE464DF132036BE0072DE4D /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
 		CCE464E0132036BE0072DE4D /* TileMap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TileMap.tmx; sourceTree = "<group>"; };
 		CCE464E1132036BE0072DE4D /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
@@ -1181,6 +1184,8 @@
 				50F4143810692D7D002A0D5E /* GLES-Render.mm */,
 				CCAE65C8131C3F13007F85A5 /* Constants.h */,
 				CCAE65C9131C3F13007F85A5 /* Constants.h */,
+				CCC4D7B01322D67C00DA511F /* CocosUtility.h */,
+				CCC4D7B11322D67C00DA511F /* CocosUtility.m */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -1469,6 +1474,7 @@
 				CCB263961321791500CA6458 /* Line.m in Sources */,
 				CCABBB1A1321DDB5003B6DDC /* EditControlLayer.m in Sources */,
 				CCABBB411321DF1D003B6DDC /* EditViewLayer.m in Sources */,
+				CCC4D7B21322D67C00DA511F /* CocosUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

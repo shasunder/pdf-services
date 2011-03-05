@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CocosUtility.h"
 
 @interface EditViewLayer : CCLayer {
-	
+	CCScene *scene;
 }
+@property (nonatomic, retain) CCScene *scene;
+
+
+-(void)setScene:(CCScene *)scene;
 
 @end
