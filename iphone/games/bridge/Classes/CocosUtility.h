@@ -13,7 +13,7 @@
 
 }
 
-- (CGRect)getRectangle:(CCSprite *) sprite;
-- (BOOL)containsTouchLocation:(UITouch *)touch : (CCSprite *) sprite;
++ (CGRect)getRectangle:(CCSprite *) sprite;
++ (BOOL)containsTouchLocation:(UITouch *)touch : (CCSprite *) sprite;
 
 @end
