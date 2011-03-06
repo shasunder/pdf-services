@@ -268,7 +268,6 @@
 								<string>CC1BC7DF13219084001C3359</string>
 								<string>CCABBB351321DE74003B6DDC</string>
 								<string>CC1AD695131AC98C00E69E5D</string>
-								<string>CC1AD672131AC91E00E69E5D</string>
 								<string>CC1AD671131AC91100E69E5D</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -277,7 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
+									<integer>10</integer>
 									<integer>7</integer>
 									<integer>6</integer>
 									<integer>4</integer>
@@ -285,7 +284,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 43}, {227, 601}}</string>
+							<string>{{0, 0}, {227, 601}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EditControlLayer.h</string>
+								<string>EditViewLayer.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>EditControlLayer.h</string>
+										<string>EditViewLayer.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CCE110A51324550100E1A6BC</string>
+										<string>CCE110BB132455D600E1A6BC</string>
 										<key>history</key>
 										<array>
 											<string>CC1AD6BA131B0CD700E69E5D</string>
@@ -388,14 +387,14 @@
 											<string>CCE11087132453C400E1A6BC</string>
 											<string>CCE11089132453C400E1A6BC</string>
 											<string>CCE1109B1324550100E1A6BC</string>
-											<string>CCE1109C1324550100E1A6BC</string>
 											<string>CCE1109D1324550100E1A6BC</string>
 											<string>CCE1109F1324550100E1A6BC</string>
-											<string>CCE110A01324550100E1A6BC</string>
-											<string>CCE110A11324550100E1A6BC</string>
-											<string>CCE110A21324550100E1A6BC</string>
-											<string>CCE110A31324550100E1A6BC</string>
-											<string>CCE110A41324550100E1A6BC</string>
+											<string>CCE110B5132455D600E1A6BC</string>
+											<string>CCE110B6132455D600E1A6BC</string>
+											<string>CCE110B7132455D600E1A6BC</string>
+											<string>CCE110B8132455D600E1A6BC</string>
+											<string>CCE110B9132455D600E1A6BC</string>
+											<string>CCE110BA132455D600E1A6BC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
