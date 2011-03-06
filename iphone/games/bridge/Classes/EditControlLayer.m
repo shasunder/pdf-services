@@ -62,7 +62,7 @@ CCSprite* grid;
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
 		
-		[[BridgeContext instance] objectForKey: KEY_SCENE];
+		//[[BridgeContext instance] objectForKey: KEY_SCENE];
 		
 		
 		NSLog([NSString stringWithFormat: @"touched twice %f %f",start.x,end.x ]);

@@ -2,10 +2,9 @@
 #import "EditViewLayer.h"
 #import "EditControlLayer.h"
 #import "Constants.h"
-
+#import "BridgeContext.h"
 @implementation EditorScene
 
-@class BridgeContext;
 
 @synthesize bridge;
 
