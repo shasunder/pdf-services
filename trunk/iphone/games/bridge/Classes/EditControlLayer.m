@@ -11,12 +11,10 @@
 
 @implementation EditControlLayer
 
-@synthesize scene;
 
 CCDirector *director;
 NSMutableArray * touchesArray;
 CCSprite* grid;
-CocosUtility *cocosUtil;
 
 -(id) init{
 
@@ -29,7 +27,6 @@ CocosUtility *cocosUtil;
 		grid = [CCSprite spriteWithFile:@"bridge-grid-background.png"];
 		grid.position =ccp(480.f/2,320.f/2); 
 		[self addChild:grid z:0];
-		cocosUtil = [[CocosUtility alloc] init];
 		
 	}
 	
@@ -52,7 +49,7 @@ CocosUtility *cocosUtil;
 	
 	//check if touch within grid 
 	
-	if(! [cocosUtil containsTouchLocation: touch : grid ] ){
+	if(! [CocosUtility containsTouchLocation: touch : grid ] ){
 		//not within grid. clear all touches
 		[touchesArray removeAllObjects];
 		return;
@@ -64,6 +61,8 @@ CocosUtility *cocosUtil;
 		
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
+		
+		[[BridgeContext instance] objectForKey: KEY_SCENE];
 		
 		
 		NSLog([NSString stringWithFormat: @"touched twice %f %f",start.x,end.x ]);
@@ -119,11 +118,6 @@ CocosUtility *cocosUtil;
 		
 	}
 	return YES;
-}
-
-
--(void)setScene:(CCScene *)scene1{
-	self.scene = scene1;
 }
 
 

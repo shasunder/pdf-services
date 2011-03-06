@@ -12,14 +12,12 @@
 @implementation CocosUtility
 
 //common
-- (CGRect)getRectangle:(CCSprite *) sprite
-{
++ (CGRect)getRectangle:(CCSprite *) sprite{
 	CGSize s = [sprite.texture contentSize];
 	return CGRectMake(-s.width / 2, -s.height / 2, s.width, s.height);
 }
 
-- (BOOL)containsTouchLocation:(UITouch *)touch : (CCSprite *) sprite
-{
++ (BOOL)containsTouchLocation:(UITouch *)touch : (CCSprite *) sprite{
 	return CGRectContainsPoint([self getRectangle:sprite], [sprite convertTouchToNodeSpaceAR:touch]);
 }
 

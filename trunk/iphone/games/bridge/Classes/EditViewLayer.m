@@ -11,9 +11,7 @@
 
 @implementation EditViewLayer
 
-@synthesize scene;
 
-CocosUtility *cocosUtil;
 
 CCSprite* wood;
 CCSprite* steel;
@@ -52,16 +50,11 @@ CCSprite* steel;
 		background.position =ccp(480.f/2,320.f/2); 
 		[self addChild:background z:-1];
 		
-		cocosUtil = [[CocosUtility alloc] init];
 	}
 	
 	return self;
 }
 
-
--(void)setScene:(CCScene *)scene1{
-	self.scene = scene1;
-}
 
 
 -(void) registerWithTouchDispatcher{
@@ -74,10 +67,10 @@ CCSprite* steel;
 	CGPoint location = [touch locationInView: [touch view]];
 	location = [[CCDirector sharedDirector] convertToGL:location];
 	//check if button pressed
-	if( [cocosUtil containsTouchLocation: touch : wood ] ){
+	if( [CocosUtility containsTouchLocation: touch : wood ] ){
 		wood.opacity = 128;steel.opacity = 184;
 		NSLog(@"Touched : wood");
-	}else if( [cocosUtil containsTouchLocation: touch : steel ] ){
+	}else if( [CocosUtility containsTouchLocation: touch : steel ] ){
 		wood.opacity = 184;steel.opacity = 128;
 		NSLog(@"Touched : steel");
 	}
