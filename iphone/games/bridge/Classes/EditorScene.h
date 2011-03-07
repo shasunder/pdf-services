@@ -8,6 +8,7 @@
 #import "cocos2d.h"
 #import "Bridge.h"
 #import "Constants.h"
+#import "BridgeContext.h"
 
 @interface EditorScene : CCScene{
 	Bridge *bridge;

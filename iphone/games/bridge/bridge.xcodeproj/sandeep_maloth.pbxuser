@@ -8,14 +8,14 @@
 	};
 	1F3B9A2B0EF2145700286867 /* bridgeAppDelegate.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {978, 819}}";
-			sepNavSelRange = "{679, 0}";
-			sepNavVisRange = "{0, 1217}";
+			sepNavIntBoundsRect = "{{0, 0}, {978, 793}}";
+			sepNavSelRange = "{213, 0}";
+			sepNavVisRange = "{0, 1103}";
 		};
 	};
 	1F3B9A2C0EF2145700286867 /* bridgeAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 539}}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
 			sepNavSelRange = "{1, 0}";
 			sepNavVisRange = "{0, 168}";
 		};
@@ -29,18 +29,19 @@
 			1D6058900D05DD3D006BFB54 /* bridge */,
 		);
 		breakpoints = (
-			CCE4650913203C600072DE4D /* EditorScene.m:27 */,
-			CCFF4DAD13203FAF0017B2CD /* EditorScene.m:27 */,
-			CCFF4DBD132040110017B2CD /* EditorScene.m:27 */,
-			CCFF4DC2132040240017B2CD /* EditorScene.m:27 */,
-			CCFF4DC7132040490017B2CD /* EditorScene.m:27 */,
-			CCFF4DD1132040960017B2CD /* EditorScene.m:27 */,
-			CCFF4DDE132041000017B2CD /* EditorScene.m:27 */,
-			CCC4D6771322BF2400DA511F /* EditControlLayer.m:114 */,
+			CCE4650913203C600072DE4D /* EditorScene.m:25 */,
+			CCFF4DAD13203FAF0017B2CD /* EditorScene.m:25 */,
+			CCFF4DBD132040110017B2CD /* EditorScene.m:25 */,
+			CCFF4DC2132040240017B2CD /* EditorScene.m:25 */,
+			CCFF4DC7132040490017B2CD /* EditorScene.m:25 */,
+			CCFF4DD1132040960017B2CD /* EditorScene.m:25 */,
+			CCFF4DDE132041000017B2CD /* EditorScene.m:25 */,
+			CCC4D6771322BF2400DA511F /* EditControlLayer.m:120 */,
 			CCE10FB21324484000E1A6BC /* EditViewLayer.m:57 */,
-			CCE1101713244D3600E1A6BC /* BridgeContext.m:17 */,
-			CCE1101913244D3800E1A6BC /* BridgeContext.m:24 */,
-			CCE1101C13244D5300E1A6BC /* EditorScene.m:19 */,
+			CCE1101713244D3600E1A6BC /* BridgeContext.m:19 */,
+			CCE1101913244D3800E1A6BC /* BridgeContext.m:28 */,
+			CCE1101C13244D5300E1A6BC /* EditorScene.m:17 */,
+			CCE110FB1324595700E1A6BC /* Bridge.m:34 */,
 		);
 		codeSenseManager = CCC744B81319397C00922488 /* Code sense */;
 		executables = (
@@ -50,6 +51,7 @@
 			"[BridgeContext instance]",
 			"[BridgeContext instance].context",
 			"[[BridgeContext instance].context @\"tst\":@\"test\"]",
+			joints,
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
@@ -281,6 +283,60 @@
 			CCE110B9132455D600E1A6BC /* PBXTextBookmark */ = CCE110B9132455D600E1A6BC /* PBXTextBookmark */;
 			CCE110BA132455D600E1A6BC /* PBXTextBookmark */ = CCE110BA132455D600E1A6BC /* PBXTextBookmark */;
 			CCE110BB132455D600E1A6BC /* PBXTextBookmark */ = CCE110BB132455D600E1A6BC /* PBXTextBookmark */;
+			CCE110C41324570200E1A6BC /* PBXTextBookmark */ = CCE110C41324570200E1A6BC /* PBXTextBookmark */;
+			CCE110C51324570200E1A6BC /* PBXTextBookmark */ = CCE110C51324570200E1A6BC /* PBXTextBookmark */;
+			CCE110C61324570200E1A6BC /* PBXTextBookmark */ = CCE110C61324570200E1A6BC /* PBXTextBookmark */;
+			CCE110C71324570200E1A6BC /* PBXTextBookmark */ = CCE110C71324570200E1A6BC /* PBXTextBookmark */;
+			CCE110C81324570200E1A6BC /* PBXTextBookmark */ = CCE110C81324570200E1A6BC /* PBXTextBookmark */;
+			CCE110C91324570200E1A6BC /* PBXTextBookmark */ = CCE110C91324570200E1A6BC /* PBXTextBookmark */;
+			CCE110CA1324570200E1A6BC /* PBXTextBookmark */ = CCE110CA1324570200E1A6BC /* PBXTextBookmark */;
+			CCE110CB1324570200E1A6BC /* PBXTextBookmark */ = CCE110CB1324570200E1A6BC /* PBXTextBookmark */;
+			CCE110CC1324570200E1A6BC /* PBXTextBookmark */ = CCE110CC1324570200E1A6BC /* PBXTextBookmark */;
+			CCE110CD1324570200E1A6BC /* PBXTextBookmark */ = CCE110CD1324570200E1A6BC /* PBXTextBookmark */;
+			CCE110CE1324570200E1A6BC /* PBXTextBookmark */ = CCE110CE1324570200E1A6BC /* PBXTextBookmark */;
+			CCE110CF1324570200E1A6BC /* PBXTextBookmark */ = CCE110CF1324570200E1A6BC /* PBXTextBookmark */;
+			CCE110D21324571800E1A6BC /* PBXTextBookmark */ = CCE110D21324571800E1A6BC /* PBXTextBookmark */;
+			CCE110D31324571800E1A6BC /* PBXTextBookmark */ = CCE110D31324571800E1A6BC /* PBXTextBookmark */;
+			CCE110D41324571800E1A6BC /* PBXTextBookmark */ = CCE110D41324571800E1A6BC /* PBXTextBookmark */;
+			CCE110D91324583400E1A6BC /* PBXTextBookmark */ = CCE110D91324583400E1A6BC /* PBXTextBookmark */;
+			CCE110DA1324583400E1A6BC /* PBXTextBookmark */ = CCE110DA1324583400E1A6BC /* PBXTextBookmark */;
+			CCE110DB1324583400E1A6BC /* PBXTextBookmark */ = CCE110DB1324583400E1A6BC /* PBXTextBookmark */;
+			CCE110DC1324583400E1A6BC /* PBXTextBookmark */ = CCE110DC1324583400E1A6BC /* PBXTextBookmark */;
+			CCE110DD1324583400E1A6BC /* PBXTextBookmark */ = CCE110DD1324583400E1A6BC /* PBXTextBookmark */;
+			CCE110DE1324583400E1A6BC /* PBXTextBookmark */ = CCE110DE1324583400E1A6BC /* PBXTextBookmark */;
+			CCE110DF1324583400E1A6BC /* PBXTextBookmark */ = CCE110DF1324583400E1A6BC /* PBXTextBookmark */;
+			CCE110E01324583400E1A6BC /* PBXTextBookmark */ = CCE110E01324583400E1A6BC /* PBXTextBookmark */;
+			CCE110E31324586A00E1A6BC /* PBXTextBookmark */ = CCE110E31324586A00E1A6BC /* PBXTextBookmark */;
+			CCE110E41324586A00E1A6BC /* PBXTextBookmark */ = CCE110E41324586A00E1A6BC /* PBXTextBookmark */;
+			CCE110E51324586A00E1A6BC /* PBXTextBookmark */ = CCE110E51324586A00E1A6BC /* PBXTextBookmark */;
+			CCE110E61324586A00E1A6BC /* PBXTextBookmark */ = CCE110E61324586A00E1A6BC /* PBXTextBookmark */;
+			CCE110E71324586A00E1A6BC /* PBXTextBookmark */ = CCE110E71324586A00E1A6BC /* PBXTextBookmark */;
+			CCE110EC132458EE00E1A6BC /* PBXTextBookmark */ = CCE110EC132458EE00E1A6BC /* PBXTextBookmark */;
+			CCE110ED132458EE00E1A6BC /* PBXTextBookmark */ = CCE110ED132458EE00E1A6BC /* PBXTextBookmark */;
+			CCE110EE132458EE00E1A6BC /* PBXTextBookmark */ = CCE110EE132458EE00E1A6BC /* PBXTextBookmark */;
+			CCE110EF132458EE00E1A6BC /* PBXTextBookmark */ = CCE110EF132458EE00E1A6BC /* PBXTextBookmark */;
+			CCE110F0132458EE00E1A6BC /* PBXTextBookmark */ = CCE110F0132458EE00E1A6BC /* PBXTextBookmark */;
+			CCE110F1132458EE00E1A6BC /* PBXTextBookmark */ = CCE110F1132458EE00E1A6BC /* PBXTextBookmark */;
+			CCE110F41324592100E1A6BC /* PBXTextBookmark */ = CCE110F41324592100E1A6BC /* PBXTextBookmark */;
+			CCE110F51324592100E1A6BC /* PBXTextBookmark */ = CCE110F51324592100E1A6BC /* PBXTextBookmark */;
+			CCE110F61324592100E1A6BC /* PBXTextBookmark */ = CCE110F61324592100E1A6BC /* PBXTextBookmark */;
+			CCE110F71324592100E1A6BC /* PBXTextBookmark */ = CCE110F71324592100E1A6BC /* PBXTextBookmark */;
+			CCE110FA1324593A00E1A6BC /* PBXTextBookmark */ = CCE110FA1324593A00E1A6BC /* PBXTextBookmark */;
+			CCE110FF1324596700E1A6BC /* PBXTextBookmark */ = CCE110FF1324596700E1A6BC /* PBXTextBookmark */;
+			CCE111001324596700E1A6BC /* PBXTextBookmark */ = CCE111001324596700E1A6BC /* PBXTextBookmark */;
+			CCE111011324596700E1A6BC /* PBXTextBookmark */ = CCE111011324596700E1A6BC /* PBXTextBookmark */;
+			CCE111021324596700E1A6BC /* PBXTextBookmark */ = CCE111021324596700E1A6BC /* PBXTextBookmark */;
+			CCE1110413245A2600E1A6BC /* PBXTextBookmark */ = CCE1110413245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110513245A2600E1A6BC /* PBXTextBookmark */ = CCE1110513245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110613245A2600E1A6BC /* PBXTextBookmark */ = CCE1110613245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110713245A2600E1A6BC /* PBXTextBookmark */ = CCE1110713245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110813245A2600E1A6BC /* PBXTextBookmark */ = CCE1110813245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110913245A2600E1A6BC /* PBXTextBookmark */ = CCE1110913245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110A13245A2600E1A6BC /* PBXTextBookmark */ = CCE1110A13245A2600E1A6BC /* PBXTextBookmark */;
+			CCE1110D13245A4300E1A6BC /* PBXTextBookmark */ = CCE1110D13245A4300E1A6BC /* PBXTextBookmark */;
+			CCE1110E13245A4300E1A6BC /* PBXTextBookmark */ = CCE1110E13245A4300E1A6BC /* PBXTextBookmark */;
+			CCE1110F13245A4300E1A6BC /* PBXTextBookmark */ = CCE1110F13245A4300E1A6BC /* PBXTextBookmark */;
+			CCE1111013245A4300E1A6BC /* PBXTextBookmark */ = CCE1111013245A4300E1A6BC /* PBXTextBookmark */;
 			CCE4650D13203C620072DE4D = CCE4650D13203C620072DE4D /* PlistBookmark */;
 			CCE4651113203C620072DE4D = CCE4651113203C620072DE4D /* PBXBookmark */;
 			CCE4651213203C620072DE4D = CCE4651213203C620072DE4D /* PBXTextBookmark */;
@@ -418,15 +474,15 @@
 	CC1AD696131AC9A900E69E5D /* EditorScene.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
-			sepNavSelRange = "{185, 0}";
-			sepNavVisRange = "{0, 304}";
+			sepNavSelRange = "{211, 0}";
+			sepNavVisRange = "{0, 330}";
 		};
 	};
 	CC1AD697131AC9A900E69E5D /* EditorScene.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
-			sepNavSelRange = "{126, 0}";
-			sepNavVisRange = "{0, 610}";
+			sepNavSelRange = "{79, 0}";
+			sepNavVisRange = "{0, 562}";
 			sepNavWindowFrame = "{{521, 98}, {750, 558}}";
 		};
 	};
@@ -599,29 +655,29 @@
 	CCABBB181321DDB5003B6DDC /* EditControlLayer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
-			sepNavSelRange = "{255, 0}";
-			sepNavVisRange = "{0, 305}";
+			sepNavSelRange = "{256, 18}";
+			sepNavVisRange = "{0, 325}";
 		};
 	};
 	CCABBB191321DDB5003B6DDC /* EditControlLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {803, 1586}}";
-			sepNavSelRange = "{1347, 0}";
-			sepNavVisRange = "{922, 1199}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 1794}}";
+			sepNavSelRange = "{265, 325}";
+			sepNavVisRange = "{265, 903}";
 		};
 	};
 	CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 491}}";
 			sepNavSelRange = "{246, 0}";
 			sepNavVisRange = "{0, 253}";
 		};
 	};
 	CCABBB401321DF1D003B6DDC /* EditViewLayer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 1118}}";
+			sepNavIntBoundsRect = "{{0, 0}, {705, 1287}}";
 			sepNavSelRange = "{1202, 0}";
-			sepNavVisRange = "{0, 880}";
+			sepNavVisRange = "{1103, 199}";
 		};
 	};
 	CCABBB901321E2DE003B6DDC /* PBXTextBookmark */ = {
@@ -682,7 +738,7 @@
 		fRef = CCAE65C9131C3F13007F85A5 /* Constants.h */;
 		name = "Constants.h: 14";
 		rLen = 0;
-		rLoc = 214;
+		rLoc = 238;
 		rType = 0;
 		vrLen = 178;
 		vrLoc = 0;
@@ -801,7 +857,7 @@
 		vrLen = 1190;
 		vrLoc = 12742;
 	};
-	CCC4D6771322BF2400DA511F /* EditControlLayer.m:114 */ = {
+	CCC4D6771322BF2400DA511F /* EditControlLayer.m:120 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -813,9 +869,9 @@
 		functionName = "-ccTouchBegan:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 114;
+		lineNumber = 120;
 		location = bridge;
-		modificationTime = 321147847.287816;
+		modificationTime = 321149288.66594;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -824,7 +880,7 @@
 		fRef = CC1AD696131AC9A900E69E5D /* EditorScene.h */;
 		name = "EditorScene.h: 13";
 		rLen = 0;
-		rLoc = 284;
+		rLoc = 310;
 		rType = 0;
 		vrLen = 202;
 		vrLoc = 0;
@@ -865,7 +921,7 @@
 	};
 	CCC4D7B11322D67C00DA511F /* CocosUtility.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 539}}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
 			sepNavSelRange = "{233, 0}";
 			sepNavVisRange = "{0, 525}";
 		};
@@ -883,7 +939,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 19";
 		rLen = 0;
-		rLoc = 547;
+		rLoc = 499;
 		rType = 0;
 		vrLen = 474;
 		vrLoc = 0;
@@ -895,7 +951,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -946,16 +1002,16 @@
 	};
 	CCE10F7713241B6E00E1A6BC /* Bridge.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 539}}";
-			sepNavSelRange = "{240, 53}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 491}}";
+			sepNavSelRange = "{500, 9}";
 			sepNavVisRange = "{0, 630}";
 		};
 	};
 	CCE10F7813241B6E00E1A6BC /* Bridge.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 715}}";
-			sepNavSelRange = "{648, 0}";
-			sepNavVisRange = "{138, 650}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 858}}";
+			sepNavSelRange = "{315, 0}";
+			sepNavVisRange = "{118, 549}";
 		};
 	};
 	CCE10F7A13241DFF00E1A6BC /* OrderedDictionary.m */ = {
@@ -974,22 +1030,22 @@
 	};
 	CCE10F7E13241F2100E1A6BC /* Constants.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
-			sepNavSelRange = "{180, 0}";
-			sepNavVisRange = "{0, 214}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 491}}";
+			sepNavSelRange = "{188, 10}";
+			sepNavVisRange = "{0, 238}";
 		};
 	};
 	CCE10F7F1324456700E1A6BC /* Joint.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 498}}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 491}}";
 			sepNavSelRange = "{238, 0}";
 			sepNavVisRange = "{0, 260}";
 		};
 	};
 	CCE10F801324456700E1A6BC /* Joint.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 539}}";
-			sepNavSelRange = "{198, 137}";
+			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
+			sepNavSelRange = "{204, 13}";
 			sepNavVisRange = "{0, 341}";
 		};
 	};
@@ -1022,7 +1078,7 @@
 		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
 		name = "Constants.h: 13";
 		rLen = 0;
-		rLoc = 208;
+		rLoc = 232;
 		rType = 0;
 		vrLen = 178;
 		vrLoc = 0;
@@ -1072,7 +1128,7 @@
 		fRef = CC1AD696131AC9A900E69E5D /* EditorScene.h */;
 		name = "EditorScene.h: 13";
 		rLen = 0;
-		rLoc = 284;
+		rLoc = 310;
 		rType = 0;
 		vrLen = 202;
 		vrLoc = 0;
@@ -1142,7 +1198,7 @@
 		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
 		name = "Bridge.m: 42";
 		rLen = 0;
-		rLoc = 648;
+		rLoc = 771;
 		rType = 0;
 		vrLen = 629;
 		vrLoc = 163;
@@ -1172,7 +1228,7 @@
 		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
 		name = "EditControlLayer.h: 14";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 317;
 		rType = 0;
 		vrLen = 354;
 		vrLoc = 0;
@@ -1192,7 +1248,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 10";
 		rLen = 4;
-		rLoc = 223;
+		rLoc = 175;
 		rType = 0;
 		vrLen = 474;
 		vrLoc = 0;
@@ -1202,7 +1258,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 14";
 		rLen = 0;
-		rLoc = 339;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 472;
 		vrLoc = 0;
@@ -1221,7 +1277,7 @@
 		ignoreCount = 0;
 		lineNumber = 57;
 		location = bridge;
-		modificationTime = 321147852.915931;
+		modificationTime = 321149295.086553;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1230,7 +1286,7 @@
 		fRef = CC1AD696131AC9A900E69E5D /* EditorScene.h */;
 		name = "EditorScene.h: 13";
 		rLen = 0;
-		rLoc = 284;
+		rLoc = 310;
 		rType = 0;
 		vrLen = 202;
 		vrLoc = 0;
@@ -1240,7 +1296,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 14";
 		rLen = 0;
-		rLoc = 339;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 472;
 		vrLoc = 0;
@@ -1278,15 +1334,15 @@
 	CCE10FBB1324499800E1A6BC /* BridgeContext.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
-			sepNavSelRange = "{234, 0}";
-			sepNavVisRange = "{0, 240}";
+			sepNavSelRange = "{197, 0}";
+			sepNavVisRange = "{0, 246}";
 		};
 	};
 	CCE10FBC1324499800E1A6BC /* BridgeContext.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {732, 514}}";
-			sepNavSelRange = "{184, 0}";
-			sepNavVisRange = "{0, 370}";
+			sepNavSelRange = "{375, 0}";
+			sepNavVisRange = "{0, 495}";
 		};
 	};
 	CCE10FC513244A6100E1A6BC /* XCBuildMessageTextBookmark */ = {
@@ -1323,7 +1379,7 @@
 		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
 		name = "EditControlLayer.h: 15";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 317;
 		rType = 0;
 		vrLen = 258;
 		vrLoc = 0;
@@ -1333,7 +1389,7 @@
 		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
 		name = "EditControlLayer.m: 119";
 		rLen = 0;
-		rLoc = 2932;
+		rLoc = 3094;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 1982;
@@ -1353,7 +1409,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 14";
 		rLen = 0;
-		rLoc = 339;
+		rLoc = 291;
 		rType = 0;
 		vrLen = 474;
 		vrLoc = 0;
@@ -1373,7 +1429,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 15";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 378;
 		vrLoc = 0;
@@ -1383,7 +1439,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 20";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 341;
 		vrLoc = 0;
@@ -1393,7 +1449,7 @@
 		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
 		name = "Bridge.m: 42";
 		rLen = 0;
-		rLoc = 648;
+		rLoc = 771;
 		rType = 0;
 		vrLen = 653;
 		vrLoc = 139;
@@ -1442,7 +1498,7 @@
 		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
 		name = "Constants.h: 13";
 		rLen = 0;
-		rLoc = 208;
+		rLoc = 232;
 		rType = 0;
 		vrLen = 178;
 		vrLoc = 0;
@@ -1452,7 +1508,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 14";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 341;
 		vrLoc = 0;
@@ -1462,7 +1518,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 17";
 		rLen = 0;
-		rLoc = 234;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 292;
 		vrLoc = 0;
@@ -1472,7 +1528,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 14";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 341;
 		vrLoc = 0;
@@ -1482,7 +1538,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 16";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 377;
 		vrLoc = 0;
@@ -1492,7 +1548,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 292;
 		vrLoc = 0;
@@ -1502,7 +1558,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 14";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1512,7 +1568,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 14";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 356;
 		vrLoc = 0;
@@ -1562,7 +1618,7 @@
 		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
 		name = "Bridge.m: 42";
 		rLen = 0;
-		rLoc = 648;
+		rLoc = 771;
 		rType = 0;
 		vrLen = 652;
 		vrLoc = 139;
@@ -1582,7 +1638,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 292;
 		vrLoc = 0;
@@ -1592,7 +1648,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 24";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 0;
@@ -1602,7 +1658,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 17";
 		rLen = 0;
-		rLoc = 205;
+		rLoc = 241;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 0;
@@ -1612,7 +1668,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 292;
 		vrLoc = 0;
@@ -1632,7 +1688,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 17";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 388;
 		rType = 0;
 		vrLen = 572;
 		vrLoc = 0;
@@ -1642,7 +1698,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 464;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 559;
 		vrLoc = 0;
@@ -1652,7 +1708,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 464;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 559;
 		vrLoc = 0;
@@ -1662,7 +1718,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 17";
 		rLen = 33;
-		rLoc = 185;
+		rLoc = 221;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 0;
@@ -1672,7 +1728,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 292;
 		vrLoc = 0;
@@ -1682,7 +1738,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 0;
@@ -1692,7 +1748,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 320;
 		vrLoc = 0;
@@ -1702,7 +1758,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 17";
 		rLen = 33;
-		rLoc = 185;
+		rLoc = 221;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 0;
@@ -1712,7 +1768,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 427;
+		rLoc = 379;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 0;
@@ -1722,7 +1778,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 17";
 		rLen = 0;
-		rLoc = 400;
+		rLoc = 352;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 0;
@@ -1732,7 +1788,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 17";
 		rLen = 0;
-		rLoc = 400;
+		rLoc = 352;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 0;
@@ -1752,7 +1808,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 22";
 		rLen = 17;
-		rLoc = 263;
+		rLoc = 299;
 		rType = 0;
 		vrLen = 604;
 		vrLoc = 0;
@@ -1762,12 +1818,12 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 30";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 618;
 		vrLoc = 0;
 	};
-	CCE1101713244D3600E1A6BC /* BridgeContext.m:17 */ = {
+	CCE1101713244D3600E1A6BC /* BridgeContext.m:19 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1777,15 +1833,15 @@
 		delayBeforeContinue = 0;
 		fileReference = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		functionName = "+instance";
-		hitCount = 1;
+		hitCount = 2;
 		ignoreCount = 0;
-		lineNumber = 17;
+		lineNumber = 19;
 		location = bridge;
-		modificationTime = 321147850.704487;
+		modificationTime = 321149300.659509;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	CCE1101913244D3800E1A6BC /* BridgeContext.m:24 */ = {
+	CCE1101913244D3800E1A6BC /* BridgeContext.m:28 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1797,13 +1853,13 @@
 		functionName = "+set::";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 24;
+		lineNumber = 28;
 		location = bridge;
-		modificationTime = 321147847.288083;
+		modificationTime = 321149288.666221;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	CCE1101C13244D5300E1A6BC /* EditorScene.m:19 */ = {
+	CCE1101C13244D5300E1A6BC /* EditorScene.m:17 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -1815,9 +1871,9 @@
 		functionName = "+scene";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 19;
+		lineNumber = 17;
 		location = bridge;
-		modificationTime = 321147847.288108;
+		modificationTime = 321149288.666274;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
@@ -1826,7 +1882,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 30";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 618;
 		vrLoc = 0;
@@ -1836,7 +1892,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 17";
 		rLen = 0;
-		rLoc = 400;
+		rLoc = 352;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 0;
@@ -1846,7 +1902,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 17";
 		rLen = 0;
-		rLoc = 400;
+		rLoc = 352;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 0;
@@ -1886,7 +1942,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 30";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 618;
 		vrLoc = 0;
@@ -1896,7 +1952,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 403;
+		rLoc = 355;
 		rType = 0;
 		vrLen = 575;
 		vrLoc = 0;
@@ -1906,7 +1962,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 450;
+		rLoc = 402;
 		rType = 0;
 		vrLen = 569;
 		vrLoc = 0;
@@ -1916,7 +1972,7 @@
 		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
 		name = "Bridge.m: 42";
 		rLen = 0;
-		rLoc = 648;
+		rLoc = 771;
 		rType = 0;
 		vrLen = 652;
 		vrLoc = 138;
@@ -1948,7 +2004,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 17";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 620;
 		vrLoc = 0;
@@ -1958,7 +2014,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 16";
 		rLen = 0;
-		rLoc = 234;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 321;
 		vrLoc = 0;
@@ -1968,7 +2024,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 450;
+		rLoc = 402;
 		rType = 0;
 		vrLen = 569;
 		vrLoc = 0;
@@ -1978,7 +2034,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 427;
+		rLoc = 379;
 		rType = 0;
 		vrLen = 555;
 		vrLoc = 0;
@@ -1988,7 +2044,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 427;
+		rLoc = 379;
 		rType = 0;
 		vrLen = 555;
 		vrLoc = 0;
@@ -1998,7 +2054,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 14";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 621;
 		vrLoc = 0;
@@ -2008,7 +2064,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 400;
 		vrLoc = 0;
@@ -2018,7 +2074,7 @@
 		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
 		name = "Bridge.m: 42";
 		rLen = 0;
-		rLoc = 648;
+		rLoc = 771;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 138;
@@ -2048,7 +2104,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 12";
 		rLen = 0;
-		rLoc = 262;
+		rLoc = 214;
 		rType = 0;
 		vrLen = 555;
 		vrLoc = 0;
@@ -2068,7 +2124,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 407;
 		vrLoc = 0;
@@ -2078,7 +2134,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 14";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 621;
 		vrLoc = 0;
@@ -2088,7 +2144,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 21";
 		rLen = 0;
-		rLoc = 249;
+		rLoc = 285;
 		rType = 0;
 		vrLen = 620;
 		vrLoc = 0;
@@ -2110,9 +2166,9 @@
 		path = /Volumes/volume2/projects/iphone/JavaIQ/Classes/DataController.m;
 		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {929, 4888}}";
-			sepNavSelRange = "{6273, 12}";
-			sepNavVisRange = "{5211, 1543}";
+			sepNavIntBoundsRect = "{{0, 0}, {929, 4810}}";
+			sepNavSelRange = "{5797, 0}";
+			sepNavVisRange = "{3679, 1087}";
 			sepNavWindowFrame = "{{15, 215}, {750, 558}}";
 		};
 	};
@@ -2121,7 +2177,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 14";
 		rLen = 0;
-		rLoc = 206;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 407;
 		vrLoc = 0;
@@ -2131,7 +2187,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 21";
 		rLen = 0;
-		rLoc = 249;
+		rLoc = 285;
 		rType = 0;
 		vrLen = 620;
 		vrLoc = 0;
@@ -2141,7 +2197,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 15";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 638;
 		vrLoc = 3;
@@ -2151,7 +2207,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 31";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 689;
 		vrLoc = 3;
@@ -2161,7 +2217,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 40";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 468;
 		rType = 0;
 		vrLen = 674;
 		vrLoc = 77;
@@ -2171,7 +2227,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 32";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 639;
 		vrLoc = 125;
@@ -2181,7 +2237,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 32";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 687;
 		vrLoc = 77;
@@ -2228,7 +2284,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 32";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 642;
 		vrLoc = 122;
@@ -2238,7 +2294,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 15";
 		rLen = 0;
-		rLoc = 234;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 240;
 		vrLoc = 0;
@@ -2248,7 +2304,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 388;
 		rType = 0;
 		vrLen = 560;
 		vrLoc = 0;
@@ -2258,7 +2314,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 26";
 		rLen = 0;
-		rLoc = 321;
+		rLoc = 446;
 		rType = 0;
 		vrLen = 392;
 		vrLoc = 0;
@@ -2268,7 +2324,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 13";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 0;
@@ -2278,7 +2334,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 13";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 0;
@@ -2288,7 +2344,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 436;
+		rLoc = 388;
 		rType = 0;
 		vrLen = 560;
 		vrLoc = 0;
@@ -2298,7 +2354,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 460;
+		rLoc = 412;
 		rType = 0;
 		vrLen = 558;
 		vrLoc = 0;
@@ -2328,7 +2384,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 8;
-		rLoc = 428;
+		rLoc = 380;
 		rType = 0;
 		vrLen = 558;
 		vrLoc = 0;
@@ -2338,7 +2394,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 449;
+		rLoc = 401;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 0;
@@ -2348,7 +2404,7 @@
 		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
 		name = "Constants.h: 12";
 		rLen = 0;
-		rLoc = 180;
+		rLoc = 209;
 		rType = 0;
 		vrLen = 214;
 		vrLoc = 0;
@@ -2358,7 +2414,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 13";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 0;
@@ -2368,7 +2424,7 @@
 		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
 		name = "BridgeContext.h: 15";
 		rLen = 0;
-		rLoc = 234;
+		rLoc = 240;
 		rType = 0;
 		vrLen = 240;
 		vrLoc = 0;
@@ -2378,7 +2434,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 18";
 		rLen = 0;
-		rLoc = 460;
+		rLoc = 412;
 		rType = 0;
 		vrLen = 560;
 		vrLoc = 0;
@@ -2388,7 +2444,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 4";
 		rLen = 0;
-		rLoc = 97;
+		rLoc = 79;
 		rType = 0;
 		vrLen = 582;
 		vrLoc = 0;
@@ -2398,7 +2454,7 @@
 		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
 		name = "BridgeContext.m: 13";
 		rLen = 0;
-		rLoc = 184;
+		rLoc = 220;
 		rType = 0;
 		vrLen = 370;
 		vrLoc = 0;
@@ -2444,7 +2500,7 @@
 		fRef = CC1AD696131AC9A900E69E5D /* EditorScene.h */;
 		name = "EditorScene.h: 11";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 211;
 		rType = 0;
 		vrLen = 304;
 		vrLoc = 0;
@@ -2454,7 +2510,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 14";
 		rLen = 0;
-		rLoc = 204;
+		rLoc = 156;
 		rType = 0;
 		vrLen = 607;
 		vrLoc = 0;
@@ -2464,7 +2520,7 @@
 		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
 		name = "EditControlLayer.m: 126";
 		rLen = 0;
-		rLoc = 2939;
+		rLoc = 3101;
 		rType = 0;
 		vrLen = 857;
 		vrLoc = 2102;
@@ -2484,7 +2540,7 @@
 		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
 		name = "EditControlLayer.h: 15";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 317;
 		rType = 0;
 		vrLen = 258;
 		vrLoc = 0;
@@ -2494,7 +2550,7 @@
 		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
 		name = "EditControlLayer.h: 13";
 		rLen = 0;
-		rLoc = 255;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 280;
 		vrLoc = 0;
@@ -2515,7 +2571,7 @@
 		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 64;
+		rLoc = 65;
 		rType = 1;
 	};
 	CCE110A81324554F00E1A6BC /* PBXTextBookmark */ = {
@@ -2523,7 +2579,7 @@
 		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
 		name = "EditControlLayer.m: 66";
 		rLen = 0;
-		rLoc = 1343;
+		rLoc = 1346;
 		rType = 0;
 		vrLen = 456;
 		vrLoc = 1188;
@@ -2533,7 +2589,7 @@
 		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
 		name = "EditControlLayer.h: 13";
 		rLen = 0;
-		rLoc = 255;
+		rLoc = 275;
 		rType = 0;
 		vrLen = 305;
 		vrLoc = 0;
@@ -2543,7 +2599,7 @@
 		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
 		name = "EditControlLayer.m: 65";
 		rLen = 0;
-		rLoc = 1347;
+		rLoc = 1364;
 		rType = 0;
 		vrLen = 1197;
 		vrLoc = 922;
@@ -2553,7 +2609,7 @@
 		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
 		name = "EditorScene.m: 5";
 		rLen = 0;
-		rLoc = 126;
+		rLoc = 79;
 		rType = 0;
 		vrLen = 610;
 		vrLoc = 0;
@@ -2563,7 +2619,7 @@
 		fRef = CC1AD696131AC9A900E69E5D /* EditorScene.h */;
 		name = "EditorScene.h: 11";
 		rLen = 0;
-		rLoc = 185;
+		rLoc = 211;
 		rType = 0;
 		vrLen = 304;
 		vrLoc = 0;
@@ -2598,6 +2654,564 @@
 		vrLen = 253;
 		vrLoc = 0;
 	};
+	CCE110C41324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC1AD696131AC9A900E69E5D /* EditorScene.h */;
+		name = "EditorScene.h: 12";
+		rLen = 0;
+		rLoc = 211;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	CCE110C51324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB401321DF1D003B6DDC /* EditViewLayer.m */;
+		name = "EditViewLayer.m: 61";
+		rLen = 0;
+		rLoc = 1202;
+		rType = 0;
+		vrLen = 880;
+		vrLoc = 0;
+	};
+	CCE110C61324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 65";
+		rLen = 0;
+		rLoc = 1364;
+		rType = 0;
+		vrLen = 730;
+		vrLoc = 0;
+	};
+	CCE110C71324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
+		name = "EditControlLayer.h: 12";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 305;
+		vrLoc = 0;
+	};
+	CCE110C81324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F3B9A2C0EF2145700286867 /* bridgeAppDelegate.h */;
+		name = "bridgeAppDelegate.h: 2";
+		rLen = 0;
+		rLoc = 1;
+		rType = 0;
+		vrLen = 168;
+		vrLoc = 0;
+	};
+	CCE110C91324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1F3B9A2B0EF2145700286867 /* bridgeAppDelegate.mm */;
+		name = "bridgeAppDelegate.mm: 12";
+		rLen = 0;
+		rLoc = 213;
+		rType = 0;
+		vrLen = 1103;
+		vrLoc = 0;
+	};
+	CCE110CA1324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */;
+		name = "EditViewLayer.h: 16";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 253;
+		vrLoc = 0;
+	};
+	CCE110CB1324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
+		name = "EditorScene.m: 4";
+		rLen = 0;
+		rLoc = 79;
+		rType = 0;
+		vrLen = 562;
+		vrLoc = 0;
+	};
+	CCE110CC1324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
+		name = "BridgeContext.h: 14";
+		rLen = 0;
+		rLoc = 240;
+		rType = 0;
+		vrLen = 205;
+		vrLoc = 0;
+	};
+	CCE110CD1324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
+		name = "BridgeContext.m: 14";
+		rLen = 0;
+		rLoc = 185;
+		rType = 0;
+		vrLen = 406;
+		vrLoc = 0;
+	};
+	CCE110CE1324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
+		name = "Constants.h: 12";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 214;
+		vrLoc = 0;
+	};
+	CCE110CF1324570200E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
+		name = "Constants.h: 13";
+		rLen = 0;
+		rLoc = 220;
+		rType = 0;
+		vrLen = 209;
+		vrLoc = 0;
+	};
+	CCE110D21324571800E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
+		name = "Constants.h: 13";
+		rLen = 0;
+		rLoc = 220;
+		rType = 0;
+		vrLen = 209;
+		vrLoc = 0;
+	};
+	CCE110D31324571800E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
+		name = "EditControlLayer.h: 12";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 305;
+		vrLoc = 0;
+	};
+	CCE110D41324571800E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 65";
+		rLen = 0;
+		rLoc = 1364;
+		rType = 0;
+		vrLen = 1168;
+		vrLoc = 1116;
+	};
+	CCE110D91324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7E13241F2100E1A6BC /* Constants.h */;
+		name = "Constants.h: 12";
+		rLen = 10;
+		rLoc = 188;
+		rType = 0;
+		vrLen = 238;
+		vrLoc = 0;
+	};
+	CCE110DA1324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
+		name = "BridgeContext.m: 22";
+		rLen = 0;
+		rLoc = 375;
+		rType = 0;
+		vrLen = 495;
+		vrLoc = 0;
+	};
+	CCE110DB1324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 42";
+		rLen = 0;
+		rLoc = 771;
+		rType = 0;
+		vrLen = 625;
+		vrLoc = 163;
+	};
+	CCE110DC1324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7713241B6E00E1A6BC /* Bridge.h */;
+		name = "Bridge.h: 18";
+		rLen = 53;
+		rLoc = 240;
+		rType = 0;
+		vrLen = 630;
+		vrLoc = 0;
+	};
+	CCE110DD1324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 68";
+		rLen = 0;
+		rLoc = 1451;
+		rType = 0;
+		vrLen = 1157;
+		vrLoc = 1116;
+	};
+	CCE110DE1324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
+		name = "EditControlLayer.h: 14";
+		rLen = 18;
+		rLoc = 256;
+		rType = 0;
+		vrLen = 325;
+		vrLoc = 0;
+	};
+	CCE110DF1324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
+		name = "BridgeContext.h: 11";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 227;
+		vrLoc = 0;
+	};
+	CCE110E01324583400E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
+		name = "BridgeContext.h: 12";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	CCE110E31324586A00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
+		name = "BridgeContext.h: 12";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	CCE110E41324586A00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7F1324456700E1A6BC /* Joint.h */;
+		name = "Joint.h: 15";
+		rLen = 0;
+		rLoc = 238;
+		rType = 0;
+		vrLen = 260;
+		vrLoc = 0;
+	};
+	CCE110E51324586A00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F801324456700E1A6BC /* Joint.m */;
+		name = "Joint.m: 17";
+		rLen = 13;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 341;
+		vrLoc = 0;
+	};
+	CCE110E61324586A00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 38";
+		rLen = 0;
+		rLoc = 684;
+		rType = 0;
+		vrLen = 650;
+		vrLoc = 140;
+	};
+	CCE110E71324586A00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 21";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 163;
+	};
+	CCE110EC132458EE00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
+		name = "EditControlLayer.h: 14";
+		rLen = 18;
+		rLoc = 256;
+		rType = 0;
+		vrLen = 325;
+		vrLoc = 0;
+	};
+	CCE110ED132458EE00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 21";
+		rLen = 0;
+		rLoc = 423;
+		rType = 0;
+		vrLen = 634;
+		vrLoc = 163;
+	};
+	CCE110EE132458EE00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7713241B6E00E1A6BC /* Bridge.h */;
+		name = "Bridge.h: 26";
+		rLen = 9;
+		rLoc = 500;
+		rType = 0;
+		vrLen = 630;
+		vrLoc = 0;
+	};
+	CCE110EF132458EE00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */;
+		name = "EditViewLayer.h: 16";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 253;
+		vrLoc = 0;
+	};
+	CCE110F0132458EE00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 73";
+		rLen = 0;
+		rLoc = 1621;
+		rType = 0;
+		vrLen = 1109;
+		vrLoc = 1116;
+	};
+	CCE110F1132458EE00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 73";
+		rLen = 0;
+		rLoc = 1639;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 1151;
+	};
+	CCE110F41324592100E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 22";
+		rLen = 6;
+		rLoc = 440;
+		rType = 0;
+		vrLen = 634;
+		vrLoc = 163;
+	};
+	CCE110F51324592100E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */;
+		name = "EditViewLayer.h: 16";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 253;
+		vrLoc = 0;
+	};
+	CCE110F61324592100E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 73";
+		rLen = 0;
+		rLoc = 1639;
+		rType = 0;
+		vrLen = 1132;
+		vrLoc = 1151;
+	};
+	CCE110F71324592100E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 73";
+		rLen = 0;
+		rLoc = 1588;
+		rType = 0;
+		vrLen = 1125;
+		vrLoc = 1161;
+	};
+	CCE110FA1324593A00E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 73";
+		rLen = 0;
+		rLoc = 1588;
+		rType = 0;
+		vrLen = 1216;
+		vrLoc = 1166;
+	};
+	CCE110FB1324595700E1A6BC /* Bridge.m:34 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		functionName = "-addJoint::";
+		hitCount = 1;
+		ignoreCount = 0;
+		lineNumber = 34;
+		location = bridge;
+		modificationTime = 321149307.782895;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	CCE110FF1324596700E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 73";
+		rLen = 0;
+		rLoc = 1588;
+		rType = 0;
+		vrLen = 1216;
+		vrLoc = 1166;
+	};
+	CCE111001324596700E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7F1324456700E1A6BC /* Joint.h */;
+		name = "Joint.h: 15";
+		rLen = 0;
+		rLoc = 238;
+		rType = 0;
+		vrLen = 260;
+		vrLoc = 0;
+	};
+	CCE111011324596700E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 31";
+		rLen = 0;
+		rLoc = 565;
+		rType = 0;
+		vrLen = 634;
+		vrLoc = 163;
+	};
+	CCE111021324596700E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 31";
+		rLen = 0;
+		rLoc = 565;
+		rType = 0;
+		vrLen = 636;
+		vrLoc = 164;
+	};
+	CCE1110413245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CC1AD697131AC9A900E69E5D /* EditorScene.m */;
+		name = "EditorScene.m: 4";
+		rLen = 0;
+		rLoc = 79;
+		rType = 0;
+		vrLen = 562;
+		vrLoc = 0;
+	};
+	CCE1110513245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB181321DDB5003B6DDC /* EditControlLayer.h */;
+		name = "EditControlLayer.h: 14";
+		rLen = 18;
+		rLoc = 256;
+		rType = 0;
+		vrLen = 325;
+		vrLoc = 0;
+	};
+	CCE1110613245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.m */;
+		name = "EditControlLayer.m: 19";
+		rLen = 325;
+		rLoc = 265;
+		rType = 0;
+		vrLen = 903;
+		vrLoc = 265;
+	};
+	CCE1110713245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBB1324499800E1A6BC /* BridgeContext.h */;
+		name = "BridgeContext.h: 12";
+		rLen = 0;
+		rLoc = 197;
+		rType = 0;
+		vrLen = 246;
+		vrLoc = 0;
+	};
+	CCE1110813245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10FBC1324499800E1A6BC /* BridgeContext.m */;
+		name = "BridgeContext.m: 22";
+		rLen = 0;
+		rLoc = 375;
+		rType = 0;
+		vrLen = 495;
+		vrLoc = 0;
+	};
+	CCE1110913245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 19";
+		rLen = 0;
+		rLoc = 204;
+		rType = 0;
+		vrLen = 584;
+		vrLoc = 118;
+	};
+	CCE1110A13245A2600E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 21";
+		rLen = 0;
+		rLoc = 293;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 115;
+	};
+	CCE1110D13245A4300E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE1105013244FC500E1A6BC /* DataController.m */;
+		name = "DataController.m: 202";
+		rLen = 0;
+		rLoc = 5797;
+		rType = 0;
+		vrLen = 1087;
+		vrLoc = 3679;
+	};
+	CCE1110E13245A4300E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCC4D7B11322D67C00DA511F /* CocosUtility.m */;
+		name = "CocosUtility.m: 15";
+		rLen = 0;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 525;
+		vrLoc = 0;
+	};
+	CCE1110F13245A4300E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 21";
+		rLen = 0;
+		rLoc = 293;
+		rType = 0;
+		vrLen = 568;
+		vrLoc = 115;
+	};
+	CCE1111013245A4300E1A6BC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CCE10F7813241B6E00E1A6BC /* Bridge.m */;
+		name = "Bridge.m: 25";
+		rLen = 0;
+		rLoc = 315;
+		rType = 0;
+		vrLen = 549;
+		vrLoc = 118;
+	};
 	CCE464AE132033560072DE4D /* HelloWorldScene.h */ = {
 		isa = PBXFileReference;
 		fileEncoding = 4;
@@ -2621,7 +3235,7 @@
 			sepNavVisRange = "{0, 675}";
 		};
 	};
-	CCE4650913203C600072DE4D /* EditorScene.m:27 */ = {
+	CCE4650913203C600072DE4D /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2633,9 +3247,9 @@
 		functionName = "-ccTouchesMoved:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287067;
+		modificationTime = 321149288.665691;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -2743,7 +3357,7 @@
 		vrLen = 941;
 		vrLoc = 1163;
 	};
-	CCFF4DAD13203FAF0017B2CD /* EditorScene.m:27 */ = {
+	CCFF4DAD13203FAF0017B2CD /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2755,13 +3369,13 @@
 		functionName = "-draw";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287361;
+		modificationTime = 321149288.665781;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	CCFF4DBD132040110017B2CD /* EditorScene.m:27 */ = {
+	CCFF4DBD132040110017B2CD /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2773,13 +3387,13 @@
 		functionName = "-draw";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287452;
+		modificationTime = 321149288.665815;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	CCFF4DC2132040240017B2CD /* EditorScene.m:27 */ = {
+	CCFF4DC2132040240017B2CD /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2791,13 +3405,13 @@
 		functionName = "-ccTouchesEnded:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287522;
+		modificationTime = 321149288.66584;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	CCFF4DC7132040490017B2CD /* EditorScene.m:27 */ = {
+	CCFF4DC7132040490017B2CD /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2809,13 +3423,13 @@
 		functionName = "-ccTouchBegan:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287578;
+		modificationTime = 321149288.66586;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	CCFF4DD1132040960017B2CD /* EditorScene.m:27 */ = {
+	CCFF4DD1132040960017B2CD /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2827,13 +3441,13 @@
 		functionName = "-ccTouchBegan:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287688;
+		modificationTime = 321149288.665887;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	CCFF4DDE132041000017B2CD /* EditorScene.m:27 */ = {
+	CCFF4DDE132041000017B2CD /* EditorScene.m:25 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2845,9 +3459,9 @@
 		functionName = "-ccTouchBegan:withEvent:";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 27;
+		lineNumber = 25;
 		location = bridge;
-		modificationTime = 321147847.287755;
+		modificationTime = 321149288.665914;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};

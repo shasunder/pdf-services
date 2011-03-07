@@ -7,10 +7,11 @@
 //
 
 #import "OrderedDictionary.h"
+#import "Constants.h"
+#import "Bridge.h"
 
 @interface BridgeContext : NSObject {
 	
 }
-static OrderedDictionary *context;
 
 @end

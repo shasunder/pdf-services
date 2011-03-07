@@ -11,6 +11,8 @@
 #import "CocosUtility.h"
 #import "Constants.h"
 #import "BridgeContext.h"
+#import "Bridge.h"
+
 @interface EditControlLayer : CCLayer {
 
 }

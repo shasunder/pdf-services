@@ -1,8 +1,6 @@
 #import "EditorScene.h"
 #import "EditViewLayer.h"
 #import "EditControlLayer.h"
-#import "Constants.h"
-#import "BridgeContext.h"
 @implementation EditorScene
 
 

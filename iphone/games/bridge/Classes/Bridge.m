@@ -15,10 +15,20 @@
 @synthesize joints;
 
 
+-(id) init{
+	
+	if( (self=[super init] )) {
+		self.joints = [[NSMutableArray alloc]init];
+		
+	}
+	
+	return self;
+}
+
 //joint
 -(Joint *)addJoint:(CGPoint) start: (CGPoint) end{
 
-	Joint *joint = [[Joint alloc] init:start : end];
+	Joint *joint = [[Joint alloc] initWithPoint:start : end];
 	[joints addObject:joint];
 	
 	return joint;
