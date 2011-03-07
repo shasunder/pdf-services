@@ -62,10 +62,16 @@ CCSprite* grid;
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
 		
-		//[[BridgeContext instance] objectForKey: KEY_SCENE];
+		
+		Bridge *bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
+		
+		[bridge addJoint:start :end];
 		
 		
 		NSLog([NSString stringWithFormat: @"touched twice %f %f",start.x,end.x ]);
+
+		NSLog([NSString stringWithFormat: @"Bridge : %@ %d",[bridge description],[ [bridge getJoints] count] ]);
+
 		
 		CCSprite* beam = [CCSprite spriteWithFile:@"material-steel.png" ];
 		float deltaX = (start.x -end.x);

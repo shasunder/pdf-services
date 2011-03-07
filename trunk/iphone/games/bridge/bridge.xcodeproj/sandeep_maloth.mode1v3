@@ -268,6 +268,7 @@
 								<string>CC1BC7DF13219084001C3359</string>
 								<string>CCABBB351321DE74003B6DDC</string>
 								<string>CC1AD695131AC98C00E69E5D</string>
+								<string>CC1AD672131AC91E00E69E5D</string>
 								<string>CC1AD671131AC91100E69E5D</string>
 								<string>19C28FACFE9D520D11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -276,9 +277,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>10</integer>
-									<integer>7</integer>
-									<integer>6</integer>
+									<integer>27</integer>
+									<integer>25</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EditViewLayer.h</string>
+								<string>Bridge.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>EditViewLayer.h</string>
+										<string>Bridge.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CCE110BB132455D600E1A6BC</string>
+										<string>CCE1111013245A4300E1A6BC</string>
 										<key>history</key>
 										<array>
 											<string>CC1AD6BA131B0CD700E69E5D</string>
@@ -367,34 +367,34 @@
 											<string>CCC4D7FB1322DBEF00DA511F</string>
 											<string>CCC4D7FC1322DBEF00DA511F</string>
 											<string>CCE10F9D132447FE00E1A6BC</string>
-											<string>CCE10FA0132447FE00E1A6BC</string>
-											<string>CCE10FA6132447FE00E1A6BC</string>
 											<string>CCE10FA7132447FE00E1A6BC</string>
 											<string>CCE10FA8132447FE00E1A6BC</string>
 											<string>CCE10FAE132447FE00E1A6BC</string>
-											<string>CCE10FCC13244A6900E1A6BC</string>
-											<string>CCE10FED13244BE600E1A6BC</string>
 											<string>CCE10FEE13244BE600E1A6BC</string>
-											<string>CCE10FF113244BE600E1A6BC</string>
 											<string>CCE1100E13244D2300E1A6BC</string>
 											<string>CCE1102713244DF500E1A6BC</string>
 											<string>CCE1102813244DF500E1A6BC</string>
 											<string>CCE1102913244DF500E1A6BC</string>
-											<string>CCE1104013244EF400E1A6BC</string>
-											<string>CCE1104713244F2D00E1A6BC</string>
 											<string>CCE110691324521700E1A6BC</string>
 											<string>CCE110801324536D00E1A6BC</string>
-											<string>CCE11087132453C400E1A6BC</string>
-											<string>CCE11089132453C400E1A6BC</string>
-											<string>CCE1109B1324550100E1A6BC</string>
 											<string>CCE1109D1324550100E1A6BC</string>
-											<string>CCE1109F1324550100E1A6BC</string>
-											<string>CCE110B5132455D600E1A6BC</string>
-											<string>CCE110B6132455D600E1A6BC</string>
-											<string>CCE110B7132455D600E1A6BC</string>
-											<string>CCE110B8132455D600E1A6BC</string>
-											<string>CCE110B9132455D600E1A6BC</string>
-											<string>CCE110BA132455D600E1A6BC</string>
+											<string>CCE110C41324570200E1A6BC</string>
+											<string>CCE110C51324570200E1A6BC</string>
+											<string>CCE110C81324570200E1A6BC</string>
+											<string>CCE110C91324570200E1A6BC</string>
+											<string>CCE110D91324583400E1A6BC</string>
+											<string>CCE110E51324586A00E1A6BC</string>
+											<string>CCE110EE132458EE00E1A6BC</string>
+											<string>CCE110F51324592100E1A6BC</string>
+											<string>CCE111001324596700E1A6BC</string>
+											<string>CCE1110413245A2600E1A6BC</string>
+											<string>CCE1110513245A2600E1A6BC</string>
+											<string>CCE1110613245A2600E1A6BC</string>
+											<string>CCE1110713245A2600E1A6BC</string>
+											<string>CCE1110813245A2600E1A6BC</string>
+											<string>CCE1110D13245A4300E1A6BC</string>
+											<string>CCE1110E13245A4300E1A6BC</string>
+											<string>CCE1110F13245A4300E1A6BC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -592,12 +592,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>CCE1111113245A4300E1A6BC</string>
 		<string>CCE10FDA13244A8400E1A6BC</string>
+		<string>CCC744B51319397C00922488</string>
 		<string>CCE10FD613244A6900E1A6BC</string>
+		<string>/Volumes/volume2/projects/iphone/games/bridge/bridge.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>CCC744B51319397C00922488</string>
-		<string>/Volumes/volume2/projects/iphone/games/bridge/bridge.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>87 118 1042 660 0 0 1280 778 </string>
@@ -621,7 +622,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EditControlLayer.m</string>
+								<string>BridgeContext.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

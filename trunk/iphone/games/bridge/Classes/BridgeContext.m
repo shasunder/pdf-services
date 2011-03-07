@@ -11,11 +11,15 @@
 
 @implementation BridgeContext
 
+static OrderedDictionary *context;
+
 + (OrderedDictionary*) instance {
 	
 	
 	if ( context == nil ) { 
 		context = [[OrderedDictionary alloc] init];
+		Bridge *bridge = [[Bridge alloc] init];
+		[context setValue:bridge forKey:KEY_BRIDGE];
 	}
 	
 	return context; 

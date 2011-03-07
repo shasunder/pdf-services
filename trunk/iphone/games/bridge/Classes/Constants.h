@@ -9,8 +9,9 @@
 #import "Constants.h"
 
 #define KEY_SCENE @"current.scene"
+#define KEY_BRIDGE @"bridge"
 
-@implementation Constants
+@interface Constants
 
 
 @end
