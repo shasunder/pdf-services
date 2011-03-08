@@ -9,6 +9,7 @@
 
 - (void) applicationDidFinishLaunching:(UIApplication*)application{
 
+	NSLog(@"Booting bridge builder");
 	CC_DIRECTOR_INIT();
 	CCDirector *director = [CCDirector sharedDirector];
 
@@ -19,9 +20,10 @@
 	[view setMultipleTouchEnabled:YES];  	// Turn on multiple touches
 	
 	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
-		
-	EditorScene *scene = [EditorScene scene]; //auto release
 	
+	NSLog(@"Starting bridge builder scene");
+	
+	EditorScene *scene = [EditorScene scene]; //auto release
 	[[CCDirector sharedDirector] runWithScene:  scene];
 }
 
