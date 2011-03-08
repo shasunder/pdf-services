@@ -7,7 +7,8 @@
 //
 
 #import "EditViewLayer.h"
-
+#import "BridgeContext.h"
+#import "Constants.h"
 
 @implementation EditViewLayer
 
@@ -21,6 +22,8 @@ CCSprite* steel;
 	if( (self=[super init] )) {
 		
 		self.isTouchEnabled = YES;	
+
+		bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
 				
 		wood = [CCSprite spriteWithFile:@"material-wood.png" ];
 		wood.position =  CGPointMake( 400 , 300);
@@ -66,14 +69,19 @@ CCSprite* steel;
 	NSLog(@"Touch Began ");
 	CGPoint location = [touch locationInView: [touch view]];
 	location = [[CCDirector sharedDirector] convertToGL:location];
+	NSString *material =@"steel";
 	//check if button pressed
 	if( [CocosUtility containsTouchLocation: touch : wood ] ){
 		wood.opacity = 128;steel.opacity = 184;
 		NSLog(@"Touched : wood");
+		material =@"wood";
+		
 	}else if( [CocosUtility containsTouchLocation: touch : steel ] ){
 		wood.opacity = 184;steel.opacity = 128;
 		NSLog(@"Touched : steel");
+		material =@"steel";
 	}
+	[[BridgeContext instance] setValue:material forKey: KEY_MATERIAL];
 	
 	return YES;
 
