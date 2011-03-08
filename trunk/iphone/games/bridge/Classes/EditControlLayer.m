@@ -7,7 +7,7 @@
 //
 
 #import "EditControlLayer.h"
-
+#import "Line.h"
 
 @implementation EditControlLayer
 
@@ -20,6 +20,8 @@ CCSprite* grid;
 
 	if( (self=[super init] )) {
 		director = [CCDirector sharedDirector];
+		CGSize s = [director winSize];
+		
 		touchesArray=[[NSMutableArray alloc ] init];
 		self.isTouchEnabled = YES;		
 		
@@ -28,11 +30,61 @@ CCSprite* grid;
 		grid.position =ccp(480.f/2,320.f/2); 
 		[self addChild:grid z:0];
 		
+		// create a render texture, this is what we're going to draw into
+		target = [[CCRenderTexture renderTextureWithWidth:s.width height:s.height] retain];
+		[target setPosition:ccp(s.width/2, s.height/2)];
+		
+		// note that the render texture is a cocosnode, and contains a sprite of it's texture for convience,
+		// so we can just parent it to the scene like any other cocos node
+		[self addChild:target z:1];
+		
+		// create a brush image to draw into the texture with
+		brush = [[CCSprite spriteWithFile:@"material-steel.png"] retain];
+		//[brush setBlendFunc: (ccBlendFunc) { GL_ONE, GL_ONE_MINUS_SRC_ALPHA }];  
+		[brush setOpacity:100];
+		
 	}
 	
 	return self;
 }
 
+
+
+-(void)drawJoint {
+
+	if([touchesArray count] >=2){
+		for(int i=0;i<[touchesArray count]-1;i=i+2){
+			CGPoint start = CGPointFromString([touchesArray objectAtIndex:i]);
+			CGPoint end = CGPointFromString([touchesArray objectAtIndex:i+1]);
+			// begin drawing to the render texture
+			[target begin];
+			
+			// for extra points, we'll draw this smoothly from the last position and vary the sprite's
+			// scale/rotation/offset
+			float distance = ccpDistance(start, end);
+			if (distance > 1)
+			{
+				int d = (int)distance;
+				for (int i = 0; i < d; i++)
+				{
+					float difx = end.x - start.x;
+					float dify = end.y - start.y;
+					float delta = (float)i / distance;
+					[brush setPosition:ccp(start.x + (difx * delta), start.y + (dify * delta))];
+					//[brush setRotation:rand()%360];
+					//float r = ((float)(rand()%50)/50.f) + 0.25f;
+					//[brush setScale:r];
+					// Call visit to draw the brush, don't call draw..
+					[brush visit];
+				}
+			}
+			// finish drawing and return context back to the screen
+			[target end];
+		}
+		
+		
+	}
+}
 
 
 -(void) registerWithTouchDispatcher{
@@ -57,7 +109,7 @@ CCSprite* grid;
 	
 	
 	if([touchesArray count]==2){
-		
+		[self drawJoint];
 		
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
@@ -119,7 +171,7 @@ CCSprite* grid;
 		
 		
 		
-		[self addChild:beam];
+		//[self addChild:beam];
 		[touchesArray removeAllObjects];
 		
 	}
