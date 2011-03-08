@@ -10,6 +10,7 @@
 
 #define KEY_SCENE @"current.scene"
 #define KEY_BRIDGE @"bridge"
+#define KEY_MATERIAL @"material"
 
 @interface Constants
 

@@ -16,6 +16,8 @@
 
 	CCRenderTexture* target;
 	CCSprite* brush;
+	
+	Bridge *bridge;
 }
 
 @end

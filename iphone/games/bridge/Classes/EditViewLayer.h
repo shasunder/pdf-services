@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "CocosUtility.h"
+#import "Bridge.h"
 
 @interface EditViewLayer : CCLayer {
-
+	Bridge *bridge;
 }
 
 

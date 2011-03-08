@@ -16,6 +16,17 @@ CCDirector *director;
 NSMutableArray * touchesArray;
 CCSprite* grid;
 
+- (void) setMaterial {
+		// create a brush image to draw into the texture with
+		  NSString *material=[[BridgeContext instance] objectForKey: KEY_MATERIAL];
+		NSString *image=@"material-steel.png";
+		if(![material isEqual:@"steel" ]){
+			image=@"material-wood.png";
+		}
+		NSLog(material);
+		brush = [[CCSprite spriteWithFile:image] retain];
+
+}
 -(id) init{
 
 	if( (self=[super init] )) {
@@ -25,6 +36,7 @@ CCSprite* grid;
 		touchesArray=[[NSMutableArray alloc ] init];
 		self.isTouchEnabled = YES;		
 		
+		bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
 		
 		grid = [CCSprite spriteWithFile:@"bridge-grid-background.png"];
 		grid.position =ccp(480.f/2,320.f/2); 
@@ -38,10 +50,11 @@ CCSprite* grid;
 		// so we can just parent it to the scene like any other cocos node
 		[self addChild:target z:1];
 		
-		// create a brush image to draw into the texture with
-		brush = [[CCSprite spriteWithFile:@"material-steel.png"] retain];
+		
+
+		
 		//[brush setBlendFunc: (ccBlendFunc) { GL_ONE, GL_ONE_MINUS_SRC_ALPHA }];  
-		[brush setOpacity:100];
+		[brush setOpacity:200];
 		
 	}
 	
@@ -53,9 +66,10 @@ CCSprite* grid;
 -(void)drawJoint {
 
 	if([touchesArray count] >=2){
-		for(int i=0;i<[touchesArray count]-1;i=i+2){
-			CGPoint start = CGPointFromString([touchesArray objectAtIndex:i]);
-			CGPoint end = CGPointFromString([touchesArray objectAtIndex:i+1]);
+			[self setMaterial];
+		
+			CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
+			CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
 			// begin drawing to the render texture
 			[target begin];
 			
@@ -71,16 +85,14 @@ CCSprite* grid;
 					float dify = end.y - start.y;
 					float delta = (float)i / distance;
 					[brush setPosition:ccp(start.x + (difx * delta), start.y + (dify * delta))];
-					//[brush setRotation:rand()%360];
-					//float r = ((float)(rand()%50)/50.f) + 0.25f;
-					//[brush setScale:r];
+					[brush setScale:0.3];
 					// Call visit to draw the brush, don't call draw..
 					[brush visit];
 				}
 			}
 			// finish drawing and return context back to the screen
 			[target end];
-		}
+		
 		
 		
 	}
@@ -95,82 +107,37 @@ CCSprite* grid;
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
 	
 	CGPoint location = [touch locationInView: [touch view]];
-	location = [[CCDirector sharedDirector] convertToGL:location];
-	
-	[touchesArray addObject:NSStringFromCGPoint(location)];
 	
 	//check if touch within grid 
 	
 	if(! [CocosUtility containsTouchLocation: touch : grid ] ){
 		//not within grid. clear all touches
 		[touchesArray removeAllObjects];
-		return;
+		return NO;
 	}
+
+	location = [[CCDirector sharedDirector] convertToGL:location];	
+	int snapToGrid =40;
+	location.x = round(location.x / snapToGrid) * snapToGrid;
+	location.y = round(location.y / snapToGrid) * snapToGrid;
+	[touchesArray addObject:NSStringFromCGPoint(location)];
 	
+		
 	
 	if([touchesArray count]==2){
-		[self drawJoint];
-		
+				
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
 		
 		
-		Bridge *bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
 		
 		[bridge addJoint:start :end];
 		
-		
-		NSLog([NSString stringWithFormat: @"touched twice %f %f",start.x,end.x ]);
-
-		NSLog([NSString stringWithFormat: @"Bridge : %@ %d",[bridge description],[ [bridge getJoints] count] ]);
-
-		
-		CCSprite* beam = [CCSprite spriteWithFile:@"material-steel.png" ];
-		float deltaX = (start.x -end.x);
-		float deltaY = (start.y -end.y);
-		
-		float imageWidth = [beam boundingBox].size.width;
-		float imageHeight = [beam boundingBox].size.height;
-		
-		int deltaRange = 10;
+		NSLog([NSString stringWithFormat: @"Bridge : %@ - joints count :%d",[bridge description],[ [bridge getJoints] count] ]);
 		
 		NSLog([NSString stringWithFormat:@"Drawing beam : (%f, %f) to (%f,%f)", start.x, start.y, end.x, end.y]);
-		NSLog([NSString stringWithFormat:@"Delta: (%f, %f) ", deltaX, deltaY]);
+		[self drawJoint];
 
-		//check touch position : vertical/horizontal/oblique
-		// set scale for vertical or horizontal
-		//TODO: check if touches withing grid
-		//TODO: snap to grid co-ordinates 
-	
-		
-		float beamX = (deltaX > 0) ? end.x : start.x;
-		float beamY = (deltaY > 0) ? end.y : start.y;
-		
-		if(fabs(deltaX) > deltaRange && fabs(deltaY) > deltaRange ){
-			NSLog(@":::::Oblique:::::");
-			beam.scaleY = 1.5;
-			beam.scaleX = 0.3;
-			beam.rotation =45;			
-			
-			beam.position = ccp( beamX+ imageWidth/2, beamY + imageHeight/2);
-			
-		}else if(fabs(deltaY) > deltaRange  ){
-			NSLog(@":::::vertical:::::");
-			beam.scaleY = 1.5;
-			beam.scaleX = 0.3;
-			beam.position = ccp( beamX, beamY + imageHeight/2);
-			
-		}else if(fabs(deltaX) > deltaRange  ){
-			NSLog(@":::::horizontal:::::");
-			beam.scaleX = 1.5;
-			beam.scaleY = 0.3;
-			beam.position = ccp( beamX + imageWidth/2, beamY);
-		}else{
-			//ignore ??
-		}
-		
-		
-		
 		//[self addChild:beam];
 		[touchesArray removeAllObjects];
 		
