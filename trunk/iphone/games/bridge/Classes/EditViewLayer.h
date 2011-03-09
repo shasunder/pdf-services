@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "CocosUtility.h"
 #import "Bridge.h"
-
+#import "PlayScene.h"
 @interface EditViewLayer : CCLayer {
 	Bridge *bridge;
 }

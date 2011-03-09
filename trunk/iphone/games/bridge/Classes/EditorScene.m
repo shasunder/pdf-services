@@ -4,7 +4,6 @@
 @implementation EditorScene
 
 
-@synthesize bridge;
 
 +(id) scene
 {

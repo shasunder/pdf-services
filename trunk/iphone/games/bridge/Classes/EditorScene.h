@@ -14,7 +14,6 @@
 	Bridge *bridge;
 }
 
-@property(nonatomic, retain)Bridge *bridge;
 
 +(id) scene;
 

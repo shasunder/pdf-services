@@ -302,6 +302,11 @@
 		CCAE657D131C3CA7007F85A5 /* land-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE657C131C3CA7007F85A5 /* land-right.png */; };
 		CCAE6585131C3D59007F85A5 /* land-left.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6584131C3D59007F85A5 /* land-left.png */; };
 		CCAE65CB131C3F3F007F85A5 /* wood2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCAE65CA131C3F3F007F85A5 /* wood2.jpg */; };
+		CCAF61CB1328188A0095B567 /* erase.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61CA1328188A0095B567 /* erase.png */; };
+		CCAF61D0132818D80095B567 /* zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61CF132818D80095B567 /* zoom.png */; };
+		CCAF61D313281B190095B567 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61D213281B190095B567 /* play.png */; };
+		CCAF622A132826DE0095B567 /* PlayViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAF6229132826DE0095B567 /* PlayViewLayer.m */; };
+		CCAF622D132827940095B567 /* PlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAF622C132827940095B567 /* PlayScene.m */; };
 		CCB263961321791500CA6458 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB263951321791500CA6458 /* Line.m */; };
 		CCB508591322805D0098BBA5 /* bridge-grid-background.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB508571322805D0098BBA5 /* bridge-grid-background.png */; };
 		CCB5085A1322805D0098BBA5 /* bridge-grid.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCB508581322805D0098BBA5 /* bridge-grid.tmx */; };
@@ -632,6 +637,13 @@
 		CCAE657C131C3CA7007F85A5 /* land-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "land-right.png"; sourceTree = SOURCE_ROOT; };
 		CCAE6584131C3D59007F85A5 /* land-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "land-left.png"; sourceTree = SOURCE_ROOT; };
 		CCAE65CA131C3F3F007F85A5 /* wood2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood2.jpg; sourceTree = SOURCE_ROOT; };
+		CCAF61CA1328188A0095B567 /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
+		CCAF61CF132818D80095B567 /* zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoom.png; sourceTree = "<group>"; };
+		CCAF61D213281B190095B567 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		CCAF6228132826DE0095B567 /* PlayViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewLayer.h; sourceTree = "<group>"; };
+		CCAF6229132826DE0095B567 /* PlayViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewLayer.m; sourceTree = "<group>"; };
+		CCAF622B132827940095B567 /* PlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayScene.h; sourceTree = "<group>"; };
+		CCAF622C132827940095B567 /* PlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayScene.m; sourceTree = "<group>"; };
 		CCB263941321791500CA6458 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
 		CCB263951321791500CA6458 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		CCB508571322805D0098BBA5 /* bridge-grid-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-grid-background.png"; sourceTree = "<group>"; };
@@ -1160,6 +1172,9 @@
 		50F4144210692EE7002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CCAF61D213281B190095B567 /* play.png */,
+				CCAF61CF132818D80095B567 /* zoom.png */,
+				CCAF61CA1328188A0095B567 /* erase.png */,
 				CCB508571322805D0098BBA5 /* bridge-grid-background.png */,
 				CCB508581322805D0098BBA5 /* bridge-grid.tmx */,
 				CCE464DF132036BE0072DE4D /* meta_tiles.png */,
@@ -1218,6 +1233,8 @@
 			children = (
 				CC1AD696131AC9A900E69E5D /* EditorScene.h */,
 				CC1AD697131AC9A900E69E5D /* EditorScene.m */,
+				CCAF622B132827940095B567 /* PlayScene.h */,
+				CCAF622C132827940095B567 /* PlayScene.m */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -1225,6 +1242,7 @@
 		CC1BC7DF13219084001C3359 /* layers */ = {
 			isa = PBXGroup;
 			children = (
+				CCAF6227132826C10095B567 /* play */,
 				CCABBB351321DE74003B6DDC /* edit */,
 			);
 			name = layers;
@@ -1248,6 +1266,15 @@
 				CCABBB401321DF1D003B6DDC /* EditViewLayer.m */,
 			);
 			name = edit;
+			sourceTree = "<group>";
+		};
+		CCAF6227132826C10095B567 /* play */ = {
+			isa = PBXGroup;
+			children = (
+				CCAF6228132826DE0095B567 /* PlayViewLayer.h */,
+				CCAF6229132826DE0095B567 /* PlayViewLayer.m */,
+			);
+			name = play;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1480,6 +1507,9 @@
 				CCE464E4132036BE0072DE4D /* tmw_desert_spacing.png in Resources */,
 				CCB508591322805D0098BBA5 /* bridge-grid-background.png in Resources */,
 				CCB5085A1322805D0098BBA5 /* bridge-grid.tmx in Resources */,
+				CCAF61CB1328188A0095B567 /* erase.png in Resources */,
+				CCAF61D0132818D80095B567 /* zoom.png in Resources */,
+				CCAF61D313281B190095B567 /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1503,6 +1533,8 @@
 				CCE10F811324456700E1A6BC /* Joint.m in Sources */,
 				CCE10F8C132446E900E1A6BC /* Pile.m in Sources */,
 				CCE10FBD1324499800E1A6BC /* BridgeContext.m in Sources */,
+				CCAF622A132826DE0095B567 /* PlayViewLayer.m in Sources */,
+				CCAF622D132827940095B567 /* PlayScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
