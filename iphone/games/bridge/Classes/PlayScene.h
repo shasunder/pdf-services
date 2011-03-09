@@ -1,20 +1,21 @@
+//
+//  PlayScene.h
+//  bridge
+//
+//  Created by sandeep m on 09/03/2011.
+//  Copyright 2011 bri. All rights reserved.
+//
+
 #import "cocos2d.h"
-#import "Box2D.h"
+#import "Bridge.h"
+#import "Constants.h"
+#import "BridgeContext.h"
+
 
 @interface PlayScene : CCLayer {
-    b2World *world;
-    b2Body *groundBody;
-    b2Body *paddleBody;    
-    b2Fixture *paddleFixture;
-    b2Fixture *ballFixture;
-    b2Fixture *bottomFixture;
-    b2MouseJoint *mouseJoint;
-	
+	Bridge *bridge;
 
-	
 }
 
-
-+ (id) scene;
-
++(id) scene;
 @end

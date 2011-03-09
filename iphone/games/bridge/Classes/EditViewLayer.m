@@ -17,6 +17,11 @@
 CCSprite* wood;
 CCSprite* steel;
 
+CCSprite* erase;
+CCSprite* zoom;
+
+CCSprite* play;
+
 -(id) init
 {
 	if( (self=[super init] )) {
@@ -25,11 +30,19 @@ CCSprite* steel;
 
 		bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
 				
-		wood = [CCSprite spriteWithFile:@"material-wood.png" ];
-		wood.position =  CGPointMake( 400 , 300);
+
 		 
 		steel = [CCSprite spriteWithFile:@"material-steel.png" ];
 		steel.position =  CGPointMake( 450 , 300);
+		
+		wood = [CCSprite spriteWithFile:@"material-wood.png" ];
+		wood.position =  CGPointMake( 450 , 250);
+		
+		erase = [CCSprite spriteWithFile:@"erase.png" ];
+		erase.position =  CGPointMake( 450 , 200);
+		
+		zoom = [CCSprite spriteWithFile:@"zoom.png" ];
+		zoom.position =  CGPointMake( 450 , 150);
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
 		landLeft.position =  CGPointMake( 20 , 50);
@@ -37,16 +50,25 @@ CCSprite* steel;
 		CCSprite* landRight = [CCSprite spriteWithFile:@"land-right.png" ];
 		landRight.position =  CGPointMake( 400 , 55);
 		
+		
+		play = [CCSprite spriteWithFile:@"play.png" ];
+		play.position =  CGPointMake( 50 , 280);
+		
+		
        // self.background = [tileMap layerNamed:@"bridge-grid-background.png"];
         
 		//material
-		[self addChild: wood];
 		[self addChild: steel];
+		[self addChild: wood];
+		[self addChild: zoom];
+		[self addChild: erase];
+		[self addChild: play];
 		
 		//land
 		[self addChild:landRight];
 		[self addChild:landLeft];
 		
+		[self selectButton:wood];
 
 		
 		CCSprite* background = [CCSprite spriteWithFile:@"background-blue.png"];
@@ -65,27 +87,61 @@ CCSprite* steel;
 }
 
 
+-(void)selectButton:(CCSprite *)sprite{
+	wood.scale = steel.scale = 0.5;
+	erase.scale = zoom.scale = play.scale= 0.5;
+	sprite.scale =1.0;
+}
+
+-(void) play{
+	PlayScene *scene = [PlayScene scene]; //auto release
+	[[CCDirector sharedDirector] pushScene:  scene];
+}
+
 -(BOOL) ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
 	NSLog(@"Touch Began ");
 	CGPoint location = [touch locationInView: [touch view]];
 	location = [[CCDirector sharedDirector] convertToGL:location];
 	NSString *material =@"steel";
+	NSString *action=@"";
+	
 	//check if button pressed
 	if( [CocosUtility containsTouchLocation: touch : wood ] ){
-		wood.opacity = 128;steel.opacity = 184;
+		[self selectButton:wood];
 		NSLog(@"Touched : wood");
 		material =@"wood";
 		
 	}else if( [CocosUtility containsTouchLocation: touch : steel ] ){
-		wood.opacity = 184;steel.opacity = 128;
+		[self selectButton:steel];		
 		NSLog(@"Touched : steel");
 		material =@"steel";
+		
+	}else if( [CocosUtility containsTouchLocation: touch : erase ] ){
+		[self selectButton:erase];		
+		NSLog(@"Touched : erase");
+		action =@"erase";
+		
+	}else if( [CocosUtility containsTouchLocation: touch : zoom ] ){
+		[self selectButton:zoom];		
+		NSLog(@"Touched : zoom");
+		action =@"zoom";
+		self.scale = (self.scale != 1.2) ? 1.1 : 1.0;
+		
+	}else if( [CocosUtility containsTouchLocation: touch : play ] ){
+		[self selectButton:play];		
+		NSLog(@"Touched : play");
+		action =@"play";
+		[self play];
 	}
+	
+	[[BridgeContext instance] setValue:action forKey: KEY_ACTION];
 	[[BridgeContext instance] setValue:material forKey: KEY_MATERIAL];
 	
 	return YES;
 
 }
+
+
 
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
 		NSLog(@"Touch end ");

@@ -18,13 +18,22 @@ CCSprite* grid;
 
 - (void) setMaterial {
 		// create a brush image to draw into the texture with
-		  NSString *material=[[BridgeContext instance] objectForKey: KEY_MATERIAL];
+		NSString *material=[[BridgeContext instance] objectForKey: KEY_MATERIAL];
 		NSString *image=@"material-steel.png";
 		if(![material isEqual:@"steel" ]){
 			image=@"material-wood.png";
 		}
 		NSLog(material);
+		NSString *action=[[BridgeContext instance] objectForKey: KEY_ACTION];
+	
+
 		brush = [[CCSprite spriteWithFile:image] retain];
+	
+		if([action isEqual:@"erase" ]){
+			brush.scale=1.15;
+			[brush setBlendFunc: (ccBlendFunc) { GL_ZERO, GL_ONE_MINUS_SRC_ALPHA }];
+			
+		}
 
 }
 -(id) init{

@@ -11,7 +11,7 @@
 #define KEY_SCENE @"current.scene"
 #define KEY_BRIDGE @"bridge"
 #define KEY_MATERIAL @"material"
-
+#define KEY_ACTION @"action"
 @interface Constants
 
 
