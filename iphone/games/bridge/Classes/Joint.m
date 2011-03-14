@@ -13,6 +13,7 @@
 
 @synthesize start;
 @synthesize end;
+@synthesize material;
 
 - (id)initWithPoint:(CGPoint)s :(CGPoint)e{
 
@@ -22,6 +23,10 @@
 		self.end= e;
 	}
 	return self;
+}
+
+-(void)setMaterial:(NSString *)mater{
+	material = mater;
 }
 
 @end

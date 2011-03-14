@@ -23,11 +23,14 @@
 -(Joint *)addJoint:(CGPoint) start: (CGPoint) end;
 -(BOOL)containsJoint:(Joint *)joint;
 -(void)removeJoint:(Joint *)joint;
+-(void)removeJoints:(CGPoint) start: (CGPoint) end;
 -(NSMutableArray *) getJoints;
 
 //piles
 -(Pile *)addPile:(CGPoint) location;
 -(void)removePile:(CGPoint) location;
 -(NSMutableArray *)getPiles;
+
+
 
 @end

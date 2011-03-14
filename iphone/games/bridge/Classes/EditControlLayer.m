@@ -137,10 +137,13 @@ CCSprite* grid;
 				
 		CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 		CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
-		
-		
-		
-		[bridge addJoint:start :end];
+		NSString *material=[[BridgeContext instance] objectForKey: KEY_MATERIAL];
+		NSString *action=[[BridgeContext instance] objectForKey: KEY_ACTION];
+		if([@"erase" isEqual:action]){
+			[bridge removeJoints:start :end];
+		}else{
+			[bridge addJoint:start :end :material];
+		}
 		
 		NSLog([NSString stringWithFormat: @"Bridge : %@ - joints count :%d",[bridge description],[ [bridge getJoints] count] ]);
 		
