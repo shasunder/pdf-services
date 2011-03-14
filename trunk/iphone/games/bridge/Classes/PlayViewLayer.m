@@ -39,10 +39,10 @@ CCSprite* play;
 		bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
-		landLeft.position =  CGPointMake( 20 , 50);
+		landLeft.position =  CGPointMake( 40 , 50);
 		
 		CCSprite* landRight = [CCSprite spriteWithFile:@"land-right.png" ];
-		landRight.position =  CGPointMake( 400 , 55);
+		landRight.position =  CGPointMake( 420 , 55);
 		
 		
 		play = [CCSprite spriteWithFile:@"play.png" ];
@@ -66,26 +66,32 @@ CCSprite* play;
 }
 
 
-- (void) setMaterial {
+- (void) setBrushMaterial: (NSString *)material {
 	// create a brush image to draw into the texture with
-	NSString *material=[[BridgeContext instance] objectForKey: KEY_MATERIAL];
 	//TODO: fix type
+	
 	NSString *image=@"material-steel.png";
 	if(![material isEqual:@"steel" ]){
 		image=@"material-wood.png";
 	}
+	
 	NSLog(material);
 	NSString *action=[[BridgeContext instance] objectForKey: KEY_ACTION];
 	
+	if(brush !=NULL){
+		[brush release];
+		brush = NULL;
+	}
 	
 	brush = [[CCSprite spriteWithFile:image] retain];
 
 	
 }
 
+
+
 -(void)drawBridge {
 	
-		[self setMaterial];
 		NSMutableArray *joints = [bridge getJoints];
 		NSLog([joints description]);
 			   
@@ -94,7 +100,7 @@ CCSprite* play;
 			
 			CGPoint start = edge.start;
 			CGPoint end = edge.end;
-
+			[self setBrushMaterial : edge.material]; 
 			// begin drawing to the render texture
 			[target begin];
 			

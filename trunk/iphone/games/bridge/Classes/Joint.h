@@ -10,9 +10,11 @@
 @interface Joint : NSObject {
 	CGPoint start;
 	CGPoint end;
+	NSString *material;
 }
 @property (nonatomic) CGPoint start;
 @property (nonatomic) CGPoint end;
+@property (nonatomic, retain) NSString *material;
 
 
 @end

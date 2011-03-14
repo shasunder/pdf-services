@@ -45,10 +45,10 @@ CCSprite* play;
 		zoom.position =  CGPointMake( 450 , 150);
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
-		landLeft.position =  CGPointMake( 20 , 50);
+		landLeft.position =  CGPointMake( 40 , 50);
 		
 		CCSprite* landRight = [CCSprite spriteWithFile:@"land-right.png" ];
-		landRight.position =  CGPointMake( 400 , 55);
+		landRight.position =  CGPointMake( 420 , 55);
 		
 		
 		play = [CCSprite spriteWithFile:@"play.png" ];
@@ -102,8 +102,8 @@ CCSprite* play;
 	NSLog(@"Touch Began ");
 	CGPoint location = [touch locationInView: [touch view]];
 	location = [[CCDirector sharedDirector] convertToGL:location];
-	NSString *material =@"steel";
-	NSString *action=@"";
+	NSString *material = [[BridgeContext instance] objectForKey:KEY_MATERIAL];
+	NSString *action= [[BridgeContext instance] objectForKey: KEY_ACTION];
 	
 	//check if button pressed
 	if( [CocosUtility containsTouchLocation: touch : wood ] ){
@@ -120,21 +120,24 @@ CCSprite* play;
 		[self selectButton:erase];		
 		NSLog(@"Touched : erase");
 		action =@"erase";
+		[[BridgeContext instance] setValue:action forKey: KEY_ACTION];
 		
 	}else if( [CocosUtility containsTouchLocation: touch : zoom ] ){
 		[self selectButton:zoom];		
 		NSLog(@"Touched : zoom");
 		action =@"zoom";
+		[[BridgeContext instance] setValue:action forKey: KEY_ACTION];
 		self.scale = (self.scale != 1.2) ? 1.1 : 1.0;
 		
 	}else if( [CocosUtility containsTouchLocation: touch : play ] ){
 		[self selectButton:play];		
 		NSLog(@"Touched : play");
 		action =@"play";
+		[[BridgeContext instance] setValue:action forKey: KEY_ACTION];
 		[self play];
 	}
 	
-	[[BridgeContext instance] setValue:action forKey: KEY_ACTION];
+	
 	[[BridgeContext instance] setValue:material forKey: KEY_MATERIAL];
 	
 	return YES;
