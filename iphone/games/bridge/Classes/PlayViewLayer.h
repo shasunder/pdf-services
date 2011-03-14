@@ -15,16 +15,18 @@
 #import "Box2D.h"
 #import "GLES-Render.h"
 
-#define PTM_RATIO 32.0
 @interface PlayViewLayer : CCLayer {
 	Bridge *bridge;
 	
 	CCRenderTexture* target;
 	CCSprite* brush;
 	
-	b2World* _world;
-	b2Body* _body;
-	CCSprite* _ball;
+	NSMutableArray *edges;
+	
+	b2World* world;
+
+	GLESDebugDraw *m_debugDraw;
+	
 }
 
 @end

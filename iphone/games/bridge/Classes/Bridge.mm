@@ -12,41 +12,41 @@
 @implementation Bridge
 
 @synthesize piles;
-@synthesize joints;
+@synthesize edges;
 
 
 -(id) init{
 	
 	if( (self=[super init] )) {
-		self.joints = [[NSMutableArray alloc]init];
+		self.edges = [[NSMutableArray alloc]init];
 		
 	}
 	
 	return self;
 }
 
-//joint
--(Joint *)addJoint:(CGPoint) start: (CGPoint) end: (NSString *) material{
+//Edge
+-(Edge *)addEdge:(CGPoint) start: (CGPoint) end: (NSString *) material{
 
-	Joint *joint = [[Joint alloc] initWithPoint:start : end];
-	[joint setMaterial:material];
-	[joints addObject:joint];
+	Edge *edge = [[Edge alloc] initWithPoint:start : end];
+	edge.material = material;
+	[edges addObject:edge];
 	
-	return joint;
+	return edge;
 
 }
 
--(BOOL)containsJoint:(Joint *)joint{
-	return [joints containsObject:joint ];
+-(BOOL)containsEdge:(Edge *)Edge{
+	return [edges containsObject:Edge ];
 }
 
--(void)removeJoints:(CGPoint) start: (CGPoint) end{
-	//loop through joints array and remove joints falling between start and end positions.
-	for (int i=0; i< [joints count]; i++) {
-		Joint *joint = [joints objectAtIndex:i];
-		CGPoint startJoint = joint.start;
-		CGPoint endJoint = joint.end;
-		int x1 = startJoint.x, y1 = startJoint.y, x2 = endJoint.x, y2 = endJoint.y;
+-(void)removeEdges:(CGPoint) start: (CGPoint) end{
+	//loop through edgesedges array and remove edges falling between start and end positions.
+	for (int i=0; i< [edges count]; i++) {
+		Edge *Edge = [edges objectAtIndex:i];
+		CGPoint startEdge = Edge.start;
+		CGPoint endEdge = Edge.end;
+		int x1 = startEdge.x, y1 = startEdge.y, x2 = endEdge.x, y2 = endEdge.y;
 		
 		int xs = start.x, ys = start.y, xe = end.x, ye = end.y;
 
@@ -58,19 +58,19 @@
 		}
 		
 		if(x1 >= xs && y1 >=ys && x2 <=xe && y2 <= ye){ //lines intersect. remove
-			[joints removeObject:joint ];		
+			[edges removeObject:Edge ];		
 		}
 		
 	}
 	
 }
 
--(void)removeJoint:(Joint *)joint{
-	[joints removeObject:joint ];
+-(void)removeEdge:(Edge *)Edge{
+	[edges removeObject:Edge ];
 	
 }
--(NSMutableArray *) getJoints{
-	return joints;
+-(NSMutableArray *) getEdges{
+	return edges;
 }
 
 //piles
