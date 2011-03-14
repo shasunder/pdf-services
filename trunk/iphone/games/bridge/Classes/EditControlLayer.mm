@@ -72,7 +72,7 @@ CCSprite* grid;
 
 
 
--(void)drawJoint {
+-(void)drawEdge {
 
 	if([touchesArray count] >=2){
 			[self setMaterial];
@@ -140,15 +140,15 @@ CCSprite* grid;
 		NSString *material=[[BridgeContext instance] objectForKey: KEY_MATERIAL];
 		NSString *action=[[BridgeContext instance] objectForKey: KEY_ACTION];
 		if([@"erase" isEqual:action]){
-			[bridge removeJoints:start :end];
+			[bridge removeEdges:start :end];
 		}else{
-			[bridge addJoint:start :end :material];
+			[bridge addEdge:start :end :material];
 		}
 		
-		NSLog([NSString stringWithFormat: @"Bridge : %@ - joints count :%d",[bridge description],[ [bridge getJoints] count] ]);
+		NSLog([NSString stringWithFormat: @"Bridge : %@ - Edges count :%d",[bridge description],[ [bridge getEdges] count] ]);
 		
 		NSLog([NSString stringWithFormat:@"Drawing beam : (%f, %f) to (%f,%f)", start.x, start.y, end.x, end.y]);
-		[self drawJoint];
+		[self drawEdge];
 
 		//[self addChild:beam];
 		[touchesArray removeAllObjects];

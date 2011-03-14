@@ -6,25 +6,25 @@
 //  Copyright 2011 bri. All rights reserved.
 //
 
-#import "Joint.h"
+#import "Edge.h"
 #import "Pile.h"
 
 @interface Bridge : NSObject {
 	
-	NSMutableArray *joints;
+	NSMutableArray *edges;
 	NSMutableArray *piles;
 }
 
-@property (nonatomic, retain) NSMutableArray *joints;
+@property (nonatomic, retain) NSMutableArray *edges;
 @property (nonatomic, retain) NSMutableArray *piles;
 
 
-//joint
--(Joint *)addJoint:(CGPoint) start: (CGPoint) end;
--(BOOL)containsJoint:(Joint *)joint;
--(void)removeJoint:(Joint *)joint;
--(void)removeJoints:(CGPoint) start: (CGPoint) end;
--(NSMutableArray *) getJoints;
+//Edge
+-(Edge *)addEdge:(CGPoint) start: (CGPoint) end;
+-(BOOL)containsEdge:(Edge *)Edge;
+-(void)removeEdge:(Edge *)Edge;
+-(void)removeEdges:(CGPoint) start: (CGPoint) end;
+-(NSMutableArray *) getEdges;
 
 //piles
 -(Pile *)addPile:(CGPoint) location;

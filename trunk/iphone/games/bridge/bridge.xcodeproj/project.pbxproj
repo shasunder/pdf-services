@@ -313,7 +313,7 @@
 		CCC4D7B21322D67C00DA511F /* CocosUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCC4D7B11322D67C00DA511F /* CocosUtility.mm */; };
 		CCE10F7913241B6E00E1A6BC /* Bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F7813241B6E00E1A6BC /* Bridge.mm */; };
 		CCE10F7C13241DFF00E1A6BC /* OrderedDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F7A13241DFF00E1A6BC /* OrderedDictionary.mm */; };
-		CCE10F811324456700E1A6BC /* Joint.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F801324456700E1A6BC /* Joint.mm */; };
+		CCE10F811324456700E1A6BC /* Edge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F801324456700E1A6BC /* Edge.mm */; };
 		CCE10F8C132446E900E1A6BC /* Pile.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F8B132446E900E1A6BC /* Pile.mm */; };
 		CCE10FBD1324499800E1A6BC /* BridgeContext.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10FBC1324499800E1A6BC /* BridgeContext.mm */; };
 		CCE464E2132036BE0072DE4D /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE464DF132036BE0072DE4D /* meta_tiles.png */; };
@@ -339,7 +339,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D6058910D05DD3D006BFB54 /* bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = bridge.app; path = "/Volumes/volume2/projects/iphone/common-build/Distribution-iphonesimulator/bridge.app"; sourceTree = "<absolute>"; };
 		1F3B9A2B0EF2145700286867 /* bridgeAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = bridgeAppDelegate.mm; sourceTree = "<group>"; };
 		1F3B9A2C0EF2145700286867 /* bridgeAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bridgeAppDelegate.h; path = Classes/bridgeAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* bridge_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -648,6 +647,7 @@
 		CCB263951321791500CA6458 /* Line.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Line.mm; sourceTree = "<group>"; };
 		CCB508571322805D0098BBA5 /* bridge-grid-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-grid-background.png"; sourceTree = "<group>"; };
 		CCB508581322805D0098BBA5 /* bridge-grid.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "bridge-grid.tmx"; sourceTree = "<group>"; };
+		CCB57D82132EC44F0059CFD3 /* bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC4D7B01322D67C00DA511F /* CocosUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocosUtility.h; sourceTree = "<group>"; };
 		CCC4D7B11322D67C00DA511F /* CocosUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CocosUtility.mm; sourceTree = "<group>"; };
 		CCE10F7713241B6E00E1A6BC /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
@@ -655,8 +655,8 @@
 		CCE10F7A13241DFF00E1A6BC /* OrderedDictionary.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OrderedDictionary.mm; path = ../../JavaIQ/Classes/OrderedDictionary.mm; sourceTree = SOURCE_ROOT; };
 		CCE10F7B13241DFF00E1A6BC /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderedDictionary.h; path = ../../JavaIQ/Classes/OrderedDictionary.h; sourceTree = SOURCE_ROOT; };
 		CCE10F7E13241F2100E1A6BC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		CCE10F7F1324456700E1A6BC /* Joint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joint.h; sourceTree = "<group>"; };
-		CCE10F801324456700E1A6BC /* Joint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Joint.mm; sourceTree = "<group>"; };
+		CCE10F7F1324456700E1A6BC /* Edge.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Edge.h; sourceTree = "<group>"; };
+		CCE10F801324456700E1A6BC /* Edge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Edge.mm; sourceTree = "<group>"; };
 		CCE10F8A132446E900E1A6BC /* Pile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pile.h; sourceTree = "<group>"; };
 		CCE10F8B132446E900E1A6BC /* Pile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Pile.mm; sourceTree = "<group>"; };
 		CCE10FBB1324499800E1A6BC /* BridgeContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeContext.h; sourceTree = "<group>"; };
@@ -712,6 +712,7 @@
 			isa = PBXGroup;
 			children = (
 				506EE05E10304ED200A389B3 /* libcocos2d libraries.a */,
+				CCB57D82132EC44F0059CFD3 /* bridge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1203,8 +1204,8 @@
 			children = (
 				CCE10F7713241B6E00E1A6BC /* Bridge.h */,
 				CCE10F7813241B6E00E1A6BC /* Bridge.mm */,
-				CCE10F7F1324456700E1A6BC /* Joint.h */,
-				CCE10F801324456700E1A6BC /* Joint.mm */,
+				CCE10F7F1324456700E1A6BC /* Edge.h */,
+				CCE10F801324456700E1A6BC /* Edge.mm */,
 				CCE10F8A132446E900E1A6BC /* Pile.h */,
 				CCE10F8B132446E900E1A6BC /* Pile.mm */,
 			);
@@ -1444,7 +1445,7 @@
 			);
 			name = bridge;
 			productName = bridge;
-			productReference = 1D6058910D05DD3D006BFB54 /* bridge.app */;
+			productReference = CCB57D82132EC44F0059CFD3 /* bridge.app */;
 			productType = "com.apple.product-type.application";
 		};
 		506EE05D10304ED200A389B3 /* cocos2d libraries */ = {
@@ -1529,7 +1530,7 @@
 				CCC4D7B21322D67C00DA511F /* CocosUtility.mm in Sources */,
 				CCE10F7913241B6E00E1A6BC /* Bridge.mm in Sources */,
 				CCE10F7C13241DFF00E1A6BC /* OrderedDictionary.mm in Sources */,
-				CCE10F811324456700E1A6BC /* Joint.mm in Sources */,
+				CCE10F811324456700E1A6BC /* Edge.mm in Sources */,
 				CCE10F8C132446E900E1A6BC /* Pile.mm in Sources */,
 				CCE10FBD1324499800E1A6BC /* BridgeContext.mm in Sources */,
 				CCAF622A132826DE0095B567 /* PlayViewLayer.mm in Sources */,

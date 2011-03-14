@@ -8,6 +8,7 @@
 
 #import "PlayViewLayer.h"
 
+#define PTM_RATIO 32
 
 @implementation PlayViewLayer
 
@@ -35,8 +36,12 @@ CCSprite* play;
 
 - (void)tick:(ccTime) dt {
 	
-    _world->Step(dt, 10, 10);
-    for(b2Body *b = _world->GetBodyList(); b; b=b->GetNext()) {    
+	int32 velocityIterations = 8;
+	int32 positionIterations = 1;
+	
+	world->Step(dt, velocityIterations, positionIterations);
+	
+    for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) {    
         if (b->GetUserData() != NULL) {
             CCSprite *ballData = (CCSprite *)b->GetUserData();
             ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
@@ -47,24 +52,31 @@ CCSprite* play;
 	
 }
 
-
--(void)demo{
-	CGSize winSize = [CCDirector sharedDirector].winSize;
-	
-	// Create sprite and add it to the layer
-	_ball = [CCSprite spriteWithFile:@"material-wood.png" rect:CGRectMake(0, 0, 52, 52)];
-	_ball.position = ccp(100, 100);
-	[self addChild:_ball];
-	
+-(void) buildWorld{
 	// Create a world
 	b2Vec2 gravity = b2Vec2(0.0f, -30.0f);
 	bool doSleep = true;
-	_world = new b2World(gravity, doSleep);
+	world = new b2World(gravity, doSleep);
+	world->SetContinuousPhysics(true);
+	
+	// Debug Draw functions
+	m_debugDraw = new GLESDebugDraw( PTM_RATIO );
+	world->SetDebugDraw(m_debugDraw);
+	
+	uint32 flags = 0;
+	flags += b2DebugDraw::e_shapeBit;
+	//		flags += b2DebugDraw::e_jointBit;
+	//		flags += b2DebugDraw::e_aabbBit;
+	//		flags += b2DebugDraw::e_pairBit;
+	//		flags += b2DebugDraw::e_centerOfMassBit;
+	m_debugDraw->SetFlags(flags);		
+	
+	CGSize winSize = [CCDirector sharedDirector].winSize;
 	
 	// Create edges around the entire screen
 	b2BodyDef groundBodyDef;
 	groundBodyDef.position.Set(0,0);
-	b2Body *groundBody = _world->CreateBody(&groundBodyDef);
+	b2Body *groundBody = world->CreateBody(&groundBodyDef);
 	b2PolygonShape groundBox;
 	b2FixtureDef boxShapeDef;
 	boxShapeDef.shape = &groundBox;
@@ -79,24 +91,64 @@ CCSprite* play;
 							   winSize.height/PTM_RATIO), b2Vec2(winSize.width/PTM_RATIO, 0));
 	groundBody->CreateFixture(&boxShapeDef);
 	
-	// Create ball body and shape
-	b2BodyDef ballBodyDef;
-	ballBodyDef.type = b2_dynamicBody;
-	ballBodyDef.position.Set(100/PTM_RATIO, 100/PTM_RATIO);
-	ballBodyDef.userData = _ball;
-	_body = _world->CreateBody(&ballBodyDef);
-	
-	b2CircleShape circle;
-	circle.m_radius = 26.0/PTM_RATIO;
-	
-	b2FixtureDef ballShapeDef;
-	ballShapeDef.shape = &circle;
-	ballShapeDef.density = 1.0f;
-	ballShapeDef.friction = 0.2f;
-	ballShapeDef.restitution = 0.8f;
-	_body->CreateFixture(&ballShapeDef);
-	
 	[self schedule:@selector(tick:)];
+	
+}
+
+-(void) draw
+{
+	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+	// Needed states:  GL_VERTEX_ARRAY, 
+	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+	glDisable(GL_TEXTURE_2D);
+	glDisableClientState(GL_COLOR_ARRAY);
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+	world->DrawDebugData();
+	
+	// restore default GL states
+	glEnable(GL_TEXTURE_2D);
+	glEnableClientState(GL_COLOR_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+}
+
+
+
+-(void)buildPhysicalBody: (Edge *) edge{
+
+	
+	// Create sprite and add it to the layer
+	CGPoint p = edge.start;
+	CCSprite *edgeImage = [CCSprite spriteWithFile:@"material-wood.png" rect:CGRectMake(0, 0, 152, 152)];
+	edgeImage.position = ccp( p.x, p.y);;
+	[self addChild:edgeImage];
+
+		
+	// Define the dynamic body.
+	//Set up a 1m squared box in the physics world
+	b2BodyDef bodyDef;
+	bodyDef.type = b2_dynamicBody;
+	
+	bodyDef.position.Set(p.x/PTM_RATIO, p.y/PTM_RATIO);
+	bodyDef.userData = edgeImage;
+	b2Body *body = world->CreateBody(&bodyDef);
+	
+	// Define another box shape for our dynamic body.
+	b2PolygonShape dynamicBox;
+	dynamicBox.SetAsBox(.5f, .5f);//These are mid points for our 1m box
+	
+	// Define the dynamic body fixture.
+	b2FixtureDef fixtureDef;
+	fixtureDef.shape = &dynamicBox;	
+	fixtureDef.density = 1.0f;
+	fixtureDef.friction = 0.3f;
+	body->CreateFixture(&fixtureDef); 
+	
+	edge.image = edgeImage;
+	edge.body = body;
+	
+	
 }
 
 -(id) init
@@ -130,10 +182,13 @@ CCSprite* play;
 		
 		//box2d
 		
-
+		//build boundary in box2d
+		[self buildWorld ];
 		
 		[self playBridge];
-		[self demo];
+		
+		
+		
 	}
 	
 	return self;
@@ -166,11 +221,11 @@ CCSprite* play;
 
 -(void)drawBridge {
 	
-		NSMutableArray *joints = [bridge getJoints];
-		NSLog([joints description]);
+		edges = [bridge getEdges];
+		NSLog([edges description]);
 			   
-		for (int i=0; i< [joints count]; i=i++) {
-			Joint *edge = [joints objectAtIndex:i];
+		for (int i=0; i< [edges count]; i=i++) {
+			Edge *edge = [edges objectAtIndex:i];
 			
 			CGPoint start = edge.start;
 			CGPoint end = edge.end;
@@ -197,6 +252,8 @@ CCSprite* play;
 			}
 			// finish drawing and return context back to the screen
 			[target end];
+			[self buildPhysicalBody : edge];
+			//[self buildPhysicalBody : edge];
 			
 		}
 
@@ -231,8 +288,8 @@ CCSprite* play;
 }
 
 - (void)dealloc {    
-    _body = NULL;
-    _world = NULL;
+   
+    world = NULL;
     [super dealloc];
 }
 
