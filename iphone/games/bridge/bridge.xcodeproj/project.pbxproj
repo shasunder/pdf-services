@@ -294,6 +294,7 @@
 		CC1AD661131AC7A900E69E5D /* Paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1AD65E131AC7A900E69E5D /* Paddle.png */; };
 		CC1AD698131AC9A900E69E5D /* EditorScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC1AD697131AC9A900E69E5D /* EditorScene.mm */; };
 		CC1AD6C6131B0E2200E69E5D /* sprites.png in Resources */ = {isa = PBXBuildFile; fileRef = CC1AD6C5131B0E2200E69E5D /* sprites.png */; };
+		CC5336001331715100BE718F /* Vertex.mm in Sources */ = {isa = PBXBuildFile; fileRef = CC5335FF1331715100BE718F /* Vertex.mm */; };
 		CCABBB1A1321DDB5003B6DDC /* EditControlLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCABBB191321DDB5003B6DDC /* EditControlLayer.mm */; };
 		CCABBB411321DF1D003B6DDC /* EditViewLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCABBB401321DF1D003B6DDC /* EditViewLayer.mm */; };
 		CCAE6571131C3A2E007F85A5 /* background-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6570131C3A2E007F85A5 /* background-blue.png */; };
@@ -307,7 +308,7 @@
 		CCAF61D313281B190095B567 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61D213281B190095B567 /* play.png */; };
 		CCAF622A132826DE0095B567 /* PlayViewLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCAF6229132826DE0095B567 /* PlayViewLayer.mm */; };
 		CCAF622D132827940095B567 /* PlayScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCAF622C132827940095B567 /* PlayScene.mm */; };
-		CCB263961321791500CA6458 /* Line.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCB263951321791500CA6458 /* Line.mm */; };
+		CCB263961321791500CA6458 /* DrawBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCB263951321791500CA6458 /* DrawBridge.mm */; };
 		CCB508591322805D0098BBA5 /* bridge-grid-background.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB508571322805D0098BBA5 /* bridge-grid-background.png */; };
 		CCB5085A1322805D0098BBA5 /* bridge-grid.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCB508581322805D0098BBA5 /* bridge-grid.tmx */; };
 		CCC4D7B21322D67C00DA511F /* CocosUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCC4D7B11322D67C00DA511F /* CocosUtility.mm */; };
@@ -626,6 +627,8 @@
 		CC1AD696131AC9A900E69E5D /* EditorScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorScene.h; sourceTree = "<group>"; };
 		CC1AD697131AC9A900E69E5D /* EditorScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditorScene.mm; sourceTree = "<group>"; };
 		CC1AD6C5131B0E2200E69E5D /* sprites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprites.png; sourceTree = SOURCE_ROOT; };
+		CC5335FE1331715100BE718F /* Vertex.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Vertex.h; sourceTree = "<group>"; };
+		CC5335FF1331715100BE718F /* Vertex.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vertex.mm; sourceTree = "<group>"; };
 		CCABBB181321DDB5003B6DDC /* EditControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditControlLayer.h; sourceTree = "<group>"; };
 		CCABBB191321DDB5003B6DDC /* EditControlLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditControlLayer.mm; sourceTree = "<group>"; };
 		CCABBB3F1321DF1D003B6DDC /* EditViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewLayer.h; sourceTree = "<group>"; };
@@ -643,8 +646,8 @@
 		CCAF6229132826DE0095B567 /* PlayViewLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayViewLayer.mm; sourceTree = "<group>"; };
 		CCAF622B132827940095B567 /* PlayScene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = PlayScene.h; sourceTree = "<group>"; };
 		CCAF622C132827940095B567 /* PlayScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayScene.mm; sourceTree = "<group>"; };
-		CCB263941321791500CA6458 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
-		CCB263951321791500CA6458 /* Line.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Line.mm; sourceTree = "<group>"; };
+		CCB263941321791500CA6458 /* DrawBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBridge.h; sourceTree = "<group>"; };
+		CCB263951321791500CA6458 /* DrawBridge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawBridge.mm; sourceTree = "<group>"; };
 		CCB508571322805D0098BBA5 /* bridge-grid-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bridge-grid-background.png"; sourceTree = "<group>"; };
 		CCB508581322805D0098BBA5 /* bridge-grid.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "bridge-grid.tmx"; sourceTree = "<group>"; };
 		CCB57D82132EC44F0059CFD3 /* bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1208,6 +1211,8 @@
 				CCE10F801324456700E1A6BC /* Edge.mm */,
 				CCE10F8A132446E900E1A6BC /* Pile.h */,
 				CCE10F8B132446E900E1A6BC /* Pile.mm */,
+				CC5335FE1331715100BE718F /* Vertex.h */,
+				CC5335FF1331715100BE718F /* Vertex.mm */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1251,8 +1256,8 @@
 		CCABBAF31321DCDB003B6DDC /* sprite */ = {
 			isa = PBXGroup;
 			children = (
-				CCB263941321791500CA6458 /* Line.h */,
-				CCB263951321791500CA6458 /* Line.mm */,
+				CCB263941321791500CA6458 /* DrawBridge.h */,
+				CCB263951321791500CA6458 /* DrawBridge.mm */,
 			);
 			name = sprite;
 			sourceTree = "<group>";
@@ -1524,7 +1529,7 @@
 				1F3B9A2D0EF2145700286867 /* bridgeAppDelegate.mm in Sources */,
 				50F4143910692D7D002A0D5E /* GLES-Render.mm in Sources */,
 				CC1AD698131AC9A900E69E5D /* EditorScene.mm in Sources */,
-				CCB263961321791500CA6458 /* Line.mm in Sources */,
+				CCB263961321791500CA6458 /* DrawBridge.mm in Sources */,
 				CCABBB1A1321DDB5003B6DDC /* EditControlLayer.mm in Sources */,
 				CCABBB411321DF1D003B6DDC /* EditViewLayer.mm in Sources */,
 				CCC4D7B21322D67C00DA511F /* CocosUtility.mm in Sources */,
@@ -1535,6 +1540,7 @@
 				CCE10FBD1324499800E1A6BC /* BridgeContext.mm in Sources */,
 				CCAF622A132826DE0095B567 /* PlayViewLayer.mm in Sources */,
 				CCAF622D132827940095B567 /* PlayScene.mm in Sources */,
+				CC5336001331715100BE718F /* Vertex.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

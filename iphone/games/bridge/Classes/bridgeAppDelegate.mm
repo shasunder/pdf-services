@@ -2,7 +2,8 @@
 #import "bridgeAppDelegate.h"
 #import "cocos2d.h"
 #import "EditorScene.h"
-
+#import "PlayScene.h"
+#import "Constants.h"
 @implementation bridgeAppDelegate
 
 @synthesize window;
@@ -23,8 +24,13 @@
 	
 	NSLog(@"Starting bridge builder scene");
 	
-	EditorScene *scene = [EditorScene scene]; //auto release
-	[[CCDirector sharedDirector] runWithScene:  scene];
+	if(TEST_MODE){
+		PlayScene *scene = [PlayScene scene]; //auto release
+		[[CCDirector sharedDirector] runWithScene:  scene];
+	}else{
+		EditorScene *scene = [EditorScene scene]; //auto release
+		[[CCDirector sharedDirector] runWithScene:  scene];
+	}
 }
 
 

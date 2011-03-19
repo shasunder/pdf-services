@@ -7,7 +7,6 @@
 //
 
 #import "EditControlLayer.h"
-#import "Line.h"
 
 @implementation EditControlLayer
 
@@ -79,28 +78,9 @@ CCSprite* grid;
 		
 			CGPoint start = CGPointFromString([touchesArray objectAtIndex:0]);
 			CGPoint end = CGPointFromString([touchesArray objectAtIndex:1]);
-			// begin drawing to the render texture
-			[target begin];
+			DrawBridge * bridgeDrawer = [DrawBridge node];
 			
-			// for extra points, we'll draw this smoothly from the last position and vary the sprite's
-			// scale/rotation/offset
-			float distance = ccpDistance(start, end);
-			if (distance > 1)
-			{
-				int d = (int)distance;
-				for (int i = 0; i < d; i++)
-				{
-					float difx = end.x - start.x;
-					float dify = end.y - start.y;
-					float delta = (float)i / distance;
-					[brush setPosition:ccp(start.x + (difx * delta), start.y + (dify * delta))];
-					[brush setScale:0.3];
-					// Call visit to draw the brush, don't call draw..
-					[brush visit];
-				}
-			}
-			// finish drawing and return context back to the screen
-			[target end];
+			[self addChild:bridgeDrawer];
 		
 		
 		

@@ -14,7 +14,7 @@
 #import "Constants.h"
 #import "Box2D.h"
 #import "GLES-Render.h"
-
+#import "DrawBridge.h"
 @interface PlayViewLayer : CCLayer {
 	Bridge *bridge;
 	

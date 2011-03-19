@@ -12,6 +12,7 @@
 #import "Constants.h"
 #import "BridgeContext.h"
 #import "Bridge.h"
+#import "DrawBridge.h"
 @interface EditControlLayer : CCLayer {
 
 	CCRenderTexture* target;

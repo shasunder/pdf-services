@@ -31,6 +31,7 @@
 	Edge *edge = [[Edge alloc] initWithPoint:start : end];
 	edge.material = material;
 	[edges addObject:edge];
+	[self addVertexEdge:edge];
 	
 	return edge;
 
@@ -84,6 +85,69 @@
 }
 -(NSMutableArray *)getPiles{
 	return piles;
+}
+
+//vertex
+
+
+-(void)addVertexEdge:(Edge *) edge{
+	Vertex *vertexStart = [self getVertex:edge.start];
+	
+	if(vertexStart==NULL){
+		vertexStart = [[Vertex alloc]init];
+		vertexStart.point = edge.start;
+	}
+	
+	[vertexStart.edges addObject:edge];
+	
+	Vertex *vertexEnd = [self getVertex:edge.end];
+	
+	if(vertexEnd==NULL){
+		vertexEnd = [[Vertex alloc]init];
+		vertexEnd.point = edge.end;
+	}
+	
+	[vertexEnd.edges addObject:edge];
+	
+	[vertices addObject:vertexStart];
+	[vertices addObject:vertexEnd];
+	
+	
+}
+
+-(BOOL)isVertexEqual:(Vertex *)vertex : (CGPoint) point{
+	return vertex.point.x == point.x && vertex.point.y == point.y;
+}
+
+-(BOOL)containsVertex:(CGPoint )point{
+	for (int i=0; i< [vertices count]; i++) {
+		Vertex *vertex = [vertices objectAtIndex:i];
+		if([self isVertexEqual : vertex : point]){
+			return YES;
+		}
+	}
+	return NO;
+}
+
+-(void)removeVertex:(CGPoint )point{
+	for (int i=0; i< [vertices count]; i++) {
+		Vertex *vertex = [vertices objectAtIndex:i];
+		if([self isVertexEqual : vertex : point]){
+			[vertices removeObjectAtIndex:i];
+			break;
+		}
+	}
+}
+
+
+-(Vertex *)getVertex:(CGPoint) point{
+	for (int i=0; i< [vertices count]; i++) {
+		Vertex *vertex = [vertices objectAtIndex:i];
+		if([self isVertexEqual : vertex : point]){
+			return vertex;
+		}
+	}
+	return NULL;
 }
 
 
