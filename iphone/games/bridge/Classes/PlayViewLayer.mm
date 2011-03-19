@@ -229,12 +229,14 @@ CCSprite* play;
 
 
 
--(void)addBar:(CGPoint) position :(float) scaleX:(float) scaleY : (float) rotation : (CCTexture2D *) texture{
+-(void)addBar:(CGPoint) position : (NSString *) material{
 
+	CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage:@"material-wood.png"];
+	
+    // When initializing the sprite I want to make a polygon (triangle), not a rectangle
+   CCSprite *sprite = [[CCSprite alloc] initWithTexture:texture rect:CGRectMake(0, 0, 32, 32)];
 
-	CCSprite *sprite = [CCSprite node];
-	[sprite setTextureRect:CGRectMake(position.x,position.y,100,10)];
-	[sprite setColor:ccBLACK];
+	//[sprite setColor:ccBLACK];
 	//sprite.scaleX =scaleX;
 	//sprite.scaleY = scaleY;
 	
@@ -252,8 +254,18 @@ CCSprite* play;
 
 -(void)drawBridge {
 
-	DrawBridge * bridgeDrawer = [DrawBridge node];
-	[self addChild:bridgeDrawer];
+	Bridge *bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
+	NSMutableArray* edges = [bridge getEdges];
+	NSLog([edges description]);
+	
+	for (int i=0; i< [edges count]; i=i++) {
+		Edge *edge = [edges objectAtIndex:i];
+		
+		CGPoint start = edge.start;
+		CGPoint end = edge.end;
+		NSString *material = edge.material;
+	}
+
 	
 
 }
