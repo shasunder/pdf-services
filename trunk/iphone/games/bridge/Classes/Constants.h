@@ -11,7 +11,11 @@
 #define KEY_SCENE @"current.scene"
 #define KEY_BRIDGE @"bridge"
 #define KEY_MATERIAL @"material"
+#define KEY_MATERIAL_WOOD @"wood"
+#define KEY_MATERIAL_STEEL @"steel"
+
 #define KEY_ACTION @"action"
+#define TEST_MODE NO
 
 @interface Constants
 

@@ -13,7 +13,7 @@
 
 	//[editView setScene:scene];
 //	[editControl setScene:scene];
-	
+	[[BridgeContext instance] setValue:KEY_MATERIAL_WOOD forKey: KEY_MATERIAL];
 	[[BridgeContext instance] setValue:scene forKey :KEY_SCENE];
 	
 	[scene addChild: editView z:0 tag:1];

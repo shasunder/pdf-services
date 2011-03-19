@@ -7,7 +7,6 @@
 //
 
 #import "PlayViewLayer.h"
-
 #define PTM_RATIO 32
 
 @implementation PlayViewLayer
@@ -94,7 +93,7 @@ CCSprite* play;
 	[self schedule:@selector(tick:)];
 	
 }
-
+/*
 -(void) draw
 {
 	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
@@ -111,7 +110,7 @@ CCSprite* play;
 	glEnableClientState(GL_COLOR_ARRAY);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	
-}
+}*/
 
 
 
@@ -145,6 +144,28 @@ CCSprite* play;
 	fixtureDef.friction = 0.3f;
 	body->CreateFixture(&fixtureDef); 
 	
+	
+	//testing joints
+	
+	b2PolygonShape shape;
+	shape.SetAsBox(.5f, .5f);
+	
+	b2BodyDef bd;
+	b2Body* ground = world->CreateBody(&bd);
+	ground->CreateFixture(&shape, 0.0f);
+	
+	b2LineJointDef jd;
+	b2Vec2 axis(2.0f, 1.0f);
+	axis.Normalize();
+	jd.Initialize(ground, body, b2Vec2(0.0f, 8.5f), axis);
+	jd.motorSpeed = 1.0f;
+	//jd.maxMotorTorque = 1000.0f;
+	jd.enableMotor = true;
+	//jd.frequencyHz = 1.0f;
+	//jd.dampingRatio = 0.2f;
+	world->CreateJoint(&jd);
+	
+	
 	edge.image = edgeImage;
 	edge.body = body;
 	
@@ -158,6 +179,18 @@ CCSprite* play;
 		self.isTouchEnabled = YES;	
 		
 		bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
+		
+		if(TEST_MODE){
+			CGPoint start =  CGPointMake( 50 , 50);
+			CGPoint end =  CGPointMake( 100 , 50);
+			CGPoint end2 =  CGPointMake( 250 , 100);
+			[bridge addEdge:start :end :@"wood"];
+			[bridge addEdge:end :end2 :@"wood"];
+			[bridge addEdge:end2 :ccp(300,200) :@"wood"];
+
+			NSLog([bridge description]);
+		}
+		
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
 		landLeft.position =  CGPointMake( 40 , 50);
@@ -195,67 +228,33 @@ CCSprite* play;
 }
 
 
-- (void) setBrushMaterial: (NSString *)material {
-	// create a brush image to draw into the texture with
-	//TODO: fix type
+
+-(void)addBar:(CGPoint) position :(float) scaleX:(float) scaleY : (float) rotation : (CCTexture2D *) texture{
+
+
+	CCSprite *sprite = [CCSprite node];
+	[sprite setTextureRect:CGRectMake(position.x,position.y,100,10)];
+	[sprite setColor:ccBLACK];
+	//sprite.scaleX =scaleX;
+	//sprite.scaleY = scaleY;
 	
-	NSString *image=@"material-steel.png";
-	if(![material isEqual:@"steel" ]){
-		image=@"material-wood.png";
-	}
+	//sprite.rotation =rotation;
+	sprite.position = position;
+//	sprite.position = ccp([sprite boundingBox].size.width/2 + position.x, [sprite boundingBox].size.height/2 + position.y);
 	
-	NSLog(material);
-	NSString *action=[[BridgeContext instance] objectForKey: KEY_ACTION];
 	
-	if(brush !=NULL){
-		[brush release];
-		brush = NULL;
-	}
-	
-	brush = [[CCSprite spriteWithFile:image] retain];
 
 	
 }
 
 
 
+
 -(void)drawBridge {
+
+	DrawBridge * bridgeDrawer = [DrawBridge node];
+	[self addChild:bridgeDrawer];
 	
-		edges = [bridge getEdges];
-		NSLog([edges description]);
-			   
-		for (int i=0; i< [edges count]; i=i++) {
-			Edge *edge = [edges objectAtIndex:i];
-			
-			CGPoint start = edge.start;
-			CGPoint end = edge.end;
-			[self setBrushMaterial : edge.material]; 
-			// begin drawing to the render texture
-			[target begin];
-			
-			// for extra points, we'll draw this smoothly from the last position and vary the sprite's
-			// scale/rotation/offset
-			float distance = ccpDistance(start, end);
-			if (distance > 1)
-			{
-				int d = (int)distance;
-				for (int i = 0; i < d; i++)
-				{
-					float difx = end.x - start.x;
-					float dify = end.y - start.y;
-					float delta = (float)i / distance;
-					[brush setPosition:ccp(start.x + (difx * delta), start.y + (dify * delta))];
-					[brush setScale:0.3];
-					// Call visit to draw the brush, don't call draw..
-					[brush visit];
-				}
-			}
-			// finish drawing and return context back to the screen
-			[target end];
-			[self buildPhysicalBody : edge];
-			//[self buildPhysicalBody : edge];
-			
-		}
 
 }
 

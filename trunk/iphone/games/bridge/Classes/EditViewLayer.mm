@@ -109,12 +109,12 @@ CCSprite* startPlay;
 	if( [CocosUtility containsTouchLocation: touch : wood ] ){
 		[self selectButton:wood];
 		NSLog(@"Touched : wood");
-		material =@"wood";
+		material = KEY_MATERIAL_WOOD;
 		
 	}else if( [CocosUtility containsTouchLocation: touch : steel ] ){
 		[self selectButton:steel];		
 		NSLog(@"Touched : steel");
-		material =@"steel";
+		material = KEY_MATERIAL_STEEL;
 		
 	}else if( [CocosUtility containsTouchLocation: touch : erase ] ){
 		[self selectButton:erase];		
@@ -137,8 +137,9 @@ CCSprite* startPlay;
 		[self playBridge];
 	}
 	
-	
-	[[BridgeContext instance] setValue:material forKey: KEY_MATERIAL];
+	if(material!= NULL){
+		[[BridgeContext instance] setValue:material forKey: KEY_MATERIAL];
+	}
 	
 	return YES;
 
