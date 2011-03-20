@@ -30,7 +30,7 @@
 - (BOOL)isEqual:(id)other {
     if (other == self)
         return YES;
-    if (!other || ![other isKindOfClass:[self class]])
+    if (other==NULL || !other || ![other isKindOfClass:[self class]])
         return NO;
 	
 	Edge *otherEdge = (Edge *)other;
