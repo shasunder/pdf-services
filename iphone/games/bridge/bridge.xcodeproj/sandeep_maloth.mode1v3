@@ -334,7 +334,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CCD706C11336C9E1007D7E0F</string>
+										<string>CCD706D31336CBE9007D7E0F</string>
 										<key>history</key>
 										<array>
 											<string>CC1AD6BA131B0CD700E69E5D</string>
@@ -399,15 +399,15 @@
 											<string>CCD706131336A1BE007D7E0F</string>
 											<string>CCD7066C1336C0C6007D7E0F</string>
 											<string>CCD7066E1336C0C6007D7E0F</string>
-											<string>CCD7066F1336C0C6007D7E0F</string>
-											<string>CCD706721336C0C6007D7E0F</string>
-											<string>CCD706781336C0E8007D7E0F</string>
 											<string>CCD7067F1336C1A0007D7E0F</string>
-											<string>CCD706B31336C80E007D7E0F</string>
 											<string>CCD706B41336C80E007D7E0F</string>
-											<string>CCD706B51336C80E007D7E0F</string>
 											<string>CCD706B61336C80E007D7E0F</string>
-											<string>CCD706B71336C80E007D7E0F</string>
+											<string>CCD706C51336CAD5007D7E0F</string>
+											<string>CCD706C61336CAD5007D7E0F</string>
+											<string>CCD706C71336CAD5007D7E0F</string>
+											<string>CCD706CC1336CB42007D7E0F</string>
+											<string>CCD706D01336CB98007D7E0F</string>
+											<string>CCD706D11336CB98007D7E0F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -608,9 +608,9 @@
 		<string>CCD7051D13368DAA007D7E0F</string>
 		<string>CCD7051E13368DAA007D7E0F</string>
 		<string>CCC744B51319397C00922488</string>
-		<string>/Volumes/volume2/projects/iphone/games/bridge/bridge.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>/Volumes/volume2/projects/iphone/games/bridge/bridge.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>96 118 1042 660 0 0 1280 778 </string>

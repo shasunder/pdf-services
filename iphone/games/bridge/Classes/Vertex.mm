@@ -25,4 +25,14 @@
 	return self;
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (other==NULL || !other || ![other isKindOfClass:[self class]])
+        return NO;
+	
+	Vertex *otherVertex = (Vertex *)other;
+    return CGPointEqualToPoint(self.point , otherVertex.point);
+}
+
 @end
