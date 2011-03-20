@@ -11,9 +11,13 @@
 @interface Vertex : NSObject {
 	NSMutableArray *edges;
 	CGPoint point;
+	
+	b2Body* body;
+	CCSprite* image;
 }
 
 @property (nonatomic, retain) NSMutableArray *edges;
 @property (nonatomic)CGPoint point;
-
+@property (nonatomic) b2Body* body;
+@property (nonatomic, retain) CCSprite* image;
 @end

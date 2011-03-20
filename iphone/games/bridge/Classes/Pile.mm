@@ -12,6 +12,8 @@
 @implementation Pile
 
 @synthesize location;
+@synthesize body;
+@synthesize image;
 
 - (id)initWithLocation:(CGPoint)l{
 	
