@@ -15,7 +15,7 @@
 	CCDirector *director = [CCDirector sharedDirector];
 
 	[director setDeviceOrientation:kCCDeviceOrientationLandscapeLeft]; //set landscape mode
-	[director setDisplayFPS:YES]; 
+	//[director setDisplayFPS:YES]; 
 	
 	EAGLView *view = [director openGLView];
 	[view setMultipleTouchEnabled:YES];  	// Turn on multiple touches

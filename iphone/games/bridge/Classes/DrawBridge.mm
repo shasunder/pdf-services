@@ -23,7 +23,7 @@
 		CGPoint end = edge.end;
 		NSString *material = edge.material;
 		glEnable(GL_LINE_SMOOTH);
-		glLineWidth( 5.0f );
+		glLineWidth( 7.0f );
 		if([material isEqual:@"wood"]){
 			glColor4ub(184,138,0,255);  // R, G , B, border color
 		}else if([material isEqual:@"steel"]){
