@@ -13,13 +13,13 @@
 
 @synthesize piles;
 @synthesize edges;
-
+@synthesize vertices;
 
 -(id) init{
 	
 	if( (self=[super init] )) {
 		self.edges = [[NSMutableArray alloc]init];
-		
+		self.vertices = [[NSMutableArray alloc]init];
 	}
 	
 	return self;
@@ -74,6 +74,10 @@
 	return edges;
 }
 
+-(NSMutableArray *) getVertices{
+	return vertices;
+}
+
 //piles
 -(Pile *)addPile:(CGPoint) location{
 	Pile *pile =[[Pile alloc] init:location ];
@@ -94,7 +98,7 @@
 	Vertex *vertexStart = [self getVertex:edge.start];
 	
 	if(vertexStart==NULL){
-		vertexStart = [[Vertex alloc]init];
+		vertexStart = [[[Vertex alloc]init] retain];
 		vertexStart.point = edge.start;
 	}
 	

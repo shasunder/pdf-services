@@ -15,24 +15,6 @@ CCSprite* play;
 
 
 
--(void) playBridge{
-	// create a render texture, this is what we're going to draw into
-	CCDirector *director = [CCDirector sharedDirector];
-	CGSize s = [director winSize];
-	
-	target = [[CCRenderTexture renderTextureWithWidth:s.width height:s.height] retain];
-	[target setPosition:ccp(s.width/2, s.height/2)];
-	
-	// note that the render texture is a cocosnode, and contains a sprite of it's texture for convience,
-	// so we can just parent it to the scene like any other cocos node
-	[self addChild:target z:1];
-	
-	//[brush setBlendFunc: (ccBlendFunc) { GL_ONE, GL_ONE_MINUS_SRC_ALPHA }];  
-	[brush setOpacity:200];
-	[self drawBridge];
-	
-}
-
 - (void)tick:(ccTime) dt {
 	
 	int32 velocityIterations = 8;
@@ -51,6 +33,24 @@ CCSprite* play;
 	
 }
 
+-(void) draw
+{
+	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+	// Needed states:  GL_VERTEX_ARRAY, 
+	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
+	glDisable(GL_TEXTURE_2D);
+	glDisableClientState(GL_COLOR_ARRAY);
+	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+	world->DrawDebugData();
+	
+	// restore default GL states
+	glEnable(GL_TEXTURE_2D);
+	glEnableClientState(GL_COLOR_ARRAY);
+	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+	
+}
+
 -(void) buildWorld{
 	// Create a world
 	b2Vec2 gravity = b2Vec2(0.0f, -30.0f);
@@ -64,7 +64,7 @@ CCSprite* play;
 	
 	uint32 flags = 0;
 	flags += b2DebugDraw::e_shapeBit;
-	//		flags += b2DebugDraw::e_jointBit;
+	flags += b2DebugDraw::e_jointBit;
 	//		flags += b2DebugDraw::e_aabbBit;
 	//		flags += b2DebugDraw::e_pairBit;
 	//		flags += b2DebugDraw::e_centerOfMassBit;
@@ -93,25 +93,312 @@ CCSprite* play;
 	[self schedule:@selector(tick:)];
 	
 }
-/*
--(void) draw
-{
-	// Default GL states: GL_TEXTURE_2D, GL_VERTEX_ARRAY, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	// Needed states:  GL_VERTEX_ARRAY, 
-	// Unneeded states: GL_TEXTURE_2D, GL_COLOR_ARRAY, GL_TEXTURE_COORD_ARRAY
-	glDisable(GL_TEXTURE_2D);
-	glDisableClientState(GL_COLOR_ARRAY);
-	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-	world->DrawDebugData();
-	
-	// restore default GL states
-	glEnable(GL_TEXTURE_2D);
-	glEnableClientState(GL_COLOR_ARRAY);
-	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-	
-}*/
 
+
+-(void)addEdgeBodies{
+	
+	NSMutableArray *vEdges = [bridge getEdges];
+	
+	//create edge bodies
+
+	for (int i=0; i< [vEdges count]; i++) {
+		Edge *edge = [vEdges objectAtIndex:i];
+
+		CGPoint startPt = edge.start ;
+		CGPoint endpt = edge.end ;
+		
+		//length of the stick body
+		float len = abs(ccpDistance(startPt, endpt))/PTM_RATIO;
+		
+		//to calculate the angle and position of the body.
+		float dx = endpt.x-startPt.x;
+		float dy = endpt.y-startPt.y;
+		
+		//position of the body
+		float xPos = startPt.x+dx/2.0f;
+		float yPos = startPt.y+dy/2.0f;
+		
+		//width of the body.
+		float width = 10.0f/PTM_RATIO;
+		
+		b2BodyDef bodyDef;
+		bodyDef.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
+		bodyDef.angle = atan(dy/dx);
+		CCSprite *sp = [CCSprite spriteWithFile:@"material-wood.png" rect:CGRectMake(0, 0, 12, 12)];
+		
+	    //TODO: fix shape
+		[self addChild:sp z:1 ];
+		
+		bodyDef.userData = sp;
+		bodyDef.type = b2_dynamicBody;
+		
+		b2Body* body = world->CreateBody(&bodyDef);
+		
+		b2PolygonShape shape;
+		b2Vec2 rectangle1_vertices[4];
+		rectangle1_vertices[0].Set(-len/2, -width/2);
+		rectangle1_vertices[1].Set(len/2, -width/2);
+		rectangle1_vertices[2].Set(len/2, width/2);
+		rectangle1_vertices[3].Set(-len/2, width/2);
+		shape.Set(rectangle1_vertices, 4);
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 1.0f;
+		fd.friction = 0.300000f;
+		fd.restitution = 0.600000f;
+		body->CreateFixture(&fd);
+
+		edge.body = body;
+		
+		//create edge joints
+		if(i >= 1){
+		
+			Edge *firstEdge = [vEdges objectAtIndex:0];
+			b2Body *firstEdgeBody = firstEdge.body;
+			
+		
+			b2WeldJointDef jd; //b2WeldJointDef
+			//b2Vec2 anchor =firstEdgeBody->GetPosition();
+			NSLog([NSString stringWithFormat:@"Joint : %f %f",firstEdgeBody->GetPosition().x , firstEdgeBody->GetPosition().y]);
+			
+			b2Vec2 anchor = b2Vec2(firstEdgeBody->GetPosition().x -width/2 , firstEdgeBody->GetPosition().y + len/2);
+			jd.Initialize(firstEdgeBody, body, anchor);
+			
+//			jd.collideConnected = true;
+//			jd.maxForce = 200;
+			
+			b2Joint *joint= world->CreateJoint(&jd);
+			
+		}
+		
+		
+	}
+	
+	
+	
+	//[self testJoint];
+	
+	
+}
+
+-(void) addPiles{
+	//piles
+	{ //pile 1
+		b2CircleShape shape;
+		shape.m_radius = 0.5f;
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 1.0f;
+		
+		b2BodyDef bd;
+		//bd.type = b2_dynamicBody;
+		bd.position.Set(6.0f + 7.0f, 1.0f);
+		b2Body* body = world->CreateBody(&bd);
+		body->CreateFixture(&fd);
+	}
+	{ //pile 2
+		b2CircleShape shape;
+		shape.m_radius = 0.5f;
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 1.0f;
+		
+		b2BodyDef bd;
+		//bd.type = b2_dynamicBody;
+		bd.position.Set(1.0f, 1.0f);
+		b2Body* body = world->CreateBody(&bd);
+		body->CreateFixture(&fd);
+	}
+	
+
+}
+
+-(void)testJoint{
+	b2Body* ground = NULL;
+	int e_count =5;
+
+	{
+		b2BodyDef bd;
+		ground = world->CreateBody(&bd);
+		
+	}
+	
+	{
+		b2PolygonShape shape;
+		shape.SetAsBox(0.5f, 0.125f);
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 20.0f;
+		
+		b2WeldJointDef jd;
+		
+		b2Body* prevBody = ground;
+		for (int32 i = 0; i < e_count; ++i)
+		{
+			b2BodyDef bd;
+			bd.type = b2_dynamicBody;
+			bd.position.Set(-14.5f + 1.0f * i, 5.0f);
+			b2Body* body = world->CreateBody(&bd);
+			body->CreateFixture(&fd);
+			
+			b2Vec2 anchor(-15.0f + 1.0f * i, 5.0f);
+			jd.Initialize(prevBody, body, anchor);
+			world->CreateJoint(&jd);
+			
+			prevBody = body;
+		}
+	}
+	
+	{
+		b2PolygonShape shape;
+		shape.SetAsBox(0.5f, 0.125f);
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 20.0f;
+		
+		b2WeldJointDef jd;
+		
+		b2Body* prevBody = ground;
+		for (int32 i = 0; i < e_count; ++i)
+		{
+			b2BodyDef bd;
+			bd.type = b2_dynamicBody;
+			bd.position.Set(-14.5f + 1.0f * i, 15.0f);
+			bd.inertiaScale = 10.0f;
+			b2Body* body = world->CreateBody(&bd);
+			body->CreateFixture(&fd);
+			
+			b2Vec2 anchor(-15.0f + 1.0f * i, 15.0f);
+			jd.Initialize(prevBody, body, anchor);
+			world->CreateJoint(&jd);
+			
+			prevBody = body;
+		}
+	}
+	
+	{
+		b2PolygonShape shape;
+		shape.SetAsBox(0.5f, 0.125f);
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 20.0f;
+		
+		b2WeldJointDef jd;
+		
+		b2Body* prevBody = ground;
+		for (int32 i = 0; i < e_count; ++i)
+		{
+			b2BodyDef bd;
+			bd.type = b2_dynamicBody;
+			bd.position.Set(-4.5f + 1.0f * i, 5.0f);
+			b2Body* body = world->CreateBody(&bd);
+			body->CreateFixture(&fd);
+			
+			if (i > 0)
+			{
+				b2Vec2 anchor(-5.0f + 1.0f * i, 5.0f);
+				jd.Initialize(prevBody, body, anchor);
+				world->CreateJoint(&jd);
+			}
+			
+			prevBody = body;
+		}
+	}
+	
+	{
+		b2PolygonShape shape;
+		shape.SetAsBox(0.5f, 0.125f);
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 20.0f;
+		
+		b2WeldJointDef jd;
+		
+		b2Body* prevBody = ground;
+		for (int32 i = 0; i < e_count; ++i)
+		{
+			b2BodyDef bd;
+			bd.type = b2_dynamicBody;
+			bd.position.Set(5.5f + 1.0f * i, 10.0f);
+			bd.inertiaScale = 10.0f;
+			b2Body* body = world->CreateBody(&bd);
+			body->CreateFixture(&fd);
+			
+			if (i > 0)
+			{
+				b2Vec2 anchor(5.0f + 1.0f * i, 10.0f);
+				jd.Initialize(prevBody, body, anchor);
+				world->CreateJoint(&jd);
+			}
+			
+			prevBody = body;
+		}
+	}
+	
+	for (int32 i = 0; i < 2; ++i)
+	{
+		b2Vec2 vertices[3];
+		vertices[0].Set(-0.5f, 0.0f);
+		vertices[1].Set(0.5f, 0.0f);
+		vertices[2].Set(0.0f, 1.5f);
+		
+		b2PolygonShape shape;
+		shape.Set(vertices, 3);
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 1.0f;
+		
+		b2BodyDef bd;
+		bd.type = b2_dynamicBody;
+		bd.position.Set(-8.0f + 8.0f * i, 12.0f);
+		b2Body* body = world->CreateBody(&bd);
+		body->CreateFixture(&fd);
+	}
+	
+	for (int32 i = 0; i < 2; ++i)
+	{
+		b2CircleShape shape;
+		shape.m_radius = 0.5f;
+		
+		b2FixtureDef fd;
+		fd.shape = &shape;
+		fd.density = 1.0f;
+		
+		b2BodyDef bd;
+		bd.type = b2_dynamicBody;
+		bd.position.Set(-6.0f + 6.0f * i, 10.0f);
+		b2Body* body = world->CreateBody(&bd);
+		body->CreateFixture(&fd);
+	}
+}
+
+-(void)drawBridge {
+	
+	Bridge *bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
+	NSMutableArray* edges = [bridge getEdges];
+	NSMutableArray* vertices = [bridge getVertices];
+	NSLog([edges description]);
+	
+	[self addEdgeBodies];
+	[self addPiles];
+	/*
+	for (int i=0; i< [vertices count]; i=i++) {
+		Vertex *vertex = [vertices objectAtIndex:i];
+		
+		[self addBody:vertex];
+	}
+	*/
+	
+	
+}
 
 
 -(void)buildPhysicalBody: (Edge *) edge{
@@ -184,9 +471,9 @@ CCSprite* play;
 			CGPoint start =  CGPointMake( 50 , 50);
 			CGPoint end =  CGPointMake( 100 , 50);
 			CGPoint end2 =  CGPointMake( 250 , 100);
-			[bridge addEdge:start :end :@"wood"];
-			[bridge addEdge:end :end2 :@"wood"];
-			[bridge addEdge:end2 :ccp(300,200) :@"wood"];
+			//[bridge addEdge:start :end :@"wood"];
+			[bridge addEdge:end :end2 :@"steel"];
+			[bridge addEdge:end :ccp(300,200) :@"wood"];
 
 			NSLog([bridge description]);
 		}
@@ -206,19 +493,19 @@ CCSprite* play;
 		[self addChild: play];
 		
 		//land
-		[self addChild:landRight];
-		[self addChild:landLeft];
+		[self addChild:landRight z:-1];
+		[self addChild:landLeft z:-1];
 	
 		CCSprite* background = [CCSprite spriteWithFile:@"background-blue.png"];
 		background.position =ccp(480.f/2,320.f/2); 
-		[self addChild:background z:-1];
+		[self addChild:background z:-2];
 		
 		//box2d
 		
 		//build boundary in box2d
 		[self buildWorld ];
 		
-		[self playBridge];
+		[self drawBridge];
 		
 		
 		
@@ -252,23 +539,7 @@ CCSprite* play;
 
 
 
--(void)drawBridge {
 
-	Bridge *bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
-	NSMutableArray* edges = [bridge getEdges];
-	NSLog([edges description]);
-	
-	for (int i=0; i< [edges count]; i=i++) {
-		Edge *edge = [edges objectAtIndex:i];
-		
-		CGPoint start = edge.start;
-		CGPoint end = edge.end;
-		NSString *material = edge.material;
-	}
-
-	
-
-}
 
 -(void)pause{
 	[[CCDirector sharedDirector] popScene];
