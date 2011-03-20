@@ -27,5 +27,15 @@
 	return self;
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+	
+	Edge *otherEdge = (Edge *)other;
+    return CGPointEqualToPoint(self.start , otherEdge.start) && CGPointEqualToPoint(self.end, otherEdge.end) && [self.material isEqual: otherEdge.material];
+}
+
 
 @end

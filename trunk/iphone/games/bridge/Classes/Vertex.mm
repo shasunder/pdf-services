@@ -13,6 +13,8 @@
 
 @synthesize edges;
 @synthesize point;
+@synthesize body;
+@synthesize image;
 
 - (id)init{
 	
