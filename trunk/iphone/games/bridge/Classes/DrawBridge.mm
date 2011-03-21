@@ -36,7 +36,7 @@
 	}
 	
 	//add piles
-	glLineWidth(10);
+	glLineWidth(0);
 	glColor4ub(184,138,0,255);
 	
 	NSMutableArray *piles = [bridge getPiles];
@@ -44,7 +44,7 @@
 		//NSLog(@"Adding pile");
 		Vertex *pile = [piles objectAtIndex:i];
 		
-		ccDrawCircle(pile.point, 10.0f, CC_DEGREES_TO_RADIANS(90), 10, NO);
+		ccDrawCircle(pile.point, 10.0f, CC_DEGREES_TO_RADIANS(90), 20, NO);
 		
 	}
 	
