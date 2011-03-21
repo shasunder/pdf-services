@@ -45,18 +45,20 @@ CCSprite* startPlay;
 		zoom.position =  CGPointMake( 450 , 150);
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
-		landLeft.position =  CGPointMake( 40 , 50);
+		landLeft.position =  CGPointMake( 50 , 50);
 		
 		CCSprite* landRight = [CCSprite spriteWithFile:@"land-right.png" ];
-		landRight.position =  CGPointMake( 420 , 55);
+		landRight.position =  CGPointMake( 430 , 55);
 		
 		
 		startPlay = [CCSprite spriteWithFile:@"play.png" ];
 		startPlay.position =  CGPointMake( 50 , 280);
 		
+		//background
+		CCSprite* background = [CCSprite spriteWithFile:@"background-blue.png"];
+		background.position =ccp(480.f/2,320.f/2); 
+		[self addChild:background z:-1];
 		
-       // self.background = [tileMap layerNamed:@"bridge-grid-background.png"];
-        
 		//material
 		[self addChild: steel];
 		[self addChild: wood];
@@ -65,15 +67,11 @@ CCSprite* startPlay;
 		[self addChild: startPlay];
 		
 		//land
-		[self addChild:landRight];
-		[self addChild:landLeft];
+		[self addChild:landRight z:-1];
+		[self addChild:landLeft z:-1];
 		
 		[self selectButton:wood];
-
 		
-		CCSprite* background = [CCSprite spriteWithFile:@"background-blue.png"];
-		background.position =ccp(480.f/2,320.f/2); 
-		[self addChild:background z:-1];
 		
 	}
 	

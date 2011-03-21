@@ -15,6 +15,7 @@
 @synthesize point;
 @synthesize body;
 @synthesize image;
+@synthesize isPile;
 
 - (id)init{
 	

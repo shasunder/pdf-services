@@ -15,5 +15,6 @@
 
 + (CGRect)getRectangle:(CCSprite *) sprite;
 + (BOOL)containsTouchLocation:(UITouch *)touch : (CCSprite *) sprite;
++(CGPoint)convetToGridPoint:(CGPoint )location;
 
 @end

@@ -7,28 +7,26 @@
 //
 
 #import "Edge.h"
-#import "Pile.h"
+
 #import "Vertex.h"
 @interface Bridge : NSObject {
 	
 	NSMutableArray *edges;
-	NSMutableArray *vertices;
 	NSMutableArray *piles;
+	NSMutableArray *vertices;
 }
 
-@property (nonatomic, retain) NSMutableArray *edges;
 @property (nonatomic, retain) NSMutableArray *piles;
 @property (nonatomic, retain) NSMutableArray *vertices;
+@property (nonatomic, retain) NSMutableArray *edges;
 
 //Edge
 -(Edge *)addEdge:(CGPoint) start: (CGPoint) end;
--(BOOL)containsEdge:(Edge *)Edge;
--(void)removeEdge:(Edge *)Edge;
--(void)removeEdges:(CGPoint) start: (CGPoint) end;
 -(NSMutableArray *) getEdges;
+-(void)removeEdges:(CGPoint) start: (CGPoint) end;
 
 //piles
--(Pile *)addPile:(CGPoint) location;
+-(void)addPile:(CGPoint) location;
 -(void)removePile:(CGPoint) location;
 -(NSMutableArray *)getPiles;
 

@@ -16,6 +16,7 @@
 
 #define KEY_ACTION @"action"
 #define TEST_MODE NO
+#define  SNAP_TO_GRID_PIXEL 40;
 
 @interface Constants
 

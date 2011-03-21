@@ -13,7 +13,7 @@
 
 CCSprite* play;
 NSMutableArray *tempEdges;
-
+DrawBridge *playBridgeDrawer;
 
 - (void)tick:(ccTime) dt {
 	
@@ -79,6 +79,9 @@ NSMutableArray *tempEdges;
 		
 		//build boundary in box2d
 		[self buildWorld ];
+		
+		playBridgeDrawer = [DrawBridge node];
+		[self addChild:playBridgeDrawer];
 		
 		[self drawBridge];
 		
@@ -263,59 +266,54 @@ NSMutableArray *tempEdges;
 
 -(void) addPiles{
 	//TODO: Get pile from bridge and set its body. 
-	{ //pile 1
-		b2CircleShape shape;
-		shape.m_radius = 0.5f;
+	NSMutableArray *piles =[bridge getPiles];
+
+	for (int i=0; i<[piles count]; i++) {
+			Vertex *pile = [piles objectAtIndex:i];
 		
-		b2FixtureDef fd;
-		fd.shape = &shape;
-		fd.density = 1.0f;
-		
-		b2BodyDef bd;
-		//bd.type = b2_dynamicBody;
-		bd.position.Set(6.0f + 7.0f, 2.0f);
-		b2Body* pileBody = world->CreateBody(&bd);
-		pileBody->CreateFixture(&fd);
-		
-		//create first vertex joints :fix this
-		if(bridge.vertices!=NULL &&  [bridge.vertices count] >0){
-			Vertex *firstVertex = [bridge.vertices objectAtIndex:0];
-			b2WeldJointDef jd; //b2WeldJointDef
+			b2CircleShape shape;
+			shape.m_radius = 0.5f;
 			
-			b2Vec2 anchor = b2Vec2(firstVertex.body->GetPosition().x  , firstVertex.body->GetPosition().y );
-			jd.Initialize(pileBody,firstVertex.body, anchor);
+			b2FixtureDef fd;
+			fd.shape = &shape;
+			fd.density = 1.0f;
 			
-			
-			b2Joint *joint= world->CreateJoint(&jd);
-		}
+			b2BodyDef bd;
+			//bd.type = b2_dynamicBody;
+			float xPos = pile.point.x;
+			float yPos = pile.point.y;
 		
+			bd.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
+			b2Body* pileBody = world->CreateBody(&bd);
+			pileBody->CreateFixture(&fd);
+			
+			//join pile with vertex at this point
+			NSMutableArray *vertices = bridge.vertices;
+			if(vertices!=NULL &&  [bridge.vertices count] >0){
+		
+			for (int i=0; i< [vertices count]; i++) {
+				Vertex *v = [vertices objectAtIndex:i];
+				
+				  NSLog([NSString stringWithFormat:@" matching v: (%f ,%f )  p :(%f ,%f)",v.point.x, v.point.y , pile.point.x, pile.point.y]);
+				  
+				  if(v.point.x == pile.point.x &&  v.point.y == pile.point.y  ){
+					NSLog(@"Joining pile and vertex");
+					b2WeldJointDef jd; //b2WeldJointDef
+					
+					jd.Initialize(pileBody, v.body, v.body->GetPosition());
+					
+					b2Joint *joint= world->CreateJoint(&jd);
+					
+			     	}
+				
+			 }
+			}
+		
+			
+			
+				
 	}
-	{ //pile 2
-		b2CircleShape shape;
-		shape.m_radius = 0.5f;
-		
-		b2FixtureDef fd;
-		fd.shape = &shape;
-		fd.density = 1.0f;
-		
-		b2BodyDef bd;
-		//bd.type = b2_dynamicBody;
-		bd.position.Set(1.0f, 2.0f);
-		b2Body* body = world->CreateBody(&bd);
-		body->CreateFixture(&fd);
-		
-		//create first vertex joints :fix this
-		if(bridge.vertices!=NULL &&  [bridge.vertices count] >1){
-			Vertex *lastVertex = [bridge.vertices objectAtIndex:[bridge.vertices count] - 1];
-			b2WeldJointDef jd; //b2WeldJointDef
-			
-			b2Vec2 anchor = b2Vec2(lastVertex.body->GetPosition().x  , lastVertex.body->GetPosition().y );
-			jd.Initialize(body,lastVertex.body, anchor);
-			
-			
-			b2Joint *joint= world->CreateJoint(&jd);
-		}
-	}
+	
 	
 
 }
