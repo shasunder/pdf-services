@@ -55,10 +55,10 @@ DrawBridge *playBridgeDrawer;
 		
 		
 		CCSprite* landLeft = [CCSprite spriteWithFile:@"land-left.png" ];
-		landLeft.position =  CGPointMake( 40 , 50);
+		landLeft.position =  CGPointMake( 50 , 50);
 		
 		CCSprite* landRight = [CCSprite spriteWithFile:@"land-right.png" ];
-		landRight.position =  CGPointMake( 420 , 55);
+		landRight.position =  CGPointMake( 430 , 55);
 		
 		
 		play = [CCSprite spriteWithFile:@"play.png" ];
@@ -157,7 +157,7 @@ DrawBridge *playBridgeDrawer;
 
 -(void)addVertexBody:(Vertex *) vertex{
 
-	{ //vertex
+	 //vertex
 		float xPos = vertex.point.x;
 		float yPos = vertex.point.y;
 		b2CircleShape shape;
@@ -174,8 +174,91 @@ DrawBridge *playBridgeDrawer;
 		body->CreateFixture(&fd);
 		
 		vertex.body = body;
-	}
+	
 }
+
+-(void)addVehicle:(CGPoint)startPt{
+	float xPos = startPt.x;
+	float yPos = startPt.y;
+	b2CircleShape shape;
+	shape.m_radius = 0.3f;
+	
+	b2FixtureDef fd;
+	fd.shape = &shape;
+	fd.density = 1.0f;
+	
+	b2BodyDef bd;
+	bd.type = b2_dynamicBody;
+	bd.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
+	
+	b2Body* wheel1 = world->CreateBody(&bd);
+	wheel1->CreateFixture(&fd);
+	
+	b2BodyDef bd2;
+	bd2.type = b2_dynamicBody;
+	bd2.position.Set( (xPos+50)/PTM_RATIO, yPos/PTM_RATIO);
+	
+	b2Body* wheel2 = world->CreateBody(&bd2);
+	wheel2->CreateFixture(&fd);
+	
+	
+	b2RevoluteJointDef jointDef;
+	
+	jointDef.Initialize(wheel2, wheel1, wheel2->GetWorldCenter());
+	jointDef.maxMotorTorque = 10.0f;
+	jointDef.enableMotor = true;
+	jointDef.motorSpeed = 20.0f;
+	world->CreateJoint(&jointDef);
+	
+}
+
+-(void)addGround:(CGPoint) startPt: (CGPoint) endpt{
+	
+	
+	//length of the stick body
+	float len = abs(ccpDistance(startPt, endpt))/PTM_RATIO;
+	
+	//to calculate the angle and position of the body.
+	float dx = endpt.x-startPt.x;
+	float dy = endpt.y-startPt.y;
+	
+	//position of the body
+	float xPos = startPt.x+dx/2.0f;
+	float yPos = startPt.y+dy/2.0f;
+	
+	//width of the body.
+	float width = 10.0f/PTM_RATIO;
+	
+	b2BodyDef bodyDef;
+	bodyDef.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
+	bodyDef.angle = atan(dy/dx);
+	CCSprite *sp = [CCSprite spriteWithFile:@"material-wood.png" rect:CGRectMake(0, 0, 12, 12)];
+	
+	//TODO: fix shape
+	[self addChild:sp z:1 ];
+	
+	bodyDef.userData = sp;
+	//bodyDef.type = b2_dynamicBody;
+	
+	b2Body* body = world->CreateBody(&bodyDef);
+	
+	b2PolygonShape shape;
+	b2Vec2 rectangle1_vertices[4];
+	rectangle1_vertices[0].Set(-len/2, -width/2);
+	rectangle1_vertices[1].Set(len/2, -width/2);
+	rectangle1_vertices[2].Set(len/2, width/2);
+	rectangle1_vertices[3].Set(-len/2, width/2);
+	shape.Set(rectangle1_vertices, 4);
+	
+	b2FixtureDef fd;
+	fd.shape = &shape;
+	fd.density = 1.0f;
+	fd.friction = 0.300000f;
+	fd.restitution = 0.600000f;
+	body->CreateFixture(&fd);
+	
+}
+
 
 -(void)addEdgeBodies:(Vertex *) vertex{
 	
@@ -344,6 +427,10 @@ DrawBridge *playBridgeDrawer;
 	
 	NSLog(@"Loading piles");
 	[self addPiles];
+	
+	[self addGround:ccp(0,90) :ccp(100,90)];
+	[self addGround:ccp(400,90) :ccp(400 + 100,90)];
+	[self addVehicle:ccp(0,140)];
 	
 }
 
