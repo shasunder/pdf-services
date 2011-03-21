@@ -1,9 +1,8 @@
 
 #import "bridgeAppDelegate.h"
 #import "cocos2d.h"
-#import "EditorScene.h"
-#import "PlayScene.h"
-#import "Constants.h"
+#import "BridgeMain.h"
+
 @implementation bridgeAppDelegate
 
 @synthesize window;
@@ -23,14 +22,8 @@
 	[CCTexture2D setDefaultAlphaPixelFormat:kTexture2DPixelFormat_RGBA8888];	// Default texture format for PNG/BMP/TIFF/JPEG/GIF images
 	
 	NSLog(@"Starting bridge builder scene");
-	
-	if(TEST_MODE){
-		PlayScene *scene = [PlayScene scene]; //auto release
-		[[CCDirector sharedDirector] runWithScene:  scene];
-	}else{
-		EditorScene *scene = [EditorScene scene]; //auto release
-		[[CCDirector sharedDirector] runWithScene:  scene];
-	}
+	[[[BridgeMain alloc] init] start ];
+
 }
 
 

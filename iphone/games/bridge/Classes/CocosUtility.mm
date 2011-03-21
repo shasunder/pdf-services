@@ -21,4 +21,12 @@
 	return CGRectContainsPoint([self getRectangle:sprite], [sprite convertTouchToNodeSpaceAR:touch]);
 }
 
++(CGPoint)convetToGridPoint:(CGPoint )location{
+	location = [[CCDirector sharedDirector] convertToGL:location];	
+	int snapToGrid =40;
+	location.x = round(location.x / snapToGrid) * snapToGrid;
+	location.y = round(location.y / snapToGrid) * snapToGrid;
+	return location;
+}
+
 @end

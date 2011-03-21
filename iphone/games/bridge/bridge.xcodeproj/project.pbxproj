@@ -303,6 +303,7 @@
 		CCAE657D131C3CA7007F85A5 /* land-right.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE657C131C3CA7007F85A5 /* land-right.png */; };
 		CCAE6585131C3D59007F85A5 /* land-left.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAE6584131C3D59007F85A5 /* land-left.png */; };
 		CCAE65CB131C3F3F007F85A5 /* wood2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCAE65CA131C3F3F007F85A5 /* wood2.jpg */; };
+		CCAF12D21337D403002581CD /* BridgeMain.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCAF12D11337D403002581CD /* BridgeMain.mm */; };
 		CCAF61CB1328188A0095B567 /* erase.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61CA1328188A0095B567 /* erase.png */; };
 		CCAF61D0132818D80095B567 /* zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61CF132818D80095B567 /* zoom.png */; };
 		CCAF61D313281B190095B567 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CCAF61D213281B190095B567 /* play.png */; };
@@ -316,7 +317,6 @@
 		CCE10F7913241B6E00E1A6BC /* Bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F7813241B6E00E1A6BC /* Bridge.mm */; };
 		CCE10F7C13241DFF00E1A6BC /* OrderedDictionary.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F7A13241DFF00E1A6BC /* OrderedDictionary.mm */; };
 		CCE10F811324456700E1A6BC /* Edge.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F801324456700E1A6BC /* Edge.mm */; };
-		CCE10F8C132446E900E1A6BC /* Pile.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10F8B132446E900E1A6BC /* Pile.mm */; };
 		CCE10FBD1324499800E1A6BC /* BridgeContext.mm in Sources */ = {isa = PBXBuildFile; fileRef = CCE10FBC1324499800E1A6BC /* BridgeContext.mm */; };
 		CCE464E2132036BE0072DE4D /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE464DF132036BE0072DE4D /* meta_tiles.png */; };
 		CCE464E3132036BE0072DE4D /* TileMap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = CCE464E0132036BE0072DE4D /* TileMap.tmx */; };
@@ -640,6 +640,8 @@
 		CCAE657C131C3CA7007F85A5 /* land-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "land-right.png"; sourceTree = SOURCE_ROOT; };
 		CCAE6584131C3D59007F85A5 /* land-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "land-left.png"; sourceTree = SOURCE_ROOT; };
 		CCAE65CA131C3F3F007F85A5 /* wood2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wood2.jpg; sourceTree = SOURCE_ROOT; };
+		CCAF12D01337D403002581CD /* BridgeMain.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BridgeMain.h; sourceTree = "<group>"; };
+		CCAF12D11337D403002581CD /* BridgeMain.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = BridgeMain.mm; sourceTree = "<group>"; };
 		CCAF61CA1328188A0095B567 /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
 		CCAF61CF132818D80095B567 /* zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoom.png; sourceTree = "<group>"; };
 		CCAF61D213281B190095B567 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -663,8 +665,6 @@
 		CCE10F7E13241F2100E1A6BC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CCE10F7F1324456700E1A6BC /* Edge.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Edge.h; sourceTree = "<group>"; };
 		CCE10F801324456700E1A6BC /* Edge.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Edge.mm; sourceTree = "<group>"; };
-		CCE10F8A132446E900E1A6BC /* Pile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Pile.h; sourceTree = "<group>"; };
-		CCE10F8B132446E900E1A6BC /* Pile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Pile.mm; sourceTree = "<group>"; };
 		CCE10FBB1324499800E1A6BC /* BridgeContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgeContext.h; sourceTree = "<group>"; };
 		CCE10FBC1324499800E1A6BC /* BridgeContext.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BridgeContext.mm; sourceTree = "<group>"; };
 		CCE464DF132036BE0072DE4D /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
@@ -773,6 +773,8 @@
 				CC1AD672131AC91E00E69E5D /* common */,
 				CC1AD671131AC91100E69E5D /* model */,
 				1F3B9A2C0EF2145700286867 /* bridgeAppDelegate.h */,
+				CCAF12D01337D403002581CD /* BridgeMain.h */,
+				CCAF12D11337D403002581CD /* BridgeMain.mm */,
 				1F3B9A2B0EF2145700286867 /* bridgeAppDelegate.mm */,
 			);
 			path = Classes;
@@ -1213,8 +1215,6 @@
 				CCE10F7813241B6E00E1A6BC /* Bridge.mm */,
 				CCE10F7F1324456700E1A6BC /* Edge.h */,
 				CCE10F801324456700E1A6BC /* Edge.mm */,
-				CCE10F8A132446E900E1A6BC /* Pile.h */,
-				CCE10F8B132446E900E1A6BC /* Pile.mm */,
 				CC5335FE1331715100BE718F /* Vertex.h */,
 				CC5335FF1331715100BE718F /* Vertex.mm */,
 			);
@@ -1549,12 +1549,12 @@
 				CCE10F7913241B6E00E1A6BC /* Bridge.mm in Sources */,
 				CCE10F7C13241DFF00E1A6BC /* OrderedDictionary.mm in Sources */,
 				CCE10F811324456700E1A6BC /* Edge.mm in Sources */,
-				CCE10F8C132446E900E1A6BC /* Pile.mm in Sources */,
 				CCE10FBD1324499800E1A6BC /* BridgeContext.mm in Sources */,
 				CCAF622A132826DE0095B567 /* PlayViewLayer.mm in Sources */,
 				CCAF622D132827940095B567 /* PlayScene.mm in Sources */,
 				CC5336001331715100BE718F /* Vertex.mm in Sources */,
 				CCD7065D1336BD82007D7E0F /* TestJoints.mm in Sources */,
+				CCAF12D21337D403002581CD /* BridgeMain.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
