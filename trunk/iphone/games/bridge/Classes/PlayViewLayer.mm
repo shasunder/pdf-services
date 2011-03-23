@@ -15,23 +15,7 @@ CCSprite* play;
 NSMutableArray *tempEdges;
 DrawBridge *playBridgeDrawer;
 
-- (void)tick:(ccTime) dt {
-	
-	int32 velocityIterations = 8;
-	int32 positionIterations = 1;
-	
-	world->Step(dt, velocityIterations, positionIterations);
-	
-    for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) {    
-        if (b->GetUserData() != NULL) {
-            CCSprite *ballData = (CCSprite *)b->GetUserData();
-            ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
-                                    b->GetPosition().y * PTM_RATIO);
-            ballData.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
-        }        
-    }
-	
-}
+
 
 
 -(id) init
@@ -43,12 +27,13 @@ DrawBridge *playBridgeDrawer;
 		bridge= [[BridgeContext instance] objectForKey: KEY_BRIDGE];
 		
 		if(TEST_MODE){
-			CGPoint start =  CGPointMake( 50 , 50);
-			CGPoint end =  CGPointMake( 100 , 50);
-			CGPoint end2 =  CGPointMake( 250 , 100);
-			//[bridge addEdge:start :end :@"wood"];
-			[bridge addEdge:end :end2 :@"steel"];
-			[bridge addEdge:end :ccp(300,200) :@"wood"];
+			//Remember to maintain distance b/n points >= PTM_RATIO
+			CGPoint start =  CGPointMake( 80 , 80);
+			CGPoint end =  CGPointMake( 182 , 80);
+			CGPoint end2 =  CGPointMake( 400 , 80);
+			[bridge addEdge:start :end :@"wood"];
+			//[bridge addEdge:end :end2 :@"steel"];
+			[bridge addEdge:end :end2 :@"wood"];
 			
 			NSLog([bridge description]);
 		}
@@ -81,7 +66,7 @@ DrawBridge *playBridgeDrawer;
 		[self buildWorld ];
 		
 		playBridgeDrawer = [DrawBridge node];
-		[self addChild:playBridgeDrawer];
+		//[self addChild:playBridgeDrawer];
 		
 		[self drawBridge];
 		
@@ -92,6 +77,23 @@ DrawBridge *playBridgeDrawer;
 	return self;
 }
 
+- (void)tick:(ccTime) dt {
+	
+	int32 velocityIterations = 8;
+	int32 positionIterations = 1;
+	
+	world->Step(dt, velocityIterations, positionIterations);
+	
+    for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) {    
+        if (b->GetUserData() != NULL) {
+            CCSprite *ballData = (CCSprite *)b->GetUserData();
+            ballData.position = ccp(b->GetPosition().x * PTM_RATIO,
+                                    b->GetPosition().y * PTM_RATIO);
+            ballData.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+        }        
+    }
+	
+}
 
 
 -(void) draw
@@ -131,25 +133,6 @@ DrawBridge *playBridgeDrawer;
 	//		flags += b2DebugDraw::e_centerOfMassBit;
 	m_debugDraw->SetFlags(flags);		
 	
-	CGSize winSize = [CCDirector sharedDirector].winSize;
-	
-	// Create edges around the entire screen
-	b2BodyDef groundBodyDef;
-	groundBodyDef.position.Set(0,0);
-	b2Body *groundBody = world->CreateBody(&groundBodyDef);
-	b2PolygonShape groundBox;
-	b2FixtureDef boxShapeDef;
-	boxShapeDef.shape = &groundBox;
-	groundBox.SetAsEdge(b2Vec2(0,0), b2Vec2(winSize.width/PTM_RATIO, 0));
-	groundBody->CreateFixture(&boxShapeDef);
-	groundBox.SetAsEdge(b2Vec2(0,0), b2Vec2(0, winSize.height/PTM_RATIO));
-	groundBody->CreateFixture(&boxShapeDef);
-	groundBox.SetAsEdge(b2Vec2(0, winSize.height/PTM_RATIO), 
-						b2Vec2(winSize.width/PTM_RATIO, winSize.height/PTM_RATIO));
-	groundBody->CreateFixture(&boxShapeDef);
-	groundBox.SetAsEdge(b2Vec2(winSize.width/PTM_RATIO, 
-							   winSize.height/PTM_RATIO), b2Vec2(winSize.width/PTM_RATIO, 0));
-	groundBody->CreateFixture(&boxShapeDef);
 	
 	[self schedule:@selector(tick:)];
 	
@@ -161,11 +144,11 @@ DrawBridge *playBridgeDrawer;
 		float xPos = vertex.point.x;
 		float yPos = vertex.point.y;
 		b2CircleShape shape;
-		shape.m_radius = 0.1f;
+		shape.m_radius = 0.0f;
 		
 		b2FixtureDef fd;
 		fd.shape = &shape;
-		fd.density = 1.0f;
+		fd.density = 0.0f;
 		
 		b2BodyDef bd;
 		bd.type = b2_dynamicBody;
@@ -181,11 +164,11 @@ DrawBridge *playBridgeDrawer;
 	float xPos = startPt.x;
 	float yPos = startPt.y;
 	b2CircleShape shape;
-	shape.m_radius = 0.3f;
+	shape.m_radius = .5f;
 	
 	b2FixtureDef fd;
 	fd.shape = &shape;
-	fd.density = 1.0f;
+	fd.density = 5.5f;
 	
 	b2BodyDef bd;
 	bd.type = b2_dynamicBody;
@@ -204,10 +187,10 @@ DrawBridge *playBridgeDrawer;
 	
 	b2RevoluteJointDef jointDef;
 	
-	jointDef.Initialize(wheel2, wheel1, wheel2->GetWorldCenter());
-	jointDef.maxMotorTorque = 10.0f;
+	jointDef.Initialize( wheel2,wheel1, wheel2->GetWorldCenter());
+	jointDef.maxMotorTorque = 20.0f;
 	jointDef.enableMotor = true;
-	jointDef.motorSpeed = 20.0f;
+	jointDef.motorSpeed = 40.0f;
 	world->CreateJoint(&jointDef);
 	
 }
@@ -227,7 +210,7 @@ DrawBridge *playBridgeDrawer;
 	float yPos = startPt.y+dy/2.0f;
 	
 	//width of the body.
-	float width = 10.0f/PTM_RATIO;
+	float width = 1.0f/PTM_RATIO;
 	
 	b2BodyDef bodyDef;
 	bodyDef.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
@@ -265,22 +248,29 @@ DrawBridge *playBridgeDrawer;
 	NSMutableArray *vEdges = vertex.edges ;
 	
 	//create edge bodies
-
+	Edge *prevEdge =NULL;
+	NSLog(@"Adding vertex edges");
 	for (int i=0; i< [vEdges count]; i++) {
 		Edge *edge = [vEdges objectAtIndex:i];
-
+		NSLog(@"Adding edge body ");
 		if( ! [tempEdges containsObject:edge]){
-			
 		
 		[tempEdges addObject:edge];
 		
 		
 		CGPoint startPt = edge.start ;
 		CGPoint endpt = edge.end ;
-		
+			
 		//length of the stick body
-		float len = abs(ccpDistance(startPt, endpt))/PTM_RATIO;
 		
+		float len = abs(ccpDistance(startPt, endpt))/PTM_RATIO;
+		NSLog([NSString stringWithFormat:@"Adding edge : %f,%f %f,%f  lenght: %f",startPt.x,startPt.y,endpt.x, endpt.y,len]);
+
+		if(len <=0){
+				NSLog(@"Skipping polygon as length <= 0");
+				continue;
+		}
+			
 		//to calculate the angle and position of the body.
 		float dx = endpt.x-startPt.x;
 		float dy = endpt.y-startPt.y;
@@ -290,11 +280,13 @@ DrawBridge *playBridgeDrawer;
 		float yPos = startPt.y+dy/2.0f;
 		
 		//width of the body.
-		float width = 10.0f/PTM_RATIO;
+		float width = 1.0f/PTM_RATIO;
 		
 		b2BodyDef bodyDef;
 		bodyDef.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
 		bodyDef.angle = atan(dy/dx);
+		
+		NSLog([NSString stringWithFormat:@"Set angle %f",bodyDef.angle]);
 		CCSprite *sp = [CCSprite spriteWithFile:@"material-wood.png" rect:CGRectMake(0, 0, 12, 12)];
 		
 	    //TODO: fix shape
@@ -305,6 +297,7 @@ DrawBridge *playBridgeDrawer;
 		
 		b2Body* body = world->CreateBody(&bodyDef);
 		
+		NSLog([NSString stringWithFormat:@"Creating polygon lenght : %f  width : %f",len, width]);
 		b2PolygonShape shape;
 		b2Vec2 rectangle1_vertices[4];
 		rectangle1_vertices[0].Set(-len/2, -width/2);
@@ -325,19 +318,30 @@ DrawBridge *playBridgeDrawer;
 		}
 		
 		//create edge joints
-		{
+		if(prevEdge!=NULL){
+			NSLog(@"Welding edges");
+			/*b2WeldJointDef jd; //b2WeldJointDef
+			//NSLog([NSString stringWithFormat:@"Joint : %f %f",prevEdge.position.x , firstEdgeBody.position.y]);
 			
-			b2WeldJointDef jd; //b2WeldJointDef
-			//NSLog([NSString stringWithFormat:@"Joint : %f %f",firstEdgeBody->GetPosition().x , firstEdgeBody->GetPosition().y]);
-			
-			b2Vec2 anchor = b2Vec2(vertex.body->GetPosition().x  , vertex.body->GetPosition().y );
-			jd.Initialize(vertex.body, edge.body, anchor);
-			
+			b2Vec2 anchor = vertex.body->GetPosition();
+			jd.Initialize(prevEdge.body, edge.body, anchor);
 			
 			b2Joint *joint= world->CreateJoint(&jd);
+			NSLog(@"Welded edges");
+			 */
+			
+			b2RevoluteJointDef jointDef;
+			b2Vec2 anchor = vertex.body->GetPosition();
+			
+			jointDef.Initialize(prevEdge.body, edge.body, anchor);
+			jointDef.maxMotorTorque = 1.0f;
+			jointDef.enableMotor = false;
+			jointDef.motorSpeed = 0.0f;
+			world->CreateJoint(&jointDef);
 		}
 		
-		
+		prevEdge = edge;
+
 	}
 	
 	
@@ -355,7 +359,7 @@ DrawBridge *playBridgeDrawer;
 			Vertex *pile = [piles objectAtIndex:i];
 		
 			b2CircleShape shape;
-			shape.m_radius = 0.5f;
+			shape.m_radius = 0.2f;
 			
 			b2FixtureDef fd;
 			fd.shape = &shape;
@@ -379,16 +383,23 @@ DrawBridge *playBridgeDrawer;
 				
 				  NSLog([NSString stringWithFormat:@" matching v: (%f ,%f )  p :(%f ,%f)",v.point.x, v.point.y , pile.point.x, pile.point.y]);
 				  
-				  if(v.point.x == pile.point.x &&  v.point.y == pile.point.y  ){
+				NSMutableArray *vEdges = v.edges ;
+				
+				//create edge bodies
+				for (int j=0; j< [vEdges count]; j++) {
+					Edge *e= [vEdges objectAtIndex:j];
+				  if((e.start.x == pile.point.x &&  e.start.y == pile.point.y) || 
+						(e.end.x == pile.point.x &&  e.end.y == pile.point.y ) ){
 					NSLog(@"Joining pile and vertex");
 					b2WeldJointDef jd; //b2WeldJointDef
 					
-					jd.Initialize(pileBody, v.body, v.body->GetPosition());
+					jd.Initialize(pileBody, e.body, e.body->GetPosition());
 					
 					b2Joint *joint= world->CreateJoint(&jd);
+					break;
 					
 			     	}
-				
+				}
 			 }
 			}
 		
@@ -427,10 +438,10 @@ DrawBridge *playBridgeDrawer;
 	
 	NSLog(@"Loading piles");
 	[self addPiles];
-	
-	[self addGround:ccp(0,90) :ccp(100,90)];
-	[self addGround:ccp(400,90) :ccp(400 + 100,90)];
-	[self addVehicle:ccp(0,140)];
+	int groundHeight = 85;
+	[self addGround:ccp(-20,groundHeight) :ccp(90,groundHeight)];
+	[self addGround:ccp(405,groundHeight) :ccp(400 + 90, groundHeight)];
+	[self addVehicle:ccp(20,140)];
 	
 }
 
