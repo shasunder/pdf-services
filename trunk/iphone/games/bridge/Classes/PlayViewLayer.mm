@@ -116,7 +116,7 @@ DrawBridge *playBridgeDrawer;
 
 -(void) buildWorld{
 	// Create a world
-	b2Vec2 gravity = b2Vec2(0.0f, -30.0f);
+	b2Vec2 gravity = b2Vec2(0.0f, -9.8f);
 	bool doSleep = true;
 	world = new b2World(gravity, doSleep);
 	world->SetContinuousPhysics(true);
@@ -167,9 +167,10 @@ DrawBridge *playBridgeDrawer;
 	shape.m_radius = .5f;
 	
 	b2FixtureDef fd;
+	fd.filter.groupIndex = int16(0); 
 	fd.shape = &shape;
 	fd.density = 5.5f;
-	
+	//fd.friction=0.5f;
 	b2BodyDef bd;
 	bd.type = b2_dynamicBody;
 	bd.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
@@ -183,13 +184,14 @@ DrawBridge *playBridgeDrawer;
 	
 	b2Body* wheel2 = world->CreateBody(&bd2);
 	wheel2->CreateFixture(&fd);
-	
+	//wheel2.friction = 0.5f
 	
 	b2RevoluteJointDef jointDef;
 	
 	jointDef.Initialize( wheel2,wheel1, wheel2->GetWorldCenter());
 	jointDef.maxMotorTorque = 20.0f;
 	jointDef.enableMotor = true;
+	
 	jointDef.motorSpeed = 40.0f;
 	world->CreateJoint(&jointDef);
 	
@@ -199,7 +201,7 @@ DrawBridge *playBridgeDrawer;
 	
 	
 	//length of the stick body
-	float len = abs(ccpDistance(startPt, endpt))/PTM_RATIO;
+	float len = (ccpDistance(startPt, endpt))/PTM_RATIO;
 	
 	//to calculate the angle and position of the body.
 	float dx = endpt.x-startPt.x;
@@ -263,7 +265,7 @@ DrawBridge *playBridgeDrawer;
 			
 		//length of the stick body
 		
-		float len = abs(ccpDistance(startPt, endpt))/PTM_RATIO;
+		float len = (ccpDistance(startPt, endpt))/PTM_RATIO;
 		NSLog([NSString stringWithFormat:@"Adding edge : %f,%f %f,%f  lenght: %f",startPt.x,startPt.y,endpt.x, endpt.y,len]);
 
 		if(len <=0){
@@ -280,7 +282,7 @@ DrawBridge *playBridgeDrawer;
 		float yPos = startPt.y+dy/2.0f;
 		
 		//width of the body.
-		float width = 1.0f/PTM_RATIO;
+		float width = 10.0f/PTM_RATIO;
 		
 		b2BodyDef bodyDef;
 		bodyDef.position.Set(xPos/PTM_RATIO, yPos/PTM_RATIO);
@@ -308,6 +310,8 @@ DrawBridge *playBridgeDrawer;
 		
 		b2FixtureDef fd;
 		fd.shape = &shape;
+			if(i%2==0)
+		fd.filter.groupIndex = int16(-1); //make edges overlap
 		fd.density = 1.0f;
 		fd.friction = 0.300000f;
 		fd.restitution = 0.600000f;
@@ -391,11 +395,21 @@ DrawBridge *playBridgeDrawer;
 				  if((e.start.x == pile.point.x &&  e.start.y == pile.point.y) || 
 						(e.end.x == pile.point.x &&  e.end.y == pile.point.y ) ){
 					NSLog(@"Joining pile and vertex");
-					b2WeldJointDef jd; //b2WeldJointDef
+					/*b2WeldJointDef jd; //b2WeldJointDef
 					
 					jd.Initialize(pileBody, e.body, e.body->GetPosition());
 					
-					b2Joint *joint= world->CreateJoint(&jd);
+					b2Joint *joint= world->CreateJoint(&jd);*/
+					  
+					  b2RevoluteJointDef jointDef;
+					  b2Vec2 anchor = pileBody->GetPosition();
+					  
+					  jointDef.Initialize(pileBody, e.body, anchor);
+					  
+					  jointDef.enableMotor = false;
+					  
+					  world->CreateJoint(&jointDef);
+					  
 					break;
 					
 			     	}
