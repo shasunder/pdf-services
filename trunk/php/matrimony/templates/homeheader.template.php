@@ -51,7 +51,7 @@ include("common/common.class.php");
 
 </head>
 
-<body <? if($fname=='index' && !$_SESSION['valid']){ ?>onload="FillReligion('ddlReligion');"<? } ?> >
+<body <? if($fname=='index' && !$_SESSION['valid']){ ?>onload=""<? } ?> >
 <div class="page_main">
 		<div id="fade" class="matri_overlayout" style="border:0px;display:'none';z-index:1000;width:1200px"></div>
 		<!-- Light Box for search starts -->
