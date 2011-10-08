@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Breath Sync</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="imagetoolbar" content="no" />
+
+ 	<script src="scripts/jquery-1.4.min.js"></script>
+  	<script src="scripts/jquery-ui-1.8.min.js"></script>
+  	<script src="scripts/jquery-cookie-1.0.js"></script>
+  	<script src="scripts/glow.js"></script>
+
+
+
+  <script type="text/javascript">
+  	var tabsTopLevelContainerId= '#tabsTopLevel';
+	var cookieName='breath.syncer.xml';
+
+	//do on load
+	$(document).ready(function() {
+		run(); //starts
+	});
+
+	var count=0;
+	var i = 0;
+
+	function run() {
+		//pieces of codes to run, can use switch statement
+		if (i==0){document.getElementById("id1").innerHTML= "<p>Inhale  </p>"; sleep(4000);
+		}
+		if (i==1){document.getElementById("id1").innerHTML= "<p>Hold </p>"; sleep(4000);}
+		if (i==2){document.getElementById("id1").innerHTML= "<p>Exhale </p>"; sleep(4000);}
+		if (i==3){
+					document.getElementById("id1").innerHTML= "<p>Hold </p>";
+					if(count< 4) {
+					 i=-1; count++;
+					 document.getElementById("count").innerHTML= "Breath count : "+ count;
+					 sleep(4000);
+			}else{
+			document.getElementById("id1").innerHTML= "<p>Done </p><a href='javascript:window.location.reload()'>Restart</a>";
+			}
+		} //stops automatically
+
+		i++;
+	}
+
+	function sleep(dur) {
+		t=setTimeout("run()",dur);
+	} //starts flow control again after dur
+
+
+
+
+	function store(){
+		xml=$('#optionsText').val();
+		$.cookie(cookieName,xml);
+	}
+
+   </script>
+</head>
+
+<body>
+
+<div id="container">
+	<div id="main" align="center">
+	<h2> Breath Sync</h2>
+	<br/>
+	<br/>
+	<br/>
+	<h2><div id="count">Breath count : 0</div></h2>
+
+	<font size="8">
+		<div id="id1"></div>
+	</font>
+
+	</div>
+
+</div>
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<b>Note: </b> Just follow the breath count above and get relaxed in 2 minutes. It implements square breathing technique as mentioned in this <a href="http://www.best-self-help-sites.com/breathing-exercise.html"> breathing exercise</a>
+<br/>
+<b>Disclaimer: </b> Right breathing relaxes you, but please do not try if you have breathing problems. I am in
+no way to be held responsible for any problems after using this program. Apply common sense and use it at your own risk.
+<br/>
+
+</body>
+</html>
