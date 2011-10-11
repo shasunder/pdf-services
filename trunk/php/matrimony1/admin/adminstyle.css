@@ -1,0 +1,141 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: arial
+}
+BR {
+	CLEAR: both
+}
+HR {
+	CLEAR: both
+}
+A {
+	TEXT-DECORATION: none
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DIV#body {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL#header {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #0d3850; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; LIST-STYLE-TYPE: none
+}
+UL#header LI {
+	DISPLAY: inline; BACKGROUND: #0d3850; FLOAT: left; HEIGHT: 76px
+}
+UL#header LI#title {
+	DISPLAY: inline; FONT-SIZE: 24px; FLOAT: left; WIDTH: 30%; COLOR: #80d2ff; PADDING-TOP: 20px
+}
+UL#header LI#subtitle {
+	DISPLAY: inline; FONT-SIZE: 24px; FLOAT: left; WIDTH: 20%; COLOR: #ffffff; PADDING-TOP: 20px
+}
+UL#header LI#operation {
+	PADDING-RIGHT: 20px; DISPLAY: inline; PADDING-LEFT: 0px; FONT-SIZE: 70%; BACKGROUND: url(../images/headerleft.gif); FLOAT: right; PADDING-BOTTOM: 0px; WIDTH: 30%; COLOR: #ffffff; PADDING-TOP: 20px
+}
+LI#operation A {
+	COLOR: #ffffff
+}
+DIV.bar {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #517284; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px; HEIGHT: 8px
+}
+DIV#left_top {
+	BACKGROUND: url(../images/navigation.gif); WIDTH: 172px; HEIGHT: 67px
+}
+UL#menu {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; WIDTH: 170px; BORDER-BOTTOM: #dddddd 1px solid; LIST-STYLE-TYPE: none; HEIGHT: 400px
+}
+UL#menu LI IMG {
+	FLOAT: left
+}
+UL#menu LI.menu {
+	CLEAR: both; BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 5px; FONT-WEIGHT: bolder; FONT-SIZE: 100%; BORDER-LEFT: #dddddd 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #dddddd 1px solid; FONT-FAMILY: verdana; HEIGHT: 25px; TEXT-ALIGN: left
+}
+UL#menu LI.menu A {
+	PADDING-TOP: 2px
+}
+UL#menu LI {
+	CLEAR: both
+}
+UL.submenu {
+	WIDTH: 170px; LIST-STYLE-TYPE: none
+}
+UL.submenu LI {
+	CLEAR: both; MARGIN-LEFT: 25px; PADDING-TOP: 2px; HEIGHT: 20px; TEXT-ALIGN: left
+}
+UL.submenu A {
+	FONT-WEIGHT: lighter; FONT-SIZE: 70%; COLOR: #000000; FONT-FAMILY: verdana
+}
+UL.submenu A:hover {
+	FONT-WEIGHT: lighter; FONT-SIZE: 70%; COLOR: #a00000; FONT-FAMILY: verdana
+}
+.headertext {
+	FONT-WEIGHT: bold; COLOR: #2197aa; FONT-FAMILY: verdana
+}
+.headertext11 {
+	FONT-SIZE: 10px; COLOR: #2197aa; FONT-FAMILY: verdana
+}
+UL#footer {
+	BACKGROUND: #0d3850; WIDTH: 100%; LIST-STYLE-TYPE: none
+}
+UL#footer LI {
+	DISPLAY: inline; FONT-SIZE: 70%; BACKGROUND: #0d3850; FLOAT: left; WIDTH: 65%; COLOR: #ffffff; HEIGHT: 50px; TEXT-ALIGN: right
+}
+UL#footer LI#footer_left {
+	BACKGROUND: url(../images/headerleft.gif); FLOAT: right; WIDTH: 35%
+}
+UL#footer LI A:link {
+	COLOR: white
+}
+UL#footer LI A:hover {
+	COLOR: white
+}
+UL#footer LI A:visited {
+	COLOR: white
+}
+.tablehead {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 40px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 4px; COLOR: white; PADDING-TOP: 4px; FONT-FAMILY: verdana; BACKGROUND-COLOR: #517284
+}
+TR.tablehead2 TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 1px; FONT-WEIGHT: bold; FONT-SIZE: 12px; PADDING-BOTTOM: 1px; COLOR: white; PADDING-TOP: 1px; FONT-FAMILY: verdana; BACKGROUND-COLOR: #517284
+}
+.maintbl {
+	BORDER-RIGHT: #517284 1px solid; BORDER-TOP: #517284 1px solid; BORDER-LEFT: #517284 1px solid; BORDER-BOTTOM: #517284 1px solid
+}
+.tblrow {
+	BACKGROUND: #e8e8e8
+}
+.tblcell1 {
+	PADDING-RIGHT: 10px; FONT-SIZE: 11px; WIDTH: 20%; COLOR: #606060; FONT-FAMILY: verdana; TEXT-ALIGN: right
+}
+.tblcell2 {
+	PADDING-LEFT: 4px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px;COLOR: #606060; FONT-FAMILY: verdana;FONT-SIZE: 11px; 
+}
+.tblcell3 {
+	PADDING-RIGHT: 10px; FONT-SIZE: 11px; WIDTH: 30%; COLOR: #606060; FONT-FAMILY: verdana; TEXT-ALIGN: right
+}
+INPUT {
+	BORDER-RIGHT: #6d90b0 1px solid; BORDER-TOP: #6d90b0 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #6d90b0 1px solid; COLOR: #333333; BORDER-BOTTOM: #6d90b0 1px solid; FONT-FAMILY: Tahoma, Verdana, Arial;  BACKGROUND-COLOR: #ffffff
+}
+.bttn {
+	BORDER-RIGHT: #999999 1px outset; BORDER-TOP: #999999 1px outset; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #999999 1px outset; CURSOR: hand; COLOR: #333333; BORDER-BOTTOM: #999999 1px outset; HEIGHT: 20px; BACKGROUND-COLOR: #f4f4f4
+}
+.bttn-a {
+	BORDER-RIGHT: #213418 1px outset; BORDER-TOP: #213418 1px outset; FONT-WEIGHT: bold; FONT-SIZE: 11px; BORDER-LEFT: #213418 1px outset; CURSOR: hand; COLOR: #ffffff; BORDER-BOTTOM: #213418 1px outset; HEIGHT: 20px; BACKGROUND-COLOR: #213418
+}
+.bttn-s {
+	BORDER-RIGHT: #999999 1px outset; BORDER-TOP: #999999 1px outset; FONT-SIZE: 10px; BORDER-LEFT: #999999 1px outset; CURSOR: hand; COLOR: #333333; BORDER-BOTTOM: #999999 1px outset; HEIGHT: 20px; BACKGROUND-COLOR: #f4f4f4
+}
+TR.infocell1 TD {
+	FONT-SIZE: 12px; BACKGROUND: #ecf8ff; PADDING-BOTTOM: 2px; COLOR: #606060; PADDING-TOP: 2px; FONT-FAMILY: verdana
+}
+TR.infocell2 TD {
+	FONT-SIZE: 12px; BACKGROUND: #fff5de; PADDING-BOTTOM: 2px; COLOR: #606060; PADDING-TOP: 2px; FONT-FAMILY: verdana
+}
+TR.pagination TD {
+	FONT-SIZE: 12px; COLOR: #606060; FONT-FAMILY: verdana
+}
+#error {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: red; FONT-FAMILY: verdana
+}
+#msg {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: blue; FONT-FAMILY: verdana
+}

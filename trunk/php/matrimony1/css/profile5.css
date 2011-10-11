@@ -1,0 +1,15 @@
+.list li	{margin-left: 5px;}
+.tbl1		{width: 690px; margin-left: 5px;}
+.tbl1 .td1	{width: 125px; /*125*/}
+.tbl1 .td2	{/*width: 540px; 421*/}
+/*		.tbl1 .td2 td	{font: normal 11px Tahoma;}*/
+.tbl1 td table td	{font: normal 11px Tahoma;}
+.tbl1 td table td img	{margin: 4 15px;}
+
+.tbl1 input		{width: 13px; margin: 0px;}
+
+.largewhitebold	{font: normal 12px Arial; color: #669900;}
+.bluepatch		{padding: 7 11px; border-bottom: 1px solid #E5E5E5; background: url('images/arrow-grn-4x7.gif') no-repeat center left;}
+
+.end		{border-top: 1px solid #8EA6BE;}
+label		{cursor: pointer; margin-right: 10px; padding-left: 6px; line-height: 20px; /*margin-bottom: 15px; border: 0px solid #000;*/}

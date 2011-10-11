@@ -1,0 +1,20 @@
+li { color:#DA6B21;}
+li span { font:normal 12px arial; color:#82826E; }
+#regform			{width: 100%; border: 0px solid #000;}
+#regform .div1	{width: 100%; float: left; text-align: left;}
+.input input		{width: 13px; height: 13px; margin: 0 5 0 0px; padding: 0px;}
+.smallgrey 			{line-height: 15px; color:#7F7F7F}
+
+.field			{background-color:#FFFFE0; width: 163px; border: 1px solid #7F9DB9; font: normal 11px Tahoma; color: #333333;}
+.field_err		{background-color:#FFE6E6; width: 163px; border: 1px solid #7F9DB9; font: normal 11px Tahoma; color: #333333;}
+.field_filled	{background-color:#FFFFFF; width: 163px; border: 1px solid #7F9DB9; font: normal 11px Tahoma; color: #333333;}
+.field_dob		{background-color:#FFFFE0; font: normal 11px Tahoma; color: #333333;}
+.field_dob_err	{background-color:#FFE6E6; font: normal 11px Tahoma; color: #333333;}
+.field_dob_filled	{background-color:#FFFFFF; font: normal 11px Tahoma; color: #333333;}
+.hint	{display:none; position:absolute; left:50%; width:200px; margin-top:-20px; padding:0px; z-index:100}
+.error		{font: normal 11px tahoma; color:#D55601; line-height:15px;}
+.tblreg				{margin: 0 0 0 0px;}
+.tblreg tr td		{padding: 8 1 3 1px; vertical-align: top;}
+.tblreg .spacer td	{line-height: 1px; border-bottom: 1px solid #E5E5E5; padding: 3 0 0 0px;}
+.tblreg tr td label	{display: block; cursor:pointer; cursor:hand; font-weight: bold;}
+.tblreg tr td .l2	{display: inline; font-weight: normal; line-height: 20px;}
