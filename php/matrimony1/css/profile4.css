@@ -1,0 +1,13 @@
+		.list li	{margin-left: 5px;}
+		.tbl1		{width: 690px; margin-left: 11px;}
+		.tbl1 .td1	{width: 230px;}
+		.tbl1 .td2	{width: 230px;}
+		.tbl1 .td3	{width: 230px;}
+/*		.tbl1 .td5	{width: 32.5%;}*/
+
+		.tbl1 input	{width: 13px; margin: 0px;}
+		.largewhitebold	{font: normal 12px Arial; color: #669900;}
+		.bluepatch		{padding: 7 11px; border-bottom: 1px solid #E5E5E5; background: url('images/arrow-grn-4x7.gif') no-repeat center left;}
+
+		.end		{border-top: 1px solid #8EA6BE;}
+		label		{cursor: pointer; padding-left: 6px; line-height: 20px;}

@@ -1,0 +1,169 @@
+/* DEFAULTS ST */
+body			{margin: 0px; font: normal 12px Arial; background-color: #ffffff;}
+form			{margin: 0px;}
+input,
+select,
+textarea		{font: normal 11px Tahoma; color: #333333;}
+
+a:link, a:visited {color: #0066CC; text-decoration: none;}
+a:hover {color: #003399; text-decoration: underline;}
+#ss a:hover{border:10px}
+a.noborder:link, a.noborder:visited {text-decoration: none;}
+
+/* IMAGE CLASSES */
+a.img:link, a.img:visited, a.img:hover {background: none; padding: 0px; border: none;}
+
+/* DEFAULTS EN */
+
+.xsmall		{font: normal 10px Tahoma; color: #999999;}
+.medium		{font: normal 12px Arial; color: #999999; line-height: 16px;}
+.smallcnt	{font: normal 11px Tahoma; color: #333333;}
+.medTahoma	{font: normal 11px Tahoma;}
+
+#memLogin {margin-top: 5px; background: #EDEDDE;}
+.noborder {text-decoration: none;}
+
+.title {font: normal 16px Arial, Tahoma; color: #FF6600;}
+
+.punchline {font: bold 13px Tahoma; color: #767676;  margin: 0px;} /* below logo */
+
+.landingHd {}
+
+h3 {font: bold 15px tahoma; padding: 12 0px; margin: 0px;}
+
+/* Floating */
+.left {float: left;}
+.right {float: right;}
+
+/* Text Align */
+.tleft {text-align: left;}
+.tcenter {text-align: center;}
+.tright {text-align: right;}
+
+
+/* Width 760 */
+.width {width: 760px;}
+
+/* Background colors */
+.cream {background: #F8F8EB;}
+
+/* Colors & Links*/
+.blue {color: #0066CC;}
+.blue a:link, .blue a:visited {color: #0066CC; text-decoration: none;}
+.blue a:hover {color: #003399; text-decoration: underline;}
+
+.lightgray {color: #CCCCCC;}		/* Copyright */
+a.lightgray:link, a.lightgray:visited {color: #CCCCCC; text-decoration: none;}
+a.lightgray:hover {color: #8E8C8C; text-decoration: underline;}
+
+.grayb {font: bold 12px tahoma; color: #999999;}
+a.grayb:link, a.grayb:visited {color: #999999;}
+a.grayb:hover {color: #999999; text-decoration: none;}
+
+.greenb {font: bold 12px tahoma; color: #99CC00;}
+#Religion a.greenb:link, #Religion a.greenb:visited {color: #99CC00;}
+#Religion a.greenb:hover {color: #99CC00; text-decoration: none;}
+
+/* Religion Matrimonials block and links*/
+#Religion {width: 360px; height: 113px; color: #898989}
+#Religion a:link, #Religion a:visited {color: #898989; text-decoration: none;}
+#Religion a:hover {color: #666666; text-decoration: underline;}
+
+/* 3Steps Register, Search, Contact Box*/
+#threeStep a:link, #threeStep a:visited {color: #5F5F5F;}
+#threeStep a:hover {color: #5F5F5F; text-decoration: none;}
+
+/* Footer */
+.gray {color: #8E8C8C;}		
+a.gray:link, a.gray:visited {color: #8E8C8C; text-decoration: none;}
+a.gray:hover {color: #666666; text-decoration: underline;}
+
+.lgray {color: #A9A8A8;}		
+a.lgray:link, a.lgray:visited {color: #A9A8A8; text-decoration: none;}
+a.lgray:hover {color: #666666; text-decoration: underline;}
+
+.grayImgText {color: #898989;}
+
+/* Break Line Height */
+.brseven{line-height: 7px;}
+.brfive{line-height: 5px;}
+
+/* Bottom Ads / Banner */
+.btmbanner{background: #F4F6F5; border: 1px solid #E8E8E8; padding: 4 0px;}
+
+#one{padding: 0 0 0 15px; float: left;}
+#two{padding: 10 0 0 5px; float: left;}
+#onetwothree{padding: 0 0 0 5px; float: left;}
+
+.banrtwo{width: 495px; float: left; margin-top: 10px;}
+
+#three{width: 115px; height: 30px; float: left;}
+#four{width: 105px; height: 31px; float: left; margin: 0 13 0 16px;}
+#five{width: 105px; height: 31px; float: left; margin-right: 14px;}
+#six{width: 117px; height: 31px; float: left;}
+
+
+.titleCreamBg {color: #7B7B7B; font: bold 12px tahoma; line-height: 24px; background: #F8F8EB;}
+
+.dottedline {line-height: 20px;}
+
+
+
+/* Explicitely for Javascript Slideshow 
+.scroll{color: #898989;}
+a.scroll:link,  a.scroll:visited {color: #898989; text-decoration: none;}
+a.scroll:hover {color: #898989; text-decoration: none;}*/
+
+.scroll{color: #898989;}
+.scroll a:link, .scroll a:visited {color: #898989; text-decoration: none;}
+.scroll a:hover {color: #898989; text-decoration: none;}
+
+
+div#container	
+{ 
+	position:relative; overflow:hidden;
+	width:390px; height:113px; z-index:100; 
+}
+
+div#content-container	
+{ 
+	position:absolute; 
+	left:0px; top:0px; 
+	width:390px; height:113px; 
+	clip:rect(0px, 390px, 113px, 0px); 
+	overflow:hidden;	
+	z-index:1; 
+}
+div.content 
+{ 
+	position:relative;
+	visibility:hidden; 
+	left:0px;
+	top:0px; 
+	z-index:2; 
+}
+
+div#slide-links 
+	{
+		position:absolute;
+		left:130px;
+		top:94;
+		z-index:3
+	}
+
+table#table-content
+	{ 
+		width:1950px;
+	}
+
+table#table-content td 
+	{
+		width:390px;
+		height:113px;
+		
+	}
+/*#table-content td 
+	{
+		target-new: window;
+	}
+	*/

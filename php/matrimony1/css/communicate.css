@@ -1,0 +1,8 @@
+.main	{width: 100%;}
+html>body .main	{width: 560px;}
+
+.container	{width: 100%; padding: 0 2 0 6px; border-top: 1px solid #8FA7BF; border-bottom: 1px solid #8FA7BF; background: #ffffe0;}
+.container div	{float: left;}
+.div1	{padding: 1 0 1 0px; width: 133px;}
+.div2	{padding: 1 5 1 5px;}
+.div3	{padding: 1 0 1 0px; width: 135px;}

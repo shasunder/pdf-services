@@ -1,0 +1,114 @@
+/* DEFAULTS ST */
+body			{margin: 0px; font: normal 12px Arial;}
+form			{margin: 0px;}
+input,
+select,
+textarea		{font: normal 11px Tahoma; color: #333333;}
+
+a:link, a:visited {color: #0066CC; text-decoration: none;}
+a:hover {color: #003399; text-decoration: underline;}
+a.noborder:link, a.noborder:visited {text-decoration: none;}
+
+/* IMAGE CLASSES */
+a.img:link, a.img:visited, a.img:hover {background: none; padding: 0px; border: none;}
+
+/* DEFAULTS EN */
+
+.xsmall		{font: normal 10px Tahoma; color: #999999;}
+.medium		{font: normal 12px Arial; color: #999999; line-height: 16px;}
+.smallcnt	{font: normal 11px Tahoma; color: #333333;}
+.large		{font: normal 12px Tahoma; line-height: 14px;}
+
+
+.grayb {font: bold 12px tahoma; color: #999999;}
+.greenb {font: bold 12px tahoma; color: #99CC00;}
+
+.noborder {text-decoration: none;}
+
+.title {font: normal 16px Arial, Tahoma; color: #FF6600;}
+
+.punchline {font: bold 13px Tahoma; color: #767676;  margin: 0px;} /* below logo */
+
+.landingHd {}
+
+h3 {font: bold 15px tahoma; padding: 12 0px; margin: 0px;}
+
+/* Floating */
+.left {float: left;}
+.right {float: right;}
+
+/* Text Align */
+.tleft {text-align: left;}
+.tcenter {text-align: center;}
+.tright {text-align: right;}
+
+
+/* Width 760 */
+.width {width: 760px;}
+
+/* Background colors */
+.cream {background: #F8F8EB;}
+
+/* Colors & Links*/
+.blue {color: #0066CC;}
+a:link, a:visited {color: #0066CC; text-decoration: none;}
+a:hover {color: #003399; text-decoration: underline;}
+a.noborder:link, a.noborder:visited {text-decoration: none;}
+
+.graytxt {color: #898989;}
+a.graytxt:link, a.graytxt:visited {color: #898989; text-decoration: none;}
+a.graytxt:hover {color: #666666; text-decoration: underline;}
+
+.lightgray {color: #CCCCCC;}		/* Copyright */
+a.lightgray:link, a.lightgray:visited {color: #CCCCCC; text-decoration: none;}
+a.lightgray:hover {color: #8E8C8C; text-decoration: underline;}
+
+/* 3Steps Register, Search, Contact Box*/
+#threeStep a:link, #threeStep a:visited {color: #5F5F5F;}
+#threeStep a:hover {color: #5F5F5F; text-decoration: none;}
+
+/* Footer */
+.gray {color: #8E8C8C;}		
+a.gray:link, a.gray:visited {color: #8E8C8C; text-decoration: none;}
+a.gray:hover {color: #666666; text-decoration: underline;}
+
+.lgray {color: #A9A8A8;}		
+a.lgray:link, a.lgray:visited {color: #A9A8A8; text-decoration: none;}
+a.lgray:hover {color: #666666; text-decoration: underline;}
+
+/* Break height */
+.brseven{line-height: 7px;}
+
+
+
+
+.titleBrdr {color: #7B7B7B; font: bold 12px tahoma; line-height: 24px;}
+.titleCreamBg {color: #7B7B7B; font: bold 12px tahoma; line-height: 24px; background-color: #F8F8EB;}
+.dottedline {line-height: 25px;}
+
+.sstories {color: #A1A1A1; line-height: 16px; margin: 15 0px;}
+.sstories a:link, .sstories a:visited {color: #A1A1A1; text-decoration: none;}
+.sstories a:hover {color: #666666; text-decoration: underline;}
+.ssgreen {color: #789F01; width: 88px;}
+
+
+.titleBrdr {color: #7B7B7B; font: bold 12px tahoma;}
+.titleCreamBg {color: #7B7B7B; font: bold 12px tahoma; line-height: 24px; background: #F8F8EB;}
+.dottedline {line-height: 24px;}
+
+
+
+/* Bottom Ads / Banner */
+.btmbanner{background: #F4F6F5; border: 1px solid #E8E8E8; padding: 4 0px;}
+
+#one{padding: 0 0 0 15px; float: left;}
+#two{padding: 10 0 0 5px; float: left;}
+#onetwothree{padding: 0 0 0 5px; float: left;}
+
+.banrtwo{width: 495px; float: left; margin-top: 10px;}
+
+#three{width: 115px; height: 30px; float: left;}
+#four{width: 105px; height: 31px; float: left; margin: 0 13 0 16px;}
+#five{width: 105px; height: 31px; float: left; margin-right: 14px;}
+#six{width: 117px; height: 31px; float: left;}
+

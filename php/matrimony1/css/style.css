@@ -1,0 +1,126 @@
+.smallblack						{font-weight: normal;		font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
+.smallgrey						{font-weight: normal;		font-size: 11px;			color: #626262;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
+.smallblackbold					{font-weight: bold;			font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
+.smallred						{font-weight: normal;		font-size: 11px;			color: #FF3300;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
+.smallgreenbold					{font-weight: bold;			font-size: 11px;			color: #669900;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
+
+.mediumblack					{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;			line-height: 16px;}
+.mediumblackbold				{font-weight: bold;			font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;			line-height: 16px;}
+.mediumred						{font-weight: normal;		font-size: 12px;			color: #FF3300;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumredbold					{font-weight: bold;			font-size: 12px;			color: #FF3300;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumgreen					{font-weight: normal;		font-size: 12px;			color: #669900;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumgreenbold				{font-weight: bold;			font-size: 12px;			color: #669900;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumwhite					{font-weight: normal;		font-size: 12px;			color: #FFFFFF;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumwhitebold				{font-weight: bold;			font-size: 12px;			color: #FFFFFF;			font-style: normal;			font-family: arial;					text-decoration: none;}
+																																						
+.largeblackbold					{font-weight: bold;			font-size: 14px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+.largegreenbold					{font-weight: bold;			font-size: 14px;			color: #336600;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+.largewhitebold					{font-weight: bold;			font-size: 14px;			color: #FFFFFF;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+
+.smallgreenlink					{font-weight: normal;		font-size: 10px;			color: #0066cc;			font-style: normal;			font-family: tahoma, ms sans serif;	text-decoration: none;}
+a.smallgreenlink:link			{font-weight: normal;		font-size: 10px;			color: #0066cc;			font-style: normal;			font-family: tahoma, ms sans serif;	text-decoration: none;}
+a.smallgreenlink:visited		{font-weight: normal;		font-size: 10px;			color: #0066cc;			font-style: normal;			font-family: tahoma, ms sans serif;	text-decoration: none;}
+a.smallgreenlink:hover			{font-weight: normal;		font-size: 10px;			color: #003399;			font-style: normal;			font-family: tahoma, ms sans serif;	text-decoration: underline;}
+
+.smallbluelink					{font-weight: normal;		font-size: 11px;			color: #0066cc;			font-style: normal;			font-family: tahoma;			text-decoration: none;}
+a.smallbluelink:link			{font-weight: normal;		font-size: 11px;			color: #0066cc;			font-style: normal;			font-family: tahoma;			text-decoration: none;}
+a.smallbluelink:visited			{font-weight: normal;		font-size: 11px;			color: #0066cc;			font-style: normal;			font-family: tahoma;			text-decoration: none;}
+a.smallbluelink:hover			{font-weight: normal;		font-size: 11px;			color: #003399;			font-style: normal;			font-family: tahoma;			text-decoration: underline;}
+
+.mediumbluelink					{font-weight: normal;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumbluelink:link			{font-weight: normal;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumbluelink:visited		{font-weight: normal;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumbluelink:hover			{font-weight: normal;		font-size: 12px;			color: #003399;			font-style: normal;			font-family: arial;					text-decoration: underline;}
+
+.mediumbluelinksp				{font-weight: normal;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumbluelinksp:link			{font-weight: normal;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumbluelinksp:visited		{font-weight: normal;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumbluelinksp:hover		{font-weight: normal;		font-size: 12px;			color: #003399;			font-style: normal;			font-family: arial;					text-decoration: underline;}
+
+.mediumblackboldlink			{font-weight: normal;			font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma;					text-decoration: none;}
+a.mediumblackboldlink:link		{font-weight: normal;			font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma;					text-decoration: none;}
+a.mediumblackboldlink:visited	{font-weight: normal;			font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma;					text-decoration: none;}
+a.mediumblackboldlink:hover		{font-weight: normal;			font-size: 11px;			color: #003399;			font-style: normal;			font-family: tahoma;					text-decoration: underline;}
+
+.blackboldlink					{font-weight: bold;			font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;			line-height: 16px;}
+a.blackboldlink:hover			{font-weight: bold;			font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: underline;			line-height: 16px;}
+
+.mediumwhiteboldlink			{font-weight: bold;			font-size: 12px;			color: #FFFFFF;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumwhiteboldlink:link		{font-weight: bold;			font-size: 12px;			color: #FFFFFF;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumwhiteboldlink:visited	{font-weight: bold;			font-size: 12px;			color: #FFFFFF;			font-style: normal;			font-family: arial;					text-decoration: none;}
+a.mediumwhiteboldlink:hover		{font-weight: bold;			font-size: 12px;			color: #FFFF00;			font-style: normal;			font-family: arial;					text-decoration: underline;}
+
+.largebluelink					{font-weight: normal;		font-size: 14px;			color: #0066cc;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.largebluelink:link			{font-weight: normal;		font-size: 14px;			color: #0066cc;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.largebluelink:visited			{font-weight: normal;		font-size: 14px;			color: #0066cc;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.largebluelink:hover			{font-weight: normal;		font-size: 14px;			color: #003399;			font-style: normal;			font-family: ms sans serif;			text-decoration: underline;}
+
+.largeblueboldlink				{font-weight: bold;			font-size: 14px;			color: #0066cc;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.largeblueboldlink:link		{font-weight: bold;			font-size: 14px;			color: #0066cc;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.largeblueboldlink:visited		{font-weight: bold;			font-size: 14px;			color: #0066cc;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.largeblueboldlink:hover		{font-weight: bold;			font-size: 14px;			color: #003399;			font-style: normal;			font-family: ms sans serif;			text-decoration: underline;}
+
+
+.forminput, input,
+.formselect		{font: normal 11px Tahoma; color: #333333;}
+.chkbox {width:12px; height:15px; margin:2 5 0 5px;}
+
+h1 {font-weight: normal;		font-size: 14px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;		margin: 0;}
+h2 {font-weight: normal;			font-size: 18px;			color: #333333;			font-style: normal;			font-family: arial;			text-decoration: none;		margin: 0;}
+h3 {font-weight: bold;			font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;		margin: 0;}
+
+td {font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;}
+
+.smallgreylink					{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.smallgreylink:link			{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.smallgreylink:visited			{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.smallgreylink:hover			{font-weight: normal;		font-size: 12px;			color: #003399;			font-style: normal;			font-family: ms sans serif;			text-decoration: underline;}
+
+.smallgreenlinksp				{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.smallgreenlinksp:link			{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.smallgreenlinksp:visited		{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
+a.smallgreenlinksp:hover		{font-weight: normal;		font-size: 12px;			color: #003399;			font-style: normal;			font-family: ms sans serif;			text-decoration: underline;}
+
+.mediumblueboldlink				{font-weight: bold;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;			text-decoration: none;}
+a.mediumblueboldlink:link		{font-weight: bold;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;			text-decoration: none;}
+a.mediumblueboldlink:visited	{font-weight: bold;		font-size: 12px;			color: #0066cc;			font-style: normal;			font-family: arial;			text-decoration: none;}
+a.mediumblueboldlink:hover		{font-weight: bold;		font-size: 12px;			color: #003399;			font-style: normal;			font-family: arial;			text-decoration: underline;}
+
+
+
+.tinygray {font: normal 11px Tahoma; color: #999999;} 
+a.tinygray:link,
+a.tinygray:visited {font: normal 11px Tahoma; color: #999999; text-decoration: none;} 
+a.tinygray:hover {color: #999999; text-decoration: none;} 
+
+.tinydgray				{font: normal 10px Tahoma; color: #999999;} 
+a.tinydgray:link,
+a.tinydgray:visited		{font: normal 10px Tahoma; color: #999999; text-decoration: none;} 
+a.tinydgray:hover		{font: normal 10px Tahoma; color: #999999; text-decoration: underline;} 
+
+.smalldgray {font: normal 11px Tahoma; color: #999999;} 
+a.smalldgray:link,
+a.smalldgray:visited	{color: #0066CC; text-decoration: none;}
+a.smalldgray:hover	{color: #003399; text-decoration: underline;}
+
+/* Standard List */
+.list,
+.list1		{margin: 5px 0px 0px 5px; padding: 0px 0px 0px 5px; list-style-position: outside;}
+
+.list li	{margin: 0px 0px 0px 15px; padding: 0px 0px 4px 0px; list-style-position: outside;}
+.list1 li	{margin: 0px 0px 0px 5px; padding: 0px 0px 4px 0px; list-style-position: outside;}
+
+.bluepatch	{margin: 20 0 5 0px; padding: 3 7px; background: #8EA6BE;}
+
+#tblresult	{border-bottom: 1px solid #8CA6BD;}
+#tblresult .thead td	{font: bold 12px Arial; color: #FFFFFF; background: #8CA6BD; border-bottom: none;}
+#tblresult .blist td	{font: bold 11px Tahoma; color: #333333; background: #DEECF6;}
+#tblresult tr td	{font: normal 11px Tahoma; color: #333333; border-top: 1px solid #CCCCCC; padding: 5 3px;}
+
+#tblresult a:link,
+#tblresult a:visited	{font: normal 11px tahoma; color: #0066cc; text-decoration: none;}
+#tblresult a:hover	{text-decoration: underline;}
+
+form		{margin: 0px;}
+.xlarge		{font: bold 24px Tahoma; color: #C2C2C2;}
+.darkgray	{color: #666666;}
