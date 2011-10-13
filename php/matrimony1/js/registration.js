@@ -15,6 +15,11 @@ aMessages["login"]["login email same"] = "Your Profile ID & Email Address cannot
 aMessages["login"]["check if available"] = "Checking if Profile ID is available...";
 aMessages["login"]["check if available error"] = "A technical error occurred while processing your Profile ID request. Please type your Profile ID again.";
 
+
+aMessages["name"] = new Array();
+aMessages["name"]["blank"] = "Please Enter Your Name Here";
+
+
 aMessages["email"] = new Array();
 aMessages["email"]["blank"] = "Please type an Email Address.";
 aMessages["email"]["invalid"] = "Incorrect Email Address format. Please use a valid Email Address.";
@@ -198,6 +203,29 @@ function uncheck(obj)
 		}
 	}
 }
+
+
+
+
+function validate_name()
+{
+	var oField = document.forms["frm_registration"].name;
+	var oElement = document.getElementById('errmsg_name');
+	toggleHint('hide', 'name');
+	oElement.innerHTML = "";
+	oField.className = "field_filled";
+
+
+	if(oField.value == "")
+	{
+		oElement.innerHTML = aMessages["name"]["blank"];
+		oField.className = "field_err";
+	}
+
+} // EO validate_email()
+
+
+
 
 
 function fix_email(sVal)

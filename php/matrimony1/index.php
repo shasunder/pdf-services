@@ -9,7 +9,7 @@ $rowsettings = mysql_fetch_array($resultsettings);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- World's No. 1 Matrimonial Website</title>
+<title>Marry Banjara - World's No. 1 Matrimonial Website</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/landing.css" type="text/css">
 <link rel="stylesheet" href="css/homepage.css" type="text/css">
@@ -25,13 +25,10 @@ $rowsettings = mysql_fetch_array($resultsettings);
 <center>
 
 		<div class="width">
-			<div class="graytxt smallcnt" style="padding: 2px 0px; height: 10px;">
-				<span class="left">
-				<span style="color: rgb(170, 170, 170);">The No.1 </span><a href="" style="color: rgb(170, 170, 170);">Matrimonial Website</a> <span style="color: rgb(170, 170, 170);">Site</span></span>
-	<span class="right" style="width:300px; text-align:right"><a href="index.php" class="gray">Home</a> | <a href="aboutus.php" class="gray">About Us</a> | <a href="contactus.php" class="gray">Contact Us</a></span>
-			</div>
+			
 	
-		</div><br style="line-height: 0px;" clear="all">
+		</div>
+        <br style="line-height: 0px;" clear="all">
 		
 		
 		
@@ -39,14 +36,16 @@ $rowsettings = mysql_fetch_array($resultsettings);
 		
 		
 		<div class="smallcnt width">
-			<div class="left tleft"><img src="images/logo1.gif" border="0" height="52" width="440"><br></div>
+			<div class="left tleft"><img src="images/logo1.gif" border="0"><br>
+           <div class="left tleft" style="padding-left:30px"> <span style="color: rgb(170, 170, 170);">The No.1 </span><a href="" style="color: rgb(170, 170, 170);">Matrimonial Website</a> <span style="color: rgb(170, 170, 170);">Site</span></span><br><br></div>
+            </div>
 	</div>
 		
 		
 		
 		
 		<div class="smallcnt width">
-			<div class="left tleft"><img src="images/logo2.gif" border="0" height="37" width="440"><br></div>
+
 			<div class="left tleft">
 
 			</div>
@@ -57,21 +56,31 @@ $rowsettings = mysql_fetch_array($resultsettings);
 	</div>
 		
 		<div class="smallcnt width" style=" background-image:url(images/topbg.gif); -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
-			<div class="left tleft" style="width: 60px;"><img src="images/top-lft-cnl.gif" border="0" height="33" width="14"><br></div>
-			<div class="left tleft" style="width: 485px;">
+			<div class="left tleft" style="width: 33px;"><img src="images/top-lft-cnl.gif" border="0" height="33" width="14"><br></div>
+			<div class="left tleft" style="width: 650px;">
+ 
 	<?PHP
 if($_SESSION['UserID']!="")
 {
 ?>
 <br>
+<a href="index.php" title="My Account" style="color:#FFFFFF;"><strong>Home</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="aboutus.php" title="My Profile" style="color:#FFFFFF;"><strong>About Us</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="contactus.php" title="Log Out" style="color:#FFFFFF;"><strong>Contact Us</strong></a><strong style="color:#FFFFFF;">|</strong>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="myaccount.php" title="My Account" style="color:#FFFFFF;"><strong>My Account</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Log Out</strong></a>
 <?PHP
 }
 else
 {
-?>		
+?>
+	
+
+
+	
 			<form method="post" action="login.php" name="loginpage" autocomplete="off" style="margin: 4px 0pt 0pt 0px;">
-			<b style="color:#FFFFFF;">Member Login</b> &nbsp; <input name="login" value="Email ID" onfocus="if(this.value=='Email ID') this.value='';" onblur="if(this.value=='') this.value='Email ID';" size="16" type="text">&nbsp; &nbsp;<input name="password" value="******" onfocus="if(this.value=='******') this.value='';" onblur="if(this.value=='') this.value='******';" size="14" type="password">&nbsp; <input src="images/go.gif" title="Login" align="top" border="0" type="image"><input name="homepage" value="Y" type="hidden"><input name="continue" value="true" type="hidden"> &nbsp; <a href="forget_password.php" class="xsmall" title="Forgot Password?" style="color:#FFFFFF;">Forgot Password?</a>
+	<b><a href="index.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">Home</a> | <a href="aboutus.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">About Us</a> | <a href="contactus.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">Contact Us</a>	</b> &nbsp;	<b style="color:#FFFFFF;padding-left:20px">Member Login</b> &nbsp; <input name="login" value="Email ID" onfocus="if(this.value=='Email ID') this.value='';" onblur="if(this.value=='') this.value='Email ID';" size="16" type="text">&nbsp; &nbsp;<input name="password" value="******" onfocus="if(this.value=='******') this.value='';" onblur="if(this.value=='') this.value='******';" size="14" type="password">&nbsp; <input src="images/go.gif" title="Login" align="top" border="0" type="image"><input name="homepage" value="Y" type="hidden"><input name="continue" value="true" type="hidden"> &nbsp; <a href="forget_password.php" class="xsmall" title="Forgot Password?" style="color:#FFFFFF;">Forgot Password?</a>
 			</form>
 		<?PHP
 }
@@ -79,20 +88,24 @@ else
 			</div>
 		<!-- FORM ST -->
 	
-		<div class="right tright" style="width: 212px;"><img src="images/top-rgt-cnl.gif" border="0" height="33" width="210"></div><br clear="all">
+		<div class="right tright" style="width: 18px;"><img src="images/top-rgt-cnl.gif" border="0" height="33" width="18"></div><br clear="all">
 		<!-- FORM EN-->
 	</div>
 	<div class="width smallcnt">
 		<!-- MAIN CREATIVE ST-->
 
 		<div style="width: 760px; padding-top: 0px;">
-		<table border="0" cellpadding="0" cellspacing="0" width="760" background="images/searchbg.gif"><tr>
+		<table border="0" cellpadding="0" cellspacing="0" width="760" background="images/searchbg.gif">
+        
+ 
+        <tr>
 		
-		<td>
+		<td width="291" valign="top">
 		
 		<table border="0" cellpadding="0" cellspacing="0" align="center">
+   <tr> <td valign="middle" colspan="3" height="59" align="center"> <img src="images/quick.gif" width="170" height="30"></td>  </tr>   
 <tr>
-<td><img src="images/mid-2-c.gif" alt="" border="0" height="138" width="100"></td>
+<td><img src="images/mid-2-c.gif" alt="" border="0"></td>
 <td align="left">
 					<div class="left" style="background: transparent url(images/mid-bg-l.gif) repeat-x scroll 0%; height: 138px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
 						<!-- SEARCH FORM ST-->
@@ -157,8 +170,9 @@ else
 </tr>
 
 </table>
-				<!-- SEARCH FORM ST-->
-				<div style="padding-top: 18px; text-align:center;">
+<div style="padding-top:10px;" align="center">
+<img src="images/profile.gif" width="170" height="30"></div>	<!-- SEARCH FORM ST-->
+				<div style="padding-top: 8px; text-align:center;">
 					<form method="get" action="profile.php" autocomplete="off" name="profileform">
 						<input name="id" value=" Search by Profile ID" onfocus="if(this.value==' Search by Profile ID') this.value='';" onblur="if(this.value=='') this.value=' Search by Profile ID';" style="width: 111px;" type="text"> &nbsp; <input src="images/go.gif" title="View Profile" align="top" type="image">
 					</form>
@@ -166,7 +180,7 @@ else
 				<!-- SEARCH FORM EN-->
 		</td>
 		
-		<td><img src="images/home.gif" width="437" height="218"></td>
+		<td width="469"><img src="images/banner.jpg" width="469" height="282px"></td>
 		
 		</tr></table>					
 	</div>
@@ -199,193 +213,45 @@ else
 		</div><!-- three step en -->
 
 		<div class="left" style="padding: 20px 0pt 0pt 36px;">
-			<a href="register.php"><img src="images/registerbutton-1.gif" alt="Register Free!" title="Register Free!" border="0" height="29" vspace="0" width="127"></a>
+			<a href="register.php"><img src="images/advSearcButton.png" alt="Register Free!" title="Register Free!" border="0" height="30" vspace="0" width="140"></a>
 		</div>
 		
 <br clear="all">
 </div>
-<div class="width smallcnt" style="background-image:url(images/background.jpg);">
+<div class="width smallcnt" style="background-image:url(images/background.jpg)">
 <div class="left graytxt" style="width: 760px;background-image:url(images/background.jpg); height:5px;"></div>
-	<div class="left graytxt" style="width: 760px;background-image:url(images/background.jpg);">
-	<table class="left tleft smallcnt graytxt" border="0" cellpadding="0" cellspacing="0"><tr><td>&nbsp;</td></tr></table>
-		<table class="left tleft smallcnt graytxt" style="width: 188px;" border="0" cellpadding="0" cellspacing="0">
-			<tbody><tr valign="top">
-				<td colspan="2" class="titleBrdr" style="background: url(images/title-brdr.gif); line-height: 24px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; padding-left:40px; color:#FFFFFF;">Brides</td>
-			</tr>
-			<?PHP
-			$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and users.Gender='Female' and users.Status=1 and users.ApprovalStatus=1 order by users.UserID desc limit 6";
-$result = mysql_query($sql,$conn);
-$a=0;
-$b=0;
-while($row = @mysql_fetch_array($result))
-			{
-			?>
-			<tr><td colspan="2" height="18">&nbsp;</td></tr>
-			<tr align="left" valign="top">
-				<td style="background: transparent url(images/photo-brdr.gif) no-repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" height="71" width="80"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"><img src="<?PHP 
-				if($row['photo3']!="")
-				echo $row['photo3'];
-				else
-				echo "images/f.gif";				
-				?>" oncontextmenu="return false" border="0" height="60" hspace="5" vspace="5" width="60" align="middle"></a></td>
-				<td style="color:#000000;">
-					<span class="large"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" style="color:#990000;"><?PHP echo stripslashes($row['LoginID'])?></a></span><br>
-					<span style="line-height: 5px;"><br></span>
-					<?PHP 
-if($row['CreatedBy']!="Self" && $row['Gender']=="Male")
-echo "He is ";
-else if($row['CreatedBy']!="Self" && $row['Gender']=="Female")
-echo "She is ";
-else
-echo "I am ";
-?><?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?>,<br>
-<?PHP echo $row['Religion']?><br>
-from <?PHP echo $row['Country']?></td>
-			</tr>
-			
-	<?PHP
-	$a=$a+1;
-	if($a==3 && $b==0)
-	{
-	$a=0;
-	$b=1;
-	?>
-	</tbody></table>
-	<table class="left tleft smallcnt graytxt" style="width: 188px;" border="0" cellpadding="0" cellspacing="0">
-			<tbody><tr valign="top">
-				<td colspan="2" class="titleBrdr" style="background-color:#A10908; line-height: 24px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;</td>
-			</tr>
-	<?PHP
-	}
-	else if($a==3 && $b==1)
-	{
-	?>
-		<tr>
-				<td colspan="2" height="23" valign="bottom"><a href="brides.php" style="color:#FFFFFF; font-weight:bold;">More Brides...
-				</a></td>
-			</tr>
-		</tbody></table>
-	<?PHP
-	}
-	}
+	<div class="left graytxt" style="width: 760px">
 		
-	if($a!=3 && $b==1)
-	{
-	?>
-	<tr>
-				<td colspan="2" height="23" valign="bottom"><a href="brides.php" style="color:#FFFFFF; font-weight:bold;">More Brides...</a></td>
-			</tr>
-		</tbody></table>
-	<?PHP
-	}
-	
-	else if($a!=3 && b==0)
-	{
-	?>
-			<tr>
-				<td colspan="2" height="23" valign="bottom"><a href="brides.php" style="color:#FFFFFF; font-weight:bold;">More Brides...</a></td>
-			</tr>
-		</tbody></table>
-			
-			<table class="left tleft smallcnt graytxt" style="width: 188px;" border="0" cellpadding="0" cellspacing="0">
-			<tbody><tr valign="top">
-				<td colspan="2" class="titleBrdr" style="background-color:#A10908; line-height: 24px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;"><a href="" style="color: rgb(170, 170, 170);">&nbsp;</a></td>
-			</tr></tbody></table>
-	<?PHP
-	}
-	?>
+	<table class="left tleft smallcnt graytxt" border="0" cellpadding="0" cellspacing="0" style="padding:10px;border:3px solid #F93;background-color:#FFC">
+    <tr>
+    <td>
+<p style="font-family:Verdana;font-size:12px;color:#600;font-weight:bold;text-align:justify">
 
-<table class="left tleft smallcnt graytxt" border="0" cellpadding="0" cellspacing="0"><tr><td width="3"></td></tr></table>
-	
-<table class="left tleft smallcnt graytxt" style="width: 188px;" border="0" cellpadding="0" cellspacing="0">
-			<tbody><tr valign="top">
-				<td colspan="2" class="titleBrdr" style="background: transparent url(images/title-brdr.gif) repeat-x scroll 0%; line-height: 24px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; padding-left:40px; color:#FFFFFF;">Grooms</td>
-			</tr>	
-	
-			<?PHP
-			$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and users.Gender='Male' and users.Status=1 and users.ApprovalStatus=1 order by users.UserID desc limit 6";
-$result = mysql_query($sql,$conn);
-$a=0;
-$b=0;
-while($row = @mysql_fetch_array($result))
-			{
-			?>
-			<tr><td colspan="2" height="18">&nbsp;</td></tr>
-			<tr align="left" valign="top">
-				<td style="background: transparent url(images/photo-brdr.gif) no-repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" height="71" width="80">
-					<a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>">
-					<img src="<?PHP 
-					if($row['photo3']!="")
-				echo $row['photo3'];
-				else
-				echo "images/m.gif";	
-					?>" oncontextmenu="return false" border="0" height="60" hspace="5" vspace="5" width="60">
-					</a></td>
-				<td style="color:#000000;">
-					<span class="large"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" style="color:#990000;"><?PHP echo stripslashes($row['LoginID'])?></a></span><br>
-					<span style="line-height: 5px;"><br></span>
-					<?PHP 
-if($row['CreatedBy']!="Self" && $row['Gender']=="Male")
-echo "He is ";
-else if($row['CreatedBy']!="Self" && $row['Gender']=="Female")
-echo "She is ";
+	<?PHP
+if($_SESSION['UserID']!="")
+{
+ echo "<a href='membership.php'>";
+}
 else
-echo "I am ";
-?><?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?>,<br><?PHP echo $row['Religion']?><br>from <?PHP echo $row['Country']?></td>
-			</tr>
-			
-	<?PHP
-	$a=$a+1;
-	if($a==3 && $b==0)
-	{
-	$a=0;
-	$b=1;
-	?>
-	</tbody></table>
-	<table class="left tleft smallcnt graytxt" style="width: 188px;" border="0" cellpadding="0" cellspacing="0">
-			<tbody><tr valign="top">
-				<td colspan="2" class="titleBrdr" style="background-color:#A10908; line-height: 24px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">&nbsp;</td>
-			</tr>
-	<?PHP
-	}
-	else if($a==3 && $b==1)
-	{
-	?><tr>
-				<td colspan="2" height="23" valign="bottom"><a href="grooms.php" style="color:#FFFFFF; font-weight:bold;">More Grooms...</a></td>
-			</tr>
-		</tbody></table>
-	<?PHP
-	}
-	}
-		
-	if($a!=3 && $b==1)
-	{
-	?>
-	<tr>
-				<td colspan="2" height="23" valign="bottom"><a href="grooms.php" style="color:#FFFFFF; font-weight:bold;">More Grooms...</a></td>
-			</tr>
-		</tbody></table>
-	<?PHP
-	}
+{
+	 echo "<a href='paidmembership.php'>";
+}
+?>
 	
-	else if($a!=3 && b==0)
-	{
-	?>
-			<tr>
-				<td colspan="2" height="23" valign="bottom"><a href="grooms.php" style="color:#FFFFFF; font-weight:bold;">More Grooms...</a></td>
-			</tr>
-		</tbody></table>
-			
-			<table class="left tleft smallcnt graytxt" style="width: 188px;" border="0" cellpadding="0" cellspacing="0">
-			<tbody><tr valign="top">
-				<td colspan="2" class="titleBrdr" style="background-color:#A10908; line-height: 24px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;"><a href="" style="color: rgb(170, 170, 170);">&nbsp;</a></td>
-			</tr></tbody></table>
-	<?PHP
-	}
-	?>
-
-		
-		
+  <img src="images/offer.gif" style="float:right;padding-left:10px;padding-right:10px;padding-bottom:10px" border="0" /> </a>
+    We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province.
+<br/><br/>
+Our history goes back to some 2000 years and is as colourful as the costumes our women wear.
+<br/><br/>
+There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community. But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.
+<br/><br/>
+This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates
+<br/><br/>
+We aim to provide service at a very affordable price (starting at Rs.500 only). We would be glad to hear from you!
+</p>
+</td>
+    </tr>
+    </table>	
 
 		
 	</div>
@@ -393,61 +259,6 @@ echo "I am ";
 	</div><span class="brseven"><br>
 
 
-
-<!-- Links Start-->
-<table class="width smallcnt tleft sstories" border="0" cellpadding="0" cellspacing="0">
-	<tbody>
-	<tr valign="top">
-	<td rowspan="2" width="18">&nbsp;</td>
-		<td class="ssgreen" style="color:#990000;">Country</td>
-		<td>:</td>
-		<td class="lgray">
-				
-			<a href="country_main.php?cid=1" title="USA matrimonial">India matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=2" title="Canada matrimonial">USA matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=3" title="UK matrimonial">UK matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=4" title="India matrimonial">Canada matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=5" title="Pakistan matrimonial">Australia matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=6" title="UAE">Europe matrimonial</a>
-<br>
-
-			<a href="country_main.php?cid=7" title="Saudi Arabia">Asia matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=8" title="Australia">Middle East matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=9" title="Australia">Africa matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=10" title="Australia">Caribbean matrimonial</a>
-		 | 
-			<a href="country_main.php?cid=11" title="Australia">Oceania matrimonial</a>									
-<br>
-
-			<a href="country_main.php?cid=12" title="Australia">South America matrimonial</a>			
-		 </td>
-	</tr>
-	<tr valign="top">
-		<td class="ssgreen" style="color:#990000;">Profession</td>
-		<td>:</td>
-		<td class="lgray">
-			<a href="profession_main.php?p=Computer Professional" title="Computer Professional">Computer Professional</a> |
-				<a href="profession_main.php?p=Business Person" title="Business">Business</a> |
-				<a href="profession_main.php?p=IT / Telecom Professional" title="IT / Telecom Professional">IT / Telecom Professional</a> |
-				<a href="profession_main.php?p=Engineer" title="Engineer">Engineer</a> |
-				<a href="profession_main.php?p=Doctor" title="Doctor">Doctor</a> |
-				<a href="profession_main.php?p=Teacher" title="Teacher">Teacher</a> |
-				<a href="profession_main.php?p=Administration Professional" title="Administration Professional">Administration Professional</a> |
-				<a href="profession_main.php?p=Manager" title="Manager">Manager</a> |
-				<a href="profession_main.php?p=Software Consultant" title="Software Consultant">Software Consultant</a> |
-				<a href="profession_main.php?p=Consultant" title="Consultant">Consultant</a></td>
-	</tr>
-</tbody></table>
-<br>
-<!-- Links End -->
 <!-- Footer starts -->
 	<?PHP
 	include("footer.php");

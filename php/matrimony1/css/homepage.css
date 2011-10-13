@@ -1,5 +1,7 @@
 /* DEFAULTS ST */
-body			{margin: 0px; font: normal 12px Arial; background-color: #ffffff;}
+body			{margin: 0px; font: normal 12px Arial; background-color: #ffffff;
+background:none repeat scroll 0 0 #FFF3DA;
+}
 form			{margin: 0px;}
 input,
 select,

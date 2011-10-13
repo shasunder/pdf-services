@@ -46,9 +46,10 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 
 
 
-			$insert = "insert into users(LoginID, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, ReligionID, CountryID, ConfirmationCode, AddedDate, Age, dobstatus) 
+			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, ReligionID, CountryID, ConfirmationCode, AddedDate, Age, dobstatus) 
 			VALUES (
 				'".mysql_escape_string($_POST['login'])."',
+				'".mysql_escape_string($_POST['name'])."',
 				'".mysql_escape_string($_POST['email'])."',
 				'".mysql_escape_string($_POST['password1'])."',
 				'".mysql_escape_string($_POST['gender'])."',
@@ -114,7 +115,7 @@ require("phpmailer/class.phpmailer.php");
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- Register</title>
+<title>Marry Banjara - Register</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/register.css">
@@ -141,15 +142,7 @@ require("phpmailer/class.phpmailer.php");
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
-					</div>
-				<br clear="all">
-			
-			</div>
-			<!-- logo + banner space -->
+				
 		
 					<div>
 					<div style="border-top: 2px solid rgb(143, 167, 191); border-bottom: 2px solid #000000; background-color: #000000;">
@@ -242,6 +235,27 @@ require("phpmailer/class.phpmailer.php");
 	<br>
 			<span id="errmsg_login" class="error"></span></td>
 		</tr>
+        
+        <tr>
+			<td nowrap="nowrap" width="150"><label for="name">Name</label></td>
+			<td class="smallgrey"><input tabindex="1" class="field" name="name" id="name" value="<?PHP echo $_REQUEST['name']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_name();" type="text">
+		<!-- HINT STARTS HERE -->
+		<span class="hint" id="hint_name">
+		<div>
+			<div><img src="images/top-hint.gif" height="10" width="201"></div>
+			<div style="padding: 0pt 5px 0pt 8px; background: transparent url(images/bg-hint.gif) no-repeat scroll 0%; width: 201px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-family: arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(127, 127, 127);"><b>Enter Your Name</b><br>Please Enter Your Name In this Field</div>
+			<div><img src="images/bottom-hint.gif" height="9" width="201"></div>
+		</div>
+		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
+		</span>
+		<!-- HINT ENDS HERE -->
+	<br>
+			<span id="errmsg_name" class="error"></span></td>
+		</tr>
+        
+        
+        
+        
 		<tr>
 			<td><label for="email">Email</label></td>
 			<td class="smallgrey"><input tabindex="3" class="field" name="email" id="email" value="<?PHP echo $_REQUEST['email']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_email();" type="text">
@@ -400,9 +414,10 @@ require("phpmailer/class.phpmailer.php");
 	
 						</td>
 						<td valign="bottom"><!-- MODEL IMAGE ST -->
-					<img src="images/model-01-a.jpg" border="0" height="165" width="268"><br>
-					<img src="images/model-01-b.jpg" border="0" height="139" width="268"><br>
-					<img src="images/model-01-c.jpg" border="0" height="108" width="268"><!-- MODEL IMAGE EN --></td>
+					<br>
+					<img src="images/bride.jpg" border="0">
+				
+                    </td>
 					</tr>
 					</tbody></table>
 					</div><br clear="all">
@@ -449,13 +464,13 @@ require("phpmailer/class.phpmailer.php");
 						
 		<br>
 		<div style="width: 100%; text-align: center; margin-bottom: 5px;">
-			<div style="padding: 0pt 0pt 0pt 14px; width: 100%;">
+			<div style="padding: 0pt 0pt 0pt 0px; width: 100%;">
 				<?PHP
 				include("footer.php");
 				?>
 						</div>
 					</div>
 				</div>
-			</center>
+
 
 </body></html>

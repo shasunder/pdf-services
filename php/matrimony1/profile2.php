@@ -56,7 +56,7 @@ $row = @mysql_fetch_array($result);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- Add More Details to your profile</title>
+<title>Marry Banjara - Add More Details to your profile</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <script language="javascript" src="js/ajax-v2-inc-mod.js"></script>
@@ -101,13 +101,7 @@ $row = @mysql_fetch_array($result);
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a></div>				
-				<br clear="all">			
-			</div>
-			<!-- logo + banner space -->
+				
 		
 					<div>
 					<div style="border-top: 2px solid rgb(143, 167, 191); border-bottom: 2px solid #000000; background-color: #000000;">

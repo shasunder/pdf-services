@@ -37,7 +37,7 @@ $nume=mysql_num_rows($resulttot);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- Search Brides By Profession</title>
+<title>Marry Banjara - Search Brides By Profession</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/main.css">
@@ -60,15 +60,7 @@ $nume=mysql_num_rows($resulttot);
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
-					</div>
-				<br clear="all">
-			
-			</div>
-			<!-- logo + banner space -->
+				
 		
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">

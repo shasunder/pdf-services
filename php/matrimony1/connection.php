@@ -1,19 +1,19 @@
 <?PHP
 
 $server = "localhost";
-$user = "root";
-$password = "";
-$dbName = "matrimony1";
+$user = "marryban_banjara";
+$password = "banjara123";
+$dbName = "marryban_banjara";
 
 $conn = mysql_connect($server,$user,$password, $dbName)
 	or die("There was a problem connecting to MySQL. Please try again later.");
-	
+
 		if (!@mysql_select_db($dbName, $conn))
 		{
 			die ("There was a problem connecting to the database. Please try again later.");
 		}
 		return $conn;
-	
+
 	function GetAge($y, $m, $d) {
   $Year = $y;
   $Month = $m;
@@ -25,5 +25,5 @@ $conn = mysql_connect($server,$user,$password, $dbName)
     $YearDifference--;
   }
   return $YearDifference;
-} 
+}
 ?>

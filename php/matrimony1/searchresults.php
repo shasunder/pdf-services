@@ -88,7 +88,7 @@ $nume=mysql_num_rows($resulttot);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- Search Results</title>
+<title>Marry Banjara - Search Results</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/main.css">
@@ -111,15 +111,7 @@ $nume=mysql_num_rows($resulttot);
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
-					</div>
-				<br clear="all">
-			
-			</div>
-			<!-- logo + banner space -->
+				
 		
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
@@ -221,34 +213,50 @@ if($this1 < $nume) {
 print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";} 
 echo "</td></tr></table>";
 ?>
-<table 4="" border="0" cellspacing="0" width="565"><tbody>
+<table border="0" cellspacing="0" width="565" style="padding:5px;border:2px dashed #F90"><tbody>
 <?PHP
 if(@mysql_num_rows($result)!=0)
 {
 while($row = @mysql_fetch_array($result))
 {
 ?>
-<tr bgcolor="#FF8282" height="18">
-		<td colspan="2" align="left">&nbsp; <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#000000 "><b><?PHP echo stripslashes($row['LoginID'])?></b></a></td>
-		<td align="right"><img src="images/arrow-blu-3x5.gif" align="middle" border="0" height="5" hspace="5" width="3"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#FFFFFF; font-weight:bold;">View full profile</a>&nbsp;</td>
+<tr bgcolor="#990000" height="18">
+		<td colspan="2" align="left">&nbsp; <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#FFF "><b><?PHP echo stripslashes($row['LoginID'])?></b></a></td>
 		</tr>
-		<tr bgcolor="#FFBFBF">
-		<td style="border-bottom: 1px solid rgb(216, 241, 186);" align="center" background="images/photo-srchres.gif" height="78" width="80"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"><img src="<?PHP 
+		<tr bgcolor="#FFF" bordercolor="#F90">
+		<td style="border-bottom: 1px dashed #F60;" align="center" height="92" width="178"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"><img src="<?PHP 
 				if($row['photo3']!="")
 				echo $row['photo3'];
 				else
 				echo "images/f.gif";				
-				?>" oncontextmenu="return false" border="0" height="60" width="60"></a></td>
-		<td width="164" align="left" class="smallblack" style="border-bottom: 1px solid rgb(216, 241, 186);">
-		<?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> yrs, <?PHP echo stripslashes($row['Height'])?>, <?PHP echo stripslashes($row['Religion'])?>, <br>
-		<?PHP echo stripslashes($row['Profession'])?>,<br>
-		from
-	<?PHP echo stripslashes($row['State'])?>, <?PHP echo stripslashes($row['Country'])?></td>
-		<td width="321" align="left" bgcolor="#FFE8E8" class="mediumblack" style="border-bottom: 1px solid rgb(216, 241, 186); padding-left: 15px; padding-right: 10px;"><?PHP
-echo substr(stripslashes($row['AboutYourself']),0,200);
-?>... <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="mediumbluelinksp" style="color:#000000 ">»»</a></td>
-		</tr>
-		<tr><td colspan="3" height="12"><spacer type="block" height="12"></td></tr>
+				?>" oncontextmenu="return false" border="0" width="70" style="padding:5px;border:5px solid #F60"></a></td>
+		<td width="379" align="left" class="smallblack" style="border-bottom: 1px dashed #F60;">
+        
+        <table width="300" style="margin-top:10px;margin-bottom:10px;border: 1px solid #F60;">
+  <tr>
+    <td style="border-bottom: 1px dashed #F60;"><strong>Name : <?PHP echo stripslashes($row['Name'])?> </strong></td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 1px dashed #F60;"><strong>Age</strong> : <?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> yrs, </td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 1px dashed #F60;"><strong>Height</strong>: <?PHP echo stripslashes($row['Height'])?>, <strong>Religion</strong>: <?PHP echo stripslashes($row['Religion'])?></td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 1px dashed #F60;"><strong>Profession</strong> : <?PHP echo stripslashes($row['Profession'])?></td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 1px dashed #F60;"> <strong>State</strong> : <?PHP echo stripslashes($row['State'])?>, <strong>Country</strong> : <?PHP echo stripslashes($row['Country'])?></td>
+  </tr>
+    <tr>
+    <td><img src="images/arrow-blu-3x5.gif" align="middle" border="0" height="5" hspace="5" width="3"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#F30; font-weight:bold;">View full profile</a>&nbsp;</td>
+  </tr>
+</table>
+
+    
+    </td>
+		
+		<tr><td colspan="3" height="12" style="border-bottom:1px dashed #F60;padding-bottom:2px"><spacer type="block" height="12"></td></tr>
 <?PHP
 }
 }
