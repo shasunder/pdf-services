@@ -31,7 +31,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- <?PHP echo $row['LoginID'] ?>'s Profile</title>
+<title>Marry Banjara - <?PHP echo $row['LoginID'] ?>'s Profile</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/main.css">
@@ -57,15 +57,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
-					</div>				
-				<br clear="all">
-			
-			</div>
-			<!-- logo + banner space -->
+				
 		
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
@@ -180,8 +172,12 @@ echo $msg;
 <tr>
 <td valign="top">
 <table border="0" cellpadding="0" cellspacing="0" width="95%">
-<tbody><tr align="left" valign="top">
-	<td width="100%" height="20" colspan="2" class="largeblackbold"><?PHP echo $row['LoginID'] ?></td>
+<tbody>
+<tr align="left" valign="top">
+	<td width="100%" height="20" colspan="2" class="largeblackbold">Name :  <?PHP echo $row['Name'] ?></td>
+</tr>
+<tr align="left" valign="top">
+	<td width="100%" height="20" colspan="2" class="largeblackbold">Profile ID : <?PHP echo $row['LoginID'] ?></td>
 </tr>
 <tr>
 	<td align="left" nowrap="nowrap" width="4"><img src="images/arrow-grn-4x7.gif" border="0" height="7" width="4"></td>

@@ -39,7 +39,7 @@ $result = mysql_query($sql,$conn);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>- Login</title>
+<title>Marry Banjara - Login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/login.css">
@@ -65,16 +65,7 @@ $result = mysql_query($sql,$conn);
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
-					</div>
 				
-				<br clear="all">
-			
-			</div>
-			<!-- logo + banner space -->
 		
 					<br style="line-height: 1px;" clear="all">
 				<div>

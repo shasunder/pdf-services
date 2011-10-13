@@ -22,6 +22,14 @@
 				return false;
 			}
 			
+			else if(theform.name.value == "")
+			{
+				alert("Please enter Name");
+				theform.name.focus();
+				return false;
+			}
+			
+			
 			else if(theform.email.value == "")
 			{
 				alert("Please enter Email");
