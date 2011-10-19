@@ -174,7 +174,16 @@ else
 					Profile ID Search
 				</span>		</div>	<!-- SEARCH FORM ST-->
 				<div style="padding-top: 18px; text-align:center;">
-					<form method="get" action="profile.php" autocomplete="off" name="profileform">
+					<form method="get" action="<?PHP
+						if($_SESSION['UserID']!="")
+						{
+						echo "profile.php";
+						}
+						else
+						{
+						echo "login.php";
+						}
+						?>" autocomplete="off" name="profileform">
 						<input name="id" value=" Search by Profile ID" onfocus="if(this.value==' Search by Profile ID') this.value='';" onblur="if(this.value=='') this.value=' Search by Profile ID';" style="width: 111px;" type="text"> &nbsp; <input src="images/go.gif" title="View Profile" align="top" type="image">
 					</form>
 				</div>

@@ -27,7 +27,8 @@ $rowsettings = mysql_fetch_array($resultsettings);
 		<div class="width">
 			
 	
-		</div><br style="line-height: 0px;" clear="all">
+		</div>
+        <br style="line-height: 0px;" clear="all">
 		
 		
 		
@@ -102,7 +103,7 @@ else
 		<td width="291" valign="top">
 		
 		<table border="0" cellpadding="0" cellspacing="0" align="center">
-   <tr> <td valign="middle" colspan="3" height="59"> <div style="font-size:14px;font-weight:700;color:#FFF;background-color:#a10908;padding:5px;text-align:center">Quick Search</div> </td>  </tr>   
+   <tr> <td valign="middle" colspan="3" height="59" align="center"> <img src="images/quick.gif" width="170" height="30"></td>  </tr>   
 <tr>
 <td><img src="images/mid-2-c.gif" alt="" border="0"></td>
 <td align="left">
@@ -169,11 +170,9 @@ else
 </tr>
 
 </table>
-<div style="padding-top:20px;" align="center">
-<span  style="font-size:14px;font-weight:700;color:#FFF;background-color:#a10908;padding-left:70px;padding-right:70px;padding-top:5px;padding-bottom:5px;text-align:center">
-					Profile ID Search
-				</span>		</div>	<!-- SEARCH FORM ST-->
-				<div style="padding-top: 18px; text-align:center;">
+<div style="padding-top:10px;" align="center">
+<img src="images/profile.gif" width="170" height="30"></div>	<!-- SEARCH FORM ST-->
+				<div style="padding-top: 8px; text-align:center;">
 					<form method="get" action="<?PHP
 						if($_SESSION['UserID']!="")
 						{
@@ -197,96 +196,68 @@ else
 	<!-- MAIN CREATIVE EN-->
 </div>
 <!-- REGISTER/UPGRADE CONTENT ST-->
+<div class="width smallcnt" style="border-top: 1px solid rgb(255, 255, 255); background: transparent url(images/main-bg.gif) repeat-x scroll left top; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
 
+		<div id="threeStep" class="left tleft">
+
+			<div id="step1" class="left" style="border-right: 1px solid rgb(255, 255, 255); width: 184px; height: 67px;" onmouseover="change_image(1,'rollin','images/');" onmouseout="change_image(1,'rollout','images/')">
+				<div style="padding-top: 13px;">
+					<a href="register.php"><img id="digit1" src="images/one-off.gif" alt="" align="left" border="0" height="43" hspace="13" width="43"></a> <a href="register.php"><font style="color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;">Register</font></a><br><a href="register.php" style="color:#000000;">
+					and create your<br> free profile.</a>
+				</div>
+			</div>
+			<div id="step2" class="left" style="border-right: 1px solid rgb(255, 255, 255); width: 184px; height: 67px;" onmouseover="change_image(2,'rollin','images/');" onmouseout="change_image(2,'rollout','images/');">
+				<div style="padding-top: 13px;">
+					<a href="search.php" style="color:#000000;"><img id="digit2" src="images/two-off.gif" alt="" align="left" border="0" height="43" hspace="13" width="43"><font style="color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;">Search</font><br>
+					for members who<br> meet your criteria.</a>
+				</div>
+			</div>
+			<div id="step3" class="left" style="border-right: 1px solid rgb(255, 255, 255); width: 184px; height: 67px;" onmouseover="change_image(3,'rollin','images/');" onmouseout="change_image(3,'rollout','images/');">
+				<div style="padding-top: 13px;">
+					<a href="communicate.php" style="color:#000000;"><img id="digit3" src="images/three-off.gif" alt="" align="left" border="0" height="43" hspace="13" width="43">
+					<font style="color:#000000; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;">Contact</font><br>
+					members you like via<br>email or phone.</a>
+				</div>
+			</div>
+		</div><!-- three step en -->
+
+		<div class="left" style="padding: 20px 0pt 0pt 36px;">
+			<a href="register.php"><img src="images/advSearcButton.png" alt="Register Free!" title="Register Free!" border="0" height="30" vspace="0" width="140"></a>
+		</div>
+		
+<br clear="all">
+</div>
 <div class="width smallcnt" style="background-image:url(images/background.jpg)">
 <div class="left graytxt" style="width: 760px;background-image:url(images/background.jpg); height:5px;"></div>
 	<div class="left graytxt" style="width: 760px">
 		
-	<table class="left tleft smallcnt graytxt" border="0" cellpadding="0" cellspacing="0" style="width: 760px;border:3px solid #F93;background-color:#FFC">
+	<table class="left tleft smallcnt graytxt" border="0" cellpadding="0" cellspacing="0" style="padding:10px;border:3px solid #F93;background-color:#FFC">
     <tr>
     <td>
-    
-    
-    
-   <table width="744" border="0">
-  <tr>
-  
-    <td width="309"> <div class="paidMember" style=" font-size:12px;margin-left:30px">
-    <!--header-->
+<p style="font-family:Verdana;font-size:12px;color:#600;font-weight:bold;text-align:justify">
 
-            <div class="">
-        
-<h2 style="text-decoration:underline"> Paid Membership</h2>
-
-<table width="297" border="1" style="font-family:Verdana, Geneva, sans-serif;padding:10px;font-size:12px;border:1px dashed #F93">
-  <tr>
-    <td width="287" height="23" align="center" style="background-color:#F60"><strong>Why Paid Membership ?</strong></td>
-  </tr>
-  <tr>
-    <td height="28">
-   					<ul style="line-height:20px;list-style-type:square">
-						<li>Top Ranking Display</li>
-                        <li>See Contact Information</li>
-                        <li>Highlighted Display</li>
-                        <li>Send Personalized Messages</li>
-                        <li>Advanced search and save</li>
-                    </ul>
- </td>
-  </tr>
-</table>
-
-</td>
-        
-        
-    <td width="425"><table width="395" border="0" style="font-family:Verdana;font-size:12px;border:1px solid #600" align="right">
-  <tr align="center">
-    <td height="29" colspan="4" bgcolor="#F60"><h4 style="color:#333">Membership options and price are as below:</h4></td>
-  </tr>
-  
-  <tr>
-    <td width="76" height="45" style="background-color:#F00;color:#FFF;text-align:center">Duration</td>
-    <td width="109" style="background-color:#F00;color:#FFF;text-align:center">3 months</td>
-    <td width="107" style="background-color:#F00;color:#FFF;text-align:center">6 months</td>
-    <td width="83" style="background-color:#F00;color:#FFF;text-align:center">12 months</td>
-  </tr>
-  <tr align="center">
-    <td height="45" style="background-color:#F00;color:#FFF;text-align:center">Price</td>
-    <td style="text-align:center"><strong>Rs. 500 <br/>(&euro; 7.1)</strong></td>
-    <td style="text-align:center"><strong>Rs. 750 <br/>(&euro; 10.7)</strong></td>
-    <td style="text-align:center"><strong>Rs. 1000 <br/>(&euro; 14.2)</strong></td>
-  </tr>
-</table></td>
-    
-    
-  </tr>
-</table>
- 
-         
-        
-        
- 
-
-        
+	<?PHP
+if($_SESSION['UserID']!="")
+{
+ echo "<a href='membership.php'>";
+}
+else
+{
+	 echo "<a href='paidmembership.php'>";
+}
+?>
 	
-
-          <div class="">
-          <br/>
-
-		 	<br/>
-
-		  </div>
-
-			<div >
-
-				<div style="margin-left:10px">
-					<a href="login.php"><img src="images/buyNowbtn.png" border="0" height="30px"/></a> &nbsp;(Please login or register free first by clicking this button)<a href="register.php"><img src="images/register.png" border="0" height="30px"/></a> 
-				</div>
-			</div>
-
+  <img src="images/offer.gif" style="float:right;padding-left:10px;padding-right:10px;padding-bottom:10px" border="0" /> </a>
+    We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province.
 <br/><br/>
-   
-            
-            
+Our history goes back to some 2000 years and is as colourful as the costumes our women wear.
+<br/><br/>
+There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community. But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.
+<br/><br/>
+This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates
+<br/><br/>
+We aim to provide service at a very affordable price (starting at Rs.500 only). We would be glad to hear from you!
+</p>
 </td>
     </tr>
     </table>	
@@ -294,7 +265,7 @@ else
 		
 	</div>
 </div><br clear="all">
-<span class="brseven"><br>
+	</div><span class="brseven"><br>
 
 
 <!-- Footer starts -->

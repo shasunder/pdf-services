@@ -24,29 +24,29 @@ else
 {
 	$dobstatus = 0;
 }
-		
+
 $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['month']), mysql_escape_string($_POST['day']));
 
 		if (@mysql_num_rows($result)!=0){
 			$emailMsg = "<font color='#FF0000'><strong>* This E-Mail Address is ALREADY REGISTRED </strong></font>";
 			}
-		
-		
-		
+
+
+
 		else if(@mysql_num_rows($result2)!=0){
 			$emailMsg = "<font color='#FF0000'><strong>* This Profile ID is ALREADY REGISTRED</strong></font>";
 			}
-		
+
 		else if($age < 18 || $age > 60)
 		{
 			$emailMsg = "<font color='#FF0000'><strong>You cannot be register with us, if your age is less than 18 or greater than 60</strong></font>";
 		}
-		
+
 		else{
 
 
 
-			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, ReligionID, CountryID, ConfirmationCode, AddedDate, Age, dobstatus) 
+			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, ReligionID, CountryID, ConfirmationCode, AddedDate, Age, dobstatus)
 			VALUES (
 				'".mysql_escape_string($_POST['login'])."',
 				'".mysql_escape_string($_POST['name'])."',
@@ -58,42 +58,42 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 				'".mysql_escape_string($_POST['year'])."',
 				".$_POST['community'].",
 				".$_POST['countryofresidence'].",
-				'".md5(mysql_escape_string($_POST['email']))."',				
+				'".md5(mysql_escape_string($_POST['email']))."',
 				NOW(),
 				'".$age."',
 				".$dobstatus."
-			)";	
+			)";
 			$resultt = mysql_query($insert);
 
-if($rowsettings['smtpstatus'] == 1)		
+if($rowsettings['smtpstatus'] == 1)
 {
-	
+
 	$email_layout = "<br><br><img src='".$rowsettings['url']."/images/matrimonial-logo-sm.gif'><br><table border='0' width='100%'><tr><Td colspan='2' background='".$rowsettings['url']."/images/footer_seprator.gif' height='2'></Td></tr></table><br><br><br>Dear Member,<br><br>Your Registration with ".$rowsettings['ScriptName']." has been successfully completed, but you need to confirm your registration first by clicking the below link. If you cannot access the confirmation page by clicking at this link, then kindly copy paste this link into your browser's address bar and press enter. After you will confirm your registration, You will be able to create your profile.<br><br><br>click below to confirm your registration:<br><br><a href='".$rowsettings['url']."/registration_confirmation.php?confirm=".md5(mysql_escape_string($_POST['email']))."'>".$rowsettings['url']."/registration_confirmation.php?confirm=".md5(mysql_escape_string($_POST['email']))."</a>";
-	
+
 
 require("phpmailer/class.phpmailer.php");
 
 	$mail = new PHPMailer();
-	
-	$mail->IsSMTP();            
+
+	$mail->IsSMTP();
 	$mail->Host = $rowsettings['smtp'];
 	$mail->Port = $rowsettings['port'];
-	$mail->SMTPAuth = true;     
+	$mail->SMTPAuth = true;
 	$mail->Username = $rowsettings['AdminEmail'];
 	$mail->Password = $rowsettings['AdminEmailPassword'];
-	
+
 	$mail->From = $rowsettings['AdminEmail'];
 	$mail->FromName = $rowsettings['ScriptName'];
-	$mail->AddAddress($_POST['email']);  
+	$mail->AddAddress($_POST['email']);
 
-	
+
 	$mail->WordWrap = 50;                                 // set word wrap to 50 characters
 	$mail->IsHTML(true);                                  // set email format to HTML
-	
+
 	$mail->Subject = "Action Required to Confirm Registration";
 	$mail->Body = $email_layout;
 	$mail->Send();
-	
+
 	}
 	else
 	{
@@ -107,7 +107,7 @@ require("phpmailer/class.phpmailer.php");
 
 	$res=@mail($to,$subject,$description,$headers);
 	}
-	
+
 	header("Location: register2.php?email=".mysql_escape_string($_POST['email']));
 		}
 }
@@ -119,7 +119,7 @@ require("phpmailer/class.phpmailer.php");
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/register.css">
-<script language="javascript" src="js/register.js"></script>		
+<script language="javascript" src="js/register.js"></script>
 </head>
 
 <body topmargin="2" leftmargin="0" oncontextmenu="return false" onselectstart="return false" ondragstart="return false" marginheight="2" marginwidth="0" background="images/background.jpg">
@@ -128,7 +128,7 @@ require("phpmailer/class.phpmailer.php");
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<!-- The top link table start's here -->
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -136,19 +136,19 @@ require("phpmailer/class.phpmailer.php");
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 					<div>
 					<div style="border-top: 2px solid rgb(143, 167, 191); border-bottom: 2px solid #000000; background-color: #000000;">
 					<div style="margin: 1px 0pt 1px 0px; padding: 3px 0pt 3px 0px; background-color: #990000;" class="mediumwhitebold">
-						
-	
+
+
 						</div>
 					</div>
 				</div>
@@ -167,22 +167,22 @@ require("phpmailer/class.phpmailer.php");
 			<div style="width: 30px; float: left;"><br></div>
  			<div style="margin: 0pt 0pt 10px 0px; width: 700px; float: left;">
 				<br>
-				<?PHP 
+				<?PHP
 				if($emailMsg != "")
 				{
 					echo $emailMsg;
 				}
 				?>
-				
-				<br>				<div style="float: left; text-align: left; padding-top: 10px;"><img src="images/why-register.gif" height="20" width="108"><br>
-				
-				<li> <span>View unlimited profiles</span> </li>
-				<li> <span>Express Interest in members</span> </li>				
-				<li> <span>Get contacted directly</span> </li>
 
+				<div style="float: left; text-align: left;"><img src="images/why-register.gif"><br>
+				<ul>
+				<li> <span>View unlimited profiles</span> </li>
+				<li> <span>Express Interest in members</span> </li>
+				<li> <span>Get contacted directly</span> </li>
+				</ul>
 				</div>
 
-				<br clear="all"><br>
+				<br clear="all">
 				<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 15px 0pt 5px 0px; width: 430px; float: left; text-align: left;">
 				<img src="images/enter-details.gif" alt="Enter your details to register for FREE!" height="20" width="354"></div>
 				<div class="smallgrey" style="border-bottom: 1px solid rgb(143, 167, 191); padding: 2px 0pt 5px 0px; width: 270px; float: left; text-align: right;"><span style="font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; font-size-adjust: none; font-stretch: normal; line-height: 18px;"><br></span>Already Registered? <a href="login.php" class="smallbluelink"><b>Login</b></a>&nbsp;</div><br clear="all">
@@ -196,14 +196,14 @@ require("phpmailer/class.phpmailer.php");
 
 
 
-			
+
 			<form method="post" action="register.php" name="frm_registration" id="frm_registration" autocomplete="off" onSubmit="return validateform(this);">
 			<input name="continue" value="true" type="hidden">
-			<div id="regform">
+			<div id="regform" style="padding-left:20px">
 
 
 
-				<div style="background: transparent url(images/registration-bg.jpg) repeat-x scroll center bottom; width: 90%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
+				<div style="">
 
 
 					<div class="div1">
@@ -211,13 +211,13 @@ require("phpmailer/class.phpmailer.php");
 					<tbody><tr>
 						<td>
 
-					
+
 		<!-- FORM TABLE ST -->
 		<script src="js/common.js" type="text/javascript" language="javascript1.2"></script>
 		<script src="js/registration.js" type="text/javascript" language="javascript1.2"></script>
 		<script src="js/common_002.js"></script>
 
-		
+
 		<table class="tblreg" border="0" cellpadding="5" cellspacing="4" width="400">
 		<tbody><tr>
 			<td nowrap="nowrap" width="150"><label for="profileid">Profile ID</label></td>
@@ -235,7 +235,7 @@ require("phpmailer/class.phpmailer.php");
 	<br>
 			<span id="errmsg_login" class="error"></span></td>
 		</tr>
-        
+
         <tr>
 			<td nowrap="nowrap" width="150"><label for="name">Name</label></td>
 			<td class="smallgrey"><input tabindex="1" class="field" name="name" id="name" value="<?PHP echo $_REQUEST['name']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_name();" type="text">
@@ -252,10 +252,10 @@ require("phpmailer/class.phpmailer.php");
 	<br>
 			<span id="errmsg_name" class="error"></span></td>
 		</tr>
-        
-        
-        
-        
+
+
+
+
 		<tr>
 			<td><label for="email">Email</label></td>
 			<td class="smallgrey"><input tabindex="3" class="field" name="email" id="email" value="<?PHP echo $_REQUEST['email']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_email();" type="text">
@@ -339,7 +339,7 @@ require("phpmailer/class.phpmailer.php");
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-	 <label class="smallblack l2" for="male">Male &nbsp;</label><br>
+	 <label class="smallblack l2" for="male">Male &nbsp;</label>
 			<input tabindex="7" name="gender" id="female" value="Female" onfocus="toggleHint('show', this.name)" onblur="validate_gender()" onclick="document.getElementById('errmsg_gender').innerHTML=''" type="radio"> <label class="smallblack l2" for="female">Female</label><br>
 			<span id="errmsg_gender" class="error"></span></td>
 		</tr>
@@ -363,27 +363,9 @@ require("phpmailer/class.phpmailer.php");
 			<span id="errmsg_dateofbirth" class="error"></span></td>
 		</tr>
 		<tr>
-			<td style="cursor: pointer;" onclick="focus_field('community');">Religion / Community</td>
+			<td style="cursor: pointer;" onclick="focus_field('community');">Subcaste</td>
 			<td>
-			<select tabindex="11" name="community" id="community" class="field" onblur="validate_community();"><option value="">Select</option>
-			<?PHP
-				$sqlCountry = "SELECT * FROM religion order by ReligionID";
-				$resultCountry = mysql_query($sqlCountry, $conn);
-				if (@mysql_num_rows($resultCountry)!=0){
-					while($rowCountry = mysql_fetch_array($resultCountry))
-					{
-						?>
-						<option value="<?PHP echo $rowCountry['ReligionID']?>"
-						<?PHP
-						if($_REQUEST['ReligionID'] == $rowCountry['ReligionID'])
-							echo "selected";
-						?>
-						><?PHP echo $rowCountry['Religion']?></option>
-						<?
-					}
-				}				
-				?>
-			</select><br>
+			<input tabindex="11" name="community" id="community" class="field" /><br>
 			<span id="errmsg_community" class="error"></span></td>
 		</tr>
 		<tr>
@@ -404,19 +386,19 @@ require("phpmailer/class.phpmailer.php");
 						><?PHP echo $rowCountry['Country']?></option>
 						<?
 					}
-				}				
+				}
 				?>
 			</select><br>
 			<span id="errmsg_countryofresidence" class="error"></span></td>
 		</tr>
 		</tbody></table>
 		<!-- FORM TABLE EN -->
-	
+
 						</td>
-						<td valign="bottom"><!-- MODEL IMAGE ST -->
+						<td valign="top"><!-- MODEL IMAGE ST -->
 					<br>
 					<img src="images/bride.jpg" border="0">
-				
+
                     </td>
 					</tr>
 					</tbody></table>
@@ -461,7 +443,7 @@ require("phpmailer/class.phpmailer.php");
 				<div class="smalldgray" style="width: 760px; text-align: left; font-family: Tahoma; font-style: normal; font-variant: normal; font-weight: normal; font-size: 10px; line-height: normal; font-size-adjust: none; font-stretch: normal;">
 					<div style="margin: 0px;">
 						<div style="width: 100%; text-align: center;">
-						
+
 		<br>
 		<div style="width: 100%; text-align: center; margin-bottom: 5px;">
 			<div style="padding: 0pt 0pt 0pt 0px; width: 100%;">

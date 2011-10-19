@@ -17,7 +17,6 @@ $result = mysql_query($sql,$conn);
 			$row = @mysql_fetch_array($result);
 			$_SESSION['UserID']=$row['UserID'];
 			$_SESSION['LoginID']=$row['LoginID'];
-			$_SESSION['Gender']=$row['Gender'];
 			$_SESSION['GoldMember']=$row['GoldMember'];
 			$_SESSION['EmailAddress']=$row['EmailAddress'];
 			if($_POST['autologin']=="Y")

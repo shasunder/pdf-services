@@ -221,10 +221,51 @@ while($row = @mysql_fetch_array($result))
 {
 ?>
 <tr bgcolor="#990000" height="18">
-		<td colspan="2" align="left">&nbsp; <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#FFF "><b><?PHP echo stripslashes($row['LoginID'])?></b></a></td>
+		<td colspan="2" align="left">&nbsp; 
+
+
+                        <?PHP
+						if($_SESSION['UserID']!="")
+						{
+						?>
+						 <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#FFF ">
+						<?PHP
+						}
+						else
+						{
+						?>
+						<a href="login.php" class="smallbluelink" style="color:#FFF ">
+						<?PHP
+						}
+						?>
+
+
+ 
+       
+        
+        
+        <b><?PHP echo stripslashes($row['LoginID'])?></b></a></td>
 		</tr>
 		<tr bgcolor="#FFF" bordercolor="#F90">
-		<td style="border-bottom: 1px dashed #F60;" align="center" height="92" width="178"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"><img src="<?PHP 
+		<td style="border-bottom: 1px dashed #F60;" align="center" height="92" width="178">
+        
+ <?PHP
+						if($_SESSION['UserID']!="")
+						{
+						?>
+						 <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>">
+						<?PHP
+						}
+						else
+						{
+						?>
+						<a href="login.php" class="smallbluelink" style="color:#FFF ">
+						<?PHP
+						}
+						?>
+        
+        
+        <img src="<?PHP 
 				if($row['photo3']!="")
 				echo $row['photo3'];
 				else
@@ -249,7 +290,26 @@ while($row = @mysql_fetch_array($result))
     <td style="border-bottom: 1px dashed #F60;"> <strong>State</strong> : <?PHP echo stripslashes($row['State'])?>, <strong>Country</strong> : <?PHP echo stripslashes($row['Country'])?></td>
   </tr>
     <tr>
-    <td><img src="images/arrow-blu-3x5.gif" align="middle" border="0" height="5" hspace="5" width="3"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#F30; font-weight:bold;">View full profile</a>&nbsp;</td>
+    <td style="color:#F30; font-weight:bold;"><img src="images/arrow-blu-3x5.gif" align="middle" border="0" height="5" hspace="5" width="3">
+    
+                        <?PHP
+						if($_SESSION['UserID']!="")
+						{
+						?>
+						 <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"  style="color:#F30;font-weight:bold;">View full profile</a>&nbsp;
+						<?PHP
+						}
+						else
+						{
+						?>
+						<a href="login.php" class="smallbluelink" style="color:#F30;font-weight:bold;">View full profile</a>&nbsp;
+						<?PHP
+						}
+						?>   
+   
+    
+    
+    </td>
   </tr>
 </table>
 
