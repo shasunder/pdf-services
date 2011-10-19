@@ -1,6 +1,6 @@
 <?PHP
 
-$server = "localhost";
+$server = "localhost";//box710.bluehost.com
 $user = "marryban_banjara";
 $password = "banjara123";
 $dbName = "marryban_banjara";

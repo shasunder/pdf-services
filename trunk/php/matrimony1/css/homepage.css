@@ -1,7 +1,24 @@
 /* DEFAULTS ST */
-body			{margin: 0px; font: normal 12px Arial; background-color: #ffffff;
-background:none repeat scroll 0 0 #FFF3DA;
+body			{margin: 0px; 
+font: normal 12px lucida grande,San Serif; 
+background-color: #ffffff;
+background:none repeat scroll 0 0 #FFFFFF;
 }
+.redText{ color:#FC5056}
+.orangeText{ color:#FFB95F;}
+fieldset{
+	margin: 10px; 
+	border: 1px solid #FCE2AF;
+}
+
+input[type="text"],input[type="password"],select {
+	border: 1px solid #FCE2AF;
+	height:18px;
+}
+hr{
+ border: 0.5px solid #FCE2AF;
+}
+
 form			{margin: 0px;}
 input,
 select,

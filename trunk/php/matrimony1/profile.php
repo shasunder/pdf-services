@@ -111,7 +111,7 @@ else if($_REQUEST['interest'] == "true")
 
 	}
 		
-$msg = "Thanks for showing your interest in this member profile. The recipient has been notified about your interest.. We wish you good luck finding your perfect Match..!";
+$msg = "<div style='color:#e12328;font-weight:bold;border:1px dotted #000;padding:5px'> Thanks for showing your interest in this member profile. The recipient has been notified about your interest.. We wish you good luck finding your perfect Match..! </div>";
 	}
 	
 	
@@ -367,7 +367,7 @@ else
 <tbody><tr><td colspan="3" class="mediumblack"><br></td></tr>
 
 <tr align="left">
-<td height="22" colspan="3" bgcolor="#FF8282" class="largewhitebold">&nbsp;
+<td height="22" colspan="3"  style="background-color:#600;padding:3px" class="largewhitebold">&nbsp;
 About Myself</td>
 </tr>
 <tr>
@@ -886,7 +886,7 @@ if(@mysql_num_rows($resultstate) != 0)
 <!-- The 3rd center content table start's here -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr align="left">
-<td height="22" colspan="3" bgcolor="#FF8282" class="largewhitebold">&nbsp;<a name="more"></a>
+<td height="22" colspan="3"  style="background-color:#600;padding:3px" class="largewhitebold">&nbsp;<a name="more"></a>
 More About Myself</td>
 </tr>
 <tr>
@@ -949,7 +949,7 @@ echo stripslashes(str_replace("\n","<br>", $row['AboutFamily']));
 <a name="partner"></a>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr align="left">
-<td height="22" colspan="3" bgcolor="#FF8282" class="largewhitebold">&nbsp;
+<td height="22" colspan="3"  style="background-color:#600;padding:3px" class="largewhitebold">&nbsp;
 My Preferred Partner</td>
 </tr>
 
@@ -1245,14 +1245,48 @@ $religion = "Doesn't Matter";
 <!-- The 4th center content table end's here -->
 
 
+<br>
+<div class="largewhitebold bluepatch" style="background-color:#600;padding:3px">Express Interest</div>
+
+<?PHP
+$m = "";
+if($_SESSION['UserID']=="")
+{
+	$m = "You need to login first to express your interests.";
+	$disabled = "disabled";
+}
+?>
+<a name="interest"></a>
+<form method="post" action="profile.php?id=<?PHP echo $_REQUEST['id']?>">
+<strong>Express your interest here. Click the Below "Express Interest" button to express an interest in this member. It is Free..!</strong><br>
+<input type="hidden" name="interest" value="true">
+<input type="hidden" name="ToEmailAddress" value="<?PHP echo $row['EmailAddress'] ?>">
+<input src="images/button-express-interest.gif" align="center" border="0" hspace="1" type="image" vspace="8" <?PHP echo $disabled?>>
+<br>
+<?PHP
+if($m!="")
+{
+?>
+<span class="mediumblackbold"><?PHP echo $m?> <a href="login.php" class="mediumblueboldlink">Click here</a> to Login.
+</span>
+<?PHP
+}
+?>
+</form>
+<br>
+
+
 <a name="contact"></a>
 
 <br>
 
-<div class="largewhitebold bluepatch" style="background-color:#FF8282; ">My Contact Details</div>
+<div class="largewhitebold bluepatch" style="background-color:#600;padding:3px">My Contact Details</div>
 
 <div class="main">
-
+<?PHP
+if($_SESSION['GoldMember']==1)
+{
+?>
 <div style="padding: 4px 0pt 2px 6px;"><b>My Contact Number</b></div>
 
 <div class="container" style="background-color:#FFE8E8;">
@@ -1309,41 +1343,35 @@ else if($row['PhoneStatus']!="telephone" && $row['DisplayContactStatus']=="Show"
 		}
 		?>
 		</div>
+        
+        <?PHP
+}
+else if($_SESSION['GoldMember']!=1 && $_SESSION['UserID']!="")
+{
+?>
+<div style="padding:10px">
+<a href="membership.php" class="largeblueboldlink"><strong>Update to Gold Member to send Unlimited Messages to Members. Click here to Update Your Membership Level Now...!!!!</strong></a>
+</div>
+<?PHP
+}
+else 
+{
+?>
+<strong>You need to login first to write messages to members. <a href="login.php" class="mediumblueboldlink">Click here</a> to Login. If you are not a member yet, <a href="register.php" class="mediumblueboldlink">Register Now...</a></strong>
+<p>&nbsp;</p>
+<?PHP
+}
+?>
+
 		<br clear="all">
 		
 </div>
 </div>
-<br>
-<?PHP
-$m = "";
-if($_SESSION['UserID']=="")
-{
-	$m = "You need to login first to express your interests.";
-	$disabled = "disabled";
-}
-?>
-<a name="interest"></a>
-<form method="post" action="profile.php?id=<?PHP echo $_REQUEST['id']?>">
-<strong>Express your interest here. Click the Below "Express Interest" button to express an interest in this member. It is Free..!</strong><br>
-<input type="hidden" name="interest" value="true">
-<input type="hidden" name="ToEmailAddress" value="<?PHP echo $row['EmailAddress'] ?>">
-<input src="images/button-express-interest.gif" align="center" border="0" hspace="1" type="image" vspace="8" <?PHP echo $disabled?>>
-<br>
-<?PHP
-if($m!="")
-{
-?>
-<span class="mediumblackbold"><?PHP echo $m?> <a href="login.php" class="mediumblueboldlink">Click here</a> to Login.
-</span>
-<?PHP
-}
-?>
-</form>
-<br>
+
 
 <!-- The 5th center content table start's here -->
-
-
+<div class="largewhitebold bluepatch" style="background-color:#600;padding:3px">Send Message Directly To Your Partner</div>
+<br>
 <a name="message"></a>
 <?PHP
 if($_SESSION['GoldMember']==1)
