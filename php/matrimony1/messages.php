@@ -35,14 +35,14 @@ function ConfirmDelete(id)
 		window.location = "delete_message.php?id="+id;
 	}
 }
-</script>		
+</script>
 
 </head>
 
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -50,19 +50,19 @@ function ConfirmDelete(id)
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -74,7 +74,7 @@ function ConfirmDelete(id)
 						<div style="padding: 6px 0pt 0pt 0px; width: 170px; " class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="<?PHP echo $_SESSION['LoginID']?>"><?PHP echo $_SESSION['LoginID']?></a>]<br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -105,7 +105,7 @@ function ConfirmDelete(id)
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -120,14 +120,14 @@ function ConfirmDelete(id)
 		<div class="mediumblack" style="width: 550px;">
 
 
-	
+
 	<div style="border: 0px solid rgb(0, 0, 0); margin: 0pt 30px; text-align: left;">
-	
-		
+
+
 			<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 12px 0px 7px; margin-bottom: 10px;">
 				<h2>My Messages</h2>
 			</div>
-		
+
 
 
 <?PHP
@@ -139,7 +139,7 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 	$resultnewmessages=mysql_query($sqlnewmessages);
 	$row_newmessages = mysql_fetch_array($resultnewmessages);
 	$numberofnewmessages = $row_newmessages['numberofnewmessages'];
-?>		
+?>
 
  <div style="font:'Times New Roman', Times, serif; text-align:center;">
   	<b><? echo $_GET['msg'];?></b>
@@ -147,19 +147,19 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 
 
 <p align="left"><img src="images/new_msg.jpg"> <strong><?=$numberofnewmessages?> New Messages</strong></p>
-	
+
 <table width="100%" >
 									<!-- Start Catetory Admin -->
 									<?
 										if (mysql_num_rows($resultProduct)!=0){
 											$color = 0;
-											while($row = mysql_fetch_array($resultProduct))	
+											while($row = mysql_fetch_array($resultProduct))
 											{
-											
+
 											if($row['ReadStatus']==1)
 											{
 											if ($color==0){
-													echo "<Tr bgcolor='#eeeeee'>
+													echo "<Tr bgcolor='#fff7e7'>
 														<td class='adminvalues' width='35%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'>".$row['SenderID']."</a></td>
 														<td align='Center' width='55%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'>".substr(stripslashes($row['Message']),0,100)."...</a></td>
 														<td align='Center' width='10%'><a class='delete2' href='javascript:ConfirmDelete(".$row[$id].");'>DELETE</a> </td>
@@ -167,7 +167,7 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 														$color = 1;
 												}
 												else{
-													echo "<Tr bgcolor='#eeeeee'>
+													echo "<Tr bgcolor='#fff7e7'>
 														<td class='adminvalues' width='35%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'>".$row['SenderID']."</a></td>
 														<td align='Center' width='55%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'>".substr(stripslashes($row['Message']),0,100)."...</a></td>
 														<td align='Center' width='10%'><a class='delete2' href='javascript:ConfirmDelete(".$row[$id].");'>DELETE</a> </td>
@@ -178,7 +178,7 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 											else
 											{
 												if ($color==0){
-													echo "<Tr bgcolor='#eeeeee'>
+													echo "<Tr bgcolor='#fff7e7'>
 														<td class='adminvalues' width='35%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'><b>".$row['SenderID']."</b></a></td>
 														<td align='Center' width='55%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'><strong>".substr(stripslashes($row['Message']),0,100)."...</strong></a></td>
 														<td align='Center' width='10%'><a class='delete2' href='javascript:ConfirmDelete(".$row[$id].");'><strong>DELETE</strong></a> </td>
@@ -186,7 +186,7 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 														$color = 1;
 												}
 												else{
-													echo "<Tr bgcolor='#eeeeee'>
+													echo "<Tr bgcolor='#fff7e7'>
 														<td class='adminvalues' width='35%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'><b>".$row['SenderID']."</b></a></td>
 														<td align='Center' width='55%'><a class='edit2' href='".$pagename.".php?".$id."=".$row[$id]."'><strong>".substr(stripslashes($row['Message']),0,100)."...</strong></a></td>
 														<td align='Center' width='10%'><a class='delete2' href='javascript:ConfirmDelete(".$row[$id].");'><strong>DELETE</strong></a> </td>
@@ -194,7 +194,7 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 														$color = 0;
 												}
 											}
-												
+
 											}
 													echo "<Tr class='currentData' bgcolor='#cccccc'  height='3'>
 														<td> </td>
@@ -202,8 +202,8 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 														<td align='Center'></td>
 														</tr>";
 														$color = 0;
-											
-										}								
+
+										}
 									?>
 								</table>
 	<br>
@@ -211,12 +211,12 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 	<div style="padding-left: 127px; text-align: left;" class="mediumblack"></div>
 
 
-		
+
 
 
 	</div><br>
 
-	
+
 
 
 
@@ -236,7 +236,7 @@ $sqlProduct="select * from messages where messages.RecieverID='".$_SESSION['Logi
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

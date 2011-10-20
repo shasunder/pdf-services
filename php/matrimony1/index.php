@@ -133,7 +133,7 @@ else
 													else
 													{
 														echo "<option value='Female' selected='selected'>Bride</option>";
-														echo "<option value='Male' selected='selected'>Groom</option>";
+														echo "<option value='Male' >Groom</option>";
 													}
 													?>
 
@@ -281,7 +281,7 @@ There are so many doctors,engineers, lecturers, dentists and other professionals
 <br/><br/>
 This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates
 <br/><br/>
-We aim to provide service at a very affordable price (starting at Rs.500 only). We would be glad to hear from you!
+We aim to provide service at a very affordable price (starting at <b>Rs.500</b> only). We would be glad to hear from you!
 </p>
 </td>
     </tr>

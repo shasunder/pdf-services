@@ -10,7 +10,9 @@ fieldset{
 	margin: 10px; 
 	border: 1px solid #FCE2AF;
 }
-
+textarea{
+border: 1px solid #FCE2AF;
+}
 input[type="text"],input[type="password"],select {
 	border: 1px solid #FCE2AF;
 	height:18px;

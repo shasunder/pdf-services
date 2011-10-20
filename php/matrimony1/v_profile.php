@@ -43,7 +43,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -51,19 +51,19 @@ $rowp = @mysql_fetch_array($resultpartner);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -90,7 +90,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 						<br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -121,7 +121,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -144,7 +144,7 @@ echo $msg;
 		<td height="7" width="350"><spacer type="block" height="7" width="350"></td>
 		<td width="220"><spacer type="block" width="220"></td>
 		</tr>
-	
+
 			<tr>
 			<td align="left"><h2>Profile&nbsp;</h2></td>
 			<td align="right">&nbsp;		</td>
@@ -152,7 +152,7 @@ echo $msg;
 		<tr><td colspan="2" bgcolor="#8fa7bf" height="1" width="1"><spacer type="block" height="1" width="1"></td></tr>
 		<tr><td colspan="2" height="8" width="1"><spacer type="block" height="8" width="1"></td></tr>
 		</tbody></table>
-	
+
 
 
 
@@ -190,7 +190,7 @@ echo $msg;
 <tbody><tr><td height="1"><spacer type="block" height="1"></td></tr>
 <tr>
 <td align="left" class="smallblack">
-<?PHP 
+<?PHP
 if($row['CreatedBy']!="Self" && $row['Gender']=="Male")
 echo "He is ";
 else if($row['CreatedBy']!="Self" && $row['Gender']=="Female")
@@ -235,11 +235,11 @@ if($row['photo2'] != "")
 else
 {
 ?>
-<img src="<?PHP 
+<img src="<?PHP
 				if($row['Gender']!="Male")
 				echo "images/rf.gif";
 				else
-				echo "images/rm.gif";				
+				echo "images/rm.gif";
 				?>" border="0" height="200" width="150">
 <?PHP
 }
@@ -257,7 +257,7 @@ else
 <tbody><tr><td colspan="3" class="mediumblack"><br></td></tr>
 
 <tr align="left">
-<td height="22" colspan="3" bgcolor="#FF8282" class="largewhitebold">&nbsp;
+<td height="22" colspan="3" bgcolor="#E473E0" class="largewhitebold">&nbsp;
 About Myself</td>
 </tr>
 <tr>
@@ -269,7 +269,7 @@ About Myself</td>
 
 
 
-<table bgcolor="#FFE8E8" border="0" cellpadding="0" cellspacing="0" width="280">
+<table bgcolor="#FFF7FF" border="0" cellpadding="0" cellspacing="0" width="280">
 <tbody><tr align="left" bgcolor="#ffffff">
 <td height="16" colspan="5" valign="middle" class="mediumblackbold">&nbsp;&nbsp;My Basics</td>
 </tr>
@@ -441,7 +441,7 @@ if ($row['Astroprofile']!="")
 <td height="1" width="10"><spacer type="block" height="1" width="10"></td>
 <td valign="top">
 
-<table bgcolor="#FFE8E8" border="0" cellpadding="0" cellspacing="0" width="280">
+<table bgcolor="#FFF7FF" border="0" cellpadding="0" cellspacing="0" width="280">
 <tbody><tr align="left" bgcolor="#ffffff">
 <td height="16" colspan="5" valign="middle"><font class="mediumblackbold">&nbsp;&nbsp;My Religious &amp; Social Background</font></td>
 </tr>
@@ -505,7 +505,7 @@ if ($row['Astroprofile']!="")
 <td class="mediumblack"><br></td>
 <td valign="top" class="mediumblack">Country of Birth</td>
 <td valign="top" class="mediumblack">:</td>
-<td valign="top" class="mediumblack"><?PHP 
+<td valign="top" class="mediumblack"><?PHP
 $sql2 = "SELECT Country FROM user_profile, countries WHERE user_profile.CountryOfBirth=countries.CountryID";
 $result2 = mysql_query($sql2,$conn);
 $row2 = @mysql_fetch_array($result2);
@@ -517,7 +517,7 @@ echo $row2['Country']?></td>
 <td valign="top" class="mediumblack">Grew up in</td>
 <td valign="top" class="mediumblack">:</td>
 <td valign="top" class="mediumblack">
-<?PHP 
+<?PHP
 $grewupin1 = explode("|",$row['GrewUpIn']);
 $a=0;
 for($x=0; $x < count($grewupin1); $x++)
@@ -694,56 +694,56 @@ for($x=0; $x < count($grewupin1); $x++)
 <tr align="left" valign="top">
 <td height="1" colspan="5" bgcolor="#8fa7bf"><spacer type="block" height="1" width="1"></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td width="8" height="8"><spacer type="block" height="8" width="8"></td>
 <td width="153" class="mediumblack">My Hobbies</td>
 <td width="30" class="mediumblack">:</td>
 <td width="364" class="mediumblack"><?PHP echo str_replace("|",", ",$row['Hobbies'])?></td>
 <td width="8" height="8"><spacer type="block" height="8" width="8"></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td class="mediumblack">My Interests</td>
 <td class="mediumblack">:</td>
 <td class="mediumblack"><?PHP echo str_replace("|",", ",$row['Interests'])?></td>
 <td><br></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td class="mediumblack">My Favorite Music</td>
 <td class="mediumblack">:</td>
 <td class="mediumblack"><?PHP echo str_replace("|",", ",$row['FavoriteMusic'])?></td>
 <td><br></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td class="mediumblack">My Favorite Reads</td>
 <td class="mediumblack">:</td>
 <td class="mediumblack"><?PHP echo str_replace("|",", ",$row['FavoriteReads'])?></td>
 <td><br></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td class="mediumblack">My Preferred Movies</td>
 <td class="mediumblack">:</td>
 <td class="mediumblack"><?PHP echo str_replace("|",", ",$row['PreferredMovies'])?></td>
 <td><br></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td nowrap="nowrap" class="mediumblack">My Sports / Fitness Activities</td>
 <td class="mediumblack">:</td>
 <td class="mediumblack"><?PHP echo str_replace("|",", ",$row['Sports'])?></td>
 <td><br></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td class="mediumblack">My Favorite Cuisine</td>
 <td class="mediumblack">:</td>
 <td class="mediumblack"><?PHP echo str_replace("|",", ",$row['FavoriteCuisine'])?></td>
 <td><br></td>
 </tr>
-<tr align="left" valign="top" bgcolor="#FFE8E8">
+<tr align="left" valign="top" bgcolor="#FFF7FF">
 <td><br></td>
 <td class="mediumblack">My Preferred Dress Style</td>
 <td class="mediumblack">:</td>
@@ -762,7 +762,7 @@ for($x=0; $x < count($grewupin1); $x++)
 <!-- The 3rd center content table start's here -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr align="left">
-<td height="22" colspan="3" bgcolor="#FF8282" class="largewhitebold">&nbsp;<a name="more"></a>
+<td height="22" colspan="3" bgcolor="#E473E0" class="largewhitebold">&nbsp;<a name="more"></a>
 More About Myself</td>
 </tr>
 <tr>
@@ -777,7 +777,7 @@ More About Myself</td>
 <td colspan="3" bgcolor="#8fa7bf" height="1"><spacer type="block" height="1" width="1"></td>
 </tr>
 
-<tr bgcolor="#FFE8E8">
+<tr bgcolor="#FFF7FF">
 <td height="1" width="8"><spacer type="block" height="1" width="8"></td>
 <td align="left" valign="top" class="mediumblack">
 <?PHP
@@ -800,7 +800,7 @@ echo stripslashes(str_replace("\n","<br>", $row['AboutYourself']));
 <td colspan="3" bgcolor="#8fa7bf" height="1"><spacer type="block" height="1" width="1"></td>
 </tr>
 
-<tr bgcolor="#FFE8E8">
+<tr bgcolor="#FFF7FF">
 <td height="1" width="8"><spacer type="block" height="1" width="8"></td>
 <td align="left" valign="top" class="mediumblack">
 <?PHP
@@ -825,7 +825,7 @@ echo stripslashes(str_replace("\n","<br>", $row['AboutFamily']));
 <a name="partner"></a>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tbody><tr align="left">
-<td height="22" colspan="3" bgcolor="#FF8282" class="largewhitebold">&nbsp;
+<td height="22" colspan="3" bgcolor="#E473E0" class="largewhitebold">&nbsp;
 My Preferred Partner</td>
 </tr>
 
@@ -836,7 +836,7 @@ My Preferred Partner</td>
 <tr>
 <td valign="top">
 
-<table bgcolor="#FFE8E8" border="0" cellpadding="0" cellspacing="0" width="280">
+<table bgcolor="#FFF7FF" border="0" cellpadding="0" cellspacing="0" width="280">
 <tbody><tr align="left" bgcolor="#ffffff">
 <td height="16" colspan="5" valign="middle" class="mediumblackbold">&nbsp;&nbsp;
 <?PHP
@@ -950,7 +950,7 @@ echo $gender;
 
 
 
-<table bgcolor="#FFE8E8" border="0" cellpadding="0" cellspacing="0" width="280">
+<table bgcolor="#FFF7FF" border="0" cellpadding="0" cellspacing="0" width="280">
 <tbody><tr align="left" bgcolor="#ffffff">
 <td height="16" colspan="5" valign="middle" class="mediumblackbold">&nbsp;&nbsp;<?PHP echo $gender?> Religious &amp; Social Background</td>
 </tr>
@@ -961,7 +961,7 @@ echo $gender;
 <td width="150" height="1" bgcolor="#8fa7bf"><spacer type="block" height="1" width="150"></td>
 <td width="8" height="1" bgcolor="#8fa7bf"><spacer type="block" height="1" width="8"></td>
 </tr>
-<?PHP 
+<?PHP
 $arrRel = explode("|",$rowp['Religion']);
 for($x=0; $x < count($arrRel); $x++)
 {
@@ -1044,7 +1044,7 @@ $religion = "Doesn't Matter";
 <tr align="left" bgcolor="#ffffff">
 <td height="1" colspan="5" bgcolor="#8fa7bf"><spacer type="block" height="1" width="1"></td>
 </tr>
-<?PHP 
+<?PHP
 $arrRel = explode("|",$rowp['CountryOfResidence']);
 for($x=0; $x < count($arrRel); $x++)
 {
@@ -1072,7 +1072,7 @@ $religion = "Doesn't Matter";
 <td valign="top" class="mediumblack"><?PHP echo $religion?></td>
 <td class="mediumblack"><br></td>
 </tr>
-<?PHP 
+<?PHP
 $arrRel = explode("|",$rowp['StateOfResidence']);
 for($x=0; $x < count($arrRel); $x++)
 {
@@ -1125,13 +1125,13 @@ $religion = "Doesn't Matter";
 <a name="contact"></a>
 
 
-<div class="largewhitebold bluepatch" style="background-color:#FF8282; ">My Contact Details</div>
+<div class="largewhitebold bluepatch" style="background-color:#E473E0; ">My Contact Details</div>
 
 <div class="main">
 
 <div style="padding: 4px 0pt 2px 6px;"><b>My Contact Number</b></div>
 
-<div class="container" style="background-color:#FFE8E8; ">
+<div class="container" style="background-color:#FFF7FF; ">
 <?PHP
 if($row['PhoneStatus']=="telephone" && $row['DisplayContactStatus']=="Show")
 {
@@ -1170,7 +1170,7 @@ else if($row['PhoneStatus']!="telephone" && $row['DisplayContactStatus']=="Show"
 			<div class="div1" style="float: left; width: 133px;">Display Option</div>
 		<div class="div2" style="float: left; width: 4px;">:</div>
 		<div style="width: 413px; float: right;">
-		<?PHP 
+		<?PHP
 		if (stripslashes($row['DisplayContactStatus'])=="Show")
 		{
 		?>
@@ -1186,7 +1186,7 @@ else if($row['PhoneStatus']!="telephone" && $row['DisplayContactStatus']=="Show"
 		?>
 		</div>
 		<br clear="all">
-		
+
 </div>
 </div>
 <br>
@@ -1205,7 +1205,7 @@ echo'		<table border="0" cellpadding="0" cellspacing="0" width="100%">
 		<td height="7" width="350"><spacer type="block" height="7" width="350"></td>
 		<td width="220"><spacer type="block" width="220"></td>
 		</tr>
-	
+
 			<tr>
 			<td align="left"><h2>Sorry, Profile not found..</h2></td>
 			<td align="right">&nbsp;		</td>
@@ -1229,7 +1229,7 @@ echo'		<table border="0" cellpadding="0" cellspacing="0" width="100%">
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>
