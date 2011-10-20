@@ -1,8 +1,8 @@
 <?PHP
 
-$server = "localhost";//box710.bluehost.com
+$server = "box710.bluehost.com";//localhost
 $user = "marryban_banjara";
-$password = "banjara123";
+$password = "";
 $dbName = "marryban_banjara";
 
 $conn = mysql_connect($server,$user,$password, $dbName)
