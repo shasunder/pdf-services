@@ -88,7 +88,7 @@ else
 			</div>
 		<!-- FORM ST -->
 
-		<div class="right tright" style="width: 18px;"><img src="images/top-rgt-cnl.gif" border="0" height="33" width="18"></div><br clear="all">
+		<br clear="all">
 		<!-- FORM EN-->
 	</div>
 	<div class="width smallcnt">
