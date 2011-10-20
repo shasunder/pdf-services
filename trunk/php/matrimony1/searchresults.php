@@ -5,45 +5,30 @@ include("connection.php");
 $sqlsettings = "SELECT * from admin";
 $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
+//print_r($_REQUEST);
+
+if($_REQUEST['gender'] == "Male")
+{
+	$page_name="grooms.php";
+}
+else
+{
+	$page_name="brides.php";
+}
 
 
-$page_name="brides.php"; 
-
-if(!isset($_REQUEST["start"])) {
+if(!isset($_REQUEST["start"]))
+{
 $start = 0;
 }
 else
 $start = $_REQUEST["start"];
 
-$eu = ($start - 0); 
-$limit = 20;          
-$this1 = $eu + $limit; 
-$back = $eu - $limit; 
-$next = $eu + $limit; 
-
-if($_REQUEST['caste']!="")
-{
-if($_REQUEST['caste'] == "1")
-{
-	$religion = " (users.ReligionID=1 or users.ReligionID=2 or users.ReligionID=3 or users.ReligionID=4 or users.ReligionID=5) ";
-}
-else if($_REQUEST['caste'] == "6")
-{
-	$religion = " (users.ReligionID=6 or users.ReligionID=7 or users.ReligionID=8 or users.ReligionID=9) ";
-}
-else if($_REQUEST['caste'] == "10")
-{
-	$religion = " (users.ReligionID=10 or users.ReligionID=11 or users.ReligionID=12 or users.ReligionID=13 or users.ReligionID=14 or users.ReligionID=15 or users.ReligionID=16 or users.ReligionID=17 or users.ReligionID=18 or users.ReligionID=19 or users.ReligionID=20 or users.ReligionID=21 or users.ReligionID=22 or users.ReligionID=23 or users.ReligionID=24) ";
-}
-else if($_REQUEST['caste'] == "26")
-{
-	$religion = " (users.ReligionID=26 or users.ReligionID=27 or users.ReligionID=28 or users.ReligionID=29 or users.ReligionID=30) ";
-}
-else
-{
-	$religion = " (users.ReligionID=".$_REQUEST['caste'].") ";
-}
-}
+$eu = ($start - 0);
+$limit = 20;
+$this1 = $eu + $limit;
+$back = $eu - $limit;
+$next = $eu + $limit;
 
 if($_REQUEST['photograph'] == "Yes")
 {
@@ -55,29 +40,43 @@ else
 }
 
 
-if($_REQUEST['countryofresidence']!="" && $_REQUEST['caste']=="")
+if($_REQUEST['caste'] == "Sub Caste")
 {
-$sql = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].") ".$photo." and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc limit $eu, $limit";
-
-$sqltot = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc";
-}
-else if($_REQUEST['countryofresidence']=="" && $_REQUEST['caste']!="")
-{
-$sql = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and ".$religion." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc limit $eu, $limit";
-
-$sqltot = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and ".$religion." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc";
-}
-else if($_REQUEST['countryofresidence']!="" && $_REQUEST['caste']!="")
-{
-$sql = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and ".$religion." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc limit $eu, $limit";
-
-$sqltot = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and ".$religion." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc";
+	$caste1 = "";
 }
 else
 {
-$sql = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc limit $eu, $limit";
+	$caste1 = $_REQUEST['caste'];
+}
 
-$sqltot = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc";
+if($_REQUEST['countryofresidence']!="" && $caste1=="")
+{
+$sql = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].") ".$photo." and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc limit $eu, $limit";
+
+$sqltot = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' order by users.UserID desc";
+}
+else if($_REQUEST['countryofresidence']=="" && $caste1 != "")
+{
+$sql = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' and users.Caste LIKE '%".$caste1."%' order by users.UserID desc limit $eu, $limit";
+
+$sqltot = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' and users.Caste LIKE '%".$caste1."%' order by users.UserID desc";
+}
+else if($_REQUEST['countryofresidence']!="" && $caste1 != "")
+{
+$sql = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' and users.Caste LIKE '%".$caste1."%' order by users.UserID desc limit $eu, $limit";
+
+$sqltot = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and users.CountryID=".$_REQUEST['countryofresidence']." and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' and users.Caste LIKE '%".$caste1."%' order by users.UserID desc";
+}
+else
+{
+$sql = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' and users.Caste LIKE '%".$caste1."%' order by users.UserID desc limit $eu, $limit";
+
+
+
+$sqltot = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1 and users.Gender='".$_REQUEST['gender']."' and (users.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."  and user_profile.MotherTongue LIKE '%".$_REQUEST['mothertongue']."%' and users.Caste LIKE '%".$caste1."%' order by users.UserID desc";
+
+
+
 }
 
 $result = mysql_query($sql,$conn);
@@ -97,7 +96,7 @@ $nume=mysql_num_rows($resulttot);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -105,21 +104,16 @@ $nume=mysql_num_rows($resulttot);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
-					<br style="line-height: 1px;" clear="all">
-				<div>
-					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
-					</div>
-				</div>
+
 				<!-- The topbanner table end's here -->
 
 				<!-- The tab table start's here -->
@@ -142,7 +136,7 @@ $nume=mysql_num_rows($resulttot);
 						?><br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -173,7 +167,7 @@ $nume=mysql_num_rows($resulttot);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -190,9 +184,9 @@ if(@mysql_num_rows($result)!=0)
 
 echo "<table align = 'center' width='50%'><tr><td  align='left' width='30%'>";
 //// if our variable $back is equal to 0 or more then only we will display the link to move back ////////
-if($back >=0) { 
-print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>"; 
-} 
+if($back >=0) {
+print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>";
+}
 //////////////// Let us display the page links at  center. We will not display the current page as a link ///////////
 echo "</td><td align=center width='30%'>Page:";
 $i=0;
@@ -209,19 +203,19 @@ $total = $total+1;
 echo " of $total</td><td  align='right' width='30%'>";
 
 ///////////// If we are not in the last page then Next link will be displayed. Here we check that /////
-if($this1 < $nume) { 
-print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";} 
+if($this1 < $nume) {
+print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";}
 echo "</td></tr></table>";
 ?>
-<table border="0" cellspacing="0" width="565" style="padding:5px;border:2px dashed #F90"><tbody>
+<table border="0" cellspacing="0" width="565" style="padding:5px;border:2px solid #FCE2AF"><tbody>
 <?PHP
 if(@mysql_num_rows($result)!=0)
 {
 while($row = @mysql_fetch_array($result))
 {
 ?>
-<tr bgcolor="#990000" height="18">
-		<td colspan="2" align="left">&nbsp; 
+<tr bgcolor="#FB920B" height="18">
+		<td colspan="2" align="left">&nbsp;
 
 
                         <?PHP
@@ -240,15 +234,15 @@ while($row = @mysql_fetch_array($result))
 						?>
 
 
- 
-       
-        
-        
+
+
+
+
         <b><?PHP echo stripslashes($row['LoginID'])?></b></a></td>
 		</tr>
 		<tr bgcolor="#FFF" bordercolor="#F90">
-		<td style="border-bottom: 1px dashed #F60;" align="center" height="92" width="178">
-        
+		<td style="border-bottom: 1px solid #FEDFCB;" align="center" height="92" width="178">
+
  <?PHP
 						if($_SESSION['UserID']!="")
 						{
@@ -263,35 +257,35 @@ while($row = @mysql_fetch_array($result))
 						<?PHP
 						}
 						?>
-        
-        
-        <img src="<?PHP 
+
+
+        <img src="<?PHP
 				if($row['photo3']!="")
 				echo $row['photo3'];
 				else
-				echo "images/f.gif";				
-				?>" oncontextmenu="return false" border="0" width="70" style="padding:5px;border:5px solid #F60"></a></td>
-		<td width="379" align="left" class="smallblack" style="border-bottom: 1px dashed #F60;">
-        
-        <table width="300" style="margin-top:10px;margin-bottom:10px;border: 1px solid #F60;">
+				echo "images/f.gif";
+				?>" oncontextmenu="return false" border="0" width="70" style="border:1px solid #DADADA"></a></td>
+		<td width="379" align="left" class="smallblack" style="border-bottom: 1px solid #FEDFCB;">
+
+        <table width="300" style="margin-top:10px;margin-bottom:10px;border: 1px solid #FEDFCB;">
   <tr>
-    <td style="border-bottom: 1px dashed #F60;"><strong>Name : <?PHP echo stripslashes($row['Name'])?> </strong></td>
+    <td style="border-bottom: 1px solid #FEDFCB;"><strong>Name : <?PHP echo stripslashes($row['Name'])?> </strong></td>
   </tr>
   <tr>
-    <td style="border-bottom: 1px dashed #F60;"><strong>Age</strong> : <?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> yrs, </td>
+    <td style="border-bottom: 1px solid #FEDFCB;"><strong>Age</strong> : <?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> yrs, </td>
   </tr>
   <tr>
-    <td style="border-bottom: 1px dashed #F60;"><strong>Height</strong>: <?PHP echo stripslashes($row['Height'])?>, <strong>Religion</strong>: <?PHP echo stripslashes($row['Religion'])?></td>
+    <td style="border-bottom: 1px solid #FEDFCB;"><strong>Height</strong>: <?PHP echo stripslashes($row['Height'])?>, <strong> Sub Caste</strong>: <?PHP echo stripslashes($row['Religion'])?></td>
   </tr>
   <tr>
-    <td style="border-bottom: 1px dashed #F60;"><strong>Profession</strong> : <?PHP echo stripslashes($row['Profession'])?></td>
+    <td style="border-bottom: 1px solid #FEDFCB;"><strong>Profession</strong> : <?PHP echo stripslashes($row['Profession'])?></td>
   </tr>
   <tr>
-    <td style="border-bottom: 1px dashed #F60;"> <strong>State</strong> : <?PHP echo stripslashes($row['State'])?>, <strong>Country</strong> : <?PHP echo stripslashes($row['Country'])?></td>
+    <td style="border-bottom: 1px solid #FEDFCB;"> <strong>State</strong> : <?PHP echo stripslashes($row['State'])?>, <strong>Country</strong> : <?PHP echo stripslashes($row['Country'])?></td>
   </tr>
     <tr>
     <td style="color:#F30; font-weight:bold;"><img src="images/arrow-blu-3x5.gif" align="middle" border="0" height="5" hspace="5" width="3">
-    
+
                         <?PHP
 						if($_SESSION['UserID']!="")
 						{
@@ -305,18 +299,18 @@ while($row = @mysql_fetch_array($result))
 						<a href="login.php" class="smallbluelink" style="color:#F30;font-weight:bold;">View full profile</a>&nbsp;
 						<?PHP
 						}
-						?>   
-   
-    
-    
+						?>
+
+
+
     </td>
   </tr>
 </table>
 
-    
+
     </td>
-		
-		<tr><td colspan="3" height="12" style="border-bottom:1px dashed #F60;padding-bottom:2px"><spacer type="block" height="12"></td></tr>
+
+
 <?PHP
 }
 }
@@ -324,9 +318,9 @@ while($row = @mysql_fetch_array($result))
 <?
 echo "<table align = 'center' width='50%'><tr><td  align='left' width='30%'>";
 //// if our variable $back is equal to 0 or more then only we will display the link to move back ////////
-if($back >=0) { 
-print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>"; 
-} 
+if($back >=0) {
+print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>";
+}
 //////////////// Let us display the page links at  center. We will not display the current page as a link ///////////
 echo "</td><td align=center width='30%'>Page:";
 $i=0;
@@ -343,8 +337,8 @@ $total = $total+1;
 echo " of $total</td><td  align='right' width='30%'>";
 
 ///////////// If we are not in the last page then Next link will be displayed. Here we check that /////
-if($this1 < $nume) { 
-print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";} 
+if($this1 < $nume) {
+print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";}
 echo "</td></tr></table>";
 
 }
@@ -367,7 +361,7 @@ echo "Sorry, no match found in your search criteria..";
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

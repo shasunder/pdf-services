@@ -1,7 +1,6 @@
 <?PHP
 session_start();
 include("connection.php");
-
 $sqlsettings = "SELECT * from admin";
 $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
@@ -46,7 +45,7 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 
 
 
-			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, ReligionID, CountryID, ConfirmationCode, AddedDate, Age, dobstatus)
+			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, Caste, CountryID, ConfirmationCode, AddedDate, Age, dobstatus)
 			VALUES (
 				'".mysql_escape_string($_POST['login'])."',
 				'".mysql_escape_string($_POST['name'])."',
@@ -56,13 +55,15 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 				'".mysql_escape_string($_POST['day'])."',
 				'".mysql_escape_string($_POST['month'])."',
 				'".mysql_escape_string($_POST['year'])."',
-				".$_POST['community'].",
+				'".$_POST['community']."',
 				".$_POST['countryofresidence'].",
 				'".md5(mysql_escape_string($_POST['email']))."',
 				NOW(),
 				'".$age."',
-				".$dobstatus."
+				'".$dobstatus."'
 			)";
+
+
 			$resultt = mysql_query($insert);
 
 if($rowsettings['smtpstatus'] == 1)
@@ -365,7 +366,7 @@ require("phpmailer/class.phpmailer.php");
 		<tr>
 			<td style="cursor: pointer;" onclick="focus_field('community');">Subcaste</td>
 			<td>
-			<input tabindex="11" name="community" id="community" class="field" /><br>
+			<input tabindex="11" name="community" id="community" class="field" type="text"/><br>
 			<span id="errmsg_community" class="error"></span></td>
 		</tr>
 		<tr>

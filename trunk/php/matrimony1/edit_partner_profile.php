@@ -375,10 +375,10 @@ $i=$i+1;
 
 
 $insert = "update partner_profile set AgeFrom='".mysql_escape_string($_REQUEST['agefrom'])."', AgeTo='".mysql_escape_string($_REQUEST['ageto'])."', Gender='".mysql_escape_string($_REQUEST['gender'])."', MaritalStatus='".mysql_escape_string($maritalstatusarray)."', HaveChildren='".mysql_escape_string($childrenarray)."', HeightFrom='".mysql_escape_string($_REQUEST['heightfrom'])."', HeightTo='".mysql_escape_string($_REQUEST['heightto'])."', BodyType='".mysql_escape_string($bodytypearray)."', Manglik='".mysql_escape_string($manglikarray)."', Complexion='".mysql_escape_string($complexionarray)."', SpecialCases='".mysql_escape_string($_REQUEST['specialcases'])."', HIV='".mysql_escape_string($_REQUEST['hiv_positive'])."', Religion='".mysql_escape_string($communityarray)."', MotherTongue='".mysql_escape_string($mothertonguearray)."', FamilyValues='".mysql_escape_string($familyvaluesarray)."', EducationLevel='".mysql_escape_string($education_level_array)."', EducationLevel='".mysql_escape_string($education_level_array)."', EducationArea='".mysql_escape_string($education_area_array)."', Profession='".mysql_escape_string($occupationarray)."', Diet='".mysql_escape_string($dietarray)."', Smoke='".mysql_escape_string($smokearray)."', Drink='".mysql_escape_string($drinkarray)."', CountryOfResidence='".mysql_escape_string($countryofresidencearray)."', StateOfResidence='".mysql_escape_string($stateofresidencearray)."', ResidencyStatus='".mysql_escape_string($residencystatusarray)."' where UserID=".$_SESSION['UserID'];
-			
+
 			$resultt = mysql_query($insert);
 
-	
+
 	header("Location: my_profile.php");
 	exit();
 }
@@ -404,7 +404,7 @@ $row = @mysql_fetch_array($result);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -412,19 +412,19 @@ $row = @mysql_fetch_array($result);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -436,7 +436,7 @@ $row = @mysql_fetch_array($result);
 						<div style="padding: 6px 0pt 0pt 0px; width: 170px; " class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="<?PHP echo $_SESSION['LoginID']?>"><?PHP echo $_SESSION['LoginID']?></a>]<br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -467,7 +467,7 @@ $row = @mysql_fetch_array($result);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -482,17 +482,17 @@ $row = @mysql_fetch_array($result);
 		<div class="mediumblack" style="width: 550px;">
 
 
-	
+
 	<div style="border: 0px solid rgb(0, 0, 0); margin: 0pt 30px; text-align: left;">
 
-		
+
 			<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 12px 0px 7px; margin-bottom: 10px;">
 				<h2>Edit your Partner Profile</h2>
 			</div>
-		
+
 
 		<!-- PAGE STYLE ST -->
-		
+
 		<!-- PAGE STYLE EN -->
 Let visitors to your profile know about your expectations from your
 partner.<br><br>
@@ -506,12 +506,12 @@ partner.<br><br>
 
 <form action="edit_partner_profile.php" method="post" name="frm_main" onsubmit="return select_values();" style="margin: 0px;">
 
-		
+
 	<noscript>
 <span class="smallred">&nbsp;<b>Note:</b> If you have disabled
 JavaScript on your browser, please enable it to use all the features on
 this page.</span> </noscript>
-	
+
 	<!-- PARTNER - BASIC INFO ST -->
 	<a name="basics"></a>
 	<div class="largewhitebold bluepatch" style="margin-top: 10px; color:#990000;"><b>Partner - Basic Info</b></div>
@@ -531,7 +531,7 @@ this page.</span> </noscript>
 		$agefrom = str_replace('<option value="'.$row['AgeFrom'].'">', '<option value="'.$row['AgeFrom'].'" selected>', $agefrom);
 			echo $agefrom;
 			?>
-		
+
 		</select>
 		To
 		<select name="ageto" class="formselect">
@@ -569,12 +569,12 @@ for($x=0; $x < count($maritalstatus); $x++)
 	else if($maritalstatus[$x]=="Annulled")
 	{
 		$annulled=" checked";
-	}	
+	}
 	else if($maritalstatus[$x]=="")
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<tr valign="top">
 		<td><b>Marital Status</b></td>
@@ -612,7 +612,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<tr valign="top">
 		<td><b>Have Children</b></td>
@@ -636,7 +636,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 		$heightfrom = str_replace('<option value="'.$row['HeightFrom'].'">', '<option value="'.$row['HeightFrom'].'" selected>', $heightfrom);
 			echo $heightfrom;
 		?>
-		
+
 		</select>
 
 		To
@@ -667,7 +667,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	else if($maritalstatus[$x]=="Athletic")
 	{
 		$athletic=" checked";
-	}	
+	}
 	else if($maritalstatus[$x]=="Heavy")
 	{
 		$heavy=" checked";
@@ -676,7 +676,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<tr valign="top">
 		<td><b>Body Type</b></td>
@@ -707,7 +707,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	else if($maritalstatus[$x]=="Wheatish")
 	{
 		$wheatish=" checked";
-	}	
+	}
 	else if($maritalstatus[$x]=="Wheatish Medium")
 	{
 		$wheatishmedium=" checked";
@@ -720,12 +720,12 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$dark=" checked";
 	}
-	
+
 	else if($maritalstatus[$x]=="")
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<tr valign="top">
 		<td><b>Complexion</b></td>
@@ -777,10 +777,10 @@ for($x=0; $x < count($maritalstatus); $x++)
 						</option>
 						<?
 					}
-				}				
+				}
 				?>
-				
-				</select>				
+
+				</select>
 				</td>
 				<td align="center">
 				<img src="images/add.gif" value="Add" onclick="if(copytolist(document.frm_main.elements['community_fromarray[]'], document.frm_main.elements['communityarray[]'])){ display_dropdown_caste('smart_search', '', document.frm_main.gender.value); }"><br>
@@ -789,7 +789,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 				<td>
 				<select multiple="multiple" name="communityarray[]" size="5" class="formselect" style="width: 175px;">
 				<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['Religion']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -830,7 +830,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 				<td>
 					<select multiple="multiple" name="mothertonguearray[]" style="width: 175px;" class="formselect" size="5">
 					<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['MotherTongue']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -856,7 +856,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 		<td>
 			<table border="0" cellpadding="0" cellspacing="0">
 			<tbody><tr>
-				<td><select multiple="multiple" name="caste_fromarray[]" size="5" class="formselect" style="width: 175px;"></select>			
+				<td><select multiple="multiple" name="caste_fromarray[]" size="5" class="formselect" style="width: 175px;"></select>
 				</td>
 				<td align="center">
 				<img src="images/add.gif" value="Add" onclick="copytolist(document.frm_main.elements['caste_fromarray[]'], document.frm_main.elements['castearray[]']);"><br>
@@ -866,7 +866,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 					<select multiple="multiple" name="castearray[]" size="5" class="formselect" style="width: 175px;"></select>
 				</td>
 			</tr>
-			</tbody></table>	
+			</tbody></table>
 		</td>
 	</tr>
 	</tbody></table>
@@ -892,7 +892,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<table  border="0" cellpadding="6" cellspacing="0">
 	<tbody><tr valign="top">
@@ -912,7 +912,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	<!-- PARTNER - EDUCATION & CAREER ST -->
 	<a name="education"></a>
 	<div class="largewhitebold bluepatch" style=" color:#990000; "><b>Partner - Education &amp; Career</b></div>
-	
+
 	<table classborder="0" cellpadding="6" cellspacing="0">
 	<tbody><tr valign="top">
 		<td><br></td>
@@ -926,8 +926,8 @@ for($x=0; $x < count($maritalstatus); $x++)
 			<table border="0" cellpadding="0" cellspacing="0">
 			<tbody><tr valign="top">
 				<td>&nbsp;Levels<br>
-			
-					<select multiple="multiple" name="education_level_fromarray[]" size="5" class="formselect" style="width: 175px;"><option value="Bachelors">Bachelors</option><option value="Masters">Masters</option><option value="Doctorate">Doctorate</option><option value="Diploma">Diploma</option><option value="Undergraduate">Undergraduate</option><option value="Associates degree">Associates degree</option><option value="Honours degree">Honours degree</option><option value="Trade school">Trade school</option><option value="High school">High school</option><option value="Less than high school">Less than high school</option></select>			
+
+					<select multiple="multiple" name="education_level_fromarray[]" size="5" class="formselect" style="width: 175px;"><option value="Bachelors">Bachelors</option><option value="Masters">Masters</option><option value="Doctorate">Doctorate</option><option value="Diploma">Diploma</option><option value="Undergraduate">Undergraduate</option><option value="Associates degree">Associates degree</option><option value="Honours degree">Honours degree</option><option value="Trade school">Trade school</option><option value="High school">High school</option><option value="Less than high school">Less than high school</option></select>
 				</td>
 				<td align="center"><br>
 				<img src="images/add.gif" value="Add" onclick="copytolist(document.frm_main.elements['education_level_fromarray[]'],document.frm_main.elements['education_level_array[]']);"><br>
@@ -935,9 +935,9 @@ for($x=0; $x < count($maritalstatus); $x++)
 				</td>
 				<td><br>
 					<select multiple="multiple" name="education_level_array[]" size="5" class="formselect" style="width: 175px;">
-					
+
 					<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['EducationLevel']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -952,13 +952,13 @@ for($x=0; $x < count($maritalstatus); $x++)
 				}
 				echo $selectgrewupin;
 				?>
-					
+
 					</select><br><br>
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Area<br>
-					<select multiple="multiple" name="education_area_fromarray[]" size="5" class="formselect" style="width: 175px;"><option value="Advertising/ Marketing">Advertising/ Marketing</option><option value="Administrative services">Administrative services</option><option value="Architecture">Architecture</option><option value="Armed Forces">Armed Forces</option><option value="Arts">Arts</option><option value="Commerce">Commerce</option><option value="Computers/ IT">Computers/ IT</option><option value="Education">Education</option><option value="Engineering/ Technology">Engineering/ Technology</option><option value="Fashion">Fashion</option><option value="Finance">Finance</option><option value="Fine Arts">Fine Arts</option><option value="Home Science">Home Science</option><option value="Law">Law</option><option value="Management">Management</option><option value="Medicine">Medicine</option><option value="Nursing/ Health Sciences">Nursing/ Health Sciences</option><option value="Office administration">Office administration</option><option value="Science">Science</option><option value="Shipping">Shipping</option><option value="Travel &amp; Tourism">Travel &amp; Tourism</option></select>		
+					<select multiple="multiple" name="education_area_fromarray[]" size="5" class="formselect" style="width: 175px;"><option value="Advertising/ Marketing">Advertising/ Marketing</option><option value="Administrative services">Administrative services</option><option value="Architecture">Architecture</option><option value="Armed Forces">Armed Forces</option><option value="Arts">Arts</option><option value="Commerce">Commerce</option><option value="Computers/ IT">Computers/ IT</option><option value="Education">Education</option><option value="Engineering/ Technology">Engineering/ Technology</option><option value="Fashion">Fashion</option><option value="Finance">Finance</option><option value="Fine Arts">Fine Arts</option><option value="Home Science">Home Science</option><option value="Law">Law</option><option value="Management">Management</option><option value="Medicine">Medicine</option><option value="Nursing/ Health Sciences">Nursing/ Health Sciences</option><option value="Office administration">Office administration</option><option value="Science">Science</option><option value="Shipping">Shipping</option><option value="Travel &amp; Tourism">Travel &amp; Tourism</option></select>
 				</td>
 				<td align="center"><br>
 				<img src="images/add.gif" value="Add" onclick="copytolist(document.frm_main.elements['education_area_fromarray[]'],document.frm_main.elements['education_area_array[]']);"><br>
@@ -966,9 +966,9 @@ for($x=0; $x < count($maritalstatus); $x++)
 				</td>
 				<td><br>
 					<select multiple="multiple" name="education_area_array[]" size="5" class="formselect" style="width: 175px;">
-					
+
 					<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['EducationArea']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -983,7 +983,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 				}
 				echo $selectgrewupin;
 				?>
-					
+
 					</select>
 				</td>
 			</tr>
@@ -1005,7 +1005,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 				<td>
 					<select multiple="multiple" name="occupationarray[]" size="5" class="formselect" style="width: 175px;">
 					<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['Profession']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -1028,9 +1028,9 @@ for($x=0; $x < count($maritalstatus); $x++)
 	</tr>
 	</tbody></table>
 	<!-- PARTNER - EDUCATION & CAREER EN -->
-		
-	
-	
+
+
+
 	<!-- PARTNER - LIFESTYLE ST -->
 	<a name="lifestyle"></a>
 	<div class="largewhitebold bluepatch" style=" color:#990000; "><b>Partner - Lifestyle</b></div>
@@ -1068,7 +1068,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<table  border="0" cellpadding="6" cellspacing="0">
 	<tbody><tr valign="top">
@@ -1105,7 +1105,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$doesntmatter=" checked";
 	}
-}	
+}
 ?>
 	<tr valign="top">
 		<td><b>Smoke</b></td>
@@ -1116,7 +1116,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 			<input name="smokearray[]" id="smoke4" value="Occasionally" onclick="check_option(this)" ;="" type="checkbox" <?PHP echo $occasionally?>><label for="smoke4">Occasionally</label>
 		</td>
 	</tr>
-	
+
 		<?PHP
 $maritalstatus = explode("|",$row['Drink']);
 $x = 0;
@@ -1138,7 +1138,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 	{
 		$ddoesntmatter=" checked";
 	}
-}	
+}
 ?>
 
 	<tr valign="top">
@@ -1153,11 +1153,11 @@ for($x=0; $x < count($maritalstatus); $x++)
 	</tbody></table>
 	<!-- PARTNER - LIFESTYLE EN -->
 
-	
+
 	<!-- PARTNER - LOCATION ST -->
 	<a name="location"></a>
 	<div class="largewhitebold bluepatch" style=" color:#990000; "><b>Partner - Location</b></div>
-	
+
 	<table border="0" cellpadding="6" cellspacing="0">
 	<tbody><tr valign="top">
 		<td><br></td>
@@ -1172,7 +1172,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 			<tbody><tr>
 				<td>
 					<select multiple="multiple" name="countryofresidence_fromarray[]" size="5" class="formselect" style="width: 175px;">
-					
+
 					<?PHP
 				$sqlCountry = "SELECT * FROM countries order by CountryID";
 				$resultCountry = mysql_query($sqlCountry, $conn);
@@ -1188,9 +1188,9 @@ for($x=0; $x < count($maritalstatus); $x++)
 						><?PHP echo $rowCountry['Country']?></option>
 						<?
 					}
-				}				
+				}
 				?>
-					
+
 					</select>
 				</td>
 				<td align="center">
@@ -1198,10 +1198,10 @@ for($x=0; $x < count($maritalstatus); $x++)
 				<img src="images/remove.gif" value="Remove" onclick="if(copytolist(document.frm_main.elements['countryofresidencearray[]'],document.frm_main.elements['countryofresidence_fromarray[]'])) { }; getselectedstates();  "><br>
 				</td>
 				<td>
-					<select multiple="multiple" name="countryofresidencearray[]" size="5" class="formselect" style="width: 175px;">									
-					
+					<select multiple="multiple" name="countryofresidencearray[]" size="5" class="formselect" style="width: 175px;">
+
 					<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['CountryOfResidence']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -1224,7 +1224,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 					</select>
 				</td>
 			</tr>
-			</tbody></table>	
+			</tbody></table>
 		</td>
 	</tr>
 <script language="javascript">
@@ -1246,14 +1246,14 @@ for($x=0; $x < count($maritalstatus); $x++)
 					//alert(countries);
 					}
 					</script>
-	
+
 	<tr id="show_hide_state" valign="top">
 		<td><b>State of Residence</b></td>
 		<td>
 			<table border="0" cellpadding="0" cellspacing="0">
 			<tbody><tr>
 				<td>
-					<span id="statesspan2">					
+					<span id="statesspan2">
 					<select multiple="multiple" name="stateofresidence_fromarray[]" size="5" class="formselect" style="width: 175px;">
 					<?PHP
 				$sqlCountry = "SELECT * FROM states,countries where countries.CountryID=states.CountryID order by states.CountryID";
@@ -1262,11 +1262,11 @@ for($x=0; $x < count($maritalstatus); $x++)
 					while($rowCountry = mysql_fetch_array($resultCountry))
 					{
 						?>
-						<option value="<?PHP echo $rowCountry['StateID']?>"						
+						<option value="<?PHP echo $rowCountry['StateID']?>"
 						><?PHP echo $rowCountry['Country'].":".$rowCountry['State']?></option>
 						<?
 					}
-				}				
+				}
 				?>
 					</select>
 					</span>
@@ -1278,7 +1278,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 				<td>
 				<select multiple="multiple" name="stateofresidencearray[]" size="5" class="formselect" style="width: 175px;">
 				<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['StateOfResidence']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -1304,7 +1304,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 			</tbody></table>
 		</td>
 	</tr>
-		
+
 
 	<tr valign="top">
 		<td><b>Residency Status</b></td>
@@ -1321,7 +1321,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 				<td>
 					<select multiple="multiple" name="residencystatusarray[]" size="5" class="formselect" style="width: 175px;">
 					<?PHP
-				$selectgrewupin="";								
+				$selectgrewupin="";
 				$grewupin1 = explode("|",$row['ResidencyStatus']);
 				for($x=0; $x < count($grewupin1); $x++)
 				{
@@ -1358,7 +1358,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 </form>
 	</div><br>
 
-	
+
 
 
 
@@ -1378,7 +1378,7 @@ for($x=0; $x < count($maritalstatus); $x++)
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

@@ -36,18 +36,7 @@ $rowsettings = mysql_fetch_array($resultsettings);
 			
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
-			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
-
-
-				<!-- logo + banner space -->
-				<div style="padding: 2px 0pt 4px 0px;">
-					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
-					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
-					</div>
-								
-				</div><br clear="all">
-			
-			</div>
+	
 			<!-- logo + banner space -->
 		
 					<div>
@@ -136,16 +125,16 @@ Please click here to check your email: <a href="http://www.<?PHP echo $arrdomain
 				<div class="smalldgray" style="width: 760px; text-align: left; font-family: Tahoma; font-style: normal; font-variant: normal; font-weight: normal; font-size: 10px; line-height: normal; font-size-adjust: none; font-stretch: normal;">
 					<div style="margin: 0px;">
 						<div style="width: 100%; text-align: center;">
-						
+
 		<br>
 		<div style="width: 100%; text-align: center; margin-bottom: 5px;">
-			<div style="padding: 0pt 0pt 0pt 14px; width: 100%;">
+			<div style="padding: 0pt 0pt 0pt 0px; width: 100%;">
 				<?PHP
 				include("footer.php");
 				?>
 						</div>
 					</div>
 				</div>
-			</center>
+
 
 </body></html>

@@ -192,11 +192,11 @@ if($_REQUEST['spoken_languages_choose']!="")
 $spoken_languagesarray = $_REQUEST['spoken_languages_choose'];
 }
 
-$insert = "update user_profile set Hobbies='".mysql_escape_string($hobbies)."', Interests='".mysql_escape_string($interestsarray)."', FavoriteMusic='".mysql_escape_string($favourite_musicarray)."', FavoriteReads='".mysql_escape_string($favourite_readsarray)."', PreferredMovies='".mysql_escape_string($preferred_moviesarray)."', Sports='".mysql_escape_string($sports_fitness_activitiesarray)."', FavoriteCuisine='".mysql_escape_string($favourite_cuisinearray)."', PreferredDress='".mysql_escape_string($preferred_dress_stylearray)."', SpokenLanguages='".mysql_escape_string($spoken_languagesarray)."' where UserID=".$_SESSION['UserID'];	
-			
+$insert = "update user_profile set Hobbies='".mysql_escape_string($hobbies)."', Interests='".mysql_escape_string($interestsarray)."', FavoriteMusic='".mysql_escape_string($favourite_musicarray)."', FavoriteReads='".mysql_escape_string($favourite_readsarray)."', PreferredMovies='".mysql_escape_string($preferred_moviesarray)."', Sports='".mysql_escape_string($sports_fitness_activitiesarray)."', FavoriteCuisine='".mysql_escape_string($favourite_cuisinearray)."', PreferredDress='".mysql_escape_string($preferred_dress_stylearray)."', SpokenLanguages='".mysql_escape_string($spoken_languagesarray)."' where UserID=".$_SESSION['UserID'];
+
 			$resultt = mysql_query($insert);
 
-	
+
 	header("Location: my_profile.php");
 	exit();
 }
@@ -220,7 +220,7 @@ $row = @mysql_fetch_array($result);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -228,19 +228,19 @@ $row = @mysql_fetch_array($result);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -252,7 +252,7 @@ $row = @mysql_fetch_array($result);
 						<div style="padding: 6px 0pt 0pt 0px; width: 170px; " class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="<?PHP echo $_SESSION['LoginID']?>"><?PHP echo $_SESSION['LoginID']?></a>]<br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -283,7 +283,7 @@ $row = @mysql_fetch_array($result);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -297,10 +297,10 @@ $row = @mysql_fetch_array($result);
 		<div class="mediumblack" style="width: 500px;">
 
 
-	
+
 	<div style="border: 0px solid rgb(0, 0, 0); margin: 0pt 30px; text-align: left;">
 
-		
+
 			<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 12px 0px 7px; margin-bottom: 10px;width:500px;">
 				<h2>Edit Hobbies, Interests, and more...</h2>
 			</div>
@@ -346,7 +346,7 @@ function radio_uncheck(obj)
 
 <form method="post" name="frm_main" action="edit_hobbies_profile.php">
 <input type="hidden" name="continue" value="true">
-	
+
 
 	<a name="Hobbies"></a>
 	<div class="largewhitebold bluepatch" style="width:500px; color:#990000;"><b>Hobbies</b></div>
@@ -450,9 +450,9 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Will tell you later")
 	{
 		$hobbieschoose=" checked";
-	}	
+	}
 }
-?>	
+?>
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 	<tbody><tr height="21" valign="top">
 		<td class="smallblack">
@@ -485,7 +485,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="hobbiesarray[]" value="Solving Crosswords, Puzzles" id="testhobbiesarray[]22" onclick="radio_uncheck('hobbies_choose');" type="checkbox" <?PHP echo $solving?>><label for="testhobbiesarray[]22">Solving Crosswords, Puzzles</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="hobbies_choose" id="hobbies_choose0" value="Will tell you later" onclick="radio_check(this,'hobbiesarray[]');" type="radio" <?PHP echo $hobbieschoose?>><label for="hobbies_choose0">Will tell you later</label></td>
 <td colspan="2">&nbsp;</td>
@@ -631,12 +631,12 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Will tell you later")
 	{
 		$interestschoose=" checked";
-	}	
+	}
 }
 ?>
 	<a name="Interests"></a>
 	<div class="largewhitebold bluepatch" style="width:500px; color:#990000;"><b>Interests</b></div>
-	
+
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 	<!-- <tr height="2"><td class="td1"></td><td class="td2"></td><td class="td3"></td></tr> -->
 	<tbody><tr height="21" valign="top">
@@ -680,7 +680,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="interestsarray[]" value="Yoga / Meditation" id="testinterestsarray[]32" onclick="radio_uncheck('interests_choose');" type="checkbox" <?PHP echo $yoga?>><label for="testinterestsarray[]32">Yoga / Meditation</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="interests_choose" id="interests_choose0" value="Will tell you later" onclick="radio_check(this,'interestsarray[]');"  type="radio" <?PHP echo $interestschoose?>><label for="interests_choose0">Will tell you later</label></td>
 <td colspan="2">&nbsp;</td>
@@ -850,7 +850,7 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Will tell you later")
 	{
 		$willtellyoulater=" checked";
-	}	
+	}
 }
 ?>
 	<a name="Favoritemusic"></a>
@@ -901,7 +901,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="favourite_musicarray[]" value="World Music" id="testfavourite_musicarray[]35" onclick="radio_uncheck('favourite_music_choose');" type="checkbox" <?PHP echo $worldmusic?>><label for="testfavourite_musicarray[]35">World Music</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="favourite_music_choose" id="favourite_music_choose0" value="Enjoy most forms of music" onclick="radio_check(this,'favourite_musicarray[]');" type="radio" <?PHP echo $enjoymostforms?>><label for="favourite_music_choose0">Enjoy most forms of music</label></td>
   <td class="smallblack"><input name="favourite_music_choose" id="favourite_music_choose1" value="Not too keen on music" onclick="radio_check(this,'favourite_musicarray[]');" type="radio" <?PHP echo $nottookeen?>><label for="favourite_music_choose1">Not too keen on music</label></td>
@@ -947,7 +947,7 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Magazines &amp; Newspapers")
 	{
 		$magazines=" checked";
-	}	
+	}
 	else if($hobbies[$x]=="Philosophy / Spiritual")
 	{
 		$philosophy=" checked";
@@ -1014,7 +1014,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="favourite_readsarray[]" value="Thriller / Suspense" id="testfavourite_readsarray[]14" onclick="radio_uncheck('favourite_reads_choose');" type="checkbox" <?PHP echo $thriller?>><label for="testfavourite_readsarray[]14">Thriller / Suspense</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="favourite_reads_choose" id="favourite_reads_choose0" value="Love reading almost anything" onclick="radio_check(this,'favourite_readsarray[]');" type="radio" <?PHP echo $lovereading?>><label for="favourite_reads_choose0">Love reading almost anything</label></td>
   <td class="smallblack"><input name="favourite_reads_choose" id="favourite_reads_choose1" value="Not much of a reader" onclick="radio_check(this,'favourite_readsarray[]');" type="radio" <?PHP echo $notmuch?>><label for="favourite_reads_choose1">Not much of a reader</label></td>
@@ -1023,7 +1023,7 @@ for($x=0; $x < count($hobbies); $x++)
 
 	<a name="PreferredMovies"></a>
 	<div class="largewhitebold bluepatch" style="width:500px; color:#990000;"><b>Preferred Movies</b></div>
-	
+
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 <?PHP
 $hobbies = explode("|",$row['PreferredMovies']);
@@ -1062,7 +1062,7 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Non-commercial / Art")
 	{
 		$noncommercialart=" checked";
-	}	
+	}
 	else if($hobbies[$x]=="Romantic")
 	{
 		$romantic=" checked";
@@ -1113,7 +1113,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="preferred_moviesarray[]" value="World cinema" id="testpreferred_moviesarray[]11" onclick="radio_uncheck('preferred_movies_choose');" type="checkbox" <?PHP echo $worldcinema?>><label for="testpreferred_moviesarray[]11">World cinema</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="preferred_movies_choose" id="preferred_movies_choose0" value="Love all kinds of movies" onclick="radio_check(this,'preferred_moviesarray[]');" type="radio" <?PHP echo $loveallkindsofmovies?>><label for="preferred_movies_choose0">Love all kinds of movies</label></td>
   <td class="smallblack"><input name="preferred_movies_choose" id="preferred_movies_choose1" value="Not a movie buff" onclick="radio_check(this,'preferred_moviesarray[]');" type="radio" <?PHP echo $notamoviebuff?>><label for="preferred_movies_choose1">Not a movie buff</label></td>
@@ -1122,7 +1122,7 @@ for($x=0; $x < count($hobbies); $x++)
 
 	<a name="Sportsfitnessactivities"></a>
 	<div class="largewhitebold bluepatch" style="width:500px; color:#990000;"><b>Sports / fitness activities</b></div>
-	
+
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 <?PHP
 $hobbies = explode("|",$row['Sports']);
@@ -1161,7 +1161,7 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Boxing / Wrestling")
 	{
 		$boxingwrestling=" checked";
-	}	
+	}
 	else if($hobbies[$x]=="Card games")
 	{
 		$cardgames=" checked";
@@ -1333,7 +1333,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="sports_fitness_activitiesarray[]" value="Yoga / Meditation" id="testsports_fitness_activitiesarray[]36" onclick="radio_uncheck('sports_fitness_activities_choose');" type="checkbox" <?PHP echo $yogameditation?>><label for="testsports_fitness_activitiesarray[]36">Yoga / Meditation</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="sports_fitness_activities_choose" id="sports_fitness_activities_choose0" value="Not a sportsperson" onclick="radio_check(this,'sports_fitness_activitiesarray[]');" type="radio" <?PHP echo $notasportsperson?>><label for="sports_fitness_activities_choose0">Not a sportsperson</label></td>
   <td class="smallblack"><input name="sports_fitness_activities_choose" id="sports_fitness_activities_choose1" value="Will tell you later" onclick="radio_check(this,'sports_fitness_activitiesarray[]');"  type="radio" <?PHP echo $willtellyoulater?>><label for="sports_fitness_activities_choose1">Will tell you later</label></td>
@@ -1379,7 +1379,7 @@ for($x=0; $x < count($hobbies); $x++)
 	else if($hobbies[$x]=="Italian")
 	{
 		$italian=" checked";
-	}	
+	}
 	else if($hobbies[$x]=="Japanese")
 	{
 		$japanese=" checked";
@@ -1453,7 +1453,7 @@ for($x=0; $x < count($hobbies); $x++)
 		$willtellyoulater=" checked";
 	}
 }
-?>	
+?>
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 	<tbody><tr height="21" valign="top">
 		<td class="smallblack">
@@ -1486,7 +1486,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="favourite_cuisinearray[]" value="Thai" id="testfavourite_cuisinearray[]22" onclick="radio_uncheck('favourite_cuisine_choose');" type="checkbox" <?PHP echo $thai?>><label for="testfavourite_cuisinearray[]22">Thai</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="favourite_cuisine_choose" id="favourite_cuisine_choose0" value="Anything edible is great!" onclick="radio_check(this,'favourite_cuisinearray[]');" type="radio" <?PHP echo $anythingedibleisgreat?>><label for="favourite_cuisine_choose0">Anything edible is great!</label></td>
   <td class="smallblack"><input name="favourite_cuisine_choose" id="favourite_cuisine_choose1" value="Not much of a food-lover" onclick="radio_check(this,'favourite_cuisinearray[]');" type="radio" <?PHP echo $notmuchofafoodlover?>><label for="favourite_cuisine_choose1">Not much of a food-lover</label></td>
@@ -1530,7 +1530,7 @@ for($x=0; $x < count($hobbies); $x++)
 		$willtellyoulater=" checked";
 	}
 }
-?>	
+?>
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 	<tbody><tr height="21" valign="top">
 		<td class="smallblack">
@@ -1545,13 +1545,13 @@ for($x=0; $x < count($hobbies); $x++)
 
  </td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="preferred_dress_style_choose" id="preferred_dress_style_choose0" value="Will tell you later" onclick="radio_check(this,'preferred_dress_stylearray[]');"  type="radio" <?PHP echo $willtellyoulater?>><label for="preferred_dress_style_choose0">Will tell you later</label></td>
 <td colspan="2">&nbsp;</td>
  </tr></tbody></table>
-	
-	
+
+
 
 	<a name="SpokenLanguages"></a>
 	<div class="largewhitebold bluepatch" style="width:500px; color:#990000;"><b>Spoken Languages</b></div>
@@ -1778,7 +1778,7 @@ for($x=0; $x < count($hobbies); $x++)
 		$willtellyoulater=" checked";
 	}
 }
-?>		
+?>
 	<table class="tbl1" border="0" cellpadding="0" cellspacing="0" style="width:500px;">
 	<tbody><tr height="21" valign="top">
 		<td class="smallblack">
@@ -1841,7 +1841,7 @@ for($x=0; $x < count($hobbies); $x++)
 <input name="spoken_languagesarray[]" value="Urdu" id="testspoken_languagesarray[]52" onclick="radio_uncheck('spoken_languages_choose');" type="checkbox" <?PHP echo $Urdu?>><label for="testspoken_languagesarray[]52">Urdu</label><br>
 			</td>
 		</tr>
-	
+
  <tr height="21">
   <td class="smallblack"><input name="spoken_languages_choose" id="spoken_languages_choose0" value="Will tell you later" onclick="radio_check(this,'spoken_languagesarray[]');"  type="radio" <?PHP echo $willtellyoulater?>><label for="spoken_languages_choose0">Will tell you later</label></td>
 <td colspan="2">&nbsp;</td>
@@ -1860,7 +1860,7 @@ for($x=0; $x < count($hobbies); $x++)
 
 	</div><br>
 
-	
+
 
 
 
@@ -1879,7 +1879,7 @@ for($x=0; $x < count($hobbies); $x++)
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

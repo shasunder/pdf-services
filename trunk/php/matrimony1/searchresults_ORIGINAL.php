@@ -7,7 +7,7 @@ $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
 
 
-$page_name="brides.php"; 
+$page_name="brides.php";
 
 if(!isset($_REQUEST["start"])) {
 $start = 0;
@@ -15,11 +15,11 @@ $start = 0;
 else
 $start = $_REQUEST["start"];
 
-$eu = ($start - 0); 
-$limit = 20;          
-$this1 = $eu + $limit; 
-$back = $eu - $limit; 
-$next = $eu + $limit; 
+$eu = ($start - 0);
+$limit = 20;
+$this1 = $eu + $limit;
+$back = $eu - $limit;
+$next = $eu + $limit;
 
 if($_REQUEST['caste']!="")
 {
@@ -97,7 +97,7 @@ $nume=mysql_num_rows($resulttot);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -105,19 +105,19 @@ $nume=mysql_num_rows($resulttot);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -142,7 +142,7 @@ $nume=mysql_num_rows($resulttot);
 						?><br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -173,7 +173,7 @@ $nume=mysql_num_rows($resulttot);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -190,9 +190,9 @@ if(@mysql_num_rows($result)!=0)
 
 echo "<table align = 'center' width='50%'><tr><td  align='left' width='30%'>";
 //// if our variable $back is equal to 0 or more then only we will display the link to move back ////////
-if($back >=0) { 
-print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>"; 
-} 
+if($back >=0) {
+print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>";
+}
 //////////////// Let us display the page links at  center. We will not display the current page as a link ///////////
 echo "</td><td align=center width='30%'>Page:";
 $i=0;
@@ -209,8 +209,8 @@ $total = $total+1;
 echo " of $total</td><td  align='right' width='30%'>";
 
 ///////////// If we are not in the last page then Next link will be displayed. Here we check that /////
-if($this1 < $nume) { 
-print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";} 
+if($this1 < $nume) {
+print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";}
 echo "</td></tr></table>";
 ?>
 <table 4="" border="0" cellspacing="0" width="565"><tbody>
@@ -220,23 +220,23 @@ if(@mysql_num_rows($result)!=0)
 while($row = @mysql_fetch_array($result))
 {
 ?>
-<tr bgcolor="#FF8282" height="18">
+<tr bgcolor="#E473E0" height="18">
 		<td colspan="2" align="left">&nbsp; <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#000000 "><b><?PHP echo stripslashes($row['LoginID'])?></b></a></td>
 		<td align="right"><img src="images/arrow-blu-3x5.gif" align="middle" border="0" height="5" hspace="5" width="3"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="smallbluelink" style="color:#FFFFFF; font-weight:bold;">View full profile</a>&nbsp;</td>
 		</tr>
 		<tr bgcolor="#FFBFBF">
-		<td style="border-bottom: 1px solid rgb(216, 241, 186);" align="center" background="images/photo-srchres.gif" height="78" width="80"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"><img src="<?PHP 
+		<td style="border-bottom: 1px solid rgb(216, 241, 186);" align="center" background="images/photo-srchres.gif" height="78" width="80"><a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"><img src="<?PHP
 				if($row['photo3']!="")
 				echo $row['photo3'];
 				else
-				echo "images/f.gif";				
+				echo "images/f.gif";
 				?>" oncontextmenu="return false" border="0" height="60" width="60"></a></td>
 		<td width="164" align="left" class="smallblack" style="border-bottom: 1px solid rgb(216, 241, 186);">
 		<?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> yrs, <?PHP echo stripslashes($row['Height'])?>, <?PHP echo stripslashes($row['Religion'])?>, <br>
 		<?PHP echo stripslashes($row['Profession'])?>,<br>
 		from
 	<?PHP echo stripslashes($row['State'])?>, <?PHP echo stripslashes($row['Country'])?></td>
-		<td width="321" align="left" bgcolor="#FFE8E8" class="mediumblack" style="border-bottom: 1px solid rgb(216, 241, 186); padding-left: 15px; padding-right: 10px;"><?PHP
+		<td width="321" align="left" bgcolor="#FFF7FF" class="mediumblack" style="border-bottom: 1px solid rgb(216, 241, 186); padding-left: 15px; padding-right: 10px;"><?PHP
 echo substr(stripslashes($row['AboutYourself']),0,200);
 ?>... <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>" class="mediumbluelinksp" style="color:#000000 ">»»</a></td>
 		</tr>
@@ -248,9 +248,9 @@ echo substr(stripslashes($row['AboutYourself']),0,200);
 <?
 echo "<table align = 'center' width='50%'><tr><td  align='left' width='30%'>";
 //// if our variable $back is equal to 0 or more then only we will display the link to move back ////////
-if($back >=0) { 
-print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>"; 
-} 
+if($back >=0) {
+print "<a href='$page_name?start=$back'><font face='Verdana' size='2'>PREV</font></a>";
+}
 //////////////// Let us display the page links at  center. We will not display the current page as a link ///////////
 echo "</td><td align=center width='30%'>Page:";
 $i=0;
@@ -267,8 +267,8 @@ $total = $total+1;
 echo " of $total</td><td  align='right' width='30%'>";
 
 ///////////// If we are not in the last page then Next link will be displayed. Here we check that /////
-if($this1 < $nume) { 
-print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";} 
+if($this1 < $nume) {
+print "<a href='$page_name?start=$next'><font face='Verdana' size='2'>NEXT</font></a>";}
 echo "</td></tr></table>";
 
 }
@@ -291,7 +291,7 @@ echo "Sorry, no match found in your search criteria..";
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

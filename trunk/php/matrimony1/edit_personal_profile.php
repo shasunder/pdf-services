@@ -12,10 +12,10 @@ $rowsettings = mysql_fetch_array($resultsettings);
 
 if($_POST['continue']=="true")
 {
-			$insert = "update user_profile set CreatedBy='".mysql_escape_string($_POST['relationship'])."', MaritalStatus='".mysql_escape_string($_POST['maritalstatus'])."', HaveChildren='".mysql_escape_string($_POST['havechildren'])."', Height='".mysql_escape_string($_POST['height'])."', BodyType='".mysql_escape_string($_POST['bodytype'])."', Complexion='".mysql_escape_string($_POST['complexion'])."', SpecialCases='".$_POST['specialcases']."', MotherTongue='".$_POST['mothertongue']."', Caste='".$_POST['caste']."', SubCaste='".$_POST['subcaste']."', Manglik='".$_POST['manglik']."', FamilyValues='".$_POST['familyvalues']."', Education='".$_POST['educationlevel']."', EducationIn='".$_POST['educationarea']."', Profession='".$_POST['occupation']."', Diet='".$_POST['diet']."', Smoke='".$_POST['smoke']."', Drink='".$_POST['drink']."', StateID=".$_POST['stateofresidence'].", CityID=".$_POST['nearest_city'].", ResidencyStatus='".$_POST['residencystatus']."', PhoneStatus='".$_POST['type']."', CountryCode='".$_POST['c_country_code']."', CountryCode2='".$_POST['country_code']."', AreaStdCode='".$_POST['std_code']."', PhoneNumber='".$_POST['contact_number']."', DisplayContactStatus='".$_POST['contact_details_dislay_status']."', AboutYourself='".$_POST['aboutyourself']."' where UserID=".$_SESSION['UserID'];	
-			
+			$insert = "update user_profile set CreatedBy='".mysql_escape_string($_POST['relationship'])."', MaritalStatus='".mysql_escape_string($_POST['maritalstatus'])."', HaveChildren='".mysql_escape_string($_POST['havechildren'])."', Height='".mysql_escape_string($_POST['height'])."', BodyType='".mysql_escape_string($_POST['bodytype'])."', Complexion='".mysql_escape_string($_POST['complexion'])."', SpecialCases='".$_POST['specialcases']."', MotherTongue='".$_POST['mothertongue']."', Caste='".$_POST['caste']."', SubCaste='".$_POST['subcaste']."', Manglik='".$_POST['manglik']."', FamilyValues='".$_POST['familyvalues']."', Education='".$_POST['educationlevel']."', EducationIn='".$_POST['educationarea']."', Profession='".$_POST['occupation']."', Diet='".$_POST['diet']."', Smoke='".$_POST['smoke']."', Drink='".$_POST['drink']."', StateID=".$_POST['stateofresidence'].", CityID=".$_POST['nearest_city'].", ResidencyStatus='".$_POST['residencystatus']."', PhoneStatus='".$_POST['type']."', CountryCode='".$_POST['c_country_code']."', CountryCode2='".$_POST['country_code']."', AreaStdCode='".$_POST['std_code']."', PhoneNumber='".$_POST['contact_number']."', DisplayContactStatus='".$_POST['contact_details_dislay_status']."', AboutYourself='".$_POST['aboutyourself']."' where UserID=".$_SESSION['UserID'];
 
-			
+
+
 			$resultt = mysql_query($insert);
 $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['month']), mysql_escape_string($_POST['day']));
 
@@ -28,10 +28,10 @@ else
 	$dobstatus = 0;
 }
 
-$insert = "update users set BirthDate='".mysql_escape_string($_POST['day'])."', BirthMonth='".mysql_escape_string($_POST['month'])."', BirthYear='".mysql_escape_string($_POST['year'])."', Age='".$age."', ReligionID=".$_REQUEST['religion'].", CountryID=".$_REQUEST['country'].", dobstatus=".$dobstatus." where UserID=".$_SESSION['UserID'];	
+$insert = "update users set BirthDate='".mysql_escape_string($_POST['day'])."', BirthMonth='".mysql_escape_string($_POST['month'])."', BirthYear='".mysql_escape_string($_POST['year'])."', Age='".$age."', ReligionID=".$_REQUEST['religion'].", CountryID=".$_REQUEST['country'].", dobstatus=".$dobstatus." where UserID=".$_SESSION['UserID'];
 
 $resultt = mysql_query($insert);
-	
+
 	header("Location: my_profile.php");
 	exit();
 }
@@ -74,7 +74,7 @@ $row = @mysql_fetch_array($result);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -82,19 +82,19 @@ $row = @mysql_fetch_array($result);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -106,7 +106,7 @@ $row = @mysql_fetch_array($result);
 						<div style="padding: 6px 0pt 0pt 0px; width: 170px; " class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="<?PHP echo $_SESSION['LoginID']?>"><?PHP echo $_SESSION['LoginID']?></a>]<br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -137,7 +137,7 @@ $row = @mysql_fetch_array($result);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -152,21 +152,21 @@ $row = @mysql_fetch_array($result);
 		<div class="mediumblack">
 
 
-	
+
 	<div style="border: 0px solid rgb(0, 0, 0); margin: 0pt 30px; text-align: left;">
 
 
-		
+
 			<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 12px 0px 7px; margin-bottom: 10px;">
 				<h2><span style="color: rgb(213, 86, 1);">Edit Personal  Profile</span></h2>
 			</div>
-		
+
 
 		<!-- PAGE STYLE ST -->
 		<script src="js/common.js" type="text/javascript" language="javascript1.2"></script>
 		<script src="js/registration2-1.js" type="text/javascript" language="javascript1.2"></script>
 
-		
+
 		<!-- PAGE STYLE EN -->
 
 
@@ -174,7 +174,7 @@ $row = @mysql_fetch_array($result);
 				<!-- MESSAGE & ERROR EN -->
 
 
-		
+
 	<table style="border-bottom: 1px solid rgb(229, 229, 229);" border="0" cellpadding="0" cellspacing="0">
 		<tbody>
 	<tr>
@@ -183,12 +183,12 @@ $row = @mysql_fetch_array($result);
 </tbody></table>
 
 
-		
+
 	<div id="loading_state"></div>
 					<form method="post" action="edit_personal_profile.php" name="profile" id="profile" style="margin: 0px;" onSubmit="return validateform(this);">
 
 	<!-- PROFILE CONTENTS ST -->
-	
+
 			<!-- BASIC INFO ST -->
 			<a name="basics"></a>
 
@@ -225,7 +225,7 @@ $row = @mysql_fetch_array($result);
 				?>
 				</select>
 <br>
-<input type="checkbox" name="dobstatus" value="true" 
+<input type="checkbox" name="dobstatus" value="true"
 <?PHP
 if($row['dobstatus']==1)
 {echo " checked";}
@@ -325,7 +325,7 @@ if($row['dobstatus']==1)
 				$height = str_replace('<option value="'.$row['Height'].'">', '<option value="'.$row['Height'].'" selected>', $height);
 				echo $height;
 				?>
-				
+
 				</select>
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_height">
@@ -401,7 +401,7 @@ if($row['dobstatus']==1)
 			<a name="releigon"></a>
 			<div class="boldgreen" style="margin-top: 10px;color:#990000;"><b>Religious &amp; Social Background</b></div>
 
-			
+
 			<!-- Gender form element at registration page is radio button so to pass its value we need to do this.. -->
 			<script language="JavaScript">
 			<!--
@@ -411,10 +411,10 @@ if($row['dobstatus']==1)
 				document.profile.caste.options.length = 0;
 				document.profile.caste[0] = new Option('---------Select Caste---------', '');
 			}
-			
+
 					function getcastes()
 		{
-		
+
 		religion = document.profile.religion.options[document.profile.religion.selectedIndex].value;
 		if(religion == 1 || religion == 2 || religion == 3 || religion == 4 || religion == 5)
 				{
@@ -452,7 +452,7 @@ if($row['dobstatus']==1)
 					document.getElementById('manglikrow').style.display = "none";
 				}
 				document.getElementById('selectedcastes').innerHTML = religioncastes;
-		
+
 		}
 
 			//-->
@@ -478,7 +478,7 @@ if($row['dobstatus']==1)
 						><?PHP echo $rowCountry['Religion']?></option>
 						<?
 					}
-				}				
+				}
 				?>
 				</select>
 				<br>
@@ -611,12 +611,12 @@ if($row['dobstatus']==1)
 				<td class="td1" style="cursor: pointer;" onclick="focus_field('educationlevel');" valign="top" width="139"><em>*</em><b>Education</b></td>
 				<td class="td2 smallblack" valign="top">
 				<select name="educationlevel" id="educationlevel" class="field" onfocus="toggleHint('show', 'educationlevel')" onblur="validate_educationlevel(this.name);">
-				<?PHP				
+				<?PHP
 				$educationlevel = '<option value="">Select</option><option value="Bachelors">Bachelors</option><option value="Masters">Masters</option><option value="Doctorate">Doctorate</option><option value="Diploma">Diploma</option><option value="Undergraduate">Undergraduate</option><option value="Associates degree">Associates degree</option><option value="Honours degree">Honours degree</option><option value="Trade school">Trade school</option><option value="High school">High school</option><option value="Less than high school">Less than high school</option><option value="Bachelors">Graduate</option>';
 				$educationlevel = str_replace('<option value="'.$row['Education'].'">', '<option value="'.$row['Education'].'" selected>', $educationlevel);
 				echo $educationlevel;
 				?>
-				
+
 				</select>&nbsp; in &nbsp;
 				<select name="educationarea" class="field" onfocus="toggleHint('show', 'educationarea')" onblur="toggleHint('hide', 'educationarea'); checkStyleSelect(this, 'field', 'field_filled');" style="width: 159px;">
 				<?PHP
@@ -624,7 +624,7 @@ if($row['dobstatus']==1)
 				$educationarea = str_replace('<option value="'.$row['EducationIn'].'">', '<option value="'.$row['EducationIn'].'" selected>', $educationarea);
 				echo $educationarea;
 				?>
-				
+
 				</select>
 		<!-- HINT STARTS HERE -->
 		<span class="hint_educationlevel" id="hint_educationlevel">
@@ -636,7 +636,7 @@ if($row['dobstatus']==1)
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-	
+
 		<!-- HINT STARTS HERE -->
 		<span class="hint_educationlevel" id="hint_educationarea">
 		<div>
@@ -695,7 +695,7 @@ if($row['dobstatus']==1)
 				$diet = str_replace('<option value="'.$row['Diet'].'">', '<option value="'.$row['Diet'].'" selected>', $diet);
 				echo $diet;
 				?>
-				
+
 				</select>
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_diet">
@@ -737,7 +737,7 @@ if($row['dobstatus']==1)
 			<tr>
 				<td class="td1" style="cursor: pointer;" onclick="focus_field('drink');" valign="top"><em>*</em><b>Drink</b></td>
 				<td class="smallblack" valign="top"><select name="drink" id="drink" class="field" onfocus="toggleHint('show', 'drink')" onblur="validate_select_box(this, 'field_filled', 'field_err');">
-				<?PHP				
+				<?PHP
 				$drink = '<option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option><option value="Occasionally">Occasionally</option>';
 				$drink = str_replace('<option value="'.$row['Drink'].'">', '<option value="'.$row['Drink'].'" selected>', $drink);
 				echo $drink;
@@ -771,7 +771,7 @@ if($row['dobstatus']==1)
 	<spacer type="block" height="1">
 
 			<table class="tbl1" border="0" cellpadding="5" cellspacing="0">
-			
+
 				<tbody><tr valign="top">
 					<td class="td1" valign="top" width="139"><em>&nbsp;</em><b>Country of Residence</b></td>
 					<td colspan="2" class="td2 smallblack" style="line-height: 16px;" valign="top">
@@ -791,13 +791,13 @@ if($row['dobstatus']==1)
 						><?PHP echo $rowCountry['Country']?></option>
 						<?
 					}
-				}				
+				}
 				?>
 				</select>
 <br>
 					<span class="smallgrey"></span></td>
 				</tr>
-				
+
 					<tr height="33">
 						<td class="td1" style="cursor: pointer;" onclick="focus_field('stateofresidence');" valign="top"><em>*</em><b>State of Residence</b></td>
 						<td colspan="2" class="formselect" id="show_hide_state" valign="top">
@@ -813,14 +813,14 @@ if($row['dobstatus']==1)
 					{
 						$stateofresidence.='<option value="'.$rowCountry['StateID'].'">'.$rowCountry['State'].'</option>';
 					}
-				}				
+				}
 				$stateofresidence.='<option value="-">Other</option>';
 				$stateofresidence = str_replace('<option value="'.$row['StateID'].'">', '<option value="'.$row['StateID'].'" selected>', $stateofresidence);
 				echo $stateofresidence;
 				?>
-						
-						
-						
+
+
+
 						</select></span>
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_stateofresidence">
@@ -836,7 +836,7 @@ if($row['dobstatus']==1)
 					<span id="errmsg_stateofresidence" class="error"></span>
 						</td>
 						</tr>
-				
+
 			<tr>
 				<td class="td1" style="cursor: pointer;" onclick="focus_field('nearest_city');" valign="top"><b>&nbsp;&nbsp;&nbsp;City of Residence</b></td>
 				<td class="td1" id="show_hide_city" valign="top" width="200">
@@ -880,7 +880,7 @@ if($row['dobstatus']==1)
 				$residencystatus = str_replace('<option value="'.$row['ResidencyStatus'].'">', '<option value="'.$row['ResidencyStatus'].'" selected>', $residencystatus);
 				echo $residencystatus;
 				?>
-				
+
 				</select>
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_residencystatus">
@@ -930,7 +930,7 @@ if($row['dobstatus']==1)
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-	<input name="type" id="no_type1" value="telephone" onclick="disable_field('profile', 'std_code', 'telephone');document.getElementById('errmsg_type').innerHTML=''" onfocus="toggleHint('show', this.name)" onblur="validate_type();contact_number_radio(this)" type="radio" 
+	<input name="type" id="no_type1" value="telephone" onclick="disable_field('profile', 'std_code', 'telephone');document.getElementById('errmsg_type').innerHTML=''" onfocus="toggleHint('show', this.name)" onblur="validate_type();contact_number_radio(this)" type="radio"
 	<?PHP
 								if($row['PhoneStatus']=="telephone")
 								{
@@ -940,7 +940,7 @@ if($row['dobstatus']==1)
 
 						<label id="lbl_telephone" for="no_type1" class="smallgrey swidthtext"><b>Telephone</b></label>
 						&nbsp;&nbsp;
-						<input name="type" id="no_type2" value="mobile" onclick="disable_field('profile', 'std_code', 'mobile');document.getElementById('errmsg_std_code').innerHTML='';document.getElementById('errmsg_type').innerHTML=''; document.forms['profile'].std_code.className='field_filled';" onfocus="toggleHint('show', this.name)" onblur="validate_type();contact_number_radio(this)" type="radio" 
+						<input name="type" id="no_type2" value="mobile" onclick="disable_field('profile', 'std_code', 'mobile');document.getElementById('errmsg_std_code').innerHTML='';document.getElementById('errmsg_type').innerHTML=''; document.forms['profile'].std_code.className='field_filled';" onfocus="toggleHint('show', this.name)" onblur="validate_type();contact_number_radio(this)" type="radio"
 						<?PHP
 								if($row['PhoneStatus']=="mobile")
 								{
@@ -957,7 +957,7 @@ if($row['dobstatus']==1)
 						<td valign="top" width="250">
 						<select name="country_code" class="field" onchange="changecountrycode(this.value,document.getElementById('c_country_code'));" onfocus="toggleHint('show', 'country_code')" onblur="validate_country_select_box(this, 'field_filled', 'field_err');">
 						<?PHP
-						$countrycode = '<option value="">Select</option><option value="+91|India">India</option><option value="+1|USA">USA</option><option value="+44|United Kingdom">United Kingdom</option><option value="+971|United Arab Emirates">United Arab Emirates</option><option value="+1|Canada">Canada</option><option value="+61|Australia">Australia</option><option value="+92|Pakistan">Pakistan</option><option value="+966|Saudi Arabia">Saudi Arabia</option><option value="+965|Kuwait">Kuwait</option><option value="+27|South Africa">South Africa</option><option value="+93|Afghanistan">Afghanistan</option><option value="+355|Albania">Albania</option><option value="+213|Algeria">Algeria</option><option value="+684|American Samoa">American Samoa</option><option value="+376|Andorra">Andorra</option><option value="+244|Angola">Angola</option><option value="+1|Anguilla">Anguilla</option><option value="+1|Antigua &amp; Barbuda">Antigua &amp; Barbuda</option><option value="+54|Argentina">Argentina</option><option value="+374|Armenia">Armenia</option><option value="+61|Australia">Australia</option><option value="+43|Austria">Austria</option><option value="+994|Azerbaijan">Azerbaijan</option><option value="+1|Bahamas">Bahamas</option><option value="+973|Bahrain">Bahrain</option><option value="+880|Bangladesh">Bangladesh</option><option value="+1|Barbados">Barbados</option><option value="+375|Belarus">Belarus</option><option value="+32|Belgium">Belgium</option><option value="+501|Belize">Belize</option><option value="+1|Bermuda">Bermuda</option><option value="+975|Bhutan">Bhutan</option><option value="+591|Bolivia">Bolivia</option><option value="+387|Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="+267|Botswana">Botswana</option><option value="+55|Brazil">Brazil</option><option value="+1|Virgin Islands (British)">Virgin Islands (British)</option><option value="+673|Brunei">Brunei</option><option value="+359|Bulgaria">Bulgaria</option><option value="+226|Burkina Faso">Burkina Faso</option><option value="+257|Burundi">Burundi</option><option value="+855|Cambodia">Cambodia</option><option value="+237|Cameroon">Cameroon</option><option value="+1|Canada">Canada</option><option value="+238|Cape Verde">Cape Verde</option><option value="+1|Cayman Islands">Cayman Islands</option><option value="+236|Central African Republic">Central African Republic</option><option value="+235|Chad">Chad</option><option value="+56|Chile">Chile</option><option value="+86|China">China</option><option value="+57|Colombia">Colombia</option><option value="+269|Comoros">Comoros</option><option value="+242|Congo">Congo</option><option value="+682|Cook Islands">Cook Islands</option><option value="+506|Costa Rica">Costa Rica</option><option value="+385|Croatia (Hrvatska)">Croatia (Hrvatska)</option><option value="+53|Cuba">Cuba</option><option value="+357|Cyprus">Cyprus</option><option value="+420|Czech Republic">Czech Republic</option><option value="+850|North Korea">North Korea</option><option value="+243|Congo (DRC)">Congo (DRC)</option><option value="+45|Denmark">Denmark</option><option value="+253|Djibouti">Djibouti</option><option value="+1|Dominica">Dominica</option><option value="+1|Dominican Republic">Dominican Republic</option><option value="+670|East Timor">East Timor</option><option value="+593|Ecuador">Ecuador</option><option value="+20|Egypt">Egypt</option><option value="+503|El Salvador">El Salvador</option><option value="+240|Equatorial Guinea">Equatorial Guinea</option><option value="+291|Eritrea">Eritrea</option><option value="+372|Estonia">Estonia</option><option value="+251|Ethiopia">Ethiopia</option><option value="+500|Falkland Islands">Falkland Islands</option><option value="+298|Faroe Islands">Faroe Islands</option><option value="+679|Fiji Islands">Fiji Islands</option><option value="+358|Finland">Finland</option><option value="+33|France">France</option><option value="+594|French Guiana">French Guiana</option><option value="+689|French Polynesia">French Polynesia</option><option value="+241|Gabon">Gabon</option><option value="+220|Gambia">Gambia</option><option value="+995|Georgia">Georgia</option><option value="+49|Germany">Germany</option><option value="+233|Ghana">Ghana</option><option value="+350|Gibraltar">Gibraltar</option><option value="+30|Greece">Greece</option><option value="+299|Greenland">Greenland</option><option value="+1|Grenada">Grenada</option><option value="+590|Guadeloupe">Guadeloupe</option><option value="+1|Guam">Guam</option><option value="+502|Guatemala">Guatemala</option><option value="+224|Guinea">Guinea</option><option value="+245|Guinea-Bissau">Guinea-Bissau</option><option value="+592|Guyana">Guyana</option><option value="+509|Haiti">Haiti</option><option value="+504|Honduras">Honduras</option><option value="+852|Hong Kong SAR">Hong Kong SAR</option><option value="+36|Hungary">Hungary</option><option value="+354|Iceland">Iceland</option><option value="+91|India">India</option><option value="+62|Indonesia">Indonesia</option><option value="+98|Iran">Iran</option><option value="+964|Iraq">Iraq</option><option value="+353|Ireland">Ireland</option><option value="+972|Israel">Israel</option><option value="+39|Italy">Italy</option><option value="+1|Jamaica">Jamaica</option><option value="+81|Japan">Japan</option><option value="+962|Jordan">Jordan</option><option value="+7|Kazakhstan">Kazakhstan</option><option value="+254|Kenya">Kenya</option><option value="+686|Kiribati">Kiribati</option><option value="+82|Korea">Korea</option><option value="+965|Kuwait">Kuwait</option><option value="+996|Kyrgyzstan">Kyrgyzstan</option><option value="+856|Laos">Laos</option><option value="+371|Latvia">Latvia</option><option value="+961|Lebanon">Lebanon</option><option value="+266|Lesotho">Lesotho</option><option value="+231|Liberia">Liberia</option><option value="+218|Libya">Libya</option><option value="+423|Liechtenstein">Liechtenstein</option><option value="+370|Lithuania">Lithuania</option><option value="+352|Luxembourg">Luxembourg</option><option value="+853|Macao SAR">Macao SAR</option><option value="+261|Madagascar">Madagascar</option><option value="+265|Malawi">Malawi</option><option value="+60|Malaysia">Malaysia</option><option value="+960|Maldives">Maldives</option><option value="+223|Mali">Mali</option><option value="+356|Malta">Malta</option><option value="+596|Martinique">Martinique</option><option value="+222|Mauritania">Mauritania</option><option value="+230|Mauritius">Mauritius</option><option value="+269|Mayotte">Mayotte</option><option value="+52|Mexico">Mexico</option><option value="+691|Micronesia">Micronesia</option><option value="+373|Moldova">Moldova</option><option value="+377|Monaco">Monaco</option><option value="+976|Mongolia">Mongolia</option><option value="+1|Montserrat">Montserrat</option><option value="+212|Morocco">Morocco</option><option value="+258|Mozambique">Mozambique</option><option value="+95|Myanmar">Myanmar</option><option value="+264|Namibia">Namibia</option><option value="+674|Nauru">Nauru</option><option value="+977|Nepal">Nepal</option><option value="+31|Netherlands">Netherlands</option><option value="+599|Netherlands Antilles">Netherlands Antilles</option><option value="+687|New Caledonia">New Caledonia</option><option value="+64|New Zealand">New Zealand</option><option value="+505|Nicaragua">Nicaragua</option><option value="+227|Niger">Niger</option><option value="+234|Nigeria">Nigeria</option><option value="+683|Niue">Niue</option><option value="+672|Norfolk Island">Norfolk Island</option><option value="+47|Norway">Norway</option><option value="+968|Oman">Oman</option><option value="+92|Pakistan">Pakistan</option><option value="+507|Panama">Panama</option><option value="+675|Papua New Guinea">Papua New Guinea</option><option value="+595|Paraguay">Paraguay</option><option value="+51|Peru">Peru</option><option value="+63|Philippines">Philippines</option><option value="+672|Pitcairn Islands">Pitcairn Islands</option><option value="+48|Poland">Poland</option><option value="+351|Portugal">Portugal</option><option value="+1|Puerto Rico">Puerto Rico</option><option value="+974|Qatar">Qatar</option><option value="+262|Reunion">Reunion</option><option value="+40|Romania">Romania</option><option value="+7|Russia">Russia</option><option value="+250|Rwanda">Rwanda</option><option value="+290|St. Helena">St. Helena</option><option value="+1|St. Kitts and Nevis">St. Kitts and Nevis</option><option value="+1|St. Lucia">St. Lucia</option><option value="+508|St. Pierre and Miquelon">St. Pierre and Miquelon</option><option value="+1|St. Vincent &amp; Grenadines">St. Vincent &amp; Grenadines</option><option value="+685|Samoa">Samoa</option><option value="+378|San Marino">San Marino</option><option value="+239|Sao Tome and Principe">Sao Tome and Principe</option><option value="+966|Saudi Arabia">Saudi Arabia</option><option value="+221|Senegal">Senegal</option><option value="+381|Serbia and Montenegro">Serbia and Montenegro</option><option value="+248|Seychelles">Seychelles</option><option value="+232|Sierra Leone">Sierra Leone</option><option value="+65|Singapore">Singapore</option><option value="+421|Slovakia">Slovakia</option><option value="+386|Slovenia">Slovenia</option><option value="+677|Solomon Islands">Solomon Islands</option><option value="+252|Somalia">Somalia</option><option value="+27|South Africa">South Africa</option><option value="+34|Spain">Spain</option><option value="+94|Sri Lanka">Sri Lanka</option><option value="+249|Sudan">Sudan</option><option value="+597|Suriname">Suriname</option><option value="+268|Swaziland">Swaziland</option><option value="+46|Sweden">Sweden</option><option value="+41|Switzerland">Switzerland</option><option value="+963|Syria">Syria</option><option value="+886|Taiwan">Taiwan</option><option value="+992|Tajikistan">Tajikistan</option><option value="+255|Tanzania">Tanzania</option><option value="+66|Thailand">Thailand</option><option value="+389|Macedonia">Macedonia</option><option value="+228|Togo">Togo</option><option value="+690|Tokelau">Tokelau</option><option value="+676|Tonga">Tonga</option><option value="+1|Trinidad and Tobago">Trinidad and Tobago</option><option value="+216|Tunisia">Tunisia</option><option value="+90|Turkey">Turkey</option><option value="+993|Turkmenistan">Turkmenistan</option><option value="+1|Turks and Caicos Islands">Turks and Caicos Islands</option><option value="+688|Tuvalu">Tuvalu</option><option value="+256|Uganda">Uganda</option><option value="+380|Ukraine">Ukraine</option><option value="+971|United Arab Emirates">United Arab Emirates</option><option value="+44|United Kingdom">United Kingdom</option><option value="+1|Virgin Islands">Virgin Islands</option><option value="+598|Uruguay">Uruguay</option><option value="+1|USA">USA</option><option value="+998|Uzbekistan">Uzbekistan</option><option value="+678|Vanuatu">Vanuatu</option><option value="+58|Venezuela">Venezuela</option><option value="+84|Vietnam">Vietnam</option><option value="+681|Wallis and Futuna">Wallis and Futuna</option><option value="+967|Yemen">Yemen</option><option value="+381|Yugoslavia">Yugoslavia</option><option value="+260|Zambia">Zambia</option><option value="+263|Zimbabwe">Zimbabwe</option>';						
+						$countrycode = '<option value="">Select</option><option value="+91|India">India</option><option value="+1|USA">USA</option><option value="+44|United Kingdom">United Kingdom</option><option value="+971|United Arab Emirates">United Arab Emirates</option><option value="+1|Canada">Canada</option><option value="+61|Australia">Australia</option><option value="+92|Pakistan">Pakistan</option><option value="+966|Saudi Arabia">Saudi Arabia</option><option value="+965|Kuwait">Kuwait</option><option value="+27|South Africa">South Africa</option><option value="+93|Afghanistan">Afghanistan</option><option value="+355|Albania">Albania</option><option value="+213|Algeria">Algeria</option><option value="+684|American Samoa">American Samoa</option><option value="+376|Andorra">Andorra</option><option value="+244|Angola">Angola</option><option value="+1|Anguilla">Anguilla</option><option value="+1|Antigua &amp; Barbuda">Antigua &amp; Barbuda</option><option value="+54|Argentina">Argentina</option><option value="+374|Armenia">Armenia</option><option value="+61|Australia">Australia</option><option value="+43|Austria">Austria</option><option value="+994|Azerbaijan">Azerbaijan</option><option value="+1|Bahamas">Bahamas</option><option value="+973|Bahrain">Bahrain</option><option value="+880|Bangladesh">Bangladesh</option><option value="+1|Barbados">Barbados</option><option value="+375|Belarus">Belarus</option><option value="+32|Belgium">Belgium</option><option value="+501|Belize">Belize</option><option value="+1|Bermuda">Bermuda</option><option value="+975|Bhutan">Bhutan</option><option value="+591|Bolivia">Bolivia</option><option value="+387|Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="+267|Botswana">Botswana</option><option value="+55|Brazil">Brazil</option><option value="+1|Virgin Islands (British)">Virgin Islands (British)</option><option value="+673|Brunei">Brunei</option><option value="+359|Bulgaria">Bulgaria</option><option value="+226|Burkina Faso">Burkina Faso</option><option value="+257|Burundi">Burundi</option><option value="+855|Cambodia">Cambodia</option><option value="+237|Cameroon">Cameroon</option><option value="+1|Canada">Canada</option><option value="+238|Cape Verde">Cape Verde</option><option value="+1|Cayman Islands">Cayman Islands</option><option value="+236|Central African Republic">Central African Republic</option><option value="+235|Chad">Chad</option><option value="+56|Chile">Chile</option><option value="+86|China">China</option><option value="+57|Colombia">Colombia</option><option value="+269|Comoros">Comoros</option><option value="+242|Congo">Congo</option><option value="+682|Cook Islands">Cook Islands</option><option value="+506|Costa Rica">Costa Rica</option><option value="+385|Croatia (Hrvatska)">Croatia (Hrvatska)</option><option value="+53|Cuba">Cuba</option><option value="+357|Cyprus">Cyprus</option><option value="+420|Czech Republic">Czech Republic</option><option value="+850|North Korea">North Korea</option><option value="+243|Congo (DRC)">Congo (DRC)</option><option value="+45|Denmark">Denmark</option><option value="+253|Djibouti">Djibouti</option><option value="+1|Dominica">Dominica</option><option value="+1|Dominican Republic">Dominican Republic</option><option value="+670|East Timor">East Timor</option><option value="+593|Ecuador">Ecuador</option><option value="+20|Egypt">Egypt</option><option value="+503|El Salvador">El Salvador</option><option value="+240|Equatorial Guinea">Equatorial Guinea</option><option value="+291|Eritrea">Eritrea</option><option value="+372|Estonia">Estonia</option><option value="+251|Ethiopia">Ethiopia</option><option value="+500|Falkland Islands">Falkland Islands</option><option value="+298|Faroe Islands">Faroe Islands</option><option value="+679|Fiji Islands">Fiji Islands</option><option value="+358|Finland">Finland</option><option value="+33|France">France</option><option value="+594|French Guiana">French Guiana</option><option value="+689|French Polynesia">French Polynesia</option><option value="+241|Gabon">Gabon</option><option value="+220|Gambia">Gambia</option><option value="+995|Georgia">Georgia</option><option value="+49|Germany">Germany</option><option value="+233|Ghana">Ghana</option><option value="+350|Gibraltar">Gibraltar</option><option value="+30|Greece">Greece</option><option value="+299|Greenland">Greenland</option><option value="+1|Grenada">Grenada</option><option value="+590|Guadeloupe">Guadeloupe</option><option value="+1|Guam">Guam</option><option value="+502|Guatemala">Guatemala</option><option value="+224|Guinea">Guinea</option><option value="+245|Guinea-Bissau">Guinea-Bissau</option><option value="+592|Guyana">Guyana</option><option value="+509|Haiti">Haiti</option><option value="+504|Honduras">Honduras</option><option value="+852|Hong Kong SAR">Hong Kong SAR</option><option value="+36|Hungary">Hungary</option><option value="+354|Iceland">Iceland</option><option value="+91|India">India</option><option value="+62|Indonesia">Indonesia</option><option value="+98|Iran">Iran</option><option value="+964|Iraq">Iraq</option><option value="+353|Ireland">Ireland</option><option value="+972|Israel">Israel</option><option value="+39|Italy">Italy</option><option value="+1|Jamaica">Jamaica</option><option value="+81|Japan">Japan</option><option value="+962|Jordan">Jordan</option><option value="+7|Kazakhstan">Kazakhstan</option><option value="+254|Kenya">Kenya</option><option value="+686|Kiribati">Kiribati</option><option value="+82|Korea">Korea</option><option value="+965|Kuwait">Kuwait</option><option value="+996|Kyrgyzstan">Kyrgyzstan</option><option value="+856|Laos">Laos</option><option value="+371|Latvia">Latvia</option><option value="+961|Lebanon">Lebanon</option><option value="+266|Lesotho">Lesotho</option><option value="+231|Liberia">Liberia</option><option value="+218|Libya">Libya</option><option value="+423|Liechtenstein">Liechtenstein</option><option value="+370|Lithuania">Lithuania</option><option value="+352|Luxembourg">Luxembourg</option><option value="+853|Macao SAR">Macao SAR</option><option value="+261|Madagascar">Madagascar</option><option value="+265|Malawi">Malawi</option><option value="+60|Malaysia">Malaysia</option><option value="+960|Maldives">Maldives</option><option value="+223|Mali">Mali</option><option value="+356|Malta">Malta</option><option value="+596|Martinique">Martinique</option><option value="+222|Mauritania">Mauritania</option><option value="+230|Mauritius">Mauritius</option><option value="+269|Mayotte">Mayotte</option><option value="+52|Mexico">Mexico</option><option value="+691|Micronesia">Micronesia</option><option value="+373|Moldova">Moldova</option><option value="+377|Monaco">Monaco</option><option value="+976|Mongolia">Mongolia</option><option value="+1|Montserrat">Montserrat</option><option value="+212|Morocco">Morocco</option><option value="+258|Mozambique">Mozambique</option><option value="+95|Myanmar">Myanmar</option><option value="+264|Namibia">Namibia</option><option value="+674|Nauru">Nauru</option><option value="+977|Nepal">Nepal</option><option value="+31|Netherlands">Netherlands</option><option value="+599|Netherlands Antilles">Netherlands Antilles</option><option value="+687|New Caledonia">New Caledonia</option><option value="+64|New Zealand">New Zealand</option><option value="+505|Nicaragua">Nicaragua</option><option value="+227|Niger">Niger</option><option value="+234|Nigeria">Nigeria</option><option value="+683|Niue">Niue</option><option value="+672|Norfolk Island">Norfolk Island</option><option value="+47|Norway">Norway</option><option value="+968|Oman">Oman</option><option value="+92|Pakistan">Pakistan</option><option value="+507|Panama">Panama</option><option value="+675|Papua New Guinea">Papua New Guinea</option><option value="+595|Paraguay">Paraguay</option><option value="+51|Peru">Peru</option><option value="+63|Philippines">Philippines</option><option value="+672|Pitcairn Islands">Pitcairn Islands</option><option value="+48|Poland">Poland</option><option value="+351|Portugal">Portugal</option><option value="+1|Puerto Rico">Puerto Rico</option><option value="+974|Qatar">Qatar</option><option value="+262|Reunion">Reunion</option><option value="+40|Romania">Romania</option><option value="+7|Russia">Russia</option><option value="+250|Rwanda">Rwanda</option><option value="+290|St. Helena">St. Helena</option><option value="+1|St. Kitts and Nevis">St. Kitts and Nevis</option><option value="+1|St. Lucia">St. Lucia</option><option value="+508|St. Pierre and Miquelon">St. Pierre and Miquelon</option><option value="+1|St. Vincent &amp; Grenadines">St. Vincent &amp; Grenadines</option><option value="+685|Samoa">Samoa</option><option value="+378|San Marino">San Marino</option><option value="+239|Sao Tome and Principe">Sao Tome and Principe</option><option value="+966|Saudi Arabia">Saudi Arabia</option><option value="+221|Senegal">Senegal</option><option value="+381|Serbia and Montenegro">Serbia and Montenegro</option><option value="+248|Seychelles">Seychelles</option><option value="+232|Sierra Leone">Sierra Leone</option><option value="+65|Singapore">Singapore</option><option value="+421|Slovakia">Slovakia</option><option value="+386|Slovenia">Slovenia</option><option value="+677|Solomon Islands">Solomon Islands</option><option value="+252|Somalia">Somalia</option><option value="+27|South Africa">South Africa</option><option value="+34|Spain">Spain</option><option value="+94|Sri Lanka">Sri Lanka</option><option value="+249|Sudan">Sudan</option><option value="+597|Suriname">Suriname</option><option value="+268|Swaziland">Swaziland</option><option value="+46|Sweden">Sweden</option><option value="+41|Switzerland">Switzerland</option><option value="+963|Syria">Syria</option><option value="+886|Taiwan">Taiwan</option><option value="+992|Tajikistan">Tajikistan</option><option value="+255|Tanzania">Tanzania</option><option value="+66|Thailand">Thailand</option><option value="+389|Macedonia">Macedonia</option><option value="+228|Togo">Togo</option><option value="+690|Tokelau">Tokelau</option><option value="+676|Tonga">Tonga</option><option value="+1|Trinidad and Tobago">Trinidad and Tobago</option><option value="+216|Tunisia">Tunisia</option><option value="+90|Turkey">Turkey</option><option value="+993|Turkmenistan">Turkmenistan</option><option value="+1|Turks and Caicos Islands">Turks and Caicos Islands</option><option value="+688|Tuvalu">Tuvalu</option><option value="+256|Uganda">Uganda</option><option value="+380|Ukraine">Ukraine</option><option value="+971|United Arab Emirates">United Arab Emirates</option><option value="+44|United Kingdom">United Kingdom</option><option value="+1|Virgin Islands">Virgin Islands</option><option value="+598|Uruguay">Uruguay</option><option value="+1|USA">USA</option><option value="+998|Uzbekistan">Uzbekistan</option><option value="+678|Vanuatu">Vanuatu</option><option value="+58|Venezuela">Venezuela</option><option value="+84|Vietnam">Vietnam</option><option value="+681|Wallis and Futuna">Wallis and Futuna</option><option value="+967|Yemen">Yemen</option><option value="+381|Yugoslavia">Yugoslavia</option><option value="+260|Zambia">Zambia</option><option value="+263|Zimbabwe">Zimbabwe</option>';
 	$countrycode = str_replace('<option value="'.$row['CountryCode2'].'">', '<option value="'.$row['CountryCode2'].'" selected>', $countrycode);
 				echo $countrycode;
 						?>
@@ -988,7 +988,7 @@ if($row['dobstatus']==1)
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-	
+
 		<!-- HINT STARTS HERE -->
 		<span class="hint_contact_number" id="hint_contact_number">
 		<div>
@@ -1016,7 +1016,7 @@ if($row['dobstatus']==1)
 					<tbody><tr>
 				<td class="td1" valign="top" width="139"><em>*</em><b><label for="contact_details_dislay_status_show_all">Display Options</label></b></td>
 				<td class="smallblack" valign="top">
-								<input name="contact_details_dislay_status" id="contact_details_dislay_status_show_all" value="Show" style="margin-left: 0px;" onfocus="toggleHint('show', this.name)" onblur="validate_contact_details_dislay_status();contact_number_display_radio(this)" onclick="document.getElementById('errmsg_contact_details_dislay_status').innerHTML=''" type="radio" 
+								<input name="contact_details_dislay_status" id="contact_details_dislay_status_show_all" value="Show" style="margin-left: 0px;" onfocus="toggleHint('show', this.name)" onblur="validate_contact_details_dislay_status();contact_number_display_radio(this)" onclick="document.getElementById('errmsg_contact_details_dislay_status').innerHTML=''" type="radio"
 								<?PHP
 								if($row['DisplayContactStatus']=="Show")
 								{
@@ -1038,7 +1038,7 @@ if($row['dobstatus']==1)
 
 				<span style="line-height: 2px;"><br></span>
 
-				<input name="contact_details_dislay_status" id="contact_details_dislay_status_none" value="None" style="margin-left: 0px;" onfocus="toggleHint('show', this.name)" onblur="validate_contact_details_dislay_status();contact_number_display_radio(this)" onclick="document.getElementById('errmsg_contact_details_dislay_status').innerHTML=''" type="radio" 
+				<input name="contact_details_dislay_status" id="contact_details_dislay_status_none" value="None" style="margin-left: 0px;" onfocus="toggleHint('show', this.name)" onblur="validate_contact_details_dislay_status();contact_number_display_radio(this)" onclick="document.getElementById('errmsg_contact_details_dislay_status').innerHTML=''" type="radio"
 				<?PHP
 								if($row['DisplayContactStatus']!="Show")
 								{
@@ -1053,12 +1053,12 @@ if($row['dobstatus']==1)
 			<tr>
 				<td colspan="2" valign="top">
 				<span class="smallgrey"><b> Note :</b></span>
-				
+
 
 				<ul style="list-style-type: disc; list-style-position: outside; margin-top: 0px;">
 				<li class="smallgrey">Your contact details are not shared with any third party.</li></ul>
-				
-				
+
+
 				</td>
 			</tr>
 					</tbody></table>
@@ -1079,7 +1079,7 @@ if($row['dobstatus']==1)
 
 			<tr valign="top">
 					<td class="td1" valign="top"><b style="float: left;"><em>*</em><label for="aboutyourself">Describe yourself, your likes &amp; dislikes, the kind of person you are looking for, etc.</label></b>
-					
+
 
 				<textarea name="aboutyourself" id="aboutyourself" rows="6" cols="90" onkeyup="calcCharLen('profile', 'aboutyourself', 'counter1', 4000)" onblur="toggleHint('hide', this.name); validate_describe_yourself(this, 'field_filled', 'field_err'); calcCharLen('profile', 'aboutyourself', 'counter1', 4000);" wrap="virtual" class="field" style="width: 500px;" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)"><?PHP echo stripslashes($row['AboutYourself'])?></textarea>
 		<!-- HINT STARTS HERE -->
@@ -1092,7 +1092,7 @@ if($row['dobstatus']==1)
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-					<div style="background: rgb(231, 231, 231) none repeat scroll 0%; width: 500px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" class="smallblack"><img src="images/gry-arrow.gif" style="margin: 4px 4px 6px 8px;" align="middle" hspace="1">&nbsp;No. of characters:  <input name="counter1" id="counter1" value="0" class="formselect" size="2" readonly="readonly" style="border: medium none ; background: rgb(231, 231, 231) none repeat scroll 0%; width: 30px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 51, 0);" type="text">(min. 100 characters; max. 4000)</div><span id="errmsg_aboutyourself" class="error"></span>
+					<div style="background: rgb(231, 231, 231) none repeat scroll 0%; width: 500px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" class="smallblack"><img src="images/gry-arrow.gif" style="margin: 4px 4px 6px 8px;" align="middle" hspace="1">&nbsp;No. of characters:  <input name="counter1" id="counter1" value="0" class="formselect" size="2" readonly="readonly" style="border: medium none ; background: rgb(231, 231, 231) none repeat scroll 0%; width: 30px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: #FC9E86;" type="text">(min. 100 characters; max. 4000)</div><span id="errmsg_aboutyourself" class="error"></span>
 				<a name="moreprofile2"></a>
 				</td>
 			</tr>
@@ -1106,7 +1106,7 @@ if($row['dobstatus']==1)
 			<!-- PROFILE CONTENTS EN -->
 
 
-		
+
 		<table class="tbl1 end" style="margin-left: 11px;" border="0" cellpadding="0" cellspacing="0">
 		<tbody><tr >
 			<td class="td2">
@@ -1115,13 +1115,13 @@ if($row['dobstatus']==1)
 
 			</td>
 		</tr>
-		
+
 		</tbody></table>
-			
-		
+
+
 	</form></div>
 
-	
+
 
 
 
@@ -1141,7 +1141,7 @@ if($row['dobstatus']==1)
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

@@ -21,11 +21,11 @@ else
 {
 $BirthCountry = $_POST['countryofbirth'];
 }
-			$insert = "update user_profile set BirthHour='".mysql_escape_string($_POST['timeofbirth_hour'])."', BirthMin='".mysql_escape_string($_POST['timeofbirth_min'])."', BirthSec='".mysql_escape_string($_POST['timeofbirth_sec'])."', CountryOfBirth=".$BirthCountry.", BirthCity=".$_POST['cityofbirth']." where UserID=".$_SESSION['UserID'];	
-			
+			$insert = "update user_profile set BirthHour='".mysql_escape_string($_POST['timeofbirth_hour'])."', BirthMin='".mysql_escape_string($_POST['timeofbirth_min'])."', BirthSec='".mysql_escape_string($_POST['timeofbirth_sec'])."', CountryOfBirth=".$BirthCountry.", BirthCity=".$_POST['cityofbirth']." where UserID=".$_SESSION['UserID'];
+
 			$resultt = mysql_query($insert);
 
-	
+
 	header("Location: profile4.php");
 	exit();
 }
@@ -50,7 +50,7 @@ $row = @mysql_fetch_array($result);
 		var pURL=iName;
 		pInfo='toolbar=0,';
 		pInfo+='location=0,';
-		pInfo+='directories=0,';	
+		pInfo+='directories=0,';
 		pInfo+='status=0,';
 		pInfo+='menubar=0,';
 		pInfo+='scrollbars=0,';
@@ -65,7 +65,7 @@ $row = @mysql_fetch_array($result);
 
 <script language="javascript" src="images/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -73,19 +73,19 @@ $row = @mysql_fetch_array($result);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -94,9 +94,9 @@ $row = @mysql_fetch_array($result);
 				<div style="margin: 0px; width: 100%;">
 					<div style="width: 180px; background-color: rgb(255, 255, 255); float: left;">
 						<div style="border-top: 2px solid rgb(0, 0, 0);">
-						<div style="padding: 6px 0pt 0pt 0px; width: 170px; background-color: rgb(238, 238, 238);" class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="nadiralishah"><?PHP echo $_SESSION['LoginID']?></a>]<br>
+						<div style="padding: 6px 0pt 0pt 0px; width: 170px; background-color: #fff7e7" class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="nadiralishah"><?PHP echo $_SESSION['LoginID']?></a>]<br>
 						</div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -126,7 +126,7 @@ $row = @mysql_fetch_array($result);
 
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><img src="images/spacer.gif" border="0" height="5" width="1"><br>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><img src="images/spacer.gif" border="0" height="5" width="1"><br>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
 include "myleftbar.php";
@@ -143,7 +143,7 @@ include "myleftbar.php";
 		<td height="7" width="350"><spacer type="block" height="7" width="350"></td>
 		<td width="220"><spacer type="block" width="220"></td>
 		</tr>
-	
+
 			<tr>
 			<td align="left"><h2>My Account </h2></td>
 			<td align="right">&nbsp;		</td>
@@ -151,7 +151,7 @@ include "myleftbar.php";
 		<tr><td colspan="2" bgcolor="#8fa7bf" height="1" width="1"><spacer type="block" height="1" width="1"></td></tr>
 		<tr><td colspan="2" height="8" width="1"><spacer type="block" height="8" width="1"></td></tr>
 		</tbody></table>
-	
+
 <!-- MAIN TABLE STARTS HERE  -->
 <div class="mediumblack">
 <b>Dear Member</b><font class="mediumblack"> (Profile ID: <?PHP echo $_SESSION['LoginID']?>)</font><br>
@@ -163,7 +163,7 @@ include "myleftbar.php";
 		<td width="362">&nbsp;			</td>
 
 		<td width="20">&nbsp;</td>
-	
+
 			<td>
 			<?PHP
 if($row['photo2'] != "")
@@ -179,7 +179,7 @@ else
 <?PHP
 }
 ?>
-			
+
 			</td>
 			</tr>
 	</tbody></table>
@@ -214,7 +214,7 @@ else
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

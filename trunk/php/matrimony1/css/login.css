@@ -1,4 +1,7 @@
-#box	{width: 100%; background: #F5F5F5; text-align: left;}
+#box{
+	width: 100%; background: #FFF7E7; text-align: left;
+	border: 1px solid #FCE2AF;
+}
 .top1 {height: 10px; background: #CCCCCC url('images/mid-top.gif'); overflow: hidden;}
 .top1 .l1	{float: left; background: #CCCCCC url('images/corner-01.gif');}
 .top1 .r1	{float: right; background: #CCCCCC url('images/corner-02.gif');}

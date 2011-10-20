@@ -12,11 +12,11 @@ $rowsettings = mysql_fetch_array($resultsettings);
 
 if($_POST['continue']=="true")
 {
-			$insert = "update users set Password='".mysql_escape_string($_POST['password'])."' where UserID=".$_SESSION['UserID'];	
-			
+			$insert = "update users set Password='".mysql_escape_string($_POST['password'])."' where UserID=".$_SESSION['UserID'];
+
 			$resultt = mysql_query($insert);
 
-	
+
 	header("Location: my_profile.php");
 	exit();
 }
@@ -41,7 +41,7 @@ $row = @mysql_fetch_array($result);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
-		
+
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -49,19 +49,19 @@ $row = @mysql_fetch_array($result);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-			
+
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
 
 
-				
-		
+
+
 				<!-- midlinks + services space -->
 					<br style="line-height: 1px;" clear="all">
 				<div>
 					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: rgb(255, 255, 255); text-align: left;">
-						
+
 					</div>
 				</div>
 				<!-- The topbanner table end's here -->
@@ -73,7 +73,7 @@ $row = @mysql_fetch_array($result);
 						<div style="padding: 6px 0pt 0pt 0px; width: 170px; " class="smallblack"><div><a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="<?PHP echo $_SESSION['LoginID']?>"><?PHP echo $_SESSION['LoginID']?></a>]<br>
 						<span style="line-height: 2px;"><br></span>
 </div>
-					
+
 				</div>
 				</div>
 				</div>
@@ -104,7 +104,7 @@ $row = @mysql_fetch_array($result);
 <tbody><tr>
 <td rowspan="2" bgcolor="#8fa7bf" width="1"><spacer type="block" height="1" width="1"></td>
 <td height="1" width="5"><spacer type="block" height="1" width="5"></td>
-<td align="center" bgcolor="#eeeeee" valign="top" width="170"><span style="line-height: 5px;"><br></span>
+<td align="center" bgcolor="#fff7e7" valign="top" width="170"><span style="line-height: 5px;"><br></span>
 <!-- LEFT BANNER STARTS HERE -->
 <?PHP
  include "myleftbar.php";
@@ -119,20 +119,20 @@ $row = @mysql_fetch_array($result);
 		<div class="mediumblack" style="width: 550px;">
 
 
-	
+
 	<div style="border: 0px solid rgb(0, 0, 0); margin: 0pt 30px; text-align: left;">
-	
-		
+
+
 			<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 12px 0px 7px; margin-bottom: 10px;">
 				<h2>Edit your Password </h2>
 			</div>
-		
 
 
-		
 
 
-		
+
+
+
 
 	<form method="post" name="frmastro" action="change_password.php" style="margin: 0px;" onSubmit="return validateform(this);">
 <input type="hidden" name="continue" value="true">
@@ -153,7 +153,7 @@ $row = @mysql_fetch_array($result);
 
 	<div style="padding-left: 127px; text-align: left;" class="mediumblack"></div>
 
-	
+
 	<table border="0" cellpadding="6" cellspacing="0">
 	<tbody><tr height="60">
  		<td ><br></td>
@@ -164,12 +164,12 @@ $row = @mysql_fetch_array($result);
 	</tbody></table>
 
 </form>
-		
+
 
 
 	</div><br>
 
-	
+
 
 
 
@@ -189,7 +189,7 @@ $row = @mysql_fetch_array($result);
 
 		<!-- BTM BANNER STARTS-->
 		<center>
-		
+
 		<?PHP
 			include("footer.php");
 		?>

@@ -1,13 +1,14 @@
 .smallblack						{font-weight: normal;		font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
 .smallgrey						{font-weight: normal;		font-size: 11px;			color: #626262;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
 .smallblackbold					{font-weight: bold;			font-size: 11px;			color: #333333;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
-.smallred						{font-weight: normal;		font-size: 11px;			color: #FF3300;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
+.smallred						{font-weight: normal;		font-size: 11px;			color: #FF7A59;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
 .smallgreenbold					{font-weight: bold;			font-size: 11px;			color: #669900;			font-style: normal;			font-family: tahoma, arial;					text-decoration: none;}
 
 .mediumblack					{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;			line-height: 16px;}
 .mediumblackbold				{font-weight: bold;			font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;			line-height: 16px;}
-.mediumred						{font-weight: normal;		font-size: 12px;			color: #FF3300;			font-style: normal;			font-family: arial;					text-decoration: none;}
-.mediumredbold					{font-weight: bold;			font-size: 12px;			color: #FF3300;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumred						
+{font-weight: normal;		font-size: 12px;color: #F59178;			font-style: normal;			font-family: arial;					text-decoration: none;}
+.mediumredbold					{font-weight: bold;			font-size: 12px;			color: #FF7A59;			font-style: normal;			font-family: arial;					text-decoration: none;}
 .mediumgreen					{font-weight: normal;		font-size: 12px;			color: #669900;			font-style: normal;			font-family: arial;					text-decoration: none;}
 .mediumgreenbold				{font-weight: bold;			font-size: 12px;			color: #669900;			font-style: normal;			font-family: arial;					text-decoration: none;}
 .mediumwhite					{font-weight: normal;		font-size: 12px;			color: #FFFFFF;			font-style: normal;			font-family: arial;					text-decoration: none;}
@@ -69,7 +70,7 @@ h1 {font-weight: normal;		font-size: 14px;			color: #333333;			font-style: norma
 h2 {font-weight: normal;			font-size: 18px;			color: #333333;			font-style: normal;			font-family: arial;			text-decoration: none;		margin: 0;}
 h3 {font-weight: bold;			font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;		margin: 0;}
 
-td {font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: arial;					text-decoration: none;}
+td {font-weight: normal;		font-size: 12px;			color: #CD6060;			font-style: normal;			font-family: arial;					text-decoration: none;}
 
 .smallgreylink					{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
 a.smallgreylink:link			{font-weight: normal;		font-size: 12px;			color: #333333;			font-style: normal;			font-family: ms sans serif;			text-decoration: none;}
