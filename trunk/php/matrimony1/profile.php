@@ -117,7 +117,7 @@ $msg = "<div style='color:#e12328;font-weight:bold;border:1px dotted #000;paddin
 
 
 
-$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."' and users.Status=1 and users.ApprovalStatus=1";
+$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."' and users.Status=1 and users.ApprovalStatus=1";
 $result = mysql_query($sql,$conn);
 if(@mysql_num_rows($result)!=0)
 {

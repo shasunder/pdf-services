@@ -228,7 +228,7 @@ while($row = @mysql_fetch_array($result))
     <td style="border-bottom: 1px dashed #F60;"><strong>Age</strong> : <?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> yrs, </td>
   </tr>
   <tr>
-    <td style="border-bottom: 1px dashed #F60;"><strong>Height</strong>: <?PHP echo stripslashes($row['Height'])?>, <strong>Religion</strong>: <?PHP echo stripslashes($row['Religion'])?></td>
+    <td style="border-bottom: 1px dashed #F60;"><strong>Height</strong>: <?PHP echo stripslashes($row['Height'])?>, <strong>Caste</strong>: <?PHP echo stripslashes($row['Caste'])?></td>
   </tr>
   <tr>
     <td style="border-bottom: 1px dashed #F60;"><strong>Profession</strong> : <?PHP echo stripslashes($row['Profession'])?></td>
