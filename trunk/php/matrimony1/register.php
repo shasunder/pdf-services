@@ -1,4 +1,4 @@
-<?PHP
+<?php
 session_start();
 include("connection.php");
 $sqlsettings = "SELECT * from admin";
@@ -74,7 +74,7 @@ if($rowsettings['smtpstatus'] == 1)
 
 require("phpmailer/class.phpmailer.php");
 
-	$mail = new PHPMailer();
+	$mail = new phpMailer();
 
 	$mail->IsSMTP();
 	$mail->Host = $rowsettings['smtp'];
@@ -132,7 +132,7 @@ require("phpmailer/class.phpmailer.php");
 
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
-					<?PHP
+					<?php
 					include("topheader.php");
 					?>
 				</div>
@@ -168,7 +168,7 @@ require("phpmailer/class.phpmailer.php");
 			<div style="width: 30px; float: left;"><br></div>
  			<div style="margin: 0pt 0pt 10px 0px; width: 700px; float: left;">
 				<br>
-				<?PHP
+				<?php
 				if($emailMsg != "")
 				{
 					echo $emailMsg;
@@ -221,8 +221,9 @@ require("phpmailer/class.phpmailer.php");
 
 		<table class="tblreg" border="0" cellpadding="5" cellspacing="4" width="400">
 		<tbody><tr>
-			<td nowrap="nowrap" width="150"><label for="profileid">Profile ID</label></td>
-			<td class="smallgrey"><input tabindex="1" class="field" name="login" id="profileid" value="<?PHP echo $_REQUEST['login']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_login();" type="text">
+			<td nowrap="nowrap" width="150"><label for="profileid">Profile Id</label></td>
+			<td class="smallgrey"><input tabindex="1" class="field" name="login" id="profileid" value="<?php echo $_REQUEST['login']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_login();" type="text">
+			<br/>eg: sandy1
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_login">
 		<div>
@@ -239,7 +240,7 @@ require("phpmailer/class.phpmailer.php");
 
         <tr>
 			<td nowrap="nowrap" width="150"><label for="name">Name</label></td>
-			<td class="smallgrey"><input tabindex="1" class="field" name="name" id="name" value="<?PHP echo $_REQUEST['name']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_name();" type="text">
+			<td class="smallgrey"><input tabindex="1" class="field" name="name" id="name" value="<?php echo $_REQUEST['name']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_name();" type="text">
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_name">
 		<div>
@@ -259,7 +260,7 @@ require("phpmailer/class.phpmailer.php");
 
 		<tr>
 			<td><label for="email">Email</label></td>
-			<td class="smallgrey"><input tabindex="3" class="field" name="email" id="email" value="<?PHP echo $_REQUEST['email']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_email();" type="text">
+			<td class="smallgrey"><input tabindex="3" class="field" name="email" id="email" value="<?php echo $_REQUEST['email']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_email();" type="text">
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_email">
 		<div>
@@ -273,28 +274,20 @@ require("phpmailer/class.phpmailer.php");
 	<br>
 			<span id="errmsg_email" class="error"></span></td>
 		</tr>
+
 		<tr>
-			<td><label for="retypeemail">Confirm Email</label></td>
-			<td><input tabindex="4" class="field" name="retypeemail" id="retypeemail" value="<?PHP echo $_REQUEST['retypeemail']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_retypeemail();" type="text">
-		<!-- HINT STARTS HERE -->
-		<span class="hint" id="hint_retypeemail">
-		<div>
-			<div><img src="images/top-hint.gif" height="10" width="201"></div>
-			<div style="padding: 0pt 5px 0pt 8px; background: transparent url(images/bg-hint.gif) no-repeat scroll 0%; width: 201px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-family: arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(127, 127, 127);"><b>Retype your email address</b><br>This will make sure you have typed the correct email address.</div>
-			<div><img src="images/bottom-hint.gif" height="9" width="201"></div>
-		</div>
-		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
-		</span>
-		<!-- HINT ENDS HERE -->
-	<br>
-			<span id="errmsg_retypeemail" class="error"></span></td>
+					<td style="cursor: pointer;" onclick="focus_field('caste');">Subcaste</td>
+					<td>
+					<?php include("sections/subcastes.php"); ?>
+					<br>
+					<span id="errmsg_caste" class="error"></span></td>
 		</tr>
 		<tr class="spacer">
 			<td colspan="2"><br></td>
 		</tr>
 		<tr>
 			<td><label for="password1">Password</label></td>
-			<td class="smallgrey"><input tabindex="5" class="field" name="password1" id="password1" value="<?PHP echo $_REQUEST['password1']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_password1();" type="password">
+			<td class="smallgrey"><input tabindex="5" class="field" name="password1" id="password1" value="<?php echo $_REQUEST['password1']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_password1();" type="password">
 		<!-- HINT STARTS HERE -->
 		<span class="hint" id="hint_password1">
 		<div>
@@ -308,22 +301,7 @@ require("phpmailer/class.phpmailer.php");
 	<br>
 			<span id="errmsg_password1" class="error"></span></td>
 		</tr>
-		<tr>
-			<td><label for="password2">Confirm Password</label></td>
-			<td><input tabindex="6" class="field" name="password2" id="password2" value="<?PHP echo $_REQUEST['password2']?>" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)" onblur="validate_password2();" type="password">
-		<!-- HINT STARTS HERE -->
-		<span class="hint" id="hint_password2">
-		<div>
-			<div><img src="images/top-hint.gif" height="10" width="201"></div>
-			<div style="padding: 0pt 5px 0pt 8px; background: transparent url(images/bg-hint.gif) no-repeat scroll 0%; width: 201px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-family: arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(127, 127, 127);"><b>Retype your password</b><br>Minimum 4 characters. Your password cannot contain spaces.</div>
-			<div><img src="images/bottom-hint.gif" height="9" width="201"></div>
-		</div>
-		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
-		</span>
-		<!-- HINT ENDS HERE -->
-	<br>
-			<span id="errmsg_password2" class="error"></span></td>
-		</tr>
+
 		<tr class="spacer">
 			<td colspan="2"><br></td>
 		</tr>
@@ -360,35 +338,31 @@ require("phpmailer/class.phpmailer.php");
 		</span>
 		<!-- HINT ENDS HERE -->
 <br>
-<input type="checkbox" name="dobstatus" value="true"> Check this box to display your date of birth in profile.
+<input type="checkbox" name="dobstatus" value="true"> <span class="mediumred" style="font-size:9px">Check this to display date of birth in profile.</span>
 			<span id="errmsg_dateofbirth" class="error"></span></td>
 		</tr>
-		<tr>
-			<td style="cursor: pointer;" onclick="focus_field('community');">Subcaste</td>
-			<td>
-			<input tabindex="11" name="community" id="community" class="field" type="text"/><br>
-			<span id="errmsg_community" class="error"></span></td>
-		</tr>
+
 		<tr>
 			<td style="cursor: pointer;" onclick="focus_field('countryofresidence');">Country of Residence</td>
 			<td><select tabindex="12" name="countryofresidence" id="countryofresidence" class="field" onblur="validate_countryofresidence();"><option value="">Select</option>
-			<?PHP
+			<?php
 				$sqlCountry = "SELECT * FROM countries order by CountryID";
 				$resultCountry = mysql_query($sqlCountry, $conn);
 				if (@mysql_num_rows($resultCountry)!=0){
 					while($rowCountry = mysql_fetch_array($resultCountry))
 					{
 						?>
-						<option value="<?PHP echo $rowCountry['CountryID']?>"
-						<?PHP
+						<option value="<?php echo $rowCountry['CountryID']?>"
+						<?php
 						if($_REQUEST['CountryID'] == $rowCountry['CountryID'])
 							echo "selected";
 						?>
-						><?PHP echo $rowCountry['Country']?></option>
+						><?php echo $rowCountry['Country']?></option>
 						<?
 					}
 				}
 				?>
+				<option value="Other">Other</option>
 			</select><br>
 			<span id="errmsg_countryofresidence" class="error"></span></td>
 		</tr>
@@ -448,7 +422,7 @@ require("phpmailer/class.phpmailer.php");
 		<br>
 		<div style="width: 100%; text-align: center; margin-bottom: 5px;">
 			<div style="padding: 0pt 0pt 0pt 0px; width: 100%;">
-				<?PHP
+				<?php
 				include("footer.php");
 				?>
 						</div>

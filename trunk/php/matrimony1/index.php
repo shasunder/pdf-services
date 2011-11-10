@@ -1,4 +1,4 @@
-<?PHP
+<?php
 session_start();
 include("connection.php");
 
@@ -10,8 +10,8 @@ $rowsettings = mysql_fetch_array($resultsettings);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<?PHP include("common/includes_static.php"); ?>
-<?PHP include("common/constants.php"); ?>
+<?php include("common/includes_static.php"); ?>
+<?php include("common/constants.php"); ?>
 <title><? echo $kSiteName." - ".$kSiteTitle; ?></title>
 
 </head>
@@ -59,7 +59,7 @@ $rowsettings = mysql_fetch_array($resultsettings);
 			<div class="left tleft" style="width: 33px;"><img src="images/top-lft-cnl.gif" border="0" height="33" width="14"><br></div>
 			<div class="left tleft" style="">
 
-	<?PHP
+	<?php
 if($_SESSION['UserID']!="")
 {
 ?>
@@ -70,7 +70,7 @@ if($_SESSION['UserID']!="")
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="myaccount.php" title="My Account" style="color:#FFFFFF;"><strong>My Account</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Log Out</strong></a>
-<?PHP
+<?php
 }
 else
 {
@@ -82,7 +82,7 @@ else
 			<form method="post" action="login.php" name="loginpage" autocomplete="off" style="margin: 4px 0pt 0pt 0px;">
 	<b><a href="index.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">Home</a> | <a href="aboutus.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">About Us</a> | <a href="contactus.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">Contact Us</a>	</b> &nbsp;	<b style="color:#FFFFFF;padding-left:20px">Member Login</b> &nbsp; <input name="login" value="Email ID" onfocus="if(this.value=='Email ID') this.value='';" onblur="if(this.value=='') this.value='Email ID';" size="30" type="text">&nbsp; &nbsp;<input name="password" value="*****" onfocus="if(this.value=='*****') this.value='';" onblur="if(this.value=='') this.value='*****';" size="14" type="password">&nbsp; <input style="border:none" src="images/go.gif" title="Login" align="top" border="0" type="image"><input name="homepage" value="Y" type="hidden"><input name="continue" value="true" type="hidden"> <a href="forget_password.php" class="xsmall" title="Forgot Password?" style="color:#FFFFFF;">Forgot Password?</a>
 			</form>
-		<?PHP
+		<?php
 }
 ?>
 			</div>
@@ -121,7 +121,7 @@ else
 												<div style="padding: 7px 0pt 3px 0px;">
 													<select name="gender" style="width: 65px;">
 
-													<?PHP
+													<?php
 													if($_SESSION['Gender']=="Female")
 													{
 														echo "<option value='Male' selected='selected'>Groom</option>";
@@ -147,19 +147,19 @@ else
 												</div><div style="padding: 3px 0px;">
 								<select name="countryofresidence" style="width: 140px;"><option value="">Country</option>
 
-								<?PHP
+								<?php
 									$sqlCountry = "SELECT * FROM countries order by CountryID";
 									$resultCountry = mysql_query($sqlCountry, $conn);
 									if (@mysql_num_rows($resultCountry)!=0){
 										while($rowCountry = mysql_fetch_array($resultCountry))
 										{
 											?>
-											<option value="<?PHP echo $rowCountry['CountryID']?>"
-											<?PHP
+											<option value="<?php echo $rowCountry['CountryID']?>"
+											<?php
 											if($_REQUEST['CountryID'] == $rowCountry['CountryID'])
 												echo "selected";
 											?>
-											><?PHP echo $rowCountry['Country']?></option>
+											><?php echo $rowCountry['Country']?></option>
 											<?
 										}
 									}
@@ -171,7 +171,8 @@ else
 
 								</div>
 								<div style="padding: 3px 0px;">
-																		<input name="caste" type="text" style="width: 140px;" id="caste" value="Sub Caste" onfocus="if(this.value=='Sub Caste') this.value='';" onblur="if(this.value=='') this.value='Sub Caste';" size="16" />
+								<?php include("sections/subcastes.php"); ?>
+
 									&nbsp;&nbsp;<input  style="border:none" src="images/go.gif" title="Search" align="top" border="0" type="image"/>
 								</div>
 
@@ -186,7 +187,7 @@ else
 								<!-- SEARCH FORM ST-->
 									<div style="padding-left:5px; text-align: left;">
 
-										<form method="get" action="<?PHP
+										<form method="get" action="<?php
 											if($_SESSION['UserID']!="")
 											{
 											echo "profile.php";
@@ -262,7 +263,7 @@ else
     <td>
 <p style="font-size:12px;color:#A35804;font-weight:normal;text-align:justify;font-family:Sans-Serif,Verdana">
 
-	<?PHP
+	<?php
 if($_SESSION['UserID']!="")
 {
  echo "<a href='membership.php'>";
@@ -294,7 +295,7 @@ We aim to provide service at a very affordable price (starting at <b>Rs.500</b> 
 
 
 <!-- Footer starts -->
-	<?PHP
+	<?php
 	include("footer.php");
 	?>
 <!-- Footer ends -->

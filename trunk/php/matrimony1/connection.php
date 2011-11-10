@@ -2,7 +2,7 @@
 
 $server = "box710.bluehost.com";//localhost
 $user = "marryban_banjara";
-$password = "";
+$password = "banjara123";
 $dbName = "marryban_banjara";
 
 $conn = mysql_connect($server,$user,$password, $dbName)

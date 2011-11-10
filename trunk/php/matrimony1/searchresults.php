@@ -40,7 +40,7 @@ else
 }
 
 
-if($_REQUEST['caste'] == "Sub Caste")
+if($_REQUEST['caste'] == "Sub Caste" || $_REQUEST['caste'] == "Other")
 {
 	$caste1 = "";
 }
