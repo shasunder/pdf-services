@@ -69,12 +69,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 
 
 				<!-- midlinks + services space -->
-					<br style="line-height: 1px;" clear="all">
-				<div>
-					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
 
-					</div>
-				</div>
 				<!-- The topbanner table end's here -->
 
 				<!-- The tab table start's here -->

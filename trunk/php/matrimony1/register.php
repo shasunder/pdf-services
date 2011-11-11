@@ -145,14 +145,6 @@ require("phpmailer/class.phpmailer.php");
 
 
 
-					<div>
-					<div style="border-top: 2px solid rgb(143, 167, 191); border-bottom: 2px solid #000000; background-color: #000000;">
-					<div style="margin: 1px 0pt 1px 0px; padding: 3px 0pt 3px 0px; background-color: #990000;" class="mediumwhitebold">
-
-
-						</div>
-					</div>
-				</div>
 				<!-- midlinks + services space end's here -->
 
 
@@ -175,19 +167,16 @@ require("phpmailer/class.phpmailer.php");
 				}
 				?>
 
-				<div style="float: left; text-align: left;"><img src="images/why-register.gif"><br>
-				<ul>
-				<li> <span>View unlimited profiles</span> </li>
-				<li> <span>Express Interest in members</span> </li>
-				<li> <span>Get contacted directly</span> </li>
-				</ul>
+				<div style="float: top; text-align: left;color:#FFA558;font-size:1.2em">
+				<span>To View unlimited profiles, express Interest in members or to get contacted directly</span>
+
 				</div>
 
-				<br clear="all">
+
 				<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 15px 0pt 5px 0px; width: 430px; float: left; text-align: left;">
 				<img src="images/enter-details.gif" alt="Enter your details to register for FREE!" height="20" width="354"></div>
-				<div class="smallgrey" style="border-bottom: 1px solid rgb(143, 167, 191); padding: 2px 0pt 5px 0px; width: 270px; float: left; text-align: right;"><span style="font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; font-size-adjust: none; font-stretch: normal; line-height: 18px;"><br></span>Already Registered? <a href="login.php" class="smallbluelink"><b>Login</b></a>&nbsp;</div><br clear="all">
-				<div style="padding: 5px 0pt 0pt 0px; text-align: left; font-family: tahoma; font-style: normal; font-variant: normal; font-weight: normal; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal; color: rgb(127, 127, 127);">All fields are compulsory. This information is a must for successful account creation</div>
+				<div class="smallgrey" style="border-bottom: 1px solid rgb(143, 167, 191); padding: 2px 0pt 5px 0px; width: 270px; float: left; text-align: right;"><span style="font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; font-size-adjust: none; font-stretch: normal; line-height: 18px;">
+				<br></span>Already Registered? <a href="login.php" class="smallbluelink"><b>Login</b></a>&nbsp;</div><br clear="all">
 			</div>
 
 
@@ -276,7 +265,7 @@ require("phpmailer/class.phpmailer.php");
 		</tr>
 
 		<tr>
-					<td style="cursor: pointer;" onclick="focus_field('caste');">Subcaste</td>
+					<td style="cursor: pointer;" onclick="focus_field('caste');"><label for="email">Subcaste</label></td>
 					<td>
 					<?php include("sections/subcastes.php"); ?>
 					<br>
@@ -302,9 +291,6 @@ require("phpmailer/class.phpmailer.php");
 			<span id="errmsg_password1" class="error"></span></td>
 		</tr>
 
-		<tr class="spacer">
-			<td colspan="2"><br></td>
-		</tr>
 		<tr>
 			<td><label for="male">Gender</label></td>
 			<td><input tabindex="7" name="gender" id="male" value="Male" onfocus="toggleHint('show', this.name)" onblur="validate_gender()" onclick="document.getElementById('errmsg_gender').innerHTML=''" type="radio">
@@ -338,7 +324,7 @@ require("phpmailer/class.phpmailer.php");
 		</span>
 		<!-- HINT ENDS HERE -->
 <br>
-<input type="checkbox" name="dobstatus" value="true"> <span class="mediumred" style="font-size:9px">Check this to display date of birth in profile.</span>
+<input type="checkbox" name="dobstatus" value="true"  style="vertical-align: top;"> <span class="mediumred" style="font-size:9px">Check this to display date of birth in profile.</span>
 			<span id="errmsg_dateofbirth" class="error"></span></td>
 		</tr>
 
@@ -389,11 +375,11 @@ require("phpmailer/class.phpmailer.php");
 				<!-- POLICY + SUBMIT ST -->
 				<div class="smallblack" style="padding: 12px 0pt 0pt 25px; text-align: left;">
 
-					<span class="input"><input tabindex="12" id="affirm" name="confirm_policy" type="checkbox"></span> <b><label for="affirm" style="cursor: pointer; font-family: arial; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal;">I affirm that I have read and agree to the <a href="privacy.php" class="smallbluelink" target="_blank"><b>Privacy Policy</b></a> and <a href="terms.php" class="smallbluelink" target="_blank"><b>Terms and Conditions</b></a>.<br><span style="line-height: 10px;"></span></label></b><br>
+					<span class="input"><input tabindex="12" id="affirm" name="confirm_policy" type="checkbox"></span> <b><label for="affirm" style="cursor: pointer; font-family: arial; font-style: normal; font-variant: normal; font-weight: bold; font-size: 11px; line-height: normal; font-size-adjust: none; font-stretch: normal;">I affirm that I have read and agree to the <a href="privacy.php" class="smallbluelink" target="_blank"><b>Privacy Policy</b></a> and <a href="terms.php" class="smallbluelink" target="_blank"><b>Terms and Conditions</b></a>.<br>
 
 					<br>
 
-										<input src="images/submit.gif" border="0" hspace="0" type="image" vspace="15">
+										<input src="images/submit.gif" border="0" hspace="0" type="image" >
 									</div>
 				<!-- POLICY + SUBMIT EN -->
 

@@ -10,12 +10,12 @@ $rowsettings = mysql_fetch_array($resultsettings);
 $msg = "";
 
 $states = 1;
-$sql = "SELECT * FROM users, user_profile, countries, religion, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and user_profile.StateID=states.StateID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."'";
+$sql = "SELECT * FROM users, user_profile, countries, states WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID  and user_profile.StateID=states.StateID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."'";
 $result = mysql_query($sql,$conn);
 
 if(@mysql_num_rows($result)<=0)
 {
-$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."'";
+$sql = "SELECT * FROM users, user_profile, countries WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."'";
 $result = mysql_query($sql,$conn);
 $states = 0;
 }
