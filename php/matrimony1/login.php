@@ -25,7 +25,7 @@ $result = mysql_query($sql,$conn);
 						setcookie ("user", $row['EmailAddress'], time()+604800);
 					}
 
-					header('LOCATION: myaccount.php');
+					header('LOCATION: my_profile.php');
 					exit();
 
 			}
