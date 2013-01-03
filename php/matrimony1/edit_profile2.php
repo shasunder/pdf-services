@@ -563,7 +563,7 @@ $row = @mysql_fetch_array($result);
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-				<div style="background: rgb(231, 231, 231) none repeat scroll 0%; width: 450px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" class="smallblack"><img src="images/gry-arrow.gif" style="margin: 4px 4px 6px 8px;" align="middle" hspace="1">&nbsp;No. of characters:  <input name="counter2" id="counter2" value="0" class="formselect" size="2" readonly="readonly" style="border: medium none ; background: rgb(231, 231, 231) none repeat scroll 0%; width: 30px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: #FC9E86;" type="text">(max. 1000 characters)</div><span id="errmsg_aboutfamily" class="error"></span>
+				<div style="background: rgb(231, 231, 231) none repeat scroll 0%; width: 450px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" class="smallblack"><img src="images/gry-arrow.gif" style="margin: 4px 4px 6px 8px;" align="middle" hspace="1">&nbsp;No. of characters:  <input name="counter2" id="counter2" value="0" class="formselect" size="2" readonly="readonly" style="border: medium none ; background: rgb(231, 231, 231) none repeat scroll 0%; width: 30px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 51, 0);" type="text">(max. 1000 characters)</div><span id="errmsg_aboutfamily" class="error"></span>
 			</td>
 		</tr>
 		</tbody></table>
