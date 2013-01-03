@@ -37,7 +37,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 -- 
 
-INSERT INTO `admin` VALUES ('admin', 'admin', '', '', '', 'Matrimonial Website Script', 'http://www.', 0, 25, 'Enter Nochex Email here', 'enter 2 checkout Seller ID number here', 'enter paypal account email here', 'Enter gold member fee here (only numeric value)');
+INSERT INTO `admin` VALUES ('admin', 'admin', '', '', '', 'Matrimonial Website', 'http://www.', 0, 25, 'Enter Nochex Email here', 'enter 2 checkout Seller ID number here', 'enter paypal account email here', 'Enter gold member fee here (only numeric value)');
 
 -- --------------------------------------------------------
 

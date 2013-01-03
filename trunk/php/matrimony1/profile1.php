@@ -13,10 +13,10 @@ $rowsettings = mysql_fetch_array($resultsettings);
 
 if($_POST['continue']=="true")
 {
-			$insert = "update user_profile set CreatedBy='".mysql_escape_string($_POST['relationship'])."', MaritalStatus='".mysql_escape_string($_POST['maritalstatus'])."', HaveChildren='".mysql_escape_string($_POST['havechildren'])."', Height='".mysql_escape_string($_POST['height'])."', BodyType='".mysql_escape_string($_POST['bodytype'])."', Complexion='".mysql_escape_string($_POST['complexion'])."', SpecialCases='".mysql_escape_string($_POST['specialcases'])."', MotherTongue='".mysql_escape_string($_POST['mothertongue'])."', Caste='".mysql_escape_string($_POST['caste'])."', SubCaste='".mysql_escape_string($_POST['subcaste'])."', Manglik='".mysql_escape_string($_POST['manglik'])."', FamilyValues='".mysql_escape_string($_POST['familyvalues'])."', Education='".mysql_escape_string($_POST['educationlevel'])."', EducationIn='".mysql_escape_string($_POST['educationarea'])."', Profession='".mysql_escape_string($_POST['occupation'])."', Diet='".mysql_escape_string($_POST['diet'])."', Smoke='".mysql_escape_string($_POST['smoke'])."', Drink='".mysql_escape_string($_POST['drink'])."', StateID=".mysql_escape_string($_POST['stateofresidence']).", CityID=".mysql_escape_string($_POST['nearest_city']).", ResidencyStatus='".mysql_escape_string($_POST['residencystatus'])."', PhoneStatus='".mysql_escape_string($_POST['type'])."', CountryCode='".mysql_escape_string($_POST['c_country_code'])."', CountryCode2='".mysql_escape_string($_POST['country_code'])."', AreaStdCode='".mysql_escape_string($_POST['std_code'])."', PhoneNumber='".mysql_escape_string($_POST['contact_number'])."', DisplayContactStatus='".mysql_escape_string($_POST['contact_details_dislay_status'])."', AboutYourself='".mysql_escape_string($_POST['aboutyourself'])."' where UserID=".$_SESSION['UserID_reg'];
+			$insert = "update user_profile set CreatedBy='".mysql_escape_string($_POST['relationship'])."', MaritalStatus='".mysql_escape_string($_POST['maritalstatus'])."', HaveChildren='".mysql_escape_string($_POST['havechildren'])."', Height='".mysql_escape_string($_POST['height'])."', BodyType='".mysql_escape_string($_POST['bodytype'])."', Complexion='".mysql_escape_string($_POST['complexion'])."', SpecialCases='".mysql_escape_string($_POST['specialcases'])."', MotherTongue='".mysql_escape_string($_POST['mothertongue'])."', Caste='".mysql_escape_string($_POST['caste'])."', SubCaste='".mysql_escape_string($_POST['subcaste'])."', Manglik='".mysql_escape_string($_POST['manglik'])."', FamilyValues='".mysql_escape_string($_POST['familyvalues'])."', Education='".mysql_escape_string($_POST['educationlevel'])."', EducationIn='".mysql_escape_string($_POST['educationarea'])."', Profession='".mysql_escape_string($_POST['occupation'])."', Diet='".mysql_escape_string($_POST['diet'])."', Smoke='".mysql_escape_string($_POST['smoke'])."', Drink='".mysql_escape_string($_POST['drink'])."', StateID=".mysql_escape_string($_POST['stateofresidence']).", CityID=".mysql_escape_string($_POST['nearest_city']).", ResidencyStatus='".mysql_escape_string($_POST['residencystatus'])."', PhoneStatus='".mysql_escape_string($_POST['type'])."', CountryCode='".mysql_escape_string($_POST['c_country_code'])."', CountryCode2='".mysql_escape_string($_POST['country_code'])."', AreaStdCode='".mysql_escape_string($_POST['std_code'])."', PhoneNumber='".mysql_escape_string($_POST['contact_number'])."', DisplayContactStatus='".mysql_escape_string($_POST['contact_details_dislay_status'])."', AboutYourself='".mysql_escape_string($_POST['aboutyourself'])."' where UserID=".$_SESSION['UserID_reg'];	
 			$resultt = mysql_query($insert);
 
-
+	
 	header("Location: profile2.php");
 	exit();
 }
@@ -49,7 +49,7 @@ $row = @mysql_fetch_array($result);
 <script language="javascript" src="js/common_002.js"></script>
 
 <link rel="stylesheet" href="css/profile1.css">
-
+		
 <script language="javascript" src="js/profile1.js"></script>
 </head>
 
@@ -59,7 +59,7 @@ $row = @mysql_fetch_array($result);
 <script language="javascript" src="js/matrimonials-v10.js"></script>
 			<!-- The top link table start's here -->
 			<center>
-
+		
 				<!-- The top link table starts here -->
 				<div style="width: 762px;" align="right">
 					<?PHP
@@ -67,7 +67,7 @@ $row = @mysql_fetch_array($result);
 					?>
 				</div>
 				<!-- The top link table ends here -->
-
+			
 			<!-- The topbanner table start's here -->
 			<div style="width: 762px; background-color: rgb(255, 255, 255);">
 			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
@@ -78,17 +78,17 @@ $row = @mysql_fetch_array($result);
 					<div style="padding: 4px 0pt 4px 16px; width: 215px; float: left; text-align: left;">
 					<a href="index.php"><img src="images/matrimonial-logo-sm.gif" border="0"></a>
 					</div>
-
+			
 				</div><br clear="all">
-
+			
 			</div>
 			<!-- logo + banner space -->
-
+		
 					<div>
 					<div style="border-top: 2px solid rgb(143, 167, 191); border-bottom: 2px solid #000000; background-color: #000000;">
 					<div style="margin: 1px 0pt 1px 0px; padding: 3px 0pt 3px 0px; background-color: #990000;" class="mediumwhitebold">
-
-
+						
+	
 						</div>
 					</div>
 				</div>
@@ -106,21 +106,21 @@ $row = @mysql_fetch_array($result);
 		<div class="mediumblack" style="width: 760px;">
 
 
-
+	
 	<div style="border: 0px solid rgb(0, 0, 0); margin: 0pt 30px; text-align: left;">
 
 
-
+		
 			<div style="border-bottom: 1px solid rgb(143, 167, 191); padding: 12px 0px 7px; margin-bottom: 10px;">
 				<h2><span style="color: rgb(213, 86, 1);">Create your Profile</span></h2>
 			</div>
-
+		
 
 		<!-- PAGE STYLE ST -->
 		<script src="js/common.js" type="text/javascript" language="javascript1.2"></script>
 		<script src="js/registration2-1.js" type="text/javascript" language="javascript1.2"></script>
 
-
+		
 		<!-- PAGE STYLE EN -->
 
 
@@ -128,7 +128,7 @@ $row = @mysql_fetch_array($result);
 				<!-- MESSAGE & ERROR EN -->
 
 
-
+		
 	<table style="border-bottom: 1px solid rgb(229, 229, 229);" border="0" cellpadding="0" cellspacing="0" width="700">
 		<tbody><tr>
 			<td colspan="2" style="font-family: arial; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-size-adjust: none; font-stretch: normal; padding-top: 5px;" valign="top">
@@ -137,7 +137,7 @@ $row = @mysql_fetch_array($result);
 		Members will see your profile and contact you. Please be as detailed <br>and accurate as possible to help you get better matches.<br><br>
 
 		Create your profile to be contacted by members interested in you.<br><br>
-
+	
 		</td>
 		<td rowspan="3" align="right" valign="bottom" width="252">&nbsp;</td>
 	</tr>
@@ -147,12 +147,12 @@ $row = @mysql_fetch_array($result);
 </tbody></table>
 
 
-
+		
 	<div id="loading_state"></div>
 					<form method="post" action="profile1.php" name="profile" id="profile" style="margin: 0px;" onSubmit="return validateform(this);">
 
 	<!-- PROFILE CONTENTS ST -->
-
+	
 			<!-- BASIC INFO ST -->
 			<a name="basics"></a>
 
@@ -336,7 +336,7 @@ $row = @mysql_fetch_array($result);
 			<a name="releigon"></a>
 			<div class="boldgreen" style="margin-top: 10px; color:#990000;"><b>Religious &amp; Social Background</b></div>
 
-
+			
 			<!-- Gender form element at registration page is radio button so to pass its value we need to do this.. -->
 			<script language="JavaScript">
 			<!--
@@ -347,10 +347,10 @@ $row = @mysql_fetch_array($result);
 				document.profile.caste.options.length = 0;
 				document.profile.caste[0] = new Option('---------Select Caste---------', '');
 			}
-
+			
 		function getcastes()
 		{
-
+		
 		religion = document.profile.religion.options[document.profile.religion.selectedIndex].value;
 		if(religion == 1 || religion == 2 || religion == 3 || religion == 4 || religion == 5)
 				{
@@ -381,7 +381,7 @@ $row = @mysql_fetch_array($result);
 					religioncastes = '<select id="caste" name="caste" class="field" onblur="validate_caste(this.name);"><option value="">---------Select Caste---------</option><option value="">Doesn\'t Matter</option></select>';
 				}
 				document.getElementById('selectedcastes').innerHTML = religioncastes;
-
+		
 		}
 
 
@@ -408,7 +408,7 @@ $row = @mysql_fetch_array($result);
 						><?PHP echo $rowCountry['Religion']?></option>
 						<?
 					}
-				}
+				}				
 				?>
 				</select><br>
 				<span id="errmsg_religion" class="error"></span>
@@ -540,7 +540,7 @@ $row = @mysql_fetch_array($result);
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-
+	
 		<!-- HINT STARTS HERE -->
 		<span class="hint_educationlevel" id="hint_educationarea">
 		<div>
@@ -650,13 +650,13 @@ $row = @mysql_fetch_array($result);
 	<spacer type="block" height="1">
 
 			<table class="tbl1" border="0" cellpadding="5" cellspacing="0">
-
+			
 				<tbody><tr valign="top">
 					<td class="td1" valign="top" width="139"><em>&nbsp;</em><b>Country of Residence</b></td>
 					<td colspan="2" class="td2 smallblack" style="line-height: 16px;" valign="top"><?PHP echo $row['Country']?><br>
 					<span class="smallgrey">You can change this information later</span></td>
 				</tr>
-
+				
 					<tr height="33">
 						<td class="td1" style="cursor: pointer;" onclick="focus_field('stateofresidence');" valign="top"><em>*</em><b>State of Residence</b></td>
 						<td colspan="2" class="formselect" id="show_hide_state" valign="top">
@@ -669,11 +669,11 @@ $row = @mysql_fetch_array($result);
 					while($rowCountry = mysql_fetch_array($resultCountry))
 					{
 						?>
-						<option value="<?PHP echo $rowCountry['StateID']?>"
+						<option value="<?PHP echo $rowCountry['StateID']?>"						
 						><?PHP echo $rowCountry['State']?></option>
 						<?
 					}
-				}
+				}				
 				?>
 						<option value="-">Other</option></select>
 		<!-- HINT STARTS HERE -->
@@ -690,7 +690,7 @@ $row = @mysql_fetch_array($result);
 					<span id="errmsg_stateofresidence" class="error"></span>
 						</td>
 						</tr>
-
+				
 			<tr>
 				<td class="td1" style="cursor: pointer;" onclick="focus_field('nearest_city');" valign="top"><b>&nbsp;&nbsp;&nbsp;City of Residence</b></td>
 				<td class="td1" id="show_hide_city" valign="top" width="200">
@@ -702,11 +702,11 @@ $row = @mysql_fetch_array($result);
 					while($rowCountry = mysql_fetch_array($resultCountry))
 					{
 						?>
-						<option value="<?PHP echo $rowCountry['CityID']?>"
+						<option value="<?PHP echo $rowCountry['CityID']?>"						
 						><?PHP echo $rowCountry['City']?></option>
 						<?
 					}
-				}
+				}				
 				?>
 					<option value="-">Other</option></select>
 		<!-- HINT STARTS HERE -->
@@ -815,7 +815,7 @@ $row = @mysql_fetch_array($result);
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-
+	
 		<!-- HINT STARTS HERE -->
 		<span class="hint_contact_number" id="hint_contact_number">
 		<div>
@@ -870,13 +870,13 @@ $row = @mysql_fetch_array($result);
 			<tr>
 				<td colspan="2" valign="top">
 				<span class="smallgrey"><b> Note :</b></span>
-
+				
 
 				<ul style="list-style-type: disc; list-style-position: outside; margin-top: 0px;">
 				<li class="smallgrey">You can change your contact details preference anytime by visiting 'My Contact Details' section.</li>
 				<li class="smallgrey">Your contact details are not shared with any third party.</li></ul>
-
-
+				
+				
 				</td>
 			</tr>
 					</tbody></table>
@@ -897,7 +897,7 @@ $row = @mysql_fetch_array($result);
 
 			<tr valign="top">
 					<td class="td1" valign="top"><b style="float: left;"><em>*</em><label for="aboutyourself">Describe yourself, your likes &amp; dislikes, the kind of person you are looking for, etc.</label></b>
-
+					
 
 				<textarea name="aboutyourself" id="aboutyourself" rows="6" cols="90" onkeyup="calcCharLen('profile', 'aboutyourself', 'counter1', 4000)" onblur="toggleHint('hide', this.name); validate_describe_yourself(this, 'field_filled', 'field_err'); calcCharLen('profile', 'aboutyourself', 'counter1', 4000);" wrap="virtual" maxlength="4000" class="field" style="width: 595px;" onkeydown="this.className='field'" onfocus="toggleHint('show', this.name)"></textarea>
 		<!-- HINT STARTS HERE -->
@@ -910,7 +910,7 @@ $row = @mysql_fetch_array($result);
 		<div style="position: absolute; top: 25px; left: -20px;"><img src="images/arrow-hint.gif" height="16" width="21"></div>
 		</span>
 		<!-- HINT ENDS HERE -->
-					<div style="background: rgb(231, 231, 231) none repeat scroll 0%; width: 595px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" class="smallblack"><img src="images/gry-arrow.gif" style="margin: 4px 4px 6px 8px;" align="middle" hspace="1">&nbsp;No. of characters:  <input name="counter1" id="counter1" value="0" class="formselect" size="2" readonly="readonly" style="border: medium none ; background: rgb(231, 231, 231) none repeat scroll 0%; width: 30px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: #FC9E86;" type="text">(min. 100 characters; max. 4000)</div><span id="errmsg_aboutyourself" class="error"></span>
+					<div style="background: rgb(231, 231, 231) none repeat scroll 0%; width: 595px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" class="smallblack"><img src="images/gry-arrow.gif" style="margin: 4px 4px 6px 8px;" align="middle" hspace="1">&nbsp;No. of characters:  <input name="counter1" id="counter1" value="0" class="formselect" size="2" readonly="readonly" style="border: medium none ; background: rgb(231, 231, 231) none repeat scroll 0%; width: 30px; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: rgb(255, 51, 0);" type="text">(min. 100 characters; max. 4000)</div><span id="errmsg_aboutyourself" class="error"></span>
 				<a name="moreprofile2"></a>
 				</td>
 			</tr>
@@ -924,7 +924,7 @@ $row = @mysql_fetch_array($result);
 			<!-- PROFILE CONTENTS EN -->
 
 
-
+		
 			<!-- GET FREE NEWSLETTERS ST -->
 			<table style="margin-left: 11px;" border="0" cellpadding="5" cellspacing="0">
 			<tbody><tr valign="top">
@@ -947,13 +947,13 @@ $row = @mysql_fetch_array($result);
 
 			</td>
 		</tr>
-
+		
 		</tbody></table>
-
-
+			
+		
 	</form></div>
 
-
+	
 
 
 
@@ -973,5 +973,5 @@ $row = @mysql_fetch_array($result);
 
 
 			<!-- BTM BANNER download / registration ENDS-->
-
+		
 </body></html>

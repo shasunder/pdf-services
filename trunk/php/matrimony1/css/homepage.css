@@ -24,7 +24,7 @@ hr{
 form			{margin: 0px;}
 input,
 select,
-textarea		{font: normal 11px Tahoma; color: #333333; height:20px;vertical-align: bottom;}
+textarea		{font: normal 11px Tahoma; color: #333333;}
 
 a:link, a:visited {color: #0066CC; text-decoration: none;}
 a:hover {color: #003399; text-decoration: underline;}

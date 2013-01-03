@@ -14,18 +14,16 @@
 	      theform.email.focus();
 	      return false;
 		}
-			
-			if(theform.profileid.value == "")
-			{
-				alert("please enter Profile ID");
-				theform.profileid.focus();
-				return false;
+			  if(theform.name.value == "")
+						{
+							alert("Please enter Name");
+							theform.name.focus();
+							return false;
 			}
-			
-			else if(theform.name.value == "")
+			else if(theform.caste.value == "")
 			{
-				alert("Please enter Name");
-				theform.name.focus();
+				alert("Please enter sub caste");
+				theform.caste.focus();
 				return false;
 			}
 			
