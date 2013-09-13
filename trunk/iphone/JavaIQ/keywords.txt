@@ -1,1 +1,0 @@
-Java IQ J2ee spring hibernate struts EJB JMS JDBC JMS servlet AJAX interview JSR SCEA XP TDD SCRUM
