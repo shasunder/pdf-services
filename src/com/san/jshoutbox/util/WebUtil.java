@@ -11,6 +11,7 @@ import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 
 import com.google.appengine.api.datastore.Blob;
 import com.san.jshoutbox.model.File;
@@ -43,26 +44,38 @@ public class WebUtil {
 		byte[] fileContent = null;
 		String category=null;
 		// TODO: fix this ugly hack to retreive input fields from a file upload form.
+		File file = new File();
+		
 		while (itemIterator.hasNext()) {
 			FileItemStream item = itemIterator.next();
 			if ("caption".equals(item.getFieldName())) {
-				caption = IOUtils.toString(item.openStream());
+				file.setCaption(IOUtils.toString(item.openStream()));
 			} else if ("file".equals(item.getFieldName())) {
 				fileContent = IOUtils.toByteArray(item.openStream());
 				fileName = item.getName();
-			} else if ("category".equals(item.getFieldName())) {
+			} else if("text".equals(item.getFieldName())){
+				if(fileContent==null || fileContent.length==0){
+					fileContent= IOUtils.toByteArray(item.openStream());
+				}
+			}else if ("category".equals(item.getFieldName())) {
 				category = IOUtils.toString(item.openStream());
+			} else if("tag".equals(item.getFieldName())) {
+				file.setTag(IOUtils.toString(item.openStream()));
+			} else if("fileId".equals(item.getFieldName())) {
+				String fileIdStr = IOUtils.toString(item.openStream());
+				if(StringUtils.isNotBlank(fileIdStr))
+					file.setId(Long.parseLong(fileIdStr));
 			}
 		}
-		File file = new File();
-		file.setCaption(caption);
 		file.setName(fileName);
 		file.setCategory(category);
-		file.setType(fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()));
-
+		if(fileName!=null){
+			file.setType(fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length()));
+		}
 		file.setContent(new Blob(fileContent));
 		return file;
 	}
+	
 
 	private static WebUtil _instance = new WebUtil();
 

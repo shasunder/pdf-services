@@ -1,0 +1,14 @@
+#if($files)
+#foreach($file in $files)
+#if($field == "id" )$!file.id
+#elseif($field == "tag" )$!file.tag
+#elseif($field == "category" )$!file.category
+#elseif($field == "author" )$!file.author
+#elseif($field == "caption" )$!file.caption
+#elseif($field == "rating" )$!file.rating
+#elseif($field == "usersRated" )$!file.usersRated
+#elseif($field == "ips" )$!file.ips
+#elseif($field == "name" )$!file.name
+#end
+#end
+#end
