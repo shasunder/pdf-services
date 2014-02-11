@@ -8,7 +8,7 @@ content="" />
 </head>
 <body>
 <div style="float:left">
- <img src="/static/images/ae_gwt_java.png" width="600"/>
+ <img src="/static/images/ae_gwt_java.png" width="300"/>
  </div>
 <div  >
 <h1>Welcome to the world of services! #parse("common/beta.vm")</h1>
@@ -30,6 +30,11 @@ content="" />
     <li><a href="/static/applet/console.html"> DOS like console using applet</a>(Add it to <a href="http://www.google.com/ig/adde?hl=en&moduleurl=http://hosting.gmodules.com/ig/gadgets/file/116227824342427869913/web-console.xml&source=imag">igoogle</a>)</li>
      <li><a href="/file/view"> File uploader</a></li>
      <li><a href="/j2o"> Java 2 Objective C convertor</a></li>
+     <li><a href="/static/cruiser/index.html"> Cruiser <span style="font-size:12px">(Simple tabbed brower using jquery/tabs/xml parsing/cookie storage -- all client side)</font></a></li>
+     <li><a href="/static/breathsync/index.html"> Breath Sync <span style="font-size:12px">(Breathing exercises for relaxing your brain)</font></a></li>
+    <li><a href="/static/map/map-address-plot.html"> Google map marker plot <span style="font-size:12px">(Plot markers on map for given address - property listing)</font></a></li>
+
+
  </ul>
  </font>
  <br/>

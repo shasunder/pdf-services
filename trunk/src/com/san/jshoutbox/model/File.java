@@ -40,6 +40,18 @@ public class File {
 
 	@Persistent
 	String category;
+	
+	@Persistent
+	String tag;
+
+	
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
 
 	public String getCategory() {
 		return category;
@@ -117,6 +129,9 @@ public class File {
 		return content;
 	}
 
+	public String getContentText(){
+		return new String(content.getBytes());
+	}
 	public void setContent(Blob content) {
 		this.content = content;
 	}
