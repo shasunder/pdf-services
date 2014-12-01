@@ -1,5 +1,5 @@
 <select id="caste" name="caste" >
-<option selected="true" value="">Sub Caste</option>
+<option selected="true" value="">-- Select --</option>
 <option  value="Bhukya">Bhukya</option>
 <option  value="Aajmera">Aajmera</option>
 <option  value="Adoth">Adoth</option>
@@ -115,8 +115,6 @@
 <option  value="Seeroya">Seeroya</option>
 <option  value="Sejavath">Sejavath</option>
 <option  value="Tepavath">Tepavath</option>
-<option  value="Testing1">Testing1</option>
-<option  value="Testing2">Testing2</option>
 <option  value="Tharbani">Tharbani</option>
 <option  value="Thejavath">Thejavath</option>
 <option  value="Theravath">Theravath</option>

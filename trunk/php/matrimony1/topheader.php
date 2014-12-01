@@ -15,12 +15,12 @@
         <br style="line-height: 0px;" clear="all">
 
 
-<div class="smallcnt width">
+<div class="width">
+		    <br/>
 			<div class="left tleft">
-			<font style="font-size:26pt;"><span class="orangeText" style="">Marry</span><span class="redText"style="font-weight:bold">Banjara</span></font>
-
+			<font style="font-size:26pt;"><span style="color:#FF9D3D">GorBanjara </span><span style="color:#FC9E93">Matrimonial</span</font>
 			<br>
-           <div class="left tleft" style="padding-left:30px"> <span style="color: rgb(170, 170, 170);"><?php echo $kSiteTitle; ?>	</span></span><br><br></div>
+           <div class="left tleft" style="padding-left:30px;font-size:10pt"> <span style="color: #A8EEAE;"><?php echo $kSiteTitle; ?>	</span></span><br><br></div>
             </div>
 	</div>
 
@@ -36,8 +36,8 @@
 		<!-- FORM EN-->
 </div>
 
-<div class="smallcnt width" style=" background-image:url(images/topbg.gif); -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
-			<div class="left tleft" style="width: 33px;"><img src="images/top-lft-cnl.gif" border="0" height="33" width="14"><br></div>
+<div class="smallcnt width" style="background-color:#EE1E2C; padding-top:6px;padding-bottom:6px">
+			<div class="left tleft" style="width: 33px;">&nbsp;</div>
 			<div class="left tleft" style="width: 650px;">
 
 	<?PHP
@@ -46,8 +46,8 @@ if($_SESSION['UserID']!="")
 ?>
 <br>
 <a href="index.php" title="My Account" style="color:#FFFFFF;"><strong>Home</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="index.php" title="Search" style="color:#FFFFFF;"><strong>Search</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="contactus.php" title="Log Out" style="color:#FFFFFF;"><strong>Contact Us</strong></a>
-<span style="padding-left:55%">
-<a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Log Out</strong></a>
+<span style="padding-left:320px">
+<a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Logout [<?PHP echo $_SESSION['LoginID']?>]</strong></a>
 </span>
 <?PHP
 }
@@ -67,6 +67,6 @@ else
 			</div>
 		<!-- FORM ST -->
 
-		<div class="right tright" style="width: 18px;"><img src="images/top-rgt-cnl.gif" border="0" height="33" width="18"></div><br clear="all">
+		<div class="right tright" style="width: 18px;">&nbsp;</div><br clear="all">
 		<!-- FORM EN-->
 	</div>
