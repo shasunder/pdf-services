@@ -1,17 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 2.6.1
--- http://www.phpmyadmin.net
--- 
--- Host: localhost
--- Generation Time: Apr 07, 2008 at 12:51 PM
--- Server version: 4.1.9
--- PHP Version: 4.3.10
--- 
--- Database: `letusmatch`
--- 
-
--- --------------------------------------------------------
-
 -- 
 -- Table structure for table `admin`
 -- 
@@ -33,13 +19,6 @@ CREATE TABLE `admin` (
   PRIMARY KEY  (`LoginID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Dumping data for table `admin`
--- 
-
-INSERT INTO `admin` VALUES ('admin', 'admin', '', '', '', 'Matrimonial Website Script', 'http://www.', 0, 25, 'Enter Nochex Email here', 'enter 2 checkout Seller ID number here', 'enter paypal account email here', 'Enter gold member fee here (only numeric value)');
-
--- --------------------------------------------------------
 
 -- 
 -- Table structure for table `cities`
@@ -1484,32 +1463,6 @@ CREATE TABLE `partner_profile` (
   PRIMARY KEY  (`PartnerProfileID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
--- 
--- Dumping data for table `partner_profile`
--- 
-
-INSERT INTO `partner_profile` VALUES (21, 24, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (2, 2, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (3, 3, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (4, 4, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (5, 5, 'Female', '18', '18', '', '', '53', '', '', '', '', 'No', '', ' ', '', '', '', '', '', '', '', '', '', '', '84');
-INSERT INTO `partner_profile` VALUES (6, 6, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (7, 7, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (8, 8, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (9, 9, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (10, 10, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (11, 11, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (12, 12, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (13, 16, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (14, 17, 'Female', '18', '18', '', '', '53', '', '', '', '', '', '', ' ', '', '', '', '', '', '', '', '4|6|5', '23|20|22', '', '84');
-INSERT INTO `partner_profile` VALUES (15, 18, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (16, 19, 'Female', '18', '18', '', '', '53', '', '', '', '', '', '', ' ', '', '', '', '', '', '', '', '7', '184', '', '84');
-INSERT INTO `partner_profile` VALUES (17, 20, '', '18', '18', '', '', '5ft 7in - 170cm', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '6ft 8in - 203cm');
-INSERT INTO `partner_profile` VALUES (18, 21, '', '22', '37', '', 'No', '5ft 0in - 152cm', '', 'No', '', '', '', '2', 'Arabic', '', 'Masters|Doctorate', 'Architecture|Administrative services', 'Accountant', '', 'No', '', '1|4', '2|5|7|104', 'Temporary Visa|Student Visa', '5ft 11in - 180cm');
-INSERT INTO `partner_profile` VALUES (19, 22, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
-INSERT INTO `partner_profile` VALUES (20, 23, 'Female', '18', '23', '', '', '4ft 5in - 134cm', '', '', '', '', '', '2', 'Aka|Arabic|Arunachali|Assamese', '', 'Doctorate|Diploma', 'Architecture|Armed Forces|Arts', 'Non-mainstream professional|Accountant', '', '', '', '4', '93', 'Temporary Visa', '7ft 0in - 213cm');
-
--- --------------------------------------------------------
 
 -- 
 -- Table structure for table `religion`
@@ -1521,51 +1474,6 @@ CREATE TABLE `religion` (
   PRIMARY KEY  (`ReligionID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
 
--- 
--- Dumping data for table `religion`
--- 
-
-INSERT INTO `religion` VALUES (1, 'Muslim');
-INSERT INTO `religion` VALUES (2, 'Muslim: Sunni');
-INSERT INTO `religion` VALUES (3, 'Muslim: Shia');
-INSERT INTO `religion` VALUES (4, 'Muslim: Bengali');
-INSERT INTO `religion` VALUES (5, 'Muslim: Dawoodi Bohra');
-INSERT INTO `religion` VALUES (6, 'Christian');
-INSERT INTO `religion` VALUES (7, 'Christian: Protestant');
-INSERT INTO `religion` VALUES (8, 'Christian: Born Again');
-INSERT INTO `religion` VALUES (9, 'Christian: Roman Catholic');
-INSERT INTO `religion` VALUES (10, 'Hindu');
-INSERT INTO `religion` VALUES (11, 'Hindu: Assamese');
-INSERT INTO `religion` VALUES (12, 'Hindu: Bengali');
-INSERT INTO `religion` VALUES (13, 'Hindu: Gujarati');
-INSERT INTO `religion` VALUES (14, 'Hindu: Hindi');
-INSERT INTO `religion` VALUES (15, 'Hindu: Kannada');
-INSERT INTO `religion` VALUES (16, 'Hindu: Konkani');
-INSERT INTO `religion` VALUES (17, 'Hindu: Malayalam');
-INSERT INTO `religion` VALUES (18, 'Hindu: Marathi');
-INSERT INTO `religion` VALUES (19, 'Hindu: Marwari');
-INSERT INTO `religion` VALUES (20, 'Hindu: Oriya');
-INSERT INTO `religion` VALUES (21, 'Hindu: Punjabi');
-INSERT INTO `religion` VALUES (22, 'Hindu: Sindhi');
-INSERT INTO `religion` VALUES (23, 'Hindu: Tamil');
-INSERT INTO `religion` VALUES (24, 'Hindu: Telugu');
-INSERT INTO `religion` VALUES (25, 'Parsi');
-INSERT INTO `religion` VALUES (26, 'Sikh');
-INSERT INTO `religion` VALUES (27, 'Sikh: Jat');
-INSERT INTO `religion` VALUES (28, 'Sikh: Ramgharia');
-INSERT INTO `religion` VALUES (29, 'Sikh: Khatri');
-INSERT INTO `religion` VALUES (30, 'Sikh: Gursikh');
-INSERT INTO `religion` VALUES (31, 'Jain');
-INSERT INTO `religion` VALUES (32, 'Jain: Shewetamber');
-INSERT INTO `religion` VALUES (33, 'Jain: Digambar');
-INSERT INTO `religion` VALUES (34, 'Jain: Vania');
-INSERT INTO `religion` VALUES (35, 'Buddhist');
-INSERT INTO `religion` VALUES (36, 'Jewish');
-INSERT INTO `religion` VALUES (37, 'No Religion');
-INSERT INTO `religion` VALUES (38, 'Spiritual - not religious');
-INSERT INTO `religion` VALUES (39, 'Other');
-
--- --------------------------------------------------------
 
 -- 
 -- Table structure for table `states`
@@ -2008,6 +1916,59 @@ CREATE TABLE `user_profile` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 -- 
+-- Table structure for table `users`
+-- 
+
+CREATE TABLE `users` (
+  `UserID` bigint(20) NOT NULL auto_increment,
+  `LoginID` varchar(250) default NULL,
+  `EmailAddress` varchar(250) default NULL,
+  `Password` varchar(250) default NULL,
+  `Gender` varchar(250) default NULL,
+  `BirthDate` varchar(250) default NULL,
+  `BirthMonth` varchar(250) default NULL,
+  `BirthYear` varchar(250) default NULL,
+  `dobstatus` int(11) NOT NULL default '0',
+  `Age` int(11) NOT NULL default '0',
+  `ReligionID` int(11) NOT NULL default '0',
+  `CountryID` int(11) NOT NULL default '0',
+  `ConfirmationCode` text,
+  `Status` int(11) NOT NULL default '0',
+  `ApprovalStatus` int(11) NOT NULL default '0',
+  `GoldMember` int(11) NOT NULL default '0',
+  `AddedDate` datetime NOT NULL default '0000-00-00 00:00:00',
+  `GoldMemberDate` datetime default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`UserID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+-- 
+-- Dumping data for table `partner_profile`
+-- 
+
+INSERT INTO `partner_profile` VALUES (21, 24, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (2, 2, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (3, 3, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (4, 4, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (5, 5, 'Female', '18', '18', '', '', '53', '', '', '', '', 'No', '', ' ', '', '', '', '', '', '', '', '', '', '', '84');
+INSERT INTO `partner_profile` VALUES (6, 6, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (7, 7, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (8, 8, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (9, 9, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (10, 10, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (11, 11, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (12, 12, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (13, 16, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (14, 17, 'Female', '18', '18', '', '', '53', '', '', '', '', '', '', ' ', '', '', '', '', '', '', '', '4|6|5', '23|20|22', '', '84');
+INSERT INTO `partner_profile` VALUES (15, 18, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (16, 19, 'Female', '18', '18', '', '', '53', '', '', '', '', '', '', ' ', '', '', '', '', '', '', '', '7', '184', '', '84');
+INSERT INTO `partner_profile` VALUES (17, 20, '', '18', '18', '', '', '5ft 7in - 170cm', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '6ft 8in - 203cm');
+INSERT INTO `partner_profile` VALUES (18, 21, '', '22', '37', '', 'No', '5ft 0in - 152cm', '', 'No', '', '', '', '2', 'Arabic', '', 'Masters|Doctorate', 'Architecture|Administrative services', 'Accountant', '', 'No', '', '1|4', '2|5|7|104', 'Temporary Visa|Student Visa', '5ft 11in - 180cm');
+INSERT INTO `partner_profile` VALUES (19, 22, '', '', '', '', '', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0');
+INSERT INTO `partner_profile` VALUES (20, 23, 'Female', '18', '23', '', '', '4ft 5in - 134cm', '', '', '', '', '', '2', 'Aka|Arabic|Arunachali|Assamese', '', 'Doctorate|Diploma', 'Architecture|Armed Forces|Arts', 'Non-mainstream professional|Accountant', '', '', '', '4', '93', 'Temporary Visa', '7ft 0in - 213cm');
+
+-- --------------------------------------------------------
+
+-- 
 -- Dumping data for table `user_profile`
 -- 
 
@@ -2035,30 +1996,13 @@ INSERT INTO `user_profile` VALUES (23, 23, 'Self', 'Never Married', 'No', '6ft 9
 -- --------------------------------------------------------
 
 -- 
--- Table structure for table `users`
+-- Dumping data for table `admin`
 -- 
 
-CREATE TABLE `users` (
-  `UserID` bigint(20) NOT NULL auto_increment,
-  `LoginID` varchar(250) default NULL,
-  `EmailAddress` varchar(250) default NULL,
-  `Password` varchar(250) default NULL,
-  `Gender` varchar(250) default NULL,
-  `BirthDate` varchar(250) default NULL,
-  `BirthMonth` varchar(250) default NULL,
-  `BirthYear` varchar(250) default NULL,
-  `dobstatus` int(11) NOT NULL default '0',
-  `Age` int(11) NOT NULL default '0',
-  `ReligionID` int(11) NOT NULL default '0',
-  `CountryID` int(11) NOT NULL default '0',
-  `ConfirmationCode` text,
-  `Status` int(11) NOT NULL default '0',
-  `ApprovalStatus` int(11) NOT NULL default '0',
-  `GoldMember` int(11) NOT NULL default '0',
-  `AddedDate` datetime NOT NULL default '0000-00-00 00:00:00',
-  `GoldMemberDate` datetime default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`UserID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+INSERT INTO `admin` VALUES ('admin', 'admin', '', '', '', 'Matrimonial Website ', 'http://www.', 0, 25, 'Enter Nochex Email here', 'enter 2 checkout Seller ID number here', 'enter paypal account email here', 'Enter gold member fee here (only numeric value)');
+
+-- --------------------------------------------------------
+
 
 -- 
 -- Dumping data for table `users`
