@@ -1,9 +1,9 @@
 <?PHP
 
-$server = "box710.bluehost.com";//localhost
-$user = "marryban_banjara";
-$password = "banjara123";
-$dbName = "marryban_banjara";
+$server = "gorbanjara.net";//localhost//box710.bluehost.com
+$user = "gorbaetp_admin";
+$password = "omnamahshivaya";
+$dbName = "gorbaetp_nov2014";
 
 $conn = mysql_connect($server,$user,$password, $dbName)
 	or die("There was a problem connecting to MySQL. Please try again later. ".$server);

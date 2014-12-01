@@ -1,17 +1,15 @@
-<?php
-session_start();
-include("connection.php");
 
-$sqlsettings = "SELECT * from admin";
-$resultsettings = mysql_query($sqlsettings);
-$rowsettings = mysql_fetch_array($resultsettings);
-?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <?php include("common/includes_static.php"); ?>
 <?php include("common/constants.php"); ?>
+<meta name="description" content="Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony, Find Lakhs of Banjara Brides &amp; Grooms on gorbanjara.net marrybanjara.com - Join FREE" />
+<meta name="keywords" content="Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony,Marry Banjara Matrimonial, Banjara Matrimonials, Banjara Matrimony, marrybanjara.com" />
+<meta name="Author" content="gorbanjara.net Lambani Matrimonial Team" />
+<meta name="copyright" content="gorbanjara.net Matrimonials" />
+
 <title><? echo $kSiteName." - ".$kSiteTitle; ?></title>
 
 </head>
@@ -28,12 +26,12 @@ $rowsettings = mysql_fetch_array($resultsettings);
         <br style="line-height: 0px;" clear="all">
 
 
-		<div class="smallcnt width">
+		<div class="width">
+		    <br/>
 			<div class="left tleft">
-			<font style="font-size:26pt;"><span class="orangeText" style="">Marry</span><span class="redText"style="font-weight:bold">Banjara</span></font>
-
+			<font style="font-size:26pt;"><span style="color:#FF9D3D">GorBanjara </span><span style="color:#FC9E93">Matrimonial</span</font>
 			<br>
-           <div class="left tleft" style="padding-left:30px"> <span style="color: rgb(170, 170, 170);"><?php echo $kSiteTitle; ?>	</span></span><br><br></div>
+           <div class="left tleft" style="padding-left:30px;font-size:10pt"> <span style="color: #A8EEAE;"><?php echo $kSiteTitle; ?>	</span></span><br><br></div>
             </div>
 	</div>
 
@@ -51,8 +49,8 @@ $rowsettings = mysql_fetch_array($resultsettings);
 		<!-- FORM EN-->
 	</div>
 
-		<div class="smallcnt width" style=" background-image:url(images/topbg.gif); -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">
-			<div class="left tleft" style="width: 33px;"><img src="images/top-lft-cnl.gif" border="0" height="33" width="14"><br></div>
+		<div class="smallcnt width" style=" background-color:#EE1E2C; padding-top:6px;padding-bottom:6px">
+			<div class="left tleft" style="width: 10px;"><br></div>
 			<div class="left tleft" style="">
 
 	<?php
@@ -60,12 +58,17 @@ if($_SESSION['UserID']!="")
 {
 ?>
 <br>
-<a href="index.php" title="My Account" style="color:#FFFFFF;"><strong>Home</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="compatibility.php" title="My Account" style="color:#FFFFFF;"><strong>Jaath Check</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="contactus.php" title="Log Out" style="color:#FFFFFF;"><strong>Contact Us</strong></a><strong style="color:#FFFFFF;">|</strong>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="myaccount.php" title="My Account" style="color:#FFFFFF;"><strong>My Account</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Log Out</strong></a>
+<table>
+<tr>
+	<td><a href="index.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>Home&nbsp;</strong></a> </td>
+	<td><a href="compatibility.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>Jaath Check&nbsp;</strong></a> </td>
+	<td><a href="contactus.php" title="Log Out" style="color:#F1F1F1;"><strong>Contact Us&nbsp;</strong></a></td>
+	<td width="300">&nbsp;</td>
+	<td><a href="myaccount.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>My Account&nbsp;</strong></a> </td>
+	<td><a href="my_profile.php" title="My Profile" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>My Profile&nbsp;</strong></a> </td>
+	<td><a href="logout.php" title="Log Out" style="color:#F1F1F1;"><strong>Log Out</strong></a></td>
+</tr>
+</table>
 <?php
 }
 else
@@ -76,11 +79,28 @@ else
 
 
 			<form method="post" action="login.php" name="loginpage" autocomplete="off" style="margin: 4px 0pt 0pt 0px;">
-	<b><a href="index.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">Home</a> | <a href="aboutus.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">About Us</a> | <a href="contactus.php" style="color:#FFFFFF;border-right:1px solid #FFF;padding-right:5px">Contact Us</a>	</b> &nbsp;	<b style="color:#FFFFFF;padding-left:20px">Member Login</b> &nbsp; <input name="login" value="Email ID" onfocus="if(this.value=='Email ID') this.value='';" onblur="if(this.value=='') this.value='Email ID';" size="30" type="text">&nbsp; &nbsp;<input name="password" value="*****" onfocus="if(this.value=='*****') this.value='';" onblur="if(this.value=='') this.value='*****';" size="14" type="password">&nbsp; <input style="border:none" src="images/go.gif" title="Login" align="top" border="0" type="image"><input name="homepage" value="Y" type="hidden"><input name="continue" value="true" type="hidden"> <a href="forget_password.php" class="xsmall" title="Forgot Password?" style="color:#FFFFFF;">Forgot Password?</a>
-			</form>
+<table>
+<tr>
+	<td><b><a href="index.php" style="color:#F1F1F1;border-right:1px solid #FFF;">Home&nbsp;</a></b></td>
+	<td><b><a href="aboutus.php" style="color:#F1F1F1;border-right:1px solid #FFF;">About Us&nbsp;</a></b></td>
+	<td><b><a href="contactus.php" style="color:#F1F1F1;">Contact Us&nbsp;</a>	</b> </td>
+
+    <td><b style="color:#F1F1F1;padding-left:45pt">Login</b></td>
+    <td><input name="login" value="Email" style="color:#CDCDCD" onfocus="if(this.value=='Email') this.value='';" onblur="if(this.value=='') this.value='Email';" size="25" type="text">&nbsp; &nbsp;</td>
+	<td><input name="password" value="*****" style="color:#CDCDCD" onfocus="if(this.value=='*****') this.value='';" onblur="if(this.value=='') this.value='*****';" size="14" type="password">&nbsp;</td>
+	<td><input style="border:none" src="images/go.gif" title="Login" align="top" border="0" type="image">
+	    <input name="homepage" value="Y" type="hidden"><input name="continue" value="true" type="hidden"></td>
+    <td><a href="register.php" style="color:#F1F1F1;font-size:12px" >Register</a></td>
+	<td><a href="forget_password.php"  title="Forgot Password?" style="color:#F1F1F1;">Forgot Password?</a></td>
+
+</tr>
+</table>
+
+	</form>
 		<?php
 }
 ?>
+
 			</div>
 		<!-- FORM ST -->
 
@@ -97,6 +117,7 @@ else
 			<tr>
 
 			<td width="291" valign="top">
+			<br/>
 				<fieldset>
 
 				<table style="padding-left:10px" border="0" cellpadding="0" cellspacing="0" align="left">
@@ -201,7 +222,7 @@ else
     We Banjara are basically from the Indian state of Rajasthan, North-West Gujarat, and Western Madhya Pradesh and Eastern Sindh province.
 Our history goes back to some 2000 years and is as colourful as the costumes our women wear.
 <br/><br/>
-There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community. But there are very few affordable lambani community matrimonial on the internet. Most are charging ridiculously high prices for our community members.
+There are so many doctors,engineers, lecturers, dentists and other professionals in our banjara community. But there are very few affordable lambani community matrimonial on the internet.
 <br/><br/>
 This is a platform for those searching for their lambani life partners and is dedicated for all lambani /banjara community people who are looking for soul mates
 <br/><br/>
