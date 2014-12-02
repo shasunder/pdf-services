@@ -1,3 +1,17 @@
+
+-- Cleanup old table
+drop table admin;
+drop table cities;
+drop table countries;
+drop table districts;
+drop table interests;
+drop table messages;
+drop table partner_profile;
+drop table religion;
+drop table states;
+drop table user_profile;
+drop table users;
+
 -- 
 -- Table structure for table `admin`
 -- 
@@ -1421,48 +1435,6 @@ CREATE TABLE `messages` (
   PRIMARY KEY  (`MessageID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
--- 
--- Dumping data for table `messages`
--- 
-
-INSERT INTO `messages` VALUES (1, 'nadiralishah', 'nadiralishah', 1, 'testing...', '2008-01-11 10:44:37');
-
--- --------------------------------------------------------
-
--- 
--- Table structure for table `partner_profile`
--- 
-
-CREATE TABLE `partner_profile` (
-  `PartnerProfileID` bigint(20) NOT NULL auto_increment,
-  `UserID` bigint(20) NOT NULL default '0',
-  `Gender` varchar(250) default NULL,
-  `AgeFrom` varchar(250) default NULL,
-  `AgeTo` varchar(250) default NULL,
-  `MaritalStatus` varchar(250) default NULL,
-  `HaveChildren` varchar(250) default NULL,
-  `HeightFrom` varchar(250) default '0',
-  `BodyType` varchar(250) default NULL,
-  `Manglik` varchar(250) default NULL,
-  `Complexion` varchar(250) default NULL,
-  `SpecialCases` varchar(250) default NULL,
-  `HIV` varchar(250) default NULL,
-  `Religion` text,
-  `MotherTongue` text,
-  `FamilyValues` varchar(250) default NULL,
-  `EducationLevel` text,
-  `EducationArea` text,
-  `Profession` text,
-  `Diet` varchar(250) default NULL,
-  `Smoke` varchar(250) default NULL,
-  `Drink` varchar(250) default NULL,
-  `CountryOfResidence` text,
-  `StateOfResidence` text,
-  `ResidencyStatus` varchar(250) default NULL,
-  `HeightTo` varchar(250) default '0',
-  PRIMARY KEY  (`PartnerProfileID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
-
 
 -- 
 -- Table structure for table `religion`
@@ -1849,52 +1821,52 @@ INSERT INTO `states` VALUES (349, 12, 'Venezuela');
 CREATE TABLE `user_profile` (
   `ProfileID` bigint(20) NOT NULL auto_increment,
   `UserID` bigint(20) NOT NULL default '0',
-  `CreatedBy` varchar(250) default NULL,
-  `MaritalStatus` varchar(250) default NULL,
-  `HaveChildren` varchar(250) default NULL,
-  `Height` varchar(250) default NULL,
-  `BodyType` varchar(250) default NULL,
-  `Complexion` varchar(250) default NULL,
-  `SpecialCases` varchar(250) default NULL,
-  `MotherTongue` varchar(250) default NULL,
-  `Caste` varchar(250) default NULL,
-  `SubCaste` varchar(250) default NULL,
-  `Manglik` varchar(250) default NULL,
-  `FamilyValues` varchar(250) default NULL,
-  `Education` varchar(250) default NULL,
-  `EducationIn` varchar(250) default NULL,
-  `Profession` varchar(250) default NULL,
-  `Diet` varchar(250) default NULL,
-  `Smoke` varchar(250) default NULL,
-  `Drink` varchar(250) default NULL,
+  `CreatedBy` varchar(100) default NULL,
+  `MaritalStatus` varchar(30) default NULL,
+  `HaveChildren` varchar(30) default NULL,
+  `Height` varchar(20) default NULL,
+  `BodyType` varchar(30) default NULL,
+  `Complexion` varchar(30) default NULL,
+  `SpecialCases` varchar(50) default NULL,
+  `MotherTongue` varchar(50) default NULL,
+  `Caste` varchar(50) default NULL,
+  `SubCaste` varchar(50) default NULL,
+  `Manglik` varchar(50) default NULL,
+  `FamilyValues` varchar(50) default NULL,
+  `Education` varchar(50) default NULL,
+  `EducationIn` varchar(50) default NULL,
+  `Profession` varchar(50) default NULL,
+  `Diet` varchar(50) default NULL,
+  `Smoke` varchar(50) default NULL,
+  `Drink` varchar(50) default NULL,
   `StateID` bigint(20) NOT NULL default '0',
   `CityID` bigint(20) NOT NULL default '0',
-  `ResidencyStatus` varchar(250) default NULL,
-  `PhoneStatus` varchar(250) default NULL,
-  `CountryCode` varchar(250) default NULL,
-  `AreaStdCode` varchar(250) default NULL,
-  `PhoneNumber` varchar(250) default NULL,
+  `ResidencyStatus` varchar(50) default NULL,
+  `PhoneStatus` varchar(50) default NULL,
+  `CountryCode` varchar(50) default NULL,
+  `AreaStdCode` varchar(50) default NULL,
+  `PhoneNumber` varchar(50) default NULL,
   `DisplayContactStatus` varchar(250) default NULL,
   `AboutYourself` text,
-  `BloodGroup` varchar(250) default NULL,
-  `Gotra` varchar(250) default NULL,
-  `AnnualIncome` varchar(250) default NULL,
-  `ContactPersonName` varchar(250) default NULL,
-  `ContactPersonRelationShip` varchar(250) default NULL,
-  `ConvenientCallTime` varchar(250) default NULL,
-  `PersonalValues` varchar(250) default NULL,
+  `BloodGroup` varchar(50) default NULL,
+  `Gotra` varchar(50) default NULL,
+  `AnnualIncome` varchar(50) default NULL,
+  `ContactPersonName` varchar(50) default NULL,
+  `ContactPersonRelationShip` varchar(50) default NULL,
+  `ConvenientCallTime` varchar(50) default NULL,
+  `PersonalValues` varchar(50) default NULL,
   `CountryOfBirth` bigint(25) NOT NULL default '0',
-  `GrewUpIn` varchar(250) default NULL,
-  `Father` varchar(250) default NULL,
-  `Mother` varchar(250) default NULL,
-  `Brothers` varchar(250) default NULL,
-  `Sisters` varchar(250) default NULL,
-  `MarriedBrothers` varchar(250) default NULL,
-  `MarriedSisters` varchar(250) default NULL,
+  `GrewUpIn` varchar(50) default NULL,
+  `Father` varchar(50) default NULL,
+  `Mother` varchar(50) default NULL,
+  `Brothers` varchar(50) default NULL,
+  `Sisters` varchar(50) default NULL,
+  `MarriedBrothers` varchar(50) default NULL,
+  `MarriedSisters` varchar(50) default NULL,
   `AboutFamily` text,
-  `BirthHour` varchar(250) default NULL,
-  `BirthMin` varchar(250) default NULL,
-  `BirthSec` varchar(250) default NULL,
+  `BirthHour` varchar(50) default NULL,
+  `BirthMin` varchar(50) default NULL,
+  `BirthSec` varchar(50) default NULL,
   `BirthCity` int(11) default '0',
   `Hobbies` text,
   `Interests` text,
@@ -1905,41 +1877,86 @@ CREATE TABLE `user_profile` (
   `FavoriteCuisine` text,
   `PreferredDress` text,
   `SpokenLanguages` text,
-  `CountryCode2` varchar(250) default NULL,
-  `photo1` varchar(250) default NULL,
-  `photo2` varchar(250) default NULL,
-  `photo3` varchar(250) default NULL,
-  `Rasi` varchar(250) default NULL,
-  `Nakshatra` varchar(250) default NULL,
-  `Astroprofile` varchar(250) default NULL,
+  `CountryCode2` varchar(50) default NULL,
+  `photo1` varchar(50) default NULL,
+  `photo2` varchar(50) default NULL,
+  `photo3` varchar(50) default NULL,
+  `Rasi` varchar(50) default NULL,
+  `Nakshatra` varchar(50) default NULL,
+  `Astroprofile` varchar(150) default NULL,
   PRIMARY KEY  (`ProfileID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
--- 
+--
 -- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `UserID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `LoginID` varchar(100) DEFAULT NULL,
+  `Name` varchar(100) NOT NULL,
+  `EmailAddress` varchar(100) DEFAULT NULL,
+  `Password` varchar(100) DEFAULT NULL,
+  `Gender` varchar(20) DEFAULT NULL,
+  `BirthDate` varchar(50) DEFAULT NULL,
+  `BirthMonth` varchar(50) DEFAULT NULL,
+  `BirthYear` varchar(50) DEFAULT NULL,
+  `Caste` varchar(100) NOT NULL,
+  `dobstatus` int(11) NOT NULL DEFAULT '0',
+  `ReligionID` int(11) NOT NULL DEFAULT '0',
+  `CountryID` int(11) NOT NULL DEFAULT '0',
+  `ConfirmationCode` text,
+  `Status` int(11) NOT NULL DEFAULT '0',
+  `ApprovalStatus` int(11) NOT NULL DEFAULT '0',
+  `GoldMember` int(11) NOT NULL DEFAULT '0',
+  `AddedDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `GoldMemberDate` datetime DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`UserID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+
+-- 
+-- Table structure for table `partner_profile`
 -- 
 
-CREATE TABLE `users` (
-  `UserID` bigint(20) NOT NULL auto_increment,
-  `LoginID` varchar(250) default NULL,
-  `EmailAddress` varchar(250) default NULL,
-  `Password` varchar(250) default NULL,
+CREATE TABLE `partner_profile` (
+  `PartnerProfileID` bigint(20) NOT NULL auto_increment,
+  `UserID` bigint(20) NOT NULL default '0',
   `Gender` varchar(250) default NULL,
-  `BirthDate` varchar(250) default NULL,
-  `BirthMonth` varchar(250) default NULL,
-  `BirthYear` varchar(250) default NULL,
-  `dobstatus` int(11) NOT NULL default '0',
-  `Age` int(11) NOT NULL default '0',
-  `ReligionID` int(11) NOT NULL default '0',
-  `CountryID` int(11) NOT NULL default '0',
-  `ConfirmationCode` text,
-  `Status` int(11) NOT NULL default '0',
-  `ApprovalStatus` int(11) NOT NULL default '0',
-  `GoldMember` int(11) NOT NULL default '0',
-  `AddedDate` datetime NOT NULL default '0000-00-00 00:00:00',
-  `GoldMemberDate` datetime default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`UserID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+  `AgeFrom` varchar(250) default NULL,
+  `AgeTo` varchar(250) default NULL,
+  `MaritalStatus` varchar(250) default NULL,
+  `HaveChildren` varchar(250) default NULL,
+  `HeightFrom` varchar(250) default '0',
+  `BodyType` varchar(250) default NULL,
+  `Manglik` varchar(250) default NULL,
+  `Complexion` varchar(250) default NULL,
+  `SpecialCases` varchar(250) default NULL,
+  `HIV` varchar(250) default NULL,
+  `Religion` text,
+  `MotherTongue` text,
+  `FamilyValues` varchar(250) default NULL,
+  `EducationLevel` text,
+  `EducationArea` text,
+  `Profession` text,
+  `Diet` varchar(250) default NULL,
+  `Smoke` varchar(250) default NULL,
+  `Drink` varchar(250) default NULL,
+  `CountryOfResidence` text,
+  `StateOfResidence` text,
+  `ResidencyStatus` varchar(250) default NULL,
+  `HeightTo` varchar(250) default '0',
+  PRIMARY KEY  (`PartnerProfileID`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+
+-- 
+-- Dumping data for table `messages`
+-- 
+
+INSERT INTO `messages` VALUES (1, 'nadiralishah', 'nadiralishah', 1, 'testing...', '2008-01-11 10:44:37');
+
+-- --------------------------------------------------------
 
 -- 
 -- Dumping data for table `partner_profile`
@@ -2004,27 +2021,28 @@ INSERT INTO `admin` VALUES ('admin', 'admin', '', '', '', 'Matrimonial Website '
 -- --------------------------------------------------------
 
 
--- 
+--
 -- Dumping data for table `users`
--- 
+--
 
-INSERT INTO `users` VALUES (2, 'groom1', 'groom11@abc.com', 'nadir', 'Male', '17', '06', '1978', 0, 29, 2, 1, '4a4e1feee1b6c8b5d525e851f74e4b54', 1, 1, 0, '2008-01-10 09:10:52', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (3, 'groom2', 'groom22@abc.com', 'nadir', 'Male', '03', '04', '1976', 0, 31, 6, 5, 'b878db6f2272778fe00317784853b5e5', 1, 1, 0, '2008-01-10 09:30:13', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (4, 'groom3', 'groom33@abc.com', 'nadir', 'Male', '15', '02', '1982', 0, 25, 10, 1, 'f5b908e7a1dd7b5fddf1f53a790cdc81', 1, 1, 0, '2008-01-10 09:39:35', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (5, 'groom4', 'groom44@abc.com', 'nadir', 'Male', '15', '03', '1982', 0, 25, 19, 12, '1ae94880102312cd2f9439ce145e854a', 1, 1, 0, '2008-01-10 09:45:14', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (6, 'groom5', 'groom55@abc.com', 'nadir', 'Male', '18', '06', '1969', 0, 38, 17, 11, 'e6baf366592eaf811a677994fcc57cc2', 1, 1, 0, '2008-01-10 09:48:27', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (7, 'bride1', 'bride11@abc.com', 'nadir', 'Female', '15', '05', '1985', 0, 22, 4, 3, '8c982c52f586c1dfd79df69c61286d1e', 1, 1, 0, '2008-01-10 09:51:00', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (8, 'bride2', 'bride22@abc.com', 'nadir', 'Female', '06', '05', '1985', 0, 22, 8, 7, '97ae5cdef0f6af50413dda793f556989', 1, 1, 0, '2008-01-10 09:53:48', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (9, 'bride3', 'bride33@abc.com', 'nadir', 'Female', '06', '09', '1990', 0, 17, 7, 4, '7c937e2f84dd89253f98ba80292a5c1d', 1, 1, 0, '2008-01-10 10:06:53', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (10, 'bride4', 'bride44@abc.com', 'nadir', 'Female', '07', '08', '1978', 0, 29, 2, 1, 'a01d4f6b74c4f7a1fd133fdd806583cb', 1, 1, 0, '2008-01-10 10:09:50', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (11, 'bride5', 'bride55@abc.com', 'nadir', 'Female', '06', '01', '1985', 0, 23, 4, 3, '6449839efb6fa091b87fd09939a81a71', 1, 1, 0, '2008-01-10 10:12:24', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (12, 'bride6', 'bride66@abc.com', 'nadir', 'Female', '05', '06', '1977', 0, 30, 5, 4, '2362f6c21a801da2ba1a61a6b0dd06fc', 1, 1, 0, '2008-01-10 10:14:55', '2008-03-01 11:12:53');
-INSERT INTO `users` VALUES (16, 'test', 'test1@abc.com', 'nadir', 'Male', '15', '08', '1995', 0, 12, 10, 1, '668608502645295c38b40c652bfbb613', 1, 1, 0, '2008-01-16 09:18:07', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (17, 'nadir123', 'the@hotmail.com', 'nadir', 'Male', '18', '11', '1980', 1, 27, 1, 1, 'dd642865be78b6cfd10c87070dfd2ee5', 1, 0, 0, '2008-02-16 08:05:56', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (18, 'nadtest', 'a@hotmail.com', 'nadir', 'Male', '24', '09', '1964', 0, 43, 27, 3, 'e0a190604dc3dd2ee7b66bb95c20ef7f', 1, 0, 0, '2008-02-17 04:11:30', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (19, 'abcd', 'b@hotmail.com', 'nadir', 'Male', '27', '11', '1963', 1, 44, 28, 3, '4d705a0c8ef1e89116a067574c8b45b3', 1, 0, 0, '2008-02-17 05:07:24', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (20, 'theee', 'c@hotmail.com', 'nadir', 'Male', '26', '10', '1963', 1, 44, 4, 3, '278a7373c173012672d9d6c8155ae6a2', 1, 0, 0, '2008-02-17 06:40:33', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (21, 'nadirali', 'alishah_nadir@yahoo.com', 'nadir', 'Male', '26', '11', '1978', 1, 29, 2, 1, 'a383ddc20998684dfcfff52dfff9c02e', 1, 1, 0, '2008-02-21 09:21:45', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (22, 'nadirtest', 'abcd@aaa.com', 'nadir', 'Male', '26', '11', '1961', 1, 46, 28, 12, 'f23a9ae2ec871ab4f778c8b1a7323eda', 1, 0, 0, '2008-02-25 01:54:33', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (23, 'nadirtesting', 'thenadir@abcd.com', 'nadir', 'Male', '16', '02', '1974', 1, 34, 2, 4, '6a08242a27246b891b77419daa9de13b', 1, 0, 0, '2008-02-29 18:08:30', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (24, 'nadiralishah', 'nadir_alishah@hotmail.com', 'nadir', 'Male', '02', '03', '1987', 1, 21, 2, 1, '13104d094c830047074dd0c1be6be8c8', 1, 0, 0, '2008-03-03 06:37:39', '0000-00-00 00:00:00');
+INSERT INTO `users` (`UserID`, `LoginID`, `Name`, `EmailAddress`, `Password`, `Gender`, `BirthDate`, `BirthMonth`, `BirthYear`, `dobstatus`,  `ReligionID`, `CountryID`, `ConfirmationCode`, `Status`, `ApprovalStatus`, `GoldMember`, `AddedDate`, `GoldMemberDate`) VALUES
+(2, 'groom1', 'Anand', 'groom11@abc.com', 'nadir', 'Male', '17', '06', '1978', 0,  2, 1, '4a4e1feee1b6c8b5d525e851f74e4b54', 1, 1, 0, '2008-01-10 09:10:52', '0000-00-00 00:00:00'),
+(3, 'groom2', 'Aravind', 'groom22@abc.com', 'nadir', 'Male', '03', '04', '1976', 0,  6, 5, 'b878db6f2272778fe00317784853b5e5', 1, 1, 0, '2008-01-10 09:30:13', '0000-00-00 00:00:00'),
+(4, 'groom3', 'Asoke', 'groom33@abc.com', 'nadir', 'Male', '15', '02', '1982', 0,  10, 1, 'f5b908e7a1dd7b5fddf1f53a790cdc81', 1, 1, 0, '2008-01-10 09:39:35', '0000-00-00 00:00:00'),
+(5, 'groom4', 'karthik', 'groom44@abc.com', 'nadir', 'Male', '15', '03', '1982', 0,  19, 12, '1ae94880102312cd2f9439ce145e854a', 1, 1, 0, '2008-01-10 09:45:14', '0000-00-00 00:00:00'),
+(6, 'groom5', 'Selva', 'groom55@abc.com', 'nadir', 'Male', '18', '06', '1969', 0,  17, 11, 'e6baf366592eaf811a677994fcc57cc2', 1, 1, 0, '2008-01-10 09:48:27', '0000-00-00 00:00:00'),
+(7, 'bride1', 'Santhi', 'bride11@abc.com', 'nadir', 'Female', '15', '05', '1985', 0, 4, 3, '8c982c52f586c1dfd79df69c61286d1e', 1, 1, 0, '2008-01-10 09:51:00', '0000-00-00 00:00:00'),
+(8, 'bride2', 'Priya', 'bride22@abc.com', 'nadir', 'Female', '06', '05', '1985', 0, 8, 7, '97ae5cdef0f6af50413dda793f556989', 1, 1, 0, '2008-01-10 09:53:48', '0000-00-00 00:00:00'),
+(9, 'bride3', 'Aruna', 'bride33@abc.com', 'nadir', 'Female', '06', '09', '1990', 0, 7, 4, '7c937e2f84dd89253f98ba80292a5c1d', 1, 1, 0, '2008-01-10 10:06:53', '0000-00-00 00:00:00'),
+(10, 'bride4', 'Karpagam', 'bride44@abc.com', 'nadir', 'Female', '07', '08', '1978', 0, 2, 1, 'a01d4f6b74c4f7a1fd133fdd806583cb', 1, 1, 0, '2008-01-10 10:09:50', '0000-00-00 00:00:00'),
+(11, 'bride5', 'Sudha', 'bride55@abc.com', 'nadir', 'Female', '06', '01', '1985', 0, 4, 3, '6449839efb6fa091b87fd09939a81a71', 1, 1, 0, '2008-01-10 10:12:24', '0000-00-00 00:00:00'),
+(12, 'bride6', 'Usha', 'bride66@abc.com', 'nadir', 'Female', '05', '06', '1977', 0, 5, 4, '2362f6c21a801da2ba1a61a6b0dd06fc', 1, 1, 0, '2008-01-10 10:14:55', '2008-03-01 11:12:53'),
+(16, 'test', 'Sakthivel', 'test1@abc.com', 'nadir', 'Male', '15', '08', '1995', 0, 10, 1, '668608502645295c38b40c652bfbb613', 1, 1, 0, '2008-01-16 09:18:07', '0000-00-00 00:00:00'),
+(17, 'nadir123', 'Ajith', 'the@hotmail.com', 'nadir', 'Male', '18', '11', '1980', 1, 1, 1, 'dd642865be78b6cfd10c87070dfd2ee5', 1, 0, 0, '2008-02-16 08:05:56', '0000-00-00 00:00:00'),
+(18, 'nadtest', 'Vijay', 'a@hotmail.com', 'nadir', 'Male', '24', '09', '1964', 0, 27, 3, 'e0a190604dc3dd2ee7b66bb95c20ef7f', 1, 0, 0, '2008-02-17 04:11:30', '0000-00-00 00:00:00'),
+(19, 'abcd', 'Surya', 'b@hotmail.com', 'nadir', 'Male', '27', '11', '1963', 1, 28, 3, '4d705a0c8ef1e89116a067574c8b45b3', 1, 0, 0, '2008-02-17 05:07:24', '0000-00-00 00:00:00'),
+(20, 'theee', 'Vikram', 'c@hotmail.com', 'nadir', 'Male', '26', '10', '1963', 1, 4, 3, '278a7373c173012672d9d6c8155ae6a2', 1, 0, 0, '2008-02-17 06:40:33', '0000-00-00 00:00:00'),
+(21, 'nadirali', 'Ganesan', 'alishah_nadir@yahoo.com', 'nadir', 'Male', '26', '11', '1978', 1, 2, 1, 'a383ddc20998684dfcfff52dfff9c02e', 1, 1, 0, '2008-02-21 09:21:45', '0000-00-00 00:00:00'),
+(22, 'nadirtest', 'Raman', 'abcd@aaa.com', 'nadir', 'Male', '26', '11', '1961', 1, 28, 12, 'f23a9ae2ec871ab4f778c8b1a7323eda', 1, 0, 0, '2008-02-25 01:54:33', '0000-00-00 00:00:00'),
+(23, 'nadirtesting', 'Eswaran', 'thenadir@abcd.com', 'nadir', 'Male', '16', '02', '1974', 1, 2, 4, '6a08242a27246b891b77419daa9de13b', 1, 0, 0, '2008-02-29 18:08:30', '0000-00-00 00:00:00'),
+(24, 'nadiralishah', 'kathiresan', 'nadir_alishah@hotmail.com', 'nadir', 'Male', '02', '03', '1987', 1, 2, 1, '13104d094c830047074dd0c1be6be8c8', 1, 1, 1, '2008-03-03 06:37:39', '2011-10-10 13:30:48');
