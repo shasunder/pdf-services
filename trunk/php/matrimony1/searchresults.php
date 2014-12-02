@@ -297,7 +297,7 @@ echo "</td></tr></table>";
 
 else
 {
-echo "Sorry, no match found in your search criteria..";
+echo "<br/>Sorry, no match found for your search criteria..";
 }
 ?>
 <!-- CENTER STARTS HERE -->
