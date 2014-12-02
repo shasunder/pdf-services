@@ -103,7 +103,7 @@ if($msg!="")
   <p>As a member, you can contact us in the following ways:
   </p>
   <ul>
-    <li>Email: service@marrybanjara.com</li>
+    <li>Email: <?PHP echo $rowsettings['AdminEmail'] ?></li>
 
 </ul>
 
