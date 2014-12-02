@@ -49,32 +49,36 @@ else
 	$caste1 = $_REQUEST['caste'];
 }
 $leftJoin = "SELECT * FROM users u left join user_profile up on  u.UserID=up.UserID left join countries c on u.CountryID=c.CountryID left join states s on up.StateID= s.StateID";
+$thisYear =  date("Y");
+$ageRangeSql ="(u.BirthYear BETWEEN ". ($thisYear - $_REQUEST['ageto'])." and ". ($thisYear-$_REQUEST['agefrom']).")";
+
+//echo $ageRangeSql;
 
 if($_REQUEST['countryofresidence']!="" && $caste1=="")
 {
-$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].") ".$photo."  order by u.UserID desc limit $eu, $limit";
+$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and ".$ageRangeSql."  ".$photo."  order by u.UserID desc limit $eu, $limit";
 
-$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   order by u.UserID desc";
+$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and ".$ageRangeSql."  ".$photo."   order by u.UserID desc";
 }
 else if($_REQUEST['countryofresidence']=="" && $caste1 != "" && $caste1 != "Other")
 {
-$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
+$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
 
-$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
+$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
 }
 else if($_REQUEST['countryofresidence']!="" && $caste1 != "" && $caste1 != "Other")
 {
-$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
+$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
 
-$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
+$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and u.CountryID=".$_REQUEST['countryofresidence']." and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
 }
 else
 {
-$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
+$sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
 
 
 
-$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and (u.Age BETWEEN ".$_REQUEST['agefrom']." and ".$_REQUEST['ageto'].")  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
+$sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
 
 
 

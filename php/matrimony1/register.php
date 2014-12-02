@@ -32,7 +32,7 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 
 		else{
 
-			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, Caste, CountryID, ConfirmationCode, AddedDate, Age, dobstatus)
+			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, Caste, CountryID, ConfirmationCode, AddedDate, dobstatus)
 			VALUES (
 				'".mysql_escape_string($_POST['email'])."',
 				'".mysql_escape_string($_POST['name'])."',
@@ -46,7 +46,6 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 				".$_POST['countryofresidence'].",
 				'".md5(mysql_escape_string($_POST['email']))."',
 				NOW(),
-				'".$age."',
 				'".$dobstatus."'
 			)";
 
