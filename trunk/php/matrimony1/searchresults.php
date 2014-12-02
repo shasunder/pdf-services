@@ -76,13 +76,13 @@ else
 {
 $sql = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc limit $eu, $limit";
 
-
-
 $sqltot = $leftJoin. " where u.Status=1 and u.ApprovalStatus=1 and u.Gender='".$_REQUEST['gender']."' and ".$ageRangeSql."  ".$photo."   and u.Caste LIKE '%".$caste1."%' order by u.UserID desc";
 
-
-
 }
+$_SESSION['search_param_ageFrom'] = $_REQUEST['agefrom'];
+$_SESSION['search_param_ageTo'] = $_REQUEST['ageto'];
+$_SESSION['search_param_gender'] = $_REQUEST['gender'];
+$_SESSION['search_param_caste'] = $_REQUEST['caste'];
 
 //echo "sql :".$sql;
 $result = mysql_query($sql,$conn);
