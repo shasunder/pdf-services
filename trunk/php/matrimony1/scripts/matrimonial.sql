@@ -1911,6 +1911,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `GoldMember` int(11) NOT NULL DEFAULT '0',
   `AddedDate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `GoldMemberDate` datetime DEFAULT '0000-00-00 00:00:00',
+  `ipAddress` varchar(30) NOT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
@@ -2025,24 +2026,24 @@ INSERT INTO `admin` VALUES ('admin', 'admin', '', '', '', 'Matrimonial Website '
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `LoginID`, `Name`, `EmailAddress`, `Password`, `Gender`, `BirthDate`, `BirthMonth`, `BirthYear`, `dobstatus`,  `ReligionID`, `CountryID`, `ConfirmationCode`, `Status`, `ApprovalStatus`, `GoldMember`, `AddedDate`, `GoldMemberDate`) VALUES
-(2, 'groom1', 'Anand', 'groom11@abc.com', 'nadir', 'Male', '17', '06', '1978', 0,  2, 1, '4a4e1feee1b6c8b5d525e851f74e4b54', 1, 1, 0, '2008-01-10 09:10:52', '0000-00-00 00:00:00'),
-(3, 'groom2', 'Aravind', 'groom22@abc.com', 'nadir', 'Male', '03', '04', '1976', 0,  6, 5, 'b878db6f2272778fe00317784853b5e5', 1, 1, 0, '2008-01-10 09:30:13', '0000-00-00 00:00:00'),
-(4, 'groom3', 'Asoke', 'groom33@abc.com', 'nadir', 'Male', '15', '02', '1982', 0,  10, 1, 'f5b908e7a1dd7b5fddf1f53a790cdc81', 1, 1, 0, '2008-01-10 09:39:35', '0000-00-00 00:00:00'),
-(5, 'groom4', 'karthik', 'groom44@abc.com', 'nadir', 'Male', '15', '03', '1982', 0,  19, 12, '1ae94880102312cd2f9439ce145e854a', 1, 1, 0, '2008-01-10 09:45:14', '0000-00-00 00:00:00'),
-(6, 'groom5', 'Selva', 'groom55@abc.com', 'nadir', 'Male', '18', '06', '1969', 0,  17, 11, 'e6baf366592eaf811a677994fcc57cc2', 1, 1, 0, '2008-01-10 09:48:27', '0000-00-00 00:00:00'),
-(7, 'bride1', 'Santhi', 'bride11@abc.com', 'nadir', 'Female', '15', '05', '1985', 0, 4, 3, '8c982c52f586c1dfd79df69c61286d1e', 1, 1, 0, '2008-01-10 09:51:00', '0000-00-00 00:00:00'),
-(8, 'bride2', 'Priya', 'bride22@abc.com', 'nadir', 'Female', '06', '05', '1985', 0, 8, 7, '97ae5cdef0f6af50413dda793f556989', 1, 1, 0, '2008-01-10 09:53:48', '0000-00-00 00:00:00'),
-(9, 'bride3', 'Aruna', 'bride33@abc.com', 'nadir', 'Female', '06', '09', '1990', 0, 7, 4, '7c937e2f84dd89253f98ba80292a5c1d', 1, 1, 0, '2008-01-10 10:06:53', '0000-00-00 00:00:00'),
-(10, 'bride4', 'Karpagam', 'bride44@abc.com', 'nadir', 'Female', '07', '08', '1978', 0, 2, 1, 'a01d4f6b74c4f7a1fd133fdd806583cb', 1, 1, 0, '2008-01-10 10:09:50', '0000-00-00 00:00:00'),
-(11, 'bride5', 'Sudha', 'bride55@abc.com', 'nadir', 'Female', '06', '01', '1985', 0, 4, 3, '6449839efb6fa091b87fd09939a81a71', 1, 1, 0, '2008-01-10 10:12:24', '0000-00-00 00:00:00'),
-(12, 'bride6', 'Usha', 'bride66@abc.com', 'nadir', 'Female', '05', '06', '1977', 0, 5, 4, '2362f6c21a801da2ba1a61a6b0dd06fc', 1, 1, 0, '2008-01-10 10:14:55', '2008-03-01 11:12:53'),
-(16, 'test', 'Sakthivel', 'test1@abc.com', 'nadir', 'Male', '15', '08', '1995', 0, 10, 1, '668608502645295c38b40c652bfbb613', 1, 1, 0, '2008-01-16 09:18:07', '0000-00-00 00:00:00'),
-(17, 'nadir123', 'Ajith', 'the@hotmail.com', 'nadir', 'Male', '18', '11', '1980', 1, 1, 1, 'dd642865be78b6cfd10c87070dfd2ee5', 1, 0, 0, '2008-02-16 08:05:56', '0000-00-00 00:00:00'),
-(18, 'nadtest', 'Vijay', 'a@hotmail.com', 'nadir', 'Male', '24', '09', '1964', 0, 27, 3, 'e0a190604dc3dd2ee7b66bb95c20ef7f', 1, 0, 0, '2008-02-17 04:11:30', '0000-00-00 00:00:00'),
-(19, 'abcd', 'Surya', 'b@hotmail.com', 'nadir', 'Male', '27', '11', '1963', 1, 28, 3, '4d705a0c8ef1e89116a067574c8b45b3', 1, 0, 0, '2008-02-17 05:07:24', '0000-00-00 00:00:00'),
-(20, 'theee', 'Vikram', 'c@hotmail.com', 'nadir', 'Male', '26', '10', '1963', 1, 4, 3, '278a7373c173012672d9d6c8155ae6a2', 1, 0, 0, '2008-02-17 06:40:33', '0000-00-00 00:00:00'),
-(21, 'nadirali', 'Ganesan', 'alishah_nadir@yahoo.com', 'nadir', 'Male', '26', '11', '1978', 1, 2, 1, 'a383ddc20998684dfcfff52dfff9c02e', 1, 1, 0, '2008-02-21 09:21:45', '0000-00-00 00:00:00'),
-(22, 'nadirtest', 'Raman', 'abcd@aaa.com', 'nadir', 'Male', '26', '11', '1961', 1, 28, 12, 'f23a9ae2ec871ab4f778c8b1a7323eda', 1, 0, 0, '2008-02-25 01:54:33', '0000-00-00 00:00:00'),
-(23, 'nadirtesting', 'Eswaran', 'thenadir@abcd.com', 'nadir', 'Male', '16', '02', '1974', 1, 2, 4, '6a08242a27246b891b77419daa9de13b', 1, 0, 0, '2008-02-29 18:08:30', '0000-00-00 00:00:00'),
-(24, 'nadiralishah', 'kathiresan', 'nadir_alishah@hotmail.com', 'nadir', 'Male', '02', '03', '1987', 1, 2, 1, '13104d094c830047074dd0c1be6be8c8', 1, 1, 1, '2008-03-03 06:37:39', '2011-10-10 13:30:48');
+INSERT INTO `users` (`UserID`, `LoginID`, `Name`, `EmailAddress`, `Password`, `Gender`, `BirthDate`, `BirthMonth`, `BirthYear`, `dobstatus`,  `ReligionID`, `CountryID`, `ConfirmationCode`, `Status`, `ApprovalStatus`, `GoldMember`, `AddedDate`, `GoldMemberDate`,`Caste`,`ipAddress`) VALUES
+(2, 'groom1', 'Sandeep', 'tucantis@gmail.com', 'sandeep', 'Male', '19', '01', '1982', 0,  2, 1, '4a4e1feee1b6c8b5d525e851f74e4b54', 1, 1, 0, '2008-01-10 09:10:52', '0000-00-00 00:00:00','Vadatiya','192.168.0.1'),
+(3, 'groom2', 'Aravind', 'groom22@abc.com', 'nadir', 'Male', '03', '04', '1976', 0,  6, 5, 'b878db6f2272778fe00317784853b5e5', 1, 1, 0, '2008-01-10 09:30:13', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(4, 'groom3', 'Asoke', 'groom33@abc.com', 'nadir', 'Male', '15', '02', '1982', 0,  10, 1, 'f5b908e7a1dd7b5fddf1f53a790cdc81', 1, 1, 0, '2008-01-10 09:39:35', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(5, 'groom4', 'karthik', 'groom44@abc.com', 'nadir', 'Male', '15', '03', '1982', 0,  19, 12, '1ae94880102312cd2f9439ce145e854a', 1, 1, 0, '2008-01-10 09:45:14', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(6, 'groom5', 'Selva', 'groom55@abc.com', 'nadir', 'Male', '18', '06', '1969', 0,  17, 11, 'e6baf366592eaf811a677994fcc57cc2', 1, 1, 0, '2008-01-10 09:48:27', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(7, 'bride1', 'Santhi', 'bride11@abc.com', 'nadir', 'Female', '15', '05', '1985', 0, 4, 3, '8c982c52f586c1dfd79df69c61286d1e', 1, 1, 0, '2008-01-10 09:51:00', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(8, 'bride2', 'Priya', 'bride22@abc.com', 'nadir', 'Female', '06', '05', '1985', 0, 8, 7, '97ae5cdef0f6af50413dda793f556989', 1, 1, 0, '2008-01-10 09:53:48', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(9, 'bride3', 'Aruna', 'bride33@abc.com', 'nadir', 'Female', '06', '09', '1990', 0, 7, 4, '7c937e2f84dd89253f98ba80292a5c1d', 1, 1, 0, '2008-01-10 10:06:53', '0000-00-00 00:00:00', 'Vadatiya','192.168.0.1'),
+(10, 'bride4', 'Karpagam', 'bride44@abc.com', 'nadir', 'Female', '07', '08', '1978', 0, 2, 1, 'a01d4f6b74c4f7a1fd133fdd806583cb', 1, 1, 0, '2008-01-10 10:09:50', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(11, 'bride5', 'Sudha', 'bride55@abc.com', 'nadir', 'Female', '06', '01', '1985', 0, 4, 3, '6449839efb6fa091b87fd09939a81a71', 1, 1, 0, '2008-01-10 10:12:24', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(12, 'bride6', 'Usha', 'bride66@abc.com', 'nadir', 'Female', '05', '06', '1977', 0, 5, 4, '2362f6c21a801da2ba1a61a6b0dd06fc', 1, 1, 0, '2008-01-10 10:14:55', '2008-03-01 11:12:53', 'Vadatiya', '192.168.0.1'),
+(16, 'test', 'Sakthivel', 'test1@abc.com', 'nadir', 'Male', '15', '08', '1995', 0, 10, 1, '668608502645295c38b40c652bfbb613', 1, 1, 0, '2008-01-16 09:18:07', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(17, 'nadir123', 'Ajith', 'the@hotmail.com', 'nadir', 'Male', '18', '11', '1980', 1, 1, 1, 'dd642865be78b6cfd10c87070dfd2ee5', 1, 0, 0, '2008-02-16 08:05:56', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(18, 'nadtest', 'Vijay', 'a@hotmail.com', 'nadir', 'Male', '24', '09', '1964', 0, 27, 3, 'e0a190604dc3dd2ee7b66bb95c20ef7f', 1, 0, 0, '2008-02-17 04:11:30', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(19, 'abcd', 'Surya', 'b@hotmail.com', 'nadir', 'Male', '27', '11', '1963', 1, 28, 3, '4d705a0c8ef1e89116a067574c8b45b3', 1, 0, 0, '2008-02-17 05:07:24', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(20, 'theee', 'Vikram', 'c@hotmail.com', 'nadir', 'Male', '26', '10', '1963', 1, 4, 3, '278a7373c173012672d9d6c8155ae6a2', 1, 0, 0, '2008-02-17 06:40:33', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(21, 'nadirali', 'Ganesan', 'alishah_nadir@yahoo.com', 'nadir', 'Male', '26', '11', '1978', 1, 2, 1, 'a383ddc20998684dfcfff52dfff9c02e', 1, 1, 0, '2008-02-21 09:21:45', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(22, 'nadirtest', 'Raman', 'abcd@aaa.com', 'nadir', 'Male', '26', '11', '1961', 1, 28, 12, 'f23a9ae2ec871ab4f778c8b1a7323eda', 1, 0, 0, '2008-02-25 01:54:33', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(23, 'nadirtesting', 'Eswaran', 'thenadir@abcd.com', 'nadir', 'Male', '16', '02', '1974', 1, 2, 4, '6a08242a27246b891b77419daa9de13b', 1, 0, 0, '2008-02-29 18:08:30', '0000-00-00 00:00:00', 'Vadatiya', '192.168.0.1'),
+(24, 'nadiralishah', 'kathiresan', 'nadir_alishah@hotmail.com', 'nadir', 'Male', '02', '03', '1987', 1, 2, 1, '13104d094c830047074dd0c1be6be8c8', 1, 1, 1, '2008-03-03 06:37:39', '2011-10-10 13:30:48', 'Vadatiya', '192.168.0.1');
