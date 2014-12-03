@@ -73,7 +73,7 @@ $row = @mysql_fetch_array($result);
 
 
 <?PHP
-$sqlProduct="select * from interests where interests.SenderID='".$_SESSION['LoginID']."' order by MessageDate desc";
+$sqlProduct="select * from interests i, users u where u.UserID=i.RecieverID and i.SenderID='".$_SESSION['UserID']."' order by MessageDate desc";
 $resultProduct=mysql_query($sqlProduct);
 ?>
 
@@ -85,8 +85,8 @@ $resultProduct=mysql_query($sqlProduct);
 <table width="100%" cellpadding="3" >
 
 <Tr bgcolor="#990000">
-<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Interest Expressed By</strong></td>
-<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Interest Recieved By</strong></td>
+<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Interest Expressed To</strong></td>
+<td align='Center' width='40%' style="color:#FFFFFF;"><strong>Message Date</strong></td>
 <td align='Center' width='40%' style="color:#FFFFFF;"><strong>Action</strong></td>
 </tr>
 									<!-- Start Catetory Admin -->
@@ -100,16 +100,16 @@ $resultProduct=mysql_query($sqlProduct);
 											{
 											if ($color==0){
 													echo "<Tr bgcolor='#fff7e7'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['Name']." [".$row['RecieverID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><strong>Accepted</strong></td>
 														</tr>";
 														$color = 1;
 												}
 												else{
 													echo "<Tr bgcolor='#ffffff'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['Name']." [".$row['RecieverID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><strong>Accepted</strong></td>
 														</tr>";
 														$color = 0;
@@ -119,16 +119,16 @@ $resultProduct=mysql_query($sqlProduct);
 											{
 												if ($color==0){
 													echo "<Tr bgcolor='#fff7e7'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['Name']." [".$row['RecieverID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><strong>Denied</strong></td>
 														</tr>";
 														$color = 1;
 												}
 												else{
 													echo "<Tr bgcolor='#ffffff'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['Name']." [".$row['RecieverID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><strong>Denied</strong></td>
 														</tr>";
 														$color = 0;
@@ -139,16 +139,16 @@ $resultProduct=mysql_query($sqlProduct);
 											{
 												if ($color==0){
 													echo "<Tr bgcolor='#fff7e7'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['Name']." [".$row['RecieverID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><strong>Wating for the Action</strong></td>
 														</tr>";
 														$color = 1;
 												}
 												else{
 													echo "<Tr bgcolor='#ffffff'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['Name']." [".$row['RecieverID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><strong>Wating for the Action</strong></td>
 														</tr>";
 														$color = 0;

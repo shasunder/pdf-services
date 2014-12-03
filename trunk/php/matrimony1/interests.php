@@ -89,7 +89,7 @@ function acceptinterest(id)
 
 
 <?PHP
-$sqlProduct="select * from interests where interests.RecieverID='".$_SESSION['LoginID']."' order by MessageDate desc";
+$sqlProduct="SELECT * FROM interests i, users u where u.UserID=i.SenderID and i.RecieverID='".$_SESSION['UserID']."' order by MessageDate desc";
 $resultProduct=mysql_query($sqlProduct);
 ?>
 
@@ -101,9 +101,9 @@ $resultProduct=mysql_query($sqlProduct);
 <table width="100%" cellpadding="3" >
 
 <Tr bgcolor="#990000">
-<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Interest Expressed By</strong></td>
-<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Interest Recieved By</strong></td>
-<td align='Center' width='40%' style="color:#FFFFFF;"><strong>Action Taken</strong></td>
+<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Interest Received From</strong></td>
+<td class='adminvalues' width='30%' style="color:#FFFFFF;"><strong>Message Date</strong></td>
+<td align='Center' width='40%' style="color:#FFFFFF;"><strong>Action</strong></td>
 </tr>
 									<!-- Start Catetory Admin -->
 									<?
@@ -115,40 +115,33 @@ $resultProduct=mysql_query($sqlProduct);
 											if($row['AcceptStatus']==1)
 											{
 											if ($color==0){
-													echo "<Tr bgcolor='#fff7e7'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
-														<td align='Center' width='40%'><strong>Accepted</strong></td>
-														</tr>";
-														$color = 1;
+													echo "<Tr bgcolor='#fff7e7'>";
+													$color = 1;
 												}
 												else{
-													echo "<Tr bgcolor='#ffffff'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
-														<td align='Center' width='40%'><strong>Accepted</strong></td>
-														</tr>";
+													echo "<Tr bgcolor='#ffffff'>";
 														$color = 0;
 												}
+												echo "<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['Name']." [".$row['SenderID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
+														<td align='Center' width='40%'><strong>Accepted</strong></td>
+														</tr>";
 											}
 											else
 											{
 												if ($color==0){
-													echo "<Tr bgcolor='#fff7e7'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
-														<td align='Center' width='40%'><a class='delete2' href='javascript:acceptinterest(".$row['MessageID'].");'><strong>Accept</strong></a> | <a class='delete2' href='javascript:denyinterest(".$row['MessageID'].");'><strong>Deny</strong></a> </td>
-														</tr>";
-														$color = 1;
+													echo "<Tr bgcolor='#fff7e7'>";
+													$color = 1;
 												}
 												else{
-													echo "<Tr bgcolor='#ffffff'>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['SenderID']."</strong></a></td>
-														<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['RecieverID']."'><strong>".$row['RecieverID']."</strong></a></td>
+													echo "<Tr bgcolor='#ffffff'>";
+													$color = 0;
+												}
+												echo "<td class='adminvalues' width='30%'><a class='edit2' href='profile.php?id=".$row['SenderID']."'><strong>".$row['Name']." [".$row['SenderID']."]</strong></a></td>
+														<td align='Center' width='40%'>".$row['MessageDate']."</td>
 														<td align='Center' width='40%'><a class='delete2' href='javascript:acceptinterest(".$row['MessageID'].");'><strong>Accept</strong></a> | <a class='delete2' href='javascript:denyinterest(".$row['MessageID'].");'><strong>Deny</strong></a> </td>
 														</tr>";
-														$color = 0;
-												}
+
 											}
 
 											}

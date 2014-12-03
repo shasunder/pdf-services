@@ -47,7 +47,8 @@ if($_SESSION['UserID']!="")
 <br>
 <a href="index.php" title="My Account" style="color:#FFFFFF;"><strong>Home</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="index.php" title="Search" style="color:#FFFFFF;"><strong>Search</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="contactus.php" title="Log Out" style="color:#FFFFFF;"><strong>Contact Us</strong></a>
 <span style="padding-left:320px">
-<a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Logout [<?PHP echo $_SESSION['LoginID']?>]</strong></a>
+<a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong>
+<a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Logout [<?PHP echo $_SESSION['Name']?>]</strong></a>
 </span>
 <?PHP
 }
