@@ -1,4 +1,9 @@
+<?PHP
+session_start();
+?>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/landing.css" type="text/css">
 <link rel="stylesheet" href="css/homepage.css" type="text/css">
 <script language="Javascript" src="js/matrimonials-v10.js" type="text/javascript"></script>

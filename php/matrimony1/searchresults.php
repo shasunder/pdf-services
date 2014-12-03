@@ -242,7 +242,7 @@ while($row = @mysql_fetch_array($result))
 						if($_SESSION['UserID']!="")
 						{
 						?>
-						 <a href="profile.php?id=<?PHP echo stripslashes($row['LoginID'])?>"  style="color:#F30;font-weight:bold;">View full profile</a>&nbsp;
+						 <a href="profile.php?id=<?PHP echo $row['UserID']?>"  style="color:#F30;font-weight:bold;">View full profile</a>&nbsp;
 						<?PHP
 						}
 						else

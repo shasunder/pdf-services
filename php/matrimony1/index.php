@@ -6,7 +6,7 @@
 <?php include("common/includes_static.php"); ?>
 <?php include("common/constants.php"); ?>
 <meta name="description" content="Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony, Find Lakhs of Banjara Brides &amp; Grooms on gorbanjara.net marrybanjara.com - Join FREE" />
-<meta name="keywords" content="Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony,Marry Banjara Matrimonial, Banjara Matrimonials, Banjara Matrimony, marrybanjara.com" />
+<meta name="keywords" content="Marry Banjara, Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony,Marry Banjara Matrimonial, Banjara Matrimonials, Banjara Matrimony, marrybanjara.com" />
 <meta name="Author" content="gorbanjara.net Lambani Matrimonial Team" />
 <meta name="copyright" content="gorbanjara.net Matrimonials" />
 

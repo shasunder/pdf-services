@@ -66,8 +66,9 @@ $msg = "Your Message has been sent successfully and recipient has been notified 
 else if($_REQUEST['interest'] == "true")
 	{
 		$sql_messages = "insert into interests (SenderID, RecieverID, MessageDate)
-			 values('".mysql_escape_string($_SESSION['LoginID'])."', '".mysql_escape_string($_REQUEST['id'])."', NOW())";
+			 values('".mysql_escape_string($_SESSION['UserID'])."', '".mysql_escape_string($_REQUEST['id'])."', NOW())";
 		$result_messagesent = mysql_query($sql_messages);
+
 
 		if($rowsettings['smtpstatus'] == 1)
 		{
@@ -117,13 +118,13 @@ $msg = "<div style='color:#e12328;font-weight:bold;border:1px dotted #000;paddin
 
 
 
-$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."' and users.Status=1 and users.ApprovalStatus=1";
+$sql = "SELECT * FROM users, user_profile, countries WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.UserID='".mysql_escape_string($_REQUEST['id'])."' and users.Status=1 and users.ApprovalStatus=1";
 $result = mysql_query($sql,$conn);
 if(@mysql_num_rows($result)!=0)
 {
 $row = @mysql_fetch_array($result);
 
-$sqlpartner = "SELECT * FROM users, partner_profile WHERE users.UserID=partner_profile.UserID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."'  and users.Status=1 and users.ApprovalStatus=1";
+$sqlpartner = "SELECT * FROM users, partner_profile WHERE users.UserID=partner_profile.UserID and users.UserID='".mysql_escape_string($_REQUEST['id'])."'  and users.Status=1 and users.ApprovalStatus=1";
 $resultpartner = mysql_query($sqlpartner,$conn);
 $rowp = @mysql_fetch_array($resultpartner);
 }
@@ -140,8 +141,6 @@ $rowp = @mysql_fetch_array($resultpartner);
 <body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
 
 <script language="javascript" src="js/profile.js"></script>
-
-<script language="javascript" src="js/matrimonials-v10.js"></script>
 			<center>
 
 				<!-- The top link table starts here -->
@@ -150,70 +149,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 					include("topheader.php");
 					?>
 				</div>
-				<!-- The top link table ends here -->
 
-			<!-- The topbanner table start's here -->
-			<div style="width: 762px; background-color: rgb(255, 255, 255);">
-			<div style="border-top: 1px solid rgb(143, 167, 191); border-left: 1px solid rgb(143, 167, 191); border-right: 1px solid rgb(143, 167, 191);">
-
-
-
-
-				<!-- midlinks + services space -->
-					<br style="line-height: 1px;" clear="all">
-				<div>
-					<div style="border-top: 2px solid #990000; border-bottom: 12px solid #990000; background-color: #990000; text-align: left;">
-
-					</div>
-				</div>
-				<!-- The topbanner table end's here -->
-
-				<!-- The tab table start's here -->
-				<div style="margin: 0px; width: 100%;">
-					<div style="width: 180px; background-color: rgb(255, 255, 255); float: left;">
-						<div style="border-top: 2px solid rgb(0, 0, 0);">
-						<div style="padding: 6px 0pt 0pt 0px; width: 170px; background-color: #fff7e7" class="smallblack"><div>
-						<?PHP
-						if($_SESSION['UserID']!="")
-						{
-						?>
-						<a href="logout.php" class="smallbluelink"><b>Logout</b></a> [<a href="my_profile.php" class="smallblackbold" title="<?PHP echo $_SESSION['LoginID']?>"><?PHP echo $_SESSION['LoginID']?></a>]
-						<?PHP
-						}
-						else
-						{
-						?>
-						<a href="login.php" class="smallbluelink"><b>Click here to login</b></a>
-						<?PHP
-						}
-						?>
-						<br>
-						<span style="line-height: 2px;"><br></span>
-</div>
-
-				</div>
-				</div>
-				</div>
-
-				<div style="width: 580px; background-color: rgb(255, 255, 255); float: right; text-align: left;">
-					<div style="border-top: 2px solid rgb(0, 0, 0); width: 7px; float: left;"></div>
-					<div style="width: 130px; float: left;border-top: 2px solid rgb(0, 0, 0);">					<br clear="all">
-				  </div>
-					<div style="width: 130px; float: left;border-top: 2px solid rgb(0, 0, 0);">					<br clear="all">
-				  </div>
-					<div style="width: 130px; float: left;border-top: 2px solid rgb(0, 0, 0);">					<br clear="all">
-				  </div>
-					<div style="border-top: 2px solid rgb(0, 0, 0); width: 30px; float: left;"></div>
-					<div style="width: 141px; float: left;border-top: 2px solid rgb(0, 0, 0);">
-					</div>
-					<div style="border-top: 2px solid rgb(0, 0, 0); width: 12px; float: right;"></div>
-				</div>
-				<br clear="all">
-				</div>
-
-			</div>
-			</div>
-			<!-- The topbanner table ends here -->
 			</center>
 
 <div align="center">
@@ -294,7 +230,7 @@ echo "She is ";
 else
 echo "I am ";
 ?>
-<?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?>, <?PHP echo $row['MaritalStatus']?>, <?PHP echo $row['Religion']?> <?PHP echo $row['Gender']?> living in <?PHP
+<?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?>, <?PHP echo $row['MaritalStatus']?>, <?PHP echo $row['Caste']?> <?PHP echo $row['Gender']?> living in <?PHP
 
 $sqlstate = "SELECT * FROM user_profile, users, states WHERE users.UserID=user_profile.UserID and users.LoginID='".mysql_escape_string($_REQUEST['id'])."' and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1";
 $resultstate = mysql_query($sqlstate,$conn);
@@ -568,13 +504,7 @@ if ($row['Astroprofile']!="")
 <td width="150" height="1" bgcolor="#8fa7bf"><spacer type="block" height="1" width="150"></td>
 <td width="8" height="1" bgcolor="#8fa7bf"><spacer type="block" height="1" width="8"></td>
 </tr>
-<tr align="left">
-<td class="mediumblack"><br></td>
-<td valign="top" class="mediumblack">Religion</td>
-<td valign="top" class="mediumblack">:</td>
-<td valign="top" class="mediumblack"><?PHP echo $row['Religion']?></td>
-<td class="mediumblack"><br></td>
-</tr>
+
 <tr align="left">
 <td class="mediumblack"><br></td>
 <td valign="top" class="mediumblack">Caste / Sect</td>
@@ -1084,34 +1014,7 @@ echo $gender;
 <td width="150" height="1" bgcolor="#8fa7bf"><spacer type="block" height="1" width="150"></td>
 <td width="8" height="1" bgcolor="#8fa7bf"><spacer type="block" height="1" width="8"></td>
 </tr>
-<?PHP
-$arrRel = explode("|",$rowp['Religion']);
-for($x=0; $x < count($arrRel); $x++)
-{
-$sql = "SELECT Religion FROM religion WHERE ReligionID=".$arrRel[$x];
-$resultrel = mysql_query($sql,$conn);
-$rowrel = @mysql_fetch_array($resultrel);
-if($x==0)
-{
-$religion = $rowrel['Religion'];
-}
-else
-{
-$religion .= ", ".$rowrel['Religion'];
-}
-}
-if($religion=="")
-{
-$religion = "Doesn't Matter";
-}
-?>
-<tr align="left">
-<td class="mediumblack"><br></td>
-<td valign="top" class="mediumblack">Religion</td>
-<td valign="top" class="mediumblack">:</td>
-<td valign="top" class="mediumblack"><?PHP echo $religion?></td>
-<td class="mediumblack"><br></td>
-</tr>
+
 <tr>
 </tr><tr align="left">
 <td class="mediumblack"><br></td>

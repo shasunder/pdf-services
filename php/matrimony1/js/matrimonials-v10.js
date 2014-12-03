@@ -1,18 +1,5 @@
 <!--
 
-
-/**
- * disable/enable text field
- *
- * @author sanket
- * @param  string  form name
- * @param  string  target_field  text box name which need to disable
- * @param  string  target_field  text box name which need to disable
- * @param  string  type   the name of field on which action field need to enable/disable
- *
- * @usage  <input type="radio" name="type" id="no_type2" value="Mobile" onclick="disable_field('contactdetails', 'std_code', 'mobile');">
-
-*/
 function disable_field_onload(form, fieldname)
 {
 
@@ -22,23 +9,6 @@ function disable_field_onload(form, fieldname)
 
 
 }//EO function set_value(field_id)
-
-
-
-
-/**
- * disable/enable text field
- *
- * @author sanket
- * @param  string  form name
- * @param  string  target_field  text box name which need to disable
- * @param  string  target_field  text box name which need to disable
- * @param  string  type   the name of field on which action field need to enable/disable
- *
- * @usage  <input type="radio" name="type" id="no_type2" value="Mobile" onclick="disable_field('contactdetails', 'std_code', 'mobile');">
-
-*/
-
 
 function disable_field(form, fieldname, type)
 {
@@ -70,18 +40,6 @@ if (self != top) {
 	else
 		top.location.href = window.location.href;
 }
-
-/**
- * changes value of textbox on country's dropdown
- *
- * @author Vinod S
- * @param  integer  new_value  country code
- * @param  string  target_field  text box name which is not editable
- *
- * @usage  <select name="mobile_country_code" class="formselect swidth" onchange="changecountrycode(this.value,document.profile.c_code_mobile);">
-
-*/
-
 
 function changecountrycode(new_value,target_field)
 {
@@ -183,18 +141,6 @@ function check_option(obj){
 }
 
 
-/**
- * counter for textarea
- *
- * @author Ritchie
- * @param  string  sForm      form name
- * @param  string  sTextArea  textarea name
- * @param  string  sTextInput counter name
- * @param  integer iMaxLimit  max number for counter
- *
- * @usage  <textarea onKeyUp="calcCharLen('form_name', 'field_name', 'counter_name', 100)" onBlur="calcCharLen('form_name', 'field_name', 'counter_name', 100)" wrap="virtual" maxLength="100" class="forminput">
-
-*/
 function calcCharLen(sForm, sTextArea, sTextInput, iMaxLimit)
 {
 	var _oDF        = document.forms[sForm];
@@ -336,17 +282,7 @@ function combo_max_option(from_obj,obj,sub_heading){
 }
 
 
-/**
- * @purpose - To fill in the mothertongue list on selection of community
- *
- * @author Shraddha
- * @param  mothertongue_string - Mothertongues list for other religions like Muslim, Sikh etc
- * @param  from_page - Whenther function call from smart search or quick search
- * @param  preselected_mothertongue - Preselected Mothertongues
- * @return void - Fills in the mothertonuge otpions
- *
- * @usage - fill_mothertongue_from('".implode("|", $GLOBALS["MOTHER_TONGUE_MASTER"])."', 'smart_search', '');
- */
+
 function fill_mothertongue_from(mothertongue_string, from_page, preselected_mothertongue)
 {
 	var arr_community = new Array();
@@ -830,13 +766,6 @@ String.prototype.trim = function()
 	return x;
 }
 
-
-
-
-/**
- * This function perform the match of selected city or state with current city(as per state) and current state(as per country)
- * if match is found then it returns index else it returns -1
-*/
 function InArray(arr, key)
 {
 	for (var i=0; i<arr.length; i++)

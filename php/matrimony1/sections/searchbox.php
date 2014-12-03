@@ -63,6 +63,9 @@
 														<?php
 														   for ($i = 18; $i <= 70; $i++) {
 															 $ageToSelect = $_SESSION['search_param_ageTo'] == $i ? " selected='selected' ": "";
+															 if($_SESSION['search_param_ageTo']=="" && $i==40){
+															 	$ageToSelect = " selected='selected' ";
+															 }
 															 echo "<option value='".$i."' ".$ageToSelect.">".$i."</option>";
 														   }
 														?>

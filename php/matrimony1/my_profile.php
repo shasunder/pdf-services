@@ -29,7 +29,7 @@ $BirthCountry = $_POST['countryofbirth'];
 	header("Location: profile4.php");
 	exit();
 }
-$sql = "SELECT * FROM users, user_profile, countries, religion WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.ReligionID=religion.ReligionID and users.UserID=".$_SESSION['UserID'];
+$sql = "SELECT * FROM users, user_profile, countries WHERE users.UserID=user_profile.UserID and users.CountryID=countries.CountryID and users.UserID=".$_SESSION['UserID'];
 $result = mysql_query($sql,$conn);
 $row = @mysql_fetch_array($result);
 
@@ -42,14 +42,10 @@ $rowp = @mysql_fetch_array($resultpartner);
 <head>
 <title>Marry Banjara - My Profile</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/main.css">
+
 </head>
 
-<body topmargin="2" leftmargin="0" marginheight="2" marginwidth="0" background="images/background.jpg">
-<script language="javascript" src="js/myprofile.js"></script>
-<script language="javascript" src="js/matrimonials-v10.js"></script>
-
+<body >
 			<!-- The top link table start's here -->
 			<center>
 
@@ -134,8 +130,7 @@ $rowp = @mysql_fetch_array($resultpartner);
 <tbody><tr><td height="1"><spacer type="block" height="1"></td></tr>
 <tr>
 <td class="smallblack" align="left">
-
-I am <?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?>, <?PHP echo $row['MaritalStatus']?>, <?PHP echo $row['Religion']?> <?PHP echo $row['Gender']?> living in <?PHP
+I am <?PHP echo GetAge($row['BirthYear'], $row['BirthMonth'], $row['BirthDate'])?> <?PHP echo $row['MaritalStatus']?>, <?PHP echo $row['Caste']?> <?PHP echo $row['Gender']?> living in <?PHP
 
 	$sqlstate = "SELECT * FROM user_profile, users, states WHERE users.UserID=user_profile.UserID and users.UserID='".$row['UserID']."' and user_profile.StateID=states.StateID and users.Status=1 and users.ApprovalStatus=1";
 $resultstate = mysql_query($sqlstate,$conn);
@@ -1117,7 +1112,7 @@ $religion = "Doesn't Matter";
 <br>
 
 
-<div class="largewhitebold bluepatch" style="background-color:#E473E0; ">My Contact Details</div>
+<div class="largewhitebold" >My Contact Details</div>
 
 <div class="main">
 
@@ -1211,4 +1206,8 @@ else if($row['PhoneStatus']!="telephone" && $row['DisplayContactStatus']=="Show"
 			include("footer.php");
 		?>
 		</center>
-</body></html>
+</body>
+<script language="javascript" src="js/myprofile.js"></script>
+
+
+</html>
