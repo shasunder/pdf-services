@@ -31,8 +31,15 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 		}
 
 		else{
-
-			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, Caste, CountryID, ConfirmationCode, AddedDate, dobstatus)
+			//get IP
+			if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+				$ip = $_SERVER['HTTP_CLIENT_IP'];
+			} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+				$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+			} else {
+				$ip = $_SERVER['REMOTE_ADDR'];
+			}
+			$insert = "insert into users(LoginID,Name, EmailAddress, Password, Gender, BirthDate, BirthMonth, BirthYear, Caste, CountryID, ConfirmationCode, AddedDate, dobstatus,ipAddress)
 			VALUES (
 				'".mysql_escape_string($_POST['email'])."',
 				'".mysql_escape_string($_POST['name'])."',
@@ -46,7 +53,8 @@ $age = GetAge(mysql_escape_string($_POST['year']), mysql_escape_string($_POST['m
 				".$_POST['countryofresidence'].",
 				'".md5(mysql_escape_string($_POST['email']))."',
 				NOW(),
-				'".$dobstatus."'
+				'".$dobstatus."',
+				$ip
 			)";
 
 
