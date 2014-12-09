@@ -1,24 +1,24 @@
 <?PHP
 	session_start();
 	include("../connection.php");
-	
+
 	if ($_SESSION['LoginID'] == '')
 	{
 		header('LOCATION: index.php');
-	
+
 	}
-	
+
 	$sqlsettings = "SELECT * from admin";
 $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
-	
+
 if ($_POST['continue'] == "true"){
 	$updatCategory = "UPDATE admin SET LoginID='".mysql_escape_string($_POST['LoginID'])."', Password='".mysql_escape_string($_POST['Password'])."'";
-	mysql_query($updatCategory);	
+	mysql_query($updatCategory);
 	$msg="Login Details have been updated successfully..!";
 }
-	
-	
+
+
 	$sqlSeller = "SELECT * from admin";
 	$resultSeller= mysql_query($sqlSeller);
 ?>
@@ -62,16 +62,8 @@ return true;
 </script>
 </head>
 <body >
-	<table width="1003" border="0" align="center" cellspacing="0">
-		<Tr  align="center">
-			<Td colspan="3">
-				<table border="0" cellpadding="5" cellspacing="0" style="vertical-align:top">
-					<Tr align="center">
-						<Td  align="center" width="361"><img src="../images/matrimonial-logo-sm.gif"></Td>
-					</Tr>
-			  </table>
-			</td>
-		</Tr>
+	<table width="75%" border="0" align="center" cellspacing="0">
+
 		<Tr>
 
 			<Td height='24' colspan="2" align="right" background='images/headCap.gif'>
@@ -82,25 +74,15 @@ return true;
 				</span>
 			</td>
 		</Tr>
-		<Tr>
-			<Td height='24' colspan="2" align="Center"> 
 
-<div  style="font-weight:bold "class="style2">
-		Welcome to Admin Control Panel
-</div>
-
-
-				
-			</td>
-		</Tr>
 		<tr valign="top">
 			<td width="218">
 				<div style="margin-left:10px">
 					<?PHP
 					include("leftbar.php");
-					
+
 					if (@mysql_num_rows($resultSeller)!=0){
-					$row = mysql_fetch_array($resultSeller);	
+					$row = mysql_fetch_array($resultSeller);
 					}
 					?>
 			 </div>
@@ -132,22 +114,22 @@ return true;
 							<div style="margin:10px" align="left">
 								<form action="edit_login.php" method="post" onSubmit="return validate(this)">
 									<table width="48%" align="center">
-								
+
 									<tr>
 										<td>
 										Login ID:
 										</td>
-										
+
 										<td>
 										<input type="text" name="LoginID" value="<?=$row['LoginID']?>">
 										</td>
 									</tr>
-									
+
 									<tr>
 										<td>
 										Password:
 										</td>
-										
+
 										<td>
 										<input type="password" name="Password" value="<?=$row['Password']?>">
 										</td>
@@ -160,7 +142,7 @@ return true;
 											<input type="submit" value="  Update  " />
 										</td>
 									</tr>
-								
+
 							  	</table>
 							  </form>
 							 </div>

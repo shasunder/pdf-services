@@ -57,7 +57,7 @@ $row = @mysql_fetch_array($result);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Marry Banjara - Your Photo</title>
+<title>Gor Banjara matrimonial - Your Photo</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="css/style.css">
 <script language="javascript" src="js/ajax-v2-inc-mod.js"></script>
@@ -116,13 +116,14 @@ $row = @mysql_fetch_array($result);
 		<!-- PAGE STYLE EN -->
 	<form method="post" name="frmastro" action="myphoto.php" enctype="multipart/form-data" style="margin: 0px;">
 <input type="hidden" name="continue" value="true">
-	<div class="largewhitebold bluepatch" style="color:#990000; "><b>My Photo</b></div>
+	<div class="largewhitebold" style="color:#990000; "><b>My Photo</b></div>
 
 	<table  border="0" cellpadding="6" cellspacing="0">
 	<tbody>
 	<tr>
-		<td><em>*</em><b>Your Photo</b></td>
-		<td><input type="file" name="myfiles[]">
+		<td><em>*</em>Upload your photo</td>
+		<td><input type="file" name="myfiles[]"></td>
+		<td>
 			<input type="hidden" name="photo1" value="<?PHP echo stripslashes($row['photo1'])?>">
 			  <input type="hidden" name="photo2" value="<?PHP echo stripslashes($row['photo2'])?>">
 			  <input type="hidden" name="photo3" value="<?PHP echo stripslashes($row['photo3'])?>">
@@ -136,6 +137,12 @@ $row = @mysql_fetch_array($result);
 			  ?>
 		</td>
 	</tr>
+	<tr height="60">
+	 		<td ><br></td>
+			<td >
+				<input style="width: 76px; height: 22px;background: #F8CF4A;padding:3px;color:#5C1515" border=1 type="image" value="Upload">
+			</td>
+	</tr>
 
 	</tbody></table>
 	<br>
@@ -144,12 +151,7 @@ $row = @mysql_fetch_array($result);
 
 
 	<table border="0" cellpadding="6" cellspacing="0">
-	<tbody><tr height="60">
- 		<td ><br></td>
-		<td >
-			<input src="images/submit.gif" style="width: 76px; height: 22px;" border="0" type="image">
-		</td>
-	</tr>
+	<tbody>
 	</tbody></table>
 
 </form>

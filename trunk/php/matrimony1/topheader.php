@@ -45,11 +45,16 @@ if($_SESSION['UserID']!="")
 {
 ?>
 <br>
-<a href="index.php" title="My Account" style="color:#FFFFFF;"><strong>Home</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="index.php" title="Search" style="color:#FFFFFF;"><strong>Search</strong></a> <strong style="color:#FFFFFF;">|</strong> <a href="contactus.php" title="Log Out" style="color:#FFFFFF;"><strong>Contact Us</strong></a>
-<span style="padding-left:320px">
-<a href="my_profile.php" title="My Profile" style="color:#FFFFFF;"><strong>My Profile</strong></a> <strong style="color:#FFFFFF;">|</strong>
-<a href="logout.php" title="Log Out" style="color:#FFFFFF;"><strong>Logout [<?PHP echo $_SESSION['Name']?>]</strong></a>
-</span>
+<table>
+<tr>
+	<td><a href="index.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>Home&nbsp;</strong></a> </td>
+	<td><a href="contactus.php" title="Log Out" style="color:#F1F1F1;"><strong>Contact Us&nbsp;</strong></a></td>
+	<td width="290">&nbsp;</td>
+	<td><a href="my_profile.php" title="My Profile" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>My Profile&nbsp;</strong></a> </td>
+	<td ><a href="logout.php" title="Log Out" style="color:#F1F1F1;"><strong>Logout [<?PHP echo $_SESSION['Name']?>]</strong></a></td>
+</tr>
+</table>
+
 <?PHP
 }
 else

@@ -1,5 +1,5 @@
 <?php
-$kSiteName="Marry Banjara";
+$kSiteName="Gor Banjara matrimonial";
 $kCaste="Banjara";
 $kSiteTitle="The leading ".$kCaste." community matrimonial site";
 
