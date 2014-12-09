@@ -60,12 +60,11 @@ if($_SESSION['UserID']!="")
 <table>
 <tr>
 	<td><a href="index.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>Home&nbsp;</strong></a> </td>
-	<td><a href="compatibility.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>Jaath Check&nbsp;</strong></a> </td>
 	<td><a href="contactus.php" title="Log Out" style="color:#F1F1F1;"><strong>Contact Us&nbsp;</strong></a></td>
 	<td width="300">&nbsp;</td>
 	<td><a href="myaccount.php" title="My Account" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>My Account&nbsp;</strong></a> </td>
 	<td><a href="my_profile.php" title="My Profile" style="color:#F1F1F1;border-right:1px solid #FFF;"><strong>My Profile&nbsp;</strong></a> </td>
-	<td><a href="logout.php" title="Log Out" style="color:#F1F1F1;"><strong>Log Out</strong></a></td>
+	<td><a href="logout.php" title="Log Out" style="color:#F1F1F1;"><strong>Logout [<?PHP echo $_SESSION['Name']?>]</strong></a></td>
 </tr>
 </table>
 <?php

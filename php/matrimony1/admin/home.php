@@ -6,9 +6,9 @@
 	{
 		header('LOCATION: index.php');
 		exit();
-	
+
 	}
-	
+
 	$sqlsettings = "SELECT * from admin";
 $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
@@ -37,22 +37,14 @@ body {
 </head>
 <body>
 	<table border="0" cellspacing="0" width="1003">
-		<Tr  align="center">
-			<Td colspan="2">
-				<table border="0" cellpadding="5" cellspacing="0" style="vertical-align:top">
-					<Tr align="center">
-						<Td  align="center" width="361"><img src="../images/matrimonial-logo-sm.gif"></Td>
-					</Tr>
-			  </table>
-			</td>
-		</Tr>
+
 		<Tr>
 			<Td height='24' background='images/headCap.gif' align="right" colspan="2">
-			
+
 			 <span class="style1" >Welcome <?PHP echo $_SESSION['LoginID'] ?>!</span>
 			 | <a href='logout.php' class='topcap'>Logout</a>
-			
-			
+
+
 			</td>
 		</Tr>
 		<Tr>

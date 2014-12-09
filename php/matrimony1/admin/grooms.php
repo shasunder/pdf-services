@@ -2,7 +2,7 @@
 	session_start();
 	include("../connection.php");
 
-	if ($_SESSION['LoginID'] == '')
+	if ($_SESSION['LoginID'] == '' || $_SESSION['LoginID']!='admin')
 	{
 		header('LOCATION: index.php');
 
