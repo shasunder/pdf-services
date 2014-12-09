@@ -1,7 +1,7 @@
 <?PHP
 	session_start();
 	include("../connection.php");
-	
+
 	$sqlsettings = "SELECT * from admin";
 $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
@@ -12,7 +12,7 @@ $rowsettings = mysql_fetch_array($resultsettings);
 		$sqlLogin = "SELECT * from admin WHERE LoginID='".mysql_escape_string($_POST['MemberID'])."' AND Password='".mysql_escape_string($_POST['Password'])."'";
 		$resultLogin= mysql_query($sqlLogin);
 		$row = mysql_fetch_array($resultLogin);
-		
+
 		if ($row['LoginID'] == mysql_escape_string($_POST['MemberID']) & $row['Password'] == mysql_escape_string($_POST['Password']) )
 		{
 
@@ -54,7 +54,7 @@ body {
 			alert ("Please Enter the LOGIN ID");
 			theform.MemberID.focus();
 			return false;
-		
+
 		}
 
 		else if(theform.Password.value == "")
@@ -62,7 +62,7 @@ body {
 			alert ("Please Enter Your Password ");
 			theform.Password.focus();
 			return false;
-		
+
 		}
 
 	}
@@ -77,7 +77,15 @@ body {
 			<Td colspan="2">
 				<table border="0" cellpadding="5" cellspacing="0" style="vertical-align:top">
 					<Tr align="center">
-						<Td  align="center" width="361"><img src="../images/matrimonial-logo-sm.gif"></Td>
+						<Td  align="center" width="761">
+						<div class="width">
+								    <br/>
+									<div class="left tleft">
+									<font style="font-size:20pt;"><span style="color:#FF9D3D">GorBanjara </span><span style="color:#FC9E93">Matrimonial Admin</span> </font>
+
+							</div>
+
+						</Td>
 					</Tr>
 			  </table>
 			</td>
@@ -102,7 +110,7 @@ body {
 
 								<table width="200" align="left">
 									<tr>
-								<?PHP 
+								<?PHP
 									if ($msgEmail!=''){
 										echo $msgEmail;
 									}
@@ -125,7 +133,7 @@ body {
 										</td>
 									</tr>
 								</table>
-								
+
 								</div>
 							</form>
 							</Td>

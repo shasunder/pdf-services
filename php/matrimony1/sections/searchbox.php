@@ -10,7 +10,7 @@
 
 								<td align="left">
 
-<div class="left" style="">
+								<div class="left" style="">
 
 											<!-- SEARCH FORM ST-->
 											<?php
@@ -86,12 +86,41 @@
 											   <td>
 
 									<input  style="border:none;padding:1px" src="images/go.gif" title="Search" align="top" border="0" type="image"/>
+												</form>
 												</td>
 											 </tr>
+											<tr><td>&nbsp;</td></tr>
+											 <tr>
+												<td colspan="3">
+															<!-- SEARCH FORM ST-->
+																<div style="padding-left:0px; text-align: left;">
+
+																	<form method="get" action="<?php
+																		if($_SESSION['UserID']!="")
+																		{
+																		echo "profile.php";
+																		}
+																		else
+																		{
+																		echo "login.php";
+																		}
+																		?>" autocomplete="off" name="profileform">
+
+																		<input name="id" value=" Search by Profile ID" onfocus="if(this.value==' Search by Profile ID') this.value='';" onblur="if(this.value=='') this.value=' Search by Profile ID';" style="width: 111px;" type="text"> &nbsp;
+																		<input  style="border:none" src="images/go.gif" title="View Profile" align="top" type="image">
+																	</form>
+
+																</div>
+											<!-- SEARCH FORM EN-->
+												</td>
+
+											</tr>
 								</table>
 								</div>
 
-											</form>
+
 											<!-- SEARCH FORM EN-->
+
+
 										</div>
 							</td>

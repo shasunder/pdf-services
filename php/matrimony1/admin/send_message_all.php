@@ -1,20 +1,20 @@
 <?PHP
 	session_start();
 	include("../connection.php");
-	
+
 	if ($_SESSION['LoginID'] == '')
 	{
 		header('LOCATION: index.php');
-	
+
 	}
-	
+
 	$sqlsettings = "SELECT * from admin";
 $resultsettings = mysql_query($sqlsettings);
 $rowsettings = mysql_fetch_array($resultsettings);
-	
+
 	if(isset($_POST['continue']))
 	{
-	
+
 	$sqlSeller = "SELECT * from users";
 	$resultSeller= mysql_query($sqlSeller);
 
@@ -23,16 +23,16 @@ $rowsettings = mysql_fetch_array($resultsettings);
 
 	if($rowsettings['smtpstatus'] == 1)
 	{
-	require("../phpmailer/class.phpmailer.php");	
+	require("../phpmailer/class.phpmailer.php");
 	$mail = new PHPMailer();
-	
-	$mail->IsSMTP();            
+
+	$mail->IsSMTP();
 	$mail->Host = $rowsettings['smtp'];
 	$mail->Port = $rowsettings['port'];
-	$mail->SMTPAuth = true;     
+	$mail->SMTPAuth = true;
 	$mail->Username = $rowsettings['AdminEmail'];
 	$mail->Password = $rowsettings['AdminEmailPassword'];
-	
+
 	$mail->From = $rowsettings['AdminEmail'];
 	$mail->FromName = $rowsettings['ScriptName'];
 	while($row=mysql_fetch_array($resultSeller))
@@ -40,9 +40,9 @@ $rowsettings = mysql_fetch_array($resultsettings);
 		$to=$row['EmailAddress'];
 		$mail->AddAddress($to);
 	}
-	$mail->WordWrap = 50;  
-	$mail->IsHTML(true);   
-	
+	$mail->WordWrap = 50;
+	$mail->IsHTML(true);
+
 	$mail->Subject = $subject;
 	$email_layout = "<br><br><img src='".$rowsettings['url']."/images/matrimonial-logo-sm.gif'><br><table border='0' width='100%'><tr><Td colspan='2' background='".$rowsettings['url']."/images/footer_seprator.gif' height='2'></Td></tr></table><br><br>";
 	$mail->Body = $email_layout.$description;
@@ -100,15 +100,7 @@ body {
 </head>
 <body >
 	<table width="1003" border="0" align="center" cellspacing="0">
-		<Tr  align="center">
-			<Td colspan="3">
-				<table border="0" cellpadding="5" cellspacing="0" style="vertical-align:top">
-					<Tr align="center">
-						<Td  align="center" width="361"><img src="../images/matrimonial-logo-sm.gif"></Td>
-					</Tr>
-			  </table>
-			</td>
-		</Tr>
+
 		<Tr>
 
 			<Td height='24' colspan="2" align="right" background='images/headCap.gif'>
@@ -119,17 +111,7 @@ body {
 				</span>
 			</td>
 		</Tr>
-		<Tr>
-			<Td height='24' colspan="2" align="Center"> 
 
-<div  style="font-weight:bold "class="style2">
-		Welcome to Admin Control Panel
-</div>
-
-
-				
-			</td>
-		</Tr>
 		<tr valign="top">
 			<td width="218">
 				<div style="margin-left:10px">
@@ -155,7 +137,7 @@ body {
 					<?PHP
 						}
 					?>
-					
+
 				</div>
 
 
@@ -165,18 +147,18 @@ body {
         <TR class=tblrow>
           <TD class=tblcell1>To :</TD>
           <TD class=tblcell2>All Members
-          </TD></TR>	
-		  
+          </TD></TR>
+
 		   <TR class=tblrow>
           <TD class=tblcell1>Subject :</TD>
           <TD class=tblcell2><input type="text" name="Subject" size="70">
-          </TD></TR>		  
-  
+          </TD></TR>
+
 		  <TR class=tblrow>
           <TD class=tblcell1>Message :</TD>
           <TD class=tblcell2><textarea id="Message" name="Message" rows="15" cols="80" style="width: 95%"></textarea></TD></TR>
-		  
-		  
+
+
         <TR class=tblrow>
           <TD class=tblcell1></TD>
           <TD class=tblcell2><input type="hidden" name="continue" value="true"><INPUT class=bttn type=submit value="Send Email" name=Submit></TD></TR></TBODY></TABLE></FORM></TD></TR></TBODY></TABLE>

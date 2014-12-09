@@ -1,12 +1,11 @@
-
-
+<?php session_start(); ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <?php include("common/includes_static.php"); ?>
 <?php include("common/constants.php"); ?>
-<meta name="description" content="Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony, Find Lakhs of Banjara Brides &amp; Grooms on gorbanjara.net marrybanjara.com - Join FREE" />
-<meta name="keywords" content="Marry Banjara, Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Marry banjara Banjara Matrimony,Marry Banjara Matrimonial, Banjara Matrimonials, Banjara Matrimony, marrybanjara.com" />
+<meta name="description" content="Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Gor Banjara matrimonial Banjara Matrimony, Find Lakhs of Banjara Brides &amp; Grooms on gorbanjara.net marrybanjara.com - Join FREE" />
+<meta name="keywords" content="Gor Banjara matrimonial, Lambani Matrimonial, Lambani Matrimonials, Lambani Matrimony,Gor Banjara matrimonial Banjara Matrimony,Gor Banjara matrimonial Matrimonial, Banjara Matrimonials, Banjara Matrimony, marrybanjara.com" />
 <meta name="Author" content="gorbanjara.net Lambani Matrimonial Team" />
 <meta name="copyright" content="gorbanjara.net Matrimonials" />
 
@@ -121,38 +120,9 @@ else
 				<fieldset>
 
 				<table style="padding-left:10px" border="0" cellpadding="0" cellspacing="0" align="left">
-
 						<?php include("sections/searchbox.php"); ?>
-
 					</tr>
-
-					<tr>
-					<td>
-								<!-- SEARCH FORM ST-->
-									<div style="padding-left:5px; text-align: left;">
-
-										<form method="get" action="<?php
-											if($_SESSION['UserID']!="")
-											{
-											echo "profile.php";
-											}
-											else
-											{
-											echo "login.php";
-											}
-											?>" autocomplete="off" name="profileform">
-											<br/>
-											<br/>
-											<input name="id" value=" Search by Profile ID" onfocus="if(this.value==' Search by Profile ID') this.value='';" onblur="if(this.value=='') this.value=' Search by Profile ID';" style="width: 111px;" type="text"> &nbsp;
-											<input  style="border:none" src="images/go.gif" title="View Profile" align="top" type="image">
-										</form>
-										<br/><br/>
-									</div>
-				<!-- SEARCH FORM EN-->
-					</td>
-
-					</tr>
-			</table>
+				</table>
 
 
 				<br/>
