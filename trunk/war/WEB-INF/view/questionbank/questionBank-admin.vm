@@ -1,0 +1,68 @@
+<div align="center">
+<br/>
+<font color="red"><b>$!error </b> </font>
+<font color="red"><b>$!message </b> </font>
+
+<br/>
+<div >
+   <table>
+   <tr style="background:lightgrey">
+     <th>Id</th>
+     <th>Question</th>
+     <th>Answer</th>
+     <th>Category</th>
+     <th>Section</th>
+   </tr>
+#if($qas)
+#foreach($qa in $qas)
+	      <form method="post" action="/qa/edit">
+      <tr>
+        <td>
+	        <a href="/qa/$!qa.id"> $!qa.id</a> 
+	        <input type="hidden" size="1" name="id" value="$!qa.id"/>
+        </td>
+        <td>
+	        <input type="text" name="question" value="$escapeTool.escapeHtml($!qa.question)" size="80"/> 
+        </td>
+         <td>
+	        <input type="text" name="answer" value="$escapeTool.escapeHtml($!qa.answer)" size="40"/> 
+        </td>
+        <td>
+	     	<input name="submit" type="submit" value="Edit"/>
+	    </td>
+	   </tr>
+	       </form>  
+#end
+#end
+	      <form method="post" action="/qa/add">
+  	<tr>
+        <td>
+	        &nbsp;
+        </td>
+        <td>
+	        <input type="text" name="question" size="80"/> 
+        </td>
+        <td>
+	        <input type="text" name="answer"/>
+        </td>
+        <td>
+	     	<input name="submit" type="submit" value="Add"/>
+	    </td>
+	   </tr>
+	       </form>  
+	  </table>
+</div>
+<br/>
+
+<div >
+<a href="#" onclick="document.getElementById('usage').style.display= document.getElementById('usage').style.display == 'block' ? 'none' : 'block';"/>Usage</a>
+<div style="float:none">
+ <ul style="display:none;" id="usage">
+ 	<li>1. Add a qa and view it using /qa/{id}  </li>
+ </ul>
+ </div>
+ <br/>
+ 
+<a href="/"> home</a>
+</div>
+</div>
