@@ -1,6 +1,7 @@
 package com.san.jshoutbox.model.ebay;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -9,7 +10,7 @@ import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 
 import com.google.appengine.api.datastore.Key;
 
-@PersistenceCapable
+@PersistenceCapable(identityType = IdentityType.APPLICATION)
 public class Site {
 
 	@PrimaryKey
