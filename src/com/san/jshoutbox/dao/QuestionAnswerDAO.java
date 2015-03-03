@@ -33,8 +33,13 @@ public class QuestionAnswerDAO {
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
 			QuestionAnswer storedQuestionBank = read(qA.getId(), pm);
+			storedQuestionBank.setQuestion(qA.getQuestion());
+			storedQuestionBank.setAnswer(qA.getAnswer());
+			storedQuestionBank.setCategory(qA.getCategory());
+			storedQuestionBank.setSubCategory(qA.getSubCategory());
 			storedQuestionBank.setRating(qA.getRating());
 			storedQuestionBank.setDate(new Date());
+			storedQuestionBank.setLanguage(qA.getLanguage());
 			storedQuestionBank.setUsersRated(qA.getUsersRated() > 0 ? qA.getUsersRated() : storedQuestionBank.getUsersRated());
 			// pm.makePersistent(qA);
 		} finally {

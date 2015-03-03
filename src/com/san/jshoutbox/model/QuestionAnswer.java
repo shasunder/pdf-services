@@ -16,6 +16,14 @@ public class QuestionAnswer {
 	@PrimaryKey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	Long id;
+
+	@Persistent
+	String language;
+	@Persistent
+	String category;
+	@Persistent
+	String subCategory;
+
 	@Persistent
 	String question;
 	@Persistent
@@ -73,6 +81,30 @@ public class QuestionAnswer {
 
 	public void setUsersRated(int usersRated) {
 		this.usersRated = usersRated;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getSubCategory() {
+		return subCategory;
+	}
+
+	public void setSubCategory(String subCategory) {
+		this.subCategory = subCategory;
 	}
 
 	@Override
