@@ -33,7 +33,7 @@ content="" />
      <li><a href="/static/cruiser/index.html"> Cruiser <span style="font-size:12px">(Simple tabbed brower using jquery/tabs/xml parsing/cookie storage -- all client side)</font></a></li>
      <li><a href="/static/breathsync/index.html"> Breath Sync <span style="font-size:12px">(Breathing exercises for relaxing your brain)</font></a></li>
     <li><a href="/static/map/map-address-plot.html"> Google map marker plot <span style="font-size:12px">(Plot markers on map for given address - property listing)</font></a></li>
-
+     <li><a href="/qa/admin?password=****">Question bank</a></li>
 
  </ul>
  </font>

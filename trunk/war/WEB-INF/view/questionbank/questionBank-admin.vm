@@ -11,7 +11,8 @@
      <th>Question</th>
      <th>Answer</th>
      <th>Category</th>
-     <th>Section</th>
+     <th>Sub category</th>
+     <th>Language</th>
    </tr>
 #if($qas)
 #foreach($qa in $qas)
@@ -22,10 +23,19 @@
 	        <input type="hidden" size="1" name="id" value="$!qa.id"/>
         </td>
         <td>
-	        <input type="text" name="question" value="$escapeTool.escapeHtml($!qa.question)" size="80"/> 
+        	<textarea name="question" rows="2" cols="40">$!qa.question</textarea>
         </td>
          <td>
-	        <input type="text" name="answer" value="$escapeTool.escapeHtml($!qa.answer)" size="40"/> 
+         <textarea name="answer" rows="2" cols="40">$!qa.answer</textarea>
+        </td>
+        <td>
+	        <input type="text" name="category" value="$!qa.category" size="10"/> 
+        </td>
+        <td>
+	        <input type="text" name="subCategory" value="$!qa.subCategory" size="10"/> 
+        </td>
+        <td>
+	        <input type="text" name="language" value="$!qa.language" size="6"/> 
         </td>
         <td>
 	     	<input name="submit" type="submit" value="Edit"/>
@@ -34,16 +44,26 @@
 	       </form>  
 #end
 #end
+	<tr><td>&nbsp;</td>
 	      <form method="post" action="/qa/add">
   	<tr>
         <td>
-	        &nbsp;
+	        &nbsp;   <input type="hidden" size="1" name="id" value="$!qa.id"/>
+        </td>
+         <td>
+        	<textarea name="question" rows="2" cols="40">$!qa.question</textarea>
+        </td>
+         <td>
+         <textarea name="answer" rows="2" cols="40">$!qa.answer</textarea>
         </td>
         <td>
-	        <input type="text" name="question" size="80"/> 
+	        <input type="text" name="category" value="$!qa.category" size="10"/> 
         </td>
         <td>
-	        <input type="text" name="answer"/>
+	        <input type="text" name="subCategory" value="$!qa.subCategory" size="10"/> 
+        </td>
+        <td>
+	        <input type="text" name="language" value="$!qa.language" size="6"/> 
         </td>
         <td>
 	     	<input name="submit" type="submit" value="Add"/>
