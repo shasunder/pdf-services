@@ -80,10 +80,12 @@ public class QuestionAnswerDAO {
 		}
 	}
 
-	public List<QuestionAnswer> readAll() {
+	public List<QuestionAnswer> readAll(int pg, int limit){
+		   
+		   int idx = pg * limit - limit;
 		PersistenceManager pm = PMF.get().getPersistenceManager();
 		try {
-			javax.jdo.Query q = pm.newQuery("select from " + QuestionAnswer.class.getName() + " order by id desc");
+			javax.jdo.Query q = pm.newQuery("select from " + QuestionAnswer.class.getName() + " order by id asc RANGE " + idx + ","+ (pg * limit));
 			List<QuestionAnswer> entries = (List<QuestionAnswer>) q.execute();
 			logger.debug(entries);
 			return entries;
