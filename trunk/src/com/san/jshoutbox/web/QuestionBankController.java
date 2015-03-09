@@ -1,6 +1,7 @@
 package com.san.jshoutbox.web;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.san.jshoutbox.dao.QuestionAnswerDAO;
@@ -30,18 +32,35 @@ public class QuestionBankController {
 	public ModelAndView show(@RequestParam(value="password",required=false) String password, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("questionbank/questionBank-admin");
 		if (validateUser.validate(ValidateUser.USER_ADMIN, password,request.getSession(true))) {
-			mv.addObject("qas", questionAnswerDAO.readAll());
+			mv.addObject("qas", questionAnswerDAO.readAll(1,1000));
 		} else {
 			mv.addObject("message", "Invalid admin password");
 		}
 		return mv;
 	}
 
+	@RequestMapping(value = { "/qa/listJson" }, method = RequestMethod.GET)
+	public  @ResponseBody List showAllJson(@RequestParam(value="password",required=false) String password,@RequestParam(value="page") int page, @RequestParam(value="size") int size, HttpServletRequest request) {
+		if (validateUser.validate(ValidateUser.USER_ADMIN, password,request.getSession(true))) {
+			return questionAnswerDAO.readAll(page, size);
+		} else {
+			List l = new java.util.ArrayList<String>();
+			l.add("Invalid password");
+			return l;
+		}
+	}
+	
 	@RequestMapping(value = { "/qa/{id}" }, method = RequestMethod.GET)
 	public ModelAndView read(@PathVariable("id") Long id) {
 		ModelAndView mv = new ModelAndView("questionbank/questionAnswer");
 		mv.addObject("qa", questionAnswerDAO.read(id));
 		return mv;
+	}
+	
+	@RequestMapping(value = { "/qajson/{id}.json" }, headers="Accept=*/*", method = RequestMethod.GET)
+	public @ResponseBody QuestionAnswer readJson(@PathVariable("id") Long id, HttpServletResponse response) {
+		response.setContentType("application/json");
+		return questionAnswerDAO.read(id);
 	}
 
 
@@ -70,7 +89,7 @@ public class QuestionBankController {
 		questionAnswerDAO.update(questionBank);
 		ModelAndView mv = new ModelAndView("redirect:/qa/admin");
 		mv.addObject("message", "Updated!!");
-		mv.addObject("questionBanks", questionAnswerDAO.readAll());
+		mv.addObject("questionBanks", questionAnswerDAO.readAll(1,1000));
 		return mv;
 	}
 
