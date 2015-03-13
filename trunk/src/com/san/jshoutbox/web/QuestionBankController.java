@@ -78,9 +78,10 @@ public class QuestionBankController {
 	@RequestMapping(value = { "/qa/delete/{id}" }, method = RequestMethod.GET)
 	public ModelAndView delete(@PathVariable("id") Long id, HttpServletResponse response) {
 
-		ModelAndView mv = new ModelAndView("forward:/qa/admin");
+		ModelAndView mv = new ModelAndView("redirect:/qa/admin");
 		questionAnswerDAO.delete(id);
-		mv.addObject("message", "Deleted!!");
+		mv.addObject("message", "Deleted!!"+id);
+		mv.addObject("password", validateUser.getPassword(ValidateUser.USER_ADMIN));
 		return mv;
 	}
 
